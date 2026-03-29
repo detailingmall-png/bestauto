@@ -2,32 +2,38 @@
 /**
  * Catch-all route: serves all 210 Tilda-exported pages.
  *
- * Phase 1/2: outputs original Tilda HTML via TildaPageLayout.
- * Phase 3: will replace mainContent with Sanity-driven components.
+ * Phase 1/2: Tilda HTML via TildaPageLayout.
+ * Phase 3: Sanity data injected into HTML at build time (phones, addresses).
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections } from '../lib/html-extractor';
+import { getSiteSettings } from '../lib/sanity';
+import { injectSanityData } from '../lib/sanity-inject';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const pages = getAllPages();
-  // Filter out orphan pages whose URLs are raw page IDs
   const validPages = pages.filter(p => !p.path.includes('.html'));
+
+  // Fetch once for all pages
+  const settings = await getSiteSettings();
 
   return validPages.map(page => ({
     params: { slug: getRouteSlug(page) },
-    props: { pageFile: page.file, pageTitle: page.title },
+    props: { pageFile: page.file, pageTitle: page.title, settings },
   }));
 }
 
 interface Props {
   readonly pageFile: string;
   readonly pageTitle: string;
+  readonly settings: Awaited<ReturnType<typeof getSiteSettings>>;
 }
 
-const { pageFile } = Astro.props;
-const html = getPageHtml(pageFile);
-const { headContent, headerBlock, mainContent, bodyClass } = extractSections(html);
+const { pageFile, settings } = Astro.props;
+const rawHtml = getPageHtml(pageFile);
+const injectedHtml = injectSanityData(rawHtml, settings);
+const { headContent, headerBlock, mainContent, bodyClass } = extractSections(injectedHtml);
 ---
 <TildaPageLayout
   headContent={headContent}
