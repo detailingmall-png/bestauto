@@ -1,5 +1,8 @@
-# Tilda export — large binary assets (161MB), not for git
-tilda-export/
+# Tilda export — only HTML pages are committed (36MB), binary assets excluded
+tilda-export/project6825691/css/
+tilda-export/project6825691/js/
+tilda-export/project6825691/images/
+tilda-export/project6825691/files/
 
 # macOS
 .DS_Store
