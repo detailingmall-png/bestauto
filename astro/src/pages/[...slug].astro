@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, extractAndRemoveBlockRange } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter } from '../lib/html-extractor';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
@@ -68,16 +68,22 @@ if (lang === 'ru') {
       mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
     }
   }
-  // Move reviews+gallery to just above contacts block
+  // Move gallery+reviews to just above contacts block
+  let galleryReviewsRu = '';
   if (currentSlug === 'ru') {
-    let reviewsGallery: string;
-    [reviewsGallery, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758392198', 'rec1859784471');
-    if (reviewsGallery) {
-      const contactsIdx = mainContent.indexOf('id="rec2091246563"');
-      if (contactsIdx >= 0) {
-        const divStart = mainContent.lastIndexOf('<div', contactsIdx);
-        mainContent = mainContent.slice(0, divStart) + reviewsGallery + mainContent.slice(divStart);
-      }
+    [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758392198', 'rec1859784471');
+  } else if (mainContent.includes('id="rec1859744811"')) {
+    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"');
+    const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
+    if (reviewsStartId && reviewsEndId) {
+      [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec1859744811', reviewsEndId);
+    }
+  }
+  if (galleryReviewsRu) {
+    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+    if (contactsIdx >= 0) {
+      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+      mainContent = mainContent.slice(0, divStart) + galleryReviewsRu + mainContent.slice(divStart);
     }
   }
 }
@@ -107,6 +113,22 @@ if (lang === 'ka') {
     }
     mainContent = insertBeforeFooter(mainContent, reviewsGallery + CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
+  // Subpages: move gallery+reviews above contacts block
+  if ((currentSlug !== '' && currentSlug !== undefined) && mainContent.includes('id="rec654920653"')) {
+    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"');
+    const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
+    if (reviewsStartId && reviewsEndId) {
+      let galleryReviewsKa: string;
+      [galleryReviewsKa, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec654920653', reviewsEndId);
+      if (galleryReviewsKa) {
+        const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+        if (contactsIdx >= 0) {
+          const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+          mainContent = mainContent.slice(0, divStart) + galleryReviewsKa + mainContent.slice(divStart);
+        }
+      }
+    }
+  }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_KA;
   }
@@ -126,6 +148,22 @@ if (lang === 'en') {
       [reviewsEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758753019', 'rec758753021');
     }
     mainContent = insertBeforeFooter(mainContent, galleryEn + reviewsEn + CONTACTS_BLOCK_EN, ['rec607472568', 'rec607473240']);
+  }
+  // Subpages: move gallery+reviews above contacts block
+  if (currentSlug !== 'en' && mainContent.includes('id="rec590463209"')) {
+    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"');
+    const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
+    if (reviewsStartId && reviewsEndId) {
+      let galleryReviewsEn: string;
+      [galleryReviewsEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec590463209', reviewsEndId);
+      if (galleryReviewsEn) {
+        const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+        if (contactsIdx >= 0) {
+          const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+          mainContent = mainContent.slice(0, divStart) + galleryReviewsEn + mainContent.slice(divStart);
+        }
+      }
+    }
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_EN;

@@ -451,6 +451,29 @@ export function extractAndRemoveBlockRange(
 }
 
 /**
+ * Find the rec ID of the last block before the given text marker.
+ * Used to identify the block containing a specific anchor (e.g., name="reviews").
+ */
+export function findRecIdContaining(content: string, marker: string): string | null {
+  const markerPos = content.indexOf(marker);
+  if (markerPos < 0) return null;
+  const before = content.slice(Math.max(0, markerPos - 500), markerPos);
+  const matches = [...before.matchAll(/id="(rec\d+)"/g)];
+  return matches.length > 0 ? matches[matches.length - 1][1] : null;
+}
+
+/**
+ * Return the rec ID that is `n` positions after `startRecId` in the flat
+ * list of all rec IDs in the content.
+ */
+export function findNthRecIdAfter(content: string, startRecId: string, n: number): string | null {
+  const allIds = [...content.matchAll(/id="(rec\d+)"/g)].map(m => m[1]);
+  const idx = allIds.indexOf(startRecId);
+  if (idx < 0 || idx + n >= allIds.length) return null;
+  return allIds[idx + n];
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
