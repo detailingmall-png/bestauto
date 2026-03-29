@@ -170,7 +170,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = addLazyLoading(addImageDimensions(rawMainContent));
+  const mainContent = addLazyLoading(rawMainContent);
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
