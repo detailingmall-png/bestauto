@@ -134,6 +134,58 @@ export function addImageDimensions(body: string): string {
 }
 
 /**
+ * Replace Tilda's tiny 20x CSS background placeholders with full-size WebP.
+ * Tilda inserts `background-image:url('...resize__20x__NAME.jpg')` in inline <style>,
+ * then its JS swaps it for the real image at runtime — causing late LCP.
+ * Pre-populate with the full-size image at build time to fix this.
+ */
+export function expandCssBackgroundPlaceholders(content: string): string {
+  // Matches: url('/images/HASH__-__resize__NNx__NAME.jpg')
+  return content.replace(
+    /url\('(\/images\/([\w-]+)__-__resize__\d+x__([\w.-]+)\.jpe?g)'\)/g,
+    (_match, _orig, hash, name) => {
+      const base = `${hash}__${name}`;
+      const src = WEBP_AVAILABLE.has(base)
+        ? `/images/${base}.webp`
+        : `/images/${base}.jpg`;
+      return `url('${src}')`;
+    }
+  );
+}
+
+/**
+ * Promote above-fold Tilda lazy images to direct src= loading.
+ * Tilda stores real image in data-original= and lazy-loads via JS.
+ * For the first N images, copy data-original → src so the browser
+ * can load them immediately without waiting for scripts.
+ * Adds fetchpriority="high" to the very first image (LCP candidate).
+ */
+export function promoteAboveFoldImages(body: string): string {
+  const ABOVE_FOLD = 2;
+  let promoted = 0;
+
+  return body.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
+    if (promoted >= ABOVE_FOLD) return match;
+
+    const dataOrigMatch = attrs.match(/data-original="([^"]+)"/);
+    if (!dataOrigMatch) return match; // no data-original, skip
+
+    promoted++;
+    const realSrc = dataOrigMatch[1];
+
+    // Replace placeholder src= with the real image path
+    let newAttrs = /\bsrc=/.test(attrs)
+      ? attrs.replace(/\bsrc="[^"]*"/, `src="${realSrc}"`)
+      : `src="${realSrc}" ${attrs}`;
+
+    // First image gets fetchpriority hint
+    if (promoted === 1) newAttrs += ' fetchpriority="high"';
+
+    return `<img ${newAttrs.trim()}>`;
+  });
+}
+
+/**
  * Add loading="lazy" to images in body content.
  * Skips the first N images (above the fold) and tracking pixels.
  */
@@ -239,7 +291,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead))));
+  const headContent = deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(expandCssBackgroundPlaceholders(makePathsAbsolute(rawHead)))));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
@@ -252,7 +304,7 @@ export function extractSections(html: string): PageSections {
     : 0;
   const bodyEnd = html.lastIndexOf('</body>');
   const rawBody = bodyEnd > bodyStart ? html.slice(bodyStart, bodyEnd) : html;
-  const body = rewriteImagesToWebp(makePathsAbsolute(rawBody));
+  const body = expandCssBackgroundPlaceholders(rewriteImagesToWebp(makePathsAbsolute(rawBody)));
 
   // Header block: everything inside <!--header-->...<!--/header-->
   const headerOpenTag = '<!--header-->';
@@ -267,7 +319,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = lazyLoadElfsight(addLazyLoading(rawMainContent));
+  const mainContent = lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
