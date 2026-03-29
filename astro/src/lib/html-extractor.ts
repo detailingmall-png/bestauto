@@ -134,6 +134,51 @@ export function addLazyLoading(body: string): string {
 }
 
 /**
+ * Lazy-load Elfsight widget via IntersectionObserver.
+ * Removes the platform.js script tag and replaces it with an observer
+ * that injects the script only when the widget scrolls into view.
+ * Saves ~463KB from the critical JS path.
+ */
+export function lazyLoadElfsight(body: string): string {
+  const scriptRe = /<script\b[^>]*src="https:\/\/static\.elfsight\.com\/platform\/platform\.js"[^>]*><\/script>/;
+  if (!scriptRe.test(body)) return body;
+
+  const loader = `<script>(function(){var loaded=false;function inject(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='https://static.elfsight.com/platform/platform.js';s.setAttribute('data-use-service-core','');document.head.appendChild(s);}if(!('IntersectionObserver' in window)){setTimeout(inject,3000);return;}var obs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(entries[i].isIntersecting){obs.disconnect();inject();break;}}},{rootMargin:'400px'});var els=document.querySelectorAll('[class*="elfsight-app"]');if(els.length){els.forEach(function(el){obs.observe(el);});}else{setTimeout(inject,3000);}})();</script>`;
+
+  return body.replace(scriptRe, loader);
+}
+
+/**
+ * Delay heavy third-party analytics scripts (GTM, GA4, Yandex Metrika,
+ * Facebook Pixel external) using requestIdleCallback + 4s fallback.
+ * Inline dataLayer/gtag/ym/fbq stubs remain so queued calls are preserved.
+ */
+export function delayAnalytics(block: string): string {
+  const DELAY_HOSTS = [
+    'googletagmanager.com/gtag/',
+    'googletagmanager.com/gtm.js',
+    'mc.yandex.ru/metrika/tag',
+    'connect.facebook.net/',
+  ];
+
+  const deferred: string[] = [];
+  const processed = block.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {
+    if (DELAY_HOSTS.some(h => src.includes(h))) {
+      deferred.push(src);
+      return '';
+    }
+    return match;
+  });
+
+  if (deferred.length === 0) return block;
+
+  const srcs = JSON.stringify(deferred);
+  const loader = `<script>(function(){function load(){${srcs}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:4000});}else{setTimeout(load,3000);}})();</script>`;
+
+  return processed + loader;
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
@@ -163,14 +208,15 @@ export function extractSections(html: string): PageSections {
   const headerCloseTag = '<!--/header-->';
   const headerOpen = body.indexOf(headerOpenTag);
   const headerClose = body.indexOf(headerCloseTag);
-  const headerBlock = headerOpen >= 0 && headerClose > headerOpen
+  const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
+  const headerBlock = delayAnalytics(rawHeaderBlock);
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = addLazyLoading(rawMainContent);
+  const mainContent = lazyLoadElfsight(addLazyLoading(rawMainContent));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
