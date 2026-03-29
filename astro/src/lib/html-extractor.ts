@@ -431,7 +431,7 @@ export function extractSections(html: string): PageSections {
     : 0;
   const bodyEnd = html.lastIndexOf('</body>');
   const rawBody = bodyEnd > bodyStart ? html.slice(bodyStart, bodyEnd) : html;
-  const body = rewriteImagesToWebp(makePathsAbsolute(rawBody));
+  const body = rewriteImagesToWebp(expandCssBackgroundPlaceholders(makePathsAbsolute(rawBody)));
 
   // Header block: everything inside <!--header-->...<!--/header-->
   const headerOpenTag = '<!--header-->';
@@ -446,7 +446,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)));
+  const mainContent = delayAnalytics(lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
