@@ -490,10 +490,12 @@ export function extractAndRemoveBlockRange(
 
 /**
  * Find the rec ID of the last block before the given text marker.
+ * Optional startPos limits search to content after a given offset —
+ * use this to skip navigation anchors that appear earlier in the page.
  * Used to identify the block containing a specific anchor (e.g., name="reviews").
  */
-export function findRecIdContaining(content: string, marker: string): string | null {
-  const markerPos = content.indexOf(marker);
+export function findRecIdContaining(content: string, marker: string, startPos = 0): string | null {
+  const markerPos = content.indexOf(marker, startPos);
   if (markerPos < 0) return null;
   const before = content.slice(Math.max(0, markerPos - 500), markerPos);
   const matches = [...before.matchAll(/id="(rec\d+)"/g)];

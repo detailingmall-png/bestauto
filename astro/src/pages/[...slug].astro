@@ -80,11 +80,12 @@ if (lang === 'ru') {
   let galleryReviewsRu = '';
   if (currentSlug === 'ru') {
     [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758392198', 'rec1859784471');
-  } else if (mainContent.includes('id="rec1859744811"')) {
-    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"');
+  } else if (mainContent.includes('id="rec713423972"')) {
+    const galleryStartPos = mainContent.indexOf('id="rec713423972"');
+    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"', galleryStartPos);
     const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
     if (reviewsStartId && reviewsEndId) {
-      [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec1859744811', reviewsEndId);
+      [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec713423972', reviewsEndId);
     }
   }
   if (galleryReviewsRu) {
@@ -122,12 +123,13 @@ if (lang === 'ka') {
     mainContent = insertBeforeFooter(mainContent, reviewsGallery + CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
   // Subpages: move gallery+reviews above contacts block
-  if ((currentSlug !== '' && currentSlug !== undefined) && mainContent.includes('id="rec654920653"')) {
-    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"');
+  if ((currentSlug !== '' && currentSlug !== undefined) && mainContent.includes('id="rec713418578"')) {
+    const galleryStartPos = mainContent.indexOf('id="rec713418578"');
+    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"', galleryStartPos);
     const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
     if (reviewsStartId && reviewsEndId) {
       let galleryReviewsKa: string;
-      [galleryReviewsKa, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec654920653', reviewsEndId);
+      [galleryReviewsKa, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec713418578', reviewsEndId);
       if (galleryReviewsKa) {
         const contactsIdx = mainContent.indexOf('id="rec2091246563"');
         if (contactsIdx >= 0) {
@@ -158,12 +160,13 @@ if (lang === 'en') {
     mainContent = insertBeforeFooter(mainContent, galleryEn + reviewsEn + CONTACTS_BLOCK_EN, ['rec607472568', 'rec607473240']);
   }
   // Subpages: move gallery+reviews above contacts block
-  if (currentSlug !== 'en' && mainContent.includes('id="rec590463209"')) {
-    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"');
+  if (currentSlug !== 'en' && mainContent.includes('id="rec1862088871"')) {
+    const galleryStartPos = mainContent.indexOf('id="rec1862088871"');
+    const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"', galleryStartPos);
     const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
     if (reviewsStartId && reviewsEndId) {
       let galleryReviewsEn: string;
-      [galleryReviewsEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec590463209', reviewsEndId);
+      [galleryReviewsEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec1862088871', reviewsEndId);
       if (galleryReviewsEn) {
         const contactsIdx = mainContent.indexOf('id="rec2091246563"');
         if (contactsIdx >= 0) {
