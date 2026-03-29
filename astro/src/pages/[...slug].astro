@@ -7,10 +7,11 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock } from '../lib/html-extractor';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
+import { WHATSAPP_BLOCK, CONTACTS_BLOCK } from '../lib/ru-contacts';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 
@@ -51,7 +52,15 @@ if (PRICES_SLUGS.has(currentSlug)) {
 const lang = (currentSlug === 'ru' || currentSlug.startsWith('ru/')) ? 'ru'
   : (currentSlug === 'en' || currentSlug.startsWith('en/')) ? 'en'
   : 'ka';
-const { headContent, headerBlock, mainContent, bodyClass } = extractSections(injectedHtml);
+const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
+let mainContent = rawMainContent;
+
+if (lang === 'ru') {
+  mainContent = removeRecordBlock(mainContent, 'rec1829048981');
+  if (!mainContent.includes('rec2091246563')) {
+    mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
+  }
+}
 ---
 <TildaPageLayout
   headContent={headContent}

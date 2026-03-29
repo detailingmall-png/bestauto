@@ -377,6 +377,33 @@ export function rewriteImagesToWebp(content: string): string {
 }
 
 /**
+ * Remove a Tilda record block by its record ID from HTML content.
+ * Uses div-depth counting to find the matching closing tag.
+ */
+export function removeRecordBlock(content: string, recId: string): string {
+  const startMarker = `id="${recId}"`;
+  const startIdx = content.indexOf(startMarker);
+  if (startIdx < 0) return content;
+  const divStart = content.lastIndexOf('<div', startIdx);
+  let depth = 0;
+  let pos = divStart;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) return content.slice(0, divStart) + content.slice(nextClose + 6);
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return content;
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
