@@ -3,24 +3,30 @@
  * Catch-all route: serves all 210 Tilda-exported pages.
  *
  * Phase 1/2: Tilda HTML via TildaPageLayout.
- * Phase 3: Sanity data injected into HTML at build time (phones, addresses).
+ * Phase 3: Sanity data injected into HTML at build time (phones, addresses, prices).
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections } from '../lib/html-extractor';
-import { getSiteSettings } from '../lib/sanity';
+import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
+import { injectPricesData } from '../lib/prices-inject';
+
+const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 
 export async function getStaticPaths() {
   const pages = getAllPages();
   const validPages = pages.filter(p => !p.path.includes('.html'));
 
   // Fetch once for all pages
-  const settings = await getSiteSettings();
+  const [settings, pricingPage] = await Promise.all([
+    getSiteSettings(),
+    getPricingPage(),
+  ]);
 
   return validPages.map(page => ({
     params: { slug: getRouteSlug(page) },
-    props: { pageFile: page.file, pageTitle: page.title, settings },
+    props: { pageFile: page.file, pageTitle: page.title, settings, pricingPage },
   }));
 }
 
@@ -28,11 +34,20 @@ interface Props {
   readonly pageFile: string;
   readonly pageTitle: string;
   readonly settings: Awaited<ReturnType<typeof getSiteSettings>>;
+  readonly pricingPage: Awaited<ReturnType<typeof getPricingPage>>;
 }
 
-const { pageFile, settings } = Astro.props;
+const { pageFile, settings, pricingPage } = Astro.props;
+const currentSlug = Astro.params.slug ?? '';
+
 const rawHtml = getPageHtml(pageFile);
-const injectedHtml = injectSanityData(rawHtml, settings);
+let injectedHtml = injectSanityData(rawHtml, settings);
+
+if (PRICES_SLUGS.has(currentSlug)) {
+  const lang = currentSlug === 'ru/prices' ? 'ru' : currentSlug === 'en/prices' ? 'en' : 'ka';
+  injectedHtml = injectPricesData(injectedHtml, pricingPage, lang);
+}
+
 const { headContent, headerBlock, mainContent, bodyClass } = extractSections(injectedHtml);
 ---
 <TildaPageLayout

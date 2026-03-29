@@ -140,6 +140,48 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
   )
 }
 
+// ──────────────────────────────────────────────
+// Pricing page types
+// ──────────────────────────────────────────────
+
+export interface PriceLineItem {
+  _key: string
+  nameRu: string
+  nameKa: string
+  nameEn: string
+  price: string
+  isPromo?: boolean
+}
+
+export interface PriceSection {
+  _key: string
+  titleRu: string
+  titleKa: string
+  titleEn: string
+  items: PriceLineItem[]
+}
+
+export interface PricingPage {
+  titleRu: string
+  titleKa: string
+  titleEn: string
+  sections: PriceSection[]
+}
+
+/** Fetch full pricing page with all sections and line items */
+export async function getPricingPage(): Promise<PricingPage | null> {
+  if (!import.meta.env.PUBLIC_SANITY_PROJECT_ID) return null
+  return sanityClient.fetch<PricingPage>(
+    `*[_type == "pricingPage" && _id == "pricingPage"][0]{
+      titleRu, titleKa, titleEn,
+      sections[]{
+        _key, titleRu, titleKa, titleEn,
+        items[]{ _key, nameRu, nameKa, nameEn, price, isPromo }
+      }
+    }`
+  )
+}
+
 /** Fetch all blog posts for the index page */
 export async function getBlogPosts(): Promise<BlogPost[]> {
   if (!import.meta.env.PUBLIC_SANITY_PROJECT_ID) return []
