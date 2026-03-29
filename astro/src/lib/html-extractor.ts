@@ -131,15 +131,6 @@ export function addResourceHints(head: string, mainContent: string): string {
   // Preload tilda-zero (cover block/artboard init depends on it → faster LCP)
   const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
 
-  // Preload page-specific Tilda blocks script (dynamic URL, extracted from head)
-  const blocksPageMatch = head.match(/src="(\/js\/tilda-blocks-page[^"]+)"/);
-  const blocksPreload = blocksPageMatch
-    ? `<link rel="preload" href="${blocksPageMatch[1]}" as="script">`
-    : '';
-
-  // Preload jQuery — first in the defer chain → faster DOMContentLoaded → faster LCP
-  const jqueryPreload = '<link rel="preload" href="/js/jquery-1.10.2.min.js" as="script">';
-
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
@@ -152,7 +143,7 @@ export function addResourceHints(head: string, mainContent: string): string {
     ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
     : '';
 
-  return dnsPrefetch + jqueryPreload + zeroPreload + blocksPreload + fontPreload + heroPreload + head;
+  return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
 }
 
 /**
