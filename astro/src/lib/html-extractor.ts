@@ -407,46 +407,6 @@ export function removeRecordBlock(content: string, recId: string): string {
   return content;
 }
 
-/**
- * Inject native <img> into T396 cover carrier divs (.t396__carrier.t-bgimg)
- * so the browser can discover the hero image in HTML without waiting for
- * Tilda JS to set background-image.
- *
- * fetchpriority="high" is given ONLY to carriers inside .t-screenmax-1200px
- * blocks (visible on mobile = Lighthouse viewport). The .t-screenmin-1200px
- * desktop carrier is display:none on mobile — prioritising its hidden img
- * wastes bandwidth on throttled connections and causes 15.9s LCP regression.
- */
-export function injectCoverHeroImg(body: string): string {
-  // Match the entire record div (rec wrapper) that contains .t396__carrier
-  // We need to know whether the parent block is t-screenmax-1200px (mobile)
-  // or t-screenmin-1200px (desktop).
-  //
-  // Strategy: inject into ALL carriers (eager loading), but give fetchpriority
-  // only to carriers whose containing block has t-screenmax-1200px class
-  // (i.e., visible on the mobile viewport Lighthouse measures).
-  return body.replace(
-    /(<div\b[^>]*class="[^"]*t396__carrier[^"]*t-bgimg[^"]*"[^>]*data-original="([^"]+)"[^>]*>)/gi,
-    (fullMatch, divTag: string, heroSrc: string, offset: number) => {
-      // Look back from this match's position to find which screen-size block contains this carrier
-      const preceding = body.slice(0, offset);
-      const lastScreenMax = preceding.lastIndexOf('t-screenmax-1200px');
-      const lastScreenMin = preceding.lastIndexOf('t-screenmin-1200px');
-      // fetchpriority="high" only for mobile-visible carrier (Lighthouse measures mobile viewport)
-      const isMobileBlock = lastScreenMax > lastScreenMin;
-      const priority = isMobileBlock ? ' fetchpriority="high"' : '';
-      const img = `<img src="${heroSrc}" alt=""${priority} loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">`;
-      // Pre-populate background-image + rename data-original → data-bg-loaded so
-      // Tilda JS (reads data-original) skips background-image swap at ~3.5s.
-      // The swap creates a new LCP candidate even when setting the same URL
-      // (quoting difference prevents browser dedup). Our <img> is the sole LCP.
-      const newDivTag = divTag
-        .replace('>', ` style="background-image:url('${heroSrc}');">`)
-        .replace('data-original=', 'data-bg-loaded=');
-      return newDivTag + img;
-    }
-  );
-}
 
 /**
  * Extract structured sections from a full Tilda HTML page.
@@ -486,7 +446,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = injectCoverHeroImg(lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent))));
+  const mainContent = lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
