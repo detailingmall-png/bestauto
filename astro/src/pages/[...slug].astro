@@ -58,7 +58,15 @@ let mainContent = rawMainContent;
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   if (!mainContent.includes('rec2091246563')) {
-    mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
+    // Insert before footer (rec603526076), not at the end
+    const FOOTER_ID = 'rec603526076';
+    const footerIdx = mainContent.indexOf(`id="${FOOTER_ID}"`);
+    if (footerIdx >= 0) {
+      const divStart = mainContent.lastIndexOf('<div', footerIdx);
+      mainContent = mainContent.slice(0, divStart) + WHATSAPP_BLOCK + CONTACTS_BLOCK + mainContent.slice(divStart);
+    } else {
+      mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
+    }
   }
 }
 ---
