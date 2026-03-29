@@ -1,0 +1,13 @@
+# Tilda export — large binary assets (161MB), not for git
+tilda-export/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editors
+.idea/
+.vscode/
+
+# Logs
+*.log

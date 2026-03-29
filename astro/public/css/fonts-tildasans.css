@@ -1,0 +1,9 @@
+/* Self-hosted TildaSans variable font (previously loaded from tildacdn.com CDN) */
+/* Single @font-face covers all weights 250-1000 via woff2-variations */
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 250 1000;
+  font-display: swap;
+  src: url('/fonts/TildaSans-VF.woff2') format('woff2-variations');
+}

@@ -1,0 +1,37 @@
+---
+/**
+ * Catch-all route: serves all 210 Tilda-exported pages.
+ *
+ * Phase 1/2: outputs original Tilda HTML via TildaPageLayout.
+ * Phase 3: will replace mainContent with Sanity-driven components.
+ */
+import TildaPageLayout from '../layouts/TildaPageLayout.astro';
+import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
+import { extractSections } from '../lib/html-extractor';
+
+export function getStaticPaths() {
+  const pages = getAllPages();
+  // Filter out orphan pages whose URLs are raw page IDs
+  const validPages = pages.filter(p => !p.path.includes('.html'));
+
+  return validPages.map(page => ({
+    params: { slug: getRouteSlug(page) },
+    props: { pageFile: page.file, pageTitle: page.title },
+  }));
+}
+
+interface Props {
+  readonly pageFile: string;
+  readonly pageTitle: string;
+}
+
+const { pageFile } = Astro.props;
+const html = getPageHtml(pageFile);
+const { headContent, headerBlock, mainContent, bodyClass } = extractSections(html);
+---
+<TildaPageLayout
+  headContent={headContent}
+  headerBlock={headerBlock}
+  mainContent={mainContent}
+  bodyClass={bodyClass}
+/>

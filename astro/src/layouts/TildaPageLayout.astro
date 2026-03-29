@@ -1,0 +1,48 @@
+---
+/**
+ * TildaPageLayout: wraps every migrated Tilda page.
+ *
+ * Receives pre-extracted sections (head, header, body) and assembles
+ * a complete HTML document. This is the single source of truth for
+ * page structure — Phase 3 will feed Sanity content through this layout.
+ */
+
+interface Props {
+  /** Raw <head> content (page-specific CSS, JS, meta tags) */
+  headContent: string;
+  /** The <!--header--> analytics block from the Tilda shared header */
+  headerBlock: string;
+  /** Main page content (nav + all blocks + footer) */
+  mainContent: string;
+  /** Body element class (usually "t-body") */
+  bodyClass?: string;
+}
+
+const {
+  headContent,
+  headerBlock,
+  mainContent,
+  bodyClass = 't-body',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html>
+<head>
+<Fragment set:html={headContent} />
+</head>
+<body class={bodyClass} style="margin:0;">
+<!--allrecords-->
+<div
+  id="allrecords"
+  data-tilda-export="yes"
+  class="t-records"
+  data-hook="blocks-collection-content-node"
+  data-tilda-project-id="6825691"
+  data-tilda-project-country="GE"
+>
+  <Fragment set:html={headerBlock} />
+  <Fragment set:html={mainContent} />
+</div>
+<!--/allrecords-->
+</body>
+</html>

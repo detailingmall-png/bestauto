@@ -1,0 +1,22 @@
+# Cloudflare Pages — redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+# Format: <source> <destination> <code>
+
+# ── Tilda trailing-slash normalization ───────────────────────────
+# Tilda URLs sometimes end with / — Astro build format=directory adds index.html
+# Cloudflare Pages handles /foo/ → /foo/index.html automatically, no redirect needed
+
+# ── Legacy Tilda page IDs (if any were indexed) ──────────────────
+# Add page-ID → slug redirects here if Google Search Console shows old IDs
+# /page36438811  /ru/  301
+
+# ── Language root shortcuts ──────────────────────────────────────
+# /russian  /ru/  301
+# /english  /en/  301
+
+# ── WWW → apex ───────────────────────────────────────────────────
+# Handled at Cloudflare DNS level — set www CNAME → bestauto.ge
+# and enable "Redirect www to apex" in Cloudflare dashboard
+
+# ── Old Tilda CDN assets (if referenced externally) ──────────────
+# These come from static.tildacdn.com so no redirect needed here
