@@ -237,7 +237,7 @@ export function lazyLoadElfsight(body: string): string {
   const scriptRe = /<script\b[^>]*src="https:\/\/static\.elfsight\.com\/platform\/platform\.js"[^>]*><\/script>/;
   if (!scriptRe.test(body)) return body;
 
-  const loader = `<script>(function(){var loaded=false;function inject(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='https://static.elfsight.com/platform/platform.js';s.setAttribute('data-use-service-core','');document.head.appendChild(s);}if(!('IntersectionObserver' in window)){setTimeout(inject,12000);return;}var obs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(entries[i].isIntersecting){obs.disconnect();inject();break;}}},{rootMargin:'400px'});var els=document.querySelectorAll('[class*="elfsight-app"]');if(els.length){els.forEach(function(el){obs.observe(el);});}else{setTimeout(inject,12000);}})();</script>`;
+  const loader = `<script>(function(){var loaded=false;function inject(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='https://static.elfsight.com/platform/platform.js';s.setAttribute('data-use-service-core','');document.head.appendChild(s);}setTimeout(function(){if(!('IntersectionObserver' in window)){inject();return;}var obs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(entries[i].isIntersecting){obs.disconnect();inject();break;}}},{rootMargin:'400px'});var els=document.querySelectorAll('[class*="elfsight-app"]');if(els.length){els.forEach(function(el){obs.observe(el);});}else{inject();}},12000);})();</script>`;
 
   return body.replace(scriptRe, loader);
 }
