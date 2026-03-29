@@ -436,7 +436,10 @@ export function injectCoverHeroImg(body: string): string {
       const isMobileBlock = lastScreenMax > lastScreenMin;
       const priority = isMobileBlock ? ' fetchpriority="high"' : '';
       const img = `<img src="${heroSrc}" alt=""${priority} loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">`;
-      return divTag + img;
+      // Pre-populate background-image with full-size URL so Tilda JS assignment
+      // at ~3.5s sets the same value → no DOM mutation → no new LCP candidate.
+      const newDivTag = divTag.replace('>', ` style="background-image:url('${heroSrc}');">`);
+      return newDivTag + img;
     }
   );
 }
