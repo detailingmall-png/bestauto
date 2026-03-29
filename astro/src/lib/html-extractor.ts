@@ -160,9 +160,15 @@ export function delayAnalytics(block: string): string {
     'mc.yandex.ru/metrika/tag',
     'connect.facebook.net/',
   ];
+  // Inline script signatures to defer (FB Pixel, Yandex Metrika)
+  const DELAY_INLINE = [
+    '!function(f,b,e,v,n,t,s)', // Facebook Pixel
+    'function(m,e,t,r,i,k,a)',   // Yandex Metrika
+  ];
 
+  // 1. Remove external analytics src scripts
   const deferred: string[] = [];
-  const processed = block.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {
+  let processed = block.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {
     if (DELAY_HOSTS.some(h => src.includes(h))) {
       deferred.push(src);
       return '';
@@ -170,10 +176,26 @@ export function delayAnalytics(block: string): string {
     return match;
   });
 
-  if (deferred.length === 0) return block;
+  // 2. Defer heavy inline analytics via type="text/plain" + idle loader
+  let inlineIdx = 0;
+  const inlineIds: string[] = [];
+  processed = processed.replace(/<script(\b[^>]*)>([\s\S]*?)<\/script>/g, (match, attrs, content) => {
+    if (!DELAY_INLINE.some(sig => content.includes(sig))) return match;
+    const id = `_lz${inlineIdx++}`;
+    inlineIds.push(id);
+    return `<script type="text/plain" id="${id}"${attrs}>${content}</script>`;
+  });
 
-  const srcs = JSON.stringify(deferred);
-  const loader = `<script>(function(){function load(){${srcs}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:4000});}else{setTimeout(load,3000);}})();</script>`;
+  const hasChanges = deferred.length > 0 || inlineIds.length > 0;
+  if (!hasChanges) return block;
+
+  const srcPart = deferred.length > 0
+    ? `${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});`
+    : '';
+  const inlinePart = inlineIds.length > 0
+    ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
+    : '';
+  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:4000});}else{setTimeout(load,3000);}})();</script>`;
 
   return processed + loader;
 }
