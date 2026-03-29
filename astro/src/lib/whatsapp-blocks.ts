@@ -70,7 +70,7 @@ const EN_TRANSLATIONS: TranslationMap = [
   ['Тбилиси, ул. Анна Политковская 51', 'Tbilisi, Anna Politkovskaya St. 51'],
   ['Пн–Сб 10:00 – 20:00', 'Mon–Sat 10:00 – 20:00'],
   ['На карте', 'On map'],
-  ['Записаться в эту студию', 'Book this studio'],
+  ['Записаться в эту студию', 'BOOK NOW'],
   ['Услуга *', 'Service *'],
   ['— Выберите услугу —', '— Select a service —'],
   ['Ваш телефон *', 'Your phone *'],
