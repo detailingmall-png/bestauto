@@ -16,6 +16,8 @@ interface Props {
   mainContent: string;
   /** Body element class (usually "t-body") */
   bodyClass?: string;
+  /** BCP-47 language tag for <html lang="..."> */
+  lang?: string;
 }
 
 const {
@@ -23,10 +25,11 @@ const {
   headerBlock,
   mainContent,
   bodyClass = 't-body',
+  lang = 'ka',
 } = Astro.props;
 ---
 <!DOCTYPE html>
-<html>
+<html lang={lang}>
 <head>
 <Fragment set:html={headContent} />
 </head>

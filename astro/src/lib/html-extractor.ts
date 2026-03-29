@@ -42,6 +42,55 @@ export function removeTildaCdnFallback(content: string): string {
 }
 
 /**
+ * Add defer to blocking scripts in <head> (jQuery and polyfill).
+ * All other Tilda scripts already have async/defer.
+ * Deferred scripts execute after HTML parsing in order, so jQuery → tilda-scripts order is preserved.
+ */
+export function deferBlockingScripts(head: string): string {
+  return head
+    .replace(
+      /(<script\s[^>]*src="js\/tilda-polyfill[^"]*"[^>]*)(>)/g,
+      (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
+    )
+    .replace(
+      /(<script\s[^>]*src="js\/jquery[^"]*"[^>]*)(>)/g,
+      (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
+    );
+}
+
+/**
+ * Add font preload and hero image fetchpriority hints to <head>.
+ * Extracts the first content image from mainContent to preload it.
+ */
+export function addResourceHints(head: string, mainContent: string): string {
+  // Preload the self-hosted TildaSans font
+  const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
+
+  // Find first real image in mainContent (skip tracking pixels)
+  const imgMatch = mainContent.match(/src="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i);
+  const heroPreload = imgMatch
+    ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
+    : '';
+
+  return fontPreload + heroPreload + head;
+}
+
+/**
+ * Add loading="lazy" to images in body content.
+ * Skips the first N images (above the fold) and tracking pixels.
+ */
+export function addLazyLoading(body: string): string {
+  let aboveFoldCount = 0;
+  const ABOVE_FOLD = 3; // first 3 images assumed above fold
+
+  return body.replace(/<img(\s)/gi, (_match, space) => {
+    aboveFoldCount++;
+    if (aboveFoldCount <= ABOVE_FOLD) return `<img${space}`;
+    return `<img loading="lazy"${space}`;
+  });
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
@@ -51,7 +100,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = removeTildaCdnFallback(makePathsAbsolute(rawHead));
+  const headContent = deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead)));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
@@ -77,7 +126,13 @@ export function extractSections(html: string): PageSections {
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
-  const mainContent = body.slice(mainStart);
+  const rawMainContent = body.slice(mainStart);
+  const mainContent = addLazyLoading(rawMainContent);
 
-  return { headContent, headerBlock, mainContent, bodyClass };
+  return {
+    headContent: addResourceHints(headContent, rawMainContent),
+    headerBlock,
+    mainContent,
+    bodyClass,
+  };
 }

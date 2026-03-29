@@ -48,6 +48,7 @@ if (PRICES_SLUGS.has(currentSlug)) {
   injectedHtml = injectPricesData(injectedHtml, pricingPage, lang);
 }
 
+const lang = currentSlug.startsWith('ru/') ? 'ru' : currentSlug.startsWith('en/') ? 'en' : 'ka';
 const { headContent, headerBlock, mainContent, bodyClass } = extractSections(injectedHtml);
 ---
 <TildaPageLayout
@@ -55,4 +56,5 @@ const { headContent, headerBlock, mainContent, bodyClass } = extractSections(inj
   headerBlock={headerBlock}
   mainContent={mainContent}
   bodyClass={bodyClass}
+  lang={lang}
 />
