@@ -272,7 +272,7 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,12000);})();</script>`;
+  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,5000);})();</script>`;
 
   return processed + loader;
 }
@@ -324,7 +324,7 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,12000);})();</script>`;
+  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,5000);})();</script>`;
 
   return processed + loader;
 }
