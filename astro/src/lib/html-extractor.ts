@@ -49,11 +49,11 @@ export function removeTildaCdnFallback(content: string): string {
 export function deferBlockingScripts(head: string): string {
   return head
     .replace(
-      /(<script\s[^>]*src="js\/tilda-polyfill[^"]*"[^>]*)(>)/g,
+      /(<script\s[^>]*src="\/?js\/tilda-polyfill[^"]*"[^>]*)(>)/g,
       (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
     )
     .replace(
-      /(<script\s[^>]*src="js\/jquery[^"]*"[^>]*)(>)/g,
+      /(<script\s[^>]*src="\/?js\/jquery[^"]*"[^>]*)(>)/g,
       (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
     );
 }
