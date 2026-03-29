@@ -11,7 +11,7 @@ import { extractSections, removeRecordBlock } from '../lib/html-extractor';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
-import { WHATSAPP_BLOCK, CONTACTS_BLOCK } from '../lib/ru-contacts';
+import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 
@@ -67,6 +67,30 @@ if (lang === 'ru') {
     } else {
       mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
     }
+  }
+}
+
+if (lang === 'ka') {
+  // Remove old contact cards and map blocks
+  mainContent = removeRecordBlock(mainContent, 'rec2091645623');
+  mainContent = removeRecordBlock(mainContent, 'rec2091645633');
+  if (!mainContent.includes('ba-contacts')) {
+    mainContent = mainContent + CONTACTS_BLOCK_KA;
+  }
+  if (!mainContent.includes('ba-wa-wrap')) {
+    mainContent = mainContent + WHATSAPP_BLOCK_KA;
+  }
+}
+
+if (lang === 'en') {
+  // Remove old contact cards and map blocks
+  mainContent = removeRecordBlock(mainContent, 'rec1862121211');
+  mainContent = removeRecordBlock(mainContent, 'rec1862121221');
+  if (!mainContent.includes('ba-contacts')) {
+    mainContent = mainContent + CONTACTS_BLOCK_EN;
+  }
+  if (!mainContent.includes('ba-wa-wrap')) {
+    mainContent = mainContent + WHATSAPP_BLOCK_EN;
   }
 }
 ---
