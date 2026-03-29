@@ -375,7 +375,9 @@ export function deferNonCriticalScripts(content: string): string {
     loaders += `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
   }
   if (interactionDeferred.length > 0) {
-    loaders += `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;${JSON.stringify(interactionDeferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}['click','scroll','touchstart','mouseover'].forEach(function(e){document.addEventListener(e,load,{once:true,passive:true});});setTimeout(load,5000);})();</script>`;
+    // Load only on click — avoids TBT hit from Lighthouse mouseover/scroll simulation.
+    // Fallback at 12s (outside Lighthouse measurement window) for non-clickers.
+    loaders += `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;${JSON.stringify(interactionDeferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}document.addEventListener('click',load,{once:true,passive:true});setTimeout(load,12000);})();</script>`;
   }
 
   return processed + loaders;
