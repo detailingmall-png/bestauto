@@ -70,12 +70,25 @@ if (lang === 'ru') {
   }
 }
 
+// Helper: insert block before the first matching footer
+function insertBeforeFooter(content: string, block: string, footerIds: readonly string[]): string {
+  for (const fid of footerIds) {
+    const idx = content.indexOf(`id="${fid}"`);
+    if (idx >= 0) {
+      const divStart = content.lastIndexOf('<div', idx);
+      return content.slice(0, divStart) + block + content.slice(divStart);
+    }
+  }
+  return content + block;
+}
+
 if (lang === 'ka') {
-  // Remove old contact cards and map blocks
+  // Remove old contact blocks: desktop, mobile, and map
+  mainContent = removeRecordBlock(mainContent, 'rec2091645613');
   mainContent = removeRecordBlock(mainContent, 'rec2091645623');
   mainContent = removeRecordBlock(mainContent, 'rec2091645633');
   if (!mainContent.includes('ba-contacts')) {
-    mainContent = mainContent + CONTACTS_BLOCK_KA;
+    mainContent = insertBeforeFooter(mainContent, CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_KA;
@@ -83,11 +96,12 @@ if (lang === 'ka') {
 }
 
 if (lang === 'en') {
-  // Remove old contact cards and map blocks
+  // Remove old contact blocks: desktop, mobile, and map
+  mainContent = removeRecordBlock(mainContent, 'rec1862121201');
   mainContent = removeRecordBlock(mainContent, 'rec1862121211');
   mainContent = removeRecordBlock(mainContent, 'rec1862121221');
   if (!mainContent.includes('ba-contacts')) {
-    mainContent = mainContent + CONTACTS_BLOCK_EN;
+    mainContent = insertBeforeFooter(mainContent, CONTACTS_BLOCK_EN, ['rec607472568', 'rec607473240']);
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_EN;
