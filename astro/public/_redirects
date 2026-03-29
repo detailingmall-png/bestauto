@@ -2,6 +2,9 @@
 # https://developers.cloudflare.com/pages/configuration/redirects/
 # Format: <source> <destination> <code>
 
+# ── Sitemap ──────────────────────────────────────────────────────
+/sitemap.xml  /sitemap-index.xml  301
+
 # ── Tilda trailing-slash normalization ───────────────────────────
 # Tilda URLs sometimes end with / — Astro build format=directory adds index.html
 # Cloudflare Pages handles /foo/ → /foo/index.html automatically, no redirect needed
