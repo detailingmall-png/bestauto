@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, extractAndRemoveBlockRange } from '../lib/html-extractor';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
@@ -68,6 +68,18 @@ if (lang === 'ru') {
       mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
     }
   }
+  // Move reviews+gallery to just above contacts block
+  if (currentSlug === 'ru') {
+    let reviewsGallery: string;
+    [reviewsGallery, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758392198', 'rec1859784471');
+    if (reviewsGallery) {
+      const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+      if (contactsIdx >= 0) {
+        const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+        mainContent = mainContent.slice(0, divStart) + reviewsGallery + mainContent.slice(divStart);
+      }
+    }
+  }
 }
 
 // Helper: insert block before the first matching footer
@@ -88,7 +100,12 @@ if (lang === 'ka') {
   mainContent = removeRecordBlock(mainContent, 'rec2091645623');
   mainContent = removeRecordBlock(mainContent, 'rec2091645633');
   if (!mainContent.includes('ba-contacts')) {
-    mainContent = insertBeforeFooter(mainContent, CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
+    // Extract reviews+gallery from homepage and place just above contacts
+    let reviewsGallery = '';
+    if (currentSlug === '' || currentSlug === undefined) {
+      [reviewsGallery, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec2091645413', 'rec2091645483');
+    }
+    mainContent = insertBeforeFooter(mainContent, reviewsGallery + CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_KA;
@@ -101,7 +118,14 @@ if (lang === 'en') {
   mainContent = removeRecordBlock(mainContent, 'rec1862121211');
   mainContent = removeRecordBlock(mainContent, 'rec1862121221');
   if (!mainContent.includes('ba-contacts')) {
-    mainContent = insertBeforeFooter(mainContent, CONTACTS_BLOCK_EN, ['rec607472568', 'rec607473240']);
+    // Extract gallery+reviews from homepage and place just above contacts
+    let galleryEn = '';
+    let reviewsEn = '';
+    if (currentSlug === 'en') {
+      [galleryEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec1862088861', 'rec1862088901');
+      [reviewsEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758753019', 'rec758753021');
+    }
+    mainContent = insertBeforeFooter(mainContent, galleryEn + reviewsEn + CONTACTS_BLOCK_EN, ['rec607472568', 'rec607473240']);
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_EN;

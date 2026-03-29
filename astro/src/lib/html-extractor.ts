@@ -409,6 +409,48 @@ export function removeRecordBlock(content: string, recId: string): string {
 
 
 /**
+ * Extract a contiguous range of Tilda blocks (from startRecId div to the closing tag
+ * of endRecId div) and remove it from the content. Returns [extracted, remaining].
+ */
+export function extractAndRemoveBlockRange(
+  content: string,
+  startRecId: string,
+  endRecId: string
+): [string, string] {
+  const startMarker = `id="${startRecId}"`;
+  const endMarker = `id="${endRecId}"`;
+  const startIdx = content.indexOf(startMarker);
+  const endIdx = content.indexOf(endMarker);
+  if (startIdx < 0 || endIdx < 0 || endIdx < startIdx) return ['', content];
+
+  const rangeStart = content.lastIndexOf('<div', startIdx);
+
+  // Walk through endRecId block to find its closing </div>
+  let depth = 0;
+  let pos = content.lastIndexOf('<div', endIdx);
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const rangeEnd = nextClose + 6;
+        return [
+          content.slice(rangeStart, rangeEnd),
+          content.slice(0, rangeStart) + content.slice(rangeEnd),
+        ];
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return ['', content];
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
