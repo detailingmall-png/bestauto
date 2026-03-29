@@ -38,6 +38,7 @@ export function makePathsAbsolute(content: string): string {
     .replace(/url\('(images\/)/g, "url('/images/")
     .replace(/data-original="(images\/)/g, 'data-original="/images/')
     .replace(/data-bg-src="(images\/)/g, 'data-bg-src="/images/')
+    .replace(/data-content-cover-bg="(images\/)/g, 'data-content-cover-bg="/images/')
     .replace(/srcset="(images\/)/g, 'srcset="/images/');
 }
 
@@ -336,7 +337,6 @@ export function delayAnalytics(block: string): string {
 export function deferNonCriticalScripts(content: string): string {
   const DEFER_SCRIPTS = [
     'tilda-forms-1.0',
-    'tilda-zoom-2.0',
     'masonry-imagesloaded',
     'tilda-video-1.0',
     'tilda-animation-2.0',
@@ -348,18 +348,37 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-events-1.0',
   ];
 
+  // Zoom/gallery script: load on first user interaction instead of 12s delay
+  // so lightbox opens immediately when user clicks a photo
+  const INTERACTION_SCRIPTS = [
+    'tilda-zoom-2.0',
+  ];
+
   const deferred: string[] = [];
+  const interactionDeferred: string[] = [];
   const processed = content.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {
-    if (!DEFER_SCRIPTS.some(name => src.includes(name))) return match;
-    deferred.push(src);
-    return '';
+    if (INTERACTION_SCRIPTS.some(name => src.includes(name))) {
+      interactionDeferred.push(src);
+      return '';
+    }
+    if (DEFER_SCRIPTS.some(name => src.includes(name))) {
+      deferred.push(src);
+      return '';
+    }
+    return match;
   });
 
-  if (deferred.length === 0) return content;
+  if (deferred.length === 0 && interactionDeferred.length === 0) return content;
 
-  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
+  let loaders = '';
+  if (deferred.length > 0) {
+    loaders += `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
+  }
+  if (interactionDeferred.length > 0) {
+    loaders += `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;${JSON.stringify(interactionDeferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}['click','scroll','touchstart','mouseover'].forEach(function(e){document.addEventListener(e,load,{once:true,passive:true});});setTimeout(load,5000);})();</script>`;
+  }
 
-  return processed + loader;
+  return processed + loaders;
 }
 
 /**
@@ -369,7 +388,7 @@ export function deferNonCriticalScripts(content: string): string {
  */
 export function rewriteImagesToWebp(content: string): string {
   return content.replace(
-    /((?:data-original|src|srcset|data-bg-src|content)="[^"]*\/)([\w.-]+)\.(jpe?g)(")/gi,
+    /((?:data-original|src|srcset|data-bg-src|data-content-cover-bg|content)="[^"]*\/)([\w.-]+)\.(jpe?g)(")/gi,
     (match, prefix, name, _ext, suffix) => {
       return WEBP_AVAILABLE.has(name) ? `${prefix}${name}.webp${suffix}` : match;
     }
