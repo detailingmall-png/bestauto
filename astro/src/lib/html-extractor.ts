@@ -340,6 +340,8 @@ export function deferNonCriticalScripts(content: string): string {
     'masonry-imagesloaded',
     'tilda-video-1.0',
     'tilda-animation-2.0',
+    'tilda-slds-1.4',
+    'hammer.min',
     'tilda-popup-1.0',
     'tilda-cards-1.0',
     'tilda-skiplink-1.0',
