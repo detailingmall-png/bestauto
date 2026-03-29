@@ -269,7 +269,7 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}if('requestIdleCallback' in window){requestIdleCallback(run,{timeout:12000});}else{setTimeout(run,12000);}})();</script>`;
+  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,12000);})();</script>`;
 
   return processed + loader;
 }
@@ -321,7 +321,7 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:12000});}else{setTimeout(load,12000);}})();</script>`;
+  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,12000);})();</script>`;
 
   return processed + loader;
 }
@@ -348,7 +348,7 @@ export function deferNonCriticalScripts(content: string): string {
 
   if (deferred.length === 0) return content;
 
-  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:12000});}else{setTimeout(load,12000);}})();</script>`;
+  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
 
   return processed + loader;
 }
