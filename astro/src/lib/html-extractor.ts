@@ -2,8 +2,16 @@
  * HTML extraction utilities for Tilda-exported pages.
  * Parses raw HTML into structured sections: head, nav, body, footer.
  */
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { IMG_DIMS } from './image-dims';
 import { WEBP_AVAILABLE } from './webp-available';
+
+// Read critical CSS at module load (4KB, stable across builds)
+const GRID_CSS = readFileSync(
+  join(process.cwd(), 'public/css/tilda-grid-3.0.min.css'),
+  'utf8'
+);
 
 export interface PageSections {
   readonly headContent: string;
@@ -80,6 +88,17 @@ export function deferNonCriticalCss(head: string): string {
 }
 
 /**
+ * Inline tilda-grid CSS (4KB) to eliminate a render-blocking network request.
+ * Replaces the <link> tag with a <style> tag containing the CSS content.
+ */
+export function inlineCriticalCss(head: string): string {
+  return head.replace(
+    /<link\b[^>]*href="\/css\/tilda-grid-3\.0\.min\.css"[^>]*\/?>/,
+    `<style>${GRID_CSS}</style>`
+  );
+}
+
+/**
  * Add defer to blocking scripts in <head> (jQuery and polyfill).
  * All other Tilda scripts already have async/defer.
  * Deferred scripts execute after HTML parsing in order, so jQuery → tilda-scripts order is preserved.
@@ -101,6 +120,14 @@ export function deferBlockingScripts(head: string): string {
  * Extracts the first content image from mainContent to preload it.
  */
 export function addResourceHints(head: string, mainContent: string): string {
+  // DNS prefetch for deferred third-party analytics
+  const dnsPrefetch = [
+    'mc.yandex.ru',
+    'www.googletagmanager.com',
+    'connect.facebook.net',
+    'static.elfsight.com',
+  ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
+
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
@@ -113,7 +140,7 @@ export function addResourceHints(head: string, mainContent: string): string {
     ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
     : '';
 
-  return fontPreload + heroPreload + head;
+  return dnsPrefetch + fontPreload + heroPreload + head;
 }
 
 /**
@@ -216,8 +243,40 @@ export function lazyLoadElfsight(body: string): string {
 }
 
 /**
+ * Delay inline analytics scripts found in <head> (GTM bootstrap, phone
+ * tracking, bot detection). These run synchronously during HTML parse and
+ * are the #1 TBT contributor. Uses type="text/plain" + idle loader.
+ * Preserves window.dataLayer stub so queued events are not lost.
+ */
+export function delayHeadAnalytics(head: string): string {
+  const DELAY_SIGNATURES = [
+    'gtm.start',          // GTM bootstrap
+    "gtag('event",        // phone click tracking
+    't_setvisRecs',       // Tilda bot detection / animation
+  ];
+
+  let idx = 0;
+  const ids: string[] = [];
+  const processed = head.replace(/<script(\b[^>]*)>([\s\S]*?)<\/script>/g, (match, attrs, content) => {
+    // Skip scripts with src= (external), and skip dataLayer stub
+    if (attrs.includes('src=')) return match;
+    if (!DELAY_SIGNATURES.some(sig => content.includes(sig))) return match;
+
+    const id = `_hd${idx++}`;
+    ids.push(id);
+    return `<script type="text/plain" id="${id}"${attrs}>${content}</script>`;
+  });
+
+  if (ids.length === 0) return head;
+
+  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}if('requestIdleCallback' in window){requestIdleCallback(run,{timeout:12000});}else{setTimeout(run,12000);}})();</script>`;
+
+  return processed + loader;
+}
+
+/**
  * Delay heavy third-party analytics scripts (GTM, GA4, Yandex Metrika,
- * Facebook Pixel external) using requestIdleCallback + 4s fallback.
+ * Facebook Pixel external) using requestIdleCallback + 12s fallback.
  * Inline dataLayer/gtag/ym/fbq stubs remain so queued calls are preserved.
  */
 export function delayAnalytics(block: string): string {
@@ -262,7 +321,34 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:4000});}else{setTimeout(load,3000);}})();</script>`;
+  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:12000});}else{setTimeout(load,12000);}})();</script>`;
+
+  return processed + loader;
+}
+
+/**
+ * Defer non-critical Tilda scripts via requestIdleCallback.
+ * Heavy scripts (forms, zoom, masonry, video) in <head> are not needed until
+ * user interacts. Replace <script src="..."> with idle loader (12s timeout).
+ */
+export function deferNonCriticalScripts(content: string): string {
+  const DEFER_SCRIPTS = [
+    'tilda-forms-1.0',
+    'tilda-zoom-2.0',
+    'masonry-imagesloaded',
+    'tilda-video-1.0',
+  ];
+
+  const deferred: string[] = [];
+  const processed = content.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {
+    if (!DEFER_SCRIPTS.some(name => src.includes(name))) return match;
+    deferred.push(src);
+    return '';
+  });
+
+  if (deferred.length === 0) return content;
+
+  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:12000});}else{setTimeout(load,12000);}})();</script>`;
 
   return processed + loader;
 }
@@ -291,7 +377,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead))));
+  const headContent = deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
