@@ -54,7 +54,15 @@ export function deferNonCriticalCss(head: string): string {
     'fonts-tildasans',
   ];
 
-  return head.replace(/<link\b[^>]*>/g, (match) => {
+  // Temporarily remove <noscript> blocks to avoid transforming their content
+  const noscriptBlocks: string[] = [];
+  const withoutNoscript = head.replace(/<noscript>[\s\S]*?<\/noscript>/g, (m) => {
+    const placeholder = `\x00NS${noscriptBlocks.length}\x00`;
+    noscriptBlocks.push(m);
+    return placeholder;
+  });
+
+  const processed = withoutNoscript.replace(/<link\b[^>]*>/g, (match) => {
     if (!match.includes('rel="stylesheet"')) return match;
     if (match.includes('media="print"')) return match; // already async
     if (!DEFERRABLE.some(name => match.includes(name))) return match;
@@ -65,6 +73,9 @@ export function deferNonCriticalCss(head: string): string {
     );
     return `${async}<noscript>${match}</noscript>`;
   });
+
+  // Restore original <noscript> blocks
+  return processed.replace(/\x00NS(\d+)\x00/g, (_, i) => noscriptBlocks[parseInt(i)]);
 }
 
 /**
