@@ -436,9 +436,13 @@ export function injectCoverHeroImg(body: string): string {
       const isMobileBlock = lastScreenMax > lastScreenMin;
       const priority = isMobileBlock ? ' fetchpriority="high"' : '';
       const img = `<img src="${heroSrc}" alt=""${priority} loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">`;
-      // Pre-populate background-image with full-size URL so Tilda JS assignment
-      // at ~3.5s sets the same value → no DOM mutation → no new LCP candidate.
-      const newDivTag = divTag.replace('>', ` style="background-image:url('${heroSrc}');">`);
+      // Pre-populate background-image + rename data-original → data-bg-loaded so
+      // Tilda JS (reads data-original) skips background-image swap at ~3.5s.
+      // The swap creates a new LCP candidate even when setting the same URL
+      // (quoting difference prevents browser dedup). Our <img> is the sole LCP.
+      const newDivTag = divTag
+        .replace('>', ` style="background-image:url('${heroSrc}');">`)
+        .replace('data-original=', 'data-bg-loaded=');
       return newDivTag + img;
     }
   );
