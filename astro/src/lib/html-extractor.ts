@@ -252,7 +252,6 @@ export function delayHeadAnalytics(head: string): string {
   const DELAY_SIGNATURES = [
     'gtm.start',          // GTM bootstrap
     "gtag('event",        // phone click tracking
-    't_setvisRecs',       // Tilda bot detection / animation
   ];
 
   let idx = 0;
