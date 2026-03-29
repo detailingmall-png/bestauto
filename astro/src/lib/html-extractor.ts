@@ -2,6 +2,7 @@
  * HTML extraction utilities for Tilda-exported pages.
  * Parses raw HTML into structured sections: head, nav, body, footer.
  */
+import { IMG_DIMS } from './image-dims';
 
 export interface PageSections {
   readonly headContent: string;
@@ -42,6 +43,31 @@ export function removeTildaCdnFallback(content: string): string {
 }
 
 /**
+ * Convert non-critical Tilda CSS to async (preload + onload) pattern.
+ * Keeps tilda-grid and tilda-blocks-page (layout-critical) as blocking.
+ * Skips tags already async (media="print").
+ */
+export function deferNonCriticalCss(head: string): string {
+  const DEFERRABLE = [
+    'tilda-animation', 'tilda-forms', 'tilda-popup',
+    'tilda-zoom', 'tilda-slds', 'tilda-cards', 'tilda-cover',
+    'fonts-tildasans',
+  ];
+
+  return head.replace(/<link\b[^>]*>/g, (match) => {
+    if (!match.includes('rel="stylesheet"')) return match;
+    if (match.includes('media="print"')) return match; // already async
+    if (!DEFERRABLE.some(name => match.includes(name))) return match;
+
+    const async = match.replace(
+      'rel="stylesheet"',
+      `rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"`
+    );
+    return `${async}<noscript>${match}</noscript>`;
+  });
+}
+
+/**
  * Add defer to blocking scripts in <head> (jQuery and polyfill).
  * All other Tilda scripts already have async/defer.
  * Deferred scripts execute after HTML parsing in order, so jQuery → tilda-scripts order is preserved.
@@ -76,6 +102,23 @@ export function addResourceHints(head: string, mainContent: string): string {
 }
 
 /**
+ * Add width/height to <img> tags using pre-built dimension map.
+ * Matches on src or data-original filename. Prevents CLS.
+ */
+export function addImageDimensions(body: string): string {
+  return body.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
+    if (/\bwidth=/.test(attrs)) return match; // already has dimensions
+    // Extract filename from src= or data-original=
+    const urlMatch = attrs.match(/(?:data-original|src)="[^"]*\/([^/"]+\.(jpg|jpeg|png|webp))"/i);
+    if (!urlMatch) return match;
+    const filename = urlMatch[1];
+    const dims = IMG_DIMS[filename];
+    if (!dims) return match;
+    return `<img${attrs} width="${dims[0]}" height="${dims[1]}">`;
+  });
+}
+
+/**
  * Add loading="lazy" to images in body content.
  * Skips the first N images (above the fold) and tracking pixels.
  */
@@ -100,7 +143,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead)));
+  const headContent = deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead))));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
@@ -127,7 +170,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = addLazyLoading(rawMainContent);
+  const mainContent = addLazyLoading(addImageDimensions(rawMainContent));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
