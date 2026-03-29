@@ -291,7 +291,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(expandCssBackgroundPlaceholders(makePathsAbsolute(rawHead)))));
+  const headContent = deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead))));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
@@ -304,7 +304,7 @@ export function extractSections(html: string): PageSections {
     : 0;
   const bodyEnd = html.lastIndexOf('</body>');
   const rawBody = bodyEnd > bodyStart ? html.slice(bodyStart, bodyEnd) : html;
-  const body = expandCssBackgroundPlaceholders(rewriteImagesToWebp(makePathsAbsolute(rawBody)));
+  const body = rewriteImagesToWebp(makePathsAbsolute(rawBody));
 
   // Header block: everything inside <!--header-->...<!--/header-->
   const headerOpenTag = '<!--header-->';
