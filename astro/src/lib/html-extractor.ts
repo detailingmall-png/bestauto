@@ -3,6 +3,7 @@
  * Parses raw HTML into structured sections: head, nav, body, footer.
  */
 import { IMG_DIMS } from './image-dims';
+import { WEBP_AVAILABLE } from './webp-available';
 
 export interface PageSections {
   readonly headContent: string;
@@ -103,8 +104,11 @@ export function addResourceHints(head: string, mainContent: string): string {
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
-  // Find first real image in mainContent (skip tracking pixels)
-  const imgMatch = mainContent.match(/src="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i);
+  // Find first real image in mainContent.
+  // Prefer data-original (Tilda lazy-loader attribute = actual content images)
+  // over src= which is often a tiny placeholder (noroot.png).
+  const imgMatch = mainContent.match(/data-original="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i)
+    ?? mainContent.match(/src="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i);
   const heroPreload = imgMatch
     ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
     : '';
@@ -212,6 +216,20 @@ export function delayAnalytics(block: string): string {
 }
 
 /**
+ * Replace .jpg/.jpeg image references with .webp where a WebP version exists.
+ * Applies to data-original, src, srcset, data-bg-src, og:image content attributes.
+ * WebP is supported by 96%+ of browsers. Saves ~40% bandwidth on images.
+ */
+export function rewriteImagesToWebp(content: string): string {
+  return content.replace(
+    /((?:data-original|src|srcset|data-bg-src|content)="[^"]*\/)([\w.-]+)\.(jpe?g)(")/gi,
+    (match, prefix, name, _ext, suffix) => {
+      return WEBP_AVAILABLE.has(name) ? `${prefix}${name}.webp${suffix}` : match;
+    }
+  );
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
@@ -234,7 +252,7 @@ export function extractSections(html: string): PageSections {
     : 0;
   const bodyEnd = html.lastIndexOf('</body>');
   const rawBody = bodyEnd > bodyStart ? html.slice(bodyStart, bodyEnd) : html;
-  const body = makePathsAbsolute(rawBody);
+  const body = rewriteImagesToWebp(makePathsAbsolute(rawBody));
 
   // Header block: everything inside <!--header-->...<!--/header-->
   const headerOpenTag = '<!--header-->';
