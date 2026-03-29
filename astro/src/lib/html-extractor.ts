@@ -423,6 +423,26 @@ export function removeRecordBlock(content: string, recId: string): string {
 }
 
 /**
+ * Inject native <img> into T396 cover carrier divs (.t396__carrier.t-bgimg)
+ * so the browser can discover the hero image in HTML without waiting for
+ * Tilda JS to set background-image. First carrier gets fetchpriority="high".
+ * The img sits at z-index:0 inside the carrier; text overlays at z-index:3
+ * remain on top.
+ */
+export function injectCoverHeroImg(body: string): string {
+  let isFirst = true;
+  return body.replace(
+    /(<div\b[^>]*class="[^"]*t396__carrier[^"]*t-bgimg[^"]*"[^>]*data-original="([^"]+)"[^>]*>)/gi,
+    (_match, divTag: string, heroSrc: string) => {
+      const priority = isFirst ? ' fetchpriority="high"' : '';
+      isFirst = false;
+      const img = `<img src="${heroSrc}" alt=""${priority} loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">`;
+      return divTag + img;
+    }
+  );
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string): PageSections {
@@ -460,7 +480,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)));
+  const mainContent = injectCoverHeroImg(lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
