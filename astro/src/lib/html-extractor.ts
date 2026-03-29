@@ -409,6 +409,44 @@ export function removeRecordBlock(content: string, recId: string): string {
 
 
 /**
+ * Remove JS-based SEO scripts from Tilda HTML (hreflang + dynamic Service schema).
+ * These are replaced by static equivalents generated at build time in seo.ts.
+ */
+export function removeClientSeoScripts(content: string): string {
+  return content
+    .replace(/<!-- HREFLANG: Dynamic language alternate links -->\s*<script>[\s\S]*?<\/script>/g, '')
+    .replace(/<!-- Schema\.org: Dynamic Service Schema -->\s*<script>[\s\S]*?<\/script>/g, '');
+}
+
+/**
+ * Add alt="BESTAUTO" to content images missing alt text.
+ * Skips tracking pixels (mc.yandex.ru, 1x1) and noscript blocks.
+ */
+export function improveEmptyAlts(body: string): string {
+  // Temporarily remove <noscript> blocks
+  const noscriptBlocks: string[] = [];
+  const withoutNoscript = body.replace(/<noscript>[\s\S]*?<\/noscript>/g, (m) => {
+    noscriptBlocks.push(m);
+    return `\x00NS${noscriptBlocks.length - 1}\x00`;
+  });
+
+  const processed = withoutNoscript.replace(/<img\b([^>]*)>/gi, (match, attrs: string) => {
+    // Skip tracking pixels
+    if (attrs.includes('mc.yandex.ru') || attrs.includes('facebook.com/tr')) return match;
+    // Skip if already has non-empty alt
+    const altMatch = attrs.match(/\balt="([^"]*)"/);
+    if (altMatch && altMatch[1].trim() !== '') return match;
+    // Has alt="" or no alt at all → add fallback
+    if (altMatch) {
+      return match.replace(/\balt=""/, 'alt="BESTAUTO"');
+    }
+    return `<img alt="BESTAUTO"${attrs}>`;
+  });
+
+  return processed.replace(/\x00NS(\d+)\x00/g, (_, i) => noscriptBlocks[parseInt(i)]);
+}
+
+/**
  * Extract a contiguous range of Tilda blocks (from startRecId div to the closing tag
  * of endRecId div) and remove it from the content. Returns [extracted, remaining].
  */
@@ -483,7 +521,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))));
+  const headContent = removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead))))))));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
@@ -511,7 +549,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = delayAnalytics(lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent))));
+  const mainContent = improveEmptyAlts(delayAnalytics(lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),

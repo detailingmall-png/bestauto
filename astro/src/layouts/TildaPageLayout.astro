@@ -10,6 +10,8 @@
 interface Props {
   /** Raw <head> content (page-specific CSS, JS, meta tags) */
   headContent: string;
+  /** Static SEO tags: hreflang, BreadcrumbList, Service, WebSite schemas */
+  seoHead?: string;
   /** The <!--header--> analytics block from the Tilda shared header */
   headerBlock: string;
   /** Main page content (nav + all blocks + footer) */
@@ -22,6 +24,7 @@ interface Props {
 
 const {
   headContent,
+  seoHead = '',
   headerBlock,
   mainContent,
   bodyClass = 't-body',
@@ -32,6 +35,7 @@ const {
 <html lang={lang}>
 <head>
 <Fragment set:html={headContent} />
+<Fragment set:html={seoHead} />
 </head>
 <body class={bodyClass} style="margin:0;">
 <!--allrecords-->

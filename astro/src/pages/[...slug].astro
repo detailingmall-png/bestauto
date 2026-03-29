@@ -11,6 +11,7 @@ import { extractSections, removeRecordBlock, extractAndRemoveBlockRange, findRec
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
+import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateWebSiteSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
@@ -38,7 +39,7 @@ interface Props {
   readonly pricingPage: Awaited<ReturnType<typeof getPricingPage>>;
 }
 
-const { pageFile, settings, pricingPage } = Astro.props;
+const { pageFile, pageTitle, settings, pricingPage } = Astro.props;
 const currentSlug = Astro.params.slug ?? '';
 
 const rawHtml = getPageHtml(pageFile);
@@ -54,6 +55,13 @@ const lang = (currentSlug === 'ru' || currentSlug.startsWith('ru/')) ? 'ru'
   : 'ka';
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = rawMainContent;
+
+// SEO: static hreflang, BreadcrumbList, Service, WebSite schemas
+const baseSlug = currentSlug.replace(/^(ru|en)\/?/, '');
+const seoHead = generateHreflangTags(baseSlug, lang)
+  + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
+  + generateServiceSchema(baseSlug, lang)
+  + (baseSlug === '' ? generateWebSiteSchema() : '');
 
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
@@ -172,6 +180,7 @@ if (lang === 'en') {
 ---
 <TildaPageLayout
   headContent={headContent}
+  seoHead={seoHead}
   headerBlock={headerBlock}
   mainContent={mainContent}
   bodyClass={bodyClass}
