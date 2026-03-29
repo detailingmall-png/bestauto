@@ -128,6 +128,9 @@ export function addResourceHints(head: string, mainContent: string): string {
     'static.elfsight.com',
   ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
 
+  // Preload tilda-zero (cover block init depends on it → faster LCP)
+  const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
+
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
@@ -140,7 +143,7 @@ export function addResourceHints(head: string, mainContent: string): string {
     ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
     : '';
 
-  return dnsPrefetch + fontPreload + heroPreload + head;
+  return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
 }
 
 /**
@@ -336,6 +339,11 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-zoom-2.0',
     'masonry-imagesloaded',
     'tilda-video-1.0',
+    'tilda-animation-2.0',
+    'tilda-popup-1.0',
+    'tilda-cards-1.0',
+    'tilda-skiplink-1.0',
+    'tilda-events-1.0',
   ];
 
   const deferred: string[] = [];
