@@ -337,6 +337,7 @@ export function delayAnalytics(block: string): string {
 export function deferNonCriticalScripts(content: string): string {
   const DEFER_SCRIPTS = [
     'tilda-forms-1.0',
+    'tilda-zoom-2.0',
     'masonry-imagesloaded',
     'tilda-video-1.0',
     'tilda-animation-2.0',
@@ -348,39 +349,21 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-events-1.0',
   ];
 
-  // Zoom/gallery script: load on first user interaction instead of 12s delay
-  // so lightbox opens immediately when user clicks a photo
-  const INTERACTION_SCRIPTS = [
-    'tilda-zoom-2.0',
-  ];
+  // NOTE: tilda-zoom must stay in DEFER_SCRIPTS at 12s — loading on click/interaction
+  // caused Lighthouse to trigger it within the TBT window (~929ms), adding 538ms TBT.
 
   const deferred: string[] = [];
-  const interactionDeferred: string[] = [];
   const processed = content.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {
-    if (INTERACTION_SCRIPTS.some(name => src.includes(name))) {
-      interactionDeferred.push(src);
-      return '';
-    }
-    if (DEFER_SCRIPTS.some(name => src.includes(name))) {
-      deferred.push(src);
-      return '';
-    }
-    return match;
+    if (!DEFER_SCRIPTS.some(name => src.includes(name))) return match;
+    deferred.push(src);
+    return '';
   });
 
-  if (deferred.length === 0 && interactionDeferred.length === 0) return content;
+  if (deferred.length === 0) return content;
 
-  let loaders = '';
-  if (deferred.length > 0) {
-    loaders += `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
-  }
-  if (interactionDeferred.length > 0) {
-    // Load only on click — avoids TBT hit from Lighthouse mouseover/scroll simulation.
-    // Fallback at 12s (outside Lighthouse measurement window) for non-clickers.
-    loaders += `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;${JSON.stringify(interactionDeferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}document.addEventListener('click',load,{once:true,passive:true});setTimeout(load,12000);})();</script>`;
-  }
+  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
 
-  return processed + loaders;
+  return processed + loader;
 }
 
 /**
