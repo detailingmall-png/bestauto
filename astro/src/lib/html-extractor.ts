@@ -410,17 +410,31 @@ export function removeRecordBlock(content: string, recId: string): string {
 /**
  * Inject native <img> into T396 cover carrier divs (.t396__carrier.t-bgimg)
  * so the browser can discover the hero image in HTML without waiting for
- * Tilda JS to set background-image. First carrier gets fetchpriority="high".
- * The img sits at z-index:0 inside the carrier; text overlays at z-index:3
- * remain on top.
+ * Tilda JS to set background-image.
+ *
+ * fetchpriority="high" is given ONLY to carriers inside .t-screenmax-1200px
+ * blocks (visible on mobile = Lighthouse viewport). The .t-screenmin-1200px
+ * desktop carrier is display:none on mobile — prioritising its hidden img
+ * wastes bandwidth on throttled connections and causes 15.9s LCP regression.
  */
 export function injectCoverHeroImg(body: string): string {
-  let isFirst = true;
+  // Match the entire record div (rec wrapper) that contains .t396__carrier
+  // We need to know whether the parent block is t-screenmax-1200px (mobile)
+  // or t-screenmin-1200px (desktop).
+  //
+  // Strategy: inject into ALL carriers (eager loading), but give fetchpriority
+  // only to carriers whose containing block has t-screenmax-1200px class
+  // (i.e., visible on the mobile viewport Lighthouse measures).
   return body.replace(
     /(<div\b[^>]*class="[^"]*t396__carrier[^"]*t-bgimg[^"]*"[^>]*data-original="([^"]+)"[^>]*>)/gi,
-    (_match, divTag: string, heroSrc: string) => {
-      const priority = isFirst ? ' fetchpriority="high"' : '';
-      isFirst = false;
+    (fullMatch, divTag: string, heroSrc: string, offset: number) => {
+      // Look back from this match's position to find which screen-size block contains this carrier
+      const preceding = body.slice(0, offset);
+      const lastScreenMax = preceding.lastIndexOf('t-screenmax-1200px');
+      const lastScreenMin = preceding.lastIndexOf('t-screenmin-1200px');
+      // fetchpriority="high" only for mobile-visible carrier (Lighthouse measures mobile viewport)
+      const isMobileBlock = lastScreenMax > lastScreenMin;
+      const priority = isMobileBlock ? ' fetchpriority="high"' : '';
       const img = `<img src="${heroSrc}" alt=""${priority} loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">`;
       return divTag + img;
     }
