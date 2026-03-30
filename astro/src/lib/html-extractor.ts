@@ -254,6 +254,28 @@ export function promoteAboveFoldImages(body: string): string {
 }
 
 /**
+ * Known image natural dimensions for CLS prevention.
+ * Add width/height attributes to images missing them.
+ */
+const KNOWN_IMG_DIMENSIONS: ReadonlyArray<{ pattern: RegExp; width: number; height: number }> = [
+  // Mobile header logo (176×53, displayed at 110px width → height≈33)
+  { pattern: /tild3031-6163-4738-a332-373636313836__noroot/, width: 176, height: 53 },
+];
+
+export function fixImgDimensions(html: string): string {
+  return html.replace(/<img\b([^>]*)>/gi, (match, attrs: string) => {
+    for (const entry of KNOWN_IMG_DIMENSIONS) {
+      if (!entry.pattern.test(attrs)) continue;
+      let updated = attrs;
+      if (!/\bwidth=/.test(updated)) updated += ` width="${entry.width}"`;
+      if (!/\bheight=/.test(updated)) updated += ` height="${entry.height}"`;
+      return `<img${updated}>`;
+    }
+    return match;
+  });
+}
+
+/**
  * Add loading="lazy" to images in body content.
  * Skips the first N images (above the fold) and tracking pixels.
  */
@@ -448,7 +470,7 @@ export function deferNonCriticalScripts(content: string): string {
  */
 export function rewriteImagesToWebp(content: string): string {
   return content.replace(
-    /((?:data-original|src|srcset|data-bg-src|data-content-cover-bg|content)="[^"]*\/)([\w.-]+)\.(jpe?g)(")/gi,
+    /((?:data-original|src|srcset|data-bg-src|data-content-cover-bg|content)="[^"]*\/)([\w.-]+)\.(jpe?g|png)(")/gi,
     (match, prefix, name, _ext, suffix) => {
       return WEBP_AVAILABLE.has(name) ? `${prefix}${name}.webp${suffix}` : match;
     }
@@ -641,12 +663,12 @@ export function extractSections(html: string): PageSections {
   const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
-  const headerBlock = delayAnalytics(stripAlienAnalytics(stripOldTracking(rawHeaderBlock)));
+  const headerBlock = fixImgDimensions(delayAnalytics(stripAlienAnalytics(stripOldTracking(rawHeaderBlock))));
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))));
+  const mainContent = fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent))))))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
