@@ -81,7 +81,7 @@ if (lang === 'ru') {
   // Move gallery+reviews to just above contacts block
   let galleryReviewsRu = '';
   if (currentSlug === 'ru') {
-    [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758392198', 'rec1859784471');
+    [galleryReviewsRu, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758392198', 'rec2072063053');
   } else if (mainContent.includes('id="rec713423972"')) {
     const galleryStartPos = mainContent.indexOf('id="rec713423972"');
     const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"', galleryStartPos);
@@ -156,7 +156,7 @@ if (lang === 'en') {
     let galleryEn = '';
     let reviewsEn = '';
     if (currentSlug === 'en') {
-      [galleryEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec1862088861', 'rec1862088901');
+      [galleryEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec1862088861', 'rec2072063803');
       [reviewsEn, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec758753019', 'rec758753021');
     }
     mainContent = insertBeforeFooter(mainContent, galleryEn + reviewsEn + CONTACTS_BLOCK_EN, ['rec607472568', 'rec607473240']);
