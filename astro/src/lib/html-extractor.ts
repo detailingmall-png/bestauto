@@ -60,7 +60,7 @@ export function removeTildaCdnFallback(content: string): string {
 export function deferNonCriticalCss(head: string): string {
   const DEFERRABLE = [
     'tilda-animation', 'tilda-forms', 'tilda-popup',
-    'tilda-zoom', 'tilda-slds', 'tilda-cards', 'tilda-cover',
+    'tilda-cards', 'tilda-cover',
     'fonts-tildasans',
   ];
 
@@ -378,11 +378,9 @@ export function delayAnalytics(block: string): string {
 export function deferNonCriticalScripts(content: string): string {
   const DEFER_SCRIPTS = [
     'tilda-forms-1.0',
-    'tilda-zoom-2.0',
     'masonry-imagesloaded',
     'tilda-video-1.0',
     'tilda-animation-2.0',
-    'tilda-slds-1.4',
     'hammer.min',
     'tilda-popup-1.0',
     'tilda-cards-1.0',
@@ -390,8 +388,6 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-events-1.0',
   ];
 
-  // NOTE: tilda-zoom must stay in DEFER_SCRIPTS at 12s — loading on click/interaction
-  // caused Lighthouse to trigger it within the TBT window (~929ms), adding 538ms TBT.
 
   const deferred: string[] = [];
   const processed = content.replace(/<script\b[^>]*src="([^"]*)"[^>]*>\s*<\/script>/g, (match, src) => {

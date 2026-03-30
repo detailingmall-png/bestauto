@@ -12,6 +12,7 @@ import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
 import { injectServicePrices } from '../lib/service-prices-inject';
+import { replaceGalleries } from '../lib/gallery-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
@@ -63,6 +64,8 @@ if (PRICES_SLUGS.has(currentSlug)) {
 if (SERVICE_SLUGS.has(baseSlug)) {
   injectedHtml = injectServicePrices(injectedHtml, pricingPage, baseSlug, lang);
 }
+
+injectedHtml = replaceGalleries(injectedHtml);
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = rawMainContent;
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
