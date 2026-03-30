@@ -1,8 +1,54 @@
 {
-  "placeId": "PLACE_ID_HERE",
+  "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 173,
-  "fetchedAt": "2026-03-30T00:00:00.000Z",
-  "reviews": []
+  "fetchedAt": "2026-03-30T08:23:23.117Z",
+  "reviews": [
+    {
+      "authorName": "jean pierre nehme",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWMrUtkJuMZqqPZJwjTZZuIaQq9EEprG0y5cg-VTNcyYSVlyO-U=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relativeTime": "4 weeks ago",
+      "text": "All the way from Romania 🇷🇴 it's my first time writing a review, i don't usually trust people easily but I felt really comfortable dealing with this team since day one, very professional, very satisfied with the results, highly recommended 👌🏻💪🏻\nGlad to meet you guys 🙏🏼",
+      "time": 1772316949,
+      "profileUrl": "https://www.google.com/maps/contrib/106862328154285265159/reviews"
+    },
+    {
+      "authorName": "Mikhail",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUygXsQGgnzvFfn9HJ_xccXGGiSaxn4tjmmCczVRlhNyCeOTQ2p=s128-c0x00000000-cc-rp-mo-ba2",
+      "rating": 5,
+      "relativeTime": "4 months ago",
+      "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
+      "time": 1763710948,
+      "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews"
+    },
+    {
+      "authorName": "David Williams",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWEweGubGwFxLnzaYEqwXeMN1GaSqMZhValtX79WVnzfyC5MUyd=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relativeTime": "5 months ago",
+      "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results.",
+      "time": 1761404842,
+      "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews"
+    },
+    {
+      "authorName": "mohamadreza sabzi",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWQaCwVM6Fk5i-ivjG3OdYu0GtMqFqMMxVqWfpi-9tJ1YRMVqDv=s128-c0x00000000-cc-rp-mo-ba5",
+      "rating": 5,
+      "relativeTime": "8 months ago",
+      "text": "Absolutely amazing experience with the car detailing and ceramic coating service! The staff were super friendly, professional, and paid attention to every little detail. My car looks brand new now – glossy, clean, and perfectly protected. Everything from start to finish was excellent. Highly recommended!",
+      "time": 1751850652,
+      "profileUrl": "https://www.google.com/maps/contrib/110154893026610914131/reviews"
+    },
+    {
+      "authorName": "Daniel Pegado",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUAaYBrM3bmc43gIWR-0nBtAOaD80-MPK6ZpUzeb2IFSoCeqvEu=s128-c0x00000000-cc-rp-mo-ba3",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "For some time I had been looking for a place to do a deep clean of the interior of my car... until one day, two options appeared on Facebook, I contacted both... but my choice fell on Bestauto, not because of the price because the price of Bestauto was more expensive than the other offer, what led me to visit them was the professionalism of the contact, the attention paid to the customer... without fear I went to the premises to see the space, as soon as I entered the store, my doubts were cleared up, a clean, organized space, a real SPA for our car, but the icing on the cake was the professionalism and politeness of the manager, we sealed the deal with a handshake.. on the agreed day I dropped the car off, and after three days or so I picked it up... here I have to say that the car was as it had been when it left the factory, a cleanliness that you can see and definitely feel. The same friendliness and professionalism on the way out... I can only recommend this SPA Auto, because in addition to excellent service, it has very professional and polite staff. Thank you",
+      "time": 1742196073,
+      "profileUrl": "https://www.google.com/maps/contrib/104058545588964445862/reviews"
+    }
+  ]
 }
