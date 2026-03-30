@@ -21,8 +21,48 @@ const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
   'polishing', 'ceramiccoating', 'interior-cleaning', 'interior-restoration',
   'paintless-dent-repair', 'windshield-repair', 'ppf-shield-wrapping', 'vinyl-wrapping',
-  'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics',
+  'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics', 'carwash',
 ]);
+
+// Related-services block start/end rec IDs per "lang/slug"
+const RELATED_BLOCK_RANGES: Readonly<Record<string, readonly [string, string]>> = {
+  // KA
+  'ka/ceramiccoating':        ['rec611064982', 'rec611064982'],
+  'ka/polishing':             ['rec598873533', 'rec598873533'],
+  'ka/interior-restoration':  ['rec598873604', 'rec598873604'],
+  'ka/interior-cleaning':     ['rec598873702', 'rec598873702'],
+  'ka/windshield-repair':     ['rec598873777', 'rec598873777'],
+  'ka/ppf-shield-wrapping':   ['rec603096462', 'rec603096462'],
+  'ka/vinyl-wrapping':        ['rec603170648', 'rec603170648'],
+  'ka/auto-glass-tinting':    ['rec604007937', 'rec604007937'],
+  'ka/car-soundproofing':     ['rec604008021', 'rec604008021'],
+  'ka/paintless-dent-repair': ['rec604008199', 'rec604008199'],
+  'ka/computer-diagnostics':  ['rec614240660', 'rec614240660'],
+  // EN
+  'en/ceramiccoating':        ['rec597103700', 'rec597103700'],
+  'en/polishing':             ['rec597103992', 'rec597103992'],
+  'en/interior-restoration':  ['rec597103949', 'rec597103949'],
+  'en/interior-cleaning':     ['rec597103839', 'rec597103839'],
+  'en/ppf-shield-wrapping':   ['rec600301228', 'rec600301228'],
+  'en/windshield-repair':     ['rec598440249', 'rec598440261'],
+  'en/vinyl-wrapping':        ['rec603097589', 'rec603097601'],
+  'en/paintless-dent-repair': ['rec603498101', 'rec603498113'],
+  'en/car-soundproofing':     ['rec603498162', 'rec603498174'],
+  'en/auto-glass-tinting':    ['rec603498247', 'rec603498259'],
+  'en/computer-diagnostics':  ['rec614236053', 'rec614236065'],
+  // RU
+  'ru/ceramiccoating':        ['rec595448578', 'rec595448578'],
+  'ru/polishing':             ['rec603225450', 'rec603225450'],
+  'ru/interior-restoration':  ['rec603225860', 'rec603225860'],
+  'ru/interior-cleaning':     ['rec603226140', 'rec603226140'],
+  'ru/windshield-repair':     ['rec603226294', 'rec603226294'],
+  'ru/auto-glass-tinting':    ['rec603226768', 'rec603226768'],
+  'ru/car-soundproofing':     ['rec603226809', 'rec603226809'],
+  'ru/paintless-dent-repair': ['rec603227099', 'rec603227099'],
+  'ru/vinyl-wrapping':        ['rec603226720', 'rec603226720'],
+  'ru/ppf-shield-wrapping':   ['rec603226585', 'rec603226585'],
+  'ru/computer-diagnostics':  ['rec610181663', 'rec610181668'],
+};
 
 export async function getStaticPaths() {
   const pages = getAllPages();
@@ -77,6 +117,14 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + (baseSlug === '' ? generateReviewSchema() + generateWebSiteSchema() : '');
 
 if (lang === 'ru') {
+  // Extract related-services block and move before footer
+  let relatedBlockRu = '';
+  const relatedKeyRu = `ru/${baseSlug}`;
+  const relatedRangeRu = RELATED_BLOCK_RANGES[relatedKeyRu];
+  if (relatedRangeRu) {
+    [relatedBlockRu, mainContent] = extractAndRemoveBlockRange(mainContent, relatedRangeRu[0], relatedRangeRu[1]);
+  }
+
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   // Remove old contact blocks (unique ID per page — use content-based removal)
   mainContent = removeBlockContaining(mainContent, '550 000 199');
@@ -113,6 +161,16 @@ if (lang === 'ru') {
       mainContent = mainContent.slice(0, divStart) + galleryReviewsRu + mainContent.slice(divStart);
     }
   }
+  // Insert related-services block just before contacts block
+  if (relatedBlockRu) {
+    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+    if (contactsIdx >= 0) {
+      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+      mainContent = mainContent.slice(0, divStart) + relatedBlockRu + mainContent.slice(divStart);
+    } else {
+      mainContent = mainContent + relatedBlockRu;
+    }
+  }
 }
 
 // Helper: insert block before the first matching footer
@@ -128,6 +186,14 @@ function insertBeforeFooter(content: string, block: string, footerIds: readonly 
 }
 
 if (lang === 'ka') {
+  // Extract related-services block and move before footer
+  let relatedBlockKa = '';
+  const relatedKeyKa = `ka/${baseSlug}`;
+  const relatedRangeKa = RELATED_BLOCK_RANGES[relatedKeyKa];
+  if (relatedRangeKa) {
+    [relatedBlockKa, mainContent] = extractAndRemoveBlockRange(mainContent, relatedRangeKa[0], relatedRangeKa[1]);
+  }
+
   // Remove old contact blocks: homepage IDs + subpage IDs (shared across all KA pages)
   mainContent = removeRecordBlock(mainContent, 'rec2091645613');
   mainContent = removeRecordBlock(mainContent, 'rec2091645623');
@@ -161,12 +227,30 @@ if (lang === 'ka') {
       }
     }
   }
+  // Insert related-services block just before contacts block
+  if (relatedBlockKa) {
+    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+    if (contactsIdx >= 0) {
+      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+      mainContent = mainContent.slice(0, divStart) + relatedBlockKa + mainContent.slice(divStart);
+    } else {
+      mainContent = mainContent + relatedBlockKa;
+    }
+  }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_KA;
   }
 }
 
 if (lang === 'en') {
+  // Extract related-services block and move before footer
+  let relatedBlockEn = '';
+  const relatedKeyEn = `en/${baseSlug}`;
+  const relatedRangeEn = RELATED_BLOCK_RANGES[relatedKeyEn];
+  if (relatedRangeEn) {
+    [relatedBlockEn, mainContent] = extractAndRemoveBlockRange(mainContent, relatedRangeEn[0], relatedRangeEn[1]);
+  }
+
   // Remove old contact blocks: subpage IDs + service-page CTA/popup IDs
   mainContent = removeRecordBlock(mainContent, 'rec1862121201');
   mainContent = removeRecordBlock(mainContent, 'rec1862121211');
@@ -198,6 +282,16 @@ if (lang === 'en') {
           mainContent = mainContent.slice(0, divStart) + galleryReviewsEn + mainContent.slice(divStart);
         }
       }
+    }
+  }
+  // Insert related-services block just before contacts block
+  if (relatedBlockEn) {
+    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+    if (contactsIdx >= 0) {
+      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+      mainContent = mainContent.slice(0, divStart) + relatedBlockEn + mainContent.slice(divStart);
+    } else {
+      mainContent = mainContent + relatedBlockEn;
     }
   }
   if (!mainContent.includes('ba-wa-wrap')) {
