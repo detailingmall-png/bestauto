@@ -84,7 +84,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       ru: 'Глубокая чистка и дезинфекция профессиональным оборудованием',
       en: 'Deep cleaning & disinfection with professional equipment',
     },
-    minPrice: '100',
+    minPrice: '400',
     image: '/images/tild3537-6262-4263-b866-366463303665__2023-07-04_231132.jpg',
   },
   {
