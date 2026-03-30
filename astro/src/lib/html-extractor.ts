@@ -244,6 +244,39 @@ export function removeElfsight(body: string): string {
 }
 
 /**
+ * Strip alien/legacy analytics scripts from Tilda body content:
+ *  1. External gtag script with foreign GA4 ID (G-1QB0MZECSB)
+ *  2. Inline gtag('config', 'G-1QB0MZECSB') initializer
+ *  3. Old Universal Analytics (analytics.js / ga.create)
+ *  4. Tilda internal stat script (tilda-stat-1.0.min.js)
+ * These are residual Tilda-generated blocks that duplicate or conflict
+ * with our own tracking setup.
+ */
+export function stripAlienAnalytics(content: string): string {
+  return content
+    // 1. External gtag script for alien GA4 ID
+    .replace(
+      /<script\b[^>]*src="[^"]*G-1QB0MZECSB[^"]*"[^>]*>\s*<\/script>/g,
+      ''
+    )
+    // 2. Inline gtag config block for alien GA4 ID
+    .replace(
+      /<script[^>]*>(?:[^<]|<(?!\/script>))*?G-1QB0MZECSB(?:[^<]|<(?!\/script>))*?<\/script>/g,
+      ''
+    )
+    // 3. Old Universal Analytics (analytics.js)
+    .replace(
+      /<script[^>]*>(?:[^<]|<(?!\/script>))*?google-analytics\.com\/analytics\.js(?:[^<]|<(?!\/script>))*?<\/script>/g,
+      ''
+    )
+    // 4. Tilda internal stat collector
+    .replace(
+      /<script[^>]*>(?:[^<]|<(?!\/script>))*?tilda-stat-1\.0\.min\.js(?:[^<]|<(?!\/script>))*?<\/script>/g,
+      ''
+    );
+}
+
+/**
  * Remove the old Tilda inline tracking script (phone_call_299 etc.)
  * that was added manually. Replaced by /js/tracking.js.
  */
@@ -554,12 +587,12 @@ export function extractSections(html: string): PageSections {
   const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
-  const headerBlock = delayAnalytics(stripOldTracking(rawHeaderBlock));
+  const headerBlock = delayAnalytics(stripAlienAnalytics(stripOldTracking(rawHeaderBlock)));
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = improveEmptyAlts(delayAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)))));
+  const mainContent = improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent))))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
