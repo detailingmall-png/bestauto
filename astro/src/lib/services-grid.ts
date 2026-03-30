@@ -24,7 +24,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Invisible protection from chips, scratches & UV — 10-year warranty',
     },
     minPrice: '2500',
-    image: '/images/tild3336-3336-4337-b939-633732303363__2023-07-04_231140.jpg',
+    image: '/images/tild3336-3336-4337-b939-633732303363__2023-07-04_231140.webp',
   },
   {
     slug: 'vinyl-wrapping',
@@ -36,7 +36,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Color change — thousands of colors & finishes to choose from',
     },
     minPrice: '300',
-    image: '/images/tild3866-3763-4039-b065-306366336264__noroot.png',
+    image: '/images/tild3866-3763-4039-b065-306366336264__noroot.webp',
   },
   // Tier 2 — compact cards
   {
@@ -49,19 +49,19 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Scratch removal & factory gloss restoration',
     },
     minPrice: '590',
-    image: '/images/tild3962-3733-4364-b039-326430393066__pxl_20240229_1140148.jpg',
+    image: '/images/tild3962-3733-4364-b039-326430393066__pxl_20240229_1140148.webp',
   },
   {
     slug: 'ceramiccoating',
     tier: 2,
-    name: { ka: 'კერამიკული საფარი', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
+    name: { ka: 'კერამიკული საფარი', ru: 'Керამическое покрытие', en: 'Ceramic Coating' },
     tagline: {
       ka: '9H ნანოსაფარი — ჰიდროფობიური ეფექტი და 3-5 წლის დაცვა',
       ru: '9H нано-покрытие — гидрофобный эффект и защита 3-5 лет',
       en: '9H nano-coating — hydrophobic effect & 3-5 year protection',
     },
     minPrice: '400',
-    image: '/images/tild3834-6636-4839-a464-316639393139__ceramic.jpg',
+    image: '/images/tild3834-6636-4839-a464-316639393139__ceramic.webp',
   },
   {
     slug: 'carwash',
@@ -73,7 +73,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Professional hand wash with safe products',
     },
     minPrice: '40',
-    image: '/images/tild3933-3539-4638-b533-333037613266__pxl_20240229_1012434.jpg',
+    image: '/images/tild3933-3539-4638-b533-333037613266__pxl_20240229_1012434.webp',
   },
   {
     slug: 'interior-cleaning',
@@ -85,7 +85,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Deep cleaning & disinfection with professional equipment',
     },
     minPrice: '400',
-    image: '/images/tild3537-6262-4263-b866-366463303665__2023-07-04_231132.jpg',
+    image: '/images/tild3537-6262-4263-b866-366463303665__2023-07-04_231132.webp',
   },
   {
     slug: 'auto-glass-tinting',
@@ -97,7 +97,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'UV protection, privacy & cooling effect for your interior',
     },
     minPrice: '130',
-    image: '/images/tild6331-6163-4761-b632-316634653631__2023-07-04_231155.jpg',
+    image: '/images/tild6331-6163-4761-b632-316634653631__2023-07-04_231155.webp',
   },
   {
     slug: 'car-soundproofing',
@@ -109,19 +109,19 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Reduce road noise & improve cabin comfort',
     },
     minPrice: '600',
-    image: '/images/tild3133-3337-4161-b336-333030376435__noroot.jpg',
+    image: '/images/tild3133-3337-4161-b336-333030376435__noroot.webp',
   },
   {
     slug: 'windshield-repair',
     tier: 2,
-    name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' },
+    name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лობового стекла', en: 'Windshield Repair' },
     tagline: {
       ka: 'ჩიპის ან ბზარის სწრაფი შეკეთება — მინის შეცვლის გარეშე',
       ru: 'Быстрый ремонт скола или трещины — без замены стекла',
       en: 'Fast chip or crack repair — no glass replacement needed',
     },
     minPrice: '60',
-    image: '/images/tild3030-6636-4036-a564-373666356236__2023-07-04_231151.jpg',
+    image: '/images/tild3030-6636-4036-a564-373666356236__2023-07-04_231151.webp',
   },
 ] as const;
 
@@ -171,7 +171,7 @@ function renderTier1Card(service: ServiceEntry, lang: string, langPrefix: string
   const href = `/${langPrefix}${service.slug}`;
 
   return `<a href="${href}" style="position:relative; display:block; height:360px; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform 0.3s ease;" class="ba-service-card ba-service-card--tier1">
-        <div style="position:absolute; inset:0; background:url(${service.image}) center/cover no-repeat;"></div>
+        <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
         <div style="position:relative; z-index:1; padding:40px 32px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
           <h3 style="color:#fff; font-size:28px; font-weight:700; margin:0 0 12px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
@@ -192,7 +192,7 @@ function renderTier2Card(service: ServiceEntry, lang: string, langPrefix: string
   const href = `/${langPrefix}${service.slug}`;
 
   return `<a href="${href}" style="position:relative; display:block; height:280px; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform 0.3s ease;" class="ba-service-card ba-service-card--tier2">
-        <div style="position:absolute; inset:0; background:url(${service.image}) center/cover no-repeat;"></div>
+        <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
         <div style="position:relative; z-index:1; padding:24px 20px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
           <h3 style="color:#fff; font-size:20px; font-weight:700; margin:0 0 8px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
