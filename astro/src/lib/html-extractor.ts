@@ -89,14 +89,31 @@ export function deferNonCriticalCss(head: string): string {
 }
 
 /**
- * Inline tilda-grid CSS (4KB) to eliminate a render-blocking network request.
- * Replaces the <link> tag with a <style> tag containing the CSS content.
+ * Inline tilda-grid CSS (4KB) and page-specific tilda-blocks-page CSS
+ * to eliminate render-blocking network requests.
+ * Both files are local, static, and safe to inline at build time.
  */
 export function inlineCriticalCss(head: string): string {
-  return head.replace(
+  // 1. Inline tilda-grid (always present, pre-loaded at module init)
+  let result = head.replace(
     /<link\b[^>]*href="\/css\/tilda-grid-3\.0\.min\.css"[^>]*\/?>/,
     `<style>${GRID_CSS}</style>`
   );
+
+  // 2. Inline tilda-blocks-page CSS (page-specific, read dynamically)
+  result = result.replace(
+    /<link\b[^>]*href="(\/css\/tilda-blocks-page[^"?]+\.min\.css)[^"]*"[^>]*\/?>/,
+    (_match, cssPath) => {
+      try {
+        const css = readFileSync(join(process.cwd(), 'public', cssPath), 'utf8');
+        return `<style>${css}</style>`;
+      } catch {
+        return _match; // fallback: keep original <link> if file not found
+      }
+    }
+  );
+
+  return result;
 }
 
 /**
