@@ -117,12 +117,13 @@ async function discoverPlaceId(): Promise<string> {
   return place.id;
 }
 
-async function fetchFromGooglePlaces(placeId: string): Promise<GooglePlaceResponse> {
+async function fetchFromGooglePlaces(placeId: string, languageCode?: string): Promise<GooglePlaceResponse> {
   if (!API_KEY) {
     throw new Error("GOOGLE_PLACES_API_KEY environment variable is not set");
   }
 
-  const url = `https://places.googleapis.com/v1/places/${placeId}`;
+  const params = languageCode ? `?languageCode=${languageCode}` : "";
+  const url = `https://places.googleapis.com/v1/places/${placeId}${params}`;
   const fieldMask = "rating,userRatingCount,reviews";
 
   const response = await fetch(url, {
@@ -135,18 +136,54 @@ async function fetchFromGooglePlaces(placeId: string): Promise<GooglePlaceRespon
   if (!response.ok) {
     const body = await response.text();
     throw new Error(
-      `Google Places API error ${response.status}: ${body}`
+      `Google Places API error ${response.status} (lang=${languageCode ?? "default"}): ${body}`
     );
   }
 
   return response.json() as Promise<GooglePlaceResponse>;
 }
 
+async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlaceResponse; incomingReviews: Review[] }> {
+  const langs = ["ru", "ka", "en"];
+  const results = await Promise.allSettled(langs.map(l => fetchFromGooglePlaces(placeId, l)));
+
+  let apiData: GooglePlaceResponse | null = null;
+  const seen = new Map<string, Review>();
+
+  for (let i = 0; i < results.length; i++) {
+    const result = results[i];
+    if (result.status === "rejected") {
+      console.warn(`Fetch for lang=${langs[i]} failed:`, result.reason);
+      continue;
+    }
+    const data = result.value;
+    if (!apiData) apiData = data;
+    for (const gr of data.reviews ?? []) {
+      const rev = convertGoogleReview(gr);
+      // Only keep reviews with text
+      if (!rev.text.trim()) continue;
+      const key = deduplicationKey(rev);
+      if (!seen.has(key)) seen.set(key, rev);
+    }
+  }
+
+  if (!apiData) {
+    throw new Error("All language fetches failed");
+  }
+
+  const incomingReviews = Array.from(seen.values()).sort((a, b) => b.time - a.time);
+  console.log(`Fetched ${incomingReviews.length} unique reviews with text across ${langs.length} languages.`);
+  return { apiData, incomingReviews };
+}
+
 function mergeReviews(existing: Review[], incoming: Review[]): Review[] {
   const seen = new Map<string, Review>();
 
+  // Only keep existing reviews that have text
   for (const review of existing) {
-    seen.set(deduplicationKey(review), review);
+    if (review.text.trim()) {
+      seen.set(deduplicationKey(review), review);
+    }
   }
 
   for (const review of incoming) {
@@ -177,17 +214,14 @@ async function main(): Promise<void> {
   }
 
   let apiData: GooglePlaceResponse;
+  let incomingReviews: Review[];
   try {
-    apiData = await fetchFromGooglePlaces(placeId);
+    ({ apiData, incomingReviews } = await fetchAllLanguages(placeId));
   } catch (err) {
     console.error("API fetch failed — existing file will NOT be overwritten.");
     console.error(err);
     process.exit(1);
   }
-
-  const incomingReviews: Review[] = (apiData.reviews ?? []).map(
-    convertGoogleReview
-  );
 
   const existingReviews: Review[] = existing?.reviews ?? [];
   const businessName: string = existing?.businessName ?? "BESTAUTO";
