@@ -69,6 +69,9 @@ if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   // Remove old contact blocks (unique ID per page — use content-based removal)
   mainContent = removeBlockContaining(mainContent, '550 000 199');
+  // Remove "Error get alias" broken Tilda blocks
+  mainContent = removeRecordBlock(mainContent, 'rec721622395');
+  mainContent = removeRecordBlock(mainContent, 'rec589470557');
   if (!mainContent.includes('rec2091246563')) {
     // Insert before footer (rec603526076), not at the end
     const FOOTER_ID = 'rec603526076';
