@@ -161,15 +161,9 @@ if (lang === 'ru') {
       mainContent = mainContent.slice(0, divStart) + galleryReviewsRu + mainContent.slice(divStart);
     }
   }
-  // Insert related-services block just before contacts block
+  // Insert related-services block after contacts, before footer
   if (relatedBlockRu) {
-    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
-    if (contactsIdx >= 0) {
-      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
-      mainContent = mainContent.slice(0, divStart) + relatedBlockRu + mainContent.slice(divStart);
-    } else {
-      mainContent = mainContent + relatedBlockRu;
-    }
+    mainContent = insertBeforeFooter(mainContent, relatedBlockRu, ['rec603526076']);
   }
 }
 
@@ -227,15 +221,9 @@ if (lang === 'ka') {
       }
     }
   }
-  // Insert related-services block just before contacts block
+  // Insert related-services block after contacts, before footer
   if (relatedBlockKa) {
-    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
-    if (contactsIdx >= 0) {
-      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
-      mainContent = mainContent.slice(0, divStart) + relatedBlockKa + mainContent.slice(divStart);
-    } else {
-      mainContent = mainContent + relatedBlockKa;
-    }
+    mainContent = insertBeforeFooter(mainContent, relatedBlockKa, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_KA;
@@ -284,15 +272,9 @@ if (lang === 'en') {
       }
     }
   }
-  // Insert related-services block just before contacts block
+  // Insert related-services block after contacts, before footer
   if (relatedBlockEn) {
-    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
-    if (contactsIdx >= 0) {
-      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
-      mainContent = mainContent.slice(0, divStart) + relatedBlockEn + mainContent.slice(divStart);
-    } else {
-      mainContent = mainContent + relatedBlockEn;
-    }
+    mainContent = insertBeforeFooter(mainContent, relatedBlockEn, ['rec607472568', 'rec607473240']);
   }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_EN;
