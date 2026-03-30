@@ -9,8 +9,9 @@ import type { PricingPage, PriceSection, PriceLineItem } from './sanity';
 type Lang = 'ru' | 'ka' | 'en';
 
 function esc(s: string): string {
+  // Don't re-encode existing HTML entities (e.g. &nbsp; from Sanity/Tilda data)
   return s
-    .replace(/&/g, '&amp;')
+    .replace(/&(?!(?:[a-zA-Z][a-zA-Z0-9]*|#[0-9]+|#x[0-9a-fA-F]+);)/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
@@ -48,7 +49,11 @@ function buildSection(section: PriceSection, idx: number, lang: Lang): string {
     `<style>@media screen and (min-width:480px){#${headingId} .t017__title{font-size:30px;}}</style>`,
     `</div>`,
     `<div id="${tableId}" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px;background-color:#000000;" data-animationappear="off" data-record-type="681" data-bg-color="#000000">`,
-    `<div class="t681"><div class="t-container">${rows}</div></div>`,
+    `<div class="t681">`,
+    `<div class="t-section__container t-container t-container_flex"><div class="t-col t-col_12"><div class="js-block-header-title t-section__title t-title t-title_xs t-align_left"><div style="font-size:30px;line-height:38px;"></div></div></div></div>`,
+    `<style>.t-section__descr{max-width:560px;}#${tableId} .t-section__title{margin-bottom:90px;}@media screen and (max-width:960px){#${tableId} .t-section__title{margin-bottom:60px;}}</style>`,
+    `<div class="t-container">${rows}</div>`,
+    `</div>`,
     `<style>#${tableId} .t681__title{font-size:20px;color:#ffffff;}#${tableId} .t681__descr{color:#ffffff;}#${tableId} .t681__price{font-size:20px;color:#ffffff;}</style>`,
     `</div>`,
   ].join('');
