@@ -450,6 +450,26 @@ export function removeRecordBlock(content: string, recId: string): string {
 
 
 /**
+ * Remove all rec blocks whose HTML contains the given search term.
+ * Used when old contact block IDs differ per page (e.g. RU subpages).
+ */
+export function removeBlockContaining(content: string, searchTerm: string): string {
+  let result = content;
+  for (let i = 0; i < 20; i++) {
+    const termIdx = result.indexOf(searchTerm);
+    if (termIdx < 0) break;
+    const before = result.slice(0, termIdx);
+    const recMatches = [...before.matchAll(/id="(rec\d+)"/g)];
+    if (recMatches.length === 0) break;
+    const recId = recMatches[recMatches.length - 1][1];
+    const next = removeRecordBlock(result, recId);
+    if (next === result) break;
+    result = next;
+  }
+  return result;
+}
+
+/**
  * Remove JS-based SEO scripts from Tilda HTML (hreflang + dynamic Service schema).
  * These are replaced by static equivalents generated at build time in seo.ts.
  */

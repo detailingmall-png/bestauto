@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter } from '../lib/html-extractor';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
@@ -67,6 +67,8 @@ const seoHead = generateHreflangTags(baseSlug, lang)
 
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
+  // Remove old contact blocks (unique ID per page — use content-based removal)
+  mainContent = removeBlockContaining(mainContent, '550 000 199');
   if (!mainContent.includes('rec2091246563')) {
     // Insert before footer (rec603526076), not at the end
     const FOOTER_ID = 'rec603526076';
@@ -112,10 +114,14 @@ function insertBeforeFooter(content: string, block: string, footerIds: readonly 
 }
 
 if (lang === 'ka') {
-  // Remove old contact blocks: desktop, mobile, and map
+  // Remove old contact blocks: homepage IDs + subpage IDs (shared across all KA pages)
   mainContent = removeRecordBlock(mainContent, 'rec2091645613');
   mainContent = removeRecordBlock(mainContent, 'rec2091645623');
   mainContent = removeRecordBlock(mainContent, 'rec2091645633');
+  mainContent = removeRecordBlock(mainContent, 'rec1860190671');
+  mainContent = removeRecordBlock(mainContent, 'rec1860190681');
+  mainContent = removeRecordBlock(mainContent, 'rec1860190701');
+  mainContent = removeRecordBlock(mainContent, 'rec1860227531');
   if (!mainContent.includes('ba-contacts')) {
     // Extract reviews+gallery from homepage and place just above contacts
     let reviewsGallery = '';
@@ -147,10 +153,12 @@ if (lang === 'ka') {
 }
 
 if (lang === 'en') {
-  // Remove old contact blocks: desktop, mobile, and map
+  // Remove old contact blocks: subpage IDs + service-page CTA/popup IDs
   mainContent = removeRecordBlock(mainContent, 'rec1862121201');
   mainContent = removeRecordBlock(mainContent, 'rec1862121211');
   mainContent = removeRecordBlock(mainContent, 'rec1862121221');
+  mainContent = removeRecordBlock(mainContent, 'rec1862088881');
+  mainContent = removeRecordBlock(mainContent, 'rec1862088901');
   if (!mainContent.includes('ba-contacts')) {
     // Extract gallery+reviews from homepage and place just above contacts
     let galleryEn = '';
