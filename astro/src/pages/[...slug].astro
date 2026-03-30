@@ -24,32 +24,32 @@ const SERVICE_SLUGS = new Set([
   'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics', 'carwash',
 ]);
 
-// Related-services block start/end rec IDs per "lang/slug"
+// Related-services block rec IDs per "lang/slug" (type-692 blocks, start=end for single block)
 const RELATED_BLOCK_RANGES: Readonly<Record<string, readonly [string, string]>> = {
   // KA
   'ka/ceramiccoating':        ['rec611064982', 'rec611064982'],
-  'ka/polishing':             ['rec598873533', 'rec598873533'],
-  'ka/interior-restoration':  ['rec598873604', 'rec598873604'],
-  'ka/interior-cleaning':     ['rec598873702', 'rec598873702'],
-  'ka/windshield-repair':     ['rec598873777', 'rec598873777'],
-  'ka/ppf-shield-wrapping':   ['rec603096462', 'rec603096462'],
-  'ka/vinyl-wrapping':        ['rec603170648', 'rec603170648'],
-  'ka/auto-glass-tinting':    ['rec604007937', 'rec604007937'],
-  'ka/car-soundproofing':     ['rec604008021', 'rec604008021'],
-  'ka/paintless-dent-repair': ['rec604008199', 'rec604008199'],
-  'ka/computer-diagnostics':  ['rec614240660', 'rec614240660'],
+  'ka/polishing':             ['rec598873537', 'rec598873537'],
+  'ka/interior-restoration':  ['rec598889932', 'rec598889932'],
+  'ka/interior-cleaning':     ['rec598893339', 'rec598893339'],
+  'ka/windshield-repair':     ['rec598893478', 'rec598893478'],
+  'ka/ppf-shield-wrapping':   ['rec603096467', 'rec603096467'],
+  'ka/vinyl-wrapping':        ['rec604005362', 'rec604005362'],
+  'ka/auto-glass-tinting':    ['rec604009889', 'rec604009889'],
+  'ka/car-soundproofing':     ['rec604009426', 'rec604009426'],
+  'ka/paintless-dent-repair': ['rec604009377', 'rec604009377'],
+  'ka/computer-diagnostics':  ['rec614244419', 'rec614244419'],
   // EN
-  'en/ceramiccoating':        ['rec597103700', 'rec597103700'],
-  'en/polishing':             ['rec597103992', 'rec597103992'],
-  'en/interior-restoration':  ['rec597103949', 'rec597103949'],
-  'en/interior-cleaning':     ['rec597103839', 'rec597103839'],
-  'en/ppf-shield-wrapping':   ['rec600301228', 'rec600301228'],
-  'en/windshield-repair':     ['rec598440249', 'rec598440261'],
-  'en/vinyl-wrapping':        ['rec603097589', 'rec603097601'],
-  'en/paintless-dent-repair': ['rec603498101', 'rec603498113'],
-  'en/car-soundproofing':     ['rec603498162', 'rec603498174'],
-  'en/auto-glass-tinting':    ['rec603498247', 'rec603498259'],
-  'en/computer-diagnostics':  ['rec614236053', 'rec614236065'],
+  'en/ceramiccoating':        ['rec603462096', 'rec603462096'],
+  'en/polishing':             ['rec597103996', 'rec597103996'],
+  'en/interior-restoration':  ['rec603459214', 'rec603459214'],
+  'en/interior-cleaning':     ['rec605651300', 'rec605651300'],
+  'en/ppf-shield-wrapping':   ['rec600301234', 'rec600301234'],
+  'en/windshield-repair':     ['rec598440261', 'rec598440261'],
+  'en/vinyl-wrapping':        ['rec603097601', 'rec603097601'],
+  'en/paintless-dent-repair': ['rec603498113', 'rec603498113'],
+  'en/car-soundproofing':     ['rec603498174', 'rec603498174'],
+  'en/auto-glass-tinting':    ['rec603498259', 'rec603498259'],
+  'en/computer-diagnostics':  ['rec614236065', 'rec614236065'],
   // RU
   'ru/ceramiccoating':        ['rec595448578', 'rec595448578'],
   'ru/polishing':             ['rec603225450', 'rec603225450'],
@@ -61,7 +61,7 @@ const RELATED_BLOCK_RANGES: Readonly<Record<string, readonly [string, string]>> 
   'ru/paintless-dent-repair': ['rec603227099', 'rec603227099'],
   'ru/vinyl-wrapping':        ['rec603226720', 'rec603226720'],
   'ru/ppf-shield-wrapping':   ['rec603226585', 'rec603226585'],
-  'ru/computer-diagnostics':  ['rec610181663', 'rec610181668'],
+  'ru/computer-diagnostics':  ['rec610181663', 'rec610181663'],
 };
 
 export async function getStaticPaths() {
