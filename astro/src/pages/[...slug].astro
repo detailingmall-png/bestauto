@@ -11,11 +11,17 @@ import { extractSections, removeRecordBlock, removeBlockContaining, extractAndRe
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
+import { injectServicePrices } from '../lib/service-prices-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
+const SERVICE_SLUGS = new Set([
+  'polishing', 'ceramiccoating', 'interior-cleaning', 'interior-restoration',
+  'paintless-dent-repair', 'windshield-repair', 'ppf-shield-wrapping', 'vinyl-wrapping',
+  'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics',
+]);
 
 export async function getStaticPaths() {
   const pages = getAllPages();
@@ -42,24 +48,26 @@ interface Props {
 
 const { pageFile, pageTitle, settings, pricingPage } = Astro.props;
 const currentSlug = Astro.params.slug ?? '';
+const lang = (currentSlug === 'ru' || currentSlug.startsWith('ru/')) ? 'ru'
+  : (currentSlug === 'en' || currentSlug.startsWith('en/')) ? 'en'
+  : 'ka';
+const baseSlug = currentSlug.replace(/^(ru|en)\/?/, '');
 
 const rawHtml = getPageHtml(pageFile);
 let injectedHtml = injectSanityData(rawHtml, settings);
 
 if (PRICES_SLUGS.has(currentSlug)) {
-  const lang = currentSlug === 'ru/prices' ? 'ru' : currentSlug === 'en/prices' ? 'en' : 'ka';
   injectedHtml = injectPricesData(injectedHtml, pricingPage, lang);
 }
 
-const lang = (currentSlug === 'ru' || currentSlug.startsWith('ru/')) ? 'ru'
-  : (currentSlug === 'en' || currentSlug.startsWith('en/')) ? 'en'
-  : 'ka';
+if (SERVICE_SLUGS.has(baseSlug)) {
+  injectedHtml = injectServicePrices(injectedHtml, pricingPage, baseSlug, lang);
+}
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = rawMainContent;
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite schemas
-const baseSlug = currentSlug.replace(/^(ru|en)\/?/, '');
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang)
