@@ -241,11 +241,11 @@ const CSS = `
   color: #444;
   margin: 0;
 }
-.ba-reviews__read-more {
+.ba-reviews__card .ba-reviews__read-more {
   display: inline-block;
   margin-top: 8px;
   font-size: 13px;
-  color: #767676;
+  color: #767676 !important;
   background: none;
   border: none;
   padding: 0;
@@ -253,8 +253,8 @@ const CSS = `
   font-family: inherit;
   text-decoration: underline;
 }
-.ba-reviews__read-more:hover {
-  color: #444;
+.ba-reviews__card .ba-reviews__read-more:hover {
+  color: #444 !important;
 }
 .ba-reviews__arrow {
   flex-shrink: 0;
