@@ -126,7 +126,6 @@ export function addResourceHints(head: string, mainContent: string): string {
     'mc.yandex.ru',
     'www.googletagmanager.com',
     'connect.facebook.net',
-    'static.elfsight.com',
   ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
 
   // Preload tilda-zero (cover block/artboard init depends on it → faster LCP)
@@ -232,18 +231,16 @@ export function addLazyLoading(body: string): string {
 }
 
 /**
- * Lazy-load Elfsight widget via IntersectionObserver.
- * Removes the platform.js script tag and replaces it with an observer
- * that injects the script only when the widget scrolls into view.
- * Saves ~463KB from the critical JS path.
+ * Remove Elfsight widget script and containers.
+ * The widget has been replaced by a self-hosted reviews widget.
  */
-export function lazyLoadElfsight(body: string): string {
-  const scriptRe = /<script\b[^>]*src="https:\/\/static\.elfsight\.com\/platform\/platform\.js"[^>]*><\/script>/;
-  if (!scriptRe.test(body)) return body;
-
-  const loader = `<script>(function(){var loaded=false;function inject(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='https://static.elfsight.com/platform/platform.js';s.setAttribute('data-use-service-core','');document.head.appendChild(s);}setTimeout(function(){if(!('IntersectionObserver' in window)){inject();return;}var obs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(entries[i].isIntersecting){obs.disconnect();inject();break;}}},{rootMargin:'400px'});var els=document.querySelectorAll('[class*="elfsight-app"]');if(els.length){els.forEach(function(el){obs.observe(el);});}else{inject();}},12000);})();</script>`;
-
-  return body.replace(scriptRe, loader);
+export function removeElfsight(body: string): string {
+  // Remove platform.js script tag
+  let result = body.replace(
+    /<script\b[^>]*src="https:\/\/static\.elfsight\.com\/platform\/platform\.js"[^>]*><\/script>/g,
+    ''
+  );
+  return result;
 }
 
 /**
@@ -551,7 +548,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = improveEmptyAlts(delayAnalytics(lazyLoadElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)))));
+  const mainContent = improveEmptyAlts(delayAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent)))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),

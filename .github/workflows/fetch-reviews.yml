@@ -1,0 +1,43 @@
+name: Fetch Google Reviews
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-reviews:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: astro/package-lock.json
+
+      - name: Install dependencies
+        run: cd astro && npm ci
+
+      - name: Fetch reviews
+        run: npx tsx scripts/fetch-reviews.ts
+        working-directory: astro
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet astro/src/data/reviews.json || (
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add astro/src/data/reviews.json
+            git commit -m "chore: update Google reviews data"
+            git push
+          )

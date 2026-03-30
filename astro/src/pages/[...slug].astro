@@ -11,8 +11,9 @@ import { extractSections, removeRecordBlock, extractAndRemoveBlockRange, findRec
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
-import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateWebSiteSchema } from '../lib/seo';
+import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
+import { getReviewsWidgetHtml } from '../lib/reviews-widget';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 
@@ -55,13 +56,14 @@ const lang = (currentSlug === 'ru' || currentSlug.startsWith('ru/')) ? 'ru'
   : 'ka';
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = rawMainContent;
+const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite schemas
 const baseSlug = currentSlug.replace(/^(ru|en)\/?/, '');
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang)
-  + (baseSlug === '' ? generateWebSiteSchema() : '');
+  + (baseSlug === '' ? generateReviewSchema() + generateWebSiteSchema() : '');
 
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
@@ -180,6 +182,16 @@ if (lang === 'en') {
     mainContent = mainContent + WHATSAPP_BLOCK_EN;
   }
 }
+
+// Replace first Elfsight reviews widget with self-hosted widget, remove duplicates
+mainContent = mainContent.replace(
+  /<div\s+class="elfsight-app-[^"]*"[^>]*>[\s\S]*?<\/div>/,
+  reviewsWidgetHtml
+);
+mainContent = mainContent.replace(
+  /<div\s+class="elfsight-app-[^"]*"[^>]*>[\s\S]*?<\/div>/g,
+  ''
+);
 ---
 <TildaPageLayout
   headContent={headContent}

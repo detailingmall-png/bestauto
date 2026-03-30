@@ -3,6 +3,7 @@
  * Replaces JS-based hreflang and Service schema from Tilda exports.
  */
 import pageMap from './page-map.json';
+import reviewsData from '../data/reviews.json';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -142,7 +143,7 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
   const service = SERVICES[baseSlug];
   if (!service) return '';
 
-  const schema = {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: service.name[lang] ?? service.name.en,
@@ -164,6 +165,59 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
         priceCurrency: 'GEL',
       },
     },
+  };
+
+  // Add aggregate rating and reviews if available
+  if (reviewsData.reviews.length > 0) {
+    schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: reviewsData.overallRating.toString(),
+      bestRating: '5',
+      ratingCount: reviewsData.totalReviews.toString(),
+    };
+    schema.review = reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string }) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.authorName },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating.toString(),
+        bestRating: '5',
+      },
+      reviewBody: r.text,
+    }));
+  }
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+export function generateReviewSchema(): string {
+  if (reviewsData.reviews.length === 0) return '';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Professional Car Detailing',
+    provider: {
+      '@type': 'AutoRepair',
+      name: 'BESTAUTO',
+      url: BASE_URL,
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: reviewsData.overallRating.toString(),
+      bestRating: '5',
+      ratingCount: reviewsData.totalReviews.toString(),
+    },
+    review: reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string }) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.authorName },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating.toString(),
+        bestRating: '5',
+      },
+      reviewBody: r.text,
+    })),
   };
 
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
