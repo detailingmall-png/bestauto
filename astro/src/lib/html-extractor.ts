@@ -244,6 +244,17 @@ export function removeElfsight(body: string): string {
 }
 
 /**
+ * Remove the old Tilda inline tracking script (phone_call_299 etc.)
+ * that was added manually. Replaced by /js/tracking.js.
+ */
+export function stripOldTracking(block: string): string {
+  return block.replace(
+    /<script>\s*document\.addEventListener\('click',\s*function\(e\)\s*\{[\s\S]*?phone_call_299[\s\S]*?<\/script>/g,
+    '<!-- old tracking removed, see /js/tracking.js -->'
+  );
+}
+
+/**
  * Delay inline analytics scripts found in <head> (GTM bootstrap, phone
  * tracking, bot detection). These run synchronously during HTML parse and
  * are the #1 TBT contributor. Uses type="text/plain" + idle loader.
@@ -543,7 +554,7 @@ export function extractSections(html: string): PageSections {
   const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
-  const headerBlock = delayAnalytics(rawHeaderBlock);
+  const headerBlock = delayAnalytics(stripOldTracking(rawHeaderBlock));
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
