@@ -184,6 +184,27 @@ export function expandCssBackgroundPlaceholders(content: string): string {
 }
 
 /**
+ * Promote the first Tilda background-image div to inline style.
+ * Tilda cover blocks use <div class="t-bgimg" data-original="...">
+ * and set background-image via JS. Adding inline background-image
+ * lets the browser paint the hero immediately without waiting for JS.
+ */
+export function promoteHeroBackground(body: string): string {
+  return body.replace(
+    /(<div\b[^>]*\bt-bgimg\b[^>]*data-original="([^"]+)")/i,
+    (match, fullTag, imgUrl) => {
+      if (/\bstyle="/.test(fullTag)) {
+        return fullTag.replace(
+          /\bstyle="([^"]*)"/,
+          `style="$1; background-image:url(${imgUrl}); background-size:cover; background-position:center;"`,
+        );
+      }
+      return `${fullTag} style="background-image:url(${imgUrl}); background-size:cover; background-position:center;"`;
+    },
+  );
+}
+
+/**
  * Promote above-fold Tilda lazy images to direct src= loading.
  * Tilda stores real image in data-original= and lazy-loads via JS.
  * For the first N images, copy data-original → src so the browser
@@ -608,7 +629,7 @@ export function extractSections(html: string): PageSections {
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(rawMainContent))))));
+  const mainContent = improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
