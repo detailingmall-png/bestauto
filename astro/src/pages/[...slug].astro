@@ -118,7 +118,7 @@ if (lang === 'ka') {
     // Extract reviews+gallery from homepage and place just above contacts
     let reviewsGallery = '';
     if (currentSlug === '' || currentSlug === undefined) {
-      [reviewsGallery, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec2091645413', 'rec2091645483');
+      [reviewsGallery, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec2091645413', 'rec2091645493');
     }
     mainContent = insertBeforeFooter(mainContent, reviewsGallery + CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
