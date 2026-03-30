@@ -83,6 +83,9 @@ export function generateHreflangTags(baseSlug: string, lang: string): string {
   const defaultLang = available.has('ka') ? 'ka' : lang;
   tags.push(`<link rel="alternate" hreflang="x-default" href="${buildUrl(defaultLang, baseSlug)}">`);
 
+  // Canonical: points to the current language version
+  tags.push(`<link rel="canonical" href="${buildUrl(lang, baseSlug)}">`);
+
   return tags.join('');
 }
 
@@ -148,7 +151,7 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
     '@type': 'Service',
     serviceType: service.name[lang] ?? service.name.en,
     provider: {
-      '@type': 'AutoRepair',
+      '@type': 'AutomotiveBusiness',
       name: 'BESTAUTO',
       url: BASE_URL,
     },
@@ -198,7 +201,7 @@ export function generateReviewSchema(): string {
     '@type': 'Service',
     serviceType: 'Professional Car Detailing',
     provider: {
-      '@type': 'AutoRepair',
+      '@type': 'AutomotiveBusiness',
       name: 'BESTAUTO',
       url: BASE_URL,
     },
@@ -235,7 +238,7 @@ export function generateWebSiteSchema(): string {
     url: BASE_URL,
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${BASE_URL}/ru?q={search_term_string}`,
+      target: `${BASE_URL}/?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };

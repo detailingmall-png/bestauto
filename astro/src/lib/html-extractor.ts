@@ -33,7 +33,7 @@ export function makePathsAbsolute(content: string): string {
     .replace(/src="(images\/)/g, 'src="/images/')
     .replace(/src="(css\/)/g, 'src="/css/')
     .replace(/href="(js\/)/g, 'href="/js/')
-    .replace(/content="(images\/)/g, 'content="/images/')
+    .replace(/content="(images\/)/g, 'content="https://bestauto.ge/images/')
     .replace(/url\((images\/)/g, 'url(/images/')
     .replace(/url\('(images\/)/g, "url('/images/")
     .replace(/data-original="(images\/)/g, 'data-original="/images/')

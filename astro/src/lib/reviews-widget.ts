@@ -40,6 +40,12 @@ const READ_MORE: Record<string, string> = {
   en: 'Read more',
 };
 
+const ON_GOOGLE: Record<string, string> = {
+  ka: 'Google-ზე',
+  ru: 'на Google',
+  en: 'on Google',
+};
+
 const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/Sx6wyy2b8xgTVmxdA';
 
 function renderStars(rating: number): string {
@@ -84,12 +90,12 @@ function renderReviewCards(reviews: readonly Review[], lang: string): string {
           </div>
           <div class="ba-reviews__author-info">
             <span class="ba-reviews__author-name">${escapeHtml(review.authorName)}</span>
-            <span class="ba-reviews__author-time">${escapeHtml(review.relativeTime)} on ${GOOGLE_INLINE}</span>
+            <span class="ba-reviews__author-time">${escapeHtml(review.relativeTime)} ${ON_GOOGLE[lang] ?? ON_GOOGLE.en} ${GOOGLE_INLINE}</span>
           </div>
         </div>
         <div class="ba-reviews__card-stars">${renderStars(review.rating)}</div>
         <p class="ba-reviews__card-text">${escapeHtml(truncated)}</p>
-        ${hasMore ? `<a href="${GOOGLE_MAPS_URL}" target="_blank" rel="noopener noreferrer" class="ba-reviews__read-more">${escapeHtml(readMoreLabel)}</a>` : ''}
+        ${hasMore ? `<button type="button" class="ba-reviews__read-more" data-full-text="${escapeHtml(review.text)}">${escapeHtml(readMoreLabel)}</button>` : ''}
       </article>`;
   }).join('\n');
 }
@@ -144,7 +150,7 @@ const CSS = `
   letter-spacing: 2px;
 }
 .ba-reviews__count {
-  color: #999;
+  color: #b0b0b0;
   font-size: 16px;
 }
 .ba-reviews__carousel {
@@ -221,7 +227,7 @@ const CSS = `
 }
 .ba-reviews__author-time {
   font-size: 12px;
-  color: #999;
+  color: #767676;
 }
 .ba-reviews__card-stars {
   color: #f4b400;
@@ -239,11 +245,16 @@ const CSS = `
   display: inline-block;
   margin-top: 8px;
   font-size: 13px;
-  color: #999;
-  text-decoration: none;
+  color: #767676;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
 }
 .ba-reviews__read-more:hover {
-  text-decoration: underline;
+  color: #444;
 }
 .ba-reviews__arrow {
   flex-shrink: 0;
@@ -357,6 +368,38 @@ const JS = `
     var cardWidth = cards[0].offsetWidth + 16;
     track.scrollBy({ left: getVisible() * cardWidth, behavior: 'smooth' });
   });
+
+  // Rebuild dots on window resize (e.g. orientation change)
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      var newTotal = Math.ceil(cards.length / getVisible());
+      if (newTotal !== totalPages) {
+        totalPages = newTotal;
+        while (dotsContainer.firstChild) dotsContainer.removeChild(dotsContainer.firstChild);
+        for (var i = 0; i < totalPages; i++) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.setAttribute('aria-label', 'Page ' + (i + 1));
+          if (i === 0) dot.className = 'active';
+          dotsContainer.appendChild(dot);
+        }
+      }
+    }, 200);
+  });
+
+  // Read more: expand full text inline instead of navigating away
+  track.addEventListener('click', function(e) {
+    var btn = e.target.closest('.ba-reviews__read-more');
+    if (!btn) return;
+    var card = btn.closest('.ba-reviews__card');
+    if (!card) return;
+    var p = card.querySelector('.ba-reviews__card-text');
+    if (!p) return;
+    p.textContent = btn.dataset.fullText || p.textContent;
+    btn.style.display = 'none';
+  });
 })();
 <\/script>`;
 
@@ -382,7 +425,7 @@ export function getReviewsWidgetHtml(lang: string): string {
   <div class="ba-reviews__container">
     <div class="ba-reviews__summary">
       <span class="ba-reviews__google-wordmark" aria-label="Google"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
-      <span class="ba-reviews__label">Reviews</span>
+      <span class="ba-reviews__label">${TITLE[lang] ?? TITLE.en}</span>
     </div>
     <div class="ba-reviews__rating-line">
       <span class="ba-reviews__rating-value">${overallRating}</span>
