@@ -1,0 +1,253 @@
+/**
+ * Generates the services grid HTML for the bestauto.ge homepage.
+ * Returns a complete HTML string styled with inline CSS (Tilda-compatible).
+ */
+
+interface ServiceEntry {
+  slug: string;
+  tier: 1 | 2;
+  name: Record<string, string>;
+  tagline: Record<string, string>;
+  minPrice: string;
+  image: string;
+}
+
+const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
+  // Tier 1 — large cards (most popular / high-margin)
+  {
+    slug: 'ppf-shield-wrapping',
+    tier: 1,
+    name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
+    tagline: {
+      ka: 'უხილავი დაცვა ქვებისგან, ნაკაწრებისგან და UV — 10 წლის გარანტია',
+      ru: 'Невидимая защита от сколов, царапин и UV — гарантия 10 лет',
+      en: 'Invisible protection from chips, scratches & UV — 10-year warranty',
+    },
+    minPrice: '2500',
+    image: '/images/tild3336-3336-4337-b939-633732303363__2023-07-04_231140.jpg',
+  },
+  {
+    slug: 'vinyl-wrapping',
+    tier: 1,
+    name: { ka: 'ვინილის ფირის გადაკვრა', ru: 'Оклейка цветной плёнкой', en: 'Vinyl Car Wrapping' },
+    tagline: {
+      ka: 'მანქანის ფერის შეცვლა — ფერების და ფაქტურების ათასობით ვარიანტი',
+      ru: 'Смена цвета кузова — тысячи цветов и фактур на выбор',
+      en: 'Color change — thousands of colors & finishes to choose from',
+    },
+    minPrice: '300',
+    image: '/images/tild3866-3763-4039-b065-306366336264__noroot.png',
+  },
+  // Tier 2 — compact cards
+  {
+    slug: 'polishing',
+    tier: 2,
+    name: { ka: 'მანქანის გაპრიალება', ru: 'Полировка автомобиля', en: 'Car Polishing' },
+    tagline: {
+      ka: 'ნაკაწრების აღმოფხვრა და ორიგინალი ბზინვარების აღდგენა',
+      ru: 'Удаление царапин и восстановление заводского блеска',
+      en: 'Scratch removal & factory gloss restoration',
+    },
+    minPrice: '590',
+    image: '/images/tild3962-3733-4364-b039-326430393066__pxl_20240229_1140148.jpg',
+  },
+  {
+    slug: 'ceramiccoating',
+    tier: 2,
+    name: { ka: 'კერამიკული საფარი', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
+    tagline: {
+      ka: '9H ნანოსაფარი — ჰიდროფობიური ეფექტი და 3-5 წლის დაცვა',
+      ru: '9H нано-покрытие — гидрофобный эффект и защита 3-5 лет',
+      en: '9H nano-coating — hydrophobic effect & 3-5 year protection',
+    },
+    minPrice: '400',
+    image: '/images/tild3834-6636-4839-a464-316639393139__ceramic.jpg',
+  },
+  {
+    slug: 'carwash',
+    tier: 2,
+    name: { ka: 'დეტეილინგ რეცხვა', ru: 'Детейлинг мойка', en: 'Detailing Wash' },
+    tagline: {
+      ka: 'პროფესიონალური ხელით რეცხვა უსაფრთხო მასალებით',
+      ru: 'Профессиональная ручная мойка безопасными средствами',
+      en: 'Professional hand wash with safe products',
+    },
+    minPrice: '40',
+    image: '/images/tild3933-3539-4638-b533-333037613266__pxl_20240229_1012434.jpg',
+  },
+  {
+    slug: 'interior-cleaning',
+    tier: 2,
+    name: { ka: 'სალონის ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' },
+    tagline: {
+      ka: 'ღრმა გაწმენდა და დეზინფექცია პროფესიონალური აღჭურვილობით',
+      ru: 'Глубокая чистка и дезинфекция профессиональным оборудованием',
+      en: 'Deep cleaning & disinfection with professional equipment',
+    },
+    minPrice: '100',
+    image: '/images/tild3537-6262-4263-b866-366463303665__2023-07-04_231132.jpg',
+  },
+  {
+    slug: 'auto-glass-tinting',
+    tier: 1,
+    name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' },
+    tagline: {
+      ka: 'UV დაცვა, კონფიდენციალობა და ინტერიერის გამაგრილებელი ეფექტი',
+      ru: 'UV-защита, приватность и охлаждающий эффект в салоне',
+      en: 'UV protection, privacy & cooling effect for your interior',
+    },
+    minPrice: '130',
+    image: '/images/tild6331-6163-4761-b632-316634653631__2023-07-04_231155.jpg',
+  },
+  {
+    slug: 'car-soundproofing',
+    tier: 2,
+    name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' },
+    tagline: {
+      ka: 'გარე ხმაურის შემცირება და მგზავრობის კომფორტის გაუმჯობესება',
+      ru: 'Снижение внешнего шума и повышение комфорта езды',
+      en: 'Reduce road noise & improve cabin comfort',
+    },
+    minPrice: '600',
+    image: '/images/tild3133-3337-4161-b336-333030376435__noroot.jpg',
+  },
+  {
+    slug: 'windshield-repair',
+    tier: 2,
+    name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' },
+    tagline: {
+      ka: 'ჩიპის ან ბზარის სწრაფი შეკეთება — მინის შეცვლის გარეშე',
+      ru: 'Быстрый ремонт скола или трещины — без замены стекла',
+      en: 'Fast chip or crack repair — no glass replacement needed',
+    },
+    minPrice: '60',
+    image: '/images/tild3030-6636-4036-a564-373666356236__2023-07-04_231151.jpg',
+  },
+] as const;
+
+const SECTION_TITLE: Record<string, string> = {
+  ka: 'ჩვენი სერვისები',
+  ru: 'Наши услуги',
+  en: 'Our Services',
+};
+
+const SECTION_SUBTITLE: Record<string, string> = {
+  ka: 'თქვენი მანქანის დეტალური და ტექნიკური მომსახურების სრული სპექტრი',
+  ru: 'Полный спектр детейлинг и технических услуг для вашего автомобиля',
+  en: 'Full range of detailing and technical services for your car',
+};
+
+const CTA_TEXT: Record<string, string> = {
+  ka: 'დაწვრილებით',
+  ru: 'Подробнее',
+  en: 'Learn more',
+};
+
+const PRICE_FROM: Record<string, string> = {
+  ka: '-დან',
+  ru: 'от',
+  en: 'from',
+};
+
+function getLangPrefix(lang: string): string {
+  if (lang === 'ru') return 'ru/';
+  if (lang === 'en') return 'en/';
+  return '';
+}
+
+function formatPrice(lang: string, minPrice: string): string {
+  const from = PRICE_FROM[lang] ?? PRICE_FROM['en'];
+  if (lang === 'ka') {
+    return `${minPrice} ₾${from}`;
+  }
+  return `${from} ${minPrice} ₾`;
+}
+
+function renderTier1Card(service: ServiceEntry, lang: string, langPrefix: string): string {
+  const name = service.name[lang] ?? service.name['en'];
+  const tagline = service.tagline[lang] ?? service.tagline['en'];
+  const price = formatPrice(lang, service.minPrice);
+  const cta = CTA_TEXT[lang] ?? CTA_TEXT['en'];
+  const href = `/${langPrefix}${service.slug}`;
+
+  return `<a href="${href}" style="position:relative; display:block; height:360px; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform 0.3s ease;" class="ba-service-card ba-service-card--tier1">
+        <div style="position:absolute; inset:0; background:url(${service.image}) center/cover no-repeat;"></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+        <div style="position:relative; z-index:1; padding:40px 32px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
+          <h3 style="color:#fff; font-size:28px; font-weight:700; margin:0 0 12px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
+          <p style="color:rgba(255,255,255,0.8); font-size:16px; margin:0 0 16px; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="color:#e4c97e; font-size:20px; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
+            <span style="color:#e4c97e; font-size:14px; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
+          </div>
+        </div>
+      </a>`;
+}
+
+function renderTier2Card(service: ServiceEntry, lang: string, langPrefix: string): string {
+  const name = service.name[lang] ?? service.name['en'];
+  const tagline = service.tagline[lang] ?? service.tagline['en'];
+  const price = formatPrice(lang, service.minPrice);
+  const cta = CTA_TEXT[lang] ?? CTA_TEXT['en'];
+  const href = `/${langPrefix}${service.slug}`;
+
+  return `<a href="${href}" style="position:relative; display:block; height:280px; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform 0.3s ease;" class="ba-service-card ba-service-card--tier2">
+        <div style="position:absolute; inset:0; background:url(${service.image}) center/cover no-repeat;"></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
+        <div style="position:relative; z-index:1; padding:24px 20px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
+          <h3 style="color:#fff; font-size:20px; font-weight:700; margin:0 0 8px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
+          <p style="color:rgba(255,255,255,0.75); font-size:14px; margin:0 0 12px; line-height:1.4; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="color:#e4c97e; font-size:18px; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
+            <span style="color:#e4c97e; font-size:13px; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
+          </div>
+        </div>
+      </a>`;
+}
+
+export function generateServicesGridHtml(lang: string): string {
+  const langPrefix = getLangPrefix(lang);
+  const title = SECTION_TITLE[lang] ?? SECTION_TITLE['en'];
+  const subtitle = SECTION_SUBTITLE[lang] ?? SECTION_SUBTITLE['en'];
+
+  const tier1Services = HOMEPAGE_SERVICES.filter((s) => s.tier === 1);
+  const tier2Services = HOMEPAGE_SERVICES.filter((s) => s.tier === 2);
+
+  const tier1Cards = tier1Services
+    .map((s) => renderTier1Card(s, lang, langPrefix))
+    .join('\n      ');
+
+  const tier2Cards = tier2Services
+    .map((s) => renderTier2Card(s, lang, langPrefix))
+    .join('\n      ');
+
+  return `<div id="ba-services-grid" name="services" style="background-color:#000; padding:60px 0 80px;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 20px;">
+    <h2 style="color:#fff; font-size:40px; font-weight:700; margin:0 0 12px; text-align:center; font-family:TildaSans,Arial,sans-serif;">${title}</h2>
+    <p style="color:rgba(255,255,255,0.6); font-size:18px; margin:0 0 48px; text-align:center; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${subtitle}</p>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:24px;" class="ba-services-tier1">
+      ${tier1Cards}
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;" class="ba-services-tier2">
+      ${tier2Cards}
+    </div>
+  </div>
+
+  <style>
+    @media screen and (max-width: 1024px) {
+      .ba-services-tier1 { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media screen and (max-width: 960px) {
+      .ba-services-tier2 { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media screen and (max-width: 640px) {
+      .ba-services-tier1 { grid-template-columns: 1fr !important; }
+      .ba-services-tier2 { grid-template-columns: 1fr !important; }
+    }
+    .ba-service-card { text-decoration: none !important; }
+    .ba-service-card:hover { transform: scale(1.02); }
+  </style>
+</div>`;
+}

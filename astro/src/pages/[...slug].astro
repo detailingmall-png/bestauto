@@ -15,6 +15,7 @@ import { injectServicePrices } from '../lib/service-prices-inject';
 import { replaceGalleries } from '../lib/gallery-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
+import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
@@ -106,6 +107,43 @@ if (SERVICE_SLUGS.has(baseSlug)) {
 }
 
 injectedHtml = replaceGalleries(injectedHtml);
+
+// Replace static Tilda services blocks with the new Astro grid (Variant A)
+// KA: rec2091645513, RU: rec588623535, EN: rec590463220
+const SERVICES_BLOCK_IDS: Readonly<Record<string, string>> = {
+  ka: 'rec2091645513',
+  ru: 'rec588623535',
+  en: 'rec590463220',
+};
+const servicesBlockId = SERVICES_BLOCK_IDS[lang];
+if (servicesBlockId && injectedHtml.includes(`id="${servicesBlockId}"`)) {
+  const blockStart = injectedHtml.lastIndexOf('<div', injectedHtml.indexOf(`id="${servicesBlockId}"`));
+  if (blockStart >= 0) {
+    // Find the closing </div> that matches this block by counting nesting
+    let depth = 0;
+    let pos = blockStart;
+    let blockEnd = -1;
+    while (pos < injectedHtml.length) {
+      if (injectedHtml.startsWith('<div', pos)) {
+        depth++;
+        pos += 4;
+      } else if (injectedHtml.startsWith('</div>', pos)) {
+        depth--;
+        if (depth === 0) {
+          blockEnd = pos + 6;
+          break;
+        }
+        pos += 6;
+      } else {
+        pos++;
+      }
+    }
+    if (blockEnd > blockStart) {
+      injectedHtml = injectedHtml.slice(0, blockStart) + generateServicesGridHtml(lang) + injectedHtml.slice(blockEnd);
+    }
+  }
+}
+
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = rawMainContent;
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);

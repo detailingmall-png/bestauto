@@ -30,6 +30,13 @@ export default defineType({
     defineField({name: 'descriptionKa', title: 'Краткое описание (КА)', type: 'text', rows: 3, group: 'content'}),
     defineField({name: 'descriptionRu', title: 'Краткое описание (РУ)', type: 'text', rows: 3, group: 'content'}),
     defineField({name: 'descriptionEn', title: 'Краткое описание (EN)', type: 'text', rows: 3, group: 'content'}),
+    // Homepage card fields
+    defineField({name: 'homepageTaglineKa', title: 'Тэглайн главной (КА)', type: 'string', group: 'homepage', description: 'Одна строка выгоды для карточки на главной'}),
+    defineField({name: 'homepageTaglineRu', title: 'Тэглайн главной (РУ)', type: 'string', group: 'homepage'}),
+    defineField({name: 'homepageTaglineEn', title: 'Тэглайн главной (EN)', type: 'string', group: 'homepage'}),
+    defineField({name: 'homepageTier', title: 'Тир на главной', type: 'number', group: 'homepage', description: '1 = крупная карточка (PPF, Керамика), 2 = компактная', initialValue: 2}),
+    defineField({name: 'homepageImage', title: 'Фото для главной', type: 'image', group: 'homepage', options: {hotspot: true}}),
+    defineField({name: 'showOnHomepage', title: 'Показывать на главной', type: 'boolean', group: 'homepage', initialValue: true}),
     // Pricing
     defineField({
       name: 'pricing',
@@ -113,6 +120,7 @@ export default defineType({
   ],
   groups: [
     {name: 'content', title: 'Контент'},
+    {name: 'homepage', title: 'Главная'},
     {name: 'pricing', title: 'Цены'},
     {name: 'faq', title: 'FAQ'},
     {name: 'gallery', title: 'Галерея'},

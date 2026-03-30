@@ -54,6 +54,22 @@ export interface ServicePreview {
   descriptionEn?: string
 }
 
+export interface HomepageService {
+  _id: string
+  slug: { current: string }
+  order: number
+  nameKa: string
+  nameRu: string
+  nameEn: string
+  homepageTaglineKa?: string
+  homepageTaglineRu?: string
+  homepageTaglineEn?: string
+  homepageTier: number
+  homepageImage?: {
+    asset: { _ref: string; url: string }
+  }
+}
+
 export interface PriceItem {
   _key: string
   nameKa: string
@@ -120,6 +136,22 @@ export async function getServices(): Promise<ServicePreview[]> {
       slug, order,
       nameKa, nameRu, nameEn,
       descriptionKa, descriptionRu, descriptionEn
+    }`
+  )
+}
+
+/** Fetch services marked for homepage display */
+export async function getHomepageServices(): Promise<HomepageService[]> {
+  if (!import.meta.env.PUBLIC_SANITY_PROJECT_ID) return []
+  return sanityClient.fetch<HomepageService[]>(
+    `*[_type == "service" && showOnHomepage == true] | order(homepageTier asc, order asc) {
+      _id, slug, order,
+      nameKa, nameRu, nameEn,
+      homepageTaglineKa, homepageTaglineRu, homepageTaglineEn,
+      homepageTier,
+      "homepageImage": homepageImage{
+        asset->{ _ref, url }
+      }
     }`
   )
 }
