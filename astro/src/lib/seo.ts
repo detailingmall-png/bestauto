@@ -32,17 +32,17 @@ const slugLangs: ReadonlyMap<string, LangSet> = (() => {
 // ──────────────────────────────────────────────
 
 const SERVICES: Readonly<Record<string, { name: Record<string, string>; min: string }>> = {
-  'polishing': { name: { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' }, min: '150' },
+  'polishing': { name: { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' }, min: '590' },
   'ceramiccoating': { name: { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' }, min: '400' },
-  'ppf-shield-wrapping': { name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' }, min: '500' },
+  'ppf-shield-wrapping': { name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' }, min: '2500' },
   'vinyl-wrapping': { name: { ka: 'ვინილით შეფუთვა', ru: 'Оклейка винилом', en: 'Vinyl Car Wrapping' }, min: '300' },
-  'interior-cleaning': { name: { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' }, min: '100' },
+  'interior-cleaning': { name: { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' }, min: '400' },
   'interior-restoration': { name: { ka: 'ინტერიერის რესტავრაცია', ru: 'Восстановление салона', en: 'Interior Restoration' }, min: '190' },
   'paintless-dent-repair': { name: { ka: 'ძარას ცივად გასწორება', ru: 'Удаление вмятин без покраски', en: 'Paintless Dent Repair' }, min: '250' },
   'carwash': { name: { ka: 'მანქანის სარეცხი', ru: 'Детейлинг мойка автомобиля', en: 'Premium Car Wash' }, min: '40' },
-  'auto-glass-tinting': { name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' }, min: '80' },
-  'windshield-repair': { name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' }, min: '30' },
-  'car-soundproofing': { name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' }, min: '200' },
+  'auto-glass-tinting': { name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' }, min: '130' },
+  'windshield-repair': { name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' }, min: '60' },
+  'car-soundproofing': { name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' }, min: '600' },
   'computer-diagnostics': { name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' }, min: '30' },
 };
 
