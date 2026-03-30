@@ -24,9 +24,9 @@ function sectionTitle(s: PriceSection, lang: Lang): string {
 }
 
 function itemName(item: PriceLineItem, lang: Lang): string {
-  if (lang === 'ru') return item.nameRu ?? '';
-  if (lang === 'ka') return item.nameKa ?? '';
-  return item.nameEn ?? '';
+  const name = lang === 'ru' ? item.nameRu : lang === 'ka' ? item.nameKa : item.nameEn;
+  // Fall back to RU name if translation is missing
+  return name || item.nameRu || '';
 }
 
 function buildRow(item: PriceLineItem, lang: Lang): string {
