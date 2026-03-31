@@ -199,15 +199,6 @@ if (lang === 'ru') {
       mainContent = mainContent.slice(0, divStart) + galleryReviewsRu + mainContent.slice(divStart);
     }
   }
-  // Add #contacts anchor directly before the contacts block (after all reordering)
-  {
-    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
-    if (contactsIdx >= 0) {
-      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
-      const contactsAnchor = '<a name="contacts" style="font-size:0;display:block;"></a>';
-      mainContent = mainContent.slice(0, divStart) + contactsAnchor + mainContent.slice(divStart);
-    }
-  }
   // Insert related-services block after contacts, before footer
   if (relatedBlockRu) {
     mainContent = insertBeforeFooter(mainContent, relatedBlockRu, ['rec603526076']);
@@ -428,6 +419,41 @@ if (baseSlug === '') {
     );
   }
 }
+
+// === Fix misplaced anchors after all block reordering ===
+// Tilda type-215 anchor-only blocks stay in their original positions when
+// content blocks are rearranged. Strip all old anchors for affected names
+// and re-insert them right before the correct content blocks.
+
+/** Remove every `<a name="...">` for the given anchor name, then insert
+ *  a fresh one right before the first `<div` that contains `targetMarker`.
+ *  If the target doesn't exist on this page, leave old anchors untouched. */
+function relocateAnchor(html: string, name: string, targetMarker: string): string {
+  // Only relocate if the target block exists on this page
+  if (!html.includes(targetMarker)) return html;
+  // Remove all occurrences of this anchor (both inline and inside content)
+  let result = html.replace(new RegExp(`<a name="${name}"[^>]*></a>`, 'g'), '');
+  // Insert before the target block
+  const idx = result.indexOf(targetMarker);
+  if (idx >= 0) {
+    const divStart = result.lastIndexOf('<div', idx);
+    if (divStart >= 0) {
+      result = result.slice(0, divStart)
+        + `<a name="${name}" style="font-size:0;display:block;"></a>`
+        + result.slice(divStart);
+    }
+  }
+  return result;
+}
+
+// #contacts → before contacts block (rec2091246563)
+mainContent = relocateAnchor(mainContent, 'contacts', 'id="rec2091246563"');
+
+// #reviews → before self-hosted reviews widget
+mainContent = relocateAnchor(mainContent, 'reviews', 'id="ba-reviews"');
+
+// #photo → before gallery
+mainContent = relocateAnchor(mainContent, 'photo', 'class="ba-gallery"');
 ---
 <TildaPageLayout
   headContent={headContent}
