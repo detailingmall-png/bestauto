@@ -145,7 +145,7 @@ if (servicesBlockId && injectedHtml.includes(`id="${servicesBlockId}"`)) {
 }
 
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
-let mainContent = rawMainContent;
+let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite schemas
