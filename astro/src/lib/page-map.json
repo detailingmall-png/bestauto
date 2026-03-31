@@ -503,14 +503,6 @@
     "lang": "en",
     "slug": "windshield-repair"
   },
-  "37046400": {
-    "file": "page37046400.html",
-    "url": "https://bestauto.ge/ru/ppf-shield-wrapping",
-    "path": "/ru/ppf-shield-wrapping",
-    "title": "Оклейка авто защитной пленкой PPF в Тбилиси — цены | BESTAUTO",
-    "lang": "ru",
-    "slug": "ppf-shield-wrapping"
-  },
   "37069115": {
     "file": "page37069115.html",
     "url": "https://bestauto.ge/ceramiccoating",
@@ -559,14 +551,6 @@
     "lang": "ru",
     "slug": "vinyl-wrapping"
   },
-  "37156611": {
-    "file": "page37156611.html",
-    "url": "https://bestauto.ge/en/ppf-shield-wrapping",
-    "path": "/en/ppf-shield-wrapping",
-    "title": "PPF Paint Protection Film in Tbilisi | BESTAUTO",
-    "lang": "en",
-    "slug": "ppf-shield-wrapping"
-  },
   "37185964": {
     "file": "page37185964.html",
     "url": "https://bestauto.ge/ru/auto-glass-tinting",
@@ -590,14 +574,6 @@
     "title": "Беспокрасочное удаление вмятин (PDR) в Тбилиси",
     "lang": "ru",
     "slug": "paintless-dent-repair"
-  },
-  "37329597": {
-    "file": "page37329597.html",
-    "url": "https://bestauto.ge/ppf-shield-wrapping",
-    "path": "/ppf-shield-wrapping",
-    "title": "PPF დამცავი ფირი თბილისი — BESTAUTO | XPEL · 3M",
-    "lang": "ka",
-    "slug": "ppf-shield-wrapping"
   },
   "37329658": {
     "file": "page37329658.html",
@@ -1713,10 +1689,26 @@
   },
   "ppf_new": {
     "file": "page_ppf_new.html",
-    "url": "https://bestauto.ge/ru/ppf-new",
-    "path": "/ru/ppf-new",
+    "url": "https://bestauto.ge/ru/ppf-shield-wrapping",
+    "path": "/ru/ppf-shield-wrapping",
     "title": "Оклейка авто защитной пленкой PPF в Тбилиси — цены | BESTAUTO",
     "lang": "ru",
-    "slug": "ppf-new"
+    "slug": "ppf-shield-wrapping"
+  },
+  "ppf_new_en": {
+    "file": "page_ppf_new_en.html",
+    "url": "https://bestauto.ge/en/ppf-shield-wrapping",
+    "path": "/en/ppf-shield-wrapping",
+    "title": "PPF Paint Protection Film in Tbilisi — Prices | BESTAUTO",
+    "lang": "en",
+    "slug": "ppf-shield-wrapping"
+  },
+  "ppf_new_ka": {
+    "file": "page_ppf_new_ka.html",
+    "url": "https://bestauto.ge/ppf-shield-wrapping",
+    "path": "/ppf-shield-wrapping",
+    "title": "PPF დამცავი ფირი თბილისში — ფასები | BESTAUTO",
+    "lang": "ka",
+    "slug": "ppf-shield-wrapping"
   }
 }

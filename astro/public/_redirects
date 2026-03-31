@@ -13,6 +13,10 @@
 # Add page-ID → slug redirects here if Google Search Console shows old IDs
 # /page36438811  /ru/  301
 
+# ── PPF new page redirect ───────────────────────────────────────
+/ru/ppf-new  /ru/ppf-shield-wrapping  301
+/ru/ppf-new/  /ru/ppf-shield-wrapping  301
+
 # ── Language root shortcuts ──────────────────────────────────────
 # /russian  /ru/  301
 # /english  /en/  301
