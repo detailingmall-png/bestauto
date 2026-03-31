@@ -355,7 +355,7 @@ if (baseSlug === '') {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  z-index: 1;
 }
 .ba-hero-video--mobile { display: none; }
 @media screen and (max-width: 639px) {
@@ -372,11 +372,21 @@ if (baseSlug === '') {
       const carrierDivStart = mainContent.lastIndexOf('<div', carrierIdx);
       mainContent = mainContent.slice(0, carrierDivStart) + heroVideoHtml + mainContent.slice(carrierDivStart);
     }
-    // Hide the carrier background image (video replaces it)
-    const bgPattern = new RegExp(
-      `(#${heroRecId}\\s+\\.t396__carrier\\{[^}]*)(background-image:url\\('[^']*'\\);)`
+    // Hide the carrier background image — remove data-original so Tilda JS can't re-apply it
+    mainContent = mainContent.replace(
+      new RegExp(`(id="${heroRecId}"[\\s\\S]*?class="t396__carrier[^"]*"[^>]*?)data-original="[^"]*"`),
+      '$1data-original=""'
     );
-    mainContent = mainContent.replace(bgPattern, '$1background-image:none;');
+    // Also force background-image:none via inline style on the carrier
+    mainContent = mainContent.replace(
+      new RegExp(`(id="${heroRecId}"[\\s\\S]*?<div class="t396__carrier[^"]*")`),
+      '$1 style="background-image:none!important"'
+    );
+    // Bump filter z-index above video
+    mainContent = mainContent.replace(
+      new RegExp(`(#${heroRecId}\\s+\\.t396__filter\\s*\\{)`),
+      '$1z-index:2;'
+    );
   }
 }
 ---
