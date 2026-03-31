@@ -333,12 +333,13 @@ mainContent = mainContent.replace(
 
 // Homepage hero: replace background image with video
 if (baseSlug === '') {
-  const HERO_REC_IDS: Readonly<Record<string, string>> = {
-    ka: 'rec2091645383',
-    ru: 'rec593575375',
-    en: 'rec593573287',
+  // Some pages have separate hero blocks for desktop/mobile (e.g. RU: split at 1200px)
+  const HERO_REC_IDS: Readonly<Record<string, readonly string[]>> = {
+    ka: ['rec2091645383'],
+    ru: ['rec593575375', 'rec1828633051'],
+    en: ['rec593573287'],
   };
-  const heroRecId = HERO_REC_IDS[lang] ?? '';
+  const heroRecIds = HERO_REC_IDS[lang] ?? [];
 
   const heroVideoHtml = `
 <video class="ba-hero-video ba-hero-video--desktop" autoplay muted loop playsinline preload="auto">
@@ -371,19 +372,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>`;
 
-  if (heroRecId && mainContent.includes(`id="${heroRecId}"`)) {
+  let videoStyleInjected = false;
+  for (const heroRecId of heroRecIds) {
+    if (!mainContent.includes(`id="${heroRecId}"`)) continue;
+
+    // Only inject <style> and <script> once (first hero block), video tags in each block
+    const videoOnly = `
+<video class="ba-hero-video ba-hero-video--desktop" autoplay muted loop playsinline preload="auto">
+  <source src="/hero-desktop.mp4" type="video/mp4">
+</video>
+<video class="ba-hero-video ba-hero-video--mobile" autoplay muted loop playsinline preload="auto">
+  <source src="/hero-mobile.mp4" type="video/mp4">
+</video>`;
+    const injection = videoStyleInjected ? videoOnly : heroVideoHtml;
+    videoStyleInjected = true;
+
     // Insert video inside the artboard, right before the first .t396__carrier in this block
     const heroIdx = mainContent.indexOf(`id="${heroRecId}"`);
     const carrierIdx = mainContent.indexOf('class="t396__carrier', heroIdx);
     if (carrierIdx >= 0) {
       const carrierDivStart = mainContent.lastIndexOf('<div', carrierIdx);
-      mainContent = mainContent.slice(0, carrierDivStart) + heroVideoHtml + mainContent.slice(carrierDivStart);
+      mainContent = mainContent.slice(0, carrierDivStart) + injection + mainContent.slice(carrierDivStart);
     }
     // Completely hide the carrier div — prevents Tilda JS from re-applying background on mobile
-    mainContent = mainContent.replace(
-      new RegExp(`(id="${heroRecId}"[\\s\\S]*?<div class="t396__carrier[^"]*")`),
-      '$1 style="display:none!important"'
-    );
+    // Find the carrier div within this hero block and replace/add display:none
+    const heroBlockIdx = mainContent.indexOf(`id="${heroRecId}"`);
+    const carrierDivIdx = mainContent.indexOf('<div class="t396__carrier', heroBlockIdx);
+    if (carrierDivIdx >= 0) {
+      const carrierEndIdx = mainContent.indexOf('>', carrierDivIdx);
+      let carrierTag = mainContent.slice(carrierDivIdx, carrierEndIdx + 1);
+      // Remove any existing style attributes (from promoteHeroBackground etc.)
+      carrierTag = carrierTag.replace(/\s*style="[^"]*"/g, '');
+      // Add our display:none
+      carrierTag = carrierTag.replace('>', ' style="display:none!important">');
+      mainContent = mainContent.slice(0, carrierDivIdx) + carrierTag + mainContent.slice(carrierEndIdx + 1);
+    }
     // Bump filter z-index above video
     mainContent = mainContent.replace(
       new RegExp(`(#${heroRecId}\\s+\\.t396__filter\\s*\\{)`),
