@@ -362,7 +362,14 @@ if (baseSlug === '') {
   .ba-hero-video--desktop { display: none; }
   .ba-hero-video--mobile { display: block; }
 }
-</style>`;
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ba-hero-video').forEach(function(v) {
+    if (v.offsetWidth > 0) v.play().catch(function(){});
+  });
+});
+</script>`;
 
   if (heroRecId && mainContent.includes(`id="${heroRecId}"`)) {
     // Insert video inside the artboard, right before the first .t396__carrier in this block
