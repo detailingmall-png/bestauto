@@ -140,8 +140,8 @@ export function deferBlockingScripts(head: string): string {
       (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
     )
     .replace(
-      /(<script\s[^>]*src="\/?js\/jquery[^"]*"[^>]*)(>)/g,
-      (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
+      /<script\s[^>]*src="\/?js\/jquery[^"]*"[^>]*>\s*<\/script>/g,
+      '<script>window.jQuery=function(){}</script>'
     );
 }
 
