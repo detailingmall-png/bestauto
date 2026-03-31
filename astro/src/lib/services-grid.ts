@@ -23,7 +23,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       ru: 'Невидимая защита от сколов, царапин и UV — гарантия 10 лет',
       en: 'Invisible protection from chips, scratches & UV — 10-year warranty',
     },
-    minPrice: '2500',
+    minPrice: '350',
     image: '/images/tild3336-3336-4337-b939-633732303363__2023-07-04_231140.webp',
   },
   {
@@ -54,13 +54,13 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'ceramiccoating',
     tier: 2,
-    name: { ka: 'კერამიკული საფარი', ru: 'Керამическое покрытие', en: 'Ceramic Coating' },
+    name: { ka: 'კერამიკული საფარი', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
     tagline: {
       ka: '9H ნანოსაფარი — ჰიდროფობიური ეფექტი და 3-5 წლის დაცვა',
       ru: '9H нано-покрытие — гидрофобный эффект и защита 3-5 лет',
       en: '9H nano-coating — hydrophobic effect & 3-5 year protection',
     },
-    minPrice: '400',
+    minPrice: '600',
     image: '/images/tild3834-6636-4839-a464-316639393139__ceramic.webp',
   },
   {
@@ -114,7 +114,7 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'windshield-repair',
     tier: 2,
-    name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лობового стекла', en: 'Windshield Repair' },
+    name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' },
     tagline: {
       ka: 'ჩიპის ან ბზარის სწრაფი შეკეთება — მინის შეცვლის გარეშე',
       ru: 'Быстрый ремонт скола или трещины — без замены стекла',
