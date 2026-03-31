@@ -9,14 +9,16 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
   X-XSS-Protection: 1; mode=block
 
-# ── Immutable cache for fingerprinted assets ─────────────────────
-# Tilda CSS/JS filenames include page IDs so they are effectively versioned
+# ── CSS/JS: long cache with revalidation ─────────────────────────
+# Tilda filenames are NOT content-hashed; stale-while-revalidate
+# lets browsers use cached copy while fetching fresh version
 /css/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /js/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
+# ── Fonts: truly immutable (content never changes) ───────────────
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 

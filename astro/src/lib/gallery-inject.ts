@@ -26,6 +26,11 @@ const GALLERY_SCRIPT = `<script>(function(){var lbEl=document.getElementById('ba
 
 const LIGHTBOX_HTML = `<div class="ba-lb" id="ba-lb" role="dialog" aria-modal="true"><img class="ba-lb__img" src="" alt=""><button class="ba-lb__btn ba-lb__close" aria-label="Close">&#215;</button><button class="ba-lb__btn ba-lb__prev" aria-label="Previous">&#8249;</button><button class="ba-lb__btn ba-lb__next" aria-label="Next">&#8250;</button></div>`;
 
+/** Escape a string for safe insertion into an HTML attribute. */
+function escAttr(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 /** Normalises a Tilda image path to an absolute URL path (leading slash). */
 function normalisePath(p: string): string {
   if (!p || p.startsWith('/') || p.startsWith('http')) return p;
@@ -46,11 +51,11 @@ function parseGalleryImages(block: string): Array<{ full: string; alt: string }>
 
 function buildGalleryHtml(images: Array<{ full: string; alt: string }>): string {
   const gridItems = images.map(({ full, alt }) =>
-    `<div class="ba-gallery__item" data-full="${full}"><img src="${full}" alt="${alt}" loading="lazy" decoding="async"></div>`
+    `<div class="ba-gallery__item" data-full="${escAttr(full)}"><img src="${escAttr(full)}" alt="${escAttr(alt)}" loading="lazy" decoding="async"></div>`
   ).join('');
 
   const sliderSlides = images.map(({ full, alt }, i) =>
-    `<div class="ba-slider__slide"><img src="${full}" alt="${alt}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async"></div>`
+    `<div class="ba-slider__slide"><img src="${escAttr(full)}" alt="${escAttr(alt)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async"></div>`
   ).join('');
 
   const sliderDots = images.map((_, i) =>

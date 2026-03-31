@@ -7,6 +7,12 @@ import { join } from 'node:path';
 import { IMG_DIMS } from './image-dims';
 import { WEBP_AVAILABLE } from './webp-available';
 
+/** Delay (ms) before loading deferred analytics and non-critical scripts. */
+const DEFER_DELAY_MS = 7000;
+
+/** Max iterations when removing multiple blocks matching a search term. */
+const MAX_BLOCK_REMOVAL_ITERATIONS = 20;
+
 // Read critical CSS at module load (4KB, stable across builds)
 const GRID_CSS = readFileSync(
   join(process.cwd(), 'public/css/tilda-grid-3.0.min.css'),
@@ -220,7 +226,7 @@ export function expandCssBackgroundPlaceholders(content: string): string {
  */
 export function promoteHeroBackground(body: string): string {
   return body.replace(
-    /(<div\b[^>]*\bt-bgimg\b[^>]*data-original="([^"]+)")/i,
+    /(<div\b[^>]*\bt-bgimg\b[^>]*data-original="([^"]+)")/gi,
     (match, fullTag, imgUrl) => {
       if (/\bstyle="/.test(fullTag)) {
         return fullTag.replace(
@@ -385,7 +391,7 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,7000);})();</script>`;
+  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,${DEFER_DELAY_MS});})();</script>`;
 
   return processed + loader;
 }
@@ -437,7 +443,7 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,7000);})();</script>`;
+  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,${DEFER_DELAY_MS});})();</script>`;
 
   return processed + loader;
 }
@@ -470,7 +476,7 @@ export function deferNonCriticalScripts(content: string): string {
 
   if (deferred.length === 0) return content;
 
-  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,7000);})();</script>`;
+  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,${DEFER_DELAY_MS});})();</script>`;
 
   return processed + loader;
 }
@@ -523,7 +529,7 @@ export function removeRecordBlock(content: string, recId: string): string {
  */
 export function removeBlockContaining(content: string, searchTerm: string): string {
   let result = content;
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < MAX_BLOCK_REMOVAL_ITERATIONS; i++) {
     const termIdx = result.indexOf(searchTerm);
     if (termIdx < 0) break;
     const before = result.slice(0, termIdx);
