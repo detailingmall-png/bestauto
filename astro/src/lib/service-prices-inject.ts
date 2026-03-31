@@ -49,10 +49,19 @@ function itemName(item: PriceLineItem, lang: Lang): string {
   return name || item.nameRu || '';
 }
 
+function localizePrice(raw: string, lang: Lang): string {
+  if (lang === 'ru') return raw;
+  // "от 7500 Gel" → "from 7500 Gel" (EN) / "7500 Gel-დან" (KA)
+  const m = raw.match(/^от\s+(.+)/);
+  if (!m) return raw;
+  if (lang === 'en') return `from ${m[1]}`;
+  return `${m[1]}-დან`;
+}
+
 function buildRows(section: PriceSection, lang: Lang): string {
   return (section.items ?? []).map(item => {
     const name = esc(itemName(item, lang));
-    const price = esc(item.price ?? '');
+    const price = esc(localizePrice(item.price ?? '', lang));
     const nameStyle = item.isPromo ? ' style="color: rgb(228, 201, 126);"' : '';
     return `<div class="t681__row t-row" style="margin-bottom:40px;"><div class="t-col t-col_3 t-prefix_2"><div class="t681__title t-heading t-heading_sm"${nameStyle}>${name}</div></div><div class="t-col t-col_4 "><div class="t681__tablewrapper"><div class="t681__textwrapper"><div class="t681__descr t-descr t-descr_sm">-------------------------</div></div><div class="t681__pricewrapper"><div class="t681__price t-heading t-heading_sm">${price}</div></div></div></div></div>`;
   }).join('');
