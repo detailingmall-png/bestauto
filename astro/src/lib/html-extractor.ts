@@ -373,14 +373,14 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,12000);})();</script>`;
+  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,7000);})();</script>`;
 
   return processed + loader;
 }
 
 /**
  * Delay heavy third-party analytics scripts (GTM, GA4, Yandex Metrika,
- * Facebook Pixel external) using requestIdleCallback + 12s fallback.
+ * Facebook Pixel external) using requestIdleCallback + 7s fallback.
  * Inline dataLayer/gtag/ym/fbq stubs remain so queued calls are preserved.
  */
 export function delayAnalytics(block: string): string {
@@ -425,7 +425,7 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,12000);})();</script>`;
+  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,7000);})();</script>`;
 
   return processed + loader;
 }
@@ -433,7 +433,7 @@ export function delayAnalytics(block: string): string {
 /**
  * Defer non-critical Tilda scripts via requestIdleCallback.
  * Heavy scripts (forms, zoom, masonry, video) in <head> are not needed until
- * user interacts. Replace <script src="..."> with idle loader (12s timeout).
+ * user interacts. Replace <script src="..."> with idle loader (7s timeout).
  */
 export function deferNonCriticalScripts(content: string): string {
   const DEFER_SCRIPTS = [
@@ -458,7 +458,7 @@ export function deferNonCriticalScripts(content: string): string {
 
   if (deferred.length === 0) return content;
 
-  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,12000);})();</script>`;
+  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,7000);})();</script>`;
 
   return processed + loader;
 }
