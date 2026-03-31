@@ -1,5 +1,5 @@
 // Auto-generated list of images with WebP versions available.
-// Regenerate by running: node scripts/gen-webp-set.js
+// Regenerate by running: python3 scripts/gen-webp-set.py
 export const WEBP_AVAILABLE = new Set<string>([
   "tild3030-3736-4331-b538-356531303464__-__resizeb__20x__shutterstock_2039932",
   "tild3030-3736-4331-b538-356531303464__shutterstock_2039932",
