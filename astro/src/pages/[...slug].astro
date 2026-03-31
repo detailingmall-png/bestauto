@@ -199,6 +199,15 @@ if (lang === 'ru') {
       mainContent = mainContent.slice(0, divStart) + galleryReviewsRu + mainContent.slice(divStart);
     }
   }
+  // Add #contacts anchor directly before the contacts block (after all reordering)
+  {
+    const contactsIdx = mainContent.indexOf('id="rec2091246563"');
+    if (contactsIdx >= 0) {
+      const divStart = mainContent.lastIndexOf('<div', contactsIdx);
+      const contactsAnchor = '<a name="contacts" style="font-size:0;display:block;"></a>';
+      mainContent = mainContent.slice(0, divStart) + contactsAnchor + mainContent.slice(divStart);
+    }
+  }
   // Insert related-services block after contacts, before footer
   if (relatedBlockRu) {
     mainContent = insertBeforeFooter(mainContent, relatedBlockRu, ['rec603526076']);
