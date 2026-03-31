@@ -379,15 +379,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const carrierDivStart = mainContent.lastIndexOf('<div', carrierIdx);
       mainContent = mainContent.slice(0, carrierDivStart) + heroVideoHtml + mainContent.slice(carrierDivStart);
     }
-    // Hide the carrier background image — remove data-original so Tilda JS can't re-apply it
-    mainContent = mainContent.replace(
-      new RegExp(`(id="${heroRecId}"[\\s\\S]*?class="t396__carrier[^"]*"[^>]*?)data-original="[^"]*"`),
-      '$1data-original=""'
-    );
-    // Also force background-image:none via inline style on the carrier
+    // Completely hide the carrier div — prevents Tilda JS from re-applying background on mobile
     mainContent = mainContent.replace(
       new RegExp(`(id="${heroRecId}"[\\s\\S]*?<div class="t396__carrier[^"]*")`),
-      '$1 style="background-image:none!important"'
+      '$1 style="display:none!important"'
     );
     // Bump filter z-index above video
     mainContent = mainContent.replace(
