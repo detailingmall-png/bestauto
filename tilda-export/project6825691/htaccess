@@ -1,0 +1,647 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page130343853.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://bestauto\.ge/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.bestauto.ge [NC]
+RewriteRule ^(.*)$ https://bestauto\.ge/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^en/blog/car-detailing-guide$ page129336113.html [NC]
+RewriteRule ^en/blog/car-detailing-guide/$ page129336113.html [NC]
+
+RewriteRule ^ru/ppf-shield-wrapping/ppf-film-benefits$ page61547409.html [NC]
+RewriteRule ^ru/ppf-shield-wrapping/ppf-film-benefits/$ page61547409.html [NC]
+
+RewriteRule ^ru/blog/car-detailing-guide$ page129335723.html [NC]
+RewriteRule ^ru/blog/car-detailing-guide/$ page129335723.html [NC]
+
+RewriteRule ^blog/car-detailing-guide$ page129335883.html [NC]
+RewriteRule ^blog/car-detailing-guide/$ page129335883.html [NC]
+
+RewriteRule ^prices$ page36554377.html [NC]
+RewriteRule ^prices/$ page36554377.html [NC]
+
+RewriteRule ^polishing$ page37069117.html [NC]
+RewriteRule ^polishing/$ page37069117.html [NC]
+
+RewriteRule ^ceramiccoating$ page37069115.html [NC]
+RewriteRule ^ceramiccoating/$ page37069115.html [NC]
+
+RewriteRule ^interior-cleaning$ page37069123.html [NC]
+RewriteRule ^interior-cleaning/$ page37069123.html [NC]
+
+RewriteRule ^interior-restoration$ page37069119.html [NC]
+RewriteRule ^interior-restoration/$ page37069119.html [NC]
+
+RewriteRule ^windshield-repair$ page37069127.html [NC]
+RewriteRule ^windshield-repair/$ page37069127.html [NC]
+
+RewriteRule ^ppf-shield-wrapping$ page37329597.html [NC]
+RewriteRule ^ppf-shield-wrapping/$ page37329597.html [NC]
+
+RewriteRule ^vinyl-wrapping$ page37334532.html [NC]
+RewriteRule ^vinyl-wrapping/$ page37334532.html [NC]
+
+RewriteRule ^auto-glass-tinting$ page37387198.html [NC]
+RewriteRule ^auto-glass-tinting/$ page37387198.html [NC]
+
+RewriteRule ^car-soundproofing$ page37387205.html [NC]
+RewriteRule ^car-soundproofing/$ page37387205.html [NC]
+
+RewriteRule ^paintless-dent-repair$ page37387217.html [NC]
+RewriteRule ^paintless-dent-repair/$ page37387217.html [NC]
+
+RewriteRule ^blog$ page37602384.html [NC]
+RewriteRule ^blog/$ page37602384.html [NC]
+
+RewriteRule ^computer-diagnostics$ page38016286.html [NC]
+RewriteRule ^computer-diagnostics/$ page38016286.html [NC]
+
+RewriteRule ^carwash$ page55695771.html [NC]
+RewriteRule ^carwash/$ page55695771.html [NC]
+
+RewriteRule ^qr$ page44491807.html [NC]
+RewriteRule ^qr/$ page44491807.html [NC]
+
+RewriteRule ^ru/polishing/polishing-after-repair$ page37354333.html [NC]
+RewriteRule ^ru/polishing/polishing-after-repair/$ page37354333.html [NC]
+
+RewriteRule ^ru/ceramiccoating/ceramic-coating-for-car$ page37626293.html [NC]
+RewriteRule ^ru/ceramiccoating/ceramic-coating-for-car/$ page37626293.html [NC]
+
+RewriteRule ^ru/interior-cleaning/interior-cleaning-for-auto$ page37739342.html [NC]
+RewriteRule ^ru/interior-cleaning/interior-cleaning-for-auto/$ page37739342.html [NC]
+
+RewriteRule ^ru/interior-restoration/why-restore-interior-elements$ page37794273.html [NC]
+RewriteRule ^ru/interior-restoration/why-restore-interior-elements/$ page37794273.html [NC]
+
+RewriteRule ^ru/ppf-shield-wrapping/ppf-film-for-cars-protection$ page37880280.html [NC]
+RewriteRule ^ru/ppf-shield-wrapping/ppf-film-for-cars-protection/$ page37880280.html [NC]
+
+RewriteRule ^ru/vinyl-wrapping/benefits-of-vinyl-wraps$ page37935297.html [NC]
+RewriteRule ^ru/vinyl-wrapping/benefits-of-vinyl-wraps/$ page37935297.html [NC]
+
+RewriteRule ^ru/paintless-dent-repair/pdr-method$ page38043378.html [NC]
+RewriteRule ^ru/paintless-dent-repair/pdr-method/$ page38043378.html [NC]
+
+RewriteRule ^ru/windshield-repair/replace-or-repair$ page38099075.html [NC]
+RewriteRule ^ru/windshield-repair/replace-or-repair/$ page38099075.html [NC]
+
+RewriteRule ^ru/auto-glass-tinting/top-11-reasons$ page38206312.html [NC]
+RewriteRule ^ru/auto-glass-tinting/top-11-reasons/$ page38206312.html [NC]
+
+RewriteRule ^ru/car-soundproofing/why-soundproof-car$ page38261911.html [NC]
+RewriteRule ^ru/car-soundproofing/why-soundproof-car/$ page38261911.html [NC]
+
+RewriteRule ^ru/computer-diagnostics/why-use-car-diagnostic-test$ page38371077.html [NC]
+RewriteRule ^ru/computer-diagnostics/why-use-car-diagnostic-test/$ page38371077.html [NC]
+
+RewriteRule ^ru/polishing/headlight-polishing$ page38424408.html [NC]
+RewriteRule ^ru/polishing/headlight-polishing/$ page38424408.html [NC]
+
+RewriteRule ^ru/ceramiccoating/ceramic-for-car-glass$ page38584230.html [NC]
+RewriteRule ^ru/ceramiccoating/ceramic-for-car-glass/$ page38584230.html [NC]
+
+RewriteRule ^ru/interior-cleaning/engine-room-cleaning$ page38687948.html [NC]
+RewriteRule ^ru/interior-cleaning/engine-room-cleaning/$ page38687948.html [NC]
+
+RewriteRule ^ru/interior-restoration/steering-wheel-restoration$ page38741194.html [NC]
+RewriteRule ^ru/interior-restoration/steering-wheel-restoration/$ page38741194.html [NC]
+
+RewriteRule ^ru/ppf-shield-wrapping/ppf-benefits$ page38848576.html [NC]
+RewriteRule ^ru/ppf-shield-wrapping/ppf-benefits/$ page38848576.html [NC]
+
+RewriteRule ^ru/vinyl-wrapping/protection-against-uv-rays-scratches$ page38901771.html [NC]
+RewriteRule ^ru/vinyl-wrapping/protection-against-uv-rays-scratches/$ page38901771.html [NC]
+
+RewriteRule ^ru/paintless-dent-repair/pdr-after-hail$ page39006216.html [NC]
+RewriteRule ^ru/paintless-dent-repair/pdr-after-hail/$ page39006216.html [NC]
+
+RewriteRule ^ru/windshield-repair/windshield-repair-benefits$ page39061588.html [NC]
+RewriteRule ^ru/windshield-repair/windshield-repair-benefits/$ page39061588.html [NC]
+
+RewriteRule ^ru/auto-glass-tinting/vehicle-tinting-techniques$ page39331357.html [NC]
+RewriteRule ^ru/auto-glass-tinting/vehicle-tinting-techniques/$ page39331357.html [NC]
+
+RewriteRule ^ru/car-soundproofing/noisemakers-and-wayouts$ page39384500.html [NC]
+RewriteRule ^ru/car-soundproofing/noisemakers-and-wayouts/$ page39384500.html [NC]
+
+RewriteRule ^ru/computer-diagnostics/car-diagnostic-test-stages-and-methods$ page39531566.html [NC]
+RewriteRule ^ru/computer-diagnostics/car-diagnostic-test-stages-and-methods/$ page39531566.html [NC]
+
+RewriteRule ^ru/polishing/car-interior-polishing$ page39735634.html [NC]
+RewriteRule ^ru/polishing/car-interior-polishing/$ page39735634.html [NC]
+
+RewriteRule ^ru/ceramiccoating/interior-ceramic-coating$ page39853826.html [NC]
+RewriteRule ^ru/ceramiccoating/interior-ceramic-coating/$ page39853826.html [NC]
+
+RewriteRule ^ru/interior-cleaning/car-interior-disinfection$ page39941406.html [NC]
+RewriteRule ^ru/interior-cleaning/car-interior-disinfection/$ page39941406.html [NC]
+
+RewriteRule ^ru/interior-restoration/restoring-car-seats$ page40122483.html [NC]
+RewriteRule ^ru/interior-restoration/restoring-car-seats/$ page40122483.html [NC]
+
+RewriteRule ^ru/ppf-shield-wrapping/service-on-ppf-wrapped-car$ page40249617.html [NC]
+RewriteRule ^ru/ppf-shield-wrapping/service-on-ppf-wrapped-car/$ page40249617.html [NC]
+
+RewriteRule ^ru/vinyl-wrapping/hints-for-vinyl-wrapped-cars$ page40311681.html [NC]
+RewriteRule ^ru/vinyl-wrapping/hints-for-vinyl-wrapped-cars/$ page40311681.html [NC]
+
+RewriteRule ^ru/paintless-dent-repair/pdr-guidelines-and-techniques$ page40418526.html [NC]
+RewriteRule ^ru/paintless-dent-repair/pdr-guidelines-and-techniques/$ page40418526.html [NC]
+
+RewriteRule ^ru/windshield-repair/efficiency-of-windshield-repair$ page40487726.html [NC]
+RewriteRule ^ru/windshield-repair/efficiency-of-windshield-repair/$ page40487726.html [NC]
+
+RewriteRule ^ru/auto-glass-tinting/window-tinting-care$ page40634269.html [NC]
+RewriteRule ^ru/auto-glass-tinting/window-tinting-care/$ page40634269.html [NC]
+
+RewriteRule ^ru/car-soundproofing/soundrpoofing-process$ page40699250.html [NC]
+RewriteRule ^ru/car-soundproofing/soundrpoofing-process/$ page40699250.html [NC]
+
+RewriteRule ^ru/computer-diagnostics/errors-to-find$ page40838369.html [NC]
+RewriteRule ^ru/computer-diagnostics/errors-to-find/$ page40838369.html [NC]
+
+RewriteRule ^ru/polishing/car-body-polishing$ page40904632.html [NC]
+RewriteRule ^ru/polishing/car-body-polishing/$ page40904632.html [NC]
+
+RewriteRule ^ru/ceramiccoating/technology-and-process$ page41489985.html [NC]
+RewriteRule ^ru/ceramiccoating/technology-and-process/$ page41489985.html [NC]
+
+RewriteRule ^ru/interior-cleaning/car-interior-detailing-basics$ page41664618.html [NC]
+RewriteRule ^ru/interior-cleaning/car-interior-detailing-basics/$ page41664618.html [NC]
+
+RewriteRule ^ru/interior-restoration/plastic-elements-restoration$ page41734485.html [NC]
+RewriteRule ^ru/interior-restoration/plastic-elements-restoration/$ page41734485.html [NC]
+
+RewriteRule ^ru/ppf-shield-wrapping/strength-and-useful-life-of-ppf$ page41931643.html [NC]
+RewriteRule ^ru/ppf-shield-wrapping/strength-and-useful-life-of-ppf/$ page41931643.html [NC]
+
+RewriteRule ^ru/vinyl-wrapping/car-body-color-with-vinyl-wrap$ page45762695.html [NC]
+RewriteRule ^ru/vinyl-wrapping/car-body-color-with-vinyl-wrap/$ page45762695.html [NC]
+
+RewriteRule ^ru/auto-glass-tinting/legal-aspects-of-tinting-in-georgia$ page50854645.html [NC]
+RewriteRule ^ru/auto-glass-tinting/legal-aspects-of-tinting-in-georgia/$ page50854645.html [NC]
+
+RewriteRule ^ru$ page36438811.html [NC]
+RewriteRule ^ru/$ page36438811.html [NC]
+
+RewriteRule ^ru/prices$ page36528485.html [NC]
+RewriteRule ^ru/prices/$ page36528485.html [NC]
+
+RewriteRule ^ru/ceramiccoating$ page36860233.html [NC]
+RewriteRule ^ru/ceramiccoating/$ page36860233.html [NC]
+
+RewriteRule ^ru/polishing$ page36909398.html [NC]
+RewriteRule ^ru/polishing/$ page36909398.html [NC]
+
+RewriteRule ^ru/interior-restoration$ page36918868.html [NC]
+RewriteRule ^ru/interior-restoration/$ page36918868.html [NC]
+
+RewriteRule ^ru/interior-cleaning$ page36940808.html [NC]
+RewriteRule ^ru/interior-cleaning/$ page36940808.html [NC]
+
+RewriteRule ^ru/windshield-repair$ page36976392.html [NC]
+RewriteRule ^ru/windshield-repair/$ page36976392.html [NC]
+
+RewriteRule ^ru/ppf-shield-wrapping$ page37046400.html [NC]
+RewriteRule ^ru/ppf-shield-wrapping/$ page37046400.html [NC]
+
+RewriteRule ^ru/vinyl-wrapping$ page37146793.html [NC]
+RewriteRule ^ru/vinyl-wrapping/$ page37146793.html [NC]
+
+RewriteRule ^ru/auto-glass-tinting$ page37185964.html [NC]
+RewriteRule ^ru/auto-glass-tinting/$ page37185964.html [NC]
+
+RewriteRule ^ru/car-soundproofing$ page37185977.html [NC]
+RewriteRule ^ru/car-soundproofing/$ page37185977.html [NC]
+
+RewriteRule ^ru/paintless-dent-repair$ page37217237.html [NC]
+RewriteRule ^ru/paintless-dent-repair/$ page37217237.html [NC]
+
+RewriteRule ^ru/computer-diagnostics$ page37767785.html [NC]
+RewriteRule ^ru/computer-diagnostics/$ page37767785.html [NC]
+
+RewriteRule ^ru/blog$ page37357691.html [NC]
+RewriteRule ^ru/blog/$ page37357691.html [NC]
+
+RewriteRule ^auto-polishing$ page38875981.html [NC]
+RewriteRule ^auto-polishing/$ page38875981.html [NC]
+
+RewriteRule ^ru/carwash$ page54710549.html [NC]
+RewriteRule ^ru/carwash/$ page54710549.html [NC]
+
+RewriteRule ^en$ page36554132.html [NC]
+RewriteRule ^en/$ page36554132.html [NC]
+
+RewriteRule ^en/prices$ page36554376.html [NC]
+RewriteRule ^en/prices/$ page36554376.html [NC]
+
+RewriteRule ^en/ceramiccoating$ page36963967.html [NC]
+RewriteRule ^en/ceramiccoating/$ page36963967.html [NC]
+
+RewriteRule ^en/interior-restoration$ page36963981.html [NC]
+RewriteRule ^en/interior-restoration/$ page36963981.html [NC]
+
+RewriteRule ^en/polishing$ page36963983.html [NC]
+RewriteRule ^en/polishing/$ page36963983.html [NC]
+
+RewriteRule ^en/interior-cleaning$ page36963977.html [NC]
+RewriteRule ^en/interior-cleaning/$ page36963977.html [NC]
+
+RewriteRule ^en/windshield-repair$ page37043952.html [NC]
+RewriteRule ^en/windshield-repair/$ page37043952.html [NC]
+
+RewriteRule ^en/ppf-shield-wrapping$ page37156611.html [NC]
+RewriteRule ^en/ppf-shield-wrapping/$ page37156611.html [NC]
+
+RewriteRule ^en/vinyl-wrapping$ page37329658.html [NC]
+RewriteRule ^en/vinyl-wrapping/$ page37329658.html [NC]
+
+RewriteRule ^en/paintless-dent-repair$ page37355650.html [NC]
+RewriteRule ^en/paintless-dent-repair/$ page37355650.html [NC]
+
+RewriteRule ^en/auto-glass-tinting$ page37355656.html [NC]
+RewriteRule ^en/auto-glass-tinting/$ page37355656.html [NC]
+
+RewriteRule ^en/car-soundproofing$ page37355654.html [NC]
+RewriteRule ^en/car-soundproofing/$ page37355654.html [NC]
+
+RewriteRule ^en/blog$ page37416946.html [NC]
+RewriteRule ^en/blog/$ page37416946.html [NC]
+
+RewriteRule ^en/computer-diagnostics$ page38015949.html [NC]
+RewriteRule ^en/computer-diagnostics/$ page38015949.html [NC]
+
+RewriteRule ^en/carwash$ page129088273.html [NC]
+RewriteRule ^en/carwash/$ page129088273.html [NC]
+
+RewriteRule ^en/polishing/polishing-after-repair$ page37596602.html [NC]
+RewriteRule ^en/polishing/polishing-after-repair/$ page37596602.html [NC]
+
+RewriteRule ^en/ceramiccoating/ceramic-coating-for-car$ page37666480.html [NC]
+RewriteRule ^en/ceramiccoating/ceramic-coating-for-car/$ page37666480.html [NC]
+
+RewriteRule ^en/interior-cleaning/interior-cleaning-for-auto$ page37739916.html [NC]
+RewriteRule ^en/interior-cleaning/interior-cleaning-for-auto/$ page37739916.html [NC]
+
+RewriteRule ^en/interior-restoration/why-restore-interior-elements$ page37795736.html [NC]
+RewriteRule ^en/interior-restoration/why-restore-interior-elements/$ page37795736.html [NC]
+
+RewriteRule ^en/ppf-shield-wrapping/ppf-film-for-cars-protection$ page37906831.html [NC]
+RewriteRule ^en/ppf-shield-wrapping/ppf-film-for-cars-protection/$ page37906831.html [NC]
+
+RewriteRule ^en/vinyl-wrapping/benefits-of-vinyl-wraps$ page37961709.html [NC]
+RewriteRule ^en/vinyl-wrapping/benefits-of-vinyl-wraps/$ page37961709.html [NC]
+
+RewriteRule ^en/paintless-dent-repair/pdr-method$ page38071724.html [NC]
+RewriteRule ^en/paintless-dent-repair/pdr-method/$ page38071724.html [NC]
+
+RewriteRule ^en/windshield-repair/replace-or-repair$ page38126059.html [NC]
+RewriteRule ^en/windshield-repair/replace-or-repair/$ page38126059.html [NC]
+
+RewriteRule ^en/auto-glass-tinting/top-11-reasons$ page38233424.html [NC]
+RewriteRule ^en/auto-glass-tinting/top-11-reasons/$ page38233424.html [NC]
+
+RewriteRule ^en/car-soundproofing/why-soundproof-car$ page38289536.html [NC]
+RewriteRule ^en/car-soundproofing/why-soundproof-car/$ page38289536.html [NC]
+
+RewriteRule ^en/computer-diagnostics/why-use-car-diagnostic-test$ page38396538.html [NC]
+RewriteRule ^en/computer-diagnostics/why-use-car-diagnostic-test/$ page38396538.html [NC]
+
+RewriteRule ^en/polishing/headlight-polishing$ page38475291.html [NC]
+RewriteRule ^en/polishing/headlight-polishing/$ page38475291.html [NC]
+
+RewriteRule ^en/ceramiccoating/ceramic-for-car-glass$ page38610424.html [NC]
+RewriteRule ^en/ceramiccoating/ceramic-for-car-glass/$ page38610424.html [NC]
+
+RewriteRule ^en/interior-cleaning/engine-room-cleaning$ page38713458.html [NC]
+RewriteRule ^en/interior-cleaning/engine-room-cleaning/$ page38713458.html [NC]
+
+RewriteRule ^en/interior-restoration/steering-wheel-restoration$ page38766378.html [NC]
+RewriteRule ^en/interior-restoration/steering-wheel-restoration/$ page38766378.html [NC]
+
+RewriteRule ^en/ppf-shield-wrapping/ppf-benefits$ page38875167.html [NC]
+RewriteRule ^en/ppf-shield-wrapping/ppf-benefits/$ page38875167.html [NC]
+
+RewriteRule ^en/vinyl-wrapping/protection-against-uv-rays-scratches$ page38927014.html [NC]
+RewriteRule ^en/vinyl-wrapping/protection-against-uv-rays-scratches/$ page38927014.html [NC]
+
+RewriteRule ^en/paintless-dent-repair/pdr-after-hail$ page39033206.html [NC]
+RewriteRule ^en/paintless-dent-repair/pdr-after-hail/$ page39033206.html [NC]
+
+RewriteRule ^en/windshield-repair/windshield-repair-benefits$ page39088372.html [NC]
+RewriteRule ^en/windshield-repair/windshield-repair-benefits/$ page39088372.html [NC]
+
+RewriteRule ^en/auto-glass-tinting/vehicle-tinting-techniques$ page39359014.html [NC]
+RewriteRule ^en/auto-glass-tinting/vehicle-tinting-techniques/$ page39359014.html [NC]
+
+RewriteRule ^en/car-soundproofing/noisemakers-and-wayouts$ page39385525.html [NC]
+RewriteRule ^en/car-soundproofing/noisemakers-and-wayouts/$ page39385525.html [NC]
+
+RewriteRule ^en/computer-diagnostics/car-diagnostic-test-stages-and-methods$ page39706610.html [NC]
+RewriteRule ^en/computer-diagnostics/car-diagnostic-test-stages-and-methods/$ page39706610.html [NC]
+
+RewriteRule ^en/polishing/car-interior-polishing$ page39764679.html [NC]
+RewriteRule ^en/polishing/car-interior-polishing/$ page39764679.html [NC]
+
+RewriteRule ^en/ceramiccoating/interior-ceramic-coating$ page39854717.html [NC]
+RewriteRule ^en/ceramiccoating/interior-ceramic-coating/$ page39854717.html [NC]
+
+RewriteRule ^en/interior-cleaning/car-interior-disinfection$ page40004952.html [NC]
+RewriteRule ^en/interior-cleaning/car-interior-disinfection/$ page40004952.html [NC]
+
+RewriteRule ^en/interior-restoration/restoring-car-seats$ page40188573.html [NC]
+RewriteRule ^en/interior-restoration/restoring-car-seats/$ page40188573.html [NC]
+
+RewriteRule ^en/ppf-shield-wrapping/service-on-ppf-wrapped-car$ page40281359.html [NC]
+RewriteRule ^en/ppf-shield-wrapping/service-on-ppf-wrapped-car/$ page40281359.html [NC]
+
+RewriteRule ^en/vinyl-wrapping/hints-for-vinyl-wrapped-cars$ page40312672.html [NC]
+RewriteRule ^en/vinyl-wrapping/hints-for-vinyl-wrapped-cars/$ page40312672.html [NC]
+
+RewriteRule ^en/paintless-dent-repair/pdr-guidelines-and-techniques$ page40453479.html [NC]
+RewriteRule ^en/paintless-dent-repair/pdr-guidelines-and-techniques/$ page40453479.html [NC]
+
+RewriteRule ^en/windshield-repair/efficiency-of-windshield-repair$ page40521740.html [NC]
+RewriteRule ^en/windshield-repair/efficiency-of-windshield-repair/$ page40521740.html [NC]
+
+RewriteRule ^en/auto-glass-tinting/window-tinting-care$ page40635194.html [NC]
+RewriteRule ^en/auto-glass-tinting/window-tinting-care/$ page40635194.html [NC]
+
+RewriteRule ^en/car-soundproofing/soundrpoofing-process$ page40731374.html [NC]
+RewriteRule ^en/car-soundproofing/soundrpoofing-process/$ page40731374.html [NC]
+
+RewriteRule ^en/computer-diagnostics/errors-to-find$ page40839462.html [NC]
+RewriteRule ^en/computer-diagnostics/errors-to-find/$ page40839462.html [NC]
+
+RewriteRule ^en/polishing/car-body-polishing$ page40938499.html [NC]
+RewriteRule ^en/polishing/car-body-polishing/$ page40938499.html [NC]
+
+RewriteRule ^en/ceramiccoating/technology-and-process$ page41490922.html [NC]
+RewriteRule ^en/ceramiccoating/technology-and-process/$ page41490922.html [NC]
+
+RewriteRule ^en/interior-cleaning/car-interior-detailing-basics$ page41699535.html [NC]
+RewriteRule ^en/interior-cleaning/car-interior-detailing-basics/$ page41699535.html [NC]
+
+RewriteRule ^en/interior-restoration/plastic-elements-restoration$ page41766639.html [NC]
+RewriteRule ^en/interior-restoration/plastic-elements-restoration/$ page41766639.html [NC]
+
+RewriteRule ^en/ppf-shield-wrapping/strength-and-useful-life-of-ppf$ page42127917.html [NC]
+RewriteRule ^en/ppf-shield-wrapping/strength-and-useful-life-of-ppf/$ page42127917.html [NC]
+
+RewriteRule ^en/vinyl-wrapping/car-body-color-with-vinyl-wrap$ page45833009.html [NC]
+RewriteRule ^en/vinyl-wrapping/car-body-color-with-vinyl-wrap/$ page45833009.html [NC]
+
+RewriteRule ^en/auto-glass-tinting/legal-aspects-of-tinting-in-georgia$ page51383339.html [NC]
+RewriteRule ^en/auto-glass-tinting/legal-aspects-of-tinting-in-georgia/$ page51383339.html [NC]
+
+RewriteRule ^polishing/polishing-after-repair$ page37597178.html [NC]
+RewriteRule ^polishing/polishing-after-repair/$ page37597178.html [NC]
+
+RewriteRule ^ceramiccoating/ceramic-coating-for-car$ page37652578.html [NC]
+RewriteRule ^ceramiccoating/ceramic-coating-for-car/$ page37652578.html [NC]
+
+RewriteRule ^interior-cleaning/interior-cleaning-for-auto$ page37740011.html [NC]
+RewriteRule ^interior-cleaning/interior-cleaning-for-auto/$ page37740011.html [NC]
+
+RewriteRule ^interior-restoration/why-restore-interior-elements$ page37796062.html [NC]
+RewriteRule ^interior-restoration/why-restore-interior-elements/$ page37796062.html [NC]
+
+RewriteRule ^ppf-shield-wrapping/ppf-film-for-cars-protection$ page37880662.html [NC]
+RewriteRule ^ppf-shield-wrapping/ppf-film-for-cars-protection/$ page37880662.html [NC]
+
+RewriteRule ^vinyl-wrapping/benefits-of-vinyl-wraps$ page37935565.html [NC]
+RewriteRule ^vinyl-wrapping/benefits-of-vinyl-wraps/$ page37935565.html [NC]
+
+RewriteRule ^paintless-dent-repair/pdr-method$ page38043698.html [NC]
+RewriteRule ^paintless-dent-repair/pdr-method/$ page38043698.html [NC]
+
+RewriteRule ^windshield-repair/replace-or-repair$ page38099239.html [NC]
+RewriteRule ^windshield-repair/replace-or-repair/$ page38099239.html [NC]
+
+RewriteRule ^auto-glass-tinting/top-11-reasons$ page38206488.html [NC]
+RewriteRule ^auto-glass-tinting/top-11-reasons/$ page38206488.html [NC]
+
+RewriteRule ^car-soundproofing/why-soundproof-car$ page38262094.html [NC]
+RewriteRule ^car-soundproofing/why-soundproof-car/$ page38262094.html [NC]
+
+RewriteRule ^computer-diagnostics/why-use-car-diagnostic-test$ page38371405.html [NC]
+RewriteRule ^computer-diagnostics/why-use-car-diagnostic-test/$ page38371405.html [NC]
+
+RewriteRule ^polishing/headlight-polishing$ page38474961.html [NC]
+RewriteRule ^polishing/headlight-polishing/$ page38474961.html [NC]
+
+RewriteRule ^ceramiccoating/ceramic-for-car-glass$ page38584976.html [NC]
+RewriteRule ^ceramiccoating/ceramic-for-car-glass/$ page38584976.html [NC]
+
+RewriteRule ^interior-cleaning/engine-room-cleaning$ page38688164.html [NC]
+RewriteRule ^interior-cleaning/engine-room-cleaning/$ page38688164.html [NC]
+
+RewriteRule ^interior-restoration/steering-wheel-restoration$ page38765977.html [NC]
+RewriteRule ^interior-restoration/steering-wheel-restoration/$ page38765977.html [NC]
+
+RewriteRule ^ppf-shield-wrapping/ppf-benefits$ page38848870.html [NC]
+RewriteRule ^ppf-shield-wrapping/ppf-benefits/$ page38848870.html [NC]
+
+RewriteRule ^vinyl-wrapping/protection-against-uv-rays-scratches$ page38901907.html [NC]
+RewriteRule ^vinyl-wrapping/protection-against-uv-rays-scratches/$ page38901907.html [NC]
+
+RewriteRule ^paintless-dent-repair/pdr-after-hail$ page39006920.html [NC]
+RewriteRule ^paintless-dent-repair/pdr-after-hail/$ page39006920.html [NC]
+
+RewriteRule ^windshield-repair/windshield-repair-benefits$ page39062231.html [NC]
+RewriteRule ^windshield-repair/windshield-repair-benefits/$ page39062231.html [NC]
+
+RewriteRule ^auto-glass-tinting/vehicle-tinting-techniques$ page39331951.html [NC]
+RewriteRule ^auto-glass-tinting/vehicle-tinting-techniques/$ page39331951.html [NC]
+
+RewriteRule ^car-soundproofing/noisemakers-and-wayouts$ page39385234.html [NC]
+RewriteRule ^car-soundproofing/noisemakers-and-wayouts/$ page39385234.html [NC]
+
+RewriteRule ^computer-diagnostics/car-diagnostic-test-stages-and-methods$ page39559488.html [NC]
+RewriteRule ^computer-diagnostics/car-diagnostic-test-stages-and-methods/$ page39559488.html [NC]
+
+RewriteRule ^polishing/car-interior-polishing$ page39736212.html [NC]
+RewriteRule ^polishing/car-interior-polishing/$ page39736212.html [NC]
+
+RewriteRule ^ceramiccoating/interior-ceramic-coating$ page39854319.html [NC]
+RewriteRule ^ceramiccoating/interior-ceramic-coating/$ page39854319.html [NC]
+
+RewriteRule ^interior-cleaning/car-interior-disinfection$ page39942604.html [NC]
+RewriteRule ^interior-cleaning/car-interior-disinfection/$ page39942604.html [NC]
+
+RewriteRule ^interior-restoration/restoring-car-seats$ page40123147.html [NC]
+RewriteRule ^interior-restoration/restoring-car-seats/$ page40123147.html [NC]
+
+RewriteRule ^ppf-shield-wrapping/service-on-ppf-wrapped-car$ page40250238.html [NC]
+RewriteRule ^ppf-shield-wrapping/service-on-ppf-wrapped-car/$ page40250238.html [NC]
+
+RewriteRule ^vinyl-wrapping/hints-for-vinyl-wrapped-cars$ page40312402.html [NC]
+RewriteRule ^vinyl-wrapping/hints-for-vinyl-wrapped-cars/$ page40312402.html [NC]
+
+RewriteRule ^paintless-dent-repair/pdr-guidelines-and-techniques$ page40419406.html [NC]
+RewriteRule ^paintless-dent-repair/pdr-guidelines-and-techniques/$ page40419406.html [NC]
+
+RewriteRule ^windshield-repair/efficiency-of-windshield-repair$ page40488563.html [NC]
+RewriteRule ^windshield-repair/efficiency-of-windshield-repair/$ page40488563.html [NC]
+
+RewriteRule ^auto-glass-tinting/window-tinting-care$ page40634861.html [NC]
+RewriteRule ^auto-glass-tinting/window-tinting-care/$ page40634861.html [NC]
+
+RewriteRule ^car-soundproofing/soundrpoofing-process$ page40699939.html [NC]
+RewriteRule ^car-soundproofing/soundrpoofing-process/$ page40699939.html [NC]
+
+RewriteRule ^computer-diagnostics/errors-to-find$ page40839100.html [NC]
+RewriteRule ^computer-diagnostics/errors-to-find/$ page40839100.html [NC]
+
+RewriteRule ^polishing/car-body-polishing$ page40905535.html [NC]
+RewriteRule ^polishing/car-body-polishing/$ page40905535.html [NC]
+
+RewriteRule ^ceramiccoating/technology-and-process$ page41490637.html [NC]
+RewriteRule ^ceramiccoating/technology-and-process/$ page41490637.html [NC]
+
+RewriteRule ^interior-cleaning/car-interior-detailing-basics$ page41665497.html [NC]
+RewriteRule ^interior-cleaning/car-interior-detailing-basics/$ page41665497.html [NC]
+
+RewriteRule ^interior-restoration/plastic-elements-restoration$ page41735359.html [NC]
+RewriteRule ^interior-restoration/plastic-elements-restoration/$ page41735359.html [NC]
+
+RewriteRule ^ppf-shield-wrapping/strength-and-useful-life-of-ppf$ page41932400.html [NC]
+RewriteRule ^ppf-shield-wrapping/strength-and-useful-life-of-ppf/$ page41932400.html [NC]
+
+RewriteRule ^vinyl-wrapping/car-body-color-with-vinyl-wrap$ page45834011.html [NC]
+RewriteRule ^vinyl-wrapping/car-body-color-with-vinyl-wrap/$ page45834011.html [NC]
+
+RewriteRule ^auto-glass-tinting/legal-aspects-of-tinting-in-georgia$ page51383971.html [NC]
+RewriteRule ^auto-glass-tinting/legal-aspects-of-tinting-in-georgia/$ page51383971.html [NC]
+
+RewriteRule ^ru/blog/new-car-detailing$ page129519903.html [NC]
+RewriteRule ^ru/blog/new-car-detailing/$ page129519903.html [NC]
+
+RewriteRule ^en/blog/new-car-detailing$ page129520323.html [NC]
+RewriteRule ^en/blog/new-car-detailing/$ page129520323.html [NC]
+
+RewriteRule ^blog/new-car-detailing$ page129520783.html [NC]
+RewriteRule ^blog/new-car-detailing/$ page129520783.html [NC]
+
+RewriteRule ^ru/how-to-choose-detailing-studio$ page129646093.html [NC]
+RewriteRule ^ru/how-to-choose-detailing-studio/$ page129646093.html [NC]
+
+RewriteRule ^ru/top-5-car-paint-protection$ page129649133.html [NC]
+RewriteRule ^ru/top-5-car-paint-protection/$ page129649133.html [NC]
+
+RewriteRule ^ru/summer-car-care-georgia$ page129649253.html [NC]
+RewriteRule ^ru/summer-car-care-georgia/$ page129649253.html [NC]
+
+RewriteRule ^ru/blog/detailing-cost-tbilisi$ page129649293.html [NC]
+RewriteRule ^ru/blog/detailing-cost-tbilisi/$ page129649293.html [NC]
+
+RewriteRule ^ru/blog/10-paint-mistakes$ page129649353.html [NC]
+RewriteRule ^ru/blog/10-paint-mistakes/$ page129649353.html [NC]
+
+RewriteRule ^ru/blog/polishing-cost-tbilisi$ page129649363.html [NC]
+RewriteRule ^ru/blog/polishing-cost-tbilisi/$ page129649363.html [NC]
+
+RewriteRule ^ru/blog/soft-vs-abrasive-polishing$ page129649433.html [NC]
+RewriteRule ^ru/blog/soft-vs-abrasive-polishing/$ page129649433.html [NC]
+
+RewriteRule ^ru/blog/how-often-polish-car$ page129649553.html [NC]
+RewriteRule ^ru/blog/how-often-polish-car/$ page129649553.html [NC]
+
+RewriteRule ^ru/blog/polishing-before-after$ page129649583.html [NC]
+RewriteRule ^ru/blog/polishing-before-after/$ page129649583.html [NC]
+
+RewriteRule ^ru/blog/polishing-before-ceramic$ page129649603.html [NC]
+RewriteRule ^ru/blog/polishing-before-ceramic/$ page129649603.html [NC]
+
+RewriteRule ^ru/blog/ceramic-coating-cost-tbilisi$ page129649683.html [NC]
+RewriteRule ^ru/blog/ceramic-coating-cost-tbilisi/$ page129649683.html [NC]
+
+RewriteRule ^ru/blog/how-long-ceramic-coating-lasts$ page129649723.html [NC]
+RewriteRule ^ru/blog/how-long-ceramic-coating-lasts/$ page129649723.html [NC]
+
+RewriteRule ^ru/blog/ceramic-coating-maintenance$ page129649913.html [NC]
+RewriteRule ^ru/blog/ceramic-coating-maintenance/$ page129649913.html [NC]
+
+RewriteRule ^how-to-choose-detailing-studio$ page129683743.html [NC]
+RewriteRule ^how-to-choose-detailing-studio/$ page129683743.html [NC]
+
+RewriteRule ^top-5-car-paint-protection$ page129683763.html [NC]
+RewriteRule ^top-5-car-paint-protection/$ page129683763.html [NC]
+
+RewriteRule ^summer-car-care-georgia$ page129683863.html [NC]
+RewriteRule ^summer-car-care-georgia/$ page129683863.html [NC]
+
+RewriteRule ^blog/detailing-cost-tbilisi$ page129683923.html [NC]
+RewriteRule ^blog/detailing-cost-tbilisi/$ page129683923.html [NC]
+
+RewriteRule ^blog/polishing-cost-tbilisi$ page129683983.html [NC]
+RewriteRule ^blog/polishing-cost-tbilisi/$ page129683983.html [NC]
+
+RewriteRule ^blog/soft-vs-abrasive-polishing$ page129683993.html [NC]
+RewriteRule ^blog/soft-vs-abrasive-polishing/$ page129683993.html [NC]
+
+RewriteRule ^blog/how-often-polish-car$ page129684013.html [NC]
+RewriteRule ^blog/how-often-polish-car/$ page129684013.html [NC]
+
+RewriteRule ^blog/polishing-before-ceramic$ page129684073.html [NC]
+RewriteRule ^blog/polishing-before-ceramic/$ page129684073.html [NC]
+
+RewriteRule ^blog/ceramic-coating-tbilisi$ page129684103.html [NC]
+RewriteRule ^blog/ceramic-coating-tbilisi/$ page129684103.html [NC]
+
+RewriteRule ^blog/ceramic-coating-care$ page129684133.html [NC]
+RewriteRule ^blog/ceramic-coating-care/$ page129684133.html [NC]
+
+RewriteRule ^en/how-to-choose-detailing-studio$ page129692233.html [NC]
+RewriteRule ^en/how-to-choose-detailing-studio/$ page129692233.html [NC]
+
+RewriteRule ^en/top-5-car-paint-protection$ page129692333.html [NC]
+RewriteRule ^en/top-5-car-paint-protection/$ page129692333.html [NC]
+
+RewriteRule ^en/summer-car-care-georgia$ page129692443.html [NC]
+RewriteRule ^en/summer-car-care-georgia/$ page129692443.html [NC]
+
+RewriteRule ^en/blog/detailing-cost-tbilisi$ page129692453.html [NC]
+RewriteRule ^en/blog/detailing-cost-tbilisi/$ page129692453.html [NC]
+
+RewriteRule ^en/blog/10-paint-mistakes$ page129692473.html [NC]
+RewriteRule ^en/blog/10-paint-mistakes/$ page129692473.html [NC]
+
+RewriteRule ^en/blog/polishing-cost-tbilisi$ page129692483.html [NC]
+RewriteRule ^en/blog/polishing-cost-tbilisi/$ page129692483.html [NC]
+
+RewriteRule ^en/blog/soft-vs-abrasive-polishing$ page129692513.html [NC]
+RewriteRule ^en/blog/soft-vs-abrasive-polishing/$ page129692513.html [NC]
+
+RewriteRule ^en/blog/how-often-polish-car$ page129692523.html [NC]
+RewriteRule ^en/blog/how-often-polish-car/$ page129692523.html [NC]
+
+RewriteRule ^en/blog/polishing-before-after$ page129692543.html [NC]
+RewriteRule ^en/blog/polishing-before-after/$ page129692543.html [NC]
+
+RewriteRule ^en/blog/polishing-before-ceramic$ page129692553.html [NC]
+RewriteRule ^en/blog/polishing-before-ceramic/$ page129692553.html [NC]
+
+RewriteRule ^en/blog/ceramic-coating-tbilisi$ page129692573.html [NC]
+RewriteRule ^en/blog/ceramic-coating-tbilisi/$ page129692573.html [NC]
+
+RewriteRule ^en/blog/ceramic-coating-durability$ page129692633.html [NC]
+RewriteRule ^en/blog/ceramic-coating-durability/$ page129692633.html [NC]
+
+RewriteRule ^en/blog/ceramic-coating-care$ page129692653.html [NC]
+RewriteRule ^en/blog/ceramic-coating-care/$ page129692653.html [NC]
+
+RewriteRule ^interiorrestoration$ https://bestauto\.ge/interior-restoration [R=301,NC,L]
+
+
