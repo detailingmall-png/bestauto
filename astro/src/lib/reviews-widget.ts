@@ -107,6 +107,7 @@ const CSS = `
   padding: 60px 0 40px;
   color: #fff;
   min-height: 400px;
+  overflow-x: hidden;
 }
 .ba-reviews__container {
   max-width: 1200px;
@@ -157,6 +158,7 @@ const CSS = `
   display: flex;
   align-items: center;
   gap: 12px;
+  overflow: hidden;
 }
 .ba-reviews__track-wrapper {
   flex: 1;
