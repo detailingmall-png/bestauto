@@ -319,13 +319,15 @@ if (lang === 'en') {
   }
 }
 
-// Replace first Elfsight reviews widget with self-hosted widget, remove duplicates
+// Replace first Elfsight reviews widget with self-hosted widget, remove duplicates.
+// Elfsight widget divs are always empty (JS populates at runtime), so match only ></div>.
+// Using [\s\S]*?<\/div> would risk consuming nested </div> from adjacent HTML.
 mainContent = mainContent.replace(
-  /<div\s+class="elfsight-app-[^"]*"[^>]*>[\s\S]*?<\/div>/,
+  /<div\s+class="elfsight-app-[^"]*"[^>]*><\/div>/,
   reviewsWidgetHtml
 );
 mainContent = mainContent.replace(
-  /<div\s+class="elfsight-app-[^"]*"[^>]*>[\s\S]*?<\/div>/g,
+  /<div\s+class="elfsight-app-[^"]*"[^>]*><\/div>/g,
   ''
 );
 ---
