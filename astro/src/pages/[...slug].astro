@@ -351,13 +351,14 @@ if (baseSlug === '') {
   const heroRecIds = HERO_REC_IDS[lang] ?? [];
 
   const heroVideoHtml = `
-<video class="ba-hero-video ba-hero-video--desktop" autoplay muted loop playsinline preload="auto">
+<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.jpg" width="1280" height="720">
   <source src="/hero-desktop.mp4" type="video/mp4">
 </video>
-<video class="ba-hero-video ba-hero-video--mobile" autoplay muted loop playsinline preload="auto">
+<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.jpg" width="480" height="854">
   <source src="/hero-mobile.mp4" type="video/mp4">
 </video>
 <style>
+.t396__artboard { position: relative; overflow: hidden; }
 .ba-hero-video {
   position: absolute;
   top: 0;
@@ -374,11 +375,15 @@ if (baseSlug === '') {
 }
 </style>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+requestIdleCallback(function() {
   document.querySelectorAll('.ba-hero-video').forEach(function(v) {
-    if (v.offsetWidth > 0) v.play().catch(function(){});
+    if (v.offsetWidth > 0) {
+      v.preload = 'auto';
+      v.setAttribute('autoplay', '');
+      v.play().catch(function(){});
+    }
   });
-});
+}, { timeout: 1500 });
 </script>`;
 
   let videoStyleInjected = false;
@@ -387,10 +392,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Only inject <style> and <script> once (first hero block), video tags in each block
     const videoOnly = `
-<video class="ba-hero-video ba-hero-video--desktop" autoplay muted loop playsinline preload="auto">
+<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.jpg" width="1280" height="720">
   <source src="/hero-desktop.mp4" type="video/mp4">
 </video>
-<video class="ba-hero-video ba-hero-video--mobile" autoplay muted loop playsinline preload="auto">
+<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.jpg" width="480" height="854">
   <source src="/hero-mobile.mp4" type="video/mp4">
 </video>`;
     const injection = videoStyleInjected ? videoOnly : heroVideoHtml;

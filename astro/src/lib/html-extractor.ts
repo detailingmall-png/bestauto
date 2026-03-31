@@ -43,6 +43,18 @@ export function makePathsAbsolute(content: string): string {
 }
 
 /**
+ * Remove Tilda polyfill script — all polyfilled features (Promise, fetch,
+ * Symbol, Array.from, Object.assign, etc.) are natively supported by every
+ * browser since 2018. Saves 185 KB of dead JavaScript.
+ */
+export function removePolyfill(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-polyfill[^"]*"[^>]*>\s*<\/script>/g,
+    ''
+  );
+}
+
+/**
  * Remove Tilda CDN fallback script — assets are now served locally.
  */
 export function removeTildaCdnFallback(content: string): string {
@@ -640,7 +652,7 @@ export function extractSections(html: string): PageSections {
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removeTildaCdnFallback(makePathsAbsolute(rawHead))))))));
+  const headContent = removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))));
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
