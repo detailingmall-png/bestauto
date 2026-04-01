@@ -277,6 +277,8 @@ if (lang === 'ka') {
   mainContent = removeRecordBlock(mainContent, 'rec1860190681');
   mainContent = removeRecordBlock(mainContent, 'rec1860190701');
   mainContent = removeRecordBlock(mainContent, 'rec1860227531');
+  // Remove old contact block shared across new pages (same ID as RU)
+  mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   if (!mainContent.includes('ba-contacts')) {
     // Extract reviews+gallery from homepage and place just above contacts
     let reviewsGallery = '';
@@ -326,6 +328,8 @@ if (lang === 'en') {
   mainContent = removeRecordBlock(mainContent, 'rec1862121221');
   mainContent = removeRecordBlock(mainContent, 'rec1862088881');
   mainContent = removeRecordBlock(mainContent, 'rec1862088901');
+  // Remove old contact block shared across new pages (same ID as RU)
+  mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   if (!mainContent.includes('ba-contacts')) {
     // Extract gallery+reviews from homepage and place just above contacts
     let galleryEn = '';
