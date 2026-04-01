@@ -30,6 +30,16 @@
 /*.mp4
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
+# ── HLS streaming segments and playlists ─────────────────────────
+/hls/*.ts
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/hls/*.m3u8
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/hls/*.js
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
 # ── HTML pages — revalidate quickly ──────────────────────────────
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
