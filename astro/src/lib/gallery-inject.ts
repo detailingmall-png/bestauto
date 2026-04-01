@@ -37,12 +37,17 @@ function normalisePath(p: string): string {
   return '/' + p;
 }
 
+/** Rewrite image path to .webp — all gallery images have a .webp copy. */
+function toWebp(p: string): string {
+  return p.replace(/\.(png|jpe?g)$/i, '.webp');
+}
+
 function parseGalleryImages(block: string): Array<{ full: string; alt: string }> {
   const items: Array<{ full: string; alt: string }> = [];
   const re = /data-img-zoom-url="([^"]*)"[^>]*alt="([^"]*)"/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(block)) !== null) {
-    const path = normalisePath(m[1]);
+    const path = toWebp(normalisePath(m[1]));
     if ([...BLOCKED_IMAGES].some(b => path.includes(b))) continue;
     items.push({ full: path, alt: m[2] });
   }
