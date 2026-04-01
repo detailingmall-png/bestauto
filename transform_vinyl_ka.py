@@ -26,9 +26,13 @@ def main():
         'ფერადი <s style="opacity:0.5">ვინილის</s> პოლიურეთანის დამცავი ფირი თბილისში',
     )
 
-    # Description
+    # Description — handle both body-file and tilda-export variants
     html = html.replace(
         '<p style="text-align: center;">თბილისში ვახორციელებთ მანქანის შეფუთვის მომსახურებას ვინილის ფირით, რაც საშუალებას გაძლევთ სწრაფად და იაფად შეცვალოთ მანქანის იერსახე, შეღებვის გარეშე და დაიცვათ იგი.</p>',
+        '<span style="font-weight: 500;">10 წლიანი გარანტია \u00b7 Quantum, LuxArmor ფირები \u00b7 2000-ზე მეტი დაფარული ავტომობილი</span>',
+    )
+    html = html.replace(
+        '<p style="text-align: center;">ვინილის ფირით ვცვლით მანქანის ფერს და იერსახეს შეღებვის გარეშე \u2014 სწრაფად, ხელმისაწვდომ ფასად და ძარის დაცვით.თ იგი.</p>',
         '<span style="font-weight: 500;">10 წლიანი გარანტია \u00b7 Quantum, LuxArmor ფირები \u00b7 2000-ზე მეტი დაფარული ავტომობილი</span>',
     )
 
