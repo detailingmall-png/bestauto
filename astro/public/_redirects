@@ -17,6 +17,34 @@
 /auto-polishing   /polishing  301
 /auto-polishing/  /polishing  301
 
+# ── Blog articles moved from root to /blog/ ─────────────────────
+/how-to-choose-detailing-studio     /blog/how-to-choose-detailing-studio    301
+/how-to-choose-detailing-studio/    /blog/how-to-choose-detailing-studio    301
+/top-5-car-paint-protection         /blog/top-5-car-paint-protection        301
+/top-5-car-paint-protection/        /blog/top-5-car-paint-protection        301
+/summer-car-care-georgia            /blog/summer-car-care-georgia           301
+/summer-car-care-georgia/           /blog/summer-car-care-georgia           301
+/ru/how-to-choose-detailing-studio  /ru/blog/how-to-choose-detailing-studio 301
+/ru/how-to-choose-detailing-studio/ /ru/blog/how-to-choose-detailing-studio 301
+/ru/top-5-car-paint-protection      /ru/blog/top-5-car-paint-protection     301
+/ru/top-5-car-paint-protection/     /ru/blog/top-5-car-paint-protection     301
+/ru/summer-car-care-georgia         /ru/blog/summer-car-care-georgia        301
+/ru/summer-car-care-georgia/        /ru/blog/summer-car-care-georgia        301
+/en/how-to-choose-detailing-studio  /en/blog/how-to-choose-detailing-studio 301
+/en/how-to-choose-detailing-studio/ /en/blog/how-to-choose-detailing-studio 301
+/en/top-5-car-paint-protection      /en/blog/top-5-car-paint-protection     301
+/en/top-5-car-paint-protection/     /en/blog/top-5-car-paint-protection     301
+/en/summer-car-care-georgia         /en/blog/summer-car-care-georgia        301
+/en/summer-car-care-georgia/        /en/blog/summer-car-care-georgia        301
+
+# ── Broken KA page IDs to proper blog slugs ─────────────────────
+/page129683953.html   /blog/10-paint-mistakes          301
+/page129683953.html/  /blog/10-paint-mistakes          301
+/page129684033.html   /blog/polishing-before-after     301
+/page129684033.html/  /blog/polishing-before-after     301
+/page129684113.html   /blog/ceramic-coating-durability  301
+/page129684113.html/  /blog/ceramic-coating-durability  301
+
 # ── PPF new page redirect ───────────────────────────────────────
 /ru/ppf-new  /ru/ppf-shield-wrapping  301
 /ru/ppf-new/  /ru/ppf-shield-wrapping  301
