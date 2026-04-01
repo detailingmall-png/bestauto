@@ -80,7 +80,8 @@ function renderReviewCards(reviews: readonly Review[], lang: string): string {
   return reviews.map((review) => {
     const truncated = truncateText(review.text, 200);
     const hasMore = review.text.length > 200;
-    const avatarSrc = review.authorPhotoUrl || '/images/default-avatar.svg';
+    const avatarSrc = (review.authorPhotoUrl || '/images/default-avatar.svg')
+      .replace(/=s\d+(-|$)/, '=s80$1');
 
     return `<article class="ba-reviews__card">
         <div class="ba-reviews__card-header">

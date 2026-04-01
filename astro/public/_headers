@@ -26,6 +26,18 @@
 /images/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
+/*.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/*.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/*.svg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
 # ── Long cache for video assets ──────────────────────────────────
 /*.mp4
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
