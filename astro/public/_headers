@@ -11,14 +11,12 @@
   X-XSS-Protection: 1; mode=block
   Cache-Control: public, s-maxage=86400, max-age=60, stale-while-revalidate=86400
 
-# ── CSS/JS: long cache with revalidation ─────────────────────────
-# Tilda filenames are NOT content-hashed; stale-while-revalidate
-# lets browsers use cached copy while fetching fresh version
+# ── CSS/JS: 30-day cache (filenames are versioned: tilda-zero-1.1, etc.)
 /css/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
 /js/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
 # ── Fonts: truly immutable (content never changes) ───────────────
 /fonts/*
