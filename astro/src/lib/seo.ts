@@ -173,26 +173,6 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
     },
   };
 
-  // Add aggregate rating and reviews if available
-  if (reviewsData.reviews.length > 0) {
-    schema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: reviewsData.overallRating.toString(),
-      bestRating: '5',
-      ratingCount: reviewsData.totalReviews.toString(),
-    };
-    schema.review = reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string }) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.authorName },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: r.rating.toString(),
-        bestRating: '5',
-      },
-      reviewBody: r.text,
-    }));
-  }
-
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
@@ -201,12 +181,16 @@ export function generateReviewSchema(): string {
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Professional Car Detailing',
-    provider: {
-      '@type': 'AutomotiveBusiness',
-      name: 'BESTAUTO',
-      url: BASE_URL,
+    '@type': 'AutomotiveBusiness',
+    name: 'BESTAUTO',
+    image: `${BASE_URL}/img/logo.png`,
+    url: BASE_URL,
+    telephone: '+995550000299',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Guramishvili Ave. 78',
+      addressLocality: 'Tbilisi',
+      addressCountry: 'GE',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
