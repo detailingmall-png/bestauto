@@ -427,7 +427,9 @@ if (baseSlug === '') {
       if(v.offsetWidth===0)return;
       var src=v.classList.contains('ba-hero-video--desktop')?'/hls/desktop/index.m3u8':'/hls/mobile/index.m3u8';
       if(v.canPlayType('application/vnd.apple.mpegurl')){
-        v.src=src;v.play().catch(function(){});
+        v.setAttribute('autoplay','');v.preload='auto';v.src=src;
+        var tryPlay=function(){v.play().catch(function(){});};
+        if(v.readyState>=3)tryPlay();else v.addEventListener('canplay',tryPlay,{once:true});
       } else { needLib=true; }
     });
     if(!needLib)return;
