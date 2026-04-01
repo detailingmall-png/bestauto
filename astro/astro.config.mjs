@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://bestauto.ge',
   output: 'static',
+  trailingSlash: 'always',
   compressHTML: true,
   build: {
     format: 'directory',

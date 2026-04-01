@@ -550,7 +550,8 @@ export function removeBlockContaining(content: string, searchTerm: string): stri
 export function removeClientSeoScripts(content: string): string {
   return content
     .replace(/<!-- HREFLANG: Dynamic language alternate links -->\s*<script>[\s\S]*?<\/script>/g, '')
-    .replace(/<!-- Schema\.org: Dynamic Service Schema -->\s*<script>[\s\S]*?<\/script>/g, '');
+    .replace(/<!-- Schema\.org: Dynamic Service Schema -->\s*<script>[\s\S]*?<\/script>/g, '')
+    .replace(/<link\s+rel="canonical"[^>]*>/g, '');
 }
 
 /**

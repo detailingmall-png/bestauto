@@ -64,8 +64,8 @@ const BLOG_LABEL: Readonly<Record<string, string>> = {
 // ──────────────────────────────────────────────
 
 function buildUrl(lang: string, slug: string): string {
-  if (lang === 'ka') return slug ? `${BASE_URL}/${slug}` : `${BASE_URL}/`;
-  return slug ? `${BASE_URL}/${lang}/${slug}` : `${BASE_URL}/${lang}`;
+  if (lang === 'ka') return slug ? `${BASE_URL}/${slug}/` : `${BASE_URL}/`;
+  return slug ? `${BASE_URL}/${lang}/${slug}/` : `${BASE_URL}/${lang}/`;
 }
 
 // ──────────────────────────────────────────────
