@@ -17,6 +17,7 @@ import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, 
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
+import { generateBlogGridHtml } from '../lib/blog-grid';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -144,13 +145,44 @@ if (servicesBlockId && injectedHtml.includes(`id="${servicesBlockId}"`)) {
   }
 }
 
+// Blog index pages: replace static t404 card grid with dynamic one
+const BLOG_INDEX_T404_IDS: Readonly<Record<string, string>> = {
+  ka: 'rec607481069',
+  ru: 'rec603531262',
+  en: 'rec604491219',
+};
+if (baseSlug === 'blog') {
+  const t404Id = BLOG_INDEX_T404_IDS[lang];
+  if (t404Id && injectedHtml.includes(`id="${t404Id}"`)) {
+    const blockStart = injectedHtml.lastIndexOf('<div', injectedHtml.indexOf(`id="${t404Id}"`));
+    if (blockStart >= 0) {
+      let depth = 0;
+      let pos = blockStart;
+      let blockEnd = -1;
+      while (pos < injectedHtml.length) {
+        if (injectedHtml.startsWith('<div', pos)) { depth++; pos += 4; }
+        else if (injectedHtml.startsWith('</div>', pos)) {
+          depth--;
+          if (depth === 0) { blockEnd = pos + 6; break; }
+          pos += 6;
+        } else { pos++; }
+      }
+      if (blockEnd > blockStart) {
+        injectedHtml = injectedHtml.slice(0, blockStart)
+          + generateBlogGridHtml(lang)
+          + injectedHtml.slice(blockEnd);
+      }
+    }
+  }
+}
+
 const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
 // Blog pages: rewrite bare #anchor links in nav to point to homepage
 // (sections like #about, #photo, #reviews only exist on the homepage)
-const isBlogPage = baseSlug.startsWith('blog/');
+const isBlogPage = baseSlug === 'blog' || baseSlug.startsWith('blog/');
 if (isBlogPage) {
   const homePath = lang === 'ka' ? '/' : `/${lang}/`;
   mainContent = mainContent.replace(

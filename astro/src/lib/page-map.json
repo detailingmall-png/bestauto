@@ -1,4 +1,1308 @@
 {
+  "35796250": {
+    "file": "page35796250.html",
+    "url": "https://bestauto.ge/page35796250.html",
+    "path": "/page35796250.html",
+    "title": "Blank page",
+    "lang": "ka",
+    "slug": "page35796250.html"
+  },
+  "36438811": {
+    "file": "page36438811.html",
+    "url": "https://bestauto.ge/ru",
+    "path": "/ru",
+    "title": "Детейлинг студия BESTAUTO в Тбилиси — полировка, керамика, PPF, тонировка",
+    "lang": "ru",
+    "slug": ""
+  },
+  "36528485": {
+    "file": "page36528485.html",
+    "url": "https://bestauto.ge/ru/prices",
+    "path": "/ru/prices",
+    "title": "Цены на детейлинг в Тбилиси — Стоимость услуг | BESTAUTO",
+    "lang": "ru",
+    "slug": "prices"
+  },
+  "36554132": {
+    "file": "page36554132.html",
+    "url": "https://bestauto.ge/en",
+    "path": "/en",
+    "title": "Car Detailing Studio in Tbilisi — Polishing, Ceramic, PPF | BESTAUTO",
+    "lang": "en",
+    "slug": ""
+  },
+  "36554376": {
+    "file": "page36554376.html",
+    "url": "https://bestauto.ge/en/prices",
+    "path": "/en/prices",
+    "title": "Car Detailing Prices in Tbilisi — Service Cost List | BESTAUTO",
+    "lang": "en",
+    "slug": "prices"
+  },
+  "36554377": {
+    "file": "page36554377.html",
+    "url": "https://bestauto.ge/prices",
+    "path": "/prices",
+    "title": "დეტეილინგ ფასები თბილისში — მომსახურების ღირებულება | BESTAUTO",
+    "lang": "ka",
+    "slug": "prices"
+  },
+  "36860233": {
+    "file": "page36860233.html",
+    "url": "https://bestauto.ge/ru/ceramiccoating",
+    "path": "/ru/ceramiccoating",
+    "title": "Керамическое покрытие авто в Тбилиси — нанокерамика от 800 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "ceramiccoating"
+  },
+  "36909398": {
+    "file": "page36909398.html",
+    "url": "https://bestauto.ge/ru/polishing",
+    "path": "/ru/polishing",
+    "title": "Полировка автомобиля в Тбилиси — цены от 150 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "polishing"
+  },
+  "36918868": {
+    "file": "page36918868.html",
+    "url": "https://bestauto.ge/ru/interior-restoration",
+    "path": "/ru/interior-restoration",
+    "title": "Восстановление элементов салона в Тбилиси",
+    "lang": "ru",
+    "slug": "interior-restoration"
+  },
+  "36940808": {
+    "file": "page36940808.html",
+    "url": "https://bestauto.ge/ru/interior-cleaning",
+    "path": "/ru/interior-cleaning",
+    "title": "Химчистка салона автомобиля в Тбилиси — от 200 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "interior-cleaning"
+  },
+  "36963967": {
+    "file": "page36963967.html",
+    "url": "https://bestauto.ge/en/ceramiccoating",
+    "path": "/en/ceramiccoating",
+    "title": "Ceramic Coating in Tbilisi — Nano Ceramic 9H from 800 GEL | BESTAUTO",
+    "lang": "en",
+    "slug": "ceramiccoating"
+  },
+  "36963977": {
+    "file": "page36963977.html",
+    "url": "https://bestauto.ge/en/interior-cleaning",
+    "path": "/en/interior-cleaning",
+    "title": "Car Interior Cleaning & Detailing in Tbilisi — from 200 GEL | BESTAUTO",
+    "lang": "en",
+    "slug": "interior-cleaning"
+  },
+  "36963981": {
+    "file": "page36963981.html",
+    "url": "https://bestauto.ge/en/interior-restoration",
+    "path": "/en/interior-restoration",
+    "title": "Car Interior Parts Restoration in Tbilisi",
+    "lang": "en",
+    "slug": "interior-restoration"
+  },
+  "36963983": {
+    "file": "page36963983.html",
+    "url": "https://bestauto.ge/en/polishing",
+    "path": "/en/polishing",
+    "title": "Car Polishing in Tbilisi — Paint Correction from 150 GEL | BESTAUTO",
+    "lang": "en",
+    "slug": "polishing"
+  },
+  "36976392": {
+    "file": "page36976392.html",
+    "url": "https://bestauto.ge/ru/windshield-repair",
+    "path": "/ru/windshield-repair",
+    "title": "Ремонт сколов и трещин лобового стекла в Тбилиси | BESTAUTO",
+    "lang": "ru",
+    "slug": "windshield-repair"
+  },
+  "37043952": {
+    "file": "page37043952.html",
+    "url": "https://bestauto.ge/en/windshield-repair",
+    "path": "/en/windshield-repair",
+    "title": "Windshield Chip & Crack Repair in Tbilisi | BESTAUTO",
+    "lang": "en",
+    "slug": "windshield-repair"
+  },
+  "37069115": {
+    "file": "page37069115.html",
+    "url": "https://bestauto.ge/ceramiccoating",
+    "path": "/ceramiccoating",
+    "title": "კერამიკული დაფარვა თბილისი — BESTAUTO | 5 წელი გარანტია",
+    "lang": "ka",
+    "slug": "ceramiccoating"
+  },
+  "37069117": {
+    "file": "page37069117.html",
+    "url": "https://bestauto.ge/polishing",
+    "path": "/polishing",
+    "title": "მანქანის პოლირება თბილისში — BESTAUTO დეტეილინგი",
+    "lang": "ka",
+    "slug": "polishing"
+  },
+  "37069119": {
+    "file": "page37069119.html",
+    "url": "https://bestauto.ge/interior-restoration",
+    "path": "/interior-restoration",
+    "title": "ინტერიერის რესტავრაცია თბილისში",
+    "lang": "ka",
+    "slug": "interior-restoration"
+  },
+  "37069123": {
+    "file": "page37069123.html",
+    "url": "https://bestauto.ge/interior-cleaning",
+    "path": "/interior-cleaning",
+    "title": "ქიმწმენდა თბილისში — BESTAUTO | სალონის გაწმენდა",
+    "lang": "ka",
+    "slug": "interior-cleaning"
+  },
+  "37069127": {
+    "file": "page37069127.html",
+    "url": "https://bestauto.ge/windshield-repair",
+    "path": "/windshield-repair",
+    "title": "საქარე მინის შეკეთება თბილისში — BESTAUTO",
+    "lang": "ka",
+    "slug": "windshield-repair"
+  },
+  "37146793": {
+    "file": "page37146793.html",
+    "url": "https://bestauto.ge/ru/vinyl-wrapping",
+    "path": "/ru/vinyl-wrapping",
+    "title": "Оклейка авто виниловой пленкой в Тбилиси — цены | BESTAUTO",
+    "lang": "ru",
+    "slug": "vinyl-wrapping"
+  },
+  "37185964": {
+    "file": "page37185964.html",
+    "url": "https://bestauto.ge/ru/auto-glass-tinting",
+    "path": "/ru/auto-glass-tinting",
+    "title": "Тонировка стекол автомобиля в Тбилиси — цены от 150 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "auto-glass-tinting"
+  },
+  "37185977": {
+    "file": "page37185977.html",
+    "url": "https://bestauto.ge/ru/car-soundproofing",
+    "path": "/ru/car-soundproofing",
+    "title": "Шумоизоляция автомобиля в Тбилиси — цены от 500 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "car-soundproofing"
+  },
+  "37217237": {
+    "file": "page37217237.html",
+    "url": "https://bestauto.ge/ru/paintless-dent-repair",
+    "path": "/ru/paintless-dent-repair",
+    "title": "Беспокрасочное удаление вмятин (PDR) в Тбилиси",
+    "lang": "ru",
+    "slug": "paintless-dent-repair"
+  },
+  "37329658": {
+    "file": "page37329658.html",
+    "url": "https://bestauto.ge/en/vinyl-wrapping",
+    "path": "/en/vinyl-wrapping",
+    "title": "Vinyl Car Wrap in Tbilisi — Color Change from 1500 GEL | BESTAUTO",
+    "lang": "en",
+    "slug": "vinyl-wrapping"
+  },
+  "37334532": {
+    "file": "page37334532.html",
+    "url": "https://bestauto.ge/vinyl-wrapping",
+    "path": "/vinyl-wrapping",
+    "title": "ვინილით შეფუთვა თბილისში — BESTAUTO | ყველა ფერი",
+    "lang": "ka",
+    "slug": "vinyl-wrapping"
+  },
+  "37354333": {
+    "file": "page37354333.html",
+    "url": "https://bestauto.ge/ru/blog/polishing-after-repair",
+    "path": "/ru/blog/polishing-after-repair",
+    "title": "Полировка после ремонта",
+    "lang": "ru",
+    "slug": "blog/polishing-after-repair"
+  },
+  "37355650": {
+    "file": "page37355650.html",
+    "url": "https://bestauto.ge/en/paintless-dent-repair",
+    "path": "/en/paintless-dent-repair",
+    "title": "Paintless Dent Removal (PDR) for Cars in Tbilisi",
+    "lang": "en",
+    "slug": "paintless-dent-repair"
+  },
+  "37355654": {
+    "file": "page37355654.html",
+    "url": "https://bestauto.ge/en/car-soundproofing",
+    "path": "/en/car-soundproofing",
+    "title": "Car Soundproofing in Tbilisi — from 500 GEL | BESTAUTO",
+    "lang": "en",
+    "slug": "car-soundproofing"
+  },
+  "37355656": {
+    "file": "page37355656.html",
+    "url": "https://bestauto.ge/en/auto-glass-tinting",
+    "path": "/en/auto-glass-tinting",
+    "title": "Car Window Tinting in Tbilisi — from 150 GEL | BESTAUTO",
+    "lang": "en",
+    "slug": "auto-glass-tinting"
+  },
+  "37357691": {
+    "file": "page37357691.html",
+    "url": "https://bestauto.ge/ru/blog",
+    "path": "/ru/blog",
+    "title": "Блог детейлинг студии BESTAUTO",
+    "lang": "ru",
+    "slug": "blog"
+  },
+  "37387198": {
+    "file": "page37387198.html",
+    "url": "https://bestauto.ge/auto-glass-tinting",
+    "path": "/auto-glass-tinting",
+    "title": "მინების დაბურვა თბილისში — BESTAUTO | ატერმალური · კერამიკული",
+    "lang": "ka",
+    "slug": "auto-glass-tinting"
+  },
+  "37387205": {
+    "file": "page37387205.html",
+    "url": "https://bestauto.ge/car-soundproofing",
+    "path": "/car-soundproofing",
+    "title": "მანქანის ხმის იზოლაცია თბილისში — BESTAUTO | სრული · ნაწილობრივი",
+    "lang": "ka",
+    "slug": "car-soundproofing"
+  },
+  "37387217": {
+    "file": "page37387217.html",
+    "url": "https://bestauto.ge/paintless-dent-repair",
+    "path": "/paintless-dent-repair",
+    "title": "ძარას ცივად გასწორება (PDR) თბილისში",
+    "lang": "ka",
+    "slug": "paintless-dent-repair"
+  },
+  "37416946": {
+    "file": "page37416946.html",
+    "url": "https://bestauto.ge/en/blog",
+    "path": "/en/blog",
+    "title": "BESTAUTO detailing blog",
+    "lang": "en",
+    "slug": "blog"
+  },
+  "37596602": {
+    "file": "page37596602.html",
+    "url": "https://bestauto.ge/en/blog/polishing-after-repair",
+    "path": "/en/blog/polishing-after-repair",
+    "title": "Paint Correction for Cars After Repair",
+    "lang": "en",
+    "slug": "blog/polishing-after-repair"
+  },
+  "37597178": {
+    "file": "page37597178.html",
+    "url": "https://bestauto.ge/blog/polishing-after-repair",
+    "path": "/blog/polishing-after-repair",
+    "title": "მანქანის გაპრიალება შეკეთების შემდეგ",
+    "lang": "ka",
+    "slug": "blog/polishing-after-repair"
+  },
+  "37602384": {
+    "file": "page37602384.html",
+    "url": "https://bestauto.ge/blog",
+    "path": "/blog",
+    "title": "ბლოგი — დეტეილინგ სტუდია BESTAUTO",
+    "lang": "ka",
+    "slug": "blog"
+  },
+  "37626293": {
+    "file": "page37626293.html",
+    "url": "https://bestauto.ge/ru/blog/ceramic-coating-for-car",
+    "path": "/ru/blog/ceramic-coating-for-car",
+    "title": "Керамическое покрытие кузова | Ваш автомобиль засияет новыми красками",
+    "lang": "ru",
+    "slug": "blog/ceramic-coating-for-car"
+  },
+  "37652578": {
+    "file": "page37652578.html",
+    "url": "https://bestauto.ge/blog/ceramic-coating-for-car",
+    "path": "/blog/ceramic-coating-for-car",
+    "title": "ავტომობილის ძარას კერამიკული საფარი",
+    "lang": "ka",
+    "slug": "blog/ceramic-coating-for-car"
+  },
+  "37666480": {
+    "file": "page37666480.html",
+    "url": "https://bestauto.ge/en/blog/ceramic-coating-for-car",
+    "path": "/en/blog/ceramic-coating-for-car",
+    "title": "Ceramic Coating For Auto | Your Car Will Shine In New Splendor",
+    "lang": "en",
+    "slug": "blog/ceramic-coating-for-car"
+  },
+  "37739342": {
+    "file": "page37739342.html",
+    "url": "https://bestauto.ge/ru/blog/interior-cleaning-for-auto",
+    "path": "/ru/blog/interior-cleaning-for-auto",
+    "title": "Профессиональная химчистка салона авто в Тбилиси",
+    "lang": "ru",
+    "slug": "blog/interior-cleaning-for-auto"
+  },
+  "37739916": {
+    "file": "page37739916.html",
+    "url": "https://bestauto.ge/en/blog/interior-cleaning-for-auto",
+    "path": "/en/blog/interior-cleaning-for-auto",
+    "title": "Professional Car Interior Cleaning in Tbilisi",
+    "lang": "en",
+    "slug": "blog/interior-cleaning-for-auto"
+  },
+  "37740011": {
+    "file": "page37740011.html",
+    "url": "https://bestauto.ge/blog/interior-cleaning-for-auto",
+    "path": "/blog/interior-cleaning-for-auto",
+    "title": "მანქანის სალონის პროფესიონალური ქიმწმენდა თბილისში",
+    "lang": "ka",
+    "slug": "blog/interior-cleaning-for-auto"
+  },
+  "37767785": {
+    "file": "page37767785.html",
+    "url": "https://bestauto.ge/ru/computer-diagnostics",
+    "path": "/ru/computer-diagnostics",
+    "title": "Компьютерная диагностика автомобиля в Тбилиси — от 50 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "computer-diagnostics"
+  },
+  "37794273": {
+    "file": "page37794273.html",
+    "url": "https://bestauto.ge/ru/blog/why-restore-interior-elements",
+    "path": "/ru/blog/why-restore-interior-elements",
+    "title": "Реставрация салона автомобиля в Тбилиси",
+    "lang": "ru",
+    "slug": "blog/why-restore-interior-elements"
+  },
+  "37795736": {
+    "file": "page37795736.html",
+    "url": "https://bestauto.ge/en/blog/why-restore-interior-elements",
+    "path": "/en/blog/why-restore-interior-elements",
+    "title": "Interior Restoration for Cars in Tbilisi",
+    "lang": "en",
+    "slug": "blog/why-restore-interior-elements"
+  },
+  "37796062": {
+    "file": "page37796062.html",
+    "url": "https://bestauto.ge/blog/why-restore-interior-elements",
+    "path": "/blog/why-restore-interior-elements",
+    "title": "მანქანის ინტერიერის სალონის რესტავრაცია თბილისში",
+    "lang": "ka",
+    "slug": "blog/why-restore-interior-elements"
+  },
+  "37880280": {
+    "file": "page37880280.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-film-for-cars-protection",
+    "path": "/ru/blog/ppf-film-for-cars-protection",
+    "title": "Оклейка кузова защитной пленкой (PPF) | Защита от царапин и сколов",
+    "lang": "ru",
+    "slug": "blog/ppf-film-for-cars-protection"
+  },
+  "37880662": {
+    "file": "page37880662.html",
+    "url": "https://bestauto.ge/blog/ppf-film-for-cars-protection",
+    "path": "/blog/ppf-film-for-cars-protection",
+    "title": "ძარას შეფუთვა დამცავი ფირით (PPF) | დაცვა ნაკაწრებისა და ნაკენჭარებისგან",
+    "lang": "ka",
+    "slug": "blog/ppf-film-for-cars-protection"
+  },
+  "37906831": {
+    "file": "page37906831.html",
+    "url": "https://bestauto.ge/en/blog/ppf-film-for-cars-protection",
+    "path": "/en/blog/ppf-film-for-cars-protection",
+    "title": "PPF Wrapping for Vehicles | Protect Your Car Body",
+    "lang": "en",
+    "slug": "blog/ppf-film-for-cars-protection"
+  },
+  "37935297": {
+    "file": "page37935297.html",
+    "url": "https://bestauto.ge/ru/blog/benefits-of-vinyl-wraps",
+    "path": "/ru/blog/benefits-of-vinyl-wraps",
+    "title": "Преимущества оклейки кузова автомобиля виниловой пленкой: стиль и защита",
+    "lang": "ru",
+    "slug": "blog/benefits-of-vinyl-wraps"
+  },
+  "37935565": {
+    "file": "page37935565.html",
+    "url": "https://bestauto.ge/blog/benefits-of-vinyl-wraps",
+    "path": "/blog/benefits-of-vinyl-wraps",
+    "title": "მანქანის ძარას ვინილის ფირით შეფუთვის უპირატესობები: ესთეთიკა და დაცვა",
+    "lang": "ka",
+    "slug": "blog/benefits-of-vinyl-wraps"
+  },
+  "37961709": {
+    "file": "page37961709.html",
+    "url": "https://bestauto.ge/en/blog/benefits-of-vinyl-wraps",
+    "path": "/en/blog/benefits-of-vinyl-wraps",
+    "title": "Benefits of vinyl wrapping for car body: style and protection",
+    "lang": "en",
+    "slug": "blog/benefits-of-vinyl-wraps"
+  },
+  "38015949": {
+    "file": "page38015949.html",
+    "url": "https://bestauto.ge/en/computer-diagnostics",
+    "path": "/en/computer-diagnostics",
+    "title": "Car Diagnostic Test in Tbilisi — Computer Diagnostics & Key Coding | BESTAUTO",
+    "lang": "en",
+    "slug": "computer-diagnostics"
+  },
+  "38016286": {
+    "file": "page38016286.html",
+    "url": "https://bestauto.ge/computer-diagnostics",
+    "path": "/computer-diagnostics",
+    "title": "მანქანის კომპიუტერული დიაგნოსტიკა თბილისში — BESTAUTO | 50 ლარიდან",
+    "lang": "ka",
+    "slug": "computer-diagnostics"
+  },
+  "38043378": {
+    "file": "page38043378.html",
+    "url": "https://bestauto.ge/ru/blog/pdr-method",
+    "path": "/ru/blog/pdr-method",
+    "title": "Беспокрасочное удаление вмятин (PDR) - инновационный метод в автоиндустрии",
+    "lang": "ru",
+    "slug": "blog/pdr-method"
+  },
+  "38043698": {
+    "file": "page38043698.html",
+    "url": "https://bestauto.ge/blog/pdr-method",
+    "path": "/blog/pdr-method",
+    "title": "უფერო ნაკბენის მოცილება: ინოვაციური მეთოდი საავტომობილო ინდუსტრიაში",
+    "lang": "ka",
+    "slug": "blog/pdr-method"
+  },
+  "38071724": {
+    "file": "page38071724.html",
+    "url": "https://bestauto.ge/en/blog/pdr-method",
+    "path": "/en/blog/pdr-method",
+    "title": "Paintless Dent Repair (PDR): An Innovative Method in the Automotive Industry",
+    "lang": "en",
+    "slug": "blog/pdr-method"
+  },
+  "38099075": {
+    "file": "page38099075.html",
+    "url": "https://bestauto.ge/ru/blog/replace-or-repair",
+    "path": "/ru/blog/replace-or-repair",
+    "title": "Когда ремонт сколов возможен, а когда требуется замена стекла?",
+    "lang": "ru",
+    "slug": "blog/replace-or-repair"
+  },
+  "38099239": {
+    "file": "page38099239.html",
+    "url": "https://bestauto.ge/blog/replace-or-repair",
+    "path": "/blog/replace-or-repair",
+    "title": "როდის კეთდება ნაკენჭარის შეკეთება და როდის არის საჭირო მინის გამოცვლა?",
+    "lang": "ka",
+    "slug": "blog/replace-or-repair"
+  },
+  "38126059": {
+    "file": "page38126059.html",
+    "url": "https://bestauto.ge/en/blog/replace-or-repair",
+    "path": "/en/blog/replace-or-repair",
+    "title": "When Is Windshield Repair Possible, And When Is Glass Replacement Required?",
+    "lang": "en",
+    "slug": "blog/replace-or-repair"
+  },
+  "38206312": {
+    "file": "page38206312.html",
+    "url": "https://bestauto.ge/ru/blog/top-11-reasons",
+    "path": "/ru/blog/top-11-reasons",
+    "title": "Преимущества от тонировки стекол автомобиля",
+    "lang": "ru",
+    "slug": "blog/top-11-reasons"
+  },
+  "38206488": {
+    "file": "page38206488.html",
+    "url": "https://bestauto.ge/blog/top-11-reasons",
+    "path": "/blog/top-11-reasons",
+    "title": "მანქანის მინების დაბურვის უპირატესობები",
+    "lang": "ka",
+    "slug": "blog/top-11-reasons"
+  },
+  "38233424": {
+    "file": "page38233424.html",
+    "url": "https://bestauto.ge/en/blog/top-11-reasons",
+    "path": "/en/blog/top-11-reasons",
+    "title": "Advantages of Car Window Tinting",
+    "lang": "en",
+    "slug": "blog/top-11-reasons"
+  },
+  "38261911": {
+    "file": "page38261911.html",
+    "url": "https://bestauto.ge/ru/blog/why-soundproof-car",
+    "path": "/ru/blog/why-soundproof-car",
+    "title": "Шумоизоляция автомобиля: ключ к комфорту и тишине на дороге",
+    "lang": "ru",
+    "slug": "blog/why-soundproof-car"
+  },
+  "38262094": {
+    "file": "page38262094.html",
+    "url": "https://bestauto.ge/blog/why-soundproof-car",
+    "path": "/blog/why-soundproof-car",
+    "title": "მანქანის ხმის იზოლაცია: გზაზე კომფორტისა და სიჩუმის უპირატესობა",
+    "lang": "ka",
+    "slug": "blog/why-soundproof-car"
+  },
+  "38289536": {
+    "file": "page38289536.html",
+    "url": "https://bestauto.ge/en/blog/why-soundproof-car",
+    "path": "/en/blog/why-soundproof-car",
+    "title": "Car Soundproofing: The Key To Comfort And Silence On The Road",
+    "lang": "en",
+    "slug": "blog/why-soundproof-car"
+  },
+  "38371077": {
+    "file": "page38371077.html",
+    "url": "https://bestauto.ge/ru/blog/why-use-car-diagnostic-test",
+    "path": "/ru/blog/why-use-car-diagnostic-test",
+    "title": "Компьютерная диагностика авто - надежный и эффективный инструмент",
+    "lang": "ru",
+    "slug": "blog/why-use-car-diagnostic-test"
+  },
+  "38371405": {
+    "file": "page38371405.html",
+    "url": "https://bestauto.ge/blog/why-use-car-diagnostic-test",
+    "path": "/blog/why-use-car-diagnostic-test",
+    "title": "მანქანის კომპიუტერული დიაგნოსტიკა: საიმედო და ეფექტური ინსტრუმენტი",
+    "lang": "ka",
+    "slug": "blog/why-use-car-diagnostic-test"
+  },
+  "38396538": {
+    "file": "page38396538.html",
+    "url": "https://bestauto.ge/en/blog/why-use-car-diagnostic-test",
+    "path": "/en/blog/why-use-car-diagnostic-test",
+    "title": "Car Diagnostic Test: Reliable and Efficient Service",
+    "lang": "en",
+    "slug": "blog/why-use-car-diagnostic-test"
+  },
+  "38424408": {
+    "file": "page38424408.html",
+    "url": "https://bestauto.ge/ru/blog/headlight-polishing",
+    "path": "/ru/blog/headlight-polishing",
+    "title": "Полировка фар автомобиля | Методы, причины, преимущества",
+    "lang": "ru",
+    "slug": "blog/headlight-polishing"
+  },
+  "38474961": {
+    "file": "page38474961.html",
+    "url": "https://bestauto.ge/blog/headlight-polishing",
+    "path": "/blog/headlight-polishing",
+    "title": "მანქანის ფარების გაპრიალება | მეთოდები, მიზეზები, სარგებელი",
+    "lang": "ka",
+    "slug": "blog/headlight-polishing"
+  },
+  "38475291": {
+    "file": "page38475291.html",
+    "url": "https://bestauto.ge/en/blog/headlight-polishing",
+    "path": "/en/blog/headlight-polishing",
+    "title": "Car Headlight Polishing | Methods, Reasons, Benefits",
+    "lang": "en",
+    "slug": "blog/headlight-polishing"
+  },
+  "38584230": {
+    "file": "page38584230.html",
+    "url": "https://bestauto.ge/ru/blog/ceramic-for-car-glass",
+    "path": "/ru/blog/ceramic-for-car-glass",
+    "title": "Керамическое покрытие стекол для кристально чистой видимости",
+    "lang": "ru",
+    "slug": "blog/ceramic-for-car-glass"
+  },
+  "38584976": {
+    "file": "page38584976.html",
+    "url": "https://bestauto.ge/blog/ceramic-for-car-glass",
+    "path": "/blog/ceramic-for-car-glass",
+    "title": "კერამიკული ლინზები კრისტალურად სუფთა ხილვადობისთვის",
+    "lang": "ka",
+    "slug": "blog/ceramic-for-car-glass"
+  },
+  "38610424": {
+    "file": "page38610424.html",
+    "url": "https://bestauto.ge/en/blog/ceramic-for-car-glass",
+    "path": "/en/blog/ceramic-for-car-glass",
+    "title": "Ceramic Coating for Glass for Crystal-Clear Visibility",
+    "lang": "en",
+    "slug": "blog/ceramic-for-car-glass"
+  },
+  "38687948": {
+    "file": "page38687948.html",
+    "url": "https://bestauto.ge/ru/blog/engine-room-cleaning",
+    "path": "/ru/blog/engine-room-cleaning",
+    "title": "Мойка подкапотного пространства для оптимальной производительности и долговечнос",
+    "lang": "ru",
+    "slug": "blog/engine-room-cleaning"
+  },
+  "38688164": {
+    "file": "page38688164.html",
+    "url": "https://bestauto.ge/blog/engine-room-cleaning",
+    "path": "/blog/engine-room-cleaning",
+    "title": "ქვედა სარეცხი ოპტიმალური მუშაობისა და გამძლეობისთვის",
+    "lang": "ka",
+    "slug": "blog/engine-room-cleaning"
+  },
+  "38713458": {
+    "file": "page38713458.html",
+    "url": "https://bestauto.ge/en/blog/engine-room-cleaning",
+    "path": "/en/blog/engine-room-cleaning",
+    "title": "Engine Room Cleaning For Optimal Performance And Useful Life",
+    "lang": "en",
+    "slug": "blog/engine-room-cleaning"
+  },
+  "38741194": {
+    "file": "page38741194.html",
+    "url": "https://bestauto.ge/ru/blog/steering-wheel-restoration",
+    "path": "/ru/blog/steering-wheel-restoration",
+    "title": "Как новый: Реставрация руля для вашего комфорта",
+    "lang": "ru",
+    "slug": "blog/steering-wheel-restoration"
+  },
+  "38765977": {
+    "file": "page38765977.html",
+    "url": "https://bestauto.ge/blog/steering-wheel-restoration",
+    "path": "/blog/steering-wheel-restoration",
+    "title": "საჭის რესტავრაცია თქვენი კომფორტისთვის",
+    "lang": "ka",
+    "slug": "blog/steering-wheel-restoration"
+  },
+  "38766378": {
+    "file": "page38766378.html",
+    "url": "https://bestauto.ge/en/blog/steering-wheel-restoration",
+    "path": "/en/blog/steering-wheel-restoration",
+    "title": "As Good As New: Steering Wheel Restoration For Your Comfort",
+    "lang": "en",
+    "slug": "blog/steering-wheel-restoration"
+  },
+  "38848576": {
+    "file": "page38848576.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-benefits",
+    "path": "/ru/blog/ppf-benefits",
+    "title": "Преимущества пленки PPF при защите кузова автомобиля: почему стоит вложиться",
+    "lang": "ru",
+    "slug": "blog/ppf-benefits"
+  },
+  "38848870": {
+    "file": "page38848870.html",
+    "url": "https://bestauto.ge/blog/ppf-benefits",
+    "path": "/blog/ppf-benefits",
+    "title": "PPF ფირის უპირატესობები მანქანის ძარას დაცვისთვის: რატომ ღირს ინვესტიცია",
+    "lang": "ka",
+    "slug": "blog/ppf-benefits"
+  },
+  "38875167": {
+    "file": "page38875167.html",
+    "url": "https://bestauto.ge/en/blog/ppf-benefits",
+    "path": "/en/blog/ppf-benefits",
+    "title": "Benefits Of PPF For Car Body Protection: Why Is It Worth Paying For It?",
+    "lang": "en",
+    "slug": "blog/ppf-benefits"
+  },
+  "38901771": {
+    "file": "page38901771.html",
+    "url": "https://bestauto.ge/ru/blog/protection-against-uv-rays-scratches",
+    "path": "/ru/blog/protection-against-uv-rays-scratches",
+    "title": "Виниловая пленка для оклейки кузова: защита от царапин, сколов и УФ-лучей",
+    "lang": "ru",
+    "slug": "blog/protection-against-uv-rays-scratches"
+  },
+  "38901907": {
+    "file": "page38901907.html",
+    "url": "https://bestauto.ge/blog/protection-against-uv-rays-scratches",
+    "path": "/blog/protection-against-uv-rays-scratches",
+    "title": "ვინილის ფირი ძარას შესაფუთად: დაცვა ნაკაწრებისგან, ნაკენჭარებისგან და UV სხივები",
+    "lang": "ka",
+    "slug": "blog/protection-against-uv-rays-scratches"
+  },
+  "38927014": {
+    "file": "page38927014.html",
+    "url": "https://bestauto.ge/en/blog/protection-against-uv-rays-scratches",
+    "path": "/en/blog/protection-against-uv-rays-scratches",
+    "title": "Vinyl For Car Body Wrapping: Protection Against Scratches, Chips, And UV-Rays",
+    "lang": "en",
+    "slug": "blog/protection-against-uv-rays-scratches"
+  },
+  "39006216": {
+    "file": "page39006216.html",
+    "url": "https://bestauto.ge/ru/blog/pdr-after-hail",
+    "path": "/ru/blog/pdr-after-hail",
+    "title": "Погода не помеха: беспокрасочное удаление вмятин от града",
+    "lang": "ru",
+    "slug": "blog/pdr-after-hail"
+  },
+  "39006920": {
+    "file": "page39006920.html",
+    "url": "https://bestauto.ge/blog/pdr-after-hail",
+    "path": "/blog/pdr-after-hail",
+    "title": "ამინდი პრობლემას არ წარმოადგენს: ნასეტყვარის ცივად გასწორება.",
+    "lang": "ka",
+    "slug": "blog/pdr-after-hail"
+  },
+  "39033206": {
+    "file": "page39033206.html",
+    "url": "https://bestauto.ge/en/blog/pdr-after-hail",
+    "path": "/en/blog/pdr-after-hail",
+    "title": "Weather Is Not A Problem: PDR After Hail",
+    "lang": "en",
+    "slug": "blog/pdr-after-hail"
+  },
+  "39061588": {
+    "file": "page39061588.html",
+    "url": "https://bestauto.ge/ru/blog/windshield-repair-benefits",
+    "path": "/ru/blog/windshield-repair-benefits",
+    "title": "Преимущества ремонта сколов на лобовом стекле: экономия времени и денег",
+    "lang": "ru",
+    "slug": "blog/windshield-repair-benefits"
+  },
+  "39062231": {
+    "file": "page39062231.html",
+    "url": "https://bestauto.ge/blog/windshield-repair-benefits",
+    "path": "/blog/windshield-repair-benefits",
+    "title": "საქარე მინის ნაკენჭარის შეკეთების უპირატესობები: დაზოგეთ დრო და ფული",
+    "lang": "ka",
+    "slug": "blog/windshield-repair-benefits"
+  },
+  "39088372": {
+    "file": "page39088372.html",
+    "url": "https://bestauto.ge/en/blog/windshield-repair-benefits",
+    "path": "/en/blog/windshield-repair-benefits",
+    "title": "Benefits Of Windshield Repair: Time And Cost Saving",
+    "lang": "en",
+    "slug": "blog/windshield-repair-benefits"
+  },
+  "39331357": {
+    "file": "page39331357.html",
+    "url": "https://bestauto.ge/ru/blog/vehicle-tinting-techniques",
+    "path": "/ru/blog/vehicle-tinting-techniques",
+    "title": "Техники тонировки стекол автомобиля: секреты профессионалов",
+    "lang": "ru",
+    "slug": "blog/vehicle-tinting-techniques"
+  },
+  "39331951": {
+    "file": "page39331951.html",
+    "url": "https://bestauto.ge/blog/vehicle-tinting-techniques",
+    "path": "/blog/vehicle-tinting-techniques",
+    "title": "მანქანის შუშის დაბურვის ტექნიკა: პროფესიული საიდუმლოებები",
+    "lang": "ka",
+    "slug": "blog/vehicle-tinting-techniques"
+  },
+  "39359014": {
+    "file": "page39359014.html",
+    "url": "https://bestauto.ge/en/blog/vehicle-tinting-techniques",
+    "path": "/en/blog/vehicle-tinting-techniques",
+    "title": "Car Window Tinting Techniques: Professional Secrets",
+    "lang": "en",
+    "slug": "blog/vehicle-tinting-techniques"
+  },
+  "39384500": {
+    "file": "page39384500.html",
+    "url": "https://bestauto.ge/ru/blog/noisemakers-and-wayouts",
+    "path": "/ru/blog/noisemakers-and-wayouts",
+    "title": "Основные источники шума в автомобиле и как с ними бороться",
+    "lang": "ru",
+    "slug": "blog/noisemakers-and-wayouts"
+  },
+  "39385234": {
+    "file": "page39385234.html",
+    "url": "https://bestauto.ge/blog/noisemakers-and-wayouts",
+    "path": "/blog/noisemakers-and-wayouts",
+    "title": "მანქანაში ხმაურის ძირითადი წყაროები და როგორ გავუმკლავდეთ მათ",
+    "lang": "ka",
+    "slug": "blog/noisemakers-and-wayouts"
+  },
+  "39385525": {
+    "file": "page39385525.html",
+    "url": "https://bestauto.ge/en/blog/noisemakers-and-wayouts",
+    "path": "/en/blog/noisemakers-and-wayouts",
+    "title": "Major Noisemakers in a Car and How to Deal with Them",
+    "lang": "en",
+    "slug": "blog/noisemakers-and-wayouts"
+  },
+  "39531566": {
+    "file": "page39531566.html",
+    "url": "https://bestauto.ge/ru/blog/car-diagnostic-test-stages-and-methods",
+    "path": "/ru/blog/car-diagnostic-test-stages-and-methods",
+    "title": "Как работает компьютерная диагностика автомобилей: основные этапы и методы",
+    "lang": "ru",
+    "slug": "blog/car-diagnostic-test-stages-and-methods"
+  },
+  "39559488": {
+    "file": "page39559488.html",
+    "url": "https://bestauto.ge/blog/car-diagnostic-test-stages-and-methods",
+    "path": "/blog/car-diagnostic-test-stages-and-methods",
+    "title": "როგორ მუშაობს მანქანების კომპიუტერული დიაგნოსტიკა: ძირითადი ეტაპები და მეთოდები",
+    "lang": "ka",
+    "slug": "blog/car-diagnostic-test-stages-and-methods"
+  },
+  "39706610": {
+    "file": "page39706610.html",
+    "url": "https://bestauto.ge/en/blog/car-diagnostic-test-stages-and-methods",
+    "path": "/en/blog/car-diagnostic-test-stages-and-methods",
+    "title": "How Car Diagnostic Test Work: Key Stages and Methods",
+    "lang": "en",
+    "slug": "blog/car-diagnostic-test-stages-and-methods"
+  },
+  "39735634": {
+    "file": "page39735634.html",
+    "url": "https://bestauto.ge/ru/blog/car-interior-polishing",
+    "path": "/ru/blog/car-interior-polishing",
+    "title": "Изящество в деталях: как полировка салона придает автомобилю новую жизнь",
+    "lang": "ru",
+    "slug": "blog/car-interior-polishing"
+  },
+  "39736212": {
+    "file": "page39736212.html",
+    "url": "https://bestauto.ge/blog/car-interior-polishing",
+    "path": "/blog/car-interior-polishing",
+    "title": "როგორ ანიჭებს ინტერიერის გაპრიალება თქვენს მანქანას ახალ სიცოცხლეს",
+    "lang": "ka",
+    "slug": "blog/car-interior-polishing"
+  },
+  "39764679": {
+    "file": "page39764679.html",
+    "url": "https://bestauto.ge/en/blog/car-interior-polishing",
+    "path": "/en/blog/car-interior-polishing",
+    "title": "Elegance in Detail: Interior Polishing For Your Car's New Life",
+    "lang": "en",
+    "slug": "blog/car-interior-polishing"
+  },
+  "39853826": {
+    "file": "page39853826.html",
+    "url": "https://bestauto.ge/ru/blog/interior-ceramic-coating",
+    "path": "/ru/blog/interior-ceramic-coating",
+    "title": "Ультра-защита для вашего салона: керамическое покрытие как способ сохранить его ",
+    "lang": "ru",
+    "slug": "blog/interior-ceramic-coating"
+  },
+  "39854319": {
+    "file": "page39854319.html",
+    "url": "https://bestauto.ge/blog/interior-ceramic-coating",
+    "path": "/blog/interior-ceramic-coating",
+    "title": "ულტრა დაცვა თქვენი ინტერიერისთვის: კერამიკული საფარი, როგორც საშუალება, რომ შეინ",
+    "lang": "ka",
+    "slug": "blog/interior-ceramic-coating"
+  },
+  "39854717": {
+    "file": "page39854717.html",
+    "url": "https://bestauto.ge/en/blog/interior-ceramic-coating",
+    "path": "/en/blog/interior-ceramic-coating",
+    "title": "Ultimate Protection for Your Interior: Ceramic Coating as a Way to Keep It Looki",
+    "lang": "en",
+    "slug": "blog/interior-ceramic-coating"
+  },
+  "39941406": {
+    "file": "page39941406.html",
+    "url": "https://bestauto.ge/ru/blog/car-interior-disinfection",
+    "path": "/ru/blog/car-interior-disinfection",
+    "title": "Верните чистоту и комфорт: устранение запахов и дезинфекция салона авто для его ",
+    "lang": "ru",
+    "slug": "blog/car-interior-disinfection"
+  },
+  "39942604": {
+    "file": "page39942604.html",
+    "url": "https://bestauto.ge/blog/car-interior-disinfection",
+    "path": "/blog/car-interior-disinfection",
+    "title": "დააბრუნეთ სისუფთავე და კომფორტი: უსიამოვნო სუნის აღმოფხვრა და მანქანის ინტერიერი",
+    "lang": "ka",
+    "slug": "blog/car-interior-disinfection"
+  },
+  "40004952": {
+    "file": "page40004952.html",
+    "url": "https://bestauto.ge/en/blog/car-interior-disinfection",
+    "path": "/en/blog/car-interior-disinfection",
+    "title": "Restore Cleanliness and Comfort: Eliminate Odors and Disinfect Your Car Interior",
+    "lang": "en",
+    "slug": "blog/car-interior-disinfection"
+  },
+  "40122483": {
+    "file": "page40122483.html",
+    "url": "https://bestauto.ge/ru/blog/restoring-car-seats",
+    "path": "/ru/blog/restoring-car-seats",
+    "title": "Реставрация сидений автомобиля: стиль и качество",
+    "lang": "ru",
+    "slug": "blog/restoring-car-seats"
+  },
+  "40123147": {
+    "file": "page40123147.html",
+    "url": "https://bestauto.ge/blog/restoring-car-seats",
+    "path": "/blog/restoring-car-seats",
+    "title": "მანქანის სავარძლების რესტავრაცია: სტილი და ხარისხი",
+    "lang": "ka",
+    "slug": "blog/restoring-car-seats"
+  },
+  "40188573": {
+    "file": "page40188573.html",
+    "url": "https://bestauto.ge/en/blog/restoring-car-seats",
+    "path": "/en/blog/restoring-car-seats",
+    "title": "Car Seat Restoration: Style and Best Quality",
+    "lang": "en",
+    "slug": "blog/restoring-car-seats"
+  },
+  "40249617": {
+    "file": "page40249617.html",
+    "url": "https://bestauto.ge/ru/blog/service-on-ppf-wrapped-car",
+    "path": "/ru/blog/service-on-ppf-wrapped-car",
+    "title": "Уход за автомобилем с пленкой PPF: рекомендации по чистке и обслуживанию",
+    "lang": "ru",
+    "slug": "blog/service-on-ppf-wrapped-car"
+  },
+  "40250238": {
+    "file": "page40250238.html",
+    "url": "https://bestauto.ge/blog/service-on-ppf-wrapped-car",
+    "path": "/blog/service-on-ppf-wrapped-car",
+    "title": "მანქანის მოვლა PPF ფირით: დასუფთავებისა და მოვლის რეკომენდაციები",
+    "lang": "ka",
+    "slug": "blog/service-on-ppf-wrapped-car"
+  },
+  "40281359": {
+    "file": "page40281359.html",
+    "url": "https://bestauto.ge/en/blog/service-on-ppf-wrapped-car",
+    "path": "/en/blog/service-on-ppf-wrapped-car",
+    "title": "Care of PPF Wrapped Vehicle: Cleaning and Maintenance Recommendations",
+    "lang": "en",
+    "slug": "blog/service-on-ppf-wrapped-car"
+  },
+  "40311681": {
+    "file": "page40311681.html",
+    "url": "https://bestauto.ge/ru/blog/hints-for-vinyl-wrapped-cars",
+    "path": "/ru/blog/hints-for-vinyl-wrapped-cars",
+    "title": "Уход за автомобилем с виниловой пленкой: рекомендации по чистке и обслуживанию",
+    "lang": "ru",
+    "slug": "blog/hints-for-vinyl-wrapped-cars"
+  },
+  "40312402": {
+    "file": "page40312402.html",
+    "url": "https://bestauto.ge/blog/hints-for-vinyl-wrapped-cars",
+    "path": "/blog/hints-for-vinyl-wrapped-cars",
+    "title": "ვინილის ფირის მქონე მანქანის მოვლა: დასუფთავებისა და მოვლის რეკომენდაციები",
+    "lang": "ka",
+    "slug": "blog/hints-for-vinyl-wrapped-cars"
+  },
+  "40312672": {
+    "file": "page40312672.html",
+    "url": "https://bestauto.ge/en/blog/hints-for-vinyl-wrapped-cars",
+    "path": "/en/blog/hints-for-vinyl-wrapped-cars",
+    "title": "Servicing of a Vinyl Wrapped Vehicle: Cleaning and Maintenance Recommendations",
+    "lang": "en",
+    "slug": "blog/hints-for-vinyl-wrapped-cars"
+  },
+  "40418526": {
+    "file": "page40418526.html",
+    "url": "https://bestauto.ge/ru/blog/pdr-guidelines-and-techniques",
+    "path": "/ru/blog/pdr-guidelines-and-techniques",
+    "title": "Как работает беспокрасочное удаление вмятин (PDR): основные принципы и техники",
+    "lang": "ru",
+    "slug": "blog/pdr-guidelines-and-techniques"
+  },
+  "40419406": {
+    "file": "page40419406.html",
+    "url": "https://bestauto.ge/blog/pdr-guidelines-and-techniques",
+    "path": "/blog/pdr-guidelines-and-techniques",
+    "title": "როგორ მუშაობს ცივად გასწორება (PDR): ძირითადი პრინციპები და ტექნიკა",
+    "lang": "ka",
+    "slug": "blog/pdr-guidelines-and-techniques"
+  },
+  "40453479": {
+    "file": "page40453479.html",
+    "url": "https://bestauto.ge/en/blog/pdr-guidelines-and-techniques",
+    "path": "/en/blog/pdr-guidelines-and-techniques",
+    "title": "How Paintless Dent Repair (PDR) Works: Basic Guidelines and Techniques",
+    "lang": "en",
+    "slug": "blog/pdr-guidelines-and-techniques"
+  },
+  "40487726": {
+    "file": "page40487726.html",
+    "url": "https://bestauto.ge/ru/blog/efficiency-of-windshield-repair",
+    "path": "/ru/blog/efficiency-of-windshield-repair",
+    "title": "Какие типы сколов могут быть восстановлены и насколько эффективен процесс ремонт",
+    "lang": "ru",
+    "slug": "blog/efficiency-of-windshield-repair"
+  },
+  "40488563": {
+    "file": "page40488563.html",
+    "url": "https://bestauto.ge/blog/efficiency-of-windshield-repair",
+    "path": "/blog/efficiency-of-windshield-repair",
+    "title": "რა ტიპის ნაკენჭარის შეკეთება შეიძლება და რამდენად ეფექტურია შეკეთების პროცესი?",
+    "lang": "ka",
+    "slug": "blog/efficiency-of-windshield-repair"
+  },
+  "40521740": {
+    "file": "page40521740.html",
+    "url": "https://bestauto.ge/en/blog/efficiency-of-windshield-repair",
+    "path": "/en/blog/efficiency-of-windshield-repair",
+    "title": "What Types of Chips Can Be Restored And How Effective Is the Repair Process?",
+    "lang": "en",
+    "slug": "blog/efficiency-of-windshield-repair"
+  },
+  "40634269": {
+    "file": "page40634269.html",
+    "url": "https://bestauto.ge/ru/blog/window-tinting-care",
+    "path": "/ru/blog/window-tinting-care",
+    "title": "Уход за тонированными стеклами: советы по сохранению качества",
+    "lang": "ru",
+    "slug": "blog/window-tinting-care"
+  },
+  "40634861": {
+    "file": "page40634861.html",
+    "url": "https://bestauto.ge/blog/window-tinting-care",
+    "path": "/blog/window-tinting-care",
+    "title": "დაბურულ მინაზე ზრუნვა: რჩევები ხარისხის შესანარჩუნებლად",
+    "lang": "ka",
+    "slug": "blog/window-tinting-care"
+  },
+  "40635194": {
+    "file": "page40635194.html",
+    "url": "https://bestauto.ge/en/blog/window-tinting-care",
+    "path": "/en/blog/window-tinting-care",
+    "title": "Tinted Windows Maintenance: Tips for Preserving Quality",
+    "lang": "en",
+    "slug": "blog/window-tinting-care"
+  },
+  "40699250": {
+    "file": "page40699250.html",
+    "url": "https://bestauto.ge/ru/blog/soundrpoofing-process",
+    "path": "/ru/blog/soundrpoofing-process",
+    "title": "Процесс шумоизоляции автомобиля: шаг за шагом",
+    "lang": "ru",
+    "slug": "blog/soundrpoofing-process"
+  },
+  "40699939": {
+    "file": "page40699939.html",
+    "url": "https://bestauto.ge/blog/soundrpoofing-process",
+    "path": "/blog/soundrpoofing-process",
+    "title": "მანქანის ხმის იზოლაციის პროცესი: ეტაპობრივად",
+    "lang": "ka",
+    "slug": "blog/soundrpoofing-process"
+  },
+  "40731374": {
+    "file": "page40731374.html",
+    "url": "https://bestauto.ge/en/blog/soundrpoofing-process",
+    "path": "/en/blog/soundrpoofing-process",
+    "title": "Car Soundproofing Process: Step by Step",
+    "lang": "en",
+    "slug": "blog/soundrpoofing-process"
+  },
+  "40838369": {
+    "file": "page40838369.html",
+    "url": "https://bestauto.ge/ru/blog/errors-to-find",
+    "path": "/ru/blog/errors-to-find",
+    "title": "Что может быть обнаружено с помощью компьютерной диагностики автомобиля",
+    "lang": "ru",
+    "slug": "blog/errors-to-find"
+  },
+  "40839100": {
+    "file": "page40839100.html",
+    "url": "https://bestauto.ge/blog/errors-to-find",
+    "path": "/blog/errors-to-find",
+    "title": "რისი დადგენა შესაძლებელია მანქანის კომპიუტერული დიაგნოსტიკის გამოყენებით",
+    "lang": "ka",
+    "slug": "blog/errors-to-find"
+  },
+  "40839462": {
+    "file": "page40839462.html",
+    "url": "https://bestauto.ge/en/blog/errors-to-find",
+    "path": "/en/blog/errors-to-find",
+    "title": "What Can Be Detected Through Car Diagnostic Test?",
+    "lang": "en",
+    "slug": "blog/errors-to-find"
+  },
+  "40904632": {
+    "file": "page40904632.html",
+    "url": "https://bestauto.ge/ru/blog/car-body-polishing",
+    "path": "/ru/blog/car-body-polishing",
+    "title": "Искусство полировки кузова, чтобы ваш автомобиль сиял как новый",
+    "lang": "ru",
+    "slug": "blog/car-body-polishing"
+  },
+  "40905535": {
+    "file": "page40905535.html",
+    "url": "https://bestauto.ge/blog/car-body-polishing",
+    "path": "/blog/car-body-polishing",
+    "title": "ძარას გაპრიალების ხელოვნება, რათა თქვენი მანქანა ახალივით ბზინავდეს",
+    "lang": "ka",
+    "slug": "blog/car-body-polishing"
+  },
+  "40938499": {
+    "file": "page40938499.html",
+    "url": "https://bestauto.ge/en/blog/car-body-polishing",
+    "path": "/en/blog/car-body-polishing",
+    "title": "The Art of Body Polishing to Make Your Car Shine Like New",
+    "lang": "en",
+    "slug": "blog/car-body-polishing"
+  },
+  "41489985": {
+    "file": "page41489985.html",
+    "url": "https://bestauto.ge/ru/blog/technology-and-process",
+    "path": "/ru/blog/technology-and-process",
+    "title": "Как работает керамическое покрытие: технология и процесс нанесения",
+    "lang": "ru",
+    "slug": "blog/technology-and-process"
+  },
+  "41490637": {
+    "file": "page41490637.html",
+    "url": "https://bestauto.ge/blog/technology-and-process",
+    "path": "/blog/technology-and-process",
+    "title": "როგორ მუშაობს კერამიკული საფარი: ტექნოლოგია და გამოყენების პროცესი",
+    "lang": "ka",
+    "slug": "blog/technology-and-process"
+  },
+  "41490922": {
+    "file": "page41490922.html",
+    "url": "https://bestauto.ge/en/blog/technology-and-process",
+    "path": "/en/blog/technology-and-process",
+    "title": "How Ceramic Coating Works: Technology and Application Process",
+    "lang": "en",
+    "slug": "blog/technology-and-process"
+  },
+  "41664618": {
+    "file": "page41664618.html",
+    "url": "https://bestauto.ge/ru/blog/car-interior-detailing-basics",
+    "path": "/ru/blog/car-interior-detailing-basics",
+    "title": "Основные этапы детейлинг-мойки салона: от удаления пыли до очистки тканей",
+    "lang": "ru",
+    "slug": "blog/car-interior-detailing-basics"
+  },
+  "41665497": {
+    "file": "page41665497.html",
+    "url": "https://bestauto.ge/blog/car-interior-detailing-basics",
+    "path": "/blog/car-interior-detailing-basics",
+    "title": "ინტერიერის დეტალების ძირითადი ეტაპები: მტვრის მოცილებიდან ქსოვილების გაწმენდამდე",
+    "lang": "ka",
+    "slug": "blog/car-interior-detailing-basics"
+  },
+  "41699535": {
+    "file": "page41699535.html",
+    "url": "https://bestauto.ge/en/blog/car-interior-detailing-basics",
+    "path": "/en/blog/car-interior-detailing-basics",
+    "title": "Key Stages of Salon Detailing: From Dust Removal to Fabric Cleaning",
+    "lang": "en",
+    "slug": "blog/car-interior-detailing-basics"
+  },
+  "41734485": {
+    "file": "page41734485.html",
+    "url": "https://bestauto.ge/ru/blog/plastic-elements-restoration",
+    "path": "/ru/blog/plastic-elements-restoration",
+    "title": "Ремонт пластиковых элементов автомобиля для сохранения его стиля и ценности",
+    "lang": "ru",
+    "slug": "blog/plastic-elements-restoration"
+  },
+  "41735359": {
+    "file": "page41735359.html",
+    "url": "https://bestauto.ge/blog/plastic-elements-restoration",
+    "path": "/blog/plastic-elements-restoration",
+    "title": "თქვენი მანქანის პლასტმასის ნაწილების შეკეთება მისი სტილისა და ღირებულების შესანა",
+    "lang": "ka",
+    "slug": "blog/plastic-elements-restoration"
+  },
+  "41766639": {
+    "file": "page41766639.html",
+    "url": "https://bestauto.ge/en/blog/plastic-elements-restoration",
+    "path": "/en/blog/plastic-elements-restoration",
+    "title": "Repairing Сar Plastic Elements to Preserve Its Style and Value",
+    "lang": "en",
+    "slug": "blog/plastic-elements-restoration"
+  },
+  "41931643": {
+    "file": "page41931643.html",
+    "url": "https://bestauto.ge/ru/blog/strength-and-useful-life-of-ppf",
+    "path": "/ru/blog/strength-and-useful-life-of-ppf",
+    "title": "Как долго длится эффект от пленки PPF: прочность и долговечность защиты",
+    "lang": "ru",
+    "slug": "blog/strength-and-useful-life-of-ppf"
+  },
+  "41932400": {
+    "file": "page41932400.html",
+    "url": "https://bestauto.ge/blog/strength-and-useful-life-of-ppf",
+    "path": "/blog/strength-and-useful-life-of-ppf",
+    "title": "რამდენ ხანს გრძელდება PPF დამცავი ფირის ეფექტი: დაცვის სიძლიერე და გამძლეობა",
+    "lang": "ka",
+    "slug": "blog/strength-and-useful-life-of-ppf"
+  },
+  "42127917": {
+    "file": "page42127917.html",
+    "url": "https://bestauto.ge/en/blog/strength-and-useful-life-of-ppf",
+    "path": "/en/blog/strength-and-useful-life-of-ppf",
+    "title": "How Long Does the Effect of PPF Last: Strength and Durability of Protection",
+    "lang": "en",
+    "slug": "blog/strength-and-useful-life-of-ppf"
+  },
+  "44491807": {
+    "file": "page44491807.html",
+    "url": "https://bestauto.ge/qr",
+    "path": "/qr",
+    "title": "Blank page",
+    "lang": "ka",
+    "slug": "qr"
+  },
+  "45762695": {
+    "file": "page45762695.html",
+    "url": "https://bestauto.ge/ru/blog/car-body-color-with-vinyl-wrap",
+    "path": "/ru/blog/car-body-color-with-vinyl-wrap",
+    "title": "Как оклейка кузова виниловой пленкой влияет на цвет автомобиля?",
+    "lang": "ru",
+    "slug": "blog/car-body-color-with-vinyl-wrap"
+  },
+  "45833009": {
+    "file": "page45833009.html",
+    "url": "https://bestauto.ge/en/blog/car-body-color-with-vinyl-wrap",
+    "path": "/en/blog/car-body-color-with-vinyl-wrap",
+    "title": "How Does Wrapping the Car Body with Vinyl Film Affect the Car's Color?",
+    "lang": "en",
+    "slug": "blog/car-body-color-with-vinyl-wrap"
+  },
+  "45834011": {
+    "file": "page45834011.html",
+    "url": "https://bestauto.ge/blog/car-body-color-with-vinyl-wrap",
+    "path": "/blog/car-body-color-with-vinyl-wrap",
+    "title": "როგორ მოქმედებს ძარაზე ვინილის ფირით შეფუთვა მანქანის ფერზე?",
+    "lang": "ka",
+    "slug": "blog/car-body-color-with-vinyl-wrap"
+  },
+  "50854645": {
+    "file": "page50854645.html",
+    "url": "https://bestauto.ge/ru/blog/legal-aspects-of-tinting-in-georgia",
+    "path": "/ru/blog/legal-aspects-of-tinting-in-georgia",
+    "title": "Правовые аспекты тонировки стекол автомобиля в Грузии",
+    "lang": "ru",
+    "slug": "blog/legal-aspects-of-tinting-in-georgia"
+  },
+  "51383339": {
+    "file": "page51383339.html",
+    "url": "https://bestauto.ge/en/blog/legal-aspects-of-tinting-in-georgia",
+    "path": "/en/blog/legal-aspects-of-tinting-in-georgia",
+    "title": "Legal Aspects of Car Window Tinting in Georgia",
+    "lang": "en",
+    "slug": "blog/legal-aspects-of-tinting-in-georgia"
+  },
+  "51383971": {
+    "file": "page51383971.html",
+    "url": "https://bestauto.ge/blog/legal-aspects-of-tinting-in-georgia",
+    "path": "/blog/legal-aspects-of-tinting-in-georgia",
+    "title": "ავტომობილის დაბურვა საქართველოს კანონმდებლობის გათვალისწინებით",
+    "lang": "ka",
+    "slug": "blog/legal-aspects-of-tinting-in-georgia"
+  },
+  "54710549": {
+    "file": "page54710549.html",
+    "url": "https://bestauto.ge/ru/carwash",
+    "path": "/ru/carwash",
+    "title": "Детейлинг мойка автомобиля в Тбилиси — цены от 40 лари | BESTAUTO",
+    "lang": "ru",
+    "slug": "carwash"
+  },
+  "55695771": {
+    "file": "page55695771.html",
+    "url": "https://bestauto.ge/carwash",
+    "path": "/carwash",
+    "title": "მანქანის სარეცხი თბილისში — BESTAUTO | პრემიუმ მომსახურება",
+    "lang": "ka",
+    "slug": "carwash"
+  },
+  "61547409": {
+    "file": "page61547409.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-film-benefits",
+    "path": "/ru/blog/ppf-film-benefits",
+    "title": "​​Преимущества полиуретановой пленки (PPF) перед другими методами защиты кузова",
+    "lang": "ru",
+    "slug": "blog/ppf-film-benefits"
+  },
   "129088273": {
     "file": "page129088273.html",
     "url": "https://bestauto.ge/en/carwash",
@@ -374,1310 +1678,6 @@
     "title": "BESTAUTO — პრემიუმ დითეილინგი თბილისში | PPF · კერამიკა · ვინილი",
     "lang": "ka",
     "slug": ""
-  },
-  "35796250": {
-    "file": "page35796250.html",
-    "url": "https://bestauto.ge/page35796250.html",
-    "path": "/page35796250.html",
-    "title": "Blank page",
-    "lang": "ka",
-    "slug": "page35796250.html"
-  },
-  "36438811": {
-    "file": "page36438811.html",
-    "url": "https://bestauto.ge/ru",
-    "path": "/ru",
-    "title": "Детейлинг студия BESTAUTO в Тбилиси — полировка, керамика, PPF, тонировка",
-    "lang": "ru",
-    "slug": ""
-  },
-  "36528485": {
-    "file": "page36528485.html",
-    "url": "https://bestauto.ge/ru/prices",
-    "path": "/ru/prices",
-    "title": "Цены на детейлинг в Тбилиси — Стоимость услуг | BESTAUTO",
-    "lang": "ru",
-    "slug": "prices"
-  },
-  "36554132": {
-    "file": "page36554132.html",
-    "url": "https://bestauto.ge/en",
-    "path": "/en",
-    "title": "Car Detailing Studio in Tbilisi — Polishing, Ceramic, PPF | BESTAUTO",
-    "lang": "en",
-    "slug": ""
-  },
-  "36554376": {
-    "file": "page36554376.html",
-    "url": "https://bestauto.ge/en/prices",
-    "path": "/en/prices",
-    "title": "Car Detailing Prices in Tbilisi — Service Cost List | BESTAUTO",
-    "lang": "en",
-    "slug": "prices"
-  },
-  "36554377": {
-    "file": "page36554377.html",
-    "url": "https://bestauto.ge/prices",
-    "path": "/prices",
-    "title": "დეტეილინგ ფასები თბილისში — მომსახურების ღირებულება | BESTAUTO",
-    "lang": "ka",
-    "slug": "prices"
-  },
-  "36860233": {
-    "file": "page36860233.html",
-    "url": "https://bestauto.ge/ru/ceramiccoating",
-    "path": "/ru/ceramiccoating",
-    "title": "Керамическое покрытие авто в Тбилиси — нанокерамика от 800 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "ceramiccoating"
-  },
-  "36909398": {
-    "file": "page36909398.html",
-    "url": "https://bestauto.ge/ru/polishing",
-    "path": "/ru/polishing",
-    "title": "Полировка автомобиля в Тбилиси — цены от 150 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "polishing"
-  },
-  "36918868": {
-    "file": "page36918868.html",
-    "url": "https://bestauto.ge/ru/interior-restoration",
-    "path": "/ru/interior-restoration",
-    "title": "Восстановление элементов салона в Тбилиси",
-    "lang": "ru",
-    "slug": "interior-restoration"
-  },
-  "36940808": {
-    "file": "page36940808.html",
-    "url": "https://bestauto.ge/ru/interior-cleaning",
-    "path": "/ru/interior-cleaning",
-    "title": "Химчистка салона автомобиля в Тбилиси — от 200 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "interior-cleaning"
-  },
-  "36963967": {
-    "file": "page36963967.html",
-    "url": "https://bestauto.ge/en/ceramiccoating",
-    "path": "/en/ceramiccoating",
-    "title": "Ceramic Coating in Tbilisi — Nano Ceramic 9H from 800 GEL | BESTAUTO",
-    "lang": "en",
-    "slug": "ceramiccoating"
-  },
-  "36963977": {
-    "file": "page36963977.html",
-    "url": "https://bestauto.ge/en/interior-cleaning",
-    "path": "/en/interior-cleaning",
-    "title": "Car Interior Cleaning & Detailing in Tbilisi — from 200 GEL | BESTAUTO",
-    "lang": "en",
-    "slug": "interior-cleaning"
-  },
-  "36963981": {
-    "file": "page36963981.html",
-    "url": "https://bestauto.ge/en/interior-restoration",
-    "path": "/en/interior-restoration",
-    "title": "Car Interior Parts Restoration in Tbilisi",
-    "lang": "en",
-    "slug": "interior-restoration"
-  },
-  "36963983": {
-    "file": "page36963983.html",
-    "url": "https://bestauto.ge/en/polishing",
-    "path": "/en/polishing",
-    "title": "Car Polishing in Tbilisi — Paint Correction from 150 GEL | BESTAUTO",
-    "lang": "en",
-    "slug": "polishing"
-  },
-  "36976392": {
-    "file": "page36976392.html",
-    "url": "https://bestauto.ge/ru/windshield-repair",
-    "path": "/ru/windshield-repair",
-    "title": "Ремонт сколов и трещин лобового стекла в Тбилиси | BESTAUTO",
-    "lang": "ru",
-    "slug": "windshield-repair"
-  },
-  "37043952": {
-    "file": "page37043952.html",
-    "url": "https://bestauto.ge/en/windshield-repair",
-    "path": "/en/windshield-repair",
-    "title": "Windshield Chip & Crack Repair in Tbilisi | BESTAUTO",
-    "lang": "en",
-    "slug": "windshield-repair"
-  },
-  "37069115": {
-    "file": "page37069115.html",
-    "url": "https://bestauto.ge/ceramiccoating",
-    "path": "/ceramiccoating",
-    "title": "კერამიკული დაფარვა თბილისი — BESTAUTO | 5 წელი გარანტია",
-    "lang": "ka",
-    "slug": "ceramiccoating"
-  },
-  "37069117": {
-    "file": "page37069117.html",
-    "url": "https://bestauto.ge/polishing",
-    "path": "/polishing",
-    "title": "მანქანის პოლირება თბილისში — BESTAUTO დეტეილინგი",
-    "lang": "ka",
-    "slug": "polishing"
-  },
-  "37069119": {
-    "file": "page37069119.html",
-    "url": "https://bestauto.ge/interior-restoration",
-    "path": "/interior-restoration",
-    "title": "ინტერიერის რესტავრაცია თბილისში",
-    "lang": "ka",
-    "slug": "interior-restoration"
-  },
-  "37069123": {
-    "file": "page37069123.html",
-    "url": "https://bestauto.ge/interior-cleaning",
-    "path": "/interior-cleaning",
-    "title": "ქიმწმენდა თბილისში — BESTAUTO | სალონის გაწმენდა",
-    "lang": "ka",
-    "slug": "interior-cleaning"
-  },
-  "37069127": {
-    "file": "page37069127.html",
-    "url": "https://bestauto.ge/windshield-repair",
-    "path": "/windshield-repair",
-    "title": "საქარე მინის შეკეთება თბილისში — BESTAUTO",
-    "lang": "ka",
-    "slug": "windshield-repair"
-  },
-  "37146793": {
-    "file": "page37146793.html",
-    "url": "https://bestauto.ge/ru/vinyl-wrapping",
-    "path": "/ru/vinyl-wrapping",
-    "title": "Оклейка авто виниловой пленкой в Тбилиси — цены | BESTAUTO",
-    "lang": "ru",
-    "slug": "vinyl-wrapping"
-  },
-  "37185964": {
-    "file": "page37185964.html",
-    "url": "https://bestauto.ge/ru/auto-glass-tinting",
-    "path": "/ru/auto-glass-tinting",
-    "title": "Тонировка стекол автомобиля в Тбилиси — цены от 150 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "auto-glass-tinting"
-  },
-  "37185977": {
-    "file": "page37185977.html",
-    "url": "https://bestauto.ge/ru/car-soundproofing",
-    "path": "/ru/car-soundproofing",
-    "title": "Шумоизоляция автомобиля в Тбилиси — цены от 500 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "car-soundproofing"
-  },
-  "37217237": {
-    "file": "page37217237.html",
-    "url": "https://bestauto.ge/ru/paintless-dent-repair",
-    "path": "/ru/paintless-dent-repair",
-    "title": "Беспокрасочное удаление вмятин (PDR) в Тбилиси",
-    "lang": "ru",
-    "slug": "paintless-dent-repair"
-  },
-  "37329658": {
-    "file": "page37329658.html",
-    "url": "https://bestauto.ge/en/vinyl-wrapping",
-    "path": "/en/vinyl-wrapping",
-    "title": "Vinyl Car Wrap in Tbilisi — Color Change from 1500 GEL | BESTAUTO",
-    "lang": "en",
-    "slug": "vinyl-wrapping"
-  },
-  "37334532": {
-    "file": "page37334532.html",
-    "url": "https://bestauto.ge/vinyl-wrapping",
-    "path": "/vinyl-wrapping",
-    "title": "ვინილით შეფუთვა თბილისში — BESTAUTO | ყველა ფერი",
-    "lang": "ka",
-    "slug": "vinyl-wrapping"
-  },
-  "37354333": {
-    "file": "page37354333.html",
-    "url": "https://bestauto.ge/ru/polishing/polishing-after-repair",
-    "path": "/ru/polishing/polishing-after-repair",
-    "title": "Полировка после ремонта",
-    "lang": "ru",
-    "slug": "polishing/polishing-after-repair"
-  },
-  "37355650": {
-    "file": "page37355650.html",
-    "url": "https://bestauto.ge/en/paintless-dent-repair",
-    "path": "/en/paintless-dent-repair",
-    "title": "Paintless Dent Removal (PDR) for Cars in Tbilisi",
-    "lang": "en",
-    "slug": "paintless-dent-repair"
-  },
-  "37355654": {
-    "file": "page37355654.html",
-    "url": "https://bestauto.ge/en/car-soundproofing",
-    "path": "/en/car-soundproofing",
-    "title": "Car Soundproofing in Tbilisi — from 500 GEL | BESTAUTO",
-    "lang": "en",
-    "slug": "car-soundproofing"
-  },
-  "37355656": {
-    "file": "page37355656.html",
-    "url": "https://bestauto.ge/en/auto-glass-tinting",
-    "path": "/en/auto-glass-tinting",
-    "title": "Car Window Tinting in Tbilisi — from 150 GEL | BESTAUTO",
-    "lang": "en",
-    "slug": "auto-glass-tinting"
-  },
-  "37357691": {
-    "file": "page37357691.html",
-    "url": "https://bestauto.ge/ru/blog",
-    "path": "/ru/blog",
-    "title": "Блог детейлинг студии BESTAUTO",
-    "lang": "ru",
-    "slug": "blog"
-  },
-  "37387198": {
-    "file": "page37387198.html",
-    "url": "https://bestauto.ge/auto-glass-tinting",
-    "path": "/auto-glass-tinting",
-    "title": "მინების დაბურვა თბილისში — BESTAUTO | ატერმალური · კერამიკული",
-    "lang": "ka",
-    "slug": "auto-glass-tinting"
-  },
-  "37387205": {
-    "file": "page37387205.html",
-    "url": "https://bestauto.ge/car-soundproofing",
-    "path": "/car-soundproofing",
-    "title": "მანქანის ხმის იზოლაცია თბილისში — BESTAUTO | სრული · ნაწილობრივი",
-    "lang": "ka",
-    "slug": "car-soundproofing"
-  },
-  "37387217": {
-    "file": "page37387217.html",
-    "url": "https://bestauto.ge/paintless-dent-repair",
-    "path": "/paintless-dent-repair",
-    "title": "ძარას ცივად გასწორება (PDR) თბილისში",
-    "lang": "ka",
-    "slug": "paintless-dent-repair"
-  },
-  "37416946": {
-    "file": "page37416946.html",
-    "url": "https://bestauto.ge/en/blog",
-    "path": "/en/blog",
-    "title": "BESTAUTO detailing blog",
-    "lang": "en",
-    "slug": "blog"
-  },
-  "37596602": {
-    "file": "page37596602.html",
-    "url": "https://bestauto.ge/en/polishing/polishing-after-repair",
-    "path": "/en/polishing/polishing-after-repair",
-    "title": "Paint Correction for Cars After Repair",
-    "lang": "en",
-    "slug": "polishing/polishing-after-repair"
-  },
-  "37597178": {
-    "file": "page37597178.html",
-    "url": "https://bestauto.ge/polishing/polishing-after-repair",
-    "path": "/polishing/polishing-after-repair",
-    "title": "მანქანის გაპრიალება შეკეთების შემდეგ",
-    "lang": "ka",
-    "slug": "polishing/polishing-after-repair"
-  },
-  "37602384": {
-    "file": "page37602384.html",
-    "url": "https://bestauto.ge/blog",
-    "path": "/blog",
-    "title": "ბლოგი — დეტეილინგ სტუდია BESTAUTO",
-    "lang": "ka",
-    "slug": "blog"
-  },
-  "37626293": {
-    "file": "page37626293.html",
-    "url": "https://bestauto.ge/ru/ceramiccoating/ceramic-coating-for-car",
-    "path": "/ru/ceramiccoating/ceramic-coating-for-car",
-    "title": "Керамическое покрытие кузова | Ваш автомобиль засияет новыми красками",
-    "lang": "ru",
-    "slug": "ceramiccoating/ceramic-coating-for-car"
-  },
-  "37652578": {
-    "file": "page37652578.html",
-    "url": "https://bestauto.ge/ceramiccoating/ceramic-coating-for-car",
-    "path": "/ceramiccoating/ceramic-coating-for-car",
-    "title": "ავტომობილის ძარას კერამიკული საფარი",
-    "lang": "ka",
-    "slug": "ceramiccoating/ceramic-coating-for-car"
-  },
-  "37666480": {
-    "file": "page37666480.html",
-    "url": "https://bestauto.ge/en/ceramiccoating/ceramic-coating-for-car",
-    "path": "/en/ceramiccoating/ceramic-coating-for-car",
-    "title": "Ceramic Coating For Auto | Your Car Will Shine In New Splendor",
-    "lang": "en",
-    "slug": "ceramiccoating/ceramic-coating-for-car"
-  },
-  "37739342": {
-    "file": "page37739342.html",
-    "url": "https://bestauto.ge/ru/interior-cleaning/interior-cleaning-for-auto",
-    "path": "/ru/interior-cleaning/interior-cleaning-for-auto",
-    "title": "Профессиональная химчистка салона авто в Тбилиси",
-    "lang": "ru",
-    "slug": "interior-cleaning/interior-cleaning-for-auto"
-  },
-  "37739916": {
-    "file": "page37739916.html",
-    "url": "https://bestauto.ge/en/interior-cleaning/interior-cleaning-for-auto",
-    "path": "/en/interior-cleaning/interior-cleaning-for-auto",
-    "title": "Professional Car Interior Cleaning in Tbilisi",
-    "lang": "en",
-    "slug": "interior-cleaning/interior-cleaning-for-auto"
-  },
-  "37740011": {
-    "file": "page37740011.html",
-    "url": "https://bestauto.ge/interior-cleaning/interior-cleaning-for-auto",
-    "path": "/interior-cleaning/interior-cleaning-for-auto",
-    "title": "მანქანის სალონის პროფესიონალური ქიმწმენდა თბილისში",
-    "lang": "ka",
-    "slug": "interior-cleaning/interior-cleaning-for-auto"
-  },
-  "37767785": {
-    "file": "page37767785.html",
-    "url": "https://bestauto.ge/ru/computer-diagnostics",
-    "path": "/ru/computer-diagnostics",
-    "title": "Компьютерная диагностика автомобиля в Тбилиси — от 50 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "computer-diagnostics"
-  },
-  "37794273": {
-    "file": "page37794273.html",
-    "url": "https://bestauto.ge/ru/interior-restoration/why-restore-interior-elements",
-    "path": "/ru/interior-restoration/why-restore-interior-elements",
-    "title": "Реставрация салона автомобиля в Тбилиси",
-    "lang": "ru",
-    "slug": "interior-restoration/why-restore-interior-elements"
-  },
-  "37795736": {
-    "file": "page37795736.html",
-    "url": "https://bestauto.ge/en/interior-restoration/why-restore-interior-elements",
-    "path": "/en/interior-restoration/why-restore-interior-elements",
-    "title": "Interior Restoration for Cars in Tbilisi",
-    "lang": "en",
-    "slug": "interior-restoration/why-restore-interior-elements"
-  },
-  "37796062": {
-    "file": "page37796062.html",
-    "url": "https://bestauto.ge/interior-restoration/why-restore-interior-elements",
-    "path": "/interior-restoration/why-restore-interior-elements",
-    "title": "მანქანის ინტერიერის სალონის რესტავრაცია თბილისში",
-    "lang": "ka",
-    "slug": "interior-restoration/why-restore-interior-elements"
-  },
-  "37880280": {
-    "file": "page37880280.html",
-    "url": "https://bestauto.ge/ru/ppf-shield-wrapping/ppf-film-for-cars-protection",
-    "path": "/ru/ppf-shield-wrapping/ppf-film-for-cars-protection",
-    "title": "Оклейка кузова защитной пленкой (PPF) | Защита от царапин и сколов",
-    "lang": "ru",
-    "slug": "ppf-shield-wrapping/ppf-film-for-cars-protection"
-  },
-  "37880662": {
-    "file": "page37880662.html",
-    "url": "https://bestauto.ge/ppf-shield-wrapping/ppf-film-for-cars-protection",
-    "path": "/ppf-shield-wrapping/ppf-film-for-cars-protection",
-    "title": "ძარას შეფუთვა დამცავი ფირით (PPF) | დაცვა ნაკაწრებისა და ნაკენჭარებისგან",
-    "lang": "ka",
-    "slug": "ppf-shield-wrapping/ppf-film-for-cars-protection"
-  },
-  "37906831": {
-    "file": "page37906831.html",
-    "url": "https://bestauto.ge/en/ppf-shield-wrapping/ppf-film-for-cars-protection",
-    "path": "/en/ppf-shield-wrapping/ppf-film-for-cars-protection",
-    "title": "PPF Wrapping for Vehicles | Protect Your Car Body",
-    "lang": "en",
-    "slug": "ppf-shield-wrapping/ppf-film-for-cars-protection"
-  },
-  "37935297": {
-    "file": "page37935297.html",
-    "url": "https://bestauto.ge/ru/vinyl-wrapping/benefits-of-vinyl-wraps",
-    "path": "/ru/vinyl-wrapping/benefits-of-vinyl-wraps",
-    "title": "Преимущества оклейки кузова автомобиля виниловой пленкой: стиль и защита",
-    "lang": "ru",
-    "slug": "vinyl-wrapping/benefits-of-vinyl-wraps"
-  },
-  "37935565": {
-    "file": "page37935565.html",
-    "url": "https://bestauto.ge/vinyl-wrapping/benefits-of-vinyl-wraps",
-    "path": "/vinyl-wrapping/benefits-of-vinyl-wraps",
-    "title": "მანქანის ძარას ვინილის ფირით შეფუთვის უპირატესობები: ესთეთიკა და დაცვა",
-    "lang": "ka",
-    "slug": "vinyl-wrapping/benefits-of-vinyl-wraps"
-  },
-  "37961709": {
-    "file": "page37961709.html",
-    "url": "https://bestauto.ge/en/vinyl-wrapping/benefits-of-vinyl-wraps",
-    "path": "/en/vinyl-wrapping/benefits-of-vinyl-wraps",
-    "title": "Benefits of vinyl wrapping for car body: style and protection",
-    "lang": "en",
-    "slug": "vinyl-wrapping/benefits-of-vinyl-wraps"
-  },
-  "38015949": {
-    "file": "page38015949.html",
-    "url": "https://bestauto.ge/en/computer-diagnostics",
-    "path": "/en/computer-diagnostics",
-    "title": "Car Diagnostic Test in Tbilisi — Computer Diagnostics & Key Coding | BESTAUTO",
-    "lang": "en",
-    "slug": "computer-diagnostics"
-  },
-  "38016286": {
-    "file": "page38016286.html",
-    "url": "https://bestauto.ge/computer-diagnostics",
-    "path": "/computer-diagnostics",
-    "title": "მანქანის კომპიუტერული დიაგნოსტიკა თბილისში — BESTAUTO | 50 ლარიდან",
-    "lang": "ka",
-    "slug": "computer-diagnostics"
-  },
-  "38043378": {
-    "file": "page38043378.html",
-    "url": "https://bestauto.ge/ru/paintless-dent-repair/pdr-method",
-    "path": "/ru/paintless-dent-repair/pdr-method",
-    "title": "Беспокрасочное удаление вмятин (PDR) - инновационный метод в автоиндустрии",
-    "lang": "ru",
-    "slug": "paintless-dent-repair/pdr-method"
-  },
-  "38043698": {
-    "file": "page38043698.html",
-    "url": "https://bestauto.ge/paintless-dent-repair/pdr-method",
-    "path": "/paintless-dent-repair/pdr-method",
-    "title": "უფერო ნაკბენის მოცილება: ინოვაციური მეთოდი საავტომობილო ინდუსტრიაში",
-    "lang": "ka",
-    "slug": "paintless-dent-repair/pdr-method"
-  },
-  "38071724": {
-    "file": "page38071724.html",
-    "url": "https://bestauto.ge/en/paintless-dent-repair/pdr-method",
-    "path": "/en/paintless-dent-repair/pdr-method",
-    "title": "Paintless Dent Repair (PDR): An Innovative Method in the Automotive Industry",
-    "lang": "en",
-    "slug": "paintless-dent-repair/pdr-method"
-  },
-  "38099075": {
-    "file": "page38099075.html",
-    "url": "https://bestauto.ge/ru/windshield-repair/replace-or-repair",
-    "path": "/ru/windshield-repair/replace-or-repair",
-    "title": "Когда ремонт сколов возможен, а когда требуется замена стекла?",
-    "lang": "ru",
-    "slug": "windshield-repair/replace-or-repair"
-  },
-  "38099239": {
-    "file": "page38099239.html",
-    "url": "https://bestauto.ge/windshield-repair/replace-or-repair",
-    "path": "/windshield-repair/replace-or-repair",
-    "title": "როდის კეთდება ნაკენჭარის შეკეთება და როდის არის საჭირო მინის გამოცვლა?",
-    "lang": "ka",
-    "slug": "windshield-repair/replace-or-repair"
-  },
-  "38126059": {
-    "file": "page38126059.html",
-    "url": "https://bestauto.ge/en/windshield-repair/replace-or-repair",
-    "path": "/en/windshield-repair/replace-or-repair",
-    "title": "When Is Windshield Repair Possible, And When Is Glass Replacement Required?",
-    "lang": "en",
-    "slug": "windshield-repair/replace-or-repair"
-  },
-  "38206312": {
-    "file": "page38206312.html",
-    "url": "https://bestauto.ge/ru/auto-glass-tinting/top-11-reasons",
-    "path": "/ru/auto-glass-tinting/top-11-reasons",
-    "title": "Преимущества от тонировки стекол автомобиля",
-    "lang": "ru",
-    "slug": "auto-glass-tinting/top-11-reasons"
-  },
-  "38206488": {
-    "file": "page38206488.html",
-    "url": "https://bestauto.ge/auto-glass-tinting/top-11-reasons",
-    "path": "/auto-glass-tinting/top-11-reasons",
-    "title": "მანქანის მინების დაბურვის უპირატესობები",
-    "lang": "ka",
-    "slug": "auto-glass-tinting/top-11-reasons"
-  },
-  "38233424": {
-    "file": "page38233424.html",
-    "url": "https://bestauto.ge/en/auto-glass-tinting/top-11-reasons",
-    "path": "/en/auto-glass-tinting/top-11-reasons",
-    "title": "Advantages of Car Window Tinting",
-    "lang": "en",
-    "slug": "auto-glass-tinting/top-11-reasons"
-  },
-  "38261911": {
-    "file": "page38261911.html",
-    "url": "https://bestauto.ge/ru/car-soundproofing/why-soundproof-car",
-    "path": "/ru/car-soundproofing/why-soundproof-car",
-    "title": "Шумоизоляция автомобиля: ключ к комфорту и тишине на дороге",
-    "lang": "ru",
-    "slug": "car-soundproofing/why-soundproof-car"
-  },
-  "38262094": {
-    "file": "page38262094.html",
-    "url": "https://bestauto.ge/car-soundproofing/why-soundproof-car",
-    "path": "/car-soundproofing/why-soundproof-car",
-    "title": "მანქანის ხმის იზოლაცია: გზაზე კომფორტისა და სიჩუმის უპირატესობა",
-    "lang": "ka",
-    "slug": "car-soundproofing/why-soundproof-car"
-  },
-  "38289536": {
-    "file": "page38289536.html",
-    "url": "https://bestauto.ge/en/car-soundproofing/why-soundproof-car",
-    "path": "/en/car-soundproofing/why-soundproof-car",
-    "title": "Car Soundproofing: The Key To Comfort And Silence On The Road",
-    "lang": "en",
-    "slug": "car-soundproofing/why-soundproof-car"
-  },
-  "38371077": {
-    "file": "page38371077.html",
-    "url": "https://bestauto.ge/ru/computer-diagnostics/why-use-car-diagnostic-test",
-    "path": "/ru/computer-diagnostics/why-use-car-diagnostic-test",
-    "title": "Компьютерная диагностика авто - надежный и эффективный инструмент",
-    "lang": "ru",
-    "slug": "computer-diagnostics/why-use-car-diagnostic-test"
-  },
-  "38371405": {
-    "file": "page38371405.html",
-    "url": "https://bestauto.ge/computer-diagnostics/why-use-car-diagnostic-test",
-    "path": "/computer-diagnostics/why-use-car-diagnostic-test",
-    "title": "მანქანის კომპიუტერული დიაგნოსტიკა: საიმედო და ეფექტური ინსტრუმენტი",
-    "lang": "ka",
-    "slug": "computer-diagnostics/why-use-car-diagnostic-test"
-  },
-  "38396538": {
-    "file": "page38396538.html",
-    "url": "https://bestauto.ge/en/computer-diagnostics/why-use-car-diagnostic-test",
-    "path": "/en/computer-diagnostics/why-use-car-diagnostic-test",
-    "title": "Car Diagnostic Test: Reliable and Efficient Service",
-    "lang": "en",
-    "slug": "computer-diagnostics/why-use-car-diagnostic-test"
-  },
-  "38424408": {
-    "file": "page38424408.html",
-    "url": "https://bestauto.ge/ru/polishing/headlight-polishing",
-    "path": "/ru/polishing/headlight-polishing",
-    "title": "Полировка фар автомобиля | Методы, причины, преимущества",
-    "lang": "ru",
-    "slug": "polishing/headlight-polishing"
-  },
-  "38474961": {
-    "file": "page38474961.html",
-    "url": "https://bestauto.ge/polishing/headlight-polishing",
-    "path": "/polishing/headlight-polishing",
-    "title": "მანქანის ფარების გაპრიალება | მეთოდები, მიზეზები, სარგებელი",
-    "lang": "ka",
-    "slug": "polishing/headlight-polishing"
-  },
-  "38475291": {
-    "file": "page38475291.html",
-    "url": "https://bestauto.ge/en/polishing/headlight-polishing",
-    "path": "/en/polishing/headlight-polishing",
-    "title": "Car Headlight Polishing | Methods, Reasons, Benefits",
-    "lang": "en",
-    "slug": "polishing/headlight-polishing"
-  },
-  "38584230": {
-    "file": "page38584230.html",
-    "url": "https://bestauto.ge/ru/ceramiccoating/ceramic-for-car-glass",
-    "path": "/ru/ceramiccoating/ceramic-for-car-glass",
-    "title": "Керамическое покрытие стекол для кристально чистой видимости",
-    "lang": "ru",
-    "slug": "ceramiccoating/ceramic-for-car-glass"
-  },
-  "38584976": {
-    "file": "page38584976.html",
-    "url": "https://bestauto.ge/ceramiccoating/ceramic-for-car-glass",
-    "path": "/ceramiccoating/ceramic-for-car-glass",
-    "title": "კერამიკული ლინზები კრისტალურად სუფთა ხილვადობისთვის",
-    "lang": "ka",
-    "slug": "ceramiccoating/ceramic-for-car-glass"
-  },
-  "38610424": {
-    "file": "page38610424.html",
-    "url": "https://bestauto.ge/en/ceramiccoating/ceramic-for-car-glass",
-    "path": "/en/ceramiccoating/ceramic-for-car-glass",
-    "title": "Ceramic Coating for Glass for Crystal-Clear Visibility",
-    "lang": "en",
-    "slug": "ceramiccoating/ceramic-for-car-glass"
-  },
-  "38687948": {
-    "file": "page38687948.html",
-    "url": "https://bestauto.ge/ru/interior-cleaning/engine-room-cleaning",
-    "path": "/ru/interior-cleaning/engine-room-cleaning",
-    "title": "Мойка подкапотного пространства для оптимальной производительности и долговечнос",
-    "lang": "ru",
-    "slug": "interior-cleaning/engine-room-cleaning"
-  },
-  "38688164": {
-    "file": "page38688164.html",
-    "url": "https://bestauto.ge/interior-cleaning/engine-room-cleaning",
-    "path": "/interior-cleaning/engine-room-cleaning",
-    "title": "ქვედა სარეცხი ოპტიმალური მუშაობისა და გამძლეობისთვის",
-    "lang": "ka",
-    "slug": "interior-cleaning/engine-room-cleaning"
-  },
-  "38713458": {
-    "file": "page38713458.html",
-    "url": "https://bestauto.ge/en/interior-cleaning/engine-room-cleaning",
-    "path": "/en/interior-cleaning/engine-room-cleaning",
-    "title": "Engine Room Cleaning For Optimal Performance And Useful Life",
-    "lang": "en",
-    "slug": "interior-cleaning/engine-room-cleaning"
-  },
-  "38741194": {
-    "file": "page38741194.html",
-    "url": "https://bestauto.ge/ru/interior-restoration/steering-wheel-restoration",
-    "path": "/ru/interior-restoration/steering-wheel-restoration",
-    "title": "Как новый: Реставрация руля для вашего комфорта",
-    "lang": "ru",
-    "slug": "interior-restoration/steering-wheel-restoration"
-  },
-  "38765977": {
-    "file": "page38765977.html",
-    "url": "https://bestauto.ge/interior-restoration/steering-wheel-restoration",
-    "path": "/interior-restoration/steering-wheel-restoration",
-    "title": "საჭის რესტავრაცია თქვენი კომფორტისთვის",
-    "lang": "ka",
-    "slug": "interior-restoration/steering-wheel-restoration"
-  },
-  "38766378": {
-    "file": "page38766378.html",
-    "url": "https://bestauto.ge/en/interior-restoration/steering-wheel-restoration",
-    "path": "/en/interior-restoration/steering-wheel-restoration",
-    "title": "As Good As New: Steering Wheel Restoration For Your Comfort",
-    "lang": "en",
-    "slug": "interior-restoration/steering-wheel-restoration"
-  },
-  "38848576": {
-    "file": "page38848576.html",
-    "url": "https://bestauto.ge/ru/ppf-shield-wrapping/ppf-benefits",
-    "path": "/ru/ppf-shield-wrapping/ppf-benefits",
-    "title": "Преимущества пленки PPF при защите кузова автомобиля: почему стоит вложиться",
-    "lang": "ru",
-    "slug": "ppf-shield-wrapping/ppf-benefits"
-  },
-  "38848870": {
-    "file": "page38848870.html",
-    "url": "https://bestauto.ge/ppf-shield-wrapping/ppf-benefits",
-    "path": "/ppf-shield-wrapping/ppf-benefits",
-    "title": "PPF ფირის უპირატესობები მანქანის ძარას დაცვისთვის: რატომ ღირს ინვესტიცია",
-    "lang": "ka",
-    "slug": "ppf-shield-wrapping/ppf-benefits"
-  },
-  "38875167": {
-    "file": "page38875167.html",
-    "url": "https://bestauto.ge/en/ppf-shield-wrapping/ppf-benefits",
-    "path": "/en/ppf-shield-wrapping/ppf-benefits",
-    "title": "Benefits Of PPF For Car Body Protection: Why Is It Worth Paying For It?",
-    "lang": "en",
-    "slug": "ppf-shield-wrapping/ppf-benefits"
-  },
-  "38901771": {
-    "file": "page38901771.html",
-    "url": "https://bestauto.ge/ru/vinyl-wrapping/protection-against-uv-rays-scratches",
-    "path": "/ru/vinyl-wrapping/protection-against-uv-rays-scratches",
-    "title": "Виниловая пленка для оклейки кузова: защита от царапин, сколов и УФ-лучей",
-    "lang": "ru",
-    "slug": "vinyl-wrapping/protection-against-uv-rays-scratches"
-  },
-  "38901907": {
-    "file": "page38901907.html",
-    "url": "https://bestauto.ge/vinyl-wrapping/protection-against-uv-rays-scratches",
-    "path": "/vinyl-wrapping/protection-against-uv-rays-scratches",
-    "title": "ვინილის ფირი ძარას შესაფუთად: დაცვა ნაკაწრებისგან, ნაკენჭარებისგან და UV სხივები",
-    "lang": "ka",
-    "slug": "vinyl-wrapping/protection-against-uv-rays-scratches"
-  },
-  "38927014": {
-    "file": "page38927014.html",
-    "url": "https://bestauto.ge/en/vinyl-wrapping/protection-against-uv-rays-scratches",
-    "path": "/en/vinyl-wrapping/protection-against-uv-rays-scratches",
-    "title": "Vinyl For Car Body Wrapping: Protection Against Scratches, Chips, And UV-Rays",
-    "lang": "en",
-    "slug": "vinyl-wrapping/protection-against-uv-rays-scratches"
-  },
-  "39006216": {
-    "file": "page39006216.html",
-    "url": "https://bestauto.ge/ru/paintless-dent-repair/pdr-after-hail",
-    "path": "/ru/paintless-dent-repair/pdr-after-hail",
-    "title": "Погода не помеха: беспокрасочное удаление вмятин от града",
-    "lang": "ru",
-    "slug": "paintless-dent-repair/pdr-after-hail"
-  },
-  "39006920": {
-    "file": "page39006920.html",
-    "url": "https://bestauto.ge/paintless-dent-repair/pdr-after-hail",
-    "path": "/paintless-dent-repair/pdr-after-hail",
-    "title": "ამინდი პრობლემას არ წარმოადგენს: ნასეტყვარის ცივად გასწორება.",
-    "lang": "ka",
-    "slug": "paintless-dent-repair/pdr-after-hail"
-  },
-  "39033206": {
-    "file": "page39033206.html",
-    "url": "https://bestauto.ge/en/paintless-dent-repair/pdr-after-hail",
-    "path": "/en/paintless-dent-repair/pdr-after-hail",
-    "title": "Weather Is Not A Problem: PDR After Hail",
-    "lang": "en",
-    "slug": "paintless-dent-repair/pdr-after-hail"
-  },
-  "39061588": {
-    "file": "page39061588.html",
-    "url": "https://bestauto.ge/ru/windshield-repair/windshield-repair-benefits",
-    "path": "/ru/windshield-repair/windshield-repair-benefits",
-    "title": "Преимущества ремонта сколов на лобовом стекле: экономия времени и денег",
-    "lang": "ru",
-    "slug": "windshield-repair/windshield-repair-benefits"
-  },
-  "39062231": {
-    "file": "page39062231.html",
-    "url": "https://bestauto.ge/windshield-repair/windshield-repair-benefits",
-    "path": "/windshield-repair/windshield-repair-benefits",
-    "title": "საქარე მინის ნაკენჭარის შეკეთების უპირატესობები: დაზოგეთ დრო და ფული",
-    "lang": "ka",
-    "slug": "windshield-repair/windshield-repair-benefits"
-  },
-  "39088372": {
-    "file": "page39088372.html",
-    "url": "https://bestauto.ge/en/windshield-repair/windshield-repair-benefits",
-    "path": "/en/windshield-repair/windshield-repair-benefits",
-    "title": "Benefits Of Windshield Repair: Time And Cost Saving",
-    "lang": "en",
-    "slug": "windshield-repair/windshield-repair-benefits"
-  },
-  "39331357": {
-    "file": "page39331357.html",
-    "url": "https://bestauto.ge/ru/auto-glass-tinting/vehicle-tinting-techniques",
-    "path": "/ru/auto-glass-tinting/vehicle-tinting-techniques",
-    "title": "Техники тонировки стекол автомобиля: секреты профессионалов",
-    "lang": "ru",
-    "slug": "auto-glass-tinting/vehicle-tinting-techniques"
-  },
-  "39331951": {
-    "file": "page39331951.html",
-    "url": "https://bestauto.ge/auto-glass-tinting/vehicle-tinting-techniques",
-    "path": "/auto-glass-tinting/vehicle-tinting-techniques",
-    "title": "მანქანის შუშის დაბურვის ტექნიკა: პროფესიული საიდუმლოებები",
-    "lang": "ka",
-    "slug": "auto-glass-tinting/vehicle-tinting-techniques"
-  },
-  "39359014": {
-    "file": "page39359014.html",
-    "url": "https://bestauto.ge/en/auto-glass-tinting/vehicle-tinting-techniques",
-    "path": "/en/auto-glass-tinting/vehicle-tinting-techniques",
-    "title": "Car Window Tinting Techniques: Professional Secrets",
-    "lang": "en",
-    "slug": "auto-glass-tinting/vehicle-tinting-techniques"
-  },
-  "39384500": {
-    "file": "page39384500.html",
-    "url": "https://bestauto.ge/ru/car-soundproofing/noisemakers-and-wayouts",
-    "path": "/ru/car-soundproofing/noisemakers-and-wayouts",
-    "title": "Основные источники шума в автомобиле и как с ними бороться",
-    "lang": "ru",
-    "slug": "car-soundproofing/noisemakers-and-wayouts"
-  },
-  "39385234": {
-    "file": "page39385234.html",
-    "url": "https://bestauto.ge/car-soundproofing/noisemakers-and-wayouts",
-    "path": "/car-soundproofing/noisemakers-and-wayouts",
-    "title": "მანქანაში ხმაურის ძირითადი წყაროები და როგორ გავუმკლავდეთ მათ",
-    "lang": "ka",
-    "slug": "car-soundproofing/noisemakers-and-wayouts"
-  },
-  "39385525": {
-    "file": "page39385525.html",
-    "url": "https://bestauto.ge/en/car-soundproofing/noisemakers-and-wayouts",
-    "path": "/en/car-soundproofing/noisemakers-and-wayouts",
-    "title": "Major Noisemakers in a Car and How to Deal with Them",
-    "lang": "en",
-    "slug": "car-soundproofing/noisemakers-and-wayouts"
-  },
-  "39531566": {
-    "file": "page39531566.html",
-    "url": "https://bestauto.ge/ru/computer-diagnostics/car-diagnostic-test-stages-and-methods",
-    "path": "/ru/computer-diagnostics/car-diagnostic-test-stages-and-methods",
-    "title": "Как работает компьютерная диагностика автомобилей: основные этапы и методы",
-    "lang": "ru",
-    "slug": "computer-diagnostics/car-diagnostic-test-stages-and-methods"
-  },
-  "39559488": {
-    "file": "page39559488.html",
-    "url": "https://bestauto.ge/computer-diagnostics/car-diagnostic-test-stages-and-methods",
-    "path": "/computer-diagnostics/car-diagnostic-test-stages-and-methods",
-    "title": "როგორ მუშაობს მანქანების კომპიუტერული დიაგნოსტიკა: ძირითადი ეტაპები და მეთოდები",
-    "lang": "ka",
-    "slug": "computer-diagnostics/car-diagnostic-test-stages-and-methods"
-  },
-  "39706610": {
-    "file": "page39706610.html",
-    "url": "https://bestauto.ge/en/computer-diagnostics/car-diagnostic-test-stages-and-methods",
-    "path": "/en/computer-diagnostics/car-diagnostic-test-stages-and-methods",
-    "title": "How Car Diagnostic Test Work: Key Stages and Methods",
-    "lang": "en",
-    "slug": "computer-diagnostics/car-diagnostic-test-stages-and-methods"
-  },
-  "39735634": {
-    "file": "page39735634.html",
-    "url": "https://bestauto.ge/ru/polishing/car-interior-polishing",
-    "path": "/ru/polishing/car-interior-polishing",
-    "title": "Изящество в деталях: как полировка салона придает автомобилю новую жизнь",
-    "lang": "ru",
-    "slug": "polishing/car-interior-polishing"
-  },
-  "39736212": {
-    "file": "page39736212.html",
-    "url": "https://bestauto.ge/polishing/car-interior-polishing",
-    "path": "/polishing/car-interior-polishing",
-    "title": "როგორ ანიჭებს ინტერიერის გაპრიალება თქვენს მანქანას ახალ სიცოცხლეს",
-    "lang": "ka",
-    "slug": "polishing/car-interior-polishing"
-  },
-  "39764679": {
-    "file": "page39764679.html",
-    "url": "https://bestauto.ge/en/polishing/car-interior-polishing",
-    "path": "/en/polishing/car-interior-polishing",
-    "title": "Elegance in Detail: Interior Polishing For Your Car's New Life",
-    "lang": "en",
-    "slug": "polishing/car-interior-polishing"
-  },
-  "39853826": {
-    "file": "page39853826.html",
-    "url": "https://bestauto.ge/ru/ceramiccoating/interior-ceramic-coating",
-    "path": "/ru/ceramiccoating/interior-ceramic-coating",
-    "title": "Ультра-защита для вашего салона: керамическое покрытие как способ сохранить его ",
-    "lang": "ru",
-    "slug": "ceramiccoating/interior-ceramic-coating"
-  },
-  "39854319": {
-    "file": "page39854319.html",
-    "url": "https://bestauto.ge/ceramiccoating/interior-ceramic-coating",
-    "path": "/ceramiccoating/interior-ceramic-coating",
-    "title": "ულტრა დაცვა თქვენი ინტერიერისთვის: კერამიკული საფარი, როგორც საშუალება, რომ შეინ",
-    "lang": "ka",
-    "slug": "ceramiccoating/interior-ceramic-coating"
-  },
-  "39854717": {
-    "file": "page39854717.html",
-    "url": "https://bestauto.ge/en/ceramiccoating/interior-ceramic-coating",
-    "path": "/en/ceramiccoating/interior-ceramic-coating",
-    "title": "Ultimate Protection for Your Interior: Ceramic Coating as a Way to Keep It Looki",
-    "lang": "en",
-    "slug": "ceramiccoating/interior-ceramic-coating"
-  },
-  "39941406": {
-    "file": "page39941406.html",
-    "url": "https://bestauto.ge/ru/interior-cleaning/car-interior-disinfection",
-    "path": "/ru/interior-cleaning/car-interior-disinfection",
-    "title": "Верните чистоту и комфорт: устранение запахов и дезинфекция салона авто для его ",
-    "lang": "ru",
-    "slug": "interior-cleaning/car-interior-disinfection"
-  },
-  "39942604": {
-    "file": "page39942604.html",
-    "url": "https://bestauto.ge/interior-cleaning/car-interior-disinfection",
-    "path": "/interior-cleaning/car-interior-disinfection",
-    "title": "დააბრუნეთ სისუფთავე და კომფორტი: უსიამოვნო სუნის აღმოფხვრა და მანქანის ინტერიერი",
-    "lang": "ka",
-    "slug": "interior-cleaning/car-interior-disinfection"
-  },
-  "40004952": {
-    "file": "page40004952.html",
-    "url": "https://bestauto.ge/en/interior-cleaning/car-interior-disinfection",
-    "path": "/en/interior-cleaning/car-interior-disinfection",
-    "title": "Restore Cleanliness and Comfort: Eliminate Odors and Disinfect Your Car Interior",
-    "lang": "en",
-    "slug": "interior-cleaning/car-interior-disinfection"
-  },
-  "40122483": {
-    "file": "page40122483.html",
-    "url": "https://bestauto.ge/ru/interior-restoration/restoring-car-seats",
-    "path": "/ru/interior-restoration/restoring-car-seats",
-    "title": "Реставрация сидений автомобиля: стиль и качество",
-    "lang": "ru",
-    "slug": "interior-restoration/restoring-car-seats"
-  },
-  "40123147": {
-    "file": "page40123147.html",
-    "url": "https://bestauto.ge/interior-restoration/restoring-car-seats",
-    "path": "/interior-restoration/restoring-car-seats",
-    "title": "მანქანის სავარძლების რესტავრაცია: სტილი და ხარისხი",
-    "lang": "ka",
-    "slug": "interior-restoration/restoring-car-seats"
-  },
-  "40188573": {
-    "file": "page40188573.html",
-    "url": "https://bestauto.ge/en/interior-restoration/restoring-car-seats",
-    "path": "/en/interior-restoration/restoring-car-seats",
-    "title": "Car Seat Restoration: Style and Best Quality",
-    "lang": "en",
-    "slug": "interior-restoration/restoring-car-seats"
-  },
-  "40249617": {
-    "file": "page40249617.html",
-    "url": "https://bestauto.ge/ru/ppf-shield-wrapping/service-on-ppf-wrapped-car",
-    "path": "/ru/ppf-shield-wrapping/service-on-ppf-wrapped-car",
-    "title": "Уход за автомобилем с пленкой PPF: рекомендации по чистке и обслуживанию",
-    "lang": "ru",
-    "slug": "ppf-shield-wrapping/service-on-ppf-wrapped-car"
-  },
-  "40250238": {
-    "file": "page40250238.html",
-    "url": "https://bestauto.ge/ppf-shield-wrapping/service-on-ppf-wrapped-car",
-    "path": "/ppf-shield-wrapping/service-on-ppf-wrapped-car",
-    "title": "მანქანის მოვლა PPF ფირით: დასუფთავებისა და მოვლის რეკომენდაციები",
-    "lang": "ka",
-    "slug": "ppf-shield-wrapping/service-on-ppf-wrapped-car"
-  },
-  "40281359": {
-    "file": "page40281359.html",
-    "url": "https://bestauto.ge/en/ppf-shield-wrapping/service-on-ppf-wrapped-car",
-    "path": "/en/ppf-shield-wrapping/service-on-ppf-wrapped-car",
-    "title": "Care of PPF Wrapped Vehicle: Cleaning and Maintenance Recommendations",
-    "lang": "en",
-    "slug": "ppf-shield-wrapping/service-on-ppf-wrapped-car"
-  },
-  "40311681": {
-    "file": "page40311681.html",
-    "url": "https://bestauto.ge/ru/vinyl-wrapping/hints-for-vinyl-wrapped-cars",
-    "path": "/ru/vinyl-wrapping/hints-for-vinyl-wrapped-cars",
-    "title": "Уход за автомобилем с виниловой пленкой: рекомендации по чистке и обслуживанию",
-    "lang": "ru",
-    "slug": "vinyl-wrapping/hints-for-vinyl-wrapped-cars"
-  },
-  "40312402": {
-    "file": "page40312402.html",
-    "url": "https://bestauto.ge/vinyl-wrapping/hints-for-vinyl-wrapped-cars",
-    "path": "/vinyl-wrapping/hints-for-vinyl-wrapped-cars",
-    "title": "ვინილის ფირის მქონე მანქანის მოვლა: დასუფთავებისა და მოვლის რეკომენდაციები",
-    "lang": "ka",
-    "slug": "vinyl-wrapping/hints-for-vinyl-wrapped-cars"
-  },
-  "40312672": {
-    "file": "page40312672.html",
-    "url": "https://bestauto.ge/en/vinyl-wrapping/hints-for-vinyl-wrapped-cars",
-    "path": "/en/vinyl-wrapping/hints-for-vinyl-wrapped-cars",
-    "title": "Servicing of a Vinyl Wrapped Vehicle: Cleaning and Maintenance Recommendations",
-    "lang": "en",
-    "slug": "vinyl-wrapping/hints-for-vinyl-wrapped-cars"
-  },
-  "40418526": {
-    "file": "page40418526.html",
-    "url": "https://bestauto.ge/ru/paintless-dent-repair/pdr-guidelines-and-techniques",
-    "path": "/ru/paintless-dent-repair/pdr-guidelines-and-techniques",
-    "title": "Как работает беспокрасочное удаление вмятин (PDR): основные принципы и техники",
-    "lang": "ru",
-    "slug": "paintless-dent-repair/pdr-guidelines-and-techniques"
-  },
-  "40419406": {
-    "file": "page40419406.html",
-    "url": "https://bestauto.ge/paintless-dent-repair/pdr-guidelines-and-techniques",
-    "path": "/paintless-dent-repair/pdr-guidelines-and-techniques",
-    "title": "როგორ მუშაობს ცივად გასწორება (PDR): ძირითადი პრინციპები და ტექნიკა",
-    "lang": "ka",
-    "slug": "paintless-dent-repair/pdr-guidelines-and-techniques"
-  },
-  "40453479": {
-    "file": "page40453479.html",
-    "url": "https://bestauto.ge/en/paintless-dent-repair/pdr-guidelines-and-techniques",
-    "path": "/en/paintless-dent-repair/pdr-guidelines-and-techniques",
-    "title": "How Paintless Dent Repair (PDR) Works: Basic Guidelines and Techniques",
-    "lang": "en",
-    "slug": "paintless-dent-repair/pdr-guidelines-and-techniques"
-  },
-  "40487726": {
-    "file": "page40487726.html",
-    "url": "https://bestauto.ge/ru/windshield-repair/efficiency-of-windshield-repair",
-    "path": "/ru/windshield-repair/efficiency-of-windshield-repair",
-    "title": "Какие типы сколов могут быть восстановлены и насколько эффективен процесс ремонт",
-    "lang": "ru",
-    "slug": "windshield-repair/efficiency-of-windshield-repair"
-  },
-  "40488563": {
-    "file": "page40488563.html",
-    "url": "https://bestauto.ge/windshield-repair/efficiency-of-windshield-repair",
-    "path": "/windshield-repair/efficiency-of-windshield-repair",
-    "title": "რა ტიპის ნაკენჭარის შეკეთება შეიძლება და რამდენად ეფექტურია შეკეთების პროცესი?",
-    "lang": "ka",
-    "slug": "windshield-repair/efficiency-of-windshield-repair"
-  },
-  "40521740": {
-    "file": "page40521740.html",
-    "url": "https://bestauto.ge/en/windshield-repair/efficiency-of-windshield-repair",
-    "path": "/en/windshield-repair/efficiency-of-windshield-repair",
-    "title": "What Types of Chips Can Be Restored And How Effective Is the Repair Process?",
-    "lang": "en",
-    "slug": "windshield-repair/efficiency-of-windshield-repair"
-  },
-  "40634269": {
-    "file": "page40634269.html",
-    "url": "https://bestauto.ge/ru/auto-glass-tinting/window-tinting-care",
-    "path": "/ru/auto-glass-tinting/window-tinting-care",
-    "title": "Уход за тонированными стеклами: советы по сохранению качества",
-    "lang": "ru",
-    "slug": "auto-glass-tinting/window-tinting-care"
-  },
-  "40634861": {
-    "file": "page40634861.html",
-    "url": "https://bestauto.ge/auto-glass-tinting/window-tinting-care",
-    "path": "/auto-glass-tinting/window-tinting-care",
-    "title": "დაბურულ მინაზე ზრუნვა: რჩევები ხარისხის შესანარჩუნებლად",
-    "lang": "ka",
-    "slug": "auto-glass-tinting/window-tinting-care"
-  },
-  "40635194": {
-    "file": "page40635194.html",
-    "url": "https://bestauto.ge/en/auto-glass-tinting/window-tinting-care",
-    "path": "/en/auto-glass-tinting/window-tinting-care",
-    "title": "Tinted Windows Maintenance: Tips for Preserving Quality",
-    "lang": "en",
-    "slug": "auto-glass-tinting/window-tinting-care"
-  },
-  "40699250": {
-    "file": "page40699250.html",
-    "url": "https://bestauto.ge/ru/car-soundproofing/soundrpoofing-process",
-    "path": "/ru/car-soundproofing/soundrpoofing-process",
-    "title": "Процесс шумоизоляции автомобиля: шаг за шагом",
-    "lang": "ru",
-    "slug": "car-soundproofing/soundrpoofing-process"
-  },
-  "40699939": {
-    "file": "page40699939.html",
-    "url": "https://bestauto.ge/car-soundproofing/soundrpoofing-process",
-    "path": "/car-soundproofing/soundrpoofing-process",
-    "title": "მანქანის ხმის იზოლაციის პროცესი: ეტაპობრივად",
-    "lang": "ka",
-    "slug": "car-soundproofing/soundrpoofing-process"
-  },
-  "40731374": {
-    "file": "page40731374.html",
-    "url": "https://bestauto.ge/en/car-soundproofing/soundrpoofing-process",
-    "path": "/en/car-soundproofing/soundrpoofing-process",
-    "title": "Car Soundproofing Process: Step by Step",
-    "lang": "en",
-    "slug": "car-soundproofing/soundrpoofing-process"
-  },
-  "40838369": {
-    "file": "page40838369.html",
-    "url": "https://bestauto.ge/ru/computer-diagnostics/errors-to-find",
-    "path": "/ru/computer-diagnostics/errors-to-find",
-    "title": "Что может быть обнаружено с помощью компьютерной диагностики автомобиля",
-    "lang": "ru",
-    "slug": "computer-diagnostics/errors-to-find"
-  },
-  "40839100": {
-    "file": "page40839100.html",
-    "url": "https://bestauto.ge/computer-diagnostics/errors-to-find",
-    "path": "/computer-diagnostics/errors-to-find",
-    "title": "რისი დადგენა შესაძლებელია მანქანის კომპიუტერული დიაგნოსტიკის გამოყენებით",
-    "lang": "ka",
-    "slug": "computer-diagnostics/errors-to-find"
-  },
-  "40839462": {
-    "file": "page40839462.html",
-    "url": "https://bestauto.ge/en/computer-diagnostics/errors-to-find",
-    "path": "/en/computer-diagnostics/errors-to-find",
-    "title": "What Can Be Detected Through Car Diagnostic Test?",
-    "lang": "en",
-    "slug": "computer-diagnostics/errors-to-find"
-  },
-  "40904632": {
-    "file": "page40904632.html",
-    "url": "https://bestauto.ge/ru/polishing/car-body-polishing",
-    "path": "/ru/polishing/car-body-polishing",
-    "title": "Искусство полировки кузова, чтобы ваш автомобиль сиял как новый",
-    "lang": "ru",
-    "slug": "polishing/car-body-polishing"
-  },
-  "40905535": {
-    "file": "page40905535.html",
-    "url": "https://bestauto.ge/polishing/car-body-polishing",
-    "path": "/polishing/car-body-polishing",
-    "title": "ძარას გაპრიალების ხელოვნება, რათა თქვენი მანქანა ახალივით ბზინავდეს",
-    "lang": "ka",
-    "slug": "polishing/car-body-polishing"
-  },
-  "40938499": {
-    "file": "page40938499.html",
-    "url": "https://bestauto.ge/en/polishing/car-body-polishing",
-    "path": "/en/polishing/car-body-polishing",
-    "title": "The Art of Body Polishing to Make Your Car Shine Like New",
-    "lang": "en",
-    "slug": "polishing/car-body-polishing"
-  },
-  "41489985": {
-    "file": "page41489985.html",
-    "url": "https://bestauto.ge/ru/ceramiccoating/technology-and-process",
-    "path": "/ru/ceramiccoating/technology-and-process",
-    "title": "Как работает керамическое покрытие: технология и процесс нанесения",
-    "lang": "ru",
-    "slug": "ceramiccoating/technology-and-process"
-  },
-  "41490637": {
-    "file": "page41490637.html",
-    "url": "https://bestauto.ge/ceramiccoating/technology-and-process",
-    "path": "/ceramiccoating/technology-and-process",
-    "title": "როგორ მუშაობს კერამიკული საფარი: ტექნოლოგია და გამოყენების პროცესი",
-    "lang": "ka",
-    "slug": "ceramiccoating/technology-and-process"
-  },
-  "41490922": {
-    "file": "page41490922.html",
-    "url": "https://bestauto.ge/en/ceramiccoating/technology-and-process",
-    "path": "/en/ceramiccoating/technology-and-process",
-    "title": "How Ceramic Coating Works: Technology and Application Process",
-    "lang": "en",
-    "slug": "ceramiccoating/technology-and-process"
-  },
-  "41664618": {
-    "file": "page41664618.html",
-    "url": "https://bestauto.ge/ru/interior-cleaning/car-interior-detailing-basics",
-    "path": "/ru/interior-cleaning/car-interior-detailing-basics",
-    "title": "Основные этапы детейлинг-мойки салона: от удаления пыли до очистки тканей",
-    "lang": "ru",
-    "slug": "interior-cleaning/car-interior-detailing-basics"
-  },
-  "41665497": {
-    "file": "page41665497.html",
-    "url": "https://bestauto.ge/interior-cleaning/car-interior-detailing-basics",
-    "path": "/interior-cleaning/car-interior-detailing-basics",
-    "title": "ინტერიერის დეტალების ძირითადი ეტაპები: მტვრის მოცილებიდან ქსოვილების გაწმენდამდე",
-    "lang": "ka",
-    "slug": "interior-cleaning/car-interior-detailing-basics"
-  },
-  "41699535": {
-    "file": "page41699535.html",
-    "url": "https://bestauto.ge/en/interior-cleaning/car-interior-detailing-basics",
-    "path": "/en/interior-cleaning/car-interior-detailing-basics",
-    "title": "Key Stages of Salon Detailing: From Dust Removal to Fabric Cleaning",
-    "lang": "en",
-    "slug": "interior-cleaning/car-interior-detailing-basics"
-  },
-  "41734485": {
-    "file": "page41734485.html",
-    "url": "https://bestauto.ge/ru/interior-restoration/plastic-elements-restoration",
-    "path": "/ru/interior-restoration/plastic-elements-restoration",
-    "title": "Ремонт пластиковых элементов автомобиля для сохранения его стиля и ценности",
-    "lang": "ru",
-    "slug": "interior-restoration/plastic-elements-restoration"
-  },
-  "41735359": {
-    "file": "page41735359.html",
-    "url": "https://bestauto.ge/interior-restoration/plastic-elements-restoration",
-    "path": "/interior-restoration/plastic-elements-restoration",
-    "title": "თქვენი მანქანის პლასტმასის ნაწილების შეკეთება მისი სტილისა და ღირებულების შესანა",
-    "lang": "ka",
-    "slug": "interior-restoration/plastic-elements-restoration"
-  },
-  "41766639": {
-    "file": "page41766639.html",
-    "url": "https://bestauto.ge/en/interior-restoration/plastic-elements-restoration",
-    "path": "/en/interior-restoration/plastic-elements-restoration",
-    "title": "Repairing Сar Plastic Elements to Preserve Its Style and Value",
-    "lang": "en",
-    "slug": "interior-restoration/plastic-elements-restoration"
-  },
-  "41931643": {
-    "file": "page41931643.html",
-    "url": "https://bestauto.ge/ru/ppf-shield-wrapping/strength-and-useful-life-of-ppf",
-    "path": "/ru/ppf-shield-wrapping/strength-and-useful-life-of-ppf",
-    "title": "Как долго длится эффект от пленки PPF: прочность и долговечность защиты",
-    "lang": "ru",
-    "slug": "ppf-shield-wrapping/strength-and-useful-life-of-ppf"
-  },
-  "41932400": {
-    "file": "page41932400.html",
-    "url": "https://bestauto.ge/ppf-shield-wrapping/strength-and-useful-life-of-ppf",
-    "path": "/ppf-shield-wrapping/strength-and-useful-life-of-ppf",
-    "title": "რამდენ ხანს გრძელდება PPF დამცავი ფირის ეფექტი: დაცვის სიძლიერე და გამძლეობა",
-    "lang": "ka",
-    "slug": "ppf-shield-wrapping/strength-and-useful-life-of-ppf"
-  },
-  "42127917": {
-    "file": "page42127917.html",
-    "url": "https://bestauto.ge/en/ppf-shield-wrapping/strength-and-useful-life-of-ppf",
-    "path": "/en/ppf-shield-wrapping/strength-and-useful-life-of-ppf",
-    "title": "How Long Does the Effect of PPF Last: Strength and Durability of Protection",
-    "lang": "en",
-    "slug": "ppf-shield-wrapping/strength-and-useful-life-of-ppf"
-  },
-  "44491807": {
-    "file": "page44491807.html",
-    "url": "https://bestauto.ge/qr",
-    "path": "/qr",
-    "title": "Blank page",
-    "lang": "ka",
-    "slug": "qr"
-  },
-  "45762695": {
-    "file": "page45762695.html",
-    "url": "https://bestauto.ge/ru/vinyl-wrapping/car-body-color-with-vinyl-wrap",
-    "path": "/ru/vinyl-wrapping/car-body-color-with-vinyl-wrap",
-    "title": "Как оклейка кузова виниловой пленкой влияет на цвет автомобиля?",
-    "lang": "ru",
-    "slug": "vinyl-wrapping/car-body-color-with-vinyl-wrap"
-  },
-  "45833009": {
-    "file": "page45833009.html",
-    "url": "https://bestauto.ge/en/vinyl-wrapping/car-body-color-with-vinyl-wrap",
-    "path": "/en/vinyl-wrapping/car-body-color-with-vinyl-wrap",
-    "title": "How Does Wrapping the Car Body with Vinyl Film Affect the Car's Color?",
-    "lang": "en",
-    "slug": "vinyl-wrapping/car-body-color-with-vinyl-wrap"
-  },
-  "45834011": {
-    "file": "page45834011.html",
-    "url": "https://bestauto.ge/vinyl-wrapping/car-body-color-with-vinyl-wrap",
-    "path": "/vinyl-wrapping/car-body-color-with-vinyl-wrap",
-    "title": "როგორ მოქმედებს ძარაზე ვინილის ფირით შეფუთვა მანქანის ფერზე?",
-    "lang": "ka",
-    "slug": "vinyl-wrapping/car-body-color-with-vinyl-wrap"
-  },
-  "50854645": {
-    "file": "page50854645.html",
-    "url": "https://bestauto.ge/ru/auto-glass-tinting/legal-aspects-of-tinting-in-georgia",
-    "path": "/ru/auto-glass-tinting/legal-aspects-of-tinting-in-georgia",
-    "title": "Правовые аспекты тонировки стекол автомобиля в Грузии",
-    "lang": "ru",
-    "slug": "auto-glass-tinting/legal-aspects-of-tinting-in-georgia"
-  },
-  "51383339": {
-    "file": "page51383339.html",
-    "url": "https://bestauto.ge/en/auto-glass-tinting/legal-aspects-of-tinting-in-georgia",
-    "path": "/en/auto-glass-tinting/legal-aspects-of-tinting-in-georgia",
-    "title": "Legal Aspects of Car Window Tinting in Georgia",
-    "lang": "en",
-    "slug": "auto-glass-tinting/legal-aspects-of-tinting-in-georgia"
-  },
-  "51383971": {
-    "file": "page51383971.html",
-    "url": "https://bestauto.ge/auto-glass-tinting/legal-aspects-of-tinting-in-georgia",
-    "path": "/auto-glass-tinting/legal-aspects-of-tinting-in-georgia",
-    "title": "ავტომობილის დაბურვა საქართველოს კანონმდებლობის გათვალისწინებით",
-    "lang": "ka",
-    "slug": "auto-glass-tinting/legal-aspects-of-tinting-in-georgia"
-  },
-  "54710549": {
-    "file": "page54710549.html",
-    "url": "https://bestauto.ge/ru/carwash",
-    "path": "/ru/carwash",
-    "title": "Детейлинг мойка автомобиля в Тбилиси — цены от 40 лари | BESTAUTO",
-    "lang": "ru",
-    "slug": "carwash"
-  },
-  "55695771": {
-    "file": "page55695771.html",
-    "url": "https://bestauto.ge/carwash",
-    "path": "/carwash",
-    "title": "მანქანის სარეცხი თბილისში — BESTAUTO | პრემიუმ მომსახურება",
-    "lang": "ka",
-    "slug": "carwash"
-  },
-  "61547409": {
-    "file": "page61547409.html",
-    "url": "https://bestauto.ge/ru/ppf-shield-wrapping/ppf-film-benefits",
-    "path": "/ru/ppf-shield-wrapping/ppf-film-benefits",
-    "title": "​​Преимущества полиуретановой пленки (PPF) перед другими методами защиты кузова",
-    "lang": "ru",
-    "slug": "ppf-shield-wrapping/ppf-film-benefits"
   },
   "ppf_new": {
     "file": "page_ppf_new.html",
