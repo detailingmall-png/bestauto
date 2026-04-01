@@ -1,13 +1,15 @@
 # Cloudflare Pages — HTTP response headers
 # https://developers.cloudflare.com/pages/configuration/headers/
 
-# ── Security headers for all pages ──────────────────────────────
+# ── Default: security + cache for all pages ──────────────────────
+# More specific rules below override Cache-Control for assets
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
   X-XSS-Protection: 1; mode=block
+  Cache-Control: public, s-maxage=86400, max-age=60, stale-while-revalidate=86400
 
 # ── CSS/JS: long cache with revalidation ─────────────────────────
 # Tilda filenames are NOT content-hashed; stale-while-revalidate
@@ -39,10 +41,6 @@
 
 /hls/*.js
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-# ── HTML pages — short browser cache, long edge cache (purged on deploy)
-/*.html
-  Cache-Control: public, s-maxage=86400, max-age=60, stale-while-revalidate=86400
 
 # ── Sitemap / robots ─────────────────────────────────────────────
 /sitemap*.xml
