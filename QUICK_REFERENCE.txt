@@ -1,0 +1,94 @@
+================================================================================================================================================
+TILDA DESIGN TOKENS - QUICK REFERENCE CARD
+================================================================================================================================================
+
+COLORS
+------
+Primary Background:   #000000 (black)
+Primary Text:         #ffffff (white)
+Accent/Buttons:       #e4c97e (gold)
+Light Gray:           #eee
+Medium Gray Text:     #999
+Dark Gray Text:       #666
+Separator:            #ccc
+
+TYPOGRAPHY
+----------
+H1 (Hero):            62px, weight 700, color #ffffff
+H2 (Section):         40px, weight 700, color #e4c97e
+Navigation:           23px, weight 600, color #ffffff
+Body Text:            20px, weight 400, color #ffffff
+Small Text:           13px-15px, color #666 or #999
+Font Family:          'TildaSans', Arial, sans-serif
+
+BUTTONS
+-------
+Background:           #e4c97e
+Text Color:           #000000
+Border Radius:        20px (small) or 30px (medium)
+Padding:              16px 40px (standard)
+Shadow:               0px 15px 30px -10px rgba(0,11,48,0.2)
+Transition:           0.2s ease-in-out
+
+SPACING (vertical rhythm)
+-------------------------
+0px   30px   45px   60px   75px   90px   105px   135px   150px
+
+LAYOUT
+------
+Max Container:        1200px
+Grid Columns:         12-column system
+Responsive Points:    640px (mobile), 1200px (desktop)
+Standard Gap:         20px - 30px
+
+REC BLOCK SPACING PRESETS
+-------------------------
+t-rec_pt_0   t-rec_pb_0     = no padding
+t-rec_pt_30  t-rec_pb_30    = 30px padding
+t-rec_pt_75  t-rec_pb_75    = 75px padding
+t-rec_pt_105 t-rec_pb_105   = 105px padding
+t-rec_pt_150 t-rec_pb_150   = 150px padding
+
+COMPONENT TYPES (rec IDs)
+------------------------
+121 = Cover/Section (12 blocks) - Main content areas
+131 = Code/Script (6 blocks)    - Tracking, analytics
+508 = Features List (1)         - Bulleted list with icons
+585 = Pricing Table (1)         - Table structure (155 elements!)
+692 = Cards Grid (1)            - Responsive card layout
+746 = Gallery/Slider (32 elems) - Image carousel
+228 = Navigation (52 elems)     - Header menu
+225 = Section Title (2)         - H2 title blocks
+182 = Hero Cover (5)            - Full-screen hero section
+
+GRID CLASSES
+-----------
+t-col_12   = full width
+t-col_8    = 66% (2/3)
+t-col_4    = 33% (1/3)
+t-col_3    = 25% (1/4)
+t-prefix_2 = 16.67% left margin
+t-prefix_1 = 8.33% left margin
+
+RESPONSIVE
+----------
+t-screenmin-640px   = show on screens >= 640px
+t-screenmax-640px   = show on screens <= 640px
+t-screenmin-1200px  = show on screens >= 1200px
+t-screenmax-1200px  = show on screens <= 1200px
+
+KEY FINDING
+-----------
+This page is 100% TILDA NATIVE
+- No separate custom blocks
+- All styling from Tilda's framework
+- 29 rec blocks total
+- 14 colors in entire palette
+- 9 spacing increments
+- 12 font sizes
+- 4 font weights
+
+================================================================================================================================================
+QUICK_REFERENCE
+
+cat /Users/fedorzubrickij/bestauto-site/QUICK_REFERENCE.txt

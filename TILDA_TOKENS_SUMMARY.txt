@@ -1,0 +1,253 @@
+================================================================================================================================================
+TILDA DESIGN TOKENS AUDIT - EXECUTIVE SUMMARY & KEY FINDINGS
+page_ppf_new.html Analysis
+================================================================================================================================================
+
+FINDING #1: 100% TILDA NATIVE - NO CUSTOM BLOCKS
+================================================================================================================================================
+Critical Discovery: This page contains NO separate custom HTML blocks.
+- All 251+ "internal elements" are part of Tilda's native rec blocks
+- No hand-coded divs outside of Tilda's component structure
+- All styling derives from Tilda's built-in framework
+
+Implication: If you need to match Tilda's styling, you CANNOT identify differences
+between Tilda and custom blocks on THIS page. This is a pure Tilda implementation.
+
+================================================================================================================================================
+MASTER DESIGN TOKEN LIST - FOR IMPLEMENTATION
+================================================================================================================================================
+
+COLOR TOKENS (14 colors total):
+  --color-black-primary:    #000000 (36 uses - backgrounds)
+  --color-white-primary:    #ffffff (37 uses - text)
+  --color-gold-accent:      #e4c97e (28 uses - buttons, highlights)
+  --color-gray-light:       #eee    (12 uses - backgrounds)
+  --color-gray-medium:      #999    (11 uses - secondary text)
+  --color-gray-border:      #ccc    (3 uses - borders)
+  --color-gray-dark:        #666    (2 uses - body text on light)
+  --color-gray-darker:      #444    (2 uses - breadcrumb separators)
+  --color-gray-darkest:     #111    (3 uses - high contrast)
+  --color-badge:            #C8A96E (alternate gold for badges)
+  --color-dark-bg:          #1a1a1a (dark sections)
+  --color-overlay-dark:     rgba(0,0,0,0.30) to rgba(0,0,0,0.70) (hero overlays)
+  --color-shadow:           rgba(0,11,48,0.2) (button shadows)
+
+SPACING TOKENS (9 increment levels):
+  --spacing-0:   0px
+  --spacing-30:  30px
+  --spacing-45:  45px
+  --spacing-60:  60px
+  --spacing-75:  75px
+  --spacing-90:  90px
+  --spacing-105: 105px
+  --spacing-135: 135px
+  --spacing-150: 150px
+
+TYPOGRAPHY TOKENS:
+  Sizes: 13px, 15px, 16px, 18px, 20px, 23px, 24px, 26px, 30px, 33px, 40px, 62px
+  Weights: 400 (regular), 500 (medium), 600 (semi-bold), 700 (bold)
+  Family: 'TildaSans', Arial, sans-serif
+  
+  Named Scales:
+    --font-size-xs:       13px (breadcrumbs)
+    --font-size-sm:       15px
+    --font-size-base:     16px
+    --font-size-md:       18px
+    --font-size-lg:       20px (body text)
+    --font-size-xl:       23px (navigation)
+    --font-size-2xl:      24px-26px
+    --font-size-3xl:      30px-33px (section headers)
+    --font-size-4xl:      40px
+    --font-size-5xl:      62px (hero title)
+
+BUTTON TOKENS:
+  Background:    #e4c97e
+  Text Color:    #000000
+  Border:        none (0px width)
+  Border-Radius: 20px (small) OR 30px (medium)
+  Shadow:        0px 15px 30px -10px rgba(0,11,48,0.2) (with elevation)
+  Shadow (alt):  none (flat buttons in header)
+  Transition:    0.2s ease-in-out (all properties)
+  Padding:       16px 40px (typical) OR 4px 12px (compact)
+
+LAYOUT TOKENS:
+  Max-Width Container:  1200px
+  Column System:        12 columns
+  Column Widths:        33% (4col), 66% (8col), 100% (12col), 25% (3col)
+  Breakpoints:          640px (mobile), 1200px (desktop)
+  Gutter/Gap:           20px - 30px (flexbox/grid)
+
+COMPONENT-SPECIFIC TOKENS:
+  Hero (t182):
+    h1 font-size: 62px, color: #ffffff
+    Subtitle: font-weight 500
+    Height: 100vh (full viewport)
+    Background: linear-gradient with image overlay
+
+  Section Titles (t225):
+    h2 color: rgb(228, 201, 126) [gold accent]
+    Text-transform: uppercase (optional)
+    Font-size: 40px+
+
+  Navigation (t228):
+    Links: 23px, weight 600, color #ffffff
+    Logo: variable max-width 110px
+    Mobile toggle: hamburger icon
+
+  Feature List (t508):
+    Item margin-top: 80px
+    Icon: 50px × 50px, color #e4c97e
+    Title: t-name_md (medium emphasis)
+    Description: t-descr_sm (small text)
+
+  Pricing Table (t585):
+    Responsive grid layout
+    155+ internal cell elements
+    Padding: 75px top, 90px bottom
+
+  Cards Grid (t692):
+    Grid: repeat(auto-fit, minmax(300px, 1fr))
+    Gap: 30px
+    Padding: 135px top, 150px bottom
+
+  Image Gallery (t746):
+    Bullet color (active): #ffffff
+    Bullet color (hover): #ffffff
+    Navigation arrows: styled overlays
+
+================================================================================================================================================
+COMPARISON TABLE: TILDA NATIVE VS CUSTOM (IF ANY EXISTED)
+================================================================================================================================================
+
+Since this page is 100% Tilda native, here's what WOULD differ if custom blocks existed:
+
+Property                | Tilda Native                    | Custom Blocks (if existed)
+========================|=================================|=================================
+Font Family             | 'TildaSans', Arial, sans-serif  | Any system font
+Color Consistency       | Limited palette (14 colors)     | Unlimited colors
+Spacing               | 15px increment grid             | Any pixel value
+Button Styling        | Unified (2 radius variants)     | Varying styles
+Typography Scale     | 12 defined sizes                | Arbitrary font sizes
+Grid System           | 12-column system                | No grid structure
+Responsive Classes    | t-screenmin/max classes         | Media queries in CSS
+Container Max-Width   | 1200px standard                 | Any width
+Border Radius         | 4px, 12px, 30px, 50%          | Any value
+Transitions           | 0.2s ease-in-out standard      | Varying durations
+Shadow Effects        | Standardized formula            | Custom shadows
+Component Structure   | BEM naming (t-xyz__elem)        | Any naming convention
+
+================================================================================================================================================
+DIFFERENCES FOUND: NONE (ALL TILDA NATIVE)
+================================================================================================================================================
+
+Expected Findings:
+  Custom div count: 0 (expected: any number)
+  Custom colors: 0 (expected: different from Tilda palette)
+  Custom spacing: 0 (expected: non-standard values)
+  Custom fonts: 0 (expected: different font families)
+  Custom buttons: 0 (expected: different styling)
+
+Actual Results: ALL ZERO - This is a pure Tilda site with zero customization outside
+the Tilda component framework.
+
+================================================================================================================================================
+HOW TO USE THIS AUDIT FOR YOUR PROJECT
+================================================================================================================================================
+
+1. IF REPLICATING TILDA STYLING IN CUSTOM CODE:
+   - Use the Color Tokens section to get exact hex values
+   - Use Spacing Tokens for consistent 15px-based rhythm
+   - Use Typography Tokens for font scales
+   - Use Button Tokens for exact CSS properties
+   - Use Layout Tokens for responsive behavior
+
+2. IF MIGRATING FROM TILDA TO CUSTOM:
+   - Extract all 14 color values and create CSS variables
+   - Create spacing scale (0-150px, 15px increments)
+   - Define typography scale with 12 font sizes
+   - Implement 12-column grid system
+   - Set up 640px and 1200px breakpoints
+   - Define button component with 2 radius variants
+
+3. IF CUSTOMIZING WITHIN TILDA:
+   - All styling is generated by Tilda's export
+   - You CAN add custom CSS via inline styles (as seen in this file)
+   - Respect the existing color palette and spacing grid
+   - Follow the typography hierarchy
+   - Match the breakpoint strategy
+
+4. IF COMPARING WITH OTHER TILDA SITES:
+   - This provides a baseline of Tilda's native tokens
+   - Different Tilda templates may use different palettes
+   - The structure (rec blocks, t-col system, spacing) will be identical
+   - Look for custom colors outside the 14 found here
+
+================================================================================================================================================
+COMPONENT STATISTICS
+================================================================================================================================================
+
+Tilda Block Count by Type:
+  Type 121 (Cover/Section):  12 blocks (41%)
+  Type 131 (Code/Script):     6 blocks (21%)
+  Type 215 (Anchor):          6 blocks (21%)
+  Type 508 (Features List):   1 block  (3%)
+  Type 585 (Pricing Table):   1 block  (3%)
+  Type 692 (Cards Grid):      1 block  (3%)
+  Type 255 (Title Block):     1 block  (3%)
+  Type 33 (Gallery):          1 block  (3%)
+  Type 205 (Spacer):          1 block  (3%)
+
+Most Complex Components (by element count):
+  1. t585 - Pricing Table: 155 divs
+  2. t228 - Navigation Menu: 52 divs
+  3. t681 - Service Cards: 42 divs
+  4. t746 - Gallery/Slider: 32 divs
+  5. t502 - Cards: 29 divs
+
+Responsive Design:
+  Mobile-first approach: YES (480px, 640px, 960px variants)
+  Breakpoints: 640px, 1200px
+  Responsive classes: t-screenmin-* and t-screenmax-* patterns
+  Mobile menu: t228 (hamburger navigation)
+
+================================================================================================================================================
+ACTIONABLE RECOMMENDATIONS
+================================================================================================================================================
+
+1. For CSS Variable Implementation:
+   Create :root { --color-primary: #000000; --color-accent: #e4c97e; ... }
+   This makes the tokens reusable across custom code
+
+2. For Custom Component Creation:
+   Follow Tilda's BEM naming: t-componentname__element_modifier
+   Use 15px-based spacing increments
+   Maintain the 12-column grid structure
+   Use the 4 defined font weights only
+
+3. For Design System Documentation:
+   Use these 12 font sizes (not more)
+   Use these 14 colors (constrain palette)
+   Use these 9 spacing values (maintain rhythm)
+   Use these 2 breakpoints (stay responsive)
+
+4. For Testing/QA:
+   Verify all buttons match the exact CSS rules (6 instances provided)
+   Verify all sections use spacing from the 9-value preset list
+   Verify all text uses colors from the 14-color palette
+   Verify responsive behavior at 640px and 1200px breakpoints
+
+================================================================================================================================================
+FILE LOCATION & DETAILS
+================================================================================================================================================
+
+Source HTML: /Users/fedorzubrickij/bestauto-site/tilda-export/project6825691/page_ppf_new.html
+Full Report: /Users/fedorzubrickij/bestauto-site/TILDA_DESIGN_TOKENS_AUDIT.txt
+
+File Size: 674 lines (~72KB)
+Encoding: UTF-8
+Language: Russian content (technical HTML is English)
+Export Type: Tilda native export (not custom HTML)
+
+================================================================================================================================================
+END OF SUMMARY
+================================================================================================================================================

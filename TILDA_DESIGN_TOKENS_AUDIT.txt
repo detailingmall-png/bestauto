@@ -1,0 +1,485 @@
+================================================================================================================================================
+COMPREHENSIVE TILDA DESIGN TOKENS AUDIT - COMPLETE FINAL REPORT
+page_ppf_new.html (Project 6825691)
+================================================================================================================================================
+
+EXECUTIVE SUMMARY
+================================================================================================================================================
+Total Tilda Native Blocks (rec IDs): 29 blocks
+Total Component Types: 9 types
+Custom Internal Elements: 251+ divs (within native blocks, not separate)
+All blocks use Tilda native styling framework with inline styles and CSS rules
+
+================================================================================================================================================
+SECTION 1: NATIVE TILDA BLOCKS - COMPLETE INVENTORY
+================================================================================================================================================
+
+BLOCK TYPE 121 (Cover/Section) - 12 BLOCKS
+  rec588593927    | class: r t-rec t-screenmin-1200px
+  rec692949103    | class: r t-rec t-screenmax-1200px
+  rec618600545    | padding-top:0px; padding-bottom:75px; background-color:#000000
+  rec588593935    | padding-top:105px; padding-bottom:105px; background-color:#000000
+  rec1829048981   | class: r t-rec t-screenmin-640px
+  rec713423972    | padding-top:105px; padding-bottom:0px; background-color:#000000
+  rec1859744811   | padding-top:30px; padding-bottom:0px; background-color:#000000
+  rec1859754151   | class: r t-rec (image carousel)
+  rec1859784471   | class: r t-rec (image carousel)
+  rec2072063053   | padding-top:90px; padding-bottom:135px; background-color:#000000
+  rec603526076    | padding-top:60px; padding-bottom:60px; background-color:#000000
+  rec1859912571   | class: r t-rec t-screenmax-640px
+
+BLOCK TYPE 131 (Code/Script) - 6 BLOCKS
+  rec592997557    | Meta Pixel tracking
+  rec799057732    | Google Analytics
+  rec697024018    | Google Analytics
+  rec589798727    | Yandex tracking
+  rec758397398    | background-color:#000000 (container)
+  rec2067665423   | FAQPage schema markup
+
+BLOCK TYPE 508 (Features List) - 1 BLOCK
+  rec598482590    | padding-top:150px; padding-bottom:45px; background-color:#000000
+  Contains: 4+ feature items with icons and descriptions
+
+BLOCK TYPE 585 (Pricing/Table) - 1 BLOCK
+  rec600154951    | padding-top:75px; padding-bottom:90px; background-color:#000000
+  Contains: 155 internal elements (pricing table structure)
+
+BLOCK TYPE 692 (Cards Grid) - 1 BLOCK
+  rec603226585    | padding-top:135px; padding-bottom:150px; background-color:#000000
+  Contains: 12+ card elements in grid layout
+
+BLOCK TYPE 255 (Title Block) - 1 BLOCK
+  rec758397397    | padding-top:105px; padding-bottom:0px; background-color:#000000
+
+BLOCK TYPE 33 (Gallery) - 1 BLOCK
+  rec598482597    | padding-top:150px; padding-bottom:0px; background-color:#000000
+
+BLOCK TYPE 215 (Anchor/Link) - 6 BLOCKS
+  rec598482605    | Anchor: #about
+  rec598482614    | Anchor: #form
+  rec598482615    | Anchor: #contacts
+  rec713438303    | Anchor: #photo
+  rec758397396    | Anchor: #reviews
+  rec598482611    | Anchor: #service
+
+BLOCK TYPE 205 (Spacer) - 1 BLOCK
+  rec598482588    | padding-bottom:0px (cover spacer)
+
+================================================================================================================================================
+SECTION 2: SPACING TOKENS (VERTICAL RHYTHM)
+================================================================================================================================================
+
+Padding-Top Classes (t-rec_pt_XX):
+  t-rec_pt_0    = 0px       (no spacing)
+  t-rec_pt_30   = 30px
+  t-rec_pt_45   = 45px
+  t-rec_pt_60   = 60px
+  t-rec_pt_75   = 75px
+  t-rec_pt_90   = 90px
+  t-rec_pt_105  = 105px
+  t-rec_pt_135  = 135px
+  t-rec_pt_150  = 150px
+
+Padding-Bottom Classes (t-rec_pb_XX):
+  t-rec_pb_0    = 0px       (no spacing)
+  t-rec_pb_30   = 30px
+  t-rec_pb_45   = 45px
+  t-rec_pb_60   = 60px
+  t-rec_pb_75   = 75px
+  t-rec_pb_90   = 90px
+  t-rec_pb_105  = 105px
+  t-rec_pb_135  = 135px
+  t-rec_pb_150  = 150px
+
+Used Spacing Combinations:
+  rec598482590   : pt_150 + pb_45
+  rec600154951   : pt_75  + pb_90
+  rec603226585   : pt_135 + pb_150
+  rec618600545   : pt_0   + pb_75
+  rec588593935   : pt_105 + pb_105
+  rec713423972   : pt_105 + pb_0
+  rec1859744811  : pt_30  + pb_0
+  rec2072063053  : pt_90  + pb_135
+  rec603526076   : pt_60  + pb_60
+  rec758397397   : pt_105 + pb_0
+
+================================================================================================================================================
+SECTION 3: COLOR PALETTE
+================================================================================================================================================
+
+PRIMARY COLORS:
+  #000000 (Black)     - 36 uses | Primary background color for all main sections
+  #ffffff (White)     - 37 uses | Primary text color on dark backgrounds
+  #e4c97e (Gold)      - 28 uses | Primary accent color for buttons, highlights
+
+SECONDARY COLORS:
+  #eee (Light Gray)   - 12 uses | Light backgrounds, subtle separators
+  #999 (Medium Gray)  - 11 uses | Secondary text color
+  #ccc (Light Border) - 3 uses  | Borders, subtle dividers
+  #666 (Dark Gray)    - 2 uses  | Text on light backgrounds
+  #444 (Very Dark)    - 2 uses  | Breadcrumb separators
+  #111 (Almost Black) - 3 uses  | High contrast text
+
+RGB EQUIVALENTS:
+  rgb(255, 255, 255) | White text (alternate notation)
+  rgb(228, 201, 126) | Gold accent (RGB version of #e4c97e)
+  rgb(255, 255, 255) | White (short form)
+
+BACKGROUND IMAGES:
+  Linear gradients: linear-gradient(to bottom, rgba(0,0,0,0.30), rgba(0,0,0,0.70))
+  Multiple background images for hero sections, cards, galleries
+
+================================================================================================================================================
+SECTION 4: BUTTON STYLES (COMPLETE CSS RULES)
+================================================================================================================================================
+
+DEFAULT BUTTON (t-btnflex.t-btnflex_type_button):
+  color: #000000
+  background-color: #e4c97e
+  border: none (--border-width: 0px; border-style: none !important)
+  border-radius: 20px OR 30px (varies by context)
+  box-shadow: none !important OR 0px 15px 30px -10px rgba(0,11,48,0.2) !important
+  white-space: normal (for text wrapping)
+  transition-duration: 0.2s
+  transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap
+  transition-timing-function: ease-in-out
+
+BUTTON VARIANTS:
+  .t-btnflex_sm        | Small buttons (in headers, 20px border-radius)
+  .t-btnflex_md        | Medium buttons (in content sections, 30px border-radius)
+  .t-btnflex_type_button2 | Secondary button variant (same colors, different styling)
+
+BUTTON INSTANCES:
+  rec588593927 .t-btnflex.t-btnflex_type_button
+    - border-radius: 20px, box-shadow: none
+  rec692949103 .t-btnflex.t-btnflex_type_button
+    - border-radius: 20px, box-shadow: none
+  rec598482588 .t-btnflex.t-btnflex_type_button
+    - border-radius: 30px, box-shadow: none, white-space: normal
+  rec1859744811 .t-btnflex.t-btnflex_type_button
+    - border-radius: 30px, box-shadow: 0px 15px 30px -10px rgba(0,11,48,0.2)
+  rec1859744811 .t-btnflex.t-btnflex_type_button2
+    - border-radius: 30px, box-shadow: 0px 15px 30px -10px rgba(0,11,48,0.2)
+  rec1859912571 .t-btnflex.t-btnflex_type_button
+    - border-radius: 30px, box-shadow: 0px 15px 30px -10px rgba(0,11,48,0.2)
+
+================================================================================================================================================
+SECTION 5: TYPOGRAPHY TOKENS
+================================================================================================================================================
+
+FONT SIZES (all pixel-based):
+  62px  | Extra large (H1 hero titles)
+  40px  | Large (section headers)
+  33px  | Large (main titles)
+  30px  | Medium-large (secondary titles)
+  26px  | Medium (data elements)
+  24px  | Medium
+  23px  | Navigation text, menu links
+  20px  | Body text, description text
+  18px  | Small body text
+  16px  | Small text
+  15px  | Extra small text
+  13px  | Tiny text (breadcrumbs, labels)
+  0px   | Utility (hidden elements)
+
+FONT WEIGHTS:
+  700   | Bold (headings, strong text)
+  600   | Semi-bold (menu links, emphasis)
+  500   | Medium (body emphasis, some nav)
+  400   | Regular (body text, default)
+
+FONT FAMILY:
+  'TildaSans', Arial, sans-serif | Default system font
+
+TEXT STYLES BY ELEMENT:
+  h1 (class="t182__title t-title t-title_xl")
+    font-size: 62px
+    color: #ffffff (on dark backgrounds)
+
+  h2 (class="t225__title t-title t-title_md")
+    color: rgb(228, 201, 126) / #e4c97e (gold accent)
+
+  Navigation links
+    font-size: 23px
+    color: #ffffff
+    font-weight: 600
+
+  Body descriptions
+    font-size: 20px
+    color: #ffffff (on dark) OR #666 (on light)
+
+  Breadcrumbs
+    font-size: 13px
+    color: #666 with #444 separators
+
+================================================================================================================================================
+SECTION 6: LAYOUT & CONTAINER TOKENS
+================================================================================================================================================
+
+COLUMN SYSTEM (12-column grid):
+  t-col_12   | 12 columns (100% width)
+  t-col_8    | 8 columns (~66% width) - used for feature lists
+  t-col_4    | 4 columns (~33% width)
+  t-col_3    | 3 columns (~25% width)
+
+COLUMN PREFIXES (left margin):
+  t-prefix_2 | 2-column left margin (~16.67%)
+  t-prefix_1 | 1-column left margin (~8.33%)
+
+WIDTH WRAPPERS:
+  t-width_100 | 100% width
+  t-width_9   | 9-column wrapper
+  t-width_8   | 8-column wrapper
+
+CONTAINER TYPES:
+  t-container        | Max-width container (1200px typical)
+  t-container_100    | Full-width container
+  t-container_flex   | Flexbox container
+  t-section__container | Section-specific container
+
+ALIGNMENT CLASSES:
+  t-align_center  | Center-aligned content
+  t-align_left    | Left-aligned content
+  t-margin_auto   | Auto margins (center)
+
+VALIGN CLASSES:
+  t-valign_middle | Vertical center alignment
+  t-valign_top    | Top vertical alignment
+
+================================================================================================================================================
+SECTION 7: RESPONSIVE DESIGN
+================================================================================================================================================
+
+BREAKPOINTS:
+  640px   | Mobile/tablet breakpoint
+  1200px  | Desktop breakpoint
+
+RESPONSIVE CLASSES:
+  t-screenmin-640px  | Show on screens >= 640px
+  t-screenmin-1200px | Show on screens >= 1200px
+  t-screenmax-640px  | Show on screens <= 640px
+  t-screenmax-1200px | Show on screens <= 1200px
+
+EXAMPLES OF USAGE:
+  rec588593927 (class="t-screenmin-1200px") | Desktop header - shown only on large screens
+  rec692949103 (class="t-screenmax-1200px") | Mobile header - shown only on screens <= 1200px
+  rec1829048981 (class="t-screenmin-640px") | Hidden on very small screens
+  rec1859912571 (class="t-screenmax-640px") | Mobile-only button (hidden on desktop)
+
+================================================================================================================================================
+SECTION 8: COMPONENT-SPECIFIC STYLES
+================================================================================================================================================
+
+T228 (MENU/NAVIGATION):
+  Elements: 52 divs
+  Contains: Logo, menu items, language switcher, buttons
+  Navigation link color: #ffffff
+  Menu font-size: 23px, weight: 600
+  Description text: font-size 18px, color #ffffff
+
+T508 (FEATURES LIST):
+  Elements: 21 divs
+  Contains: Feature items with icons, titles, descriptions
+  Icon size: 50px x 50px
+  Icon color: #e4c97e (gold)
+  Title class: t-name, t-name_md
+  Description class: t-descr, t-descr_sm
+  Margin-top on items: 80px
+
+T585 (PRICING TABLE):
+  Elements: 155 divs (largest component!)
+  Contains: Pricing table structure, cells, columns
+  Used within rec600154951 (padding 75px top, 90px bottom)
+
+T681 (SERVICE/FEATURE CARDS):
+  Elements: 42 divs
+  Contains: Service cards with descriptions
+  Title: t681__title, t-heading, t-heading_sm
+  Description: t681__descr, t-descr, t-descr_sm
+
+T692 (CARDS GRID):
+  Elements: 12 divs
+  Contains: Grid of cards with images and text
+  Grid layout: repeat(auto-fit, minmax(300px, 1fr))
+
+T746 (IMAGE SLIDER/GALLERY):
+  Elements: 32 divs
+  Contains: Slider bullets, navigation, images
+  Active bullet background: #ffffff
+  Hover bullet background: #ffffff
+
+T979 (IMAGE CAROUSEL):
+  Elements: 24 divs
+  Contains: Image loading, zooming functionality
+
+T182 (COVER/HERO):
+  Elements: 5 divs
+  Hero title: t182__title, font-size 62px
+  Hero description: t182__descr
+  Font-weight for subtitle: 500
+
+T225 (SECTION TITLE):
+  Elements: 2 divs
+  Title color: rgb(228, 201, 126) / gold accent
+  Uptitle transform: text-transform: uppercase
+
+T502:
+  Elements: 29 divs
+  Card structure component
+
+T457:
+  Elements: 6 divs
+  Minor component
+
+T396 (TEXT ELEMENTS/FORM):
+  Elements: 3 divs
+  Contains: Contact information text elements
+  Font-sizes: 20px, 23px, 33px (for data displays)
+  Text color: rgb(255, 255, 255) / white
+
+T017:
+  Elements: 5 divs
+  Minor component
+
+T1331 (LOCATION/ADDRESS BLOCK):
+  Elements: 3 divs
+  Contains: Address buttons, location info
+
+T943 (HIDDEN BUTTON):
+  Elements: 2 divs
+  Floating action button (appears on scroll)
+
+================================================================================================================================================
+SECTION 9: CUSTOM (NON-TILDA-NATIVE) BLOCKS ANALYSIS
+================================================================================================================================================
+
+FINDING: NO SEPARATE CUSTOM BLOCKS DETECTED
+- All divs are part of Tilda-native components
+- 251+ "custom elements" are actually internal elements within native Tilda components
+- Examples: t508__item, t585__cell, t681__title, t692__card
+- These are all child elements of rec blocks (not independent custom HTML)
+
+CONCLUSION: This page is 100% Tilda native - all content uses Tilda's built-in components
+and styling system. No hand-coded HTML divs outside of Tilda's component structure.
+
+================================================================================================================================================
+SECTION 10: INLINE STYLES (Element-Level Custom Styling)
+================================================================================================================================================
+
+MARGIN/PADDING:
+  margin: 0 auto                          | Center alignment
+  margin-top: 80px                        | Feature item top spacing
+  margin-bottom: 8px, 12px, 20px, 30px   | Bottom spacing variations
+  padding: 4px 12px                       | Compact padding (badges)
+  padding: 16px 40px                      | Button padding
+  padding: 0 40px                         | Horizontal padding (containers)
+  padding: 30px, 60px                     | Section padding
+
+BACKGROUND:
+  background: #C8A96E                     | Badge background (alternate gold)
+  background: #000000                     | Black background
+  background: #1a1a1a                     | Dark gray background
+  background-size: cover                  | Background image scaling
+  background-attachment: scroll           | Background scroll behavior
+
+DISPLAY/LAYOUT:
+  display: grid                           | Grid layout
+  display: flex                           | Flexbox
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) | Responsive grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) | Responsive grid (larger)
+  gap: 20px, 30px                         | Grid/flex gap spacing
+  flex-direction: column                  | Vertical flex
+
+SIZING:
+  width: 100%, 50px, 110px, 150px        | Width values
+  height: 100%, 100vh, 100px, 50px       | Height values
+  min-width: 48px, 110px, 150px          | Minimum width
+  max-width: 110px, 150px, 1200px        | Maximum width
+  line-height: 1.5, 1.6, 38px            | Line height variations
+
+POSITIONING:
+  position: relative, absolute            | Positioning types
+  text-align: center, left                | Text alignment
+  align-items: center, flex-start         | Flex alignment
+  justify-content: center                 | Flex justification
+
+BORDER/RADIUS:
+  border: 1px solid #333, #eee            | Borders
+  border-radius: 4px, 12px, 30px, 50%    | Radius values
+  border-top: 1px solid #eee              | Top border only
+
+TEXT:
+  font-weight: 500, 700                   | Font weight variations
+  color: #000, #fff, #666, #999, #ccc    | Text colors
+  text-decoration: none                   | Link styling
+  white-space: normal                     | Text wrapping
+
+EFFECTS:
+  box-shadow: 0px 15px 30px -10px rgba(0,11,48,0.2) | Button shadow
+  opacity variations                      | Transparency effects
+  transition-duration: 0.2s               | Smooth transitions
+
+================================================================================================================================================
+SECTION 11: KEY FINDINGS & DESIGN TOKEN SUMMARY
+================================================================================================================================================
+
+1. DESIGN SYSTEM CONSISTENCY:
+   - All spacing uses 15px increments (30, 45, 60, 75, 90, 105, 135, 150px)
+   - Color palette is minimal: black, white, gold + grays
+   - All buttons use same styling with 2 radius variants (20px, 30px)
+
+2. TYPOGRAPHY HIERARCHY:
+   - Clear hierarchy: 62px (h1) > 40px (h2) > 23px (nav) > 20px (body) > 13px (small)
+   - Limited font weights: 400 (regular), 500 (medium), 600 (semi-bold), 700 (bold)
+   - Single font family throughout (TildaSans)
+
+3. COLOR STRATEGY:
+   - Dark theme (black backgrounds) with white text
+   - Gold (#e4c97e) is the only bright accent color
+   - Used consistently for buttons, highlights, and emphasis
+
+4. LAYOUT APPROACH:
+   - 12-column grid system (t-col classes)
+   - Max-width container (1200px) on desktop
+   - Full-width sections (100vh for hero)
+   - Responsive breakpoints at 640px and 1200px
+
+5. COMPONENT REUSABILITY:
+   - Button component used across 6+ sections
+   - Consistent spacing pattern across all rec blocks
+   - Modular inline styles for variations
+
+6. NO EXTERNAL CUSTOM BLOCKS:
+   - All content is Tilda-native
+   - No hand-coded divs separate from Tilda structure
+   - All styling comes from Tilda's framework
+
+================================================================================================================================================
+SECTION 12: FILE STATISTICS
+================================================================================================================================================
+
+Document Size: 674 lines
+HTML File Size: ~72KB
+
+Component Breakdown:
+  - 29 Tilda rec blocks (native)
+  - 9 record type variations
+  - 251+ internal component elements
+  - 44 style blocks
+  - 162 unique CSS selectors with rec IDs
+  - 14+ distinct CSS color values
+  - 13 font-size variations
+  - 9 spacing presets
+  - 4 responsive breakpoint classes
+
+Most Used Components (by element count):
+  1. t585 (Pricing Table): 155 elements
+  2. t228 (Menu): 52 elements
+  3. t681 (Service Cards): 42 elements
+  4. t746 (Gallery): 32 elements
+  5. t502 (Cards): 29 elements
+  6. t979 (Carousel): 24 elements
+
+================================================================================================================================================
+END OF REPORT
+================================================================================================================================================
