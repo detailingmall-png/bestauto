@@ -40,3 +40,75 @@ html {
   padding: 15px 14px !important;
   min-height: 48px !important;
 }
+
+/* ========================================================================
+   Tilda block typography standardization
+   Fix: t502 titles (inline 18px) vs t508 titles (CSS 26px) — standardize
+   both to 22px/20px/18px (desktop/tablet/mobile) per UI/UX guide H3 range.
+   ======================================================================== */
+
+/* t502 "numbered advantages" — title */
+.t502__title {
+  font-size: 22px !important;
+}
+/* Override inline data-customstyle font-size on nested div */
+.t502__title [data-customstyle] {
+  font-size: inherit !important;
+}
+
+/* t508 "bullet list" — title */
+.t508 .t-name {
+  font-size: 22px !important;
+}
+
+/* Descriptions: standardize across t502/t508 */
+.t502__blockdescr {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+.t508__descr {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+
+/* t502/t508 section headings — standardize to 36px */
+.t502 .t-section__title,
+.t508 .t-section__title {
+  font-size: 36px !important;
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  .t502__title {
+    font-size: 20px !important;
+  }
+  .t508 .t-name {
+    font-size: 20px !important;
+  }
+  .t502__blockdescr,
+  .t508__descr {
+    font-size: 14px !important;
+  }
+  .t502 .t-section__title,
+  .t508 .t-section__title {
+    font-size: 32px !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 640px) {
+  .t502__title {
+    font-size: 18px !important;
+  }
+  .t508 .t-name {
+    font-size: 18px !important;
+  }
+  .t502__blockdescr,
+  .t508__descr {
+    font-size: 14px !important;
+  }
+  .t502 .t-section__title,
+  .t508 .t-section__title {
+    font-size: 28px !important;
+  }
+}
