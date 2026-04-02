@@ -5,10 +5,11 @@
  */
 
 const BRANDS: ReadonlyArray<{ readonly name: string; readonly width: number }> = [
-  { name: 'Gtechniq', width: 100 },
+  { name: 'LLumar', width: 90 },
+  { name: 'Quantum', width: 100 },
+  { name: 'LuxArmor', width: 100 },
   { name: 'Koch-Chemie', width: 120 },
   { name: 'GYEON', width: 80 },
-  { name: 'STEK', width: 70 },
   { name: '3M', width: 50 },
 ];
 
@@ -19,7 +20,7 @@ const SUBTITLE: Readonly<Record<string, string>> = {
 };
 
 function renderBrandItem(brand: { readonly name: string; readonly width: number }): string {
-  return `<span class="ba-brands__item" style="display:inline-flex;align-items:center;justify-content:center;min-width:${brand.width}px;padding:12px 24px;font-family:TildaSans,Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.35);text-transform:uppercase;transition:color 0.25s ease;white-space:nowrap;">${brand.name}</span>`;
+  return `<span class="ba-brands__item" style="display:inline-flex;align-items:center;justify-content:center;min-width:${brand.width}px;padding:12px 24px;font-family:TildaSans,Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.6);text-transform:uppercase;transition:color 0.25s ease;white-space:nowrap;">${brand.name}</span>`;
 }
 
 export function generateBrandLogosHtml(lang: string): string {

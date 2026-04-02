@@ -29,9 +29,9 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
       en: 'What materials do you use?',
     },
     answer: {
-      ka: 'ვმუშაობთ მხოლოდ სერტიფიცირებული ბრენდებით: STEK, 3M, Gtechniq, Koch-Chemie, GYEON. ეს უზრუნველყოფს ხარისხსა და მწარმოებლის გარანტიას.',
-      ru: 'Работаем только с сертифицированными брендами: STEK, 3M, Gtechniq, Koch-Chemie, GYEON. Это гарантирует качество и заводскую гарантию материалов.',
-      en: 'We work exclusively with certified brands: STEK, 3M, Gtechniq, Koch-Chemie, GYEON. This ensures quality and manufacturer warranty on materials.',
+      ka: 'ვმუშაობთ მხოლოდ სერტიფიცირებული ბრენდებით: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. ეს უზრუნველყოფს ხარისხსა და მწარმოებლის გარანტიას.',
+      ru: 'Работаем только с сертифицированными брендами: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. Это гарантирует качество и заводскую гарантию материалов.',
+      en: 'We work exclusively with certified brands: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. This ensures quality and manufacturer warranty on materials.',
     },
   },
   {
@@ -41,9 +41,9 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
       en: 'What does the warranty cover and how do I use it?',
     },
     answer: {
-      ka: 'PPF ფირზე — 10 წლამდე გარანტია გაყვითლებისა და აქერცვლისგან. კერამიკულ საფარზე — 3-5 წელი. მიღებისას მიიღებთ საგარანტიო სერტიფიკატს. გარანტიით სარგებლობისთვის — მოგვმართეთ სერტიფიკატის ნომრით.',
-      ru: 'На PPF плёнку — до 10 лет гарантии от пожелтения и отслаивания. На керамику — 3–5 лет. При приёмке выдаём гарантийный сертификат. Для обращения по гарантии свяжитесь с нами с номером сертификата.',
-      en: 'PPF film — up to 10-year warranty against yellowing and peeling. Ceramic coating — 3–5 years. You receive a warranty certificate at handover. To make a claim, contact us with your certificate number.',
+      ka: 'PPF ფირზე — 10 წლამდე გარანტია გაყვითლებისა და აქერცვლისგან. მიღებისას მიიღებთ საგარანტიო სერტიფიკატს. გარანტიით სარგებლობისთვის — მოგვმართეთ სერტიფიკატის ნომრით.',
+      ru: 'На PPF плёнку — до 10 лет гарантии от пожелтения и отслаивания. При приёмке выдаём гарантийный сертификат. Для обращения по гарантии свяжитесь с нами с номером сертификата.',
+      en: 'PPF film — up to 10-year warranty against yellowing and peeling. You receive a warranty certificate at handover. To make a claim, contact us with your certificate number.',
     },
   },
   {
@@ -68,18 +68,6 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
       ka: 'დიახ, ახალი ავტომობილები — იდეალური დრო PPF-ისა და კერამიკის დასატანად. ლაქი ჯერ კიდევ სუფთაა, რაც უზრუნველყოფს საუკეთესო ადჰეზიას. ბევრი კლიენტი სალონიდან პირდაპირ ჩვენთან მოდის.',
       ru: 'Да, новый автомобиль — идеальное время для нанесения PPF и керамики. Лак ещё чистый, что обеспечивает лучшую адгезию. Многие клиенты приезжают к нам прямо из салона.',
       en: 'Yes, a brand-new car is the perfect time for PPF and ceramic coating. The paint is still pristine, ensuring optimal adhesion. Many clients drive to us straight from the dealership.',
-    },
-  },
-  {
-    question: {
-      ka: 'არის განვადება?',
-      ru: 'Есть ли рассрочка?',
-      en: 'Do you offer installment plans?',
-    },
-    answer: {
-      ka: 'დიახ, ვთავაზობთ განვადებას საბანკო პარტნიორების მეშვეობით. დეტალებისთვის დაგვიკავშირდით WhatsApp-ით ან ტელეფონით — გეტყვით ხელმისაწვდომ პირობებს.',
-      ru: 'Да, мы предлагаем рассрочку через банки-партнёры. Свяжитесь с нами в WhatsApp или по телефону — расскажем о доступных условиях.',
-      en: 'Yes, we offer installment plans through our banking partners. Contact us via WhatsApp or phone — we will explain the available options.',
     },
   },
 ];

@@ -38,7 +38,7 @@ const STEPS: ReadonlyArray<ProcessStep> = [
     },
   },
   {
-    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l2 2-6.4 6.4-2-2L22.7 19zM14.7 11l-2-2-9.4 9.4 2 2 9.4-9.4z" fill="#e4c97e"/><path d="M20.3 7.3l4.4 4.4c.4.4.4 1 0 1.4l-2.6 2.6-5.8-5.8 2.6-2.6c.4-.4 1-.4 1.4 0z" fill="#e4c97e"/><path d="M3 29l4-1-3-3-1 4z" fill="#e4c97e"/></svg>`,
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.4 6.2c-2.1-2.1-5.2-2.5-7.7-1.2l-1 .5 6.8 6.8.5-1c1.3-2.5.9-5.6-1.2-7.7l1.6 1.6zM17.3 8.9L6.5 19.7l-.1.1L4 28l8.2-2.4.1-.1 10.8-10.8-5.8-5.8zm-8.6 16l-1.8.5.5-1.8 9.3-9.3 1.3 1.3-9.3 9.3z" fill="#e4c97e"/></svg>`,
     title: {
       ka: 'სამუშაო',
       ru: 'Работа',
