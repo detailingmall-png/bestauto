@@ -571,14 +571,20 @@ if (baseSlug === '') {
   }
 }
 
-// Homepage: inject video gallery before photo gallery
-if (baseSlug === '' && mainContent.includes('class="ba-gallery"')) {
-  const galleryClassIdx = mainContent.indexOf('class="ba-gallery"');
-  const galleryDivStart = mainContent.lastIndexOf('<div', galleryClassIdx);
-  if (galleryDivStart >= 0) {
-    mainContent = mainContent.slice(0, galleryDivStart)
-      + generateVideoGalleryHtml(lang)
-      + mainContent.slice(galleryDivStart);
+// Homepage: inject video gallery before photo gallery section
+// RU has a separate header block (rec713423972 "Фото двух наших студий") before the gallery
+if (baseSlug === '') {
+  const galleryHeaderId = 'rec713423972';
+  const hasGalleryHeader = mainContent.includes(`id="${galleryHeaderId}"`);
+  const insertMarker = hasGalleryHeader ? `id="${galleryHeaderId}"` : 'class="ba-gallery"';
+  if (mainContent.includes(insertMarker)) {
+    const markerIdx = mainContent.indexOf(insertMarker);
+    const divStart = mainContent.lastIndexOf('<div', markerIdx);
+    if (divStart >= 0) {
+      mainContent = mainContent.slice(0, divStart)
+        + generateVideoGalleryHtml(lang)
+        + mainContent.slice(divStart);
+    }
   }
 }
 
