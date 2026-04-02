@@ -181,7 +181,8 @@ export function generateReviewSchema(): string {
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'AutomotiveBusiness',
+    '@type': 'LocalBusiness',
+    '@id': `${BASE_URL}/#business`,
     name: 'BESTAUTO',
     image: `${BASE_URL}/img/logo.png`,
     url: BASE_URL,

@@ -195,7 +195,8 @@ if (isBlogPage) {
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang)
-  + (baseSlug === '' ? generateReviewSchema() + generateWebSiteSchema() : '');
+  + generateReviewSchema()
+  + (baseSlug === '' ? generateWebSiteSchema() : '');
 
 if (lang === 'ru') {
   // Extract related-services block and move before footer
