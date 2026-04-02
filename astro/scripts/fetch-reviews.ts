@@ -10,6 +10,10 @@ const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 const LANGS = ["ru", "ka", "en"] as const;
 type Lang = (typeof LANGS)[number];
 
+// ──────────────────────────────────────────────
+// Interfaces
+// ──────────────────────────────────────────────
+
 interface GoogleReview {
   name: string;
   relativePublishTimeDescription: string;
@@ -66,6 +70,148 @@ interface ReviewsData {
   fetchedAt: string;
   reviews: Review[];
 }
+
+// ──────────────────────────────────────────────
+// Relative time computation (all 3 languages)
+// ──────────────────────────────────────────────
+
+function ruPlural(n: number, one: string, few: string, many: string): string {
+  const abs = Math.abs(n) % 100;
+  const lastDigit = abs % 10;
+  if (abs >= 11 && abs <= 19) return `${n} ${many}`;
+  if (lastDigit === 1) return `${n} ${one}`;
+  if (lastDigit >= 2 && lastDigit <= 4) return `${n} ${few}`;
+  return `${n} ${many}`;
+}
+
+function computeRelativeTimes(unixTime: number): LocalizedText {
+  const nowSec = Math.floor(Date.now() / 1000);
+  const diffSec = nowSec - unixTime;
+  const diffMin = Math.floor(diffSec / 60);
+  const diffHours = Math.floor(diffMin / 60);
+  const diffDays = Math.floor(diffHours / 24);
+  const diffWeeks = Math.floor(diffDays / 7);
+  const diffMonths = Math.floor(diffDays / 30.44);
+  const diffYears = Math.floor(diffDays / 365.25);
+
+  let en: string;
+  let ru: string;
+  let ka: string;
+
+  if (diffYears >= 1) {
+    en = diffYears === 1 ? "a year ago" : `${diffYears} years ago`;
+    ru = ruPlural(diffYears, "год назад", "года назад", "лет назад");
+    ka = diffYears === 1 ? "ერთი წლის წინ" : `${diffYears} წლის წინ`;
+  } else if (diffMonths >= 1) {
+    en = diffMonths === 1 ? "a month ago" : `${diffMonths} months ago`;
+    ru = ruPlural(diffMonths, "месяц назад", "месяца назад", "месяцев назад");
+    ka = diffMonths === 1 ? "ერთი თვის წინ" : `${diffMonths} თვის წინ`;
+  } else if (diffWeeks >= 1) {
+    en = diffWeeks === 1 ? "a week ago" : `${diffWeeks} weeks ago`;
+    ru = ruPlural(diffWeeks, "неделю назад", "недели назад", "недель назад");
+    ka = diffWeeks === 1 ? "ერთი კვირის წინ" : `${diffWeeks} კვირის წინ`;
+  } else if (diffDays >= 1) {
+    en = diffDays === 1 ? "a day ago" : `${diffDays} days ago`;
+    ru = ruPlural(diffDays, "день назад", "дня назад", "дней назад");
+    ka = diffDays === 1 ? "ერთი დღის წინ" : `${diffDays} დღის წინ`;
+  } else {
+    en = "today";
+    ru = "сегодня";
+    ka = "დღეს";
+  }
+
+  return { en, ru, ka };
+}
+
+// ──────────────────────────────────────────────
+// Google Cloud Translation API v2
+// ──────────────────────────────────────────────
+
+interface TranslateResponse {
+  data?: {
+    translations?: Array<{
+      translatedText: string;
+      detectedSourceLanguage?: string;
+    }>;
+  };
+}
+
+async function translateTexts(
+  texts: string[],
+  targetLang: string,
+  sourceLang?: string
+): Promise<string[]> {
+  if (!API_KEY || texts.length === 0) return texts;
+
+  const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
+  const body: Record<string, unknown> = {
+    q: texts,
+    target: targetLang,
+    format: "text",
+  };
+  if (sourceLang) body.source = sourceLang;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errBody = await response.text();
+    console.warn(`Translation API error ${response.status} (target=${targetLang}): ${errBody}`);
+    return texts;
+  }
+
+  const data = (await response.json()) as TranslateResponse;
+  const translations = data.data?.translations;
+  if (!translations || translations.length !== texts.length) {
+    console.warn("Translation API returned unexpected number of results");
+    return texts;
+  }
+
+  return translations.map((t) => t.translatedText);
+}
+
+async function translateMissingLanguages(reviews: Review[]): Promise<void> {
+  // For each missing language, collect texts that need translation
+  for (const targetLang of LANGS) {
+    const needsTranslation: Array<{ review: Review; sourceText: string }> = [];
+
+    for (const review of reviews) {
+      if (review.texts[targetLang]) continue; // already have this language
+      // Find the best source text
+      const sourceText =
+        review.texts[review.originalLang as Lang] ??
+        review.texts.en ??
+        review.texts.ru ??
+        review.texts.ka ??
+        review.text;
+      if (sourceText?.trim()) {
+        needsTranslation.push({ review, sourceText });
+      }
+    }
+
+    if (needsTranslation.length === 0) continue;
+
+    console.log(`Translating ${needsTranslation.length} reviews to ${targetLang}...`);
+
+    // Batch translate (API supports arrays)
+    const sourceTexts = needsTranslation.map((n) => n.sourceText);
+    const translated = await translateTexts(sourceTexts, targetLang);
+
+    for (let i = 0; i < needsTranslation.length; i++) {
+      const result = translated[i];
+      if (result && result.trim()) {
+        needsTranslation[i].review.texts[targetLang] = result;
+      }
+    }
+  }
+}
+
+// ──────────────────────────────────────────────
+// Google Places API
+// ──────────────────────────────────────────────
 
 function deduplicationKey(authorName: string, time: number): string {
   return `${authorName}::${time}`;
@@ -205,7 +351,6 @@ async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlac
       }
       entry.relativeTimes[lang] = gr.relativePublishTimeDescription;
 
-      // Update originalLang from originalText if available
       if (gr.originalText?.languageCode && !entry.originalLang) {
         entry.originalLang = gr.originalText.languageCode;
       }
@@ -229,10 +374,13 @@ async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlac
   return { apiData, incomingReviews };
 }
 
+// ──────────────────────────────────────────────
+// Merge
+// ──────────────────────────────────────────────
+
 function mergeReviews(existing: Review[], incoming: Review[]): Review[] {
   const seen = new Map<string, Review>();
 
-  // Keep existing reviews that have text
   for (const review of existing) {
     if (review.text.trim()) {
       seen.set(deduplicationKey(review.authorName, review.time), review);
@@ -243,7 +391,6 @@ function mergeReviews(existing: Review[], incoming: Review[]): Review[] {
     const key = deduplicationKey(review.authorName, review.time);
     const prev = seen.get(key);
     if (prev) {
-      // Merge localized texts: incoming data enriches existing
       const mergedTexts: LocalizedText = { ...prev.texts, ...review.texts };
       const mergedRelativeTimes: LocalizedText = { ...prev.relativeTimes, ...review.relativeTimes };
       seen.set(key, {
@@ -262,12 +409,15 @@ function mergeReviews(existing: Review[], incoming: Review[]): Review[] {
   return Array.from(seen.values()).sort((a, b) => b.time - a.time);
 }
 
+// ──────────────────────────────────────────────
+// Main
+// ──────────────────────────────────────────────
+
 async function main(): Promise<void> {
   console.log("Fetching reviews from Google Places API...");
 
   const existing = readExistingReviews();
 
-  // Resolve Place ID: use cached value or discover via text search
   let placeId: string = existing?.placeId ?? "";
   if (!placeId || placeId === "PLACE_ID_HERE") {
     try {
@@ -293,6 +443,21 @@ async function main(): Promise<void> {
   const businessName: string = existing?.businessName ?? "BESTAUTO";
 
   const merged = mergeReviews(existingReviews, incomingReviews);
+
+  // Translate reviews missing languages via Google Cloud Translation API
+  try {
+    await translateMissingLanguages(merged);
+    console.log("Translation complete.");
+  } catch (err) {
+    console.warn("Translation step failed (non-fatal, keeping existing texts):", err);
+  }
+
+  // Compute relative times for all 3 languages from timestamps
+  for (const review of merged) {
+    const computed = computeRelativeTimes(review.time);
+    review.relativeTimes = { ...review.relativeTimes, ...computed };
+    review.relativeTime = computed.en ?? review.relativeTime;
+  }
 
   const output: ReviewsData = {
     placeId,
