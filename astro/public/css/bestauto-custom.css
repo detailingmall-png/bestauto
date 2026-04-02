@@ -116,6 +116,26 @@ html {
   }
 }
 
+/* ========================================================================
+   Hero Zero Block: widen text fields and enlarge subtitle on small mobile.
+   Overrides Tilda JS inline styles (applied from data-field-* attributes).
+   elem 1470209944682 = H1 title, 1684511382614 = subtitle (all 3 homepages).
+   ======================================================================== */
+@media screen and (max-width: 479px) {
+  .t396 .tn-elem[data-elem-id="1470209944682"] {
+    width: 340px !important;
+    left: calc(50% - 170px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1684511382614"] {
+    width: 340px !important;
+    left: calc(50% - 170px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1684511382614"] .tn-atom {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+}
+
 /* --- Mobile (<=640px) --- */
 @media screen and (max-width: 640px) {
   .t182__title [data-customstyle] {
