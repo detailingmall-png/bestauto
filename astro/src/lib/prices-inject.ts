@@ -54,15 +54,15 @@ function buildSection(section: PriceSection, idx: number, lang: Lang): string {
     `<div class="t017"><div class="t-container t-align_left"><div class="t-col t-col_10 t-prefix_2">`,
     `<h2 class="t017__title t-title t-title_xxs"><span style="color: rgb(228, 201, 126);">${title}</span></h2>`,
     `</div></div></div>`,
-    `<style>@media screen and (min-width:480px){#${headingId} .t017__title{font-size:30px;}}</style>`,
+    `<style>#${headingId} .t017__title{font-size:30px;}@media screen and (max-width:960px){#${headingId} .t017__title{font-size:28px;}}@media screen and (max-width:640px){#${headingId} .t017__title{font-size:24px;}}</style>`,
     `</div>`,
     `<div id="${tableId}" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px;background-color:#000000;" data-animationappear="off" data-record-type="681" data-bg-color="#000000">`,
     `<div class="t681">`,
-    `<div class="t-section__container t-container t-container_flex"><div class="t-col t-col_12"><div class="js-block-header-title t-section__title t-title t-title_xs t-align_left"><div style="font-size:30px;line-height:38px;"></div></div></div></div>`,
+    `<div class="t-section__container t-container t-container_flex"><div class="t-col t-col_12"><div class="js-block-header-title t-section__title t-title t-title_xs t-align_left"><div style="line-height:38px;"></div></div></div></div>`,
     `<style>.t-section__descr{max-width:560px;}#${tableId} .t-section__title{margin-bottom:90px;}@media screen and (max-width:960px){#${tableId} .t-section__title{margin-bottom:60px;}}</style>`,
     `<div class="t-container">${rows}</div>`,
     `</div>`,
-    `<style>#${tableId} .t681__title{font-size:20px;color:#ffffff;}#${tableId} .t681__descr{color:#ffffff;}#${tableId} .t681__price{font-size:20px;color:#ffffff;}</style>`,
+    `<style>#${tableId} .t681__title{font-size:20px;color:#ffffff;}#${tableId} .t681__descr{color:#ffffff;}#${tableId} .t681__price{font-size:20px;color:#ffffff;}@media screen and (max-width:960px){#${tableId} .t681__title{font-size:18px;}#${tableId} .t681__price{font-size:18px;}}@media screen and (max-width:640px){#${tableId} .t681__title{font-size:16px;}#${tableId} .t681__price{font-size:16px;}}</style>`,
     `</div>`,
   ].join('');
 }

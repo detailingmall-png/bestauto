@@ -83,11 +83,11 @@ function renderFaqItem(item: FaqItem, lang: string): string {
   const answer = item.answer[lang] ?? item.answer['en'];
 
   return `<details class="ba-faq__item" style="border-bottom:1px solid rgba(255,255,255,0.1);">
-        <summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;list-style:none;font-family:TildaSans,Arial,sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.4;gap:16px;">
+        <summary class="ba-faq__question" style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;list-style:none;font-family:TildaSans,Arial,sans-serif;font-weight:600;color:#fff;line-height:1.4;gap:16px;">
           <span>${question}</span>
           <svg class="ba-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;transition:transform 0.25s ease;"><path d="M5 7.5L10 12.5L15 7.5" stroke="#e4c97e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </summary>
-        <div style="padding:0 0 20px;font-family:TildaSans,Arial,sans-serif;font-size:16px;color:rgba(255,255,255,0.7);line-height:1.6;">${answer}</div>
+        <div class="ba-faq__answer" style="padding:0 0 20px;font-family:TildaSans,Arial,sans-serif;color:rgba(255,255,255,0.7);line-height:1.6;">${answer}</div>
       </details>`;
 }
 
@@ -97,20 +97,28 @@ export function generateFaqHtml(lang: string): string {
 
   return `<div id="ba-faq" style="background:#000;padding:80px 0;border-top:1px solid rgba(255,255,255,0.06);">
   <div style="max-width:800px;margin:0 auto;padding:0 24px;">
-    <h2 style="color:#fff;font-size:36px;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
+    <h2 class="ba-faq__heading" style="color:#fff;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
     <div>
       ${items}
     </div>
   </div>
   <style>
+    .ba-faq__heading { font-size: 36px; }
+    .ba-faq__question { font-size: 18px; }
+    .ba-faq__answer { font-size: 16px; }
     .ba-faq__item summary::-webkit-details-marker { display: none; }
     .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
     .ba-faq__item summary:hover { color: #e4c97e !important; }
-    @media screen and (max-width:639px) {
+    @media screen and (max-width: 960px) {
+      .ba-faq__heading { font-size: 32px; }
+      .ba-faq__question { font-size: 17px; }
+      .ba-faq__answer { font-size: 15px; }
+    }
+    @media screen and (max-width: 640px) {
       #ba-faq { padding: 48px 0 !important; }
-      #ba-faq h2 { font-size: 28px !important; margin-bottom: 32px !important; }
-      .ba-faq__item summary { font-size: 16px !important; padding: 16px 0 !important; }
-      .ba-faq__item div { font-size: 15px !important; }
+      .ba-faq__heading { font-size: 28px; margin-bottom: 32px !important; }
+      .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
+      .ba-faq__answer { font-size: 15px; }
     }
   </style>
 </div>`;

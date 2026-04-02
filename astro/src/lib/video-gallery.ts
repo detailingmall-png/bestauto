@@ -65,7 +65,7 @@ function renderVideoCard(video: VideoEntry, lang: string): string {
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="rgba(0,0,0,0.4)"/><path d="M19 15l14 9-14 9V15z" fill="rgba(255,255,255,0.9)"/></svg>
       </div>
       <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.8));pointer-events:none;">
-        <span style="font-family:TildaSans,Arial,sans-serif;font-size:14px;font-weight:600;color:#fff;">${label}</span>
+        <span class="ba-video__label" style="font-family:TildaSans,Arial,sans-serif;font-weight:600;color:#fff;">${label}</span>
       </div>
     </div>`;
 }
@@ -76,20 +76,24 @@ export function generateVideoGalleryHtml(lang: string): string {
 
   return `<div id="ba-video-gallery" style="background:#000;padding:80px 0;border-top:1px solid rgba(255,255,255,0.06);">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
-    <h2 style="color:#fff;font-size:36px;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
+    <h2 class="ba-video__heading" style="color:#fff;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
     <div class="ba-video__grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
       ${cards}
     </div>
   </div>
   <style>
+    .ba-video__heading { font-size: 36px; }
+    .ba-video__label { font-size: 14px; }
     .ba-video__card { cursor: pointer; }
     .ba-video__card.is-playing .ba-video__overlay { opacity: 0; }
-    @media screen and (max-width:960px) {
+    @media screen and (max-width: 960px) {
+      .ba-video__heading { font-size: 32px; }
       .ba-video__grid { grid-template-columns: repeat(2,1fr) !important; }
     }
-    @media screen and (max-width:639px) {
+    @media screen and (max-width: 640px) {
       #ba-video-gallery { padding: 48px 0 !important; }
-      #ba-video-gallery h2 { font-size: 28px !important; margin-bottom: 32px !important; }
+      .ba-video__heading { font-size: 28px; margin-bottom: 32px !important; }
+      .ba-video__label { font-size: 13px; }
       .ba-video__grid { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; }
     }
   </style>

@@ -174,11 +174,11 @@ function renderTier1Card(service: ServiceEntry, lang: string, langPrefix: string
         <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
         <div style="position:relative; z-index:1; padding:40px 32px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
-          <h3 style="color:#fff; font-size:28px; font-weight:700; margin:0 0 12px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
-          <p style="color:rgba(255,255,255,0.8); font-size:16px; margin:0 0 16px; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
+          <h3 class="ba-service-card__name ba-service-card__name--t1" style="color:#fff; font-weight:700; margin:0 0 12px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
+          <p class="ba-service-card__tagline ba-service-card__tagline--t1" style="color:rgba(255,255,255,0.8); margin:0 0 16px; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
           <div style="display:flex; align-items:center; justify-content:space-between;">
-            <span style="color:#e4c97e; font-size:20px; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
-            <span style="color:#e4c97e; font-size:14px; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
+            <span class="ba-service-card__price ba-service-card__price--t1" style="color:#e4c97e; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
+            <span class="ba-service-card__cta ba-service-card__cta--t1" style="color:#e4c97e; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
           </div>
         </div>
       </a>`;
@@ -195,11 +195,11 @@ function renderTier2Card(service: ServiceEntry, lang: string, langPrefix: string
         <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
         <div style="position:relative; z-index:1; padding:24px 20px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
-          <h3 style="color:#fff; font-size:20px; font-weight:700; margin:0 0 8px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
-          <p style="color:rgba(255,255,255,0.75); font-size:14px; margin:0 0 12px; line-height:1.4; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
+          <h3 class="ba-service-card__name ba-service-card__name--t2" style="color:#fff; font-weight:700; margin:0 0 8px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
+          <p class="ba-service-card__tagline ba-service-card__tagline--t2" style="color:rgba(255,255,255,0.75); margin:0 0 12px; line-height:1.4; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
           <div style="display:flex; align-items:center; justify-content:space-between;">
-            <span style="color:#e4c97e; font-size:18px; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
-            <span style="color:#e4c97e; font-size:13px; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
+            <span class="ba-service-card__price ba-service-card__price--t2" style="color:#e4c97e; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
+            <span class="ba-service-card__cta ba-service-card__cta--t2" style="color:#e4c97e; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
           </div>
         </div>
       </a>`;
@@ -223,8 +223,8 @@ export function generateServicesGridHtml(lang: string): string {
 
   return `<div id="ba-services-grid" name="services" style="background-color:#000; padding:60px 0 80px;">
   <div style="max-width:1200px; margin:0 auto; padding:0 20px;">
-    <h2 style="color:#fff; font-size:40px; font-weight:700; margin:0 0 12px; text-align:center; font-family:TildaSans,Arial,sans-serif;">${title}</h2>
-    <p style="color:rgba(255,255,255,0.6); font-size:18px; margin:0 0 48px; text-align:center; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${subtitle}</p>
+    <h2 class="ba-services__heading" style="color:#fff; font-weight:700; margin:0 0 12px; text-align:center; font-family:TildaSans,Arial,sans-serif;">${title}</h2>
+    <p class="ba-services__subtitle" style="color:rgba(255,255,255,0.6); margin:0 0 48px; text-align:center; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${subtitle}</p>
 
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:24px;" class="ba-services-tier1">
       ${tier1Cards}
@@ -236,13 +236,37 @@ export function generateServicesGridHtml(lang: string): string {
   </div>
 
   <style>
+    .ba-services__heading { font-size: 36px; }
+    .ba-services__subtitle { font-size: 18px; }
+    .ba-service-card__name--t1 { font-size: 24px; }
+    .ba-service-card__tagline--t1 { font-size: 16px; }
+    .ba-service-card__price--t1 { font-size: 20px; }
+    .ba-service-card__cta--t1 { font-size: 14px; }
+    .ba-service-card__name--t2 { font-size: 20px; }
+    .ba-service-card__tagline--t2 { font-size: 14px; }
+    .ba-service-card__price--t2 { font-size: 18px; }
+    .ba-service-card__cta--t2 { font-size: 13px; }
     @media screen and (max-width: 1024px) {
       .ba-services-tier1 { grid-template-columns: 1fr 1fr !important; }
     }
     @media screen and (max-width: 960px) {
+      .ba-services__heading { font-size: 32px; }
+      .ba-services__subtitle { font-size: 16px; }
+      .ba-service-card__name--t1 { font-size: 22px; }
+      .ba-service-card__tagline--t1 { font-size: 15px; }
+      .ba-service-card__price--t1 { font-size: 18px; }
+      .ba-service-card__name--t2 { font-size: 18px; }
+      .ba-service-card__price--t2 { font-size: 16px; }
       .ba-services-tier2 { grid-template-columns: 1fr 1fr !important; }
     }
     @media screen and (max-width: 640px) {
+      .ba-services__heading { font-size: 28px; }
+      .ba-services__subtitle { font-size: 15px; }
+      .ba-service-card__name--t1 { font-size: 20px; }
+      .ba-service-card__tagline--t1 { font-size: 14px; }
+      .ba-service-card__price--t1 { font-size: 18px; }
+      .ba-service-card__name--t2 { font-size: 18px; }
+      .ba-service-card__price--t2 { font-size: 16px; }
       .ba-services-tier1 { grid-template-columns: 1fr !important; }
       .ba-services-tier2 { grid-template-columns: 1fr !important; }
     }

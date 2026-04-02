@@ -20,7 +20,7 @@ const SUBTITLE: Readonly<Record<string, string>> = {
 };
 
 function renderBrandItem(brand: { readonly name: string; readonly width: number }): string {
-  return `<span class="ba-brands__item" style="display:inline-flex;align-items:center;justify-content:center;min-width:${brand.width}px;padding:12px 24px;font-family:TildaSans,Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.6);text-transform:uppercase;transition:color 0.25s ease;white-space:nowrap;">${brand.name}</span>`;
+  return `<span class="ba-brands__item" style="display:inline-flex;align-items:center;justify-content:center;min-width:${brand.width}px;padding:12px 24px;font-family:TildaSans,Arial,sans-serif;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.6);text-transform:uppercase;transition:color 0.25s ease;white-space:nowrap;">${brand.name}</span>`;
 }
 
 export function generateBrandLogosHtml(lang: string): string {
@@ -32,14 +32,20 @@ export function generateBrandLogosHtml(lang: string): string {
     <div class="ba-brands__row" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px 40px;margin-bottom:16px;">
       ${items}
     </div>
-    <p style="font-family:TildaSans,Arial,sans-serif;font-size:13px;color:rgba(255,255,255,0.3);letter-spacing:0.5px;margin:0;">${subtitle}</p>
+    <p class="ba-brands__subtitle" style="font-family:TildaSans,Arial,sans-serif;color:rgba(255,255,255,0.3);letter-spacing:0.5px;margin:0;">${subtitle}</p>
   </div>
   <style>
+    .ba-brands__item { font-size: 18px; }
+    .ba-brands__subtitle { font-size: 13px; }
     .ba-brands__item:hover { color: rgba(228,201,126,0.8) !important; }
-    @media screen and (max-width:639px) {
+    @media screen and (max-width: 960px) {
+      .ba-brands__item { font-size: 16px; }
+    }
+    @media screen and (max-width: 640px) {
       #ba-brand-logos { padding: 32px 0; }
       .ba-brands__row { gap: 8px 24px !important; }
-      .ba-brands__item { font-size: 14px !important; padding: 8px 16px !important; min-width: auto !important; }
+      .ba-brands__item { font-size: 14px; padding: 8px 16px !important; min-width: auto !important; }
+      .ba-brands__subtitle { font-size: 12px; }
     }
   </style>
 </div>`;

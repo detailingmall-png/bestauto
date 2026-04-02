@@ -78,11 +78,11 @@ function renderStep(step: ProcessStep, index: number, lang: string): string {
 
   return `<div class="ba-process__step" style="display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;flex:1;min-width:0;">
       <div style="width:72px;height:72px;border-radius:50%;border:2px solid #e4c97e;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;z-index:2;background:#000;">
-        <span style="position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;background:#e4c97e;color:#000;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:TildaSans,Arial,sans-serif;">${stepNum}</span>
+        <span class="ba-process__badge" style="position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;background:#e4c97e;color:#000;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:TildaSans,Arial,sans-serif;">${stepNum}</span>
         ${step.icon}
       </div>
-      <h3 style="color:#fff;font-size:20px;font-weight:700;margin:0 0 8px;font-family:TildaSans,Arial,sans-serif;">${title}</h3>
-      <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.5;margin:0;font-family:TildaSans,Arial,sans-serif;max-width:240px;">${description}</p>
+      <h3 class="ba-process__title" style="color:#fff;font-weight:700;margin:0 0 8px;font-family:TildaSans,Arial,sans-serif;">${title}</h3>
+      <p class="ba-process__desc" style="color:rgba(255,255,255,0.7);line-height:1.5;margin:0;font-family:TildaSans,Arial,sans-serif;max-width:240px;">${description}</p>
     </div>`;
 }
 
@@ -92,21 +92,29 @@ export function generateProcessStepsHtml(lang: string): string {
 
   return `<div id="ba-process-steps" style="background:#000;padding:80px 0;border-top:1px solid rgba(255,255,255,0.06);">
   <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
-    <h2 style="color:#fff;font-size:36px;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
+    <h2 class="ba-process__heading" style="color:#fff;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
     <div class="ba-process__row" style="display:flex;align-items:flex-start;justify-content:center;gap:32px;position:relative;">
       <div class="ba-process__line" style="position:absolute;top:36px;left:calc(12.5% + 36px);right:calc(12.5% + 36px);height:2px;background:rgba(228,201,126,0.25);z-index:1;"></div>
       ${items}
     </div>
   </div>
   <style>
-    @media screen and (max-width:960px) {
+    .ba-process__heading { font-size: 36px; }
+    .ba-process__badge { font-size: 13px; }
+    .ba-process__title { font-size: 20px; }
+    .ba-process__desc { font-size: 15px; }
+    @media screen and (max-width: 960px) {
+      .ba-process__heading { font-size: 32px; }
+      .ba-process__title { font-size: 18px; }
       .ba-process__row { flex-wrap: wrap !important; gap: 40px 32px !important; }
       .ba-process__step { flex: 0 0 calc(50% - 16px) !important; }
       .ba-process__line { display: none !important; }
     }
-    @media screen and (max-width:639px) {
+    @media screen and (max-width: 640px) {
       #ba-process-steps { padding: 48px 0 !important; }
-      #ba-process-steps h2 { font-size: 28px !important; margin-bottom: 32px !important; }
+      .ba-process__heading { font-size: 28px; margin-bottom: 32px !important; }
+      .ba-process__title { font-size: 18px; }
+      .ba-process__desc { font-size: 14px; }
       .ba-process__row { flex-direction: column !important; align-items: center !important; gap: 32px !important; }
       .ba-process__step { flex: none !important; width: 100% !important; max-width: 320px !important; }
     }

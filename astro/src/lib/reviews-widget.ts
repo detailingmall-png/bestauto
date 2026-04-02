@@ -333,6 +333,16 @@ const CSS = `
     flex: 0 0 calc(50% - 8px);
   }
 }
+@media (max-width: 960px) {
+  .ba-reviews__google-wordmark { font-size: 20px; }
+  .ba-reviews__label { font-size: 18px; }
+  .ba-reviews__rating-line { font-size: 16px; }
+  .ba-reviews__rating-value { font-size: 18px; }
+  .ba-reviews__stars { font-size: 18px; }
+  .ba-reviews__count { font-size: 14px; }
+  .ba-reviews__card-stars { font-size: 16px; }
+  .ba-reviews__cta { font-size: 14px; }
+}
 @media (max-width: 640px) {
   .ba-reviews__card {
     flex: 0 0 100%;
@@ -343,6 +353,15 @@ const CSS = `
   .ba-reviews {
     padding: 40px 0 30px;
   }
+  .ba-reviews__google-wordmark { font-size: 18px; }
+  .ba-reviews__label { font-size: 16px; }
+  .ba-reviews__rating-line { font-size: 14px; }
+  .ba-reviews__rating-value { font-size: 16px; }
+  .ba-reviews__stars { font-size: 16px; }
+  .ba-reviews__count { font-size: 14px; }
+  .ba-reviews__author-name { font-size: 13px; }
+  .ba-reviews__card-stars { font-size: 16px; }
+  .ba-reviews__cta { font-size: 14px; }
 }
 </style>`;
 

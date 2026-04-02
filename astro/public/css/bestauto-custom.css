@@ -4,6 +4,13 @@
  * Loaded after Tilda CSS for correct cascade order.
  */
 
+/* Prevent mobile browser text inflation — ensures font-size in CSS = rendered size */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 /* C2: Prevent H1/H2 text clipping on narrow mobile viewports (375px) */
 .t396 h1.tn-atom,
 .t396 h2.tn-atom {
