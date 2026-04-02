@@ -3,16 +3,23 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 173,
-  "fetchedAt": "2026-04-02T07:56:14.564Z",
+  "fetchedAt": "2026-04-02T14:39:08.843Z",
   "reviews": [
     {
       "authorName": "jean pierre nehme",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWMrUtkJuMZqqPZJwjTZZuIaQq9EEprG0y5cg-VTNcyYSVlyO-U=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "4 weeks ago",
+      "relativeTime": "a month ago",
       "text": "All the way from Romania 🇷🇴 it's my first time writing a review, i don't usually trust people easily but I felt really comfortable dealing with this team since day one, very professional, very satisfied with the results, highly recommended 👌🏻💪🏻\nGlad to meet you guys 🙏🏼",
       "time": 1772316949,
-      "profileUrl": "https://www.google.com/maps/contrib/106862328154285265159/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/106862328154285265159/reviews",
+      "texts": {
+        "en": "All the way from Romania 🇷🇴 it's my first time writing a review, i don't usually trust people easily but I felt really comfortable dealing with this team since day one, very professional, very satisfied with the results, highly recommended 👌🏻💪🏻\nGlad to meet you guys 🙏🏼"
+      },
+      "relativeTimes": {
+        "en": "a month ago"
+      },
+      "originalLang": "en"
     },
     {
       "authorName": "Zezva Arabuli",
@@ -21,7 +28,14 @@
       "relativeTime": "2 თვის წინ",
       "text": "გავაკეთე პოლირების სერვისი და დავაკარი სტიკერები. შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად. ნამდვილად გირჩევთ 👍",
       "time": 1768994407,
-      "profileUrl": "https://www.google.com/maps/contrib/118019043653831607447/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/118019043653831607447/reviews",
+      "texts": {
+        "ka": "გავაკეთე პოლირების სერვისი და დავაკარი სტიკერები. შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად. ნამდვილად გირჩევთ 👍"
+      },
+      "relativeTimes": {
+        "ka": "2 თვის წინ"
+      },
+      "originalLang": "ka"
     },
     {
       "authorName": "Николай жидков",
@@ -30,7 +44,14 @@
       "relativeTime": "2 месяца назад",
       "text": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин. Ребята — настоящие профессионалы и просто классные люди! Делают всё на высшем уровне, результат всегда «супер». Что особенно радует — это индивидуальный подход к каждому клиенту и внимание к деталям. Однозначно рекомендую!\n\nI’ve been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and just great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail. Highly recommended!",
       "time": 1767770321,
-      "profileUrl": "https://www.google.com/maps/contrib/115733878456850340696/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/115733878456850340696/reviews",
+      "texts": {
+        "ru": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин. Ребята — настоящие профессионалы и просто классные люди! Делают всё на высшем уровне, результат всегда «супер». Что особенно радует — это индивидуальный подход к каждому клиенту и внимание к деталям. Однозначно рекомендую!\n\nI’ve been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and just great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail. Highly recommended!"
+      },
+      "relativeTimes": {
+        "ru": "2 месяца назад"
+      },
+      "originalLang": "ru"
     },
     {
       "authorName": "Mikhail",
@@ -39,7 +60,14 @@
       "relativeTime": "4 months ago",
       "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
       "time": 1763710948,
-      "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews",
+      "texts": {
+        "en": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!"
+      },
+      "relativeTimes": {
+        "en": "4 months ago"
+      },
+      "originalLang": "en"
     },
     {
       "authorName": "David Williams",
@@ -48,7 +76,14 @@
       "relativeTime": "5 months ago",
       "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results.",
       "time": 1761404842,
-      "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews",
+      "texts": {
+        "en": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results."
+      },
+      "relativeTimes": {
+        "en": "5 months ago"
+      },
+      "originalLang": "en"
     },
     {
       "authorName": "Pavel",
@@ -57,16 +92,30 @@
       "relativeTime": "5 месяцев назад",
       "text": "Отличный сервис. Нужно было сделать полировку машины и химчистку салона. Всё четко проговорили, указали на места, где полировка может не помочь, дали скидку на химчистку. Всё сделали в оговоренные сроки, машина здорово выглядит (и пахнет апельсином внутри :) ). Цены ниже, чем у ближайших конкурентов.\n\nРекомендую!",
       "time": 1759725891,
-      "profileUrl": "https://www.google.com/maps/contrib/106496441851471955289/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/106496441851471955289/reviews",
+      "texts": {
+        "ru": "Отличный сервис. Нужно было сделать полировку машины и химчистку салона. Всё четко проговорили, указали на места, где полировка может не помочь, дали скидку на химчистку. Всё сделали в оговоренные сроки, машина здорово выглядит (и пахнет апельсином внутри :) ). Цены ниже, чем у ближайших конкурентов.\n\nРекомендую!"
+      },
+      "relativeTimes": {
+        "ru": "5 месяцев назад"
+      },
+      "originalLang": "ru"
     },
     {
       "authorName": "vako gurashvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWb0dfXeNtYQJ237o4Y8UxWldmJ2LCmOHx4AYCYXKnRHPAIqd4Q=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "7 თვის წინ",
+      "relativeTime": "8 თვის წინ",
       "text": "ძალიან კარგი გარემოა, ნებისმიერ კითხვაზე აქვთ ამომწურავი  პასუხები, ასევე მაღალი ხარისხის მომსახურება, 100% რეკომენდაცია ჩემგან",
       "time": 1754381049,
-      "profileUrl": "https://www.google.com/maps/contrib/110315020163169452249/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/110315020163169452249/reviews",
+      "texts": {
+        "ka": "ძალიან კარგი გარემოა, ნებისმიერ კითხვაზე აქვთ ამომწურავი  პასუხები, ასევე მაღალი ხარისხის მომსახურება, 100% რეკომენდაცია ჩემგან"
+      },
+      "relativeTimes": {
+        "ka": "8 თვის წინ"
+      },
+      "originalLang": "ka"
     },
     {
       "authorName": "Alexander Vertyankin",
@@ -75,7 +124,14 @@
       "relativeTime": "8 месяцев назад",
       "text": "Обращался в этот сервис дважды — сначала на химчистку салона, потом на тонировку передних стекол атермальной плёнкой. Оба раза остался очень доволен.\n\nСотрудники вовлечённые, вежливые, всё подробно объяснили: по плёнкам показали все доступные варианты, рассказали про отличия, после установки замерили светопропускание (я приезжал отдельно на следующий день, чтобы не открывать окна сразу после тонировки). Всё в пределах допустимых норм по закону.\n\nПо химчистке — салон отмыли до мельчайших деталей, включая труднодоступные места. Снаружи тоже всё вымыли: кузов, стёкла, даже подкапотное пространство — аккуратно и качественно.\n\nНа тонировку приехал прямо перед закрытием, но без вопросов приняли и всё сделали за час. Работой и отношением остался полностью доволен. Рекомендую!",
       "time": 1753886738,
-      "profileUrl": "https://www.google.com/maps/contrib/108773084403365621421/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/108773084403365621421/reviews",
+      "texts": {
+        "ru": "Обращался в этот сервис дважды — сначала на химчистку салона, потом на тонировку передних стекол атермальной плёнкой. Оба раза остался очень доволен.\n\nСотрудники вовлечённые, вежливые, всё подробно объяснили: по плёнкам показали все доступные варианты, рассказали про отличия, после установки замерили светопропускание (я приезжал отдельно на следующий день, чтобы не открывать окна сразу после тонировки). Всё в пределах допустимых норм по закону.\n\nПо химчистке — салон отмыли до мельчайших деталей, включая труднодоступные места. Снаружи тоже всё вымыли: кузов, стёкла, даже подкапотное пространство — аккуратно и качественно.\n\nНа тонировку приехал прямо перед закрытием, но без вопросов приняли и всё сделали за час. Работой и отношением остался полностью доволен. Рекомендую!"
+      },
+      "relativeTimes": {
+        "ru": "8 месяцев назад"
+      },
+      "originalLang": "ru"
     },
     {
       "authorName": "Saba Inaishvili",
@@ -84,7 +140,14 @@
       "relativeTime": "8 თვის წინ",
       "text": "დითეილინგის სერვისით უაღრესად კმაყოფილი დავრჩი. სამუშაო შესრულებულია უმაღლეს დონეზე – ყოველი დეტალი გალამაზებული და სუფთაა, მანქანა ფაქტობრივად ახალივით გამოიყურება. განსაკუთრებით აღსანიშნავია მენეჯერის პროფესიონალიზმი და ყურადღება – დეტალურად ამიხსნა ყველა პროცესი, დამეხმარა ყველა კითხვაზე და ზუსტად იგრძნობოდა, რომ მისთვის თითოეული კლიენტის კმაყოფილება მნიშვნელოვანია. ასეთი სერვისი იშვიათად შემხვედრია და გულწრფელად ვურჩევ ყველას",
       "time": 1753885026,
-      "profileUrl": "https://www.google.com/maps/contrib/106496816367486580373/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/106496816367486580373/reviews",
+      "texts": {
+        "ka": "დითეილინგის სერვისით უაღრესად კმაყოფილი დავრჩი. სამუშაო შესრულებულია უმაღლეს დონეზე – ყოველი დეტალი გალამაზებული და სუფთაა, მანქანა ფაქტობრივად ახალივით გამოიყურება. განსაკუთრებით აღსანიშნავია მენეჯერის პროფესიონალიზმი და ყურადღება – დეტალურად ამიხსნა ყველა პროცესი, დამეხმარა ყველა კითხვაზე და ზუსტად იგრძნობოდა, რომ მისთვის თითოეული კლიენტის კმაყოფილება მნიშვნელოვანია. ასეთი სერვისი იშვიათად შემხვედრია და გულწრფელად ვურჩევ ყველას"
+      },
+      "relativeTimes": {
+        "ka": "8 თვის წინ"
+      },
+      "originalLang": "ka"
     },
     {
       "authorName": "mohamadreza sabzi",
@@ -93,7 +156,14 @@
       "relativeTime": "8 months ago",
       "text": "Absolutely amazing experience with the car detailing and ceramic coating service! The staff were super friendly, professional, and paid attention to every little detail. My car looks brand new now – glossy, clean, and perfectly protected. Everything from start to finish was excellent. Highly recommended!",
       "time": 1751850652,
-      "profileUrl": "https://www.google.com/maps/contrib/110154893026610914131/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/110154893026610914131/reviews",
+      "texts": {
+        "en": "Absolutely amazing experience with the car detailing and ceramic coating service! The staff were super friendly, professional, and paid attention to every little detail. My car looks brand new now – glossy, clean, and perfectly protected. Everything from start to finish was excellent. Highly recommended!"
+      },
+      "relativeTimes": {
+        "en": "8 months ago"
+      },
+      "originalLang": "en"
     },
     {
       "authorName": "Tamriko Bakhtadze",
@@ -102,7 +172,14 @@
       "relativeTime": "8 месяцев назад",
       "text": "Сегодня была в BestAuto Detailing Tbilisi — это не просто уход за машиной, а настоящий экспириенс! ✨\nСделали трёхфазную мойку и обклеили авто полиуретановой плёнкой. Теперь моя машина не только сверкает, как с обложки, но и надёжно защищена от царапин.\nВсё выполнено на высшем уровне -от сервиса до деталей. Рекомендую от души! 🙌🚘",
       "time": 1751835127,
-      "profileUrl": "https://www.google.com/maps/contrib/114094927714527313333/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/114094927714527313333/reviews",
+      "texts": {
+        "ru": "Сегодня была в BestAuto Detailing Tbilisi — это не просто уход за машиной, а настоящий экспириенс! ✨\nСделали трёхфазную мойку и обклеили авто полиуретановой плёнкой. Теперь моя машина не только сверкает, как с обложки, но и надёжно защищена от царапин.\nВсё выполнено на высшем уровне -от сервиса до деталей. Рекомендую от души! 🙌🚘"
+      },
+      "relativeTimes": {
+        "ru": "8 месяцев назад"
+      },
+      "originalLang": "ru"
     },
     {
       "authorName": "Екатерина Куринская",
@@ -111,7 +188,14 @@
       "relativeTime": "11 месяцев назад",
       "text": "Предыстория\nПривезли на химчистку Mercedes кабриолет в состоянии сарая (буквально), машина стояла на улице несколько месяцев в турции под палящим солнцем и около пыльной дороги. Отсюда сильные дефекты на салоне (далее на фото видно)\n\nИскали хороший сервис с химчисткой около дома. Нашли Bestauto по отзывам и местоположению. Решили довериться и не прогадали. Автомобиль привели в порядок за каких-то пару дней, хотя было много других клиентов и работ.\nЧто касается самой химчистки, тут выше всех похвал, тачка помолодела лет на 5. Ребята все вычистили, намыли, пропылесосили и даже справились с тем, чтобы убрать пыльный запах из авто.\n\nОтдельное спасибо менеджеру Беке. Всё рассказал, показал, дал рекомендации и честную консультацию! Настоящий профи\n\nНастоятельно рекомендую это место\np.s. ребята даже отмыли ремни безопастности, что очень сильно порадовало",
       "time": 1744619873,
-      "profileUrl": "https://www.google.com/maps/contrib/101442341811599099879/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/101442341811599099879/reviews",
+      "texts": {
+        "ru": "Предыстория\nПривезли на химчистку Mercedes кабриолет в состоянии сарая (буквально), машина стояла на улице несколько месяцев в турции под палящим солнцем и около пыльной дороги. Отсюда сильные дефекты на салоне (далее на фото видно)\n\nИскали хороший сервис с химчисткой около дома. Нашли Bestauto по отзывам и местоположению. Решили довериться и не прогадали. Автомобиль привели в порядок за каких-то пару дней, хотя было много других клиентов и работ.\nЧто касается самой химчистки, тут выше всех похвал, тачка помолодела лет на 5. Ребята все вычистили, намыли, пропылесосили и даже справились с тем, чтобы убрать пыльный запах из авто.\n\nОтдельное спасибо менеджеру Беке. Всё рассказал, показал, дал рекомендации и честную консультацию! Настоящий профи\n\nНастоятельно рекомендую это место\np.s. ребята даже отмыли ремни безопастности, что очень сильно порадовало"
+      },
+      "relativeTimes": {
+        "ru": "11 месяцев назад"
+      },
+      "originalLang": "ru"
     },
     {
       "authorName": "Daniel Pegado",
@@ -120,7 +204,14 @@
       "relativeTime": "a year ago",
       "text": "For some time I had been looking for a place to do a deep clean of the interior of my car... until one day, two options appeared on Facebook, I contacted both... but my choice fell on Bestauto, not because of the price because the price of Bestauto was more expensive than the other offer, what led me to visit them was the professionalism of the contact, the attention paid to the customer... without fear I went to the premises to see the space, as soon as I entered the store, my doubts were cleared up, a clean, organized space, a real SPA for our car, but the icing on the cake was the professionalism and politeness of the manager, we sealed the deal with a handshake.. on the agreed day I dropped the car off, and after three days or so I picked it up... here I have to say that the car was as it had been when it left the factory, a cleanliness that you can see and definitely feel. The same friendliness and professionalism on the way out... I can only recommend this SPA Auto, because in addition to excellent service, it has very professional and polite staff. Thank you",
       "time": 1742196073,
-      "profileUrl": "https://www.google.com/maps/contrib/104058545588964445862/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/104058545588964445862/reviews",
+      "texts": {
+        "en": "For some time I had been looking for a place to do a deep clean of the interior of my car... until one day, two options appeared on Facebook, I contacted both... but my choice fell on Bestauto, not because of the price because the price of Bestauto was more expensive than the other offer, what led me to visit them was the professionalism of the contact, the attention paid to the customer... without fear I went to the premises to see the space, as soon as I entered the store, my doubts were cleared up, a clean, organized space, a real SPA for our car, but the icing on the cake was the professionalism and politeness of the manager, we sealed the deal with a handshake.. on the agreed day I dropped the car off, and after three days or so I picked it up... here I have to say that the car was as it had been when it left the factory, a cleanliness that you can see and definitely feel. The same friendliness and professionalism on the way out... I can only recommend this SPA Auto, because in addition to excellent service, it has very professional and polite staff. Thank you"
+      },
+      "relativeTimes": {
+        "en": "a year ago"
+      },
+      "originalLang": "en"
     },
     {
       "authorName": "Tamar Tsotsoria",
@@ -129,7 +220,14 @@
       "relativeTime": "ერთი წლის წინ",
       "text": "როცა შედეგი მოლოდინს აჭარბებს… უამრავი ნაკაწრით, ვანდალიზმის მსხვერპლი მანქანა გააბრწინეს და გააკაშკაშეს👏🏼👏🏼აღფრთოვანებული ვარ შედეგით, მადლობა და უდიდესი რეკომენდაცია თქვენ 🙌🏽🙌🏽",
       "time": 1730409202,
-      "profileUrl": "https://www.google.com/maps/contrib/108846655922654768062/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/108846655922654768062/reviews",
+      "texts": {
+        "ka": "როცა შედეგი მოლოდინს აჭარბებს… უამრავი ნაკაწრით, ვანდალიზმის მსხვერპლი მანქანა გააბრწინეს და გააკაშკაშეს👏🏼👏🏼აღფრთოვანებული ვარ შედეგით, მადლობა და უდიდესი რეკომენდაცია თქვენ 🙌🏽🙌🏽"
+      },
+      "relativeTimes": {
+        "ka": "ერთი წლის წინ"
+      },
+      "originalLang": "ka"
     },
     {
       "authorName": "mamuka mikadze",
@@ -138,7 +236,14 @@
       "relativeTime": "ერთი წლის წინ",
       "text": "პროფესიონალური და დროული მომსახურება მივიღე, ძალიან კმაყოფილი ვარ, სამ ფაზიანი რეცხვა, დამუქება, პოლირება, კერამიკა გავაკეთე, უმაღლესი ხარისხია და ადამიანური ფასები, ყველას გირჩევთ!!",
       "time": 1718207484,
-      "profileUrl": "https://www.google.com/maps/contrib/117213092684475699837/reviews"
+      "profileUrl": "https://www.google.com/maps/contrib/117213092684475699837/reviews",
+      "texts": {
+        "ka": "პროფესიონალური და დროული მომსახურება მივიღე, ძალიან კმაყოფილი ვარ, სამ ფაზიანი რეცხვა, დამუქება, პოლირება, კერამიკა გავაკეთე, უმაღლესი ხარისხია და ადამიანური ფასები, ყველას გირჩევთ!!"
+      },
+      "relativeTimes": {
+        "ka": "ერთი წლის წინ"
+      },
+      "originalLang": "ka"
     }
   ]
 }
