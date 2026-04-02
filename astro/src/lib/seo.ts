@@ -222,8 +222,19 @@ export function generateWebSiteSchema(): string {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
     name: 'BESTAUTO',
+    alternateName: ['BESTAUTO Detailing', 'BESTAUTO Detailing Studio'],
     url: BASE_URL,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'BESTAUTO',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/img/logo.png`,
+      },
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: `${BASE_URL}/?q={search_term_string}`,

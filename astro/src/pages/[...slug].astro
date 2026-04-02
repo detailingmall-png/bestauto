@@ -196,7 +196,7 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang)
   + generateReviewSchema()
-  + (baseSlug === '' ? generateWebSiteSchema() : '');
+  + generateWebSiteSchema();
 
 if (lang === 'ru') {
   // Extract related-services block and move before footer
