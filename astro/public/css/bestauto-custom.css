@@ -43,25 +43,45 @@ html {
 
 /* ========================================================================
    Tilda block typography standardization
-   Fix: t502 titles (inline 18px) vs t508 titles (CSS 26px) — standardize
-   both to 22px/20px/18px (desktop/tablet/mobile) per UI/UX guide H3 range.
+   Override inline data-customstyle font-sizes to enforce consistency.
+   All values follow ui-ux-guide.md: H1 36-48px, H2 28-36px, H3 20-24px.
    ======================================================================== */
 
-/* t502 "numbered advantages" — title */
+/* --- H1 Hero titles (t182__title in t205 cover blocks) --- */
+/* Was: 62px inline. Guide max: 48px */
+.t182__title [data-customstyle] {
+  font-size: 48px !important;
+}
+
+/* --- H2 Section headings --- */
+/* t017 block headings: was 40px/42px inline */
+.t017__title [data-customstyle] {
+  font-size: 36px !important;
+}
+/* t225 block headings: was 30px or 46px inline */
+.t225__title [data-customstyle] {
+  font-size: 36px !important;
+}
+/* t502/t508 section headings (t-section__title) */
+.t502 .t-section__title,
+.t508 .t-section__title {
+  font-size: 36px !important;
+}
+
+/* --- H3 List item titles --- */
+/* t502 "numbered advantages": was 18px inline */
 .t502__title {
   font-size: 22px !important;
 }
-/* Override inline data-customstyle font-size on nested div */
 .t502__title [data-customstyle] {
   font-size: inherit !important;
 }
-
-/* t508 "bullet list" — title */
+/* t508 "bullet list": was 26px CSS */
 .t508 .t-name {
   font-size: 22px !important;
 }
 
-/* Descriptions: standardize across t502/t508 */
+/* --- Descriptions: standardize across t502/t508 --- */
 .t502__blockdescr {
   font-size: 15px !important;
   line-height: 1.5 !important;
@@ -71,32 +91,44 @@ html {
   line-height: 1.5 !important;
 }
 
-/* t502/t508 section headings — standardize to 36px */
-.t502 .t-section__title,
-.t508 .t-section__title {
-  font-size: 36px !important;
-}
-
-/* Tablet */
+/* --- Tablet (641-960px) --- */
 @media screen and (max-width: 960px) {
-  .t502__title {
-    font-size: 20px !important;
+  .t182__title [data-customstyle] {
+    font-size: 40px !important;
   }
-  .t508 .t-name {
-    font-size: 20px !important;
-  }
-  .t502__blockdescr,
-  .t508__descr {
-    font-size: 14px !important;
+  .t017__title [data-customstyle],
+  .t225__title [data-customstyle] {
+    font-size: 32px !important;
   }
   .t502 .t-section__title,
   .t508 .t-section__title {
     font-size: 32px !important;
   }
+  .t502__title {
+    font-size: 20px !important;
+  }
+  .t508 .t-name {
+    font-size: 20px !important;
+  }
+  .t502__blockdescr,
+  .t508__descr {
+    font-size: 14px !important;
+  }
 }
 
-/* Mobile */
+/* --- Mobile (<=640px) --- */
 @media screen and (max-width: 640px) {
+  .t182__title [data-customstyle] {
+    font-size: 32px !important;
+  }
+  .t017__title [data-customstyle],
+  .t225__title [data-customstyle] {
+    font-size: 28px !important;
+  }
+  .t502 .t-section__title,
+  .t508 .t-section__title {
+    font-size: 28px !important;
+  }
   .t502__title {
     font-size: 18px !important;
   }
@@ -106,9 +138,5 @@ html {
   .t502__blockdescr,
   .t508__descr {
     font-size: 14px !important;
-  }
-  .t502 .t-section__title,
-  .t508 .t-section__title {
-    font-size: 28px !important;
   }
 }
