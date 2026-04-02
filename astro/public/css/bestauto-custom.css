@@ -11,18 +11,6 @@
   word-break: break-word;
 }
 
-/* C3: Expand burger touch target to 48x48px without changing layout size.
-   Pseudo-element creates invisible tap area centered on the 28x20 icon. */
-.t-menuburger::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 48px;
-  min-height: 48px;
-}
-
 /* H4: Gold focus indicator on burger for keyboard navigation */
 .t-menuburger:focus-visible {
   outline: 2px solid #e4c97e;
