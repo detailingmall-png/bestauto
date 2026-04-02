@@ -69,12 +69,14 @@ html {
 }
 
 /* --- H3 List item titles --- */
-/* t502 "numbered advantages": was 18px inline */
+/* t502 "numbered advantages": was 18px inline, weight 600/700 inconsistent */
 .t502__title {
   font-size: 22px !important;
+  font-weight: 700 !important;
 }
 .t502__title [data-customstyle] {
   font-size: inherit !important;
+  font-weight: inherit !important;
 }
 /* t508 "bullet list": was 26px CSS */
 .t508 .t-name {
