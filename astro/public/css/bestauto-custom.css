@@ -11,10 +11,16 @@
   word-break: break-word;
 }
 
-/* C3: Expand burger touch target from 28x20px to 48x48px (WCAG 2.1) */
-/* !important needed: Tilda inline <style> in body overrides <head> link */
-.t-menuburger {
-  padding: 14px 10px !important;
+/* C3: Expand burger touch target to 48x48px without changing layout size.
+   Pseudo-element creates invisible tap area centered on the 28x20 icon. */
+.t-menuburger::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 48px;
+  min-height: 48px;
 }
 
 /* H4: Gold focus indicator on burger for keyboard navigation */
