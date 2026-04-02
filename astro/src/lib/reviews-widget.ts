@@ -426,10 +426,21 @@ const JS = `
 })();
 <\/script>`;
 
+function hasTextInLang(review: Review, lang: string): boolean {
+  return Boolean(review.texts?.[lang]) || review.originalLang === lang;
+}
+
 export function getReviewsWidgetHtml(lang: string): string {
   const data = reviewsData as ReviewsData;
   const { overallRating, totalReviews, reviews } = data;
-  const displayReviews = reviews.slice(0, DISPLAY_COUNT);
+
+  // Sort: reviews with text in page language first, then others
+  const sorted = [...reviews].sort((a, b) => {
+    const aMatch = hasTextInLang(a, lang) ? 0 : 1;
+    const bMatch = hasTextInLang(b, lang) ? 0 : 1;
+    return aMatch - bMatch;
+  });
+  const displayReviews = sorted.slice(0, DISPLAY_COUNT);
 
   const cta = CTA[lang] ?? CTA.en;
 

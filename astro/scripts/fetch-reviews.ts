@@ -191,7 +191,18 @@ async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlac
       }
 
       const entry = seen.get(key)!;
-      entry.texts[lang] = reviewText;
+
+      // Store the text returned for this language request (translated by Google)
+      if (gr.text?.text?.trim()) {
+        entry.texts[lang] = gr.text.text;
+      }
+      // Also store the original text under its original language code
+      if (gr.originalText?.text?.trim() && gr.originalText.languageCode) {
+        const origLang = gr.originalText.languageCode as Lang;
+        if (!entry.texts[origLang]) {
+          entry.texts[origLang] = gr.originalText.text;
+        }
+      }
       entry.relativeTimes[lang] = gr.relativePublishTimeDescription;
 
       // Update originalLang from originalText if available
