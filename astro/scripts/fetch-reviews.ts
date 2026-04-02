@@ -179,10 +179,20 @@ async function translateMissingLanguages(reviews: Review[]): Promise<void> {
     const needsTranslation: Array<{ review: Review; sourceText: string }> = [];
 
     for (const review of reviews) {
-      if (review.texts[targetLang]) continue; // already have this language
-      // Find the best source text
+      // Skip if this IS the original language — no translation needed
+      if (targetLang === review.originalLang) continue;
+
+      const existingText = review.texts[targetLang];
+      const originalText =
+        review.texts[review.originalLang as Lang] ?? review.text;
+
+      // Skip only if we have a translation that differs from the original
+      // (identical text means it was stored untranslated — needs re-translation)
+      if (existingText && existingText !== originalText) continue;
+
+      // Find the best source text for translation
       const sourceText =
-        review.texts[review.originalLang as Lang] ??
+        originalText ??
         review.texts.en ??
         review.texts.ru ??
         review.texts.ka ??
