@@ -4,12 +4,22 @@
  */
 import reviewsData from '../data/reviews.json';
 
+interface LocalizedText {
+  ru?: string;
+  ka?: string;
+  en?: string;
+  [key: string]: string | undefined;
+}
+
 interface Review {
   authorName: string;
   authorPhotoUrl: string;
   rating: number;
   relativeTime: string;
   text: string;
+  texts?: LocalizedText;
+  relativeTimes?: LocalizedText;
+  originalLang?: string;
   time: number;
   profileUrl: string;
 }
@@ -18,6 +28,14 @@ interface ReviewsData {
   overallRating: number;
   totalReviews: number;
   reviews: Review[];
+}
+
+function getLocalizedText(review: Review, lang: string): string {
+  return review.texts?.[lang] ?? review.texts?.en ?? review.text;
+}
+
+function getLocalizedTime(review: Review, lang: string): string {
+  return review.relativeTimes?.[lang] ?? review.relativeTimes?.en ?? review.relativeTime;
 }
 
 const DISPLAY_COUNT = 15;
@@ -78,8 +96,10 @@ function renderReviewCards(reviews: readonly Review[], lang: string): string {
   const readMoreLabel = READ_MORE[lang] ?? READ_MORE.en;
 
   return reviews.map((review) => {
-    const truncated = truncateText(review.text, 200);
-    const hasMore = review.text.length > 200;
+    const resolvedText = getLocalizedText(review, lang);
+    const resolvedTime = getLocalizedTime(review, lang);
+    const truncated = truncateText(resolvedText, 200);
+    const hasMore = resolvedText.length > 200;
     const avatarSrc = (review.authorPhotoUrl || '/images/default-avatar.svg')
       .replace(/=s\d+(-|$)/, '=s80$1');
 
@@ -91,12 +111,12 @@ function renderReviewCards(reviews: readonly Review[], lang: string): string {
           </div>
           <div class="ba-reviews__author-info">
             <span class="ba-reviews__author-name">${escapeHtml(review.authorName)}</span>
-            <span class="ba-reviews__author-time">${escapeHtml(review.relativeTime)} ${ON_GOOGLE[lang] ?? ON_GOOGLE.en} ${GOOGLE_INLINE}</span>
+            <span class="ba-reviews__author-time">${escapeHtml(resolvedTime)} ${ON_GOOGLE[lang] ?? ON_GOOGLE.en} ${GOOGLE_INLINE}</span>
           </div>
         </div>
         <div class="ba-reviews__card-stars">${renderStars(review.rating)}</div>
         <p class="ba-reviews__card-text">${escapeHtml(truncated)}</p>
-        ${hasMore ? `<button type="button" class="ba-reviews__read-more" data-full-text="${escapeHtml(review.text)}">${escapeHtml(readMoreLabel)}</button>` : ''}
+        ${hasMore ? `<button type="button" class="ba-reviews__read-more" data-full-text="${escapeHtml(resolvedText)}">${escapeHtml(readMoreLabel)}</button>` : ''}
       </article>`;
   }).join('\n');
 }

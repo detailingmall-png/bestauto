@@ -18,6 +18,10 @@ import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, C
 import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
 import { generateBlogGridHtml } from '../lib/blog-grid';
+import { generateBrandLogosHtml } from '../lib/brand-logos';
+import { generateProcessStepsHtml } from '../lib/process-steps';
+import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
+import { generateVideoGalleryHtml } from '../lib/video-gallery';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -145,6 +149,46 @@ if (servicesBlockId && injectedHtml.includes(`id="${servicesBlockId}"`)) {
   }
 }
 
+// Homepage: inject process steps section after services grid
+if (baseSlug === '' && injectedHtml.includes('id="ba-services-grid"')) {
+  const gridEndMarker = 'id="ba-services-grid"';
+  const gridIdx = injectedHtml.indexOf(gridEndMarker);
+  // Find closing </div> of the services grid wrapper
+  let depth = 0;
+  let pos = injectedHtml.lastIndexOf('<div', gridIdx);
+  let gridEnd = -1;
+  while (pos < injectedHtml.length) {
+    if (injectedHtml.startsWith('<div', pos)) { depth++; pos += 4; }
+    else if (injectedHtml.startsWith('</div>', pos)) {
+      depth--;
+      if (depth === 0) { gridEnd = pos + 6; break; }
+      pos += 6;
+    } else { pos++; }
+  }
+  if (gridEnd > 0) {
+    injectedHtml = injectedHtml.slice(0, gridEnd) + generateProcessStepsHtml(lang) + injectedHtml.slice(gridEnd);
+  }
+}
+
+// Homepage: inject brand logos strip between hero and About section
+if (baseSlug === '') {
+  const ABOUT_ANCHOR_IDS: Readonly<Record<string, string>> = {
+    ka: 'rec2091645393',
+    ru: 'rec588593929',
+    en: 'rec1862088841',
+  };
+  const aboutId = ABOUT_ANCHOR_IDS[lang];
+  if (aboutId && injectedHtml.includes(`id="${aboutId}"`)) {
+    const aboutIdx = injectedHtml.indexOf(`id="${aboutId}"`);
+    const aboutDivStart = injectedHtml.lastIndexOf('<div', aboutIdx);
+    if (aboutDivStart >= 0) {
+      injectedHtml = injectedHtml.slice(0, aboutDivStart)
+        + generateBrandLogosHtml(lang)
+        + injectedHtml.slice(aboutDivStart);
+    }
+  }
+}
+
 // Blog index pages: replace static t404 card grid with dynamic one
 const BLOG_INDEX_T404_IDS: Readonly<Record<string, string>> = {
   ka: 'rec607481069',
@@ -176,8 +220,39 @@ if (baseSlug === 'blog') {
   }
 }
 
-const { headContent, headerBlock, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
+const { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml);
 let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
+
+// CTA copy improvements: nav button
+const CTA_NAV: Readonly<Record<string, readonly [string, string]>> = {
+  ru: ['Записаться', 'Бесплатная консультация'],
+  ka: ['დაჯავშნეთ ვიზიტი', 'უფასო კონსულტაცია'],
+  en: ['Book a visit', 'Free consultation'],
+};
+let headerBlock = rawHeader;
+const navCta = CTA_NAV[lang];
+if (navCta) {
+  headerBlock = headerBlock.replaceAll(
+    `t-btnflex__text">${navCta[0]}</span>`,
+    `t-btnflex__text">${navCta[1]}</span>`
+  );
+}
+
+// CTA copy improvements: hero button (homepage only)
+if (baseSlug === '') {
+  const CTA_HERO: Readonly<Record<string, readonly [string, string]>> = {
+    ru: ['Записаться', 'Узнать стоимость'],
+    ka: ['დაჯავშნეთ ვიზიტი', 'გაიგეთ ფასი'],
+    en: ['Book a visit', 'Get a quote'],
+  };
+  const heroCta = CTA_HERO[lang];
+  if (heroCta) {
+    mainContent = mainContent.replaceAll(
+      `tn-atom__button-text">${heroCta[0]}</span>`,
+      `tn-atom__button-text">${heroCta[1]}</span>`
+    );
+  }
+}
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
 // Blog pages: rewrite bare #anchor links in nav to point to homepage
@@ -191,12 +266,13 @@ if (isBlogPage) {
   );
 }
 
-// SEO: static hreflang, BreadcrumbList, Service, WebSite schemas
+// SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang)
-  + generateReviewSchema()
-  + generateWebSiteSchema();
+  + generateReviewSchema(lang)
+  + generateWebSiteSchema()
+  + (baseSlug === '' ? generateFaqSchema(lang) : '');
 
 if (lang === 'ru') {
   // Extract related-services block and move before footer
@@ -492,6 +568,28 @@ if (baseSlug === '') {
       new RegExp(`(#${heroRecId}\\s+\\.t396__filter\\s*\\{)`),
       '$1z-index:2;'
     );
+  }
+}
+
+// Homepage: inject video gallery before photo gallery
+if (baseSlug === '' && mainContent.includes('class="ba-gallery"')) {
+  const galleryClassIdx = mainContent.indexOf('class="ba-gallery"');
+  const galleryDivStart = mainContent.lastIndexOf('<div', galleryClassIdx);
+  if (galleryDivStart >= 0) {
+    mainContent = mainContent.slice(0, galleryDivStart)
+      + generateVideoGalleryHtml(lang)
+      + mainContent.slice(galleryDivStart);
+  }
+}
+
+// Homepage: inject FAQ accordion before contacts block
+if (baseSlug === '' && mainContent.includes('id="rec2091246563"')) {
+  const contactsFaqIdx = mainContent.indexOf('id="rec2091246563"');
+  const contactsFaqDiv = mainContent.lastIndexOf('<div', contactsFaqIdx);
+  if (contactsFaqDiv >= 0) {
+    mainContent = mainContent.slice(0, contactsFaqDiv)
+      + generateFaqHtml(lang)
+      + mainContent.slice(contactsFaqDiv);
   }
 }
 

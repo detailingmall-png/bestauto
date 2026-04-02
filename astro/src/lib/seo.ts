@@ -176,7 +176,7 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
-export function generateReviewSchema(): string {
+export function generateReviewSchema(lang: string = 'en'): string {
   if (reviewsData.reviews.length === 0) return '';
 
   const schema = {
@@ -199,7 +199,7 @@ export function generateReviewSchema(): string {
       bestRating: '5',
       ratingCount: reviewsData.totalReviews.toString(),
     },
-    review: reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string }) => ({
+    review: reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string; texts?: Record<string, string> }) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.authorName },
       reviewRating: {
@@ -207,7 +207,7 @@ export function generateReviewSchema(): string {
         ratingValue: r.rating.toString(),
         bestRating: '5',
       },
-      reviewBody: r.text,
+      reviewBody: r.texts?.[lang] ?? r.texts?.en ?? r.text,
     })),
   };
 

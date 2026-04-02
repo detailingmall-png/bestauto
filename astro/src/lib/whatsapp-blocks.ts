@@ -44,7 +44,7 @@ export const WHATSAPP_BLOCK = makePathsAbsolute(
 );
 export const CONTACTS_BLOCK = makePathsAbsolute(
   extractRecordBlock(ruHtml, 'rec2091246563')
-);
+).replaceAll('Отправить заявку в WhatsApp', 'Записаться — ответим за 15 минут');
 
 // KA: WhatsApp widget
 const kaHtml = loadTildaPage('page130343853.html');
@@ -84,7 +84,7 @@ const EN_TRANSLATIONS: TranslationMap = [
   ['Реставрация автостекла', 'Windshield repair'],
   ['Шумоизоляция', 'Sound insulation'],
   ['Введите номер в международном формате: +995 5XX XXX XXX', 'Enter phone in international format: +995 5XX XXX XXX'],
-  ['Отправить заявку в WhatsApp', 'Send request via WhatsApp'],
+  ['Записаться — ответим за 15 минут', 'Book now — reply in 15 min'],
   ["Здравствуйте! Хочу записаться в студию", "Hello! I'd like to book at studio"],
   ['Услуга: ', 'Service: '],
   ['Мой телефон: ', 'My phone: '],
@@ -116,7 +116,7 @@ const KA_TRANSLATIONS: TranslationMap = [
   ['Реставрация автостекла', 'ავტო მინის აღდგენა'],
   ['Шумоизоляция', 'ხმის იზოლაცია'],
   ['Введите номер в международном формате: +995 5XX XXX XXX', 'შეიყვანეთ ნომერი საერთაშორისო ფორმატში: +995 5XX XXX XXX'],
-  ['Отправить заявку в WhatsApp', 'გაგზავნეთ განაცხადი WhatsApp-ით'],
+  ['Записаться — ответим за 15 минут', 'ჩაეწერეთ — ვუპასუხებთ 15 წუთში'],
   ["Здравствуйте! Хочу записаться в студию", "გამარჯობა! მინდა ჩავეწერო ვიზიტზე"],
   ['Услуга: ', 'სერვისი: '],
   ['Мой телефон: ', 'ჩემი ტელეფონი: '],

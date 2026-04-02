@@ -7,6 +7,8 @@ const REVIEWS_PATH = resolve(__dirname, "../src/data/reviews.json");
 
 const SEARCH_QUERY = "BESTAUTO Detailing Tbilisi";
 const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+const LANGS = ["ru", "ka", "en"] as const;
+type Lang = (typeof LANGS)[number];
 
 interface GoogleReview {
   name: string;
@@ -37,12 +39,21 @@ interface GoogleSearchResult {
   }>;
 }
 
+interface LocalizedText {
+  ru?: string;
+  ka?: string;
+  en?: string;
+}
+
 interface Review {
   authorName: string;
   authorPhotoUrl: string;
   rating: number;
   relativeTime: string;
   text: string;
+  texts: LocalizedText;
+  relativeTimes: LocalizedText;
+  originalLang: string;
   time: number;
   profileUrl: string;
 }
@@ -56,8 +67,8 @@ interface ReviewsData {
   reviews: Review[];
 }
 
-function deduplicationKey(review: Review): string {
-  return `${review.authorName}::${review.time}`;
+function deduplicationKey(authorName: string, time: number): string {
+  return `${authorName}::${time}`;
 }
 
 function readExistingReviews(): ReviewsData | null {
@@ -71,18 +82,6 @@ function readExistingReviews(): ReviewsData | null {
     console.error("Failed to parse existing reviews.json:", err);
     return null;
   }
-}
-
-function convertGoogleReview(gr: GoogleReview): Review {
-  return {
-    authorName: gr.authorAttribution.displayName,
-    authorPhotoUrl: gr.authorAttribution.photoUri,
-    rating: gr.rating,
-    relativeTime: gr.relativePublishTimeDescription,
-    text: gr.text?.text ?? gr.originalText?.text ?? "",
-    time: Math.floor(new Date(gr.publishTime).getTime() / 1000),
-    profileUrl: gr.authorAttribution.uri,
-  };
 }
 
 async function discoverPlaceId(): Promise<string> {
@@ -143,27 +142,62 @@ async function fetchFromGooglePlaces(placeId: string, languageCode?: string): Pr
   return response.json() as Promise<GooglePlaceResponse>;
 }
 
+interface PartialReview {
+  authorName: string;
+  authorPhotoUrl: string;
+  rating: number;
+  texts: LocalizedText;
+  relativeTimes: LocalizedText;
+  originalLang: string;
+  time: number;
+  profileUrl: string;
+}
+
 async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlaceResponse; incomingReviews: Review[] }> {
-  const langs = ["ru", "ka", "en"];
-  const results = await Promise.allSettled(langs.map(l => fetchFromGooglePlaces(placeId, l)));
+  const results = await Promise.allSettled(LANGS.map(l => fetchFromGooglePlaces(placeId, l)));
 
   let apiData: GooglePlaceResponse | null = null;
-  const seen = new Map<string, Review>();
+  const seen = new Map<string, PartialReview>();
 
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
+    const lang = LANGS[i];
     if (result.status === "rejected") {
-      console.warn(`Fetch for lang=${langs[i]} failed:`, result.reason);
+      console.warn(`Fetch for lang=${lang} failed:`, result.reason);
       continue;
     }
     const data = result.value;
     if (!apiData) apiData = data;
+
     for (const gr of data.reviews ?? []) {
-      const rev = convertGoogleReview(gr);
-      // Only keep reviews with text
-      if (!rev.text.trim()) continue;
-      const key = deduplicationKey(rev);
-      if (!seen.has(key)) seen.set(key, rev);
+      const reviewText = gr.text?.text ?? gr.originalText?.text ?? "";
+      if (!reviewText.trim()) continue;
+
+      const authorName = gr.authorAttribution.displayName;
+      const time = Math.floor(new Date(gr.publishTime).getTime() / 1000);
+      const key = deduplicationKey(authorName, time);
+
+      if (!seen.has(key)) {
+        seen.set(key, {
+          authorName,
+          authorPhotoUrl: gr.authorAttribution.photoUri,
+          rating: gr.rating,
+          texts: {},
+          relativeTimes: {},
+          originalLang: gr.originalText?.languageCode ?? lang,
+          time,
+          profileUrl: gr.authorAttribution.uri,
+        });
+      }
+
+      const entry = seen.get(key)!;
+      entry.texts[lang] = reviewText;
+      entry.relativeTimes[lang] = gr.relativePublishTimeDescription;
+
+      // Update originalLang from originalText if available
+      if (gr.originalText?.languageCode && !entry.originalLang) {
+        entry.originalLang = gr.originalText.languageCode;
+      }
     }
   }
 
@@ -171,24 +205,45 @@ async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlac
     throw new Error("All language fetches failed");
   }
 
-  const incomingReviews = Array.from(seen.values()).sort((a, b) => b.time - a.time);
-  console.log(`Fetched ${incomingReviews.length} unique reviews with text across ${langs.length} languages.`);
+  const incomingReviews: Review[] = Array.from(seen.values())
+    .map((p): Review => ({
+      ...p,
+      text: p.texts[p.originalLang as Lang] ?? p.texts.en ?? Object.values(p.texts).find(t => t) ?? "",
+      relativeTime: p.relativeTimes.en ?? Object.values(p.relativeTimes).find(t => t) ?? "",
+    }))
+    .filter(r => r.text.trim())
+    .sort((a, b) => b.time - a.time);
+
+  console.log(`Fetched ${incomingReviews.length} unique reviews with text across ${LANGS.length} languages.`);
   return { apiData, incomingReviews };
 }
 
 function mergeReviews(existing: Review[], incoming: Review[]): Review[] {
   const seen = new Map<string, Review>();
 
-  // Only keep existing reviews that have text
+  // Keep existing reviews that have text
   for (const review of existing) {
     if (review.text.trim()) {
-      seen.set(deduplicationKey(review), review);
+      seen.set(deduplicationKey(review.authorName, review.time), review);
     }
   }
 
   for (const review of incoming) {
-    const key = deduplicationKey(review);
-    if (!seen.has(key)) {
+    const key = deduplicationKey(review.authorName, review.time);
+    const prev = seen.get(key);
+    if (prev) {
+      // Merge localized texts: incoming data enriches existing
+      const mergedTexts: LocalizedText = { ...prev.texts, ...review.texts };
+      const mergedRelativeTimes: LocalizedText = { ...prev.relativeTimes, ...review.relativeTimes };
+      seen.set(key, {
+        ...prev,
+        texts: mergedTexts,
+        relativeTimes: mergedRelativeTimes,
+        originalLang: review.originalLang || prev.originalLang || "",
+        text: review.text || prev.text,
+        relativeTime: review.relativeTime || prev.relativeTime,
+      });
+    } else {
       seen.set(key, review);
     }
   }
