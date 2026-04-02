@@ -1,0 +1,41 @@
+/**
+ * BESTAUTO custom CSS overrides
+ * Phase 1 UI/UX improvements
+ * Loaded after Tilda CSS for correct cascade order.
+ */
+
+/* C2: Prevent H1/H2 text clipping on narrow mobile viewports (375px) */
+.t396 h1.tn-atom,
+.t396 h2.tn-atom {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* C3: Expand burger touch target from 28x20px to 48x48px (WCAG 2.1) */
+/* !important needed: Tilda inline <style> in body overrides <head> link */
+.t-menuburger {
+  padding: 14px 10px !important;
+}
+
+/* H4: Gold focus indicator on burger for keyboard navigation */
+.t-menuburger:focus-visible {
+  outline: 2px solid #e4c97e;
+  outline-offset: 2px;
+}
+
+/* H5: Increase form label size from 11px to 13px */
+#ba-contacts .ba-field label {
+  font-size: 13px !important;
+}
+
+/* M7: Increase H1 line-height from 1.2 to 1.35 */
+.t396 h1.tn-atom {
+  line-height: 1.35 !important;
+}
+
+/* M8: Increase form field height from ~43px to 48px minimum */
+#ba-contacts .ba-field input,
+#ba-contacts .ba-field select {
+  padding: 15px 14px !important;
+  min-height: 48px !important;
+}

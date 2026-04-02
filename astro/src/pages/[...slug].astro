@@ -514,7 +514,7 @@ function relocateAnchor(html: string, name: string, targetMarker: string): strin
     const divStart = result.lastIndexOf('<div', idx);
     if (divStart >= 0) {
       result = result.slice(0, divStart)
-        + `<a name="${name}" style="font-size:0;display:block;"></a>`
+        + `<a name="${name}" style="font-size:0;display:block;" aria-hidden="true"></a>`
         + result.slice(divStart);
     }
   }
@@ -529,6 +529,15 @@ mainContent = relocateAnchor(mainContent, 'reviews', 'id="ba-reviews"');
 
 // #photo → before gallery
 mainContent = relocateAnchor(mainContent, 'photo', 'class="ba-gallery"');
+
+// H3: Hide empty named anchors from screen readers
+mainContent = mainContent.replace(
+  /<a name="([^"]+)"([^>]*)><\/a>/g,
+  (match, _name, attrs) => {
+    if (attrs.includes('aria-hidden')) return match;
+    return `<a name="${_name}"${attrs} aria-hidden="true"></a>`;
+  }
+);
 ---
 <TildaPageLayout
   headContent={headContent}
