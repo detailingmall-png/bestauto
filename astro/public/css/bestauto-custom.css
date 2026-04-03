@@ -99,19 +99,9 @@ html {
    Prices page heroes (RU rec590032970, KA rec590466139, EN rec590463208)
    Consistent font-size + spacing from sticky header across all 3 languages.
    ======================================================================== */
-#rec590032970 .t-cover,
-#rec590466139 .t-cover {
-  height: 30vh !important;
+#rec590032970,
+#rec590466139 {
   padding-top: 80px !important;
-  box-sizing: border-box !important;
-}
-#rec590032970 .t-cover__carrier,
-#rec590032970 .t-cover__filter,
-#rec590032970 .t-cover__wrapper,
-#rec590466139 .t-cover__carrier,
-#rec590466139 .t-cover__filter,
-#rec590466139 .t-cover__wrapper {
-  height: 30vh !important;
 }
 #rec590032970 .t001__title,
 #rec590466139 .t001__title {
@@ -203,17 +193,9 @@ html {
     font-size: 14px !important;
   }
   /* Prices heroes - mobile */
-  #rec590032970 .t-cover,
-  #rec590466139 .t-cover {
+  #rec590032970,
+  #rec590466139 {
     padding-top: 60px !important;
-  }
-  #rec590032970 .t-cover__carrier,
-  #rec590032970 .t-cover__filter,
-  #rec590032970 .t-cover__wrapper,
-  #rec590466139 .t-cover__carrier,
-  #rec590466139 .t-cover__filter,
-  #rec590466139 .t-cover__wrapper {
-    height: 20vh !important;
   }
   #rec590032970 .t001__title,
   #rec590466139 .t001__title {
@@ -224,6 +206,5 @@ html {
   }
   #rec590463208 {
     padding-top: 60px !important;
-    min-height: 15vh !important;
   }
 }
