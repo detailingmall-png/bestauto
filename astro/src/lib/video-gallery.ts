@@ -58,14 +58,14 @@ const SECTION_TITLE: Readonly<Record<string, string>> = {
 function renderVideoCard(video: VideoEntry, lang: string): string {
   const label = video.label[lang] ?? video.label['en'];
 
-  return `<div class="ba-video__card" style="position:relative;border-radius:12px;overflow:hidden;background:#111;aspect-ratio:9/16;">
+  return `<div class="ba-video__card" style="position:relative;border-radius:var(--ba-radius-lg);overflow:hidden;background:var(--ba-color-surface);aspect-ratio:9/16;">
       <video class="ba-video__player" muted loop playsinline preload="none" poster="${video.poster}" style="width:100%;height:100%;object-fit:cover;display:block;" data-src="${video.src}">
       </video>
-      <div class="ba-video__overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);transition:opacity 0.3s ease;pointer-events:none;">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="rgba(0,0,0,0.4)"/><path d="M19 15l14 9-14 9V15z" fill="rgba(255,255,255,0.9)"/></svg>
+      <div class="ba-video__overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--ba-overlay-video);transition:opacity var(--ba-duration-normal) var(--ba-ease-default);pointer-events:none;">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" style="stroke:var(--ba-color-text-80)" stroke-width="2" fill="rgba(0,0,0,0.4)"/><path d="M19 15l14 9-14 9V15z" fill="rgba(255,255,255,0.9)"/></svg>
       </div>
       <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.8));pointer-events:none;">
-        <span class="ba-video__label" style="font-family:TildaSans,Arial,sans-serif;font-weight:600;color:#fff;">${label}</span>
+        <span class="ba-video__label" style="font-family:var(--ba-font-family);font-weight:var(--ba-font-weight-semibold);color:var(--ba-color-text);">${label}</span>
       </div>
     </div>`;
 }
@@ -74,9 +74,9 @@ export function generateVideoGalleryHtml(lang: string): string {
   const title = SECTION_TITLE[lang] ?? SECTION_TITLE['en'];
   const cards = VIDEOS.map((v) => renderVideoCard(v, lang)).join('\n    ');
 
-  return `<div id="ba-video-gallery" style="background:#000;padding:80px 0;border-top:1px solid rgba(255,255,255,0.06);">
+  return `<div id="ba-video-gallery" style="background:var(--ba-color-bg);padding:80px 0;border-top:1px solid var(--ba-color-border-subtle);">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
-    <h2 class="ba-video__heading" style="color:#fff;font-weight:700;text-align:center;margin:0 0 48px;font-family:TildaSans,Arial,sans-serif;">${title}</h2>
+    <h2 class="ba-video__heading" style="color:var(--ba-color-text);font-weight:var(--ba-font-weight-bold);text-align:center;margin:0 0 48px;font-family:var(--ba-font-family);">${title}</h2>
     <div class="ba-video__grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
       ${cards}
     </div>

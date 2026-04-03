@@ -62,7 +62,7 @@ function buildRows(section: PriceSection, lang: Lang): string {
   return (section.items ?? []).map(item => {
     const name = esc(itemName(item, lang));
     const price = esc(localizePrice(item.price ?? '', lang));
-    const nameStyle = item.isPromo ? ' style="color: rgb(228, 201, 126);"' : '';
+    const nameStyle = item.isPromo ? ' style="color: var(--ba-color-accent);"' : '';
     return `<div class="t681__row t-row" style="margin-bottom:40px;"><div class="t-col t-col_3 t-prefix_2"><div class="t681__title t-heading t-heading_sm"${nameStyle}>${name}</div></div><div class="t-col t-col_4 "><div class="t681__tablewrapper"><div class="t681__textwrapper"><div class="t681__descr t-descr t-descr_sm">-------------------------</div></div><div class="t681__pricewrapper"><div class="t681__price t-heading t-heading_sm">${price}</div></div></div></div></div>`;
   }).join('');
 }
@@ -115,7 +115,7 @@ function buildFullSection(section: PriceSection, lang: Lang): string {
   return [
     `<div id="${headingId}" class="r t-rec t-rec_pt_75 t-rec_pb_0" style="padding-top:75px;padding-bottom:0px;background-color:#000000;" data-record-type="33" data-bg-color="#000000">`,
     `<div class="t017"><div class="t-container t-align_left"><div class="t-col t-col_10 t-prefix_2">`,
-    `<h2 class="t017__title t-title t-title_xxs"><span style="color: rgb(228, 201, 126);">${title}</span></h2>`,
+    `<h2 class="t017__title t-title t-title_xxs"><span style="color: var(--ba-color-accent);">${title}</span></h2>`,
     `</div></div></div>`,
     `<style>#${headingId} .t017__title{font-size:30px;}@media screen and (max-width:960px){#${headingId} .t017__title{font-size:28px;}}@media screen and (max-width:640px){#${headingId} .t017__title{font-size:24px;}}</style>`,
     `</div>`,

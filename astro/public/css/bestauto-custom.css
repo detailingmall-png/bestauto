@@ -1,8 +1,104 @@
 /**
- * BESTAUTO custom CSS overrides
- * Phase 1 UI/UX improvements
+ * BESTAUTO Design System — Custom CSS
+ * Design tokens + UI/UX overrides.
  * Loaded after Tilda CSS for correct cascade order.
+ * Token reference: .claude/rules/ui-ux-guide.md section 1.
  */
+
+/* ========================================================================
+   Design Tokens
+   ======================================================================== */
+:root {
+  /* Colors */
+  --ba-color-bg: #000000;
+  --ba-color-text: #ffffff;
+  --ba-color-accent: #e4c97e;
+  --ba-color-accent-hover: #d4b96e;
+  --ba-color-accent-alt: #C8A96E;
+  --ba-color-error: #ff4444;
+  --ba-color-success: #25D366;
+  --ba-color-surface: #111111;
+  --ba-color-surface-dark: #1a1a1a;
+  --ba-color-text-muted: rgba(255, 255, 255, 0.7);
+  --ba-color-text-subtle: rgba(255, 255, 255, 0.6);
+  --ba-color-text-faint: rgba(255, 255, 255, 0.3);
+  --ba-color-border: rgba(255, 255, 255, 0.1);
+  --ba-color-border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Typography */
+  --ba-font-family: 'TildaSans', Arial, sans-serif;
+  --ba-font-weight-regular: 400;
+  --ba-font-weight-medium: 500;
+  --ba-font-weight-semibold: 600;
+  --ba-font-weight-bold: 700;
+
+  /* Spacing (8px grid) */
+  --ba-space-xs: 4px;
+  --ba-space-sm: 8px;
+  --ba-space-md: 16px;
+  --ba-space-lg: 24px;
+  --ba-space-xl: 32px;
+  --ba-space-2xl: 48px;
+  --ba-space-3xl: 64px;
+  --ba-space-4xl: 80px;
+  --ba-space-5xl: 96px;
+
+  /* Border radius */
+  --ba-radius-sm: 4px;
+  --ba-radius-md: 8px;
+  --ba-radius-lg: 12px;
+  --ba-radius-xl: 16px;
+  --ba-radius-2xl: 20px;
+  --ba-radius-full: 50%;
+
+  /* Shadows / Elevation */
+  --ba-shadow-none: none;
+  --ba-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ba-shadow-medium: 0px 15px 30px -10px rgba(0, 11, 48, 0.2);
+  --ba-shadow-high: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+  /* Animation */
+  --ba-duration-fast: 0.2s;
+  --ba-duration-normal: 0.3s;
+  --ba-duration-slow: 0.5s;
+  --ba-ease-default: ease;
+  --ba-ease-smooth: ease-in-out;
+
+  /* Overlay & gradient colors */
+  --ba-overlay-dark: rgba(0, 0, 0, 0.6);
+  --ba-overlay-light: rgba(255, 255, 255, 0.15);
+  --ba-overlay-video: rgba(0, 0, 0, 0.3);
+  --ba-color-accent-faint: rgba(228, 201, 126, 0.25);
+  --ba-color-text-80: rgba(255, 255, 255, 0.8);
+  --ba-color-text-75: rgba(255, 255, 255, 0.75);
+
+  /* z-index scale */
+  --ba-z-base: 0;
+  --ba-z-card: 1;
+  --ba-z-sticky: 100;
+  --ba-z-dropdown: 200;
+  --ba-z-overlay: 300;
+  --ba-z-modal: 400;
+  --ba-z-toast: 500;
+}
+
+/* ========================================================================
+   Accessibility: Reduced Motion
+   ======================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================================================
+   Base styles
+   ======================================================================== */
 
 /* Prevent mobile browser text inflation — ensures font-size in CSS = rendered size */
 html {
@@ -20,7 +116,7 @@ html {
 
 /* H4: Gold focus indicator on burger for keyboard navigation */
 .t-menuburger:focus-visible {
-  outline: 2px solid #e4c97e;
+  outline: 2px solid var(--ba-color-accent);
   outline-offset: 2px;
 }
 
@@ -106,7 +202,7 @@ html {
 #rec590032970 .t001__title,
 #rec590466139 .t001__title {
   font-size: 42px !important;
-  color: #ffffff !important;
+  color: var(--ba-color-text) !important;
   font-weight: 600 !important;
 }
 

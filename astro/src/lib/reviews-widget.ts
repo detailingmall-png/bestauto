@@ -124,9 +124,9 @@ function renderReviewCards(reviews: readonly Review[], lang: string): string {
 const CSS = `
 <style>
 .ba-reviews {
-  background: #000;
+  background: var(--ba-color-bg);
   padding: 60px 0 40px;
-  color: #fff;
+  color: var(--ba-color-text);
   min-height: 400px;
   overflow-x: hidden;
 }
@@ -203,7 +203,7 @@ const CSS = `
   scroll-snap-align: start;
   background: #fff;
   color: #333;
-  border-radius: 12px;
+  border-radius: var(--ba-radius-lg);
   padding: 20px;
   text-align: left;
   min-height: 200px;
@@ -283,19 +283,19 @@ const CSS = `
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
-  background: rgba(0,0,0,0.6);
-  color: #fff;
+  border-radius: var(--ba-radius-full);
+  border: 1px solid var(--ba-color-text-faint);
+  background: var(--ba-overlay-dark);
+  color: var(--ba-color-text);
   font-size: 24px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background var(--ba-duration-fast);
 }
 .ba-reviews__arrow:hover {
-  background: rgba(255,255,255,0.15);
+  background: var(--ba-overlay-light);
 }
 .ba-reviews__dots {
   display: flex;
@@ -306,12 +306,12 @@ const CSS = `
 .ba-reviews__dots button {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: var(--ba-radius-full);
   border: none;
-  background: rgba(255,255,255,0.3);
+  background: var(--ba-color-text-faint);
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s;
+  transition: background var(--ba-duration-fast);
 }
 .ba-reviews__dots button.active {
   background: #fff;
@@ -319,14 +319,14 @@ const CSS = `
 .ba-reviews__cta {
   display: inline-block;
   margin-top: 24px;
-  color: #e4c97e;
+  color: var(--ba-color-accent);
   text-decoration: none;
   font-size: 15px;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  transition: border-color var(--ba-duration-fast);
 }
 .ba-reviews__cta:hover {
-  border-bottom-color: #e4c97e;
+  border-bottom-color: var(--ba-color-accent);
 }
 @media (max-width: 1024px) {
   .ba-reviews__card {

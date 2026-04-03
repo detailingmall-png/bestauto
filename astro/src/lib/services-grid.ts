@@ -170,15 +170,15 @@ function renderTier1Card(service: ServiceEntry, lang: string, langPrefix: string
   const cta = CTA_TEXT[lang] ?? CTA_TEXT['en'];
   const href = `/${langPrefix}${service.slug}`;
 
-  return `<a href="${href}" style="position:relative; display:block; height:360px; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform 0.3s ease;" class="ba-service-card ba-service-card--tier1">
+  return `<a href="${href}" style="position:relative; display:block; height:360px; border-radius:var(--ba-radius-xl); overflow:hidden; text-decoration:none; transition:transform var(--ba-duration-normal) var(--ba-ease-default);" class="ba-service-card ba-service-card--tier1">
         <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
-        <div style="position:relative; z-index:1; padding:40px 32px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
-          <h3 class="ba-service-card__name ba-service-card__name--t1" style="color:#fff; font-weight:700; margin:0 0 12px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
-          <p class="ba-service-card__tagline ba-service-card__tagline--t1" style="color:rgba(255,255,255,0.8); margin:0 0 16px; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
+        <div style="position:relative; z-index:var(--ba-z-card); padding:40px 32px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
+          <h3 class="ba-service-card__name ba-service-card__name--t1" style="color:var(--ba-color-text); font-weight:var(--ba-font-weight-bold); margin:0 0 12px; font-family:var(--ba-font-family);">${name}</h3>
+          <p class="ba-service-card__tagline ba-service-card__tagline--t1" style="color:var(--ba-color-text-80); margin:0 0 16px; line-height:1.5; font-family:var(--ba-font-family);">${tagline}</p>
           <div style="display:flex; align-items:center; justify-content:space-between;">
-            <span class="ba-service-card__price ba-service-card__price--t1" style="color:#e4c97e; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
-            <span class="ba-service-card__cta ba-service-card__cta--t1" style="color:#e4c97e; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
+            <span class="ba-service-card__price ba-service-card__price--t1" style="color:var(--ba-color-accent); font-weight:var(--ba-font-weight-bold); font-family:var(--ba-font-family);">${price}</span>
+            <span class="ba-service-card__cta ba-service-card__cta--t1" style="color:var(--ba-color-accent); font-family:var(--ba-font-family);">${cta} →</span>
           </div>
         </div>
       </a>`;
@@ -191,15 +191,15 @@ function renderTier2Card(service: ServiceEntry, lang: string, langPrefix: string
   const cta = CTA_TEXT[lang] ?? CTA_TEXT['en'];
   const href = `/${langPrefix}${service.slug}`;
 
-  return `<a href="${href}" style="position:relative; display:block; height:280px; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform 0.3s ease;" class="ba-service-card ba-service-card--tier2">
+  return `<a href="${href}" style="position:relative; display:block; height:280px; border-radius:var(--ba-radius-xl); overflow:hidden; text-decoration:none; transition:transform var(--ba-duration-normal) var(--ba-ease-default);" class="ba-service-card ba-service-card--tier2">
         <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
-        <div style="position:relative; z-index:1; padding:24px 20px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
-          <h3 class="ba-service-card__name ba-service-card__name--t2" style="color:#fff; font-weight:700; margin:0 0 8px; font-family:TildaSans,Arial,sans-serif;">${name}</h3>
-          <p class="ba-service-card__tagline ba-service-card__tagline--t2" style="color:rgba(255,255,255,0.75); margin:0 0 12px; line-height:1.4; font-family:TildaSans,Arial,sans-serif;">${tagline}</p>
+        <div style="position:relative; z-index:var(--ba-z-card); padding:24px 20px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
+          <h3 class="ba-service-card__name ba-service-card__name--t2" style="color:var(--ba-color-text); font-weight:var(--ba-font-weight-bold); margin:0 0 8px; font-family:var(--ba-font-family);">${name}</h3>
+          <p class="ba-service-card__tagline ba-service-card__tagline--t2" style="color:var(--ba-color-text-75); margin:0 0 12px; line-height:1.4; font-family:var(--ba-font-family);">${tagline}</p>
           <div style="display:flex; align-items:center; justify-content:space-between;">
-            <span class="ba-service-card__price ba-service-card__price--t2" style="color:#e4c97e; font-weight:700; font-family:TildaSans,Arial,sans-serif;">${price}</span>
-            <span class="ba-service-card__cta ba-service-card__cta--t2" style="color:#e4c97e; font-family:TildaSans,Arial,sans-serif;">${cta} →</span>
+            <span class="ba-service-card__price ba-service-card__price--t2" style="color:var(--ba-color-accent); font-weight:var(--ba-font-weight-bold); font-family:var(--ba-font-family);">${price}</span>
+            <span class="ba-service-card__cta ba-service-card__cta--t2" style="color:var(--ba-color-accent); font-family:var(--ba-font-family);">${cta} →</span>
           </div>
         </div>
       </a>`;
@@ -221,10 +221,10 @@ export function generateServicesGridHtml(lang: string): string {
     .map((s) => renderTier2Card(s, lang, langPrefix))
     .join('\n      ');
 
-  return `<div id="ba-services-grid" name="services" style="background-color:#000; padding:60px 0 80px;">
+  return `<div id="ba-services-grid" name="services" style="background-color:var(--ba-color-bg); padding:60px 0 80px;">
   <div style="max-width:1200px; margin:0 auto; padding:0 20px;">
-    <h2 class="ba-services__heading" style="color:#fff; font-weight:700; margin:0 0 12px; text-align:center; font-family:TildaSans,Arial,sans-serif;">${title}</h2>
-    <p class="ba-services__subtitle" style="color:rgba(255,255,255,0.6); margin:0 0 48px; text-align:center; line-height:1.5; font-family:TildaSans,Arial,sans-serif;">${subtitle}</p>
+    <h2 class="ba-services__heading" style="color:var(--ba-color-text); font-weight:var(--ba-font-weight-bold); margin:0 0 12px; text-align:center; font-family:var(--ba-font-family);">${title}</h2>
+    <p class="ba-services__subtitle" style="color:var(--ba-color-text-subtle); margin:0 0 48px; text-align:center; line-height:1.5; font-family:var(--ba-font-family);">${subtitle}</p>
 
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:24px;" class="ba-services-tier1">
       ${tier1Cards}
