@@ -1,9 +1,11 @@
 /**
- * SEO utilities: static hreflang, BreadcrumbList, Service, WebSite schemas.
+ * SEO utilities: static hreflang, BreadcrumbList, Service, WebSite,
+ * FAQPage, Article, and Organization schemas.
  * Replaces JS-based hreflang and Service schema from Tilda exports.
  */
 import pageMap from './page-map.json';
 import reviewsData from '../data/reviews.json';
+import { SERVICE_FAQS } from '../data/service-faqs';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -239,6 +241,106 @@ export function generateWebSiteSchema(): string {
       '@type': 'SearchAction',
       target: `${BASE_URL}/?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
+    },
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 5. Service FAQPage Schema
+// ──────────────────────────────────────────────
+
+export function generateServiceFaqSchema(baseSlug: string, lang: string): string {
+  const faqs = SERVICE_FAQS[baseSlug];
+  if (!faqs || faqs.length === 0) return '';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question[lang] ?? item.question['en'],
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer[lang] ?? item.answer['en'],
+      },
+    })),
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 6. Article Schema (blog posts)
+// ──────────────────────────────────────────────
+
+export function generateArticleSchema(
+  baseSlug: string,
+  lang: string,
+  pageTitle: string,
+): string {
+  if (!baseSlug.startsWith('blog/') || baseSlug === 'blog') return '';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageTitle.replace(/\s*[—|]\s*BESTAUTO.*$/, '').trim() || pageTitle,
+    author: {
+      '@type': 'Organization',
+      name: 'BESTAUTO',
+      url: BASE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'BESTAUTO',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/img/logo.png`,
+      },
+    },
+    inLanguage: lang,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': buildUrl(lang, baseSlug),
+    },
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 7. Organization Schema
+// ──────────────────────────────────────────────
+
+export function generateOrganizationSchema(): string {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${BASE_URL}/#organization`,
+    name: 'BESTAUTO',
+    url: BASE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${BASE_URL}/img/logo.png`,
+    },
+    telephone: '+995550000299',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Guramishvili Ave. 78',
+      addressLocality: 'Tbilisi',
+      addressCountry: 'GE',
+    },
+    sameAs: [
+      'https://www.instagram.com/bestauto.ge/',
+      'https://www.facebook.com/bestauto.ge/',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+995550000299',
+      contactType: 'customer service',
+      availableLanguage: ['Georgian', 'Russian', 'English'],
     },
   };
 

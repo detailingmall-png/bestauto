@@ -6,6 +6,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { IMG_DIMS } from './image-dims';
 import { WEBP_AVAILABLE } from './webp-available';
+import { META_OVERRIDES } from '../data/meta-overrides';
 
 /** Delay (ms) before loading deferred analytics and non-critical scripts. */
 const DEFER_DELAY_MS = 7000;
@@ -650,16 +651,117 @@ export function findNthRecIdAfter(content: string, startRecId: string, n: number
 }
 
 /**
+ * Strip HTML tags from <title> and <meta name="description"> content.
+ * Fixes broken SERP snippets caused by Tilda inline markup (e.g. <s> tags).
+ */
+export function sanitizeMetaTags(head: string): string {
+  // Strip HTML tags inside <title>...</title>
+  const sanitized = head.replace(
+    /(<title>)([\s\S]*?)(<\/title>)/i,
+    (_match, open, content, close) => {
+      const clean = content.replace(/<[^>]+>/g, '');
+      return `${open}${clean}${close}`;
+    }
+  );
+  // Strip HTML tags inside meta description content="..."
+  return sanitized.replace(
+    /(<meta\s+name="description"\s+content=")([\s\S]*?)("\s*\/?>)/i,
+    (_match, open, content, close) => {
+      const clean = content.replace(/<[^>]+>/g, '');
+      return `${open}${clean}${close}`;
+    }
+  );
+}
+
+/**
+ * Add missing Twitter Card meta tags by mirroring Open Graph values.
+ * Tilda exports only twitter:card and twitter:site; this fills in
+ * twitter:title, twitter:description, twitter:image from og: equivalents.
+ */
+export function completeTwitterCards(head: string): string {
+  const hasTwitterTitle = /name="twitter:title"/.test(head);
+  const hasTwitterDesc = /name="twitter:description"/.test(head);
+  const hasTwitterImg = /name="twitter:image"/.test(head);
+
+  if (hasTwitterTitle && hasTwitterDesc && hasTwitterImg) return head;
+
+  const tags: string[] = [];
+
+  if (!hasTwitterTitle) {
+    const ogTitle = head.match(/property="og:title"\s+content="([^"]*)"/)?.[1];
+    if (ogTitle) tags.push(`<meta name="twitter:title" content="${ogTitle}">`);
+  }
+  if (!hasTwitterDesc) {
+    const ogDesc = head.match(/property="og:description"\s+content="([^"]*)"/)?.[1];
+    if (ogDesc) tags.push(`<meta name="twitter:description" content="${ogDesc}">`);
+  }
+  if (!hasTwitterImg) {
+    const ogImg = head.match(/property="og:image"\s+content="([^"]*)"/)?.[1];
+    if (ogImg) tags.push(`<meta name="twitter:image" content="${ogImg}">`);
+  }
+
+  if (tags.length === 0) return head;
+
+  // Insert after existing twitter:site tag, or at the end of head
+  const insertPoint = head.lastIndexOf('twitter:');
+  if (insertPoint >= 0) {
+    const afterTag = head.indexOf('>', insertPoint);
+    if (afterTag >= 0) {
+      return head.slice(0, afterTag + 1) + tags.join('') + head.slice(afterTag + 1);
+    }
+  }
+  return head + tags.join('');
+}
+
+/**
+ * Apply build-time meta tag overrides from meta-overrides.ts.
+ * Replaces title, description, og:title, og:description when an override exists.
+ */
+export function applyMetaOverrides(head: string, lang: string, slug: string): string {
+  const key = `${lang}/${slug}`;
+  const overrides = META_OVERRIDES[key];
+  if (!overrides) return head;
+
+  let result = head;
+  if (overrides.title) {
+    result = result.replace(
+      /(<title>)([\s\S]*?)(<\/title>)/i,
+      `$1${overrides.title}$3`
+    );
+  }
+  if (overrides.description) {
+    result = result.replace(
+      /(<meta\s+name="description"\s+content=")([\s\S]*?)("\s*\/?>)/i,
+      `$1${overrides.description}$3`
+    );
+  }
+  if (overrides.ogTitle) {
+    result = result.replace(
+      /(property="og:title"\s+content=")([\s\S]*?)(")/i,
+      `$1${overrides.ogTitle}$3`
+    );
+  }
+  if (overrides.ogDescription) {
+    result = result.replace(
+      /(property="og:description"\s+content=")([\s\S]*?)(")/i,
+      `$1${overrides.ogDescription}$3`
+    );
+  }
+  return result;
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
-export function extractSections(html: string): PageSections {
+export function extractSections(html: string, lang?: string, slug?: string): PageSections {
   // Head content
   const headStart = html.indexOf('<head>');
   const headEnd = html.indexOf('</head>');
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const headContent = removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))));
+  const processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
+  const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
   // Body class
   const bodyTagMatch = html.match(/<body([^>]*)>/);
