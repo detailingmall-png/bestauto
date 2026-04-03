@@ -205,60 +205,6 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
   ],
 
-  'interior-restoration': [
-    {
-      question: {
-        ka: 'რა სახის დაზიანებებს აღადგენთ?',
-        ru: 'Какие повреждения вы восстанавливаете?',
-        en: 'What types of damage do you restore?',
-      },
-      answer: {
-        ka: 'ვაღადგენთ ტყავის გახეთქვას, დამწვრობას, გაცვეთას, პლასტმასის ნაკაწრებს და გაცვეთილ ღილაკებს/სახელურებს.',
-        ru: 'Восстанавливаем трещины кожи, прожоги, потёртости, царапины на пластике и изношенные кнопки/ручки.',
-        en: 'We restore leather cracks, burns, wear marks, plastic scratches, and worn buttons/handles.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს ნარჩუნდება რესტავრაციის შედეგი?',
-        ru: 'Как долго держится результат реставрации?',
-        en: 'How long does restoration result last?',
-      },
-      answer: {
-        ka: 'ტყავის რესტავრაცია 2-4 წელი ნარჩუნდება რეგულარული მოვლის პირობებში. ვიყენებთ პროფესიონალურ საღებავებსა და დამცავ საშუალებებს.',
-        ru: 'Реставрация кожи сохраняется 2–4 года при регулярном уходе. Используем профессиональные краски и защитные средства.',
-        en: 'Leather restoration lasts 2–4 years with regular care. We use professional-grade dyes and protective coatings.',
-      },
-    },
-  ],
-
-  'paintless-dent-repair': [
-    {
-      question: {
-        ka: 'ყველა ჩაზნექილობას თუ ასწორებთ ფერის გარეშე?',
-        ru: 'Все вмятины можно выправить без покраски?',
-        en: 'Can all dents be repaired without painting?',
-      },
-      answer: {
-        ka: 'ვასწორებთ ჩაზნექილობებს, რომლებსაც ლაქი არ აქვს დაზიანებული. ძარას დეფორმაციისა და ლაქის მოცილების შემთხვევაში საჭიროა ტრადიციული შეკეთება.',
-        ru: 'Выправляем вмятины без повреждения ЛКП. При деформации кузова или сколах краски требуется традиционный ремонт.',
-        en: 'We repair dents where the paint is intact. Body deformation or paint chipping requires traditional repair.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს გრძელდება ცივად გასწორება?',
-        ru: 'Сколько времени занимает удаление вмятин?',
-        en: 'How long does paintless dent repair take?',
-      },
-      answer: {
-        ka: 'მცირე ჩაზნექილობა 30-60 წუთში სწორდება. რამდენიმე ჩაზნექილობის შემთხვევაში — 2-4 საათი.',
-        ru: 'Мелкая вмятина исправляется за 30–60 минут. При нескольких вмятинах — 2–4 часа.',
-        en: 'A small dent is fixed in 30–60 minutes. Multiple dents take 2–4 hours.',
-      },
-    },
-  ],
-
   'auto-glass-tinting': [
     {
       question: {

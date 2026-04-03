@@ -103,8 +103,12 @@ export function injectPricesData(
   if (!nextRecMatch) return rawHtml;
   const priceEnd = last681Index + nextRecMatch.index + nextRecMatch[1].length;
 
+  // Discontinued service section keys (no longer rendered on prices page)
+  const DISCONTINUED_KEYS = new Set(['s3', 's4']);
+
   // Generate Sanity-driven price sections
-  const generated = pricingPage.sections
+  const activeSections = pricingPage.sections.filter(s => !DISCONTINUED_KEYS.has(s._key));
+  const generated = activeSections
     .map((section, i) => buildSection(section, i, lang))
     .join('\n');
 

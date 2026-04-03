@@ -39,8 +39,7 @@ const SERVICES: Readonly<Record<string, { name: Record<string, string>; min: str
   'ppf-shield-wrapping': { name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' }, min: '2500' },
   'vinyl-wrapping': { name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета защитной плёнкой', en: 'Color Change with Protective Film' }, min: '300' },
   'interior-cleaning': { name: { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' }, min: '400' },
-  'interior-restoration': { name: { ka: 'ინტერიერის რესტავრაცია', ru: 'Восстановление салона', en: 'Interior Restoration' }, min: '190' },
-  'paintless-dent-repair': { name: { ka: 'ძარას ცივად გასწორება', ru: 'Удаление вмятин без покраски', en: 'Paintless Dent Repair' }, min: '250' },
+
   'carwash': { name: { ka: 'მანქანის სარეცხი', ru: 'Детейлинг мойка автомобиля', en: 'Premium Car Wash' }, min: '40' },
   'auto-glass-tinting': { name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' }, min: '130' },
   'windshield-repair': { name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' }, min: '60' },

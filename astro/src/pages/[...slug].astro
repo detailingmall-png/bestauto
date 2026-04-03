@@ -25,8 +25,8 @@ import { generateVideoGalleryHtml } from '../lib/video-gallery';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
-  'polishing', 'ceramiccoating', 'interior-cleaning', 'interior-restoration',
-  'paintless-dent-repair', 'windshield-repair', 'ppf-shield-wrapping', 'vinyl-wrapping',
+  'polishing', 'ceramiccoating', 'interior-cleaning',
+  'windshield-repair', 'ppf-shield-wrapping', 'vinyl-wrapping',
   'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics', 'carwash',
 ]);
 
@@ -35,44 +35,52 @@ const RELATED_BLOCK_RANGES: Readonly<Record<string, readonly [string, string]>> 
   // KA
   'ka/ceramiccoating':        ['rec611064982', 'rec611064982'],
   'ka/polishing':             ['rec598873537', 'rec598873537'],
-  'ka/interior-restoration':  ['rec598889932', 'rec598889932'],
+
   'ka/interior-cleaning':     ['rec598893339', 'rec598893339'],
   'ka/windshield-repair':     ['rec598893478', 'rec598893478'],
   'ka/ppf-shield-wrapping':   ['rec603096467', 'rec603096467'],
   'ka/vinyl-wrapping':        ['rec604005362', 'rec604005362'],
   'ka/auto-glass-tinting':    ['rec604009889', 'rec604009889'],
   'ka/car-soundproofing':     ['rec604009426', 'rec604009426'],
-  'ka/paintless-dent-repair': ['rec604009377', 'rec604009377'],
+
   'ka/computer-diagnostics':  ['rec614244419', 'rec614244419'],
   // EN
   'en/ceramiccoating':        ['rec603462096', 'rec603462096'],
   'en/polishing':             ['rec597103996', 'rec597103996'],
-  'en/interior-restoration':  ['rec603459214', 'rec603459214'],
+
   'en/interior-cleaning':     ['rec605651300', 'rec605651300'],
   'en/ppf-shield-wrapping':   ['rec600301234', 'rec600301234'],
   'en/windshield-repair':     ['rec598440261', 'rec598440261'],
   'en/vinyl-wrapping':        ['rec603097601', 'rec603097601'],
-  'en/paintless-dent-repair': ['rec603498113', 'rec603498113'],
+
   'en/car-soundproofing':     ['rec603498174', 'rec603498174'],
   'en/auto-glass-tinting':    ['rec603498259', 'rec603498259'],
   'en/computer-diagnostics':  ['rec614236065', 'rec614236065'],
   // RU
   'ru/ceramiccoating':        ['rec595448578', 'rec595448578'],
   'ru/polishing':             ['rec603225450', 'rec603225450'],
-  'ru/interior-restoration':  ['rec603225860', 'rec603225860'],
+
   'ru/interior-cleaning':     ['rec603226140', 'rec603226140'],
   'ru/windshield-repair':     ['rec603226294', 'rec603226294'],
   'ru/auto-glass-tinting':    ['rec603226768', 'rec603226768'],
   'ru/car-soundproofing':     ['rec603226809', 'rec603226809'],
-  'ru/paintless-dent-repair': ['rec603227099', 'rec603227099'],
+
   'ru/vinyl-wrapping':        ['rec603226720', 'rec603226720'],
   'ru/ppf-shield-wrapping':   ['rec603226585', 'rec603226585'],
   'ru/computer-diagnostics':  ['rec610181663', 'rec610181663'],
 };
 
 export async function getStaticPaths() {
+  const discontinuedSlugs = new Set([
+    'paintless-dent-repair', 'interior-restoration',
+    'blog/pdr-method', 'blog/pdr-after-hail', 'blog/pdr-guidelines-and-techniques',
+    'blog/plastic-elements-restoration', 'blog/restoring-car-seats',
+    'blog/steering-wheel-restoration', 'blog/why-restore-interior-elements',
+  ]);
   const pages = getAllPages();
-  const validPages = pages.filter(p => !p.path.includes('.html'));
+  const validPages = pages
+    .filter(p => !p.path.includes('.html'))
+    .filter(p => !discontinuedSlugs.has(p.slug));
 
   // Fetch once for all pages
   const [settings, pricingPage] = await Promise.all([

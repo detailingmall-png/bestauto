@@ -13,7 +13,16 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      // Generate sitemap for all 3 locales
+      filter: (page) =>
+        !page.includes('/paintless-dent-repair') &&
+        !page.includes('/interior-restoration') &&
+        !page.includes('/blog/pdr-method') &&
+        !page.includes('/blog/pdr-after-hail') &&
+        !page.includes('/blog/pdr-guidelines-and-techniques') &&
+        !page.includes('/blog/plastic-elements-restoration') &&
+        !page.includes('/blog/restoring-car-seats') &&
+        !page.includes('/blog/steering-wheel-restoration') &&
+        !page.includes('/blog/why-restore-interior-elements'),
       i18n: {
         defaultLocale: 'ka',
         locales: {

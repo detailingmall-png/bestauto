@@ -17,6 +17,20 @@
 /auto-polishing   /polishing  301
 /auto-polishing/  /polishing  301
 
+# ── Discontinued services (April 2026) ──────────────────────
+/paintless-dent-repair     /polishing             301
+/paintless-dent-repair/    /polishing             301
+/ru/paintless-dent-repair  /ru/polishing          301
+/ru/paintless-dent-repair/ /ru/polishing          301
+/en/paintless-dent-repair  /en/polishing          301
+/en/paintless-dent-repair/ /en/polishing          301
+/interior-restoration      /interior-cleaning     301
+/interior-restoration/     /interior-cleaning     301
+/ru/interior-restoration   /ru/interior-cleaning  301
+/ru/interior-restoration/  /ru/interior-cleaning  301
+/en/interior-restoration   /en/interior-cleaning  301
+/en/interior-restoration/  /en/interior-cleaning  301
+
 # ── Blog articles moved from root to /blog/ ─────────────────────
 /how-to-choose-detailing-studio     /blog/how-to-choose-detailing-studio    301
 /how-to-choose-detailing-studio/    /blog/how-to-choose-detailing-studio    301
@@ -166,51 +180,51 @@
 /ru/interior-cleaning/interior-cleaning-for-auto      /ru/blog/interior-cleaning-for-auto  301
 /ru/interior-cleaning/interior-cleaning-for-auto/     /ru/blog/interior-cleaning-for-auto  301
 
-# interior-restoration
-/interior-restoration/plastic-elements-restoration           /blog/plastic-elements-restoration  301
-/interior-restoration/plastic-elements-restoration/          /blog/plastic-elements-restoration  301
-/interior-restoration/restoring-car-seats                    /blog/restoring-car-seats  301
-/interior-restoration/restoring-car-seats/                   /blog/restoring-car-seats  301
-/interior-restoration/steering-wheel-restoration             /blog/steering-wheel-restoration  301
-/interior-restoration/steering-wheel-restoration/            /blog/steering-wheel-restoration  301
-/interior-restoration/why-restore-interior-elements          /blog/why-restore-interior-elements  301
-/interior-restoration/why-restore-interior-elements/         /blog/why-restore-interior-elements  301
-/en/interior-restoration/plastic-elements-restoration        /en/blog/plastic-elements-restoration  301
-/en/interior-restoration/plastic-elements-restoration/       /en/blog/plastic-elements-restoration  301
-/en/interior-restoration/restoring-car-seats                 /en/blog/restoring-car-seats  301
-/en/interior-restoration/restoring-car-seats/                /en/blog/restoring-car-seats  301
-/en/interior-restoration/steering-wheel-restoration          /en/blog/steering-wheel-restoration  301
-/en/interior-restoration/steering-wheel-restoration/         /en/blog/steering-wheel-restoration  301
-/en/interior-restoration/why-restore-interior-elements       /en/blog/why-restore-interior-elements  301
-/en/interior-restoration/why-restore-interior-elements/      /en/blog/why-restore-interior-elements  301
-/ru/interior-restoration/plastic-elements-restoration        /ru/blog/plastic-elements-restoration  301
-/ru/interior-restoration/plastic-elements-restoration/       /ru/blog/plastic-elements-restoration  301
-/ru/interior-restoration/restoring-car-seats                 /ru/blog/restoring-car-seats  301
-/ru/interior-restoration/restoring-car-seats/                /ru/blog/restoring-car-seats  301
-/ru/interior-restoration/steering-wheel-restoration          /ru/blog/steering-wheel-restoration  301
-/ru/interior-restoration/steering-wheel-restoration/         /ru/blog/steering-wheel-restoration  301
-/ru/interior-restoration/why-restore-interior-elements       /ru/blog/why-restore-interior-elements  301
-/ru/interior-restoration/why-restore-interior-elements/      /ru/blog/why-restore-interior-elements  301
+# interior-restoration (discontinued — redirect directly to active service)
+/interior-restoration/plastic-elements-restoration           /interior-cleaning  301
+/interior-restoration/plastic-elements-restoration/          /interior-cleaning  301
+/interior-restoration/restoring-car-seats                    /interior-cleaning  301
+/interior-restoration/restoring-car-seats/                   /interior-cleaning  301
+/interior-restoration/steering-wheel-restoration             /interior-cleaning  301
+/interior-restoration/steering-wheel-restoration/            /interior-cleaning  301
+/interior-restoration/why-restore-interior-elements          /interior-cleaning  301
+/interior-restoration/why-restore-interior-elements/         /interior-cleaning  301
+/en/interior-restoration/plastic-elements-restoration        /en/interior-cleaning  301
+/en/interior-restoration/plastic-elements-restoration/       /en/interior-cleaning  301
+/en/interior-restoration/restoring-car-seats                 /en/interior-cleaning  301
+/en/interior-restoration/restoring-car-seats/                /en/interior-cleaning  301
+/en/interior-restoration/steering-wheel-restoration          /en/interior-cleaning  301
+/en/interior-restoration/steering-wheel-restoration/         /en/interior-cleaning  301
+/en/interior-restoration/why-restore-interior-elements       /en/interior-cleaning  301
+/en/interior-restoration/why-restore-interior-elements/      /en/interior-cleaning  301
+/ru/interior-restoration/plastic-elements-restoration        /ru/interior-cleaning  301
+/ru/interior-restoration/plastic-elements-restoration/       /ru/interior-cleaning  301
+/ru/interior-restoration/restoring-car-seats                 /ru/interior-cleaning  301
+/ru/interior-restoration/restoring-car-seats/                /ru/interior-cleaning  301
+/ru/interior-restoration/steering-wheel-restoration          /ru/interior-cleaning  301
+/ru/interior-restoration/steering-wheel-restoration/         /ru/interior-cleaning  301
+/ru/interior-restoration/why-restore-interior-elements       /ru/interior-cleaning  301
+/ru/interior-restoration/why-restore-interior-elements/      /ru/interior-cleaning  301
 
-# paintless-dent-repair
-/paintless-dent-repair/pdr-after-hail                    /blog/pdr-after-hail  301
-/paintless-dent-repair/pdr-after-hail/                   /blog/pdr-after-hail  301
-/paintless-dent-repair/pdr-guidelines-and-techniques     /blog/pdr-guidelines-and-techniques  301
-/paintless-dent-repair/pdr-guidelines-and-techniques/    /blog/pdr-guidelines-and-techniques  301
-/paintless-dent-repair/pdr-method                        /blog/pdr-method  301
-/paintless-dent-repair/pdr-method/                       /blog/pdr-method  301
-/en/paintless-dent-repair/pdr-after-hail                 /en/blog/pdr-after-hail  301
-/en/paintless-dent-repair/pdr-after-hail/                /en/blog/pdr-after-hail  301
-/en/paintless-dent-repair/pdr-guidelines-and-techniques  /en/blog/pdr-guidelines-and-techniques  301
-/en/paintless-dent-repair/pdr-guidelines-and-techniques/ /en/blog/pdr-guidelines-and-techniques  301
-/en/paintless-dent-repair/pdr-method                     /en/blog/pdr-method  301
-/en/paintless-dent-repair/pdr-method/                    /en/blog/pdr-method  301
-/ru/paintless-dent-repair/pdr-after-hail                 /ru/blog/pdr-after-hail  301
-/ru/paintless-dent-repair/pdr-after-hail/                /ru/blog/pdr-after-hail  301
-/ru/paintless-dent-repair/pdr-guidelines-and-techniques  /ru/blog/pdr-guidelines-and-techniques  301
-/ru/paintless-dent-repair/pdr-guidelines-and-techniques/ /ru/blog/pdr-guidelines-and-techniques  301
-/ru/paintless-dent-repair/pdr-method                     /ru/blog/pdr-method  301
-/ru/paintless-dent-repair/pdr-method/                    /ru/blog/pdr-method  301
+# paintless-dent-repair (discontinued — redirect directly to active service)
+/paintless-dent-repair/pdr-after-hail                    /polishing  301
+/paintless-dent-repair/pdr-after-hail/                   /polishing  301
+/paintless-dent-repair/pdr-guidelines-and-techniques     /polishing  301
+/paintless-dent-repair/pdr-guidelines-and-techniques/    /polishing  301
+/paintless-dent-repair/pdr-method                        /polishing  301
+/paintless-dent-repair/pdr-method/                       /polishing  301
+/en/paintless-dent-repair/pdr-after-hail                 /en/polishing  301
+/en/paintless-dent-repair/pdr-after-hail/                /en/polishing  301
+/en/paintless-dent-repair/pdr-guidelines-and-techniques  /en/polishing  301
+/en/paintless-dent-repair/pdr-guidelines-and-techniques/ /en/polishing  301
+/en/paintless-dent-repair/pdr-method                     /en/polishing  301
+/en/paintless-dent-repair/pdr-method/                    /en/polishing  301
+/ru/paintless-dent-repair/pdr-after-hail                 /ru/polishing  301
+/ru/paintless-dent-repair/pdr-after-hail/                /ru/polishing  301
+/ru/paintless-dent-repair/pdr-guidelines-and-techniques  /ru/polishing  301
+/ru/paintless-dent-repair/pdr-guidelines-and-techniques/ /ru/polishing  301
+/ru/paintless-dent-repair/pdr-method                     /ru/polishing  301
+/ru/paintless-dent-repair/pdr-method/                    /ru/polishing  301
 
 # polishing
 /polishing/car-body-polishing        /blog/car-body-polishing  301
@@ -311,6 +325,52 @@
 /ru/windshield-repair/replace-or-repair/                 /ru/blog/replace-or-repair  301
 /ru/windshield-repair/windshield-repair-benefits         /ru/blog/windshield-repair-benefits  301
 /ru/windshield-repair/windshield-repair-benefits/        /ru/blog/windshield-repair-benefits  301
+
+# ── Discontinued service blog articles (April 2026) ─────────────
+# PDR blog → polishing
+/blog/pdr-method                         /polishing             301
+/blog/pdr-method/                        /polishing             301
+/blog/pdr-after-hail                     /polishing             301
+/blog/pdr-after-hail/                    /polishing             301
+/blog/pdr-guidelines-and-techniques      /polishing             301
+/blog/pdr-guidelines-and-techniques/     /polishing             301
+/ru/blog/pdr-method                      /ru/polishing          301
+/ru/blog/pdr-method/                     /ru/polishing          301
+/ru/blog/pdr-after-hail                  /ru/polishing          301
+/ru/blog/pdr-after-hail/                 /ru/polishing          301
+/ru/blog/pdr-guidelines-and-techniques   /ru/polishing          301
+/ru/blog/pdr-guidelines-and-techniques/  /ru/polishing          301
+/en/blog/pdr-method                      /en/polishing          301
+/en/blog/pdr-method/                     /en/polishing          301
+/en/blog/pdr-after-hail                  /en/polishing          301
+/en/blog/pdr-after-hail/                 /en/polishing          301
+/en/blog/pdr-guidelines-and-techniques   /en/polishing          301
+/en/blog/pdr-guidelines-and-techniques/  /en/polishing          301
+# Interior restoration blog → interior-cleaning
+/blog/plastic-elements-restoration       /interior-cleaning     301
+/blog/plastic-elements-restoration/      /interior-cleaning     301
+/blog/restoring-car-seats                /interior-cleaning     301
+/blog/restoring-car-seats/               /interior-cleaning     301
+/blog/steering-wheel-restoration         /interior-cleaning     301
+/blog/steering-wheel-restoration/        /interior-cleaning     301
+/blog/why-restore-interior-elements      /interior-cleaning     301
+/blog/why-restore-interior-elements/     /interior-cleaning     301
+/ru/blog/plastic-elements-restoration    /ru/interior-cleaning  301
+/ru/blog/plastic-elements-restoration/   /ru/interior-cleaning  301
+/ru/blog/restoring-car-seats             /ru/interior-cleaning  301
+/ru/blog/restoring-car-seats/            /ru/interior-cleaning  301
+/ru/blog/steering-wheel-restoration      /ru/interior-cleaning  301
+/ru/blog/steering-wheel-restoration/     /ru/interior-cleaning  301
+/ru/blog/why-restore-interior-elements   /ru/interior-cleaning  301
+/ru/blog/why-restore-interior-elements/  /ru/interior-cleaning  301
+/en/blog/plastic-elements-restoration    /en/interior-cleaning  301
+/en/blog/plastic-elements-restoration/   /en/interior-cleaning  301
+/en/blog/restoring-car-seats             /en/interior-cleaning  301
+/en/blog/restoring-car-seats/            /en/interior-cleaning  301
+/en/blog/steering-wheel-restoration      /en/interior-cleaning  301
+/en/blog/steering-wheel-restoration/     /en/interior-cleaning  301
+/en/blog/why-restore-interior-elements   /en/interior-cleaning  301
+/en/blog/why-restore-interior-elements/  /en/interior-cleaning  301
 
 # ── PPF new page redirect ───────────────────────────────────────
 /ru/ppf-new  /ru/ppf-shield-wrapping  301

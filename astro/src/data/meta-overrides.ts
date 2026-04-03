@@ -44,14 +44,7 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
 
   // ── Short descriptions (<120 chars) — expand to 120-160 ───
 
-  'en/paintless-dent-repair': {
-    // 54 chars → 152 chars
-    description: 'Paintless dent removal (PDR) in Tbilisi. Fix dents without repainting — preserve original factory finish. Fast repair, affordable prices. Book at BESTAUTO.',
-  },
-  'ka/paintless-dent-repair': {
-    // 95 chars → 148 chars
-    description: 'მანქანის ძარას ცივად გასწორება (PDR) თბილისში შეღებვის გარეშე. ვინარჩუნებთ ორიგინალ ლაქს. სწრაფი შეკეთება, ხელმისაწვდომი ფასები. ჩაწერა — BESTAUTO.',
-  },
+
   'ka/polishing': {
     // 103 chars → 147 chars
     description: 'პროფესიონალური მანქანის პოლირება თბილისში. ნაკაწრების მოცილება, ლაქის აღდგენა, სარკისებრი ბზინვარება. ფასები 590 ლარიდან. ჩაწერა ახლავე — BESTAUTO.',
