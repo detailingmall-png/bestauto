@@ -1,0 +1,75 @@
+---
+/**
+ * SEO Head component — generates meta tags, hreflang, structured data.
+ * Replaces HTML-string generation from lib/seo.ts with typed Astro component.
+ */
+
+import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema } from '../../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'ka' | 'ru' | 'en';
+  slug: string;
+  /** Base slug without language prefix (e.g. "ppf-shield-wrapping") */
+  baseSlug: string;
+  /** Include WebSite schema (homepage only) */
+  isHomepage?: boolean;
+  /** Include Service schema (service pages) */
+  isService?: boolean;
+  /** Include Review schema */
+  includeReviews?: boolean;
+  /** Open Graph image URL */
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  lang,
+  slug,
+  baseSlug,
+  isHomepage = false,
+  isService = false,
+  includeReviews = false,
+  ogImage,
+} = Astro.props;
+
+const BASE_URL = 'https://bestauto.ge';
+const canonicalUrl = lang === 'ka'
+  ? (baseSlug ? `${BASE_URL}/${baseSlug}/` : `${BASE_URL}/`)
+  : (baseSlug ? `${BASE_URL}/${lang}/${baseSlug}/` : `${BASE_URL}/${lang}/`);
+
+const hreflangHtml = generateHreflangTags(baseSlug, lang);
+const breadcrumbHtml = generateBreadcrumbSchema(baseSlug, lang, title);
+const serviceHtml = isService ? generateServiceSchema(baseSlug, lang) : '';
+const reviewHtml = includeReviews ? generateReviewSchema(lang) : '';
+const websiteHtml = isHomepage ? generateWebSiteSchema() : '';
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="icon" href="/images/tild3835-3238-4533-b837-373331316562__favicon_1.ico" type="image/x-icon" />
+
+<!-- Preload critical font -->
+<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin />
+
+<!-- Open Graph -->
+<meta property="og:type" content={isHomepage ? 'website' : 'article'} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content="BESTAUTO" />
+{ogImage && <meta property="og:image" content={ogImage} />}
+<meta property="og:locale" content={lang === 'ka' ? 'ka_GE' : lang === 'ru' ? 'ru_RU' : 'en_US'} />
+
+<!-- Hreflang & Canonical -->
+<Fragment set:html={hreflangHtml} />
+
+<!-- Structured Data -->
+<Fragment set:html={breadcrumbHtml} />
+<Fragment set:html={serviceHtml} />
+<Fragment set:html={reviewHtml} />
+<Fragment set:html={websiteHtml} />

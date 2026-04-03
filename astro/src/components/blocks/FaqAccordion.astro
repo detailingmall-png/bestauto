@@ -1,0 +1,81 @@
+---
+/**
+ * FaqAccordion — minimal FAQ with native <details>/<summary>.
+ * No cards, no chevrons, just clean horizontal lines.
+ * Matches original Tilda design.
+ */
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  sectionTitle?: string;
+  items: FaqItem[];
+  withSchema?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  sectionTitle,
+  items,
+  withSchema = true,
+  ctaText,
+  ctaHref = '#contacts',
+} = Astro.props;
+
+const faqSchema = withSchema
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: items.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    })
+  : null;
+---
+
+<section class="section-spacing" id="faq">
+  <div class="container-ba">
+    {sectionTitle && (
+      <h2 class="text-5xl lg:text-7xl font-bold text-white-primary text-center text-balance mb-3 lg:mb-4">
+        {sectionTitle}
+      </h2>
+    )}
+
+    <div class="max-w-3xl mx-auto">
+      {items.map((item) => (
+        <details class="group" data-reveal>
+          <summary class="text-lg lg:text-xl font-medium text-white-primary py-3 border-b border-gray-800 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            {item.question}
+          </summary>
+          <div class="py-2 text-gray-400 text-md lg:text-lg leading-relaxed">
+            {item.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    {ctaText && (
+      <div class="text-center mt-10 lg:mt-16">
+        <a
+          href={ctaHref}
+          class="inline-flex items-center justify-center bg-gold-accent text-black-primary font-semibold rounded-full px-10 py-4 text-lg hover:bg-gold-hover transition-colors duration-300 no-underline"
+        >
+          {ctaText}
+        </a>
+      </div>
+    )}
+
+    {faqSchema && (
+      <script type="application/ld+json" set:html={faqSchema} />
+    )}
+  </div>
+</section>

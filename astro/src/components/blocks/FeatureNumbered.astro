@@ -1,0 +1,49 @@
+---
+/**
+ * FeatureNumbered — t508-style checklist with gold checkmark circles.
+ * Vertical single-column list: gold checkmark on the left, title + description on the right.
+ */
+
+interface BenefitItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  sectionTitle: string;
+  items: BenefitItem[];
+}
+
+const { sectionTitle, items } = Astro.props;
+---
+
+<section class="section-spacing" id="about">
+  <div class="container-ba">
+    <h2 class="text-5xl lg:text-7xl font-bold text-white-primary text-center text-balance mb-3 lg:mb-4">
+      {sectionTitle}
+    </h2>
+
+    <div class="max-w-3xl mx-auto">
+      {items.map((item, index) => (
+        <div
+          data-reveal={String(Math.min(index, 5))}
+          class="flex items-start gap-3 py-2"
+        >
+          <div class="w-6 h-6 rounded-full bg-gold-accent flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-black-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl lg:text-3xl font-semibold text-white-primary mb-0.5">
+              {item.title}
+            </h3>
+            <p class="text-base lg:text-md text-gray-400 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
