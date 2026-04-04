@@ -62,8 +62,8 @@ export const WHATSAPP_BLOCK_EN = makePathsAbsolute(
 type TranslationMap = ReadonlyArray<readonly [string, string]>;
 
 const EN_TRANSLATIONS: TranslationMap = [
-  ['Выберите ближайшую студию для <span class="gold">бесплатной консультации</span>', 'Choose the nearest studio for a <span class="gold">free consultation</span>'],
-  ['Выберите ближайшую студию для <span class=\\"gold\\">бесплатной консультации</span>', 'Choose the nearest studio for a <span class=\\"gold\\">free consultation</span>'],
+  ['Выберите ближайшую студию<br>для <span class="gold">бесплатной консультации</span>', 'Choose the nearest studio<br>for a <span class="gold">free consultation</span>'],
+  ['Выберите ближайшую студию<br>для <span class=\\"gold\\">бесплатной консультации</span>', 'Choose the nearest studio<br>for a <span class=\\"gold\\">free consultation</span>'],
   ['BESTAUTO Гурамишвили', 'BESTAUTO Guramishvili'],
   ['BESTAUTO Сабуртало', 'BESTAUTO Saburtalo'],
   ['Тбилиси, ул. Гурамишвили 78', 'Tbilisi, Guramishvili Ave. 78'],
@@ -97,8 +97,8 @@ const EN_TRANSLATIONS: TranslationMap = [
 ];
 
 const KA_TRANSLATIONS: TranslationMap = [
-  ['Выберите ближайшую студию для <span class="gold">бесплатной консультации</span>', 'აირჩიეთ უახლოესი სტუდია <span class="gold">უფასო კონსულტაციისთვის</span>'],
-  ['Выберите ближайшую студию для <span class=\\"gold\\">бесплатной консультации</span>', 'აირჩიეთ უახლოესი სტუდია <span class=\\"gold\\">უფასო კონსულტაციისთვის</span>'],
+  ['Выберите ближайшую студию<br>для <span class="gold">бесплатной консультации</span>', 'აირჩიეთ უახლოესი სტუდია<br><span class="gold">უფასო კონსულტაციისთვის</span>'],
+  ['Выберите ближайшую студию<br>для <span class=\\"gold\\">бесплатной консультации</span>', 'აირჩიეთ უახლოესი სტუდია<br><span class=\\"gold\\">უფასო კონსულტაციისთვის</span>'],
   ['BESTAUTO Гурамишвили', 'BESTAUTO გურამიშვილი'],
   ['BESTAUTO Сабуртало', 'BESTAUTO საბურთალო'],
   ['Тбилиси, ул. Гурамишвили 78', 'თბილისი, გურამიშვილის გამზ. 78'],
