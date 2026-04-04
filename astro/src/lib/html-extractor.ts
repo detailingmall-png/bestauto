@@ -859,8 +859,10 @@ export function sanitizeMetaTags(head: string): string {
     }
   );
   // Strip HTML tags inside meta description content="..."
+  // Use greedy match with " /> anchor to avoid stopping at inner quotes
+  // from malformed Tilda tags like <s style="opacity:0.5"> inside content.
   return sanitized.replace(
-    /(<meta\s+name="description"\s+content=")([\s\S]*?)("\s*\/?>)/i,
+    /(<meta\s+name="description"\s+content=")([\s\S]*?)("\s*\/>)/i,
     (_match, open, content, close) => {
       const clean = content.replace(/<[^>]+>/g, '');
       return `${open}${clean}${close}`;
