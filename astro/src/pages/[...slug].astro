@@ -148,7 +148,11 @@ if (baseSlug === 'windshield-repair') {
       'Беспокрасочное удаление вмятин',
       'Тонировка стёкол'
     );
-    // Update prices section title to include grinding
+    // Update section titles to reflect full service range
+    injectedHtml = injectedHtml.replaceAll(
+      'Преимущества ремонта сколов и трещин',
+      'Преимущества реставрации автостекол'
+    );
     injectedHtml = injectedHtml.replaceAll(
       'Цены на ремонт сколов и трещин автостекол',
       'Цены на ремонт сколов и трещин, шлифовку автостекол'
@@ -176,7 +180,11 @@ if (baseSlug === 'windshield-repair') {
       'უფერო ნაკბენის მოცილება',
       'მინების ტონირება'
     );
-    // Update prices section title to include grinding
+    // Update section titles to reflect full service range
+    injectedHtml = injectedHtml.replaceAll(
+      'ჩიპებისა და ბზარების შეკეთების უპირატესობები',
+      'ავტომინების რესტავრაციის უპირატესობები'
+    );
     injectedHtml = injectedHtml.replaceAll(
       'საქარე მინის ჩიპის და ბზარების შეკეთება',
       'ავტომინის შეკეთება, შლიფოვკა და პოლირება'
@@ -205,10 +213,14 @@ if (baseSlug === 'windshield-repair') {
       'href="/en/ppf-shield-wrapping"',
       'href="/en/auto-glass-tinting"'
     );
-    // Update prices section title to include grinding
+    // Update section titles to reflect full service range
     injectedHtml = injectedHtml.replaceAll(
       'Prices for windshield chip and crack repair',
       'Prices for chip & crack repair, glass grinding'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'Advantages of chips and cracks repair',
+      'Advantages of auto glass restoration'
     );
     // Fix 15→30 cm in FAQ
     injectedHtml = injectedHtml.replaceAll('cracks up to 15 cm', 'cracks up to 30 cm');
