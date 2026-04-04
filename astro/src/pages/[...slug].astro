@@ -370,6 +370,10 @@ if (lang === 'ru') {
   // Remove "Error get alias" broken Tilda blocks
   mainContent = removeRecordBlock(mainContent, 'rec721622395');
   mainContent = removeRecordBlock(mainContent, 'rec589470557');
+  // Remove old "Контакты" t225 heading blocks from service pages (replaced by ba-contacts)
+  for (const headingId of ['rec713429688', 'rec713429088', 'rec796869046', 'rec713430044', 'rec713429827']) {
+    mainContent = removeRecordBlock(mainContent, headingId);
+  }
   if (!mainContent.includes('rec2091246563')) {
     // Insert before footer (rec603526076), not at the end
     const FOOTER_ID = 'rec603526076';
