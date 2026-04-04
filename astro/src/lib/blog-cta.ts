@@ -87,6 +87,7 @@ function getLangPrefix(lang: string): string {
 // ---------------------------------------------------------------------------
 
 const BLOCK_STYLE = `<style>
+.ba-blog-content{padding-bottom:0 !important}
 .ba-blog-cta__title{font-size:30px;color:#e4c97e !important;font-weight:700 !important;margin:0 0 16px !important;font-family:var(--ba-font-family);line-height:1.3}
 .ba-blog-cta__descr{font-size:18px;line-height:1.5;color:rgba(255,255,255,0.7) !important;margin:0 0 32px;font-family:var(--ba-font-family)}
 .ba-blog-cta__btn{display:inline-block;font-size:16px;background:#e4c97e;color:#000 !important;font-weight:600;padding:14px 40px;border-radius:20px;text-decoration:none !important;font-family:var(--ba-font-family);transition:background 0.2s ease;box-shadow:0px 15px 30px -10px rgba(0,11,48,0.2)}
