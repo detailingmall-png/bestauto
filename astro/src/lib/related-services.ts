@@ -85,7 +85,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/interior-cleaning-for-auto':    'interior-cleaning',
   'blog/engine-room-cleaning':          'interior-cleaning',
   // Soundproofing
-  'blog/soundrpoofing-process':    'car-soundproofing',
+  'blog/soundproofing-process':    'car-soundproofing',
   'blog/noisemakers-and-wayouts':  'car-soundproofing',
   'blog/why-soundproof-car':       'car-soundproofing',
   'blog/technology-and-process':   'car-soundproofing',

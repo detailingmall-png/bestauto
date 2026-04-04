@@ -908,6 +908,36 @@ export function applyMetaOverrides(head: string, lang: string, slug: string): st
   return result;
 }
 
+// ---------------------------------------------------------------------------
+// Strip <style> blocks embedded inside <a> button elements.
+// Tilda exports scoped CSS rules inside anchor tags; browsers render the
+// <style> content as visible text because <style> is invalid inside <a>.
+// ---------------------------------------------------------------------------
+
+function stripButtonInlineStyles(html: string): string {
+  return html.replace(/<style>#rec\d+\s+\.t-btnflex[^<]*<\/style>/g, '');
+}
+
+// ---------------------------------------------------------------------------
+// Strip CMS metadata blocks from newer blog articles (page129xxx series).
+// Removes visible "Сео-заголовок:", "URL:", "Тип:" paragraphs and
+// inline-styled duplicate <h1> elements from editorial templates.
+// ---------------------------------------------------------------------------
+
+export function stripBlogCmsMetadata(content: string): string {
+  // Remove inline-styled duplicate H1 (CMS template artifact)
+  let result = content.replace(
+    /<h1 style="font-size:\s*36px;\s*margin-bottom:\s*20px;\s*color:\s*#1a1a1a;">[^<]*<\/h1>/g,
+    ''
+  );
+  // Remove visible SEO metadata paragraphs
+  result = result.replace(
+    /<p[^>]*><strong>(?:Сео-заголовок|URL|Тип):<\/strong>[^<]*<\/p>/g,
+    ''
+  );
+  return result;
+}
+
 /**
  * Extract structured sections from a full Tilda HTML page.
  */
@@ -932,7 +962,7 @@ export function extractSections(html: string, lang?: string, slug?: string): Pag
     : 0;
   const bodyEnd = html.lastIndexOf('</body>');
   const rawBody = bodyEnd > bodyStart ? html.slice(bodyStart, bodyEnd) : html;
-  const body = rewriteImagesToWebp(expandCssBackgroundPlaceholders(makePathsAbsolute(rawBody)));
+  const body = stripButtonInlineStyles(rewriteImagesToWebp(expandCssBackgroundPlaceholders(makePathsAbsolute(rawBody))));
 
   // Header block: everything inside <!--header-->...<!--/header-->
   const headerOpenTag = '<!--header-->';

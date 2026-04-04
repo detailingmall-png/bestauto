@@ -91,22 +91,29 @@
 # car-soundproofing
 /car-soundproofing/noisemakers-and-wayouts      /blog/noisemakers-and-wayouts  301
 /car-soundproofing/noisemakers-and-wayouts/     /blog/noisemakers-and-wayouts  301
-/car-soundproofing/soundrpoofing-process        /blog/soundrpoofing-process  301
-/car-soundproofing/soundrpoofing-process/       /blog/soundrpoofing-process  301
+/car-soundproofing/soundrpoofing-process        /blog/soundproofing-process  301
+/car-soundproofing/soundrpoofing-process/       /blog/soundproofing-process  301
 /car-soundproofing/why-soundproof-car           /blog/why-soundproof-car  301
 /car-soundproofing/why-soundproof-car/          /blog/why-soundproof-car  301
 /en/car-soundproofing/noisemakers-and-wayouts   /en/blog/noisemakers-and-wayouts  301
 /en/car-soundproofing/noisemakers-and-wayouts/  /en/blog/noisemakers-and-wayouts  301
-/en/car-soundproofing/soundrpoofing-process     /en/blog/soundrpoofing-process  301
-/en/car-soundproofing/soundrpoofing-process/    /en/blog/soundrpoofing-process  301
+/en/car-soundproofing/soundrpoofing-process     /en/blog/soundproofing-process  301
+/en/car-soundproofing/soundrpoofing-process/    /en/blog/soundproofing-process  301
 /en/car-soundproofing/why-soundproof-car        /en/blog/why-soundproof-car  301
 /en/car-soundproofing/why-soundproof-car/       /en/blog/why-soundproof-car  301
 /ru/car-soundproofing/noisemakers-and-wayouts   /ru/blog/noisemakers-and-wayouts  301
 /ru/car-soundproofing/noisemakers-and-wayouts/  /ru/blog/noisemakers-and-wayouts  301
-/ru/car-soundproofing/soundrpoofing-process     /ru/blog/soundrpoofing-process  301
-/ru/car-soundproofing/soundrpoofing-process/    /ru/blog/soundrpoofing-process  301
+/ru/car-soundproofing/soundrpoofing-process     /ru/blog/soundproofing-process  301
+/ru/car-soundproofing/soundrpoofing-process/    /ru/blog/soundproofing-process  301
 /ru/car-soundproofing/why-soundproof-car        /ru/blog/why-soundproof-car  301
 /ru/car-soundproofing/why-soundproof-car/       /ru/blog/why-soundproof-car  301
+# Old typo slug redirects
+/blog/soundrpoofing-process                     /blog/soundproofing-process  301
+/blog/soundrpoofing-process/                    /blog/soundproofing-process  301
+/ru/blog/soundrpoofing-process                  /ru/blog/soundproofing-process  301
+/ru/blog/soundrpoofing-process/                 /ru/blog/soundproofing-process  301
+/en/blog/soundrpoofing-process                  /en/blog/soundproofing-process  301
+/en/blog/soundrpoofing-process/                 /en/blog/soundproofing-process  301
 
 # ceramiccoating
 /ceramiccoating/ceramic-coating-for-car      /blog/ceramic-coating-for-car  301
