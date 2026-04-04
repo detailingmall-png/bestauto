@@ -36,7 +36,7 @@ const GENERIC_SERVICES: readonly string[] = [
 // 2. Blog article -> parent service mapping (51 articles)
 // ---------------------------------------------------------------------------
 
-const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
+export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   // Polishing
   'blog/polishing-before-after':       'polishing',
   'blog/polishing-cost-tbilisi':       'polishing',

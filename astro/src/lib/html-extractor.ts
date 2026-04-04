@@ -565,6 +565,127 @@ export function removeBlockByRecordType(content: string, recordType: string): st
   return result;
 }
 
+// ---------------------------------------------------------------------------
+// Blog article cleanup: strip broken CTA placeholder & convert inline FAQ
+// ---------------------------------------------------------------------------
+
+/**
+ * Strip the broken CTA placeholder from blog articles.
+ * Removes everything from `<h2>CTA</h2>` to the next `<hr` tag (inclusive),
+ * or to `</div>` if no `<hr` is found.
+ */
+export function stripBlogCtaPlaceholder(content: string): string {
+  const marker = '<h2>CTA</h2>';
+  const markerIdx = content.indexOf(marker);
+  if (markerIdx < 0) return content;
+
+  // Find the end boundary: prefer <hr, fallback to </div>
+  const afterMarker = content.slice(markerIdx);
+  const hrIdx = afterMarker.indexOf('<hr');
+  let endOffset: number;
+
+  if (hrIdx >= 0) {
+    // Include the full <hr ...> tag
+    const hrEnd = afterMarker.indexOf('>', hrIdx);
+    endOffset = hrEnd >= 0 ? hrEnd + 1 : hrIdx + 3;
+  } else {
+    // No <hr> — remove up to (but not including) the next </div>
+    const divIdx = afterMarker.indexOf('</div>');
+    endOffset = divIdx >= 0 ? divIdx : afterMarker.length;
+  }
+
+  return content.slice(0, markerIdx) + content.slice(markerIdx + endOffset);
+}
+
+/**
+ * Convert inline FAQ in blog articles to a native <details>/<summary> accordion.
+ *
+ * Matches any <h2> or <h3> heading containing "FAQ" (case-insensitive),
+ * then parses subsequent Q&A pairs in three language patterns:
+ * - RU: `<strong>Вопрос [N]: ...` / `Ответ: ...`
+ * - EN: `<strong>Question [N]: ...` / `Answer: ...`
+ * - KA: `<strong>კითხვა [N]: ...` / `პასუხი: ...`
+ */
+export function convertBlogInlineFaq(content: string): string {
+  // Find any h2/h3 heading containing "FAQ" (case-insensitive)
+  const faqHeadingRegex = /<h[23]>[^<]*?(?:FAQ|faq)[^<]*?<\/h[23]>/;
+  const headingMatch = faqHeadingRegex.exec(content);
+  if (!headingMatch) return content;
+
+  const faqIdx = headingMatch.index;
+  const faqMarker = headingMatch[0];
+
+  // Find the CTA marker or end of the text block as the FAQ section boundary
+  const afterFaq = content.slice(faqIdx + faqMarker.length);
+  const ctaMarkerIdx = afterFaq.indexOf('<h2>CTA</h2>');
+
+  // Boundary: CTA marker, or next heading (h2/h3), or </div>
+  let sectionEndOffset: number;
+  if (ctaMarkerIdx >= 0) {
+    sectionEndOffset = ctaMarkerIdx;
+  } else {
+    // Find the next heading or </div> as boundary
+    const nextHeadingMatch = afterFaq.match(/<h[23]>/);
+    const nextDivEnd = afterFaq.indexOf('</div>');
+    if (nextHeadingMatch && nextHeadingMatch.index !== undefined && (nextDivEnd < 0 || nextHeadingMatch.index < nextDivEnd)) {
+      sectionEndOffset = nextHeadingMatch.index;
+    } else {
+      sectionEndOffset = nextDivEnd >= 0 ? nextDivEnd : afterFaq.length;
+    }
+  }
+
+  const faqSection = afterFaq.slice(0, sectionEndOffset);
+
+  // Parse Q&A pairs using regex
+  const qaPairRegex = /<p[^>]*>\s*<strong>\s*(?:Вопрос\s*\d*|Question\s*\d*|კითხვა\s*\d*)\s*:?\s*(.*?)<\/strong>\s*<\/p>\s*<p[^>]*>\s*(?:Ответ|Answer|პასუხი)\s*:\s*([\s\S]*?)<\/p>/g;
+
+  const pairs: Array<{ question: string; answer: string }> = [];
+  let match: RegExpExecArray | null;
+  while ((match = qaPairRegex.exec(faqSection)) !== null) {
+    const question = match[1].trim();
+    const answer = match[2].trim();
+    if (question && answer) {
+      pairs.push({ question, answer });
+    }
+  }
+
+  if (pairs.length === 0) return content;
+
+  // Build accordion HTML (reuse ba-faq__* classes from faq-section.ts)
+  const accordionItems = pairs.map(({ question, answer }) =>
+    `<details class="ba-faq__item" style="border-bottom:1px solid var(--ba-color-border);">
+        <summary class="ba-faq__question" style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;list-style:none;font-family:var(--ba-font-family);font-weight:var(--ba-font-weight-semibold);color:var(--ba-color-text);line-height:1.4;gap:16px;">
+          <span>${question}</span>
+          <svg class="ba-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;transition:transform 0.25s ease;"><path d="M5 7.5L10 12.5L15 7.5" style="stroke:var(--ba-color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="ba-faq__answer" style="padding:0 0 20px;font-family:var(--ba-font-family);color:var(--ba-color-text-muted);line-height:1.6;">${answer}</div>
+      </details>`
+  ).join('\n      ');
+
+  const accordionHtml = `<div class="ba-blog-faq" style="margin:32px 0;">
+      ${accordionItems}
+      <style>
+        .ba-blog-faq .ba-faq__question { font-size: 18px; }
+        .ba-blog-faq .ba-faq__answer { font-size: 16px; }
+        .ba-blog-faq .ba-faq__item summary::-webkit-details-marker { display: none; }
+        .ba-blog-faq .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
+        .ba-blog-faq .ba-faq__item summary:hover { color: var(--ba-color-accent) !important; }
+        @media screen and (max-width: 960px) {
+          .ba-blog-faq .ba-faq__question { font-size: 17px; }
+          .ba-blog-faq .ba-faq__answer { font-size: 15px; }
+        }
+        @media screen and (max-width: 640px) {
+          .ba-blog-faq .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
+          .ba-blog-faq .ba-faq__answer { font-size: 15px; }
+        }
+      </style>
+    </div>`;
+
+  // Replace the entire FAQ section (heading + Q&A pairs) with accordion
+  const faqEndIdx = faqIdx + faqMarker.length + sectionEndOffset;
+  return content.slice(0, faqIdx) + accordionHtml + content.slice(faqEndIdx);
+}
+
 /**
  * Remove JS-based SEO scripts from Tilda HTML (hreflang + dynamic Service schema).
  * These are replaced by static equivalents generated at build time in seo.ts.

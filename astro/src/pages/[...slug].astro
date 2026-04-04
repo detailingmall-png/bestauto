@@ -7,8 +7,9 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, convertBlogInlineFaq } from '../lib/html-extractor';
 import { generateRelatedServicesHtml } from '../lib/related-services';
+import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
@@ -345,6 +346,12 @@ if (isBlogPage) {
   );
 }
 
+// Blog articles: strip broken CTA placeholder and convert inline FAQ to accordion
+if (isBlogPage && baseSlug !== 'blog') {
+  mainContent = stripBlogCtaPlaceholder(mainContent);
+  mainContent = convertBlogInlineFaq(mainContent);
+}
+
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
@@ -496,6 +503,13 @@ const FOOTER_IDS: Readonly<Record<string, readonly string[]>> = {
   ka: ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076'],
   en: ['rec607472568', 'rec607473240'],
 };
+
+// Blog articles: insert contextual service promo CTA block (before cross-sell)
+const blogCtaHtml = generateBlogCtaHtml(lang, baseSlug);
+if (blogCtaHtml) {
+  mainContent = insertBeforeFooter(mainContent, blogCtaHtml, FOOTER_IDS[lang] ?? []);
+}
+
 const relatedHtml = generateRelatedServicesHtml(lang, baseSlug);
 if (relatedHtml) {
   mainContent = insertBeforeFooter(mainContent, relatedHtml, FOOTER_IDS[lang] ?? []);
