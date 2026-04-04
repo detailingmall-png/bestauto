@@ -1,0 +1,57 @@
+---
+/**
+ * KA location pages: /locations/guramishvili/, /locations/saburtalo/
+ */
+import TildaPageLayout from '../../layouts/TildaPageLayout.astro';
+import { LOCATIONS, getLocation } from '../../data/location-data';
+import { generateLocationContent, buildLocationHeadContent } from '../../lib/location-page';
+import { getNavBlock, getFooterBlock } from '../../lib/shared-blocks';
+import {
+  generateHreflangTags,
+  generateBreadcrumbSchema,
+  generateLocationSchema,
+  generateLocationFaqSchema,
+  generateOrganizationSchema,
+} from '../../lib/seo';
+import { META_OVERRIDES } from '../../data/meta-overrides';
+
+export function getStaticPaths() {
+  return LOCATIONS.map((loc) => ({
+    params: { location: loc.slug },
+    props: { locationSlug: loc.slug },
+  }));
+}
+
+const { locationSlug } = Astro.props;
+const lang = 'ka';
+const location = getLocation(locationSlug)!;
+const otherLocation = LOCATIONS.find((l) => l.slug !== locationSlug)!;
+const baseSlug = `locations/${locationSlug}`;
+
+const meta = META_OVERRIDES[`${lang}/${baseSlug}`];
+const pageTitle = meta?.title ?? `${location.name[lang]} — BESTAUTO`;
+
+const seoHead = [
+  generateHreflangTags(baseSlug, lang),
+  generateBreadcrumbSchema(baseSlug, lang, pageTitle),
+  generateLocationSchema(locationSlug, lang),
+  generateLocationFaqSchema(locationSlug, lang),
+  generateOrganizationSchema(),
+].join('');
+
+const nav = getNavBlock(lang);
+const content = generateLocationContent(location, otherLocation, lang);
+const footer = getFooterBlock(lang);
+const mainContent = nav + content + footer;
+
+const headContent = buildLocationHeadContent(lang, baseSlug, pageTitle);
+---
+
+<TildaPageLayout
+  headContent={headContent}
+  seoHead={seoHead}
+  headerBlock=""
+  mainContent={mainContent}
+  bodyClass="t-body"
+  lang={lang}
+/>

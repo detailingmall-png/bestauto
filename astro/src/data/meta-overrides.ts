@@ -57,11 +57,6 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     // 101 chars → 144 chars
     description: 'ავტომობილის სალონის პროფესიონალური ქიმწმენდა თბილისში. ლაქების, სუნის და ბაქტერიების მოცილება. ტყავის დამუშავება. ფასები 400 ლარიდან — BESTAUTO.',
   },
-  'ka/carwash': {
-    // 103 chars → 148 chars
-    description: 'პრემიუმ ხელით რეცხვა თბილისში. 2-3 ფაზიანი დეტეილინგ რეცხვა, სალონის დამუშავება, დამცავი საფარის გადატანა. ორი ფილიალი. ჩაწერა ონლაინ — BESTAUTO.',
-  },
-
   // ── Windshield Repair (expanded: + polishing & grinding) ────
   'ru/windshield-repair': {
     title: 'Ремонт сколов и трещин автостекол, полировка и шлифовка в Тбилиси | BESTAUTO',
@@ -154,5 +149,31 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
   'en/carwash': {
     title: 'Premium Hand Car Wash in Tbilisi — from 40 GEL | BESTAUTO',
     description: 'Premium hand car wash in Tbilisi. 2-3 phase detailing wash, interior treatment, protective coating. From 40 GEL. Two studios — BESTAUTO.',
+  },
+
+  // ── Location Pages ─────────────────────────────────────────
+  'ka/locations/guramishvili': {
+    title: 'BESTAUTO გურამიშვილი — დეტეილინგ სტუდია თბილისში | მისამართი, საათები',
+    description: 'BESTAUTO გურამიშვილის სტუდია: გურამიშვილის გამზ. 78, გლდანი. PPF, კერამიკა, პოლირება, ტონირება. ორშ–შაბ 10:00–20:00. უფასო პარკინგი — ჩაეწერეთ ახლავე.',
+  },
+  'ru/locations/guramishvili': {
+    title: 'BESTAUTO Гурамишвили — Детейлинг студия в Тбилиси | Адрес, часы работы',
+    description: 'Студия BESTAUTO на Гурамишвили: пр. Гурамишвили 78, Глдани. PPF, керамика, полировка, тонировка. Пн–Сб 10:00–20:00. Бесплатная парковка. Запись онлайн!',
+  },
+  'en/locations/guramishvili': {
+    title: 'BESTAUTO Guramishvili — Detailing Studio in Tbilisi | Address & Hours',
+    description: 'BESTAUTO Guramishvili studio: Guramishvili Ave. 78, Gldani. PPF, ceramic, polishing, tinting. Mon–Sat 10:00–20:00. Free parking. Book online!',
+  },
+  'ka/locations/saburtalo': {
+    title: 'BESTAUTO საბურთალო — დეტეილინგ სტუდია თბილისში | მისამართი, საათები',
+    description: 'BESTAUTO საბურთალოს სტუდია: ანა პოლიტკოვსკაიას ქ. 51. PPF, კერამიკა, პოლირება, ტონირება. ორშ–შაბ 10:00–20:00. უფასო პარკინგი — ჩაეწერეთ ახლავე.',
+  },
+  'ru/locations/saburtalo': {
+    title: 'BESTAUTO Сабуртало — Детейлинг студия в Тбилиси | Адрес, часы работы',
+    description: 'Студия BESTAUTO на Сабуртало: ул. Анна Политковская 51. PPF, керамика, полировка, тонировка. Пн–Сб 10:00–20:00. Бесплатная парковка. Запись онлайн!',
+  },
+  'en/locations/saburtalo': {
+    title: 'BESTAUTO Saburtalo — Detailing Studio in Tbilisi | Address & Hours',
+    description: 'BESTAUTO Saburtalo studio: Anna Politkovskaya St. 51. PPF, ceramic, polishing, tinting. Mon–Sat 10:00–20:00. Free parking. Book online!',
   },
 };

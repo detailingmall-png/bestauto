@@ -6,6 +6,7 @@
 import pageMap from './page-map.json';
 import reviewsData from '../data/reviews.json';
 import { SERVICE_FAQS } from '../data/service-faqs';
+import { LOCATIONS } from '../data/location-data';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -25,6 +26,10 @@ const slugLangs: ReadonlyMap<string, LangSet> = (() => {
     } else {
       map.set(page.slug, new Set([page.lang]));
     }
+  }
+  // Location pages (native Astro, not in page-map.json)
+  for (const loc of LOCATIONS) {
+    map.set(`locations/${loc.slug}`, new Set(['ka', 'ru', 'en']));
   }
   return map;
 })();
@@ -58,6 +63,12 @@ const BLOG_LABEL: Readonly<Record<string, string>> = {
   ka: 'ბლოგი',
   ru: 'Блог',
   en: 'Blog',
+};
+
+const LOCATIONS_LABEL: Readonly<Record<string, string>> = {
+  ka: 'სტუდიები',
+  ru: 'Студии',
+  en: 'Studios',
 };
 
 // ──────────────────────────────────────────────
@@ -115,6 +126,12 @@ export function generateBreadcrumbSchema(baseSlug: string, lang: string, pageTit
     if (parts.length > 1) {
       items.push({ name: shortTitle, url: buildUrl(lang, baseSlug) });
     }
+  } else if (parts[0] === 'locations' && parts.length > 1) {
+    // Location: Home → Studios → Location Name
+    items.push({ name: LOCATIONS_LABEL[lang] ?? 'Studios', url: buildUrl(lang, '') });
+    const loc = LOCATIONS.find((l) => l.slug === parts[1]);
+    const locName = loc?.name[lang] ?? shortTitle;
+    items.push({ name: locName, url: buildUrl(lang, baseSlug) });
   } else if (parts.length === 1) {
     // Top-level service or page: Home → Page (use SERVICES name if available)
     const serviceName = SERVICES[baseSlug]?.name[lang];
@@ -381,6 +398,68 @@ export function generateOrganizationSchema(): string {
         availableLanguage: ['Georgian', 'Russian', 'English'],
       },
     ],
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 8. Location (LocalBusiness) Schema
+// ──────────────────────────────────────────────
+
+export function generateLocationSchema(locationSlug: string, lang: string): string {
+  const loc = LOCATIONS.find((l) => l.slug === locationSlug);
+  if (!loc) return '';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'AutomotiveBusiness',
+    '@id': `${BASE_URL}/locations/${loc.slug}/#business`,
+    name: loc.name[lang] ?? loc.name.en,
+    image: `${BASE_URL}/img/logo.png`,
+    url: buildUrl(lang, `locations/${loc.slug}`),
+    telephone: loc.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: loc.address.en.replace(', Tbilisi', ''),
+      addressLocality: 'Tbilisi',
+      addressCountry: 'GE',
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '10:00',
+      closes: '20:00',
+    },
+    parentOrganization: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'BESTAUTO',
+    },
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 9. Location FAQ Schema
+// ──────────────────────────────────────────────
+
+export function generateLocationFaqSchema(locationSlug: string, lang: string): string {
+  const loc = LOCATIONS.find((l) => l.slug === locationSlug);
+  if (!loc || loc.faqs.length === 0) return '';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: loc.faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question[lang] ?? item.question.en,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer[lang] ?? item.answer.en,
+      },
+    })),
   };
 
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;

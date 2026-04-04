@@ -714,10 +714,46 @@ export function removeClientSeoScripts(content: string): string {
 }
 
 /**
- * Add alt="BESTAUTO" to content images missing alt text.
+ * Language-specific fallback alt text for images.
+ * Service pages get "{ServiceName} — BESTAUTO", homepage gets localized tagline.
+ */
+const ALT_SERVICE_NAMES: Readonly<Record<string, Record<string, string>>> = {
+  'polishing': { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' },
+  'ceramiccoating': { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
+  'ppf-shield-wrapping': { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
+  'vinyl-wrapping': { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета защитной плёнкой', en: 'Color Change Wrap' },
+  'interior-cleaning': { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' },
+  'carwash': { ka: 'მანქანის რეცხვა', ru: 'Детейлинг мойка', en: 'Premium Car Wash' },
+  'auto-glass-tinting': { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' },
+  'windshield-repair': { ka: 'ავტომინების შეკეთება', ru: 'Ремонт автостекол', en: 'Windshield Repair' },
+  'car-soundproofing': { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' },
+  'computer-diagnostics': { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' },
+};
+
+const ALT_HOMEPAGE: Readonly<Record<string, string>> = {
+  ka: 'BESTAUTO — დეტეილინგი თბილისში',
+  ru: 'BESTAUTO — Детейлинг в Тбилиси',
+  en: 'BESTAUTO — Car Detailing Tbilisi',
+};
+
+function buildFallbackAlt(lang?: string, slug?: string): string {
+  if (!lang) return 'BESTAUTO';
+  // Homepage
+  if (!slug || slug === '') return ALT_HOMEPAGE[lang] ?? 'BESTAUTO';
+  // Service page
+  const serviceName = ALT_SERVICE_NAMES[slug]?.[lang];
+  if (serviceName) return `${serviceName} — BESTAUTO`;
+  // Blog or other pages
+  return 'BESTAUTO';
+}
+
+/**
+ * Add contextual alt text to content images missing alt text.
  * Skips tracking pixels (mc.yandex.ru, 1x1) and noscript blocks.
  */
-export function improveEmptyAlts(body: string): string {
+export function improveEmptyAlts(body: string, lang?: string, slug?: string): string {
+  const fallbackAlt = buildFallbackAlt(lang, slug);
+
   // Temporarily remove <noscript> blocks
   const noscriptBlocks: string[] = [];
   const withoutNoscript = body.replace(/<noscript>[\s\S]*?<\/noscript>/g, (m) => {
@@ -725,6 +761,7 @@ export function improveEmptyAlts(body: string): string {
     return `\x00NS${noscriptBlocks.length - 1}\x00`;
   });
 
+  const escaped = fallbackAlt.replace(/"/g, '&quot;');
   const processed = withoutNoscript.replace(/<img\b([^>]*)>/gi, (match, attrs: string) => {
     // Skip tracking pixels
     if (attrs.includes('mc.yandex.ru') || attrs.includes('facebook.com/tr')) return match;
@@ -733,9 +770,9 @@ export function improveEmptyAlts(body: string): string {
     if (altMatch && altMatch[1].trim() !== '') return match;
     // Has alt="" or no alt at all → add fallback
     if (altMatch) {
-      return match.replace(/\balt=""/, 'alt="BESTAUTO"');
+      return match.replace(/\balt=""/, `alt="${escaped}"`);
     }
-    return `<img alt="BESTAUTO"${attrs}>`;
+    return `<img alt="${escaped}"${attrs}>`;
   });
 
   return processed.replace(/\x00NS(\d+)\x00/g, (_, i) => noscriptBlocks[parseInt(i)]);
@@ -977,7 +1014,7 @@ export function extractSections(html: string, lang?: string, slug?: string): Pag
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent))))))));
+  const mainContent = fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))), lang, slug));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent),
