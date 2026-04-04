@@ -673,15 +673,26 @@ document.addEventListener('click', function(e) {
 #ba-contacts .ba-field select option{background:#111;color:#fff}
 #ba-contacts .ba-btn-wa{
   width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
-  background:#25D366;color:#fff;
+  background:var(--gold);color:#000;
   padding:13px;border-radius:8px;
   font-size:13px;font-weight:700;font-family:TildaSans,Arial,sans-serif;
   text-transform:uppercase;letter-spacing:0.5px;
   cursor:pointer;border:none;
   transition:background var(--transition);
 }
-#ba-contacts .ba-btn-wa:hover{background:#22c55e}
-#ba-contacts .ba-btn-wa svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
+#ba-contacts .ba-btn-wa:hover{background:#f0d890}
+#ba-contacts .ba-btn-wa svg{width:18px;height:18px;fill:#000;flex-shrink:0}
+#ba-contacts .ba-btn-wa.loading{opacity:0.7;pointer-events:none}
+#ba-contacts .ba-btn-wa .ba-spinner{display:none;width:16px;height:16px;border:2px solid rgba(0,0,0,0.2);border-top-color:#000;border-radius:50%;animation:ba-spin .6s linear infinite}
+#ba-contacts .ba-btn-wa.loading .ba-spinner{display:block}
+#ba-contacts .ba-btn-wa.loading .ba-btn-text{display:none}
+@keyframes ba-spin{to{transform:rotate(360deg)}}
+#ba-contacts .ba-success{display:none;text-align:center;padding:32px 20px}
+#ba-contacts .ba-success.visible{display:block}
+#ba-contacts .ba-success-icon{width:48px;height:48px;margin:0 auto 16px;color:#25D366}
+#ba-contacts .ba-success-title{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text)}
+#ba-contacts .ba-success-text{font-size:13px;color:var(--text-muted);line-height:1.5}
+#ba-contacts .ba-honeypot{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
 #ba-contacts .ba-error{
   display:none;font-size:11px;color:#f44336;
   margin-top:5px;padding-left:2px;
@@ -718,18 +729,14 @@ document.addEventListener('click', function(e) {
               Instagram
             </a> </div> <button class="ba-btn-record" onclick="baToggleForm('ba-form-guramishvili',this)">
             Записаться в эту студию
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> </button> <div class="ba-form" id="ba-form-guramishvili"> <div class="ba-field"> <label for="ba-service-guramishvili">Услуга *</label> <select id="ba-service-guramishvili"> <option value="">— Выберите услугу —</option> <option>Оклейка защитной пленкой</option> <option>Смена цвета защитной пленкой</option> <option>Детейлинг полировка</option> <option>Керамическое покрытие авто</option> <option>Тонировка стекол</option> <option>Детейлинг химчистка</option> <option>Реставрация автостекла</option> <option>Шумоизоляция</option> </select> </div> <div class="ba-field"> <label for="ba-phone-guramishvili">Ваш телефон *</label> <input type="tel" placeholder="+995 5XX XXX XXX" id="ba-phone-guramishvili" oninput="baClearError(this)"> <div class="ba-error" id="ba-phone-error-guramishvili">Введите номер в международном формате: +995 5XX XXX XXX</div> </div> <div class="ba-field"> <label for="ba-car-guramishvili">Модель авто</label> <input type="text" placeholder="BMW X5, Mercedes GLE..." id="ba-car-guramishvili"> </div> <button class="ba-btn-wa" onclick="baSendWA('guramishvili')"> <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Отправить заявку в WhatsApp
-            </button> </div> </div> </div> <div class="ba-card" id="ba-card-saburtalo"> <div class="ba-card-header" onclick="baToggleCard('ba-card-saburtalo')"> <div class="ba-hdr-info"> <div class="ba-label"><span class="ba-dot"></span>BESTAUTO Сабуртало</div> <div class="ba-hdr-addr">Тбилиси, ул. Анна Политковская 51</div> </div> <svg class="ba-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg> </div> <div class="ba-card-body"> <div class="ba-label"><span class="ba-dot"></span>BESTAUTO Сабуртало</div> <h3><a href="https://maps.app.goo.gl/g8eLgcEB9vrVNvsY7" target="_blank">Тбилиси, ул. Анна Политковская 51</a></h3> <a class="ba-phone" href="tel:+995550000199">+995 550 000 199</a> <div class="ba-hours">Пн–Сб 10:00 – 20:00</div> <div class="ba-actions"> <a class="ba-action" href="https://wa.me/995550000199" target="_blank"> <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> </button> <div class="ba-form" id="ba-form-guramishvili"> <div class="ba-field"> <label for="ba-service-guramishvili">Услуга *</label> <select id="ba-service-guramishvili"> <option value="">— Выберите услугу —</option> <option>Оклейка защитной пленкой</option> <option>Смена цвета защитной пленкой</option> <option>Детейлинг полировка</option> <option>Керамическое покрытие авто</option> <option>Тонировка стекол</option> <option>Детейлинг химчистка</option> <option>Реставрация автостекла</option> <option>Шумоизоляция</option> </select> </div> <div class="ba-field"> <label for="ba-phone-guramishvili">Ваш телефон *</label> <input type="tel" placeholder="+995 5XX XXX XXX" id="ba-phone-guramishvili" oninput="baClearError(this)"> <div class="ba-error" id="ba-phone-error-guramishvili">Введите номер в международном формате: +995 5XX XXX XXX</div> </div> <div class="ba-field"> <label for="ba-car-guramishvili">Модель авто</label> <input type="text" placeholder="BMW X5, Mercedes GLE..." id="ba-car-guramishvili"> </div> <div class="ba-honeypot" aria-hidden="true" tabindex="-1"><input type="text" id="ba-hp-guramishvili" name="website" autocomplete="off" tabindex="-1"></div> <button class="ba-btn-wa" onclick="baSendLead('guramishvili')"> <span class="ba-btn-text">Записаться — ответим за 15 минут</span><span class="ba-spinner"></span> </button> </div> <div class="ba-success" id="ba-success-guramishvili"> <svg class="ba-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 16 10"/></svg> <div class="ba-success-title">Заявка отправлена!</div> <div class="ba-success-text">Мы перезвоним в течение 15 минут.<br>Или позвоните нам: <a href="tel:+995550000299" style="color:var(--gold);text-decoration:none">+995 550 000 299</a></div> </div> </div> </div> <div class="ba-card" id="ba-card-saburtalo"> <div class="ba-card-header" onclick="baToggleCard('ba-card-saburtalo')"> <div class="ba-hdr-info"> <div class="ba-label"><span class="ba-dot"></span>BESTAUTO Сабуртало</div> <div class="ba-hdr-addr">Тбилиси, ул. Анна Политковская 51</div> </div> <svg class="ba-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg> </div> <div class="ba-card-body"> <div class="ba-label"><span class="ba-dot"></span>BESTAUTO Сабуртало</div> <h3><a href="https://maps.app.goo.gl/g8eLgcEB9vrVNvsY7" target="_blank">Тбилиси, ул. Анна Политковская 51</a></h3> <a class="ba-phone" href="tel:+995550000199">+995 550 000 199</a> <div class="ba-hours">Пн–Сб 10:00 – 20:00</div> <div class="ba-actions"> <a class="ba-action" href="https://wa.me/995550000199" target="_blank"> <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
               WhatsApp
             </a> <a class="ba-action" href="https://maps.app.goo.gl/g8eLgcEB9vrVNvsY7" target="_blank"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               На карте<span class="ba-rating">★ 4.9</span> </a> <a class="ba-action" href="https://www.instagram.com/bestautodetailingtbilisi/" target="_blank"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               Instagram
             </a> </div> <button class="ba-btn-record" onclick="baToggleForm('ba-form-saburtalo',this)">
             Записаться в эту студию
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> </button> <div class="ba-form" id="ba-form-saburtalo"> <div class="ba-field"> <label for="ba-service-saburtalo">Услуга *</label> <select id="ba-service-saburtalo"> <option value="">— Выберите услугу —</option> <option>Оклейка защитной пленкой</option> <option>Смена цвета защитной пленкой</option> <option>Детейлинг полировка</option> <option>Керамическое покрытие авто</option> <option>Тонировка стекол</option> <option>Детейлинг химчистка</option> <option>Реставрация автостекла</option> <option>Шумоизоляция</option> </select> </div> <div class="ba-field"> <label for="ba-phone-saburtalo">Ваш телефон *</label> <input type="tel" placeholder="+995 5XX XXX XXX" id="ba-phone-saburtalo" oninput="baClearError(this)"> <div class="ba-error" id="ba-phone-error-saburtalo">Введите номер в международном формате: +995 5XX XXX XXX</div> </div> <div class="ba-field"> <label for="ba-car-saburtalo">Модель авто</label> <input type="text" placeholder="BMW X5, Mercedes GLE..." id="ba-car-saburtalo"> </div> <button class="ba-btn-wa" onclick="baSendWA('saburtalo')"> <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Отправить заявку в WhatsApp
-            </button> </div> </div> </div> </div> </div> </section> <script>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> </button> <div class="ba-form" id="ba-form-saburtalo"> <div class="ba-field"> <label for="ba-service-saburtalo">Услуга *</label> <select id="ba-service-saburtalo"> <option value="">— Выберите услугу —</option> <option>Оклейка защитной пленкой</option> <option>Смена цвета защитной пленкой</option> <option>Детейлинг полировка</option> <option>Керамическое покрытие авто</option> <option>Тонировка стекол</option> <option>Детейлинг химчистка</option> <option>Реставрация автостекла</option> <option>Шумоизоляция</option> </select> </div> <div class="ba-field"> <label for="ba-phone-saburtalo">Ваш телефон *</label> <input type="tel" placeholder="+995 5XX XXX XXX" id="ba-phone-saburtalo" oninput="baClearError(this)"> <div class="ba-error" id="ba-phone-error-saburtalo">Введите номер в международном формате: +995 5XX XXX XXX</div> </div> <div class="ba-field"> <label for="ba-car-saburtalo">Модель авто</label> <input type="text" placeholder="BMW X5, Mercedes GLE..." id="ba-car-saburtalo"> </div> <div class="ba-honeypot" aria-hidden="true" tabindex="-1"><input type="text" id="ba-hp-saburtalo" name="website" autocomplete="off" tabindex="-1"></div> <button class="ba-btn-wa" onclick="baSendLead('saburtalo')"> <span class="ba-btn-text">Записаться — ответим за 15 минут</span><span class="ba-spinner"></span> </button> </div> <div class="ba-success" id="ba-success-saburtalo"> <svg class="ba-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 16 10"/></svg> <div class="ba-success-title">Заявка отправлена!</div> <div class="ba-success-text">Мы перезвоним в течение 15 минут.<br>Или позвоните нам: <a href="tel:+995550000199" style="color:var(--gold);text-decoration:none">+995 550 000 199</a></div> </div> </div> </div> </div> </div> </section> <script>
 (function(){
   var baStudios = {
     guramishvili: { phone:'995550000299', name:'Гурамишвили, ул. Гурамишвили 78' },
@@ -759,12 +766,14 @@ document.addEventListener('click', function(e) {
     var err = document.getElementById('ba-phone-error-' + key);
     if (err) err.classList.remove('visible');
   };
-  window.baSendWA = function(key) {
+  window.baSendLead = function(key) {
     var studio  = baStudios[key];
     var service = document.getElementById('ba-service-' + key);
     var phone   = document.getElementById('ba-phone-' + key);
     var phoneErr= document.getElementById('ba-phone-error-' + key);
     var car     = document.getElementById('ba-car-' + key);
+    var hp      = document.getElementById('ba-hp-' + key);
+    var btn     = phone.closest('.ba-form').querySelector('.ba-btn-wa');
     var clean   = phone.value.trim().replace(/[\s\-\(\)]/g,'');
     if (clean && clean[0] !== '+') { clean = '+' + clean; phone.value = clean; }
     if (!service.value) { service.style.borderColor='#f44336'; service.focus(); return; }
@@ -773,11 +782,50 @@ document.addEventListener('click', function(e) {
       if (phoneErr) phoneErr.classList.add('visible');
       phone.focus(); return;
     }
+    // Build WhatsApp fallback message
     var msg = 'Здравствуйте! Хочу записаться в студию ' + studio.name + '.\n'
             + 'Услуга: ' + service.value + '\n'
             + 'Мой телефон: ' + phone.value.trim();
     if (car.value.trim()) msg += '\nАвтомобиль: ' + car.value.trim();
-    window.open('https://wa.me/' + studio.phone + '?text=' + encodeURIComponent(msg), '_blank');
+    var waUrl = 'https://wa.me/' + studio.phone + '?text=' + encodeURIComponent(msg);
+    // Loading state
+    btn.classList.add('loading');
+    // Detect language from URL
+    var lang = 'ru';
+    if (location.pathname.indexOf('/en') === 0) lang = 'en';
+    else if (location.pathname.indexOf('/ru') !== 0) lang = 'ka';
+    // POST to server
+    var payload = {
+      studio: key,
+      service: service.value,
+      phone: clean,
+      car: car.value.trim() || undefined,
+      lang: lang,
+      page: location.pathname,
+      honeypot: hp ? hp.value : ''
+    };
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(res) {
+      if (!res.ok) throw new Error(res.status);
+      return res.json();
+    }).then(function(data) {
+      if (!data.ok) throw new Error(data.error || 'fail');
+      // Success: show confirmation
+      var form = document.getElementById('ba-form-' + key);
+      var success = document.getElementById('ba-success-' + key);
+      if (form) form.classList.remove('open');
+      if (success) success.classList.add('visible');
+      // Track event
+      if (typeof baTrackLead === 'function') baTrackLead(key, service.value, true);
+    }).catch(function() {
+      // Fallback: open WhatsApp directly
+      btn.classList.remove('loading');
+      window.open(waUrl, '_blank');
+      if (typeof baTrackLead === 'function') baTrackLead(key, service.value, false);
+    });
   };
 })();
 </script> <!-- nominify end --> </div> </div> </div> </div> <div id="rec603526076" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#000000; " data-animationappear="off" data-record-type="457" data-bg-color="#000000"> <!-- T457 --> <div class="t457"> <div class="t-container"> <div class="t-col t-col_12"> <ul class="t457__ul"> <li class="t457__li"> <a href="/ru/prices" data-menu-item-number="1">Цены</a> </li> <li class="t457__li"> <a href="#about" data-menu-item-number="2">Преимущества</a> </li> <li class="t457__li"> <a href="/ru#service" data-menu-item-number="3">Услуги</a> </li> <li class="t457__li"> <a href="/ru/blog" data-menu-item-number="4">Блог</a> </li> </ul> </div> <div class="t-col t-col_12"> <div class="t457__copyright" field="text"><strong>© BESTAUTO 2024 - 2026</strong></div> </div> </div> </div> <style> #rec603526076 .t457__copyright{color:#e4c97e;}</style> </div> </div> <div id="rec1859912571" class="r t-rec t-screenmax-640px" style=" " data-animationappear="off" data-record-type="121" data-alias-record-type="943" data-screen-max="640px"> <!-- t943 --> <div class="t943"> <div class="t943__buttonwrapper"> <a

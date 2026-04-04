@@ -84,4 +84,13 @@
       send('form_submit', { form_action: form.action || 'unknown' });
     }
   });
+
+  // --- Lead form submission tracking ---
+  window.baTrackLead = function (studio, service, serverOk) {
+    if (serverOk) {
+      send('lead_submitted', { studio: studio, service: service });
+    } else {
+      send('lead_fallback_whatsapp', { studio: studio, service: service });
+    }
+  };
 })();
