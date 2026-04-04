@@ -353,6 +353,12 @@ if (isBlogPage && baseSlug !== 'blog') {
     mainContent = mainContent.replaceAll('\u043a\u0430\u043c\u0435\u043d\u044c\u0438\u0441\u043f\u043e\u0440\u0442\u0438\u0442', '\u043a\u0430\u043c\u0435\u043d\u044c \u0438\u0441\u043f\u043e\u0440\u0442\u0438\u0442');
     mainContent = mainContent.replaceAll('Gyeon Q2 Bailiwick', 'Gyeon Q\u00b2 One');
     mainContent = mainContent.replaceAll('\u041d\u043e\u0432\u044b\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f', '\u041d\u043e\u0432\u044b\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0438');
+    // Blog RU audit — content fixes (2026-04-04)
+    mainContent = mainContent.replaceAll('плёнка сохраняет 15-25% стоимости при перепродаже', 'плёнка помогает лучше сохранить внешний вид и ликвидность при перепродаже');
+    mainContent = mainContent.replaceAll('при перепродаже стоит на 15-30% дороже', 'при перепродаже обычно выглядит привлекательнее для покупателя');
+    mainContent = mainContent.replaceAll('Реальный срок в Грузии 1–3 года', 'В реальных условиях Грузии срок службы чаще 2–5 лет — в зависимости от состава и ухода');
+    mainContent = mainContent.replaceAll('Короткий ответ: да, нужна.', 'Чаще всего — да, если есть микродефекты или голограммы. На новом идеальном ЛКП иногда достаточно лёгкой подготовки.');
+    mainContent = mainContent.replaceAll('идеальная стратегия', 'рациональная стратегия');
   }
   if (lang === 'ka') {
     mainContent = mainContent.replaceAll('\u10de\u10dd\u10da\u10d8\u10e0\u10dd\u10d1\u10d0', '\u10de\u10dd\u10da\u10d8\u10e0\u10d4\u10d1\u10d0');
