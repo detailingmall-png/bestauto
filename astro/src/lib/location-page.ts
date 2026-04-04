@@ -127,7 +127,7 @@ export function generateLocationContent(
 
   // NAP (Name, Address, Phone) + Hours
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#111;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;">
       <div>
@@ -180,7 +180,7 @@ export function generateLocationContent(
 
   // Available Services
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#111;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
     <h2 style="color:#fff;font-size:28px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 32px;text-align:center;">${SERVICES_LABEL[lang] ?? 'Services'}</h2>
     ${generateServicesList(lang)}
@@ -207,7 +207,7 @@ export function generateLocationContent(
 
   // CTA — Book at this studio
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#111;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;text-align:center;">
     <a href="https://wa.me/${location.whatsapp}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:#e4c97e;color:#000;font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;box-shadow:0px 15px 30px -10px rgba(0,11,48,0.2);">${BOOK_LABEL[lang] ?? 'Book Now'}</a>
   </div>

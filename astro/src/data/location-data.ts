@@ -44,8 +44,8 @@ export const LOCATIONS: readonly LocationData[] = [
       ru: 'Пн–Сб 10:00 – 20:00',
       en: 'Mon–Sat 10:00 – 20:00',
     },
-    mapsUrl: 'https://maps.app.goo.gl/vQqfwBCT9oKqMVDr5',
-    mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2976.5!2d44.7536!3d41.7634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQ1JzQ4LjIiTiA0NMKwNDUnMTMuMCJF!5e0!3m2!1sen!2sge!4v1',
+    mapsUrl: 'https://maps.app.goo.gl/WBLHgeikidvdjsew7',
+    mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d44.7938693!3d41.7731946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40446dd3c4830495%3A0xa77e856b8f9101ee!2sBestauto%20Detailing!5e0!3m2!1sen!2sge!4v1',
     description: {
       ka: 'BESTAUTO გურამიშვილის სტუდია მდებარეობს გურამიშვილის გამზირზე, გლდანის რაიონში. სტუდიაში ხორციელდება ყველა სახის დეტეილინგ მომსახურება: PPF დამცავი ფირი, კერამიკული დაფარვა, პოლირება, ფერის შეცვლა, მინების ტონირება, ქიმწმენდა, ხმის იზოლაცია და კომპიუტერული დიაგნოსტიკა.',
       ru: 'Студия BESTAUTO на проспекте Гурамишвили расположена в районе Глдани. В студии выполняются все виды детейлинг-услуг: PPF защитная плёнка, керамическое покрытие, полировка, смена цвета плёнкой, тонировка стёкол, химчистка салона, шумоизоляция и компьютерная диагностика.',
@@ -127,8 +127,8 @@ export const LOCATIONS: readonly LocationData[] = [
       ru: 'Пн–Сб 10:00 – 20:00',
       en: 'Mon–Sat 10:00 – 20:00',
     },
-    mapsUrl: 'https://maps.app.goo.gl/NkR4PvcJEGr5DQWK8',
-    mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.5!2d44.7436!3d41.7234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQzJzI0LjIiTiA0NMKwNDQnMzYuMCJF!5e0!3m2!1sen!2sge!4v1',
+    mapsUrl: 'https://maps.app.goo.gl/2vyDX1rNExQY4VER7',
+    mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d44.7047754!3d41.7226529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447370b96bf0b9%3A0xc0b8756d8205e69a!2sBestauto%20Detailing%20Tbilisi!5e0!3m2!1sen!2sge!4v1',
     description: {
       ka: 'BESTAUTO საბურთალოს სტუდია მდებარეობს ანა პოლიტკოვსკაიას ქუჩაზე, საბურთალოს რაიონში. სტუდიაში ხორციელდება ყველა სახის დეტეილინგ მომსახურება: PPF დამცავი ფირი, კერამიკული დაფარვა, პოლირება, ფერის შეცვლა, მინების ტონირება, ქიმწმენდა, ხმის იზოლაცია და კომპიუტერული დიაგნოსტიკა.',
       ru: 'Студия BESTAUTO на Сабуртало расположена на улице Анна Политковская, район Сабуртало. В студии выполняются все виды детейлинг-услуг: PPF защитная плёнка, керамическое покрытие, полировка, смена цвета плёнкой, тонировка стёкол, химчистка салона, шумоизоляция и компьютерная диагностика.',
