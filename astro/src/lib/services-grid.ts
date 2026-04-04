@@ -29,7 +29,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'vinyl-wrapping',
     tier: 1,
-    name: { ka: 'ვინილის ფირის გადაკვრა', ru: 'Оклейка цветной плёнкой', en: 'Vinyl Car Wrapping' },
+    name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Оклейка цветной плёнкой', en: 'Color Change Wrap' },
     tagline: {
       ka: 'მანქანის ფერის შეცვლა — ფერების და ფაქტურების ათასობით ვარიანტი',
       ru: 'Смена цвета кузова — тысячи цветов и фактур на выбор',

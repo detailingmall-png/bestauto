@@ -194,6 +194,30 @@ export function generateReviewSchema(lang: string = 'en'): string {
       addressLocality: 'Tbilisi',
       addressCountry: 'GE',
     },
+    location: [
+      {
+        '@type': 'Place',
+        name: 'BESTAUTO Guramishvili',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Guramishvili Ave. 78',
+          addressLocality: 'Tbilisi',
+          addressCountry: 'GE',
+        },
+        telephone: '+995550000299',
+      },
+      {
+        '@type': 'Place',
+        name: 'BESTAUTO Saburtalo',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Anna Politkovskaya St. 51',
+          addressLocality: 'Tbilisi',
+          addressCountry: 'GE',
+        },
+        telephone: '+995550000199',
+      },
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: reviewsData.overallRating.toString(),
@@ -325,22 +349,38 @@ export function generateOrganizationSchema(): string {
       url: `${BASE_URL}/img/logo.png`,
     },
     telephone: '+995550000299',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Guramishvili Ave. 78',
-      addressLocality: 'Tbilisi',
-      addressCountry: 'GE',
-    },
+    address: [
+      {
+        '@type': 'PostalAddress',
+        streetAddress: 'Guramishvili Ave. 78',
+        addressLocality: 'Tbilisi',
+        addressCountry: 'GE',
+      },
+      {
+        '@type': 'PostalAddress',
+        streetAddress: 'Anna Politkovskaya St. 51',
+        addressLocality: 'Tbilisi',
+        addressCountry: 'GE',
+      },
+    ],
     sameAs: [
       'https://www.instagram.com/bestauto.ge/',
       'https://www.facebook.com/bestauto.ge/',
     ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+995550000299',
-      contactType: 'customer service',
-      availableLanguage: ['Georgian', 'Russian', 'English'],
-    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+995550000299',
+        contactType: 'customer service',
+        availableLanguage: ['Georgian', 'Russian', 'English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+995550000199',
+        contactType: 'customer service',
+        availableLanguage: ['Georgian', 'Russian', 'English'],
+      },
+    ],
   };
 
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;

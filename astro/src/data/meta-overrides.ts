@@ -33,6 +33,10 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
   'ru/vinyl-wrapping': {
     description: 'Цветная полиуретановая защитная плёнка в Тбилиси: смена цвета, карбон, матовая и глянцевая плёнка. Полная и частичная оклейка. Гарантия 10 лет. Запись онлайн!',
   },
+  'en/vinyl-wrapping': {
+    title: 'Color Change Wrap in Tbilisi — Protective Film, 200+ Colors | BESTAUTO',
+    description: 'Change your car color with polyurethane protective film in Tbilisi. Gloss, matte, satin, carbon, chrome. Full and partial wrap. 10-year warranty. Book online!',
+  },
 
   // ── OG tag alignment ─────────────────────────────────────
   'ru/ceramiccoating': {
@@ -70,5 +74,85 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
   'en/windshield-repair': {
     title: 'Windshield Chip & Crack Repair, Glass Polishing & Grinding in Tbilisi | BESTAUTO',
     description: 'Windshield and side window chip repair, glass polishing and scratch grinding in Tbilisi. Prices from 60 GEL. Warranty included. Book online — BESTAUTO.',
+  },
+
+  // ── PPF Shield Wrapping ─────────────────────────────────────
+  'ka/ppf-shield-wrapping': {
+    title: 'PPF დამცავი ფირი თბილისში — 10 წლიანი გარანტია, ფასები 2500 ლარიდან | BESTAUTO',
+    description: 'სრული და ნაწილობრივი PPF დამცავი ფირით დაფარვა თბილისში. LLumar, Quantum, SunTek. კაპოტი, ბამპერი, ფარები. ორი სტუდია. უფასო ინსპექცია — ჩაეწერეთ ახლავე.',
+  },
+  'ru/ppf-shield-wrapping': {
+    title: 'Защитная плёнка PPF в Тбилиси — гарантия 10 лет, цены от 2500 GEL | BESTAUTO',
+    description: 'Полная и частичная оклейка кузова защитной плёнкой PPF в Тбилиси. LLumar, Quantum, SunTek. Капот, бампер, фары. 2 студии, бесплатный осмотр. Запись онлайн!',
+  },
+  'en/ppf-shield-wrapping': {
+    title: 'PPF Paint Protection Film in Tbilisi — 10-Year Warranty, from 2500 GEL | BESTAUTO',
+    description: 'Full and partial PPF wrap in Tbilisi: hood, bumper, headlights. LLumar, Quantum, SunTek films. Two studios, free inspection. Book online — BESTAUTO.',
+  },
+
+  // ── Ceramic Coating ─────────────────────────────────────────
+  'ka/ceramiccoating': {
+    title: 'კერამიკული დაფარვა თბილისში — 9H, 3 წლამდე დაცვა, ფ���სები 400 ლარიდან | BESTAUTO',
+    description: 'ავტომობილის კერამიკული დაფარვა თბილისში: კუზოვი, მინები, სალონი. ჰიდროფობული ეფექტი, UV-დაცვა. ფასები 400 ლარიდან. ჩაწერა ონლაინ — BESTAUTO.',
+  },
+  'en/ceramiccoating': {
+    title: 'Ceramic Coating in Tbilisi — 9H, Up to 3 Years Protection, from 400 GEL | BESTAUTO',
+    description: 'Professional ceramic coating for car body, glass, and interior in Tbilisi. Hydrophobic protection from scratches and UV. Two studios. Book online — BESTAUTO.',
+  },
+
+  // ── Window Tinting ──────────────────────────────────────────
+  'ka/auto-glass-tinting': {
+    title: 'მინების დაბურვა თბილისში — ფასები 130 ლარიდან | BESTAUTO',
+    description: 'ავტომობილის მინების პროფესიონალური ტონირება თბილისში. სითბოს და UV-დაცვა, კონფიდენციალურობა. ფასები 130 ლარიდან. ორი სტუდია — ჩაწერა ონლაინ.',
+  },
+  'ru/auto-glass-tinting': {
+    title: 'Тонировка стёкол авто в Тбилиси — цены от 130 GEL | BESTAUTO',
+    description: 'Профессиональная тонировка стёкол в Тбилиси. Защита от жары и UV, конфиденциальность. Цены от 130 лари. 2 локации. Запись онлайн — BESTAUTO.',
+  },
+  'en/auto-glass-tinting': {
+    title: 'Car Window Tinting in Tbilisi — Prices from 130 GEL | BESTAUTO',
+    description: 'Professional auto window tinting in Tbilisi. Heat and UV protection, privacy. Prices from 130 GEL. Two studios. Book online — BESTAUTO.',
+  },
+
+  // ── Car Soundproofing ───────────────────────────────────────
+  'ka/car-soundproofing': {
+    title: 'ავტომობილის ხმის იზოლაცია თბილისში — ფასები 600 ლარიდან | BESTAUTO',
+    description: 'პროფესიონალური ხმის იზოლაცია თბილისში: კარები, იატაკი, სახურავი, საბარგული. ხმაურის შემცირება 40%-მდე. ფასები 600 ლარიდან — BESTAUTO.',
+  },
+  'ru/car-soundproofing': {
+    title: 'Шумоизоляция автомобиля в Тбилиси — цены от 600 GEL | BESTAUTO',
+    description: 'Профессиональная шумоизоляция авто в Тбилиси: двери, пол, крыша, багажник. Снижение шума до 40%. Цены от 600 лари. Запись — BESTAUTO.',
+  },
+  'en/car-soundproofing': {
+    title: 'Car Soundproofing in Tbilisi — Prices from 600 GEL | BESTAUTO',
+    description: 'Professional car sound insulation in Tbilisi: doors, floor, roof, trunk. Up to 40% noise reduction. Prices from 600 GEL. Book online — BESTAUTO.',
+  },
+
+  // ── Computer Diagnostics ────────────────────────────────────
+  'ka/computer-diagnostics': {
+    title: 'კომპიუტერული დიაგნოსტიკა თბილისში — ECU/ABS, ფასები 30 ლარიდან | BESTAUTO',
+    description: 'სრული კომპიუტერული დიაგნოსტიკა 30-90 წუთში. შეცდომების წაკითხვა, ECU, ABS, სენსორები. ფასები 30 ლარიდან. ორი ლოკაცია — BESTAUTO.',
+  },
+  'ru/computer-diagnostics': {
+    title: 'Компьютерная диагностика авто в Тбилиси — цены от 30 GEL | BESTAUTO',
+    description: 'Полная компьютерная диагностика за 30-90 минут. Чтение ошибок, ECU, ABS, датчики. Цены от 30 лари. Детальный отчёт. 2 студии — BESTAUTO.',
+  },
+  'en/computer-diagnostics': {
+    title: 'Car Computer Diagnostics in Tbilisi — from 30 GEL | BESTAUTO',
+    description: 'Full OBD computer diagnostics in 30-90 minutes. Error codes, ECU, ABS, sensors. Prices from 30 GEL. Detailed report. Two studios — BESTAUTO.',
+  },
+
+  // ── Car Wash ────────────────────────────────────────────────
+  'ka/carwash': {
+    title: 'პრემიუმ ხელით რეცხვა თბილისში — ფასები 40 ლარიდან | BESTAUTO',
+    description: 'პრემიუმ ხელით რეცხვა თბილისში. 2-3 ფაზიანი დეტეილინგ რეცხვა, სალონის დამუშავება, დამცავი საფარი. ფასები 40 ლარიდან — BESTAUTO.',
+  },
+  'ru/carwash': {
+    title: 'Детейлинг мойка автомобиля в Тбилиси — цены от 40 GEL | BESTAUTO',
+    description: 'Премиальная ручная мойка авто в Тбилиси. 2-3 фазы, обработка салона, защитное покрытие. Цены от 40 лари. 2 студии. Запись онлайн — BESTAUTO.',
+  },
+  'en/carwash': {
+    title: 'Premium Hand Car Wash in Tbilisi — from 40 GEL | BESTAUTO',
+    description: 'Premium hand car wash in Tbilisi. 2-3 phase detailing wash, interior treatment, protective coating. From 40 GEL. Two studios — BESTAUTO.',
   },
 };

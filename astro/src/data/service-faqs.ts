@@ -164,6 +164,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'We offer 200+ colors and textures: gloss, matte, satin, carbon, chrome, chameleon. From 3M, KPMF, and Oracal catalogs.',
       },
     },
+    {
+      question: {
+        ka: 'რა განსხვავებაა ვინილის და პოლიურეთანის დამცავ ფირს შორის?',
+        ru: 'В чём разница между виниловой и полиуретановой защитной плёнкой?',
+        en: 'What is the difference between vinyl and polyurethane protective film?',
+      },
+      answer: {
+        ka: 'ვინილის (PVC) ფირი თხელი და იაფია, მაგრამ არ იცავს ქვის ჩიპებისგან. პოლიურეთანის (PPF) ფირი სქელი, თვითაღდგენადი და იცავს ლაქს ნაკაწრები��ა და ჩიპებისგან. ჩვენ ვიყენებთ პოლიურეთანის ფირს ფერის შეცვლისთვის — ერთდროულად იცვლით ფერს და იცავთ კუზოვს.',
+        ru: 'Виниловая (ПВХ) плёнка тонкая и дешевле, но не защищает от сколов. Полиуретановая (PPF) плёнка толще, обладает самовосстановлением и защищает ЛКП от царапин и сколов. Мы используем именно полиуретановую плёнку для смены цвета — вы одновременно меняете цвет и защищаете кузов.',
+        en: 'Vinyl (PVC) wrap is thinner and cheaper but does not protect against stone chips. Polyurethane (PPF) film is thicker, self-healing, and protects paint from scratches and chips. We use polyurethane film for color changes — you change the color and protect the body at the same time.',
+      },
+    },
   ],
 
   'interior-cleaning': [
