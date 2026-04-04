@@ -18,7 +18,7 @@ def apply_ru_transforms(html: str) -> str:
     # Hero title
     html = html.replace(
         "Виниловая оклейка автомобиля в Тбилиси",
-        'Цветная <s style="opacity:0.5">виниловая</s> полиуретановая защитная плёнка в Тбилиси'
+        'Оклейка цветной <s style="opacity:0.5">виниловой</s> полиуретановой (PPF) защитной плёнкой в Тбилиси'
     )
 
     # Hero description
