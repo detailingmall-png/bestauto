@@ -349,7 +349,7 @@ if (isBlogPage) {
 // Blog articles: strip broken CTA placeholder and convert inline FAQ to accordion
 if (isBlogPage && baseSlug !== 'blog') {
   mainContent = stripBlogCtaPlaceholder(mainContent);
-  mainContent = convertBlogInlineFaq(mainContent);
+  mainContent = convertBlogInlineFaq(mainContent, lang);
 }
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
@@ -504,15 +504,23 @@ const FOOTER_IDS: Readonly<Record<string, readonly string[]>> = {
   en: ['rec607472568', 'rec607473240'],
 };
 
-// Blog articles: insert contextual service promo CTA block (before contacts section)
+// Blog articles: insert contextual service promo CTA block (right after FAQ accordion)
 const blogCtaHtml = generateBlogCtaHtml(lang, baseSlug);
 if (blogCtaHtml) {
-  const contactsAnchor = '<a name="contacts"';
-  const contactsIdx = mainContent.indexOf(contactsAnchor);
-  if (contactsIdx >= 0) {
-    mainContent = mainContent.slice(0, contactsIdx) + blogCtaHtml + mainContent.slice(contactsIdx);
+  const faqEndMarker = '<!-- /ba-blog-faq -->';
+  const faqEndIdx = mainContent.indexOf(faqEndMarker);
+  if (faqEndIdx >= 0) {
+    const insertAt = faqEndIdx + faqEndMarker.length;
+    mainContent = mainContent.slice(0, insertAt) + blogCtaHtml + mainContent.slice(insertAt);
   } else {
-    mainContent = insertBeforeFooter(mainContent, blogCtaHtml, FOOTER_IDS[lang] ?? []);
+    // Fallback: insert before contacts section
+    const contactsAnchor = '<a name="contacts"';
+    const contactsIdx = mainContent.indexOf(contactsAnchor);
+    if (contactsIdx >= 0) {
+      mainContent = mainContent.slice(0, contactsIdx) + blogCtaHtml + mainContent.slice(contactsIdx);
+    } else {
+      mainContent = insertBeforeFooter(mainContent, blogCtaHtml, FOOTER_IDS[lang] ?? []);
+    }
   }
 }
 

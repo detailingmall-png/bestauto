@@ -597,6 +597,13 @@ export function stripBlogCtaPlaceholder(content: string): string {
   return content.slice(0, markerIdx) + content.slice(markerIdx + endOffset);
 }
 
+// FAQ heading translations
+const FAQ_HEADING_TEXT: Readonly<Record<string, string>> = {
+  ru: 'Часто задаваемые вопросы',
+  ka: 'ხშირად დასმული კითხვები',
+  en: 'Frequently Asked Questions',
+};
+
 /**
  * Convert inline FAQ in blog articles to a native <details>/<summary> accordion.
  *
@@ -606,7 +613,7 @@ export function stripBlogCtaPlaceholder(content: string): string {
  * - EN: `<strong>Question [N]: ...` / `Answer: ...`
  * - KA: `<strong>კითხვა [N]: ...` / `პასუხი: ...`
  */
-export function convertBlogInlineFaq(content: string): string {
+export function convertBlogInlineFaq(content: string, lang: string = 'en'): string {
   // Find any h2/h3 heading containing "FAQ" (case-insensitive)
   const faqHeadingRegex = /<h[23]>[^<]*?(?:FAQ|faq)[^<]*?<\/h[23]>/;
   const headingMatch = faqHeadingRegex.exec(content);
@@ -662,25 +669,31 @@ export function convertBlogInlineFaq(content: string): string {
       </details>`
   ).join('\n      ');
 
-  const accordionHtml = `<div class="ba-blog-faq" style="margin:32px 0;background:var(--ba-color-surface);border-radius:var(--ba-radius-xl);padding:32px 24px;">
+  const faqTitle = FAQ_HEADING_TEXT[lang] ?? FAQ_HEADING_TEXT['en'];
+
+  const accordionHtml = `<div class="ba-blog-faq" style="margin:32px 0 0;background:var(--ba-color-surface);border-radius:var(--ba-radius-xl);padding:32px 24px;">
+      <h2 class="ba-blog-faq__title">${faqTitle}</h2>
       ${accordionItems}
       <style>
+        .ba-blog-faq__title { font-size: 24px; color: var(--ba-color-accent); font-weight: var(--ba-font-weight-bold); margin: 0 0 24px; font-family: var(--ba-font-family); line-height: 1.3; }
         .ba-blog-faq .ba-faq__question { font-size: 18px; }
         .ba-blog-faq .ba-faq__answer { font-size: 16px; }
         .ba-blog-faq .ba-faq__item summary::-webkit-details-marker { display: none; }
         .ba-blog-faq .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
         .ba-blog-faq .ba-faq__item summary:hover { color: var(--ba-color-accent) !important; }
         @media screen and (max-width: 960px) {
+          .ba-blog-faq__title { font-size: 22px; }
           .ba-blog-faq .ba-faq__question { font-size: 17px; }
           .ba-blog-faq .ba-faq__answer { font-size: 15px; }
         }
         @media screen and (max-width: 640px) {
           .ba-blog-faq { padding: 24px 16px !important; }
+          .ba-blog-faq__title { font-size: 20px; margin-bottom: 20px !important; }
           .ba-blog-faq .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
           .ba-blog-faq .ba-faq__answer { font-size: 15px; }
         }
       </style>
-    </div>`;
+    </div><!-- /ba-blog-faq -->`;
 
   // Replace the entire FAQ section (heading + Q&A pairs) with accordion
   const faqEndIdx = faqIdx + faqMarker.length + sectionEndOffset;

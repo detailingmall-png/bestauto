@@ -89,10 +89,10 @@ function getLangPrefix(lang: string): string {
 const BLOCK_STYLE = `<style>
 .ba-blog-cta__title{font-size:30px;color:var(--ba-color-accent);font-weight:var(--ba-font-weight-bold);margin:0 0 16px;font-family:var(--ba-font-family);line-height:1.3}
 .ba-blog-cta__descr{font-size:18px;line-height:1.5;color:var(--ba-color-text-muted);margin:0 0 32px;font-family:var(--ba-font-family)}
-.ba-blog-cta__btn{display:inline-block;font-size:16px;background:var(--ba-color-accent);color:#000;font-weight:var(--ba-font-weight-semibold);padding:14px 40px;border-radius:var(--ba-radius-2xl);text-decoration:none;font-family:var(--ba-font-family);transition:background var(--ba-duration-fast) var(--ba-ease-default);box-shadow:var(--ba-shadow-medium)}
+.ba-blog-cta__btn{display:inline-block;font-size:16px;background:var(--ba-color-accent);color:#000 !important;font-weight:var(--ba-font-weight-semibold);padding:14px 40px;border-radius:var(--ba-radius-2xl);text-decoration:none !important;font-family:var(--ba-font-family);transition:background var(--ba-duration-fast) var(--ba-ease-default);box-shadow:var(--ba-shadow-medium)}
 .ba-blog-cta__btn:hover{background:var(--ba-color-accent-hover)}
 @media screen and (max-width:960px){.ba-blog-cta__title{font-size:28px}.ba-blog-cta__descr{font-size:16px}}
-@media screen and (max-width:640px){#ba-blog-cta{padding:48px 0!important;margin:32px 0!important}.ba-blog-cta__title{font-size:24px}.ba-blog-cta__descr{font-size:15px}.ba-blog-cta__btn{padding:12px 32px}}
+@media screen and (max-width:640px){#ba-blog-cta{padding:32px 16px!important}.ba-blog-cta__title{font-size:24px}.ba-blog-cta__descr{font-size:15px}.ba-blog-cta__btn{padding:12px 32px}}
 @media(prefers-reduced-motion:reduce){.ba-blog-cta__btn{transition:none}}
 </style>`;
 
@@ -143,8 +143,8 @@ export function generateBlogCtaHtml(lang: string, baseSlug: string): string {
   const description = CTA_DESCRIPTION[lang] ?? CTA_DESCRIPTION['en'];
   const buttonText = CTA_BUTTON[lang] ?? CTA_BUTTON['en'];
 
-  return `<div id="ba-blog-cta" style="padding:64px 0;background:var(--ba-color-surface);border-radius:var(--ba-radius-xl);margin:48px 0;">
-  <div style="max-width:800px;margin:0 auto;padding:0 24px;text-align:center;">
+  return `<div id="ba-blog-cta" style="padding:48px 24px;background:var(--ba-color-surface);border-radius:var(--ba-radius-xl);margin:16px 0 0;">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
     <h2 class="ba-blog-cta__title">${title}</h2>
     <p class="ba-blog-cta__descr">${description}</p>
     <a href="${href}" class="ba-blog-cta__btn">${buttonText}</a>
