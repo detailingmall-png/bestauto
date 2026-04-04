@@ -269,6 +269,54 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Chip repair takes 20–30 minutes, crack repair — 40–60 minutes. You can wait in our lounge.',
       },
     },
+    {
+      question: {
+        ka: 'რას იძლევა მინის პოლირება?',
+        ru: 'Что даёт полировка стекла?',
+        en: 'What does glass polishing do?',
+      },
+      answer: {
+        ka: 'პოლირება აშორებს მოღრუბლულობას, წვრილ ნაკაწრებს და აღადგენს გამჭვირვალობას მინის შეცვლის გარეშე. შედეგი მაშინვე ჩანს.',
+        ru: 'Полировка убирает помутнение, мелкие царапины и восстанавливает прозрачность стекла без замены. Результат виден сразу.',
+        en: 'Polishing removes cloudiness, minor scratches and restores glass clarity without replacement. The result is immediately visible.',
+      },
+    },
+    {
+      question: {
+        ka: 'შესაძლებელია ღრმა ნაკაწრების მოცილება მინიდან?',
+        ru: 'Можно ли убрать глубокие царапины со стекла?',
+        en: 'Can deep scratches be removed from glass?',
+      },
+      answer: {
+        ka: 'დიახ, შლიფოვკა + პოლირება აშორებს ღრმა ნაკაწრებს. ფასი 300 ლარიდან, მინის შეცვლაზე გაცილებით ეკონომიური.',
+        ru: 'Да, шлифовка + полировка убирает глубокие царапины. Стоимость от 300 лари — значительно дешевле замены стекла.',
+        en: 'Yes, grinding + polishing removes deep scratches. Cost from 300 GEL — significantly cheaper than glass replacement.',
+      },
+    },
+    {
+      question: {
+        ka: 'რით განსხვავდება პოლირება შლიფოვკისგან?',
+        ru: 'Чем отличается полировка от шлифовки стекла?',
+        en: 'What\'s the difference between polishing and grinding?',
+      },
+      answer: {
+        ka: 'პოლირება — წვრილი დეფექტების, მოღრუბლულობის მოცილება რბილი დისკებით. შლიფოვკა — ღრმა ნაკაწრების აბრაზიული დამუშავება + საბოლოო პოლირება.',
+        ru: 'Полировка — удаление мелких дефектов и помутнения мягкими дисками. Шлифовка — абразивная обработка глубоких царапин с последующей финальной полировкой.',
+        en: 'Polishing removes minor defects and cloudiness with soft pads. Grinding is abrasive treatment of deep scratches followed by final polishing.',
+      },
+    },
+    {
+      question: {
+        ka: 'რა ღირს საქარე მინის პოლირება?',
+        ru: 'Сколько стоит полировка лобового стекла?',
+        en: 'How much does windshield polishing cost?',
+      },
+      answer: {
+        ka: 'საქარე მინის პოლირება 250 ლარიდან, გვერდითი მინის — 150 ლარიდან. შლიფოვკა საქარე მინის — 400 ლარიდან.',
+        ru: 'Полировка лобового стекла — от 250 лари, бокового — от 150 лари. Шлифовка лобового — от 400 лари.',
+        en: 'Windshield polishing starts from 250 GEL, side window — from 150 GEL. Windshield grinding — from 400 GEL.',
+      },
+    },
   ],
 
   'car-soundproofing': [

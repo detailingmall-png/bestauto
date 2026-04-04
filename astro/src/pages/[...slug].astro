@@ -121,6 +121,63 @@ if (SERVICE_SLUGS.has(baseSlug)) {
 
 injectedHtml = replaceGalleries(injectedHtml);
 
+// Windshield-repair page: expand H1, hero description, replace PDR with tinting
+if (baseSlug === 'windshield-repair') {
+  if (lang === 'ru') {
+    injectedHtml = injectedHtml.replaceAll(
+      'Ремонт лобового стекла в Тбилиси',
+      'Ремонт сколов и трещин, полировка и шлифовка автостекол в Тбилиси'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'Мы оказываем услуги по ремонту лобового стекла в Тбилиси. Если на лобовом стекле вашего автомобиля образовался скол или трещина - мы поможем восстановить его. Место ремонта будет едва заметным.',
+      'Мы оказываем услуги по ремонту лобового стекла в Тбилиси. Если на стекле вашего автомобиля образовался скол, трещина, царапины или следы от песка - мы поможем восстановить его. Место ремонта будет едва заметным или незаметным вовсе.'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'https://bestauto.ge/ru/paintless-dent-repair',
+      'https://bestauto.ge/ru/auto-glass-tinting'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'Беспокрасочное удаление вмятин',
+      'Тонировка стёкол'
+    );
+  } else if (lang === 'ka') {
+    injectedHtml = injectedHtml.replaceAll(
+      'საქარე მინის შეკეთება თბილისში',
+      'ავტომინების შეკეთება, პოლირება და შლიფოვკა თბილისში'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'საქარე მინაზე ნაკენჭარი ან ბზარი? ვაკეთებთ ადგილზე — შეკეთების შემდეგ კვალი თითქმის უჩინარია. შესამჩნევი იქნება.',
+      'მინაზე ნაკენჭარი, ბზარი, ნაკაწრები ან ქვიშის კვალი? დაგეხმარებით აღდგენაში — შეკეთების ადგილი თითქმის უჩინარი ან სრულიად შეუმჩნეველი იქნება.'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'https://bestauto.ge/paintless-dent-repair',
+      'https://bestauto.ge/auto-glass-tinting'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'უფერო ნაკბენის მოცილება',
+      'მინების ტონირება'
+    );
+  } else if (lang === 'en') {
+    injectedHtml = injectedHtml.replaceAll(
+      'Windshield Repair in Tbilisi',
+      'Windshield Repair, Glass Polishing & Grinding in Tbilisi'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      "We provide glass fixing service in Tbilisi. If your car\u0027s windshield has a chip or crack, we can help restore it. It\u2019ll be barely noticeable.",
+      'We provide glass repair services in Tbilisi. If your car\u2019s glass has a chip, crack, scratches or sand marks \u2014 we can help restore it. The repair will be barely noticeable or completely invisible.'
+    );
+    injectedHtml = injectedHtml.replaceAll(
+      'Paintless dent removal',
+      'Window tinting'
+    );
+    // Fix mislinked Tilda card: relative URL to ppf → tinting
+    injectedHtml = injectedHtml.replaceAll(
+      'href="/en/ppf-shield-wrapping"',
+      'href="/en/auto-glass-tinting"'
+    );
+  }
+}
+
 // Replace static Tilda services blocks with the new Astro grid (Variant A)
 // KA: rec2091645513, RU: rec588623535, EN: rec590463220
 const SERVICES_BLOCK_IDS: Readonly<Record<string, string>> = {

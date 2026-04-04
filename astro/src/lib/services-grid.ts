@@ -114,11 +114,11 @@ const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'windshield-repair',
     tier: 2,
-    name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' },
+    name: { ka: 'ავტომინების შეკეთება და შლიფოვკა', ru: 'Ремонт и шлифовка автостекол', en: 'Glass Repair & Grinding' },
     tagline: {
-      ka: 'ჩიპის ან ბზარის სწრაფი შეკეთება — მინის შეცვლის გარეშე',
-      ru: 'Быстрый ремонт скола или трещины — без замены стекла',
-      en: 'Fast chip or crack repair — no glass replacement needed',
+      ka: 'ნაკენჭარის შეკეთება, პოლირება და შლიფოვკა — საქარე და გვერდითი',
+      ru: 'Ремонт сколов, полировка и шлифовка — лобовое и боковые',
+      en: 'Chip repair, polishing & grinding — windshield and side windows',
     },
     minPrice: '60',
     image: '/images/tild3030-6636-4036-a564-373666356236__2023-07-04_231151.webp',

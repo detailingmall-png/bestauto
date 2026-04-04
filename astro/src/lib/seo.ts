@@ -42,7 +42,7 @@ const SERVICES: Readonly<Record<string, { name: Record<string, string>; min: str
 
   'carwash': { name: { ka: 'მანქანის სარეცხი', ru: 'Детейлинг мойка автомобиля', en: 'Premium Car Wash' }, min: '40' },
   'auto-glass-tinting': { name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' }, min: '130' },
-  'windshield-repair': { name: { ka: 'საქარე მინის შეკეთება', ru: 'Ремонт лобового стекла', en: 'Windshield Repair' }, min: '60' },
+  'windshield-repair': { name: { ka: 'ავტომინების შეკეთება, პოლირება და შლიფოვკა', ru: 'Ремонт сколов и трещин, полировка и шлифовка автостекол', en: 'Windshield Repair, Glass Polishing & Grinding' }, min: '60' },
   'car-soundproofing': { name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' }, min: '600' },
   'computer-diagnostics': { name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' }, min: '30' },
 };

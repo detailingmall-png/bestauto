@@ -44,7 +44,7 @@ export const WHATSAPP_BLOCK = makePathsAbsolute(
 );
 export const CONTACTS_BLOCK = makePathsAbsolute(
   extractRecordBlock(ruHtml, 'rec2091246563')
-).replaceAll('Отправить заявку в WhatsApp', 'Записаться — ответим за 15 минут');
+);
 
 // KA: WhatsApp widget
 const kaHtml = loadTildaPage('page130343853.html');
@@ -81,7 +81,7 @@ const EN_TRANSLATIONS: TranslationMap = [
   ['Керамическое покрытие авто', 'Ceramic coating'],
   ['Тонировка стекол', 'Window tinting'],
   ['Детейлинг химчистка', 'Detailing dry cleaning'],
-  ['Реставрация автостекла', 'Windshield repair'],
+  ['Ремонт и шлифовка автостекла', 'Glass repair & grinding'],
   ['Шумоизоляция', 'Sound insulation'],
   ['Введите номер в международном формате: +995 5XX XXX XXX', 'Enter phone in international format: +995 5XX XXX XXX'],
   ['Записаться — ответим за 15 минут', 'Book now — reply in 15 min'],
@@ -91,6 +91,9 @@ const EN_TRANSLATIONS: TranslationMap = [
   ['Автомобиль: ', 'Car: '],
   ['Гурамишвили, ул. Гурамишвили 78', 'Guramishvili, Guramishvili Ave. 78'],
   ['Сабуртало, ул. Анна Политковская 51', 'Saburtalo, Anna Politkovskaya St. 51'],
+  ['Заявка отправлена!', 'Request sent!'],
+  ['Мы перезвоним в течение 15 минут.', 'We will call you back within 15 minutes.'],
+  ['Или позвоните нам:', 'Or call us:'],
 ];
 
 const KA_TRANSLATIONS: TranslationMap = [
@@ -113,7 +116,7 @@ const KA_TRANSLATIONS: TranslationMap = [
   ['Керамическое покрытие авто', 'კერამიკული დაფარვა'],
   ['Тонировка стекол', 'მინების ტონირება'],
   ['Детейлинг химчистка', 'დეტეილინგ ქიმწმენდა'],
-  ['Реставрация автостекла', 'ავტო მინის აღდგენა'],
+  ['Ремонт и шлифовка автостекла', 'ავტომინის შეკეთება და შლიფოვკა'],
   ['Шумоизоляция', 'ხმის იზოლაცია'],
   ['Введите номер в международном формате: +995 5XX XXX XXX', 'შეიყვანეთ ნომერი საერთაშორისო ფორმატში: +995 5XX XXX XXX'],
   ['Записаться — ответим за 15 минут', 'ჩაეწერეთ — ვუპასუხებთ 15 წუთში'],
@@ -123,6 +126,9 @@ const KA_TRANSLATIONS: TranslationMap = [
   ['Автомобиль: ', 'ავტომობილი: '],
   ['Гурамишвили, ул. Гурамишвили 78', 'გურამიშვილის სტუდიაში, გურამიშვილის გამზ.78'],
   ['Сабуртало, ул. Анна Политковская 51', 'საბურთალოს სტუდიაში, ანა პოლიტკოვსკაიას ქ. 51'],
+  ['Заявка отправлена!', 'მოთხოვნა გაიგზავნა!'],
+  ['Мы перезвоним в течение 15 минут.', 'ჩვენ დაგირეკავთ 15 წუთში.'],
+  ['Или позвоните нам:', 'ან დაგვირეკეთ:'],
 ];
 
 function translateBlock(html: string, translations: TranslationMap): string {

@@ -57,4 +57,18 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     // 103 chars → 148 chars
     description: 'პრემიუმ ხელით რეცხვა თბილისში. 2-3 ფაზიანი დეტეილინგ რეცხვა, სალონის დამუშავება, დამცავი საფარის გადატანა. ორი ფილიალი. ჩაწერა ონლაინ — BESTAUTO.',
   },
+
+  // ── Windshield Repair (expanded: + polishing & grinding) ────
+  'ru/windshield-repair': {
+    title: 'Ремонт сколов и трещин автостекол, полировка и шлифовка в Тбилиси | BESTAUTO',
+    description: 'Ремонт сколов и трещин, полировка помутневших и шлифовка поцарапанных автостекол в Тбилиси. Лобовое и боковые стёкла. Цены от 60 лари. Гарантия. Запись онлайн — BESTAUTO.',
+  },
+  'ka/windshield-repair': {
+    title: 'ავტომინების შეკეთება, პოლირება და შლიფოვკა თბილისში | BESTAUTO',
+    description: 'საქარე და გვერდითი მინების ნაკენჭარის შეკეთება, პოლირება და შლიფოვკა თბილისში. ფასები 60 ლარიდან. გარანტია. ჩაწერა ონლაინ — BESTAUTO.',
+  },
+  'en/windshield-repair': {
+    title: 'Windshield Chip & Crack Repair, Glass Polishing & Grinding in Tbilisi | BESTAUTO',
+    description: 'Windshield and side window chip repair, glass polishing and scratch grinding in Tbilisi. Prices from 60 GEL. Warranty included. Book online — BESTAUTO.',
+  },
 };
