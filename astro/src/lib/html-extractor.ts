@@ -545,6 +545,27 @@ export function removeBlockContaining(content: string, searchTerm: string): stri
 }
 
 /**
+ * Remove all rec blocks with the given data-record-type attribute.
+ * Used to strip old Tilda t692 cross-sell blocks replaced by dynamic generator.
+ */
+export function removeBlockByRecordType(content: string, recordType: string): string {
+  const marker = `data-record-type="${recordType}"`;
+  let result = content;
+  for (let i = 0; i < MAX_BLOCK_REMOVAL_ITERATIONS; i++) {
+    const markerIdx = result.indexOf(marker);
+    if (markerIdx < 0) break;
+    const before = result.slice(0, markerIdx);
+    const recMatches = [...before.matchAll(/id="(rec\d+)"/g)];
+    if (recMatches.length === 0) break;
+    const recId = recMatches[recMatches.length - 1][1];
+    const next = removeRecordBlock(result, recId);
+    if (next === result) break;
+    result = next;
+  }
+  return result;
+}
+
+/**
  * Remove JS-based SEO scripts from Tilda HTML (hreflang + dynamic Service schema).
  * These are replaced by static equivalents generated at build time in seo.ts.
  */

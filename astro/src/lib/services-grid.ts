@@ -3,7 +3,7 @@
  * Returns a complete HTML string styled with inline CSS (Tilda-compatible).
  */
 
-interface ServiceEntry {
+export interface ServiceEntry {
   slug: string;
   tier: 1 | 2;
   name: Record<string, string>;
@@ -12,7 +12,7 @@ interface ServiceEntry {
   image: string;
 }
 
-const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
+export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   // Tier 1 — large cards (most popular / high-margin)
   {
     slug: 'ppf-shield-wrapping',

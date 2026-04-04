@@ -7,7 +7,8 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter } from '../lib/html-extractor';
+import { generateRelatedServicesHtml } from '../lib/related-services';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
@@ -30,46 +31,6 @@ const SERVICE_SLUGS = new Set([
   'windshield-repair', 'ppf-shield-wrapping', 'vinyl-wrapping',
   'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics', 'carwash',
 ]);
-
-// Related-services block rec IDs per "lang/slug" (type-692 blocks, start=end for single block)
-const RELATED_BLOCK_RANGES: Readonly<Record<string, readonly [string, string]>> = {
-  // KA
-  'ka/ceramiccoating':        ['rec611064982', 'rec611064982'],
-  'ka/polishing':             ['rec598873537', 'rec598873537'],
-
-  'ka/interior-cleaning':     ['rec598893339', 'rec598893339'],
-  'ka/windshield-repair':     ['rec598893478', 'rec598893478'],
-  'ka/ppf-shield-wrapping':   ['rec603096467', 'rec603096467'],
-  'ka/vinyl-wrapping':        ['rec604005362', 'rec604005362'],
-  'ka/auto-glass-tinting':    ['rec604009889', 'rec604009889'],
-  'ka/car-soundproofing':     ['rec604009426', 'rec604009426'],
-
-  'ka/computer-diagnostics':  ['rec614244419', 'rec614244419'],
-  // EN
-  'en/ceramiccoating':        ['rec603462096', 'rec603462096'],
-  'en/polishing':             ['rec597103996', 'rec597103996'],
-
-  'en/interior-cleaning':     ['rec605651300', 'rec605651300'],
-  'en/ppf-shield-wrapping':   ['rec600301234', 'rec600301234'],
-  'en/windshield-repair':     ['rec598440261', 'rec598440261'],
-  'en/vinyl-wrapping':        ['rec603097601', 'rec603097601'],
-
-  'en/car-soundproofing':     ['rec603498174', 'rec603498174'],
-  'en/auto-glass-tinting':    ['rec603498259', 'rec603498259'],
-  'en/computer-diagnostics':  ['rec614236065', 'rec614236065'],
-  // RU
-  'ru/ceramiccoating':        ['rec595448578', 'rec595448578'],
-  'ru/polishing':             ['rec603225450', 'rec603225450'],
-
-  'ru/interior-cleaning':     ['rec603226140', 'rec603226140'],
-  'ru/windshield-repair':     ['rec603226294', 'rec603226294'],
-  'ru/auto-glass-tinting':    ['rec603226768', 'rec603226768'],
-  'ru/car-soundproofing':     ['rec603226809', 'rec603226809'],
-
-  'ru/vinyl-wrapping':        ['rec603226720', 'rec603226720'],
-  'ru/ppf-shield-wrapping':   ['rec603226585', 'rec603226585'],
-  'ru/computer-diagnostics':  ['rec610181663', 'rec610181663'],
-};
 
 export async function getStaticPaths() {
   const discontinuedSlugs = new Set([
@@ -396,14 +357,6 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + (baseSlug === '' ? generateFaqSchema(lang) : '');
 
 if (lang === 'ru') {
-  // Extract related-services block and move before footer
-  let relatedBlockRu = '';
-  const relatedKeyRu = `ru/${baseSlug}`;
-  const relatedRangeRu = RELATED_BLOCK_RANGES[relatedKeyRu];
-  if (relatedRangeRu) {
-    [relatedBlockRu, mainContent] = extractAndRemoveBlockRange(mainContent, relatedRangeRu[0], relatedRangeRu[1]);
-  }
-
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   // Remove old contact blocks (unique ID per page — use content-based removal)
   mainContent = removeBlockContaining(mainContent, '550 000 199');
@@ -440,10 +393,6 @@ if (lang === 'ru') {
       mainContent = mainContent.slice(0, divStart) + galleryReviewsRu + mainContent.slice(divStart);
     }
   }
-  // Insert related-services block after contacts, before footer
-  if (relatedBlockRu) {
-    mainContent = insertBeforeFooter(mainContent, relatedBlockRu, ['rec603526076']);
-  }
 }
 
 // Helper: insert block before the first matching footer
@@ -459,14 +408,6 @@ function insertBeforeFooter(content: string, block: string, footerIds: readonly 
 }
 
 if (lang === 'ka') {
-  // Extract related-services block and move before footer
-  let relatedBlockKa = '';
-  const relatedKeyKa = `ka/${baseSlug}`;
-  const relatedRangeKa = RELATED_BLOCK_RANGES[relatedKeyKa];
-  if (relatedRangeKa) {
-    [relatedBlockKa, mainContent] = extractAndRemoveBlockRange(mainContent, relatedRangeKa[0], relatedRangeKa[1]);
-  }
-
   // Remove old contact blocks: homepage IDs + subpage IDs (shared across all KA pages)
   mainContent = removeRecordBlock(mainContent, 'rec2091645613');
   mainContent = removeRecordBlock(mainContent, 'rec2091645623');
@@ -502,24 +443,12 @@ if (lang === 'ka') {
       }
     }
   }
-  // Insert related-services block after contacts, before footer
-  if (relatedBlockKa) {
-    mainContent = insertBeforeFooter(mainContent, relatedBlockKa, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
-  }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_KA;
   }
 }
 
 if (lang === 'en') {
-  // Extract related-services block and move before footer
-  let relatedBlockEn = '';
-  const relatedKeyEn = `en/${baseSlug}`;
-  const relatedRangeEn = RELATED_BLOCK_RANGES[relatedKeyEn];
-  if (relatedRangeEn) {
-    [relatedBlockEn, mainContent] = extractAndRemoveBlockRange(mainContent, relatedRangeEn[0], relatedRangeEn[1]);
-  }
-
   // Remove old contact blocks: subpage IDs + service-page CTA/popup IDs
   mainContent = removeRecordBlock(mainContent, 'rec1862121201');
   mainContent = removeRecordBlock(mainContent, 'rec1862121211');
@@ -555,13 +484,21 @@ if (lang === 'en') {
       }
     }
   }
-  // Insert related-services block after contacts, before footer
-  if (relatedBlockEn) {
-    mainContent = insertBeforeFooter(mainContent, relatedBlockEn, ['rec607472568', 'rec607473240']);
-  }
   if (!mainContent.includes('ba-wa-wrap')) {
     mainContent = mainContent + WHATSAPP_BLOCK_EN;
   }
+}
+
+// Strip old Tilda cross-sell blocks (t692) and insert dynamic cross-sell
+mainContent = removeBlockByRecordType(mainContent, '692');
+const FOOTER_IDS: Readonly<Record<string, readonly string[]>> = {
+  ru: ['rec603526076'],
+  ka: ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076'],
+  en: ['rec607472568', 'rec607473240'],
+};
+const relatedHtml = generateRelatedServicesHtml(lang, baseSlug);
+if (relatedHtml) {
+  mainContent = insertBeforeFooter(mainContent, relatedHtml, FOOTER_IDS[lang] ?? []);
 }
 
 // Replace first Elfsight reviews widget with self-hosted widget, remove duplicates.
