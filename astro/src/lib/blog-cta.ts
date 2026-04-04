@@ -133,12 +133,13 @@ export function generateBlogCtaHtml(lang: string, baseSlug: string): string {
   if (parentService && CTA_HEADINGS[parentService]) {
     const headings = CTA_HEADINGS[parentService];
     title = headings[lang] ?? headings['en'];
-    href = `/${langPrefix}${parentService}`;
   } else {
-    // Generic CTA for unmapped articles — links to homepage
+    // Generic CTA for unmapped articles
     title = GENERIC_CTA_TITLE[lang] ?? GENERIC_CTA_TITLE['en'];
-    href = langPrefix ? `/${langPrefix}` : '/';
   }
+
+  // Always link to #contacts section on the homepage
+  href = langPrefix ? `/${langPrefix}#contacts` : '/#contacts';
 
   const description = CTA_DESCRIPTION[lang] ?? CTA_DESCRIPTION['en'];
   const buttonText = CTA_BUTTON[lang] ?? CTA_BUTTON['en'];

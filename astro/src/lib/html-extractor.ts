@@ -671,7 +671,7 @@ export function convertBlogInlineFaq(content: string, lang: string = 'en'): stri
 
   const faqTitle = FAQ_HEADING_TEXT[lang] ?? FAQ_HEADING_TEXT['en'];
 
-  const accordionHtml = `<div class="ba-blog-faq" style="position:relative;left:50%;transform:translateX(-50%);width:100vw;background:#000;padding:64px 24px 48px;box-sizing:border-box;margin:32px 0 0;">
+  const accordionHtml = `<div class="ba-blog-faq" style="position:relative;left:50%;transform:translateX(-50%);width:100vw;background:#000;padding:64px 24px 48px;box-sizing:border-box;margin:0;">
       <div style="max-width:800px;margin:0 auto;">
         <h2 class="ba-blog-faq__title">${faqTitle}</h2>
         ${accordionItems}
