@@ -22,7 +22,7 @@ import { generateBrandLogosHtml } from '../lib/brand-logos';
 import { generateProcessStepsHtml } from '../lib/process-steps';
 import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
 import { generateVideoGalleryHtml } from '../lib/video-gallery';
-import { removeTildaFaqSchema, removeAccordionByQuestion, generateGrindingFaqHtml, injectAfterRecBlock } from '../lib/windshield-faq';
+import { removeTildaFaqSchema, removeAccordionByQuestion, generateGrindingAccordionItems, injectAtTopOfFaqAccordion } from '../lib/windshield-faq';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -161,8 +161,8 @@ if (baseSlug === 'windshield-repair') {
     injectedHtml = injectedHtml.replaceAll('трещины до 15 см', 'трещины до 30 см');
     // Remove booking question from visual accordion
     injectedHtml = removeAccordionByQuestion(injectedHtml, 'Нужно ли записываться?');
-    // Inject grinding FAQ after Tilda t585 block (rec597296962)
-    injectedHtml = injectAfterRecBlock(injectedHtml, 'rec597296962', generateGrindingFaqHtml(lang));
+    // Inject grinding FAQ items at top of Tilda t585 accordion (rec597296962)
+    injectedHtml = injectAtTopOfFaqAccordion(injectedHtml, 'rec597296962', generateGrindingAccordionItems(lang, 'rec597296962'));
   } else if (lang === 'ka') {
     injectedHtml = injectedHtml.replaceAll(
       'საქარე მინის შეკეთება თბილისში',
@@ -193,8 +193,8 @@ if (baseSlug === 'windshield-repair') {
     injectedHtml = injectedHtml.replaceAll('ბზარები 15 სმ-მდე', 'ბზარები 30 სმ-მდე');
     // Remove booking question from visual accordion
     injectedHtml = removeAccordionByQuestion(injectedHtml, 'საჭიროა თუ არა წინასწარ ჩაწერა?');
-    // Inject grinding FAQ after Tilda t585 block (rec598873770)
-    injectedHtml = injectAfterRecBlock(injectedHtml, 'rec598873770', generateGrindingFaqHtml(lang));
+    // Inject grinding FAQ items at top of Tilda t585 accordion (rec598873770)
+    injectedHtml = injectAtTopOfFaqAccordion(injectedHtml, 'rec598873770', generateGrindingAccordionItems(lang, 'rec598873770'));
   } else if (lang === 'en') {
     injectedHtml = injectedHtml.replaceAll(
       'Windshield Repair in Tbilisi',
@@ -226,8 +226,8 @@ if (baseSlug === 'windshield-repair') {
     injectedHtml = injectedHtml.replaceAll('cracks up to 15 cm', 'cracks up to 30 cm');
     // Remove booking question from visual accordion
     injectedHtml = removeAccordionByQuestion(injectedHtml, 'Do I need to book in advance?');
-    // Inject grinding FAQ after Tilda t585 block (rec598440249)
-    injectedHtml = injectAfterRecBlock(injectedHtml, 'rec598440249', generateGrindingFaqHtml(lang));
+    // Inject grinding FAQ items at top of Tilda t585 accordion (rec598440249)
+    injectedHtml = injectAtTopOfFaqAccordion(injectedHtml, 'rec598440249', generateGrindingAccordionItems(lang, 'rec598440249'));
   }
 }
 

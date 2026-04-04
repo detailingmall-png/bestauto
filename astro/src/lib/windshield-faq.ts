@@ -2,7 +2,7 @@
  * Utilities for windshield-repair FAQ page transformations.
  * - Remove Tilda FAQPage JSON-LD (replaced by service-faqs.ts schema)
  * - Remove specific accordion items by question text
- * - Generate grinding FAQ section (ba-faq style)
+ * - Generate grinding FAQ items (Tilda t585 accordion format)
  */
 
 /**
@@ -97,92 +97,68 @@ const GRINDING_FAQ_ITEMS: ReadonlyArray<GrindingFaqItem> = [
   },
 ];
 
-function renderGrindingFaqItem(item: GrindingFaqItem, lang: string): string {
+/* Tilda t585 accordion SVG icons (plus sign) */
+const PLUS_SVG = '<svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#000000"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg>';
+
+const PLUS_SVG_HOVER = '<svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg>';
+
+function renderTildaAccordionItem(
+  item: GrindingFaqItem,
+  lang: string,
+  recId: string,
+  index: number,
+): string {
   const question = item.question[lang] ?? item.question['en'];
   const answer = item.answer[lang] ?? item.answer['en'];
+  const accordionId = `grinding${index}_${recId}`;
+  const fieldSuffix = `grinding_${recId}_${index}`;
 
-  return `<details class="ba-faq__item" style="border-bottom:1px solid var(--ba-color-border);">
-        <summary class="ba-faq__question" style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;list-style:none;font-family:var(--ba-font-family);font-weight:var(--ba-font-weight-semibold);color:var(--ba-color-text);line-height:1.4;gap:16px;">
-          <span>${question}</span>
-          <svg class="ba-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;transition:transform 0.25s ease;"><path d="M5 7.5L10 12.5L15 7.5" style="stroke:var(--ba-color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </summary>
-        <div class="ba-faq__answer" style="padding:0 0 20px;font-family:var(--ba-font-family);color:var(--ba-color-text-muted);line-height:1.6;">${answer}</div>
-      </details>`;
-}
-
-const GRINDING_SECTION_TITLE: Readonly<Record<string, string>> = {
-  ka: 'მინის შლიფოვკა: მითები და რეალობა',
-  ru: 'Шлифовка стекла: мифы и реальность',
-  en: 'Glass Grinding: Myths vs Reality',
-};
-
-/**
- * Generates a ba-faq section with grinding-specific FAQ items.
- * Injected after the Tilda FAQ t585 block on the windshield-repair page.
- */
-export function generateGrindingFaqHtml(lang: string): string {
-  const title = GRINDING_SECTION_TITLE[lang] ?? GRINDING_SECTION_TITLE['en'];
-  const items = GRINDING_FAQ_ITEMS.map((item) => renderGrindingFaqItem(item, lang)).join('\n      ');
-
-  return `<div id="ba-grinding-faq" style="background:#000000;padding:0 0 80px;">
-  <div style="max-width:800px;margin:0 auto;padding:0 24px;">
-    <h3 class="ba-grinding-faq__heading" style="color:var(--ba-color-accent);font-weight:var(--ba-font-weight-bold);text-align:center;margin:0 0 48px;font-family:var(--ba-font-family);">${title}</h3>
-    <div>
-      ${items}
-    </div>
-  </div>
-  <style>
-    .ba-grinding-faq__heading { font-size: 28px; }
-    #ba-grinding-faq .ba-faq__question { font-size: 18px; }
-    #ba-grinding-faq .ba-faq__answer { font-size: 16px; }
-    #ba-grinding-faq .ba-faq__item summary::-webkit-details-marker { display: none; }
-    #ba-grinding-faq .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
-    #ba-grinding-faq .ba-faq__item summary:hover { color: var(--ba-color-accent) !important; }
-    @media screen and (max-width: 960px) {
-      .ba-grinding-faq__heading { font-size: 24px; }
-      #ba-grinding-faq .ba-faq__question { font-size: 17px; }
-      #ba-grinding-faq .ba-faq__answer { font-size: 15px; }
-    }
-    @media screen and (max-width: 640px) {
-      #ba-grinding-faq { padding: 0 0 48px !important; }
-      .ba-grinding-faq__heading { font-size: 22px; margin-bottom: 32px !important; }
-      #ba-grinding-faq .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
-      #ba-grinding-faq .ba-faq__answer { font-size: 15px; }
-    }
-  </style>
-</div>`;
+  return (
+    '<div class="t-col t-col_8 t-prefix_2">' +
+    '<div class="t585__accordion" data-accordion="false" data-scroll-to-expanded="false">' +
+    '<div class="t585__wrapper">' +
+    '<div class="t585__header " style="border-top: 1px solid #eee;">' +
+    `<button type="button" class="t585__trigger-button" aria-controls="${accordionId}" aria-expanded="false">` +
+    `<span class="t585__title t-name t-name_xl" field="li_title__faq_${fieldSuffix}"><strong>${question}</strong></span>` +
+    `<span class="t585__icon"><span class="t585__lines">${PLUS_SVG}</span>` +
+    '<span class="t585__circle" style="background-color: #e4c97e"></span></span>' +
+    `<span class="t585__icon t585__icon-hover"><span class="t585__lines">${PLUS_SVG_HOVER}</span>` +
+    '<span class="t585__circle" style="background-color: #eee;"></span></span>' +
+    '</button></div>' +
+    `<div class="t585__content" id="${accordionId}" hidden>` +
+    '<div class="t585__textwrapper">' +
+    `<div class="t585__text t-descr t-descr_xs" field="li_descr__faq_${fieldSuffix}">${answer}</div>` +
+    '</div></div></div></div></div>'
+  );
 }
 
 /**
- * Injects HTML content after a Tilda rec block (identified by its ID).
- * Finds the block's closing </div> and appends the content after it.
+ * Generates grinding FAQ items in Tilda t585 accordion format.
+ * These are prepended to the existing FAQ accordion on the windshield-repair page.
  */
-export function injectAfterRecBlock(html: string, recId: string, content: string): string {
+export function generateGrindingAccordionItems(lang: string, recId: string): string {
+  return GRINDING_FAQ_ITEMS.map((item, i) =>
+    renderTildaAccordionItem(item, lang, recId, i + 1),
+  ).join('');
+}
+
+/**
+ * Injects accordion items at the TOP of a Tilda t585 FAQ block.
+ * Finds the first `<div class="t-col t-col_8 t-prefix_2">` inside
+ * the rec block identified by recId and prepends the items before it.
+ */
+export function injectAtTopOfFaqAccordion(
+  html: string,
+  recId: string,
+  items: string,
+): string {
   const marker = `id="${recId}"`;
   const startIdx = html.indexOf(marker);
   if (startIdx < 0) return html;
 
-  const divStart = html.lastIndexOf('<div', startIdx);
-  if (divStart < 0) return html;
+  const tColMarker = '<div class="t-col t-col_8 t-prefix_2">';
+  const firstTCol = html.indexOf(tColMarker, startIdx);
+  if (firstTCol < 0) return html;
 
-  // Count div depth to find the block's closing </div>
-  let depth = 0;
-  let pos = divStart;
-  while (pos < html.length) {
-    if (html.startsWith('<div', pos)) {
-      depth++;
-      pos += 4;
-    } else if (html.startsWith('</div>', pos)) {
-      depth--;
-      if (depth === 0) {
-        const blockEnd = pos + 6;
-        return html.slice(0, blockEnd) + content + html.slice(blockEnd);
-      }
-      pos += 6;
-    } else {
-      pos++;
-    }
-  }
-
-  return html;
+  return html.slice(0, firstTCol) + items + html.slice(firstTCol);
 }
