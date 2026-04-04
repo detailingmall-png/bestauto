@@ -148,7 +148,7 @@ export function deferBlockingScripts(head: string): string {
     )
     .replace(
       /<script\s[^>]*src="\/?js\/jquery[^"]*"[^>]*>\s*<\/script>/g,
-      '<script>window.jQuery=function(){}</script>'
+      '<script>(function(){var n=function(){return n};n.fn=n.prototype={jquery:"stub"};n.extend=n.each=n.ready=n.on=n.off=n.trigger=n.find=n.filter=n.css=n.attr=n.addClass=n.removeClass=n.toggleClass=n.text=n.html=n.val=n.append=n.prepend=n.remove=n.data=n.animate=n.hide=n.show=n.fadeIn=n.fadeOut=n.slideDown=n.slideUp=n;n.bridget=n;n.isFunction=function(){return false};n.isArray=Array.isArray;window.jQuery=window.$=n})()</script>'
     );
 }
 
