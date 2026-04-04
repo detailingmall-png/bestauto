@@ -22,6 +22,7 @@ import { generateBrandLogosHtml } from '../lib/brand-logos';
 import { generateProcessStepsHtml } from '../lib/process-steps';
 import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
 import { generateVideoGalleryHtml } from '../lib/video-gallery';
+import { removeTildaFaqSchema, removeAccordionByQuestion, generateGrindingFaqHtml, injectAfterRecBlock } from '../lib/windshield-faq';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -121,8 +122,15 @@ if (SERVICE_SLUGS.has(baseSlug)) {
 
 injectedHtml = replaceGalleries(injectedHtml);
 
-// Windshield-repair page: expand H1, hero description, replace PDR with tinting
+// Windshield-repair page: expand H1, hero description, replace PDR with tinting,
+// fix FAQ (15→30 cm, remove booking question, add grinding FAQ section)
 if (baseSlug === 'windshield-repair') {
+  // Remove Tilda-generated FAQPage JSON-LD first (service-faqs.ts schema is the canonical source).
+  // Must happen before removeAccordionByQuestion — EN/KA pages have JSON-LD before the accordion,
+  // so indexOf would find question text in JSON-LD first and fail to locate the visual block.
+  injectedHtml = removeTildaFaqSchema(injectedHtml);
+
+  // --- Language-specific text replacements ---
   if (lang === 'ru') {
     injectedHtml = injectedHtml.replaceAll(
       'Ремонт лобового стекла в Тбилиси',
@@ -140,6 +148,12 @@ if (baseSlug === 'windshield-repair') {
       'Беспокрасочное удаление вмятин',
       'Тонировка стёкол'
     );
+    // Fix 15→30 cm in FAQ (selective: lowercase plural hits accordion2+6, not price breakdown)
+    injectedHtml = injectedHtml.replaceAll('трещины до 15 см', 'трещины до 30 см');
+    // Remove booking question from visual accordion
+    injectedHtml = removeAccordionByQuestion(injectedHtml, 'Нужно ли записываться?');
+    // Inject grinding FAQ after Tilda t585 block (rec597296962)
+    injectedHtml = injectAfterRecBlock(injectedHtml, 'rec597296962', generateGrindingFaqHtml(lang));
   } else if (lang === 'ka') {
     injectedHtml = injectedHtml.replaceAll(
       'საქარე მინის შეკეთება თბილისში',
@@ -157,6 +171,12 @@ if (baseSlug === 'windshield-repair') {
       'უფერო ნაკბენის მოცილება',
       'მინების ტონირება'
     );
+    // Fix 15→30 cm in FAQ
+    injectedHtml = injectedHtml.replaceAll('ბზარები 15 სმ-მდე', 'ბზარები 30 სმ-მდე');
+    // Remove booking question from visual accordion
+    injectedHtml = removeAccordionByQuestion(injectedHtml, 'საჭიროა თუ არა წინასწარ ჩაწერა?');
+    // Inject grinding FAQ after Tilda t585 block (rec598873770)
+    injectedHtml = injectAfterRecBlock(injectedHtml, 'rec598873770', generateGrindingFaqHtml(lang));
   } else if (lang === 'en') {
     injectedHtml = injectedHtml.replaceAll(
       'Windshield Repair in Tbilisi',
@@ -175,6 +195,12 @@ if (baseSlug === 'windshield-repair') {
       'href="/en/ppf-shield-wrapping"',
       'href="/en/auto-glass-tinting"'
     );
+    // Fix 15→30 cm in FAQ
+    injectedHtml = injectedHtml.replaceAll('cracks up to 15 cm', 'cracks up to 30 cm');
+    // Remove booking question from visual accordion
+    injectedHtml = removeAccordionByQuestion(injectedHtml, 'Do I need to book in advance?');
+    // Inject grinding FAQ after Tilda t585 block (rec598440249)
+    injectedHtml = injectAfterRecBlock(injectedHtml, 'rec598440249', generateGrindingFaqHtml(lang));
   }
 }
 

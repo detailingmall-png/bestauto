@@ -317,6 +317,30 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Windshield polishing starts from 250 GEL, side window — from 150 GEL. Windshield grinding — from 400 GEL.',
       },
     },
+    {
+      question: {
+        ka: 'სიმართლეა, რომ ავტომინის შლიფოვკა შეუძლებელია?',
+        ru: 'Правда ли, что автостекло нельзя шлифовать?',
+        en: 'Is it true that car glass cannot be ground?',
+      },
+      answer: {
+        ka: 'არა, ეს მითია. პროფესიონალური შლიფოვკა სპეციალური აბრაზიული დისკებით და პოლირების პასტებით უსაფრთხოდ აშორებს ნაკაწრებს მინის სტრუქტურის დარღვევის გარეშე. მნიშვნელოვანია სწორი აღჭურვილობა და გამოცდილება.',
+        ru: 'Нет, это миф. Профессиональная шлифовка специальными абразивными дисками и полировальными пастами безопасно удаляет царапины без нарушения структуры стекла. Важны правильное оборудование и опыт.',
+        en: 'No, this is a myth. Professional grinding with specialized abrasive discs and polishing compounds safely removes scratches without compromising the glass structure. Proper equipment and experience are key.',
+      },
+    },
+    {
+      question: {
+        ka: 'რა დეფექტებს აშორებს მინის შლიფოვკა?',
+        ru: 'Какие дефекты убирает шлифовка стекла?',
+        en: 'What defects does glass grinding remove?',
+      },
+      answer: {
+        ka: 'შლიფოვკა აშორებს: ქვიშის კვალს (ავტობანის ეფექტი), საწმენდი ფუნჯების დატოვებულ ნაკაწრებს, ღრმა ნაკაწრებს ვანდალიზმიდან ან შემთხვევითი დაზიანებიდან, მოღრუბლულობას და მინის გაუმჭვირვალობას.',
+        ru: 'Шлифовка убирает: следы от песка (эффект пескоструя на трассе), затёртости от щёток стеклоочистителя, глубокие царапины от вандализма или случайных повреждений, помутнение и потерю прозрачности стекла.',
+        en: 'Grinding removes: sand marks (sandblasting effect from highway driving), wiper blade scratches, deep scratches from vandalism or accidental damage, cloudiness and loss of glass transparency.',
+      },
+    },
   ],
 
   'car-soundproofing': [
