@@ -176,4 +176,22 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     title: 'BESTAUTO Saburtalo — Detailing Studio in Tbilisi | Address & Hours',
     description: 'BESTAUTO Saburtalo studio: Anna Politkovskaya St. 51. PPF, ceramic, polishing, tinting. Mon–Sat 10:00–20:00. Free parking. Book online!',
   },
+
+  // ── Blog audit KA v3 + EN (2026-04-04) ─────────────────────
+  'en/blog/why-use-car-diagnostic-test': {
+    title: 'Car Diagnostic Test: Importance and Benefits',
+    ogTitle: 'Car Diagnostic Test: Importance and Benefits',
+  },
+  'en/blog/car-diagnostic-test-stages-and-methods': {
+    title: 'How Car Diagnostic Tests Work: Key Stages and Methods',
+    ogTitle: 'How Car Diagnostic Tests Work: Key Stages and Methods',
+  },
+  'en/blog/car-interior-detailing-basics': {
+    title: 'Key Stages of Interior Detailing: From Dust Removal to Fabric Cleaning',
+    ogTitle: 'Key Stages of Interior Detailing: From Dust Removal to Fabric Cleaning',
+  },
+  'ka/blog/technology-and-process': {
+    title: '\u10e0\u10dd\u10d2\u10dd\u10e0 \u10db\u10e3\u10e8\u10d0\u10dd\u10d1\u10e1 \u10d9\u10d4\u10e0\u10d0\u10db\u10d8\u10d9\u10e3\u10da\u10d8 \u10e1\u10d0\u10e4\u10d0\u10e0\u10d8: \u10e2\u10d4\u10e5\u10dc\u10dd\u10da\u10dd\u10d2\u10d8\u10d0 \u10d3\u10d0 \u10d2\u10d0\u10db\u10dd\u10e7\u10d4\u10dc\u10d4\u10d1\u10d8\u10e1 \u10de\u10e0\u10dd\u10ea\u10d4\u10e1\u10d8',
+    ogTitle: '\u10e0\u10dd\u10d2\u10dd\u10e0 \u10db\u10e3\u10e8\u10d0\u10dd\u10d1\u10e1 \u10d9\u10d4\u10e0\u10d0\u10db\u10d8\u10d9\u10e3\u10da\u10d8 \u10e1\u10d0\u10e4\u10d0\u10e0\u10d8: \u10e2\u10d4\u10e5\u10dc\u10dd\u10da\u10dd\u10d2\u10d8\u10d0 \u10d3\u10d0 \u10d2\u10d0\u10db\u10dd\u10e7\u10d4\u10dc\u10d4\u10d1\u10d8\u10e1 \u10de\u10e0\u10dd\u10ea\u10d4\u10e1\u10d8',
+  },
 };

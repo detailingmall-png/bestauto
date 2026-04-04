@@ -383,12 +383,24 @@ if (isBlogPage && baseSlug !== 'blog') {
     mainContent = mainContent.replaceAll('\u10d2\u10d0\u10e3\u10ee\u10d0\u10dc\u10d2\u10e0\u10d6\u10da\u10d8\u10d5\u10d4\u10d1\u10e1', '\u10d2\u10d0\u10e3\u10ee\u10d0\u10dc\u10d2\u10e0\u10eb\u10da\u10d8\u10d5\u10d4\u10d1\u10e1');
     mainContent = mainContent.replaceAll('\u10e1\u10d8\u10ea\u10dd\u10ea\u10da\u10d8\u10e1\u10e3\u10dc\u10d0\u10e0\u10d8\u10d0\u10dc\u10dd\u10d1\u10d0\u10e1', '\u10e1\u10d8\u10ea\u10dd\u10ea\u10ee\u10da\u10d8\u10e1\u10e3\u10dc\u10d0\u10e0\u10d8\u10d0\u10dc\u10dd\u10d1\u10d0\u10e1');
     mainContent = mainContent.replaceAll('\u10d4\u10da\u10e4\u10d4\u10e0\u10d8', '\u10e2\u10dd\u10dc\u10d8');
+    // Blog KA audit v3 — text fix (2026-04-04)
+    mainContent = mainContent.replaceAll('\u10d1\u10d6\u10d8\u10dc\u10d5\u10d0\u10e0\u10d4\u10d1\u10d0 \u10d3\u10d0 \u10d1\u10d6\u10d8\u10dc\u10d5\u10d0\u10e0\u10d4\u10d1\u10d0', '\u10d1\u10d6\u10d8\u10dc\u10d5\u10d0\u10e0\u10d4\u10d1\u10d0 \u10d3\u10d0 \u10e4\u10d4\u10e0\u10d8\u10e1 \u10e1\u10d8\u10e6\u10e0\u10db\u10d4');
   }
   if (lang === 'en') {
     mainContent = mainContent.replace(
       /The steering wheel is not merely a control element[\s\S]*?uniqueness\.\s*(?:<br\s*\/?\s*>\s*)*<\/div>/,
       '</div>'
     );
+    // Blog EN audit — text corrections (2026-04-04)
+    mainContent = mainContent.replaceAll(
+      'Weigh the cost of $2500 to $10000',
+      'Consider that full repainting can cost several thousand GEL'
+    );
+    mainContent = mainContent.replaceAll('Color and Tone Color', 'Color and Tone');
+    mainContent = mainContent.replaceAll('Salon Detailing', 'Interior Detailing');
+    mainContent = mainContent.replaceAll('salon detailing', 'interior detailing');
+    mainContent = mainContent.replaceAll('gain through zonation', 'gain through ozone treatment');
+    mainContent = mainContent.replaceAll('car amateurs', 'car owners');
   }
 }
 
