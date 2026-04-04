@@ -148,6 +148,11 @@ if (baseSlug === 'windshield-repair') {
       'Беспокрасочное удаление вмятин',
       'Тонировка стёкол'
     );
+    // Update prices section title to include grinding
+    injectedHtml = injectedHtml.replaceAll(
+      'Цены на ремонт сколов и трещин автостекол',
+      'Цены на ремонт сколов и трещин, шлифовку автостекол'
+    );
     // Fix 15→30 cm in FAQ (selective: lowercase plural hits accordion2+6, not price breakdown)
     injectedHtml = injectedHtml.replaceAll('трещины до 15 см', 'трещины до 30 см');
     // Remove booking question from visual accordion
@@ -170,6 +175,11 @@ if (baseSlug === 'windshield-repair') {
     injectedHtml = injectedHtml.replaceAll(
       'უფერო ნაკბენის მოცილება',
       'მინების ტონირება'
+    );
+    // Update prices section title to include grinding
+    injectedHtml = injectedHtml.replaceAll(
+      'საქარე მინის ჩიპის და ბზარების შეკეთება',
+      'ავტომინის შეკეთება, შლიფოვკა და პოლირება'
     );
     // Fix 15→30 cm in FAQ
     injectedHtml = injectedHtml.replaceAll('ბზარები 15 სმ-მდე', 'ბზარები 30 სმ-მდე');
@@ -194,6 +204,11 @@ if (baseSlug === 'windshield-repair') {
     injectedHtml = injectedHtml.replaceAll(
       'href="/en/ppf-shield-wrapping"',
       'href="/en/auto-glass-tinting"'
+    );
+    // Update prices section title to include grinding
+    injectedHtml = injectedHtml.replaceAll(
+      'Prices for windshield chip and crack repair',
+      'Prices for chip & crack repair, glass grinding'
     );
     // Fix 15→30 cm in FAQ
     injectedHtml = injectedHtml.replaceAll('cracks up to 15 cm', 'cracks up to 30 cm');
