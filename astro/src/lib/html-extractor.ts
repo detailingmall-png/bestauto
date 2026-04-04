@@ -662,7 +662,7 @@ export function convertBlogInlineFaq(content: string): string {
       </details>`
   ).join('\n      ');
 
-  const accordionHtml = `<div class="ba-blog-faq" style="margin:32px 0;">
+  const accordionHtml = `<div class="ba-blog-faq" style="margin:32px 0;background:var(--ba-color-surface);border-radius:var(--ba-radius-xl);padding:32px 24px;">
       ${accordionItems}
       <style>
         .ba-blog-faq .ba-faq__question { font-size: 18px; }
@@ -675,6 +675,7 @@ export function convertBlogInlineFaq(content: string): string {
           .ba-blog-faq .ba-faq__answer { font-size: 15px; }
         }
         @media screen and (max-width: 640px) {
+          .ba-blog-faq { padding: 24px 16px !important; }
           .ba-blog-faq .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
           .ba-blog-faq .ba-faq__answer { font-size: 15px; }
         }

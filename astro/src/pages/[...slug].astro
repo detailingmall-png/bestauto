@@ -504,10 +504,16 @@ const FOOTER_IDS: Readonly<Record<string, readonly string[]>> = {
   en: ['rec607472568', 'rec607473240'],
 };
 
-// Blog articles: insert contextual service promo CTA block (before cross-sell)
+// Blog articles: insert contextual service promo CTA block (before contacts section)
 const blogCtaHtml = generateBlogCtaHtml(lang, baseSlug);
 if (blogCtaHtml) {
-  mainContent = insertBeforeFooter(mainContent, blogCtaHtml, FOOTER_IDS[lang] ?? []);
+  const contactsAnchor = '<a name="contacts"';
+  const contactsIdx = mainContent.indexOf(contactsAnchor);
+  if (contactsIdx >= 0) {
+    mainContent = mainContent.slice(0, contactsIdx) + blogCtaHtml + mainContent.slice(contactsIdx);
+  } else {
+    mainContent = insertBeforeFooter(mainContent, blogCtaHtml, FOOTER_IDS[lang] ?? []);
+  }
 }
 
 const relatedHtml = generateRelatedServicesHtml(lang, baseSlug);
