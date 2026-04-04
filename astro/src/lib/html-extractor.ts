@@ -946,13 +946,19 @@ export function applyMetaOverrides(head: string, lang: string, slug: string): st
 }
 
 // ---------------------------------------------------------------------------
-// Strip <style> blocks embedded inside <a> button elements.
-// Tilda exports scoped CSS rules inside anchor tags; browsers render the
-// <style> content as visible text because <style> is invalid inside <a>.
+// Relocate <style> blocks embedded inside <a>/<button> elements.
+// Tilda exports scoped CSS rules inside anchor and submit-button tags;
+// browsers render <style> content as visible text when it is nested in
+// phrasing elements (<a>, <button>).  Move each <style> to just after
+// the closing tag so it becomes valid HTML while preserving button
+// styling (gold bg, border-radius, etc.).
 // ---------------------------------------------------------------------------
 
 function stripButtonInlineStyles(html: string): string {
-  return html.replace(/<style>#rec\d+\s+\.t-btnflex[^<]*<\/style>/g, '');
+  return html.replace(
+    /<style>(#rec\d+\s+\.t-btnflex[^<]*)<\/style><\/(a|button)>/g,
+    '</$2><style>$1</style>'
+  );
 }
 
 // ---------------------------------------------------------------------------
