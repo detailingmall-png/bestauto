@@ -671,24 +671,26 @@ export function convertBlogInlineFaq(content: string, lang: string = 'en'): stri
 
   const faqTitle = FAQ_HEADING_TEXT[lang] ?? FAQ_HEADING_TEXT['en'];
 
-  const accordionHtml = `<div class="ba-blog-faq" style="margin:32px 0 0;background:var(--ba-color-surface);border-radius:var(--ba-radius-xl);padding:32px 24px;">
-      <h2 class="ba-blog-faq__title">${faqTitle}</h2>
-      ${accordionItems}
+  const accordionHtml = `<div class="ba-blog-faq" style="position:relative;left:50%;transform:translateX(-50%);width:100vw;background:#000;padding:64px 24px 48px;box-sizing:border-box;margin:32px 0 0;">
+      <div style="max-width:800px;margin:0 auto;">
+        <h2 class="ba-blog-faq__title">${faqTitle}</h2>
+        ${accordionItems}
+      </div>
       <style>
-        .ba-blog-faq__title { font-size: 24px; color: var(--ba-color-accent); font-weight: var(--ba-font-weight-bold); margin: 0 0 24px; font-family: var(--ba-font-family); line-height: 1.3; }
-        .ba-blog-faq .ba-faq__question { font-size: 18px; }
-        .ba-blog-faq .ba-faq__answer { font-size: 16px; }
+        .ba-blog-faq__title { font-size: 30px; color: #e4c97e !important; font-weight: 700 !important; margin: 0 0 32px !important; font-family: var(--ba-font-family); line-height: 1.3; text-align: center; }
+        .ba-blog-faq .ba-faq__question { font-size: 18px; color: #fff !important; }
+        .ba-blog-faq .ba-faq__answer { font-size: 16px; color: rgba(255,255,255,0.7) !important; }
         .ba-blog-faq .ba-faq__item summary::-webkit-details-marker { display: none; }
         .ba-blog-faq .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
-        .ba-blog-faq .ba-faq__item summary:hover { color: var(--ba-color-accent) !important; }
+        .ba-blog-faq .ba-faq__item summary:hover { color: #e4c97e !important; }
         @media screen and (max-width: 960px) {
-          .ba-blog-faq__title { font-size: 22px; }
+          .ba-blog-faq__title { font-size: 28px !important; }
           .ba-blog-faq .ba-faq__question { font-size: 17px; }
           .ba-blog-faq .ba-faq__answer { font-size: 15px; }
         }
         @media screen and (max-width: 640px) {
-          .ba-blog-faq { padding: 24px 16px !important; }
-          .ba-blog-faq__title { font-size: 20px; margin-bottom: 20px !important; }
+          .ba-blog-faq { padding: 48px 16px 32px !important; }
+          .ba-blog-faq__title { font-size: 24px !important; margin-bottom: 24px !important; }
           .ba-blog-faq .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
           .ba-blog-faq .ba-faq__answer { font-size: 15px; }
         }
