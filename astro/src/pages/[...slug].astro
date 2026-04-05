@@ -602,12 +602,22 @@ mainContent = mainContent.replace(
   ''
 );
 
-// On service pages, move reviews widget right after the advantages block (t502)
+// On service pages, move reviews heading + widget right after the advantages block (t502)
 if (mainContent.includes('data-alias-record-type="502"') && mainContent.includes('id="ba-reviews"')) {
+  // Extract reviews heading blocks (anchor t215 + heading t255 that precede the Elfsight container)
+  let reviewsHeading = '';
+  const reviewsAnchorRecId = findRecIdContaining(mainContent, 'name="reviews"');
+  if (reviewsAnchorRecId) {
+    const headingRecId = findNthRecIdAfter(mainContent, reviewsAnchorRecId, 1);
+    if (headingRecId) {
+      [reviewsHeading, mainContent] = extractAndRemoveBlockRange(mainContent, reviewsAnchorRecId, headingRecId);
+    }
+  }
+  // Extract ba-reviews section
   let reviewsSection: string;
   [reviewsSection, mainContent] = extractSectionById(mainContent, 'ba-reviews');
   if (reviewsSection) {
-    mainContent = insertAfterBlockByAliasType(mainContent, '502', reviewsSection);
+    mainContent = insertAfterBlockByAliasType(mainContent, '502', reviewsHeading + reviewsSection);
   }
 }
 
