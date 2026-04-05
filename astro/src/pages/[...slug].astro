@@ -297,7 +297,7 @@ if (baseSlug === 'blog') {
   }
 }
 
-const { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml, lang, baseSlug);
+const { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml, lang, baseSlug, baseSlug === '');
 let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
 
 // CTA copy improvements: nav button
@@ -644,10 +644,10 @@ if (baseSlug === '') {
   const heroRecIds = HERO_REC_IDS[lang] ?? [];
 
   const heroVideoHtml = `
-<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.jpg" width="1280" height="720">
+<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.webp" width="1280" height="720">
   <source src="/hero-desktop.mp4" type="video/mp4">
 </video>
-<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.jpg" width="480" height="854">
+<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.webp" width="480" height="854">
   <source src="/hero-mobile.mp4" type="video/mp4">
 </video>
 <style>
@@ -712,10 +712,10 @@ if (baseSlug === '') {
 
     // Only inject <style> and <script> once (first hero block), video tags in each block
     const videoOnly = `
-<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.jpg" width="1280" height="720">
+<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.webp" width="1280" height="720">
   <source src="/hero-desktop.mp4" type="video/mp4">
 </video>
-<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.jpg" width="480" height="854">
+<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.webp" width="480" height="854">
   <source src="/hero-mobile.mp4" type="video/mp4">
 </video>`;
     const injection = videoStyleInjected ? videoOnly : heroVideoHtml;

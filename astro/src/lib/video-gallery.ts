@@ -13,7 +13,7 @@ interface VideoEntry {
 const VIDEOS: ReadonlyArray<VideoEntry> = [
   {
     src: '/videos/ppf-reel1.mp4',
-    poster: '/videos/ppf-reel1-poster.jpg',
+    poster: '/videos/ppf-reel1-poster.webp',
     label: {
       ka: 'PPF ფირით დაფარვა',
       ru: 'Оклейка PPF плёнкой',
@@ -22,7 +22,7 @@ const VIDEOS: ReadonlyArray<VideoEntry> = [
   },
   {
     src: '/videos/ppf-reel2.mp4',
-    poster: '/videos/ppf-reel2-poster.jpg',
+    poster: '/videos/ppf-reel2-poster.webp',
     label: {
       ka: 'კაპოტის დაცვა',
       ru: 'Защита капота',
@@ -31,7 +31,7 @@ const VIDEOS: ReadonlyArray<VideoEntry> = [
   },
   {
     src: '/videos/ppf-reel3.mp4',
-    poster: '/videos/ppf-reel3-poster.jpg',
+    poster: '/videos/ppf-reel3-poster.webp',
     label: {
       ka: 'სრული დაფარვა',
       ru: 'Полная оклейка',
@@ -40,7 +40,7 @@ const VIDEOS: ReadonlyArray<VideoEntry> = [
   },
   {
     src: '/videos/ppf-reel4.mp4',
-    poster: '/videos/ppf-reel4-poster.jpg',
+    poster: '/videos/ppf-reel4-poster.webp',
     label: {
       ka: 'დეტალური მუშაობა',
       ru: 'Детальная работа',

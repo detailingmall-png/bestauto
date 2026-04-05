@@ -156,8 +156,9 @@ export function deferBlockingScripts(head: string): string {
 /**
  * Add font preload and hero image fetchpriority hints to <head>.
  * Extracts the first content image from mainContent to preload it.
+ * For homepage (isHomepage=true), preloads responsive video poster instead.
  */
-export function addResourceHints(head: string, mainContent: string): string {
+export function addResourceHints(head: string, mainContent: string, isHomepage = false): string {
   // DNS prefetch for deferred third-party analytics
   const dnsPrefetch = [
     'mc.yandex.ru',
@@ -171,14 +172,22 @@ export function addResourceHints(head: string, mainContent: string): string {
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
-  // Find first real image in mainContent.
-  // Prefer data-original (Tilda lazy-loader attribute = actual content images)
-  // over src= which is often a tiny placeholder (noroot.png).
-  const imgMatch = mainContent.match(/data-original="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i)
-    ?? mainContent.match(/src="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i);
-  const heroPreload = imgMatch
-    ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
-    : '';
+  let heroPreload: string;
+  if (isHomepage) {
+    // Homepage hero is a <video> with poster — preload the poster with responsive media
+    heroPreload =
+      '<link rel="preload" href="/hero-mobile-poster.webp" as="image" media="(max-width:639px)" fetchpriority="high">' +
+      '<link rel="preload" href="/hero-desktop-poster.webp" as="image" media="(min-width:640px)" fetchpriority="high">';
+  } else {
+    // Find first real image in mainContent.
+    // Prefer data-original (Tilda lazy-loader attribute = actual content images)
+    // over src= which is often a tiny placeholder (noroot.png).
+    const imgMatch = mainContent.match(/data-original="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i)
+      ?? mainContent.match(/src="(\/images\/[^"]+\.(jpg|jpeg|png|webp))"/i);
+    heroPreload = imgMatch
+      ? `<link rel="preload" href="${imgMatch[1]}" as="image" fetchpriority="high">`
+      : '';
+  }
 
   return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
 }
@@ -1161,7 +1170,7 @@ export function transformT681ToPriceList(content: string): string {
 /**
  * Extract structured sections from a full Tilda HTML page.
  */
-export function extractSections(html: string, lang?: string, slug?: string): PageSections {
+export function extractSections(html: string, lang?: string, slug?: string, isHomepage = false): PageSections {
   // Head content
   const headStart = html.indexOf('<head>');
   const headEnd = html.indexOf('</head>');
@@ -1200,7 +1209,7 @@ export function extractSections(html: string, lang?: string, slug?: string): Pag
   const mainContent = fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))), lang, slug));
 
   return {
-    headContent: addResourceHints(headContent, rawMainContent),
+    headContent: addResourceHints(headContent, rawMainContent, isHomepage),
     headerBlock,
     mainContent,
     bodyClass,
