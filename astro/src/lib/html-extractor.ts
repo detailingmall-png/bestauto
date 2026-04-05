@@ -186,8 +186,10 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
   // Preload tilda-zero (cover block/artboard init depends on it → faster LCP)
   const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
 
-  // Preload the self-hosted TildaSans font
-  const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
+  // With font-display:optional, font preload competes for bandwidth on slow 3G
+  // and the font won't be used anyway if it arrives late. Skip preload to leave
+  // more bandwidth for HTML, hero poster, and tilda-zero.js (all LCP-critical).
+  const fontPreload = '';
 
   let heroPreload: string;
   if (isHomepage) {
