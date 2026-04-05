@@ -204,13 +204,33 @@ export function generateReviewSchema(lang: string = 'en'): string {
     name: 'BESTAUTO',
     image: `${BASE_URL}/img/logo.png`,
     url: BASE_URL,
-    telephone: '+995550000299',
+    telephone: '+995550000199',
+    priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Guramishvili Ave. 78',
+      streetAddress: 'Anna Politkovskaya St. 51',
       addressLocality: 'Tbilisi',
       addressCountry: 'GE',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 41.7226529,
+      longitude: 44.7047754,
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '10:00',
+      closes: '20:00',
+    },
+    sameAs: [
+      'https://maps.app.goo.gl/g8eLgcEB9vrVNvsY7',
+      'https://www.instagram.com/bestautodetailingtbilisi/',
+      'https://www.facebook.com/bestauto.detailing.tbilis',
+      'https://maps.app.goo.gl/9VfCTRyXAEigrErM6',
+      'https://www.instagram.com/bestautodetailingspa/',
+      'https://www.facebook.com/bstdtlngtbls',
+    ],
     location: [
       {
         '@type': 'Place',
@@ -240,10 +260,12 @@ export function generateReviewSchema(lang: string = 'en'): string {
       ratingValue: reviewsData.overallRating.toString(),
       bestRating: '5',
       ratingCount: reviewsData.totalReviews.toString(),
+      reviewCount: reviewsData.totalReviews.toString(),
     },
-    review: reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string; texts?: Record<string, string> }) => ({
+    review: reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string; texts?: Record<string, string>; time: number }) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.authorName },
+      datePublished: new Date(r.time * 1000).toISOString().split('T')[0],
       reviewRating: {
         '@type': 'Rating',
         ratingValue: r.rating.toString(),
@@ -381,8 +403,12 @@ export function generateOrganizationSchema(): string {
       },
     ],
     sameAs: [
-      'https://www.instagram.com/bestauto.ge/',
-      'https://www.facebook.com/bestauto.ge/',
+      'https://www.instagram.com/bestautodetailingspa/',
+      'https://www.facebook.com/bstdtlngtbls',
+      'https://www.instagram.com/bestautodetailingtbilisi/',
+      'https://www.facebook.com/bestauto.detailing.tbilis',
+      'https://maps.app.goo.gl/9VfCTRyXAEigrErM6',
+      'https://maps.app.goo.gl/g8eLgcEB9vrVNvsY7',
     ],
     contactPoint: [
       {
