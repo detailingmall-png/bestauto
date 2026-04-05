@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList } from '../lib/html-extractor';
 import { generateRelatedServicesHtml } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
@@ -77,6 +77,11 @@ if (PRICES_SLUGS.has(currentSlug)) {
 
 if (SERVICE_SLUGS.has(baseSlug)) {
   injectedHtml = injectServicePrices(injectedHtml, pricingPage, baseSlug, lang);
+}
+
+// Carwash: no Sanity pricing section — transform static t681 HTML to ba-price-* layout
+if (baseSlug === 'carwash') {
+  injectedHtml = transformT681ToPriceList(injectedHtml);
 }
 
 injectedHtml = replaceGalleries(injectedHtml);

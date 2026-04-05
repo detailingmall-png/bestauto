@@ -950,6 +950,90 @@ export function stripBlogCmsMetadata(content: string): string {
 }
 
 /**
+ * Converts a static Tilda t681 price table block into the new ba-price-* flexbox layout.
+ * Used for pages (like carwash) where prices come from static Tilda HTML, not Sanity CMS.
+ * Parses t681__title + t681__price from each row and rebuilds as ba-price-row spans.
+ */
+export function transformT681ToPriceList(content: string): string {
+  // Find actual HTML row elements (not CSS class references) by looking for the element pattern
+  const htmlRowMarker = 'class="t681__row';
+  const firstRowIdx = content.indexOf(htmlRowMarker);
+  if (firstRowIdx < 0) return content;
+
+  // Extract all t681 rows: title + price pairs
+  const rowPattern = /class="t681__title[^"]*"[^>]*>([^<]*(?:<br\s*\/?>)?[^<]*)<\/div>[\s\S]*?class="t681__price[^"]*"[^>]*>([^<]*)<\/div>/g;
+  const rows: Array<{ name: string; price: string }> = [];
+  let match: RegExpExecArray | null;
+  while ((match = rowPattern.exec(content)) !== null) {
+    const name = match[1].replace(/<br\s*\/?>/g, ' ').replace(/\s+/g, ' ').trim();
+    const price = match[2].trim();
+    if (name && price) rows.push({ name, price });
+  }
+  if (!rows.length) return content;
+
+  // Find the rec block containing the t681 rows
+  const beforeRow = content.slice(0, firstRowIdx);
+  const recDivPattern = /<div id="(rec\d+)"[^>]*data-record-type="681"/g;
+  let lastRecMatch: RegExpExecArray | null = null;
+  let m: RegExpExecArray | null;
+  while ((m = recDivPattern.exec(beforeRow)) !== null) {
+    lastRecMatch = m;
+  }
+
+  let blockStart: number;
+  let recId: string;
+
+  if (lastRecMatch) {
+    blockStart = beforeRow.lastIndexOf('<div', lastRecMatch.index);
+    recId = lastRecMatch[1];
+  } else {
+    // Fallback: find closest <div id="rec..." before the first row
+    const lastRec = beforeRow.lastIndexOf('<div id="rec');
+    if (lastRec < 0) return content;
+    blockStart = lastRec;
+    recId = content.slice(lastRec).match(/id="(rec\d+)"/)?.[1] ?? 'transformed-t681';
+  }
+
+  // Walk forward to find the end of this rec block
+  let depth = 0;
+  let pos = blockStart;
+  let blockEnd = -1;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        blockEnd = nextClose + '</div>'.length;
+        break;
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  if (blockEnd < 0) return content;
+
+  // Build ba-price-* replacement
+  const priceRows = rows.map(r => {
+    const escapedName = r.name.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const escapedPrice = r.price.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return `<div class="ba-price-row"><span class="ba-price-name">${escapedName}</span><span class="ba-price-value">${escapedPrice}</span></div>`;
+  }).join('');
+
+  const newBlock = [
+    `<div id="${recId}" class="r t-rec" style="padding-top:60px;padding-bottom:60px;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
+    `<div class="t-container"><div class="ba-price-section">`,
+    `<div class="ba-price-list">${priceRows}</div>`,
+    `</div></div></div>`,
+  ].join('');
+
+  return content.slice(0, blockStart) + newBlock + content.slice(blockEnd);
+}
+
+/**
  * Extract structured sections from a full Tilda HTML page.
  */
 export function extractSections(html: string, lang?: string, slug?: string): PageSections {
