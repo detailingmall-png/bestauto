@@ -1,12 +1,9 @@
 /**
  * Hero block video injection for Tilda Zero Block (t396).
  *
- * The original Tilda Zero Block renders correctly via CSS alone —
- * positions use calc(50vh - ...) and media queries for all breakpoints.
- * tilda-zero.js (49KB) is NOT needed for initial render.
- *
- * This module injects background video into the t396 artboard and
- * replaces the t396_init() script call with the HLS video loader.
+ * This module injects background video into the t396 artboard.
+ * tilda-zero.js is loaded async to provide t396_init() which
+ * recalculates element positions for the actual viewport height.
  */
 
 /** Hero record IDs per language (primary Zero Block for each homepage). */
@@ -91,9 +88,8 @@ const HERO_VIDEO_SCRIPT = `<script>
  * 1. Find the hero rec block by ID
  * 2. Insert <video> elements after .t396__carrier (z-index:0 = behind gradient filter)
  * 3. Add CSS for video positioning
- * 4. Replace the t396_init() inline script with HLS video loader
+ * 4. Keep t396_init() call (needs tilda-zero.js for proper positioning)
  *
- * The t396 layout renders correctly via CSS alone (no tilda-zero.js needed).
  * The gradient overlay (.t396__filter, z-index:1) darkens the video.
  * Text elements (.tn-elem, z-index:3) stay on top.
  */
@@ -148,11 +144,8 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       videoInjected = true;
     }
 
-    // Remove the t396_init() inline script (not needed without tilda-zero.js)
-    result = result.replace(
-      new RegExp(`<script>\\s*t_onReady\\(function\\(\\)\\s*\\{\\s*t_onFuncLoad\\('t396_init',function\\(\\)\\s*\\{\\s*t396_init\\('${heroRecId.replace('rec', '')}'\\);\\s*\\}\\);\\s*\\}\\);\\s*</script>`),
-      '',
-    );
+    // Keep the t396_init() inline script — it recalculates element positions
+    // for the actual viewport height (tilda-zero.js provides the function).
   }
 
   if (videoInjected) {

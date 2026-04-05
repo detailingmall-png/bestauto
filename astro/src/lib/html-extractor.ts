@@ -97,7 +97,7 @@ export function removeTildaCdnFallback(content: string): string {
  */
 export function deferNonCriticalCss(head: string): string {
   const DEFERRABLE = [
-    'tilda-animation', 'tilda-forms', 'tilda-popup',
+    'tilda-animation', 'tilda-forms',
     'tilda-cards', 'tilda-cover',
     'fonts-tildasans',
   ];
@@ -284,11 +284,9 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
     'connect.facebook.net',
   ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
 
-  // Preload tilda-zero only on non-homepage pages (homepage uses custom CSS hero,
-  // so tilda-zero.js is not needed for LCP there — saves 44KB from critical path)
-  const zeroPreload = isHomepage
-    ? ''
-    : '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
+  // Preload tilda-zero on all pages — needed for t396_init() which
+  // recalculates Zero Block element positions for the actual viewport.
+  const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
 
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
@@ -612,13 +610,14 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-video-1.0',
     'tilda-animation-2.0',
     'hammer.min',
-    'tilda-popup-1.0',
+    // tilda-popup-1.0 and tilda-slds-1.4 must load early: popup gallery buttons
+    // use t_popup__showPopup (from popup script) and slider (from slds script).
+    // Deferring them 7s breaks user interaction on gallery tab buttons.
     'tilda-cards-1.0',
     'tilda-skiplink-1.0',
     'tilda-events-1.0',
     'tilda-map-1.0',
     'tilda-zoom-2.0',
-    'tilda-slds-1.4',
   ];
 
 
@@ -1367,8 +1366,8 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   if (isHomepage) {
     processedHead = inlineBlocksPageCss(processedHead);
     processedHead = inlineAllPageCss(processedHead);
-    // Homepage has zero t396 blocks — strip tilda-zero scripts entirely (saves 49KB)
-    processedHead = removeZeroBlockScripts(processedHead);
+    // Homepage HAS a t396 Zero Block hero — keep tilda-zero.js for t396_init()
+    // which recalculates element positions for the actual viewport height.
   }
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
