@@ -201,6 +201,58 @@ export function inlineBlocksPageCss(head: string): string {
 }
 
 /**
+ * Convert ALL async CSS in <head> back to blocking stylesheets.
+ *
+ * Two async CSS patterns exist:
+ * 1. preload+onload (from deferNonCriticalCss): rel="preload" as="style" onload="..."
+ * 2. media=print+onload (from Tilda export): media="print" onload="this.media='all'"
+ *
+ * Both trigger style recalculation when they load, causing Chrome to report
+ * a new LCP entry. Making them blocking ensures all styles are applied before
+ * FCP, so FCP = LCP with no late re-paint.
+ *
+ * The extra blocking CSS is small (~24KB raw for all non-form files) and
+ * downloads in parallel with HTML on HTTP/2.
+ *
+ * Also strips fonts-tildasans.css entirely (already inlined via ZERO_BLOCK_CRITICAL_CSS),
+ * and removes paired <noscript> fallbacks.
+ */
+export function makeAllCssBlocking(head: string): string {
+  let result = head;
+
+  // Remove fonts-tildasans completely (duplicate of inlined @font-face)
+  result = result.replace(
+    /<link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?>\s*(?:<noscript><link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?><\/noscript>\s*)?/g,
+    '',
+  );
+
+  // Pattern 1: preload+onload → stylesheet
+  // Before: rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+  // After:  rel="stylesheet"
+  result = result.replace(
+    /rel="preload"\s+as="style"\s+onload="this\.onload=null;this\.rel='stylesheet'"/g,
+    'rel="stylesheet"',
+  );
+
+  // Pattern 2: media="print" onload → media="all"
+  // Before: media="print" onload="this.media='all';"  (or without trailing semicolon)
+  // After:  media="all"
+  result = result.replace(
+    /media="print"\s+onload="this\.media='all';?"/g,
+    'media="all"',
+  );
+
+  // Remove <noscript> fallbacks — now that CSS is blocking, they're redundant.
+  // Pattern: <noscript><link rel="stylesheet" ...></noscript>
+  result = result.replace(
+    /\s*<noscript>\s*<link\b[^>]*rel="stylesheet"[^>]*\/?>\s*<\/noscript>/g,
+    '',
+  );
+
+  return result;
+}
+
+/**
  * Add defer to blocking scripts in <head> (jQuery and polyfill).
  * All other Tilda scripts already have async/defer.
  * Deferred scripts execute after HTML parsing in order, so jQuery → tilda-scripts order is preserved.
@@ -1288,12 +1340,13 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
     ? html.slice(headStart + 6, headEnd)
     : '';
   let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
-  // Homepage hero is a custom CSS-only block (.ba-hero). Inline the entire
-  // tilda-blocks-page CSS to prevent async style recalculation from causing
-  // a late LCP re-paint (Chrome reports new LCP entry at CSS load time ~3.3s).
-  // Inlining makes all styles available at parse time → FCP = LCP.
+  // Homepage hero is a custom CSS-only block (.ba-hero). Eliminate ALL async CSS
+  // to prevent style recalculation from causing late LCP re-paint.
+  // Strategy: inline tilda-blocks-page CSS, make ALL remaining CSS blocking.
+  // Chrome reports new LCP on ANY style recalc — even from tiny async CSS files.
   if (isHomepage) {
     processedHead = inlineBlocksPageCss(processedHead);
+    processedHead = makeAllCssBlocking(processedHead);
     // Homepage has zero t396 blocks — strip tilda-zero scripts entirely (saves 49KB)
     processedHead = removeZeroBlockScripts(processedHead);
   }
