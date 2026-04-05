@@ -179,8 +179,11 @@ html {
   font-variation-settings: 'wght' 700 !important;
   font-synthesis: none !important;
 }
-/* t508 "bullet list": was 26px CSS */
-.t508 .t-name {
+/* t508 "bullet list": was 26px CSS.
+   Wildcard * catches nested <div data-customstyle> wrappers
+   (same approach as t502__title above). */
+.t508 .t-name,
+.t508 .t-name * {
   font-size: 22px !important;
 }
 
@@ -228,7 +231,8 @@ html {
     font-variation-settings: 'wght' 700 !important;
     font-synthesis: none !important;
   }
-  .t508 .t-name {
+  .t508 .t-name,
+  .t508 .t-name * {
     font-size: 20px !important;
   }
   .t502__blockdescr,
@@ -342,7 +346,8 @@ html {
     font-variation-settings: 'wght' 700 !important;
     font-synthesis: none !important;
   }
-  .t508 .t-name {
+  .t508 .t-name,
+  .t508 .t-name * {
     font-size: 18px !important;
   }
   .t502__blockdescr,
