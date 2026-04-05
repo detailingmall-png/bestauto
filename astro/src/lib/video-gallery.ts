@@ -81,6 +81,12 @@ export function generateVideoGalleryHtml(lang: string): string {
       ${cards}
     </div>
   </div>
+  <div id="ba-video-fullscreen" style="display:none;position:fixed;inset:0;z-index:var(--ba-z-modal);background:#000;align-items:center;justify-content:center;">
+    <button id="ba-video-fs-close" aria-label="Close" style="position:absolute;top:16px;right:16px;z-index:1;width:48px;height:48px;background:rgba(255,255,255,0.15);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <video id="ba-video-fs-player" muted loop playsinline style="max-width:100%;max-height:100%;object-fit:contain;"></video>
+  </div>
   <style>
     .ba-video__heading { font-size: 36px; }
     .ba-video__label { font-size: 14px; }
@@ -112,10 +118,67 @@ export function generateVideoGalleryHtml(lang: string): string {
       });
     },{rootMargin:'200px'});
     document.querySelectorAll('.ba-video__player').forEach(function(v){io.observe(v);});
+
+    var fsOverlay=document.getElementById('ba-video-fullscreen');
+    var fsPlayer=document.getElementById('ba-video-fs-player');
+    var fsClose=document.getElementById('ba-video-fs-close');
+    var isMobile=window.matchMedia('(max-width:960px)');
+    document.body.appendChild(fsOverlay);
+
+    var hiddenEls=[];
+    function hideFixedUI(){
+      var sels=['.t228','.tmenu-mobile','.ba-sticky-cta','.t943__buttonwrapper','#ba-whatsapp','.ba-wa-wrap','[class*="t-tildalabel"]'];
+      sels.forEach(function(s){
+        document.querySelectorAll(s).forEach(function(el){
+          if(el.offsetHeight>0||getComputedStyle(el).display!=='none'){
+            el.style.display='none';hiddenEls.push(el);
+          }
+        });
+      });
+    }
+    function showFixedUI(){
+      hiddenEls.forEach(function(el){el.style.display='';});
+      hiddenEls=[];
+    }
+
+    function openFullscreen(videoSrc){
+      hideFixedUI();
+      fsPlayer.src=videoSrc;
+      fsPlayer.load();
+      fsOverlay.style.display='flex';
+      document.body.style.overflow='hidden';
+      fsPlayer.play().catch(function(){});
+    }
+
+    function closeFullscreen(){
+      fsPlayer.pause();
+      fsPlayer.removeAttribute('src');
+      fsPlayer.load();
+      fsOverlay.style.display='none';
+      document.body.style.overflow='';
+      showFixedUI();
+    }
+
+    fsClose.addEventListener('click',closeFullscreen);
+    fsOverlay.addEventListener('click',function(e){
+      if(e.target===fsOverlay) closeFullscreen();
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&fsOverlay.style.display==='flex') closeFullscreen();
+    });
+
     document.querySelectorAll('.ba-video__card').forEach(function(card){
       card.addEventListener('click',function(){
         var v=card.querySelector('video');
         if(!v)return;
+        var src=v.src||v.dataset.src;
+        if(!src)return;
+
+        if(isMobile.matches){
+          openFullscreen(src);
+          return;
+        }
+
         if(!v.src&&v.dataset.src){v.src=v.dataset.src;v.load();}
         if(v.paused){v.play().then(function(){card.classList.add('is-playing');}).catch(function(){});}
         else{v.pause();card.classList.remove('is-playing');}
