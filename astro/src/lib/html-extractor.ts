@@ -82,6 +82,7 @@ export function deferNonCriticalCss(head: string): string {
     'tilda-animation', 'tilda-forms', 'tilda-popup',
     'tilda-cards', 'tilda-cover',
     'fonts-tildasans',
+    'tilda-blocks-page',
   ];
 
   // Temporarily remove <noscript> blocks to avoid transforming their content
@@ -110,10 +111,10 @@ export function deferNonCriticalCss(head: string): string {
 
 /**
  * Inline only truly critical CSS (tilda-grid, 4KB) for layout stability.
- * Page-specific tilda-blocks-page CSS stays as a linked file — it's preloaded
- * via addResourceHints so the browser fetches it in parallel with HTML.
- * This keeps the HTML document small (~15KB gzipped instead of ~52KB),
- * significantly improving parse time and LCP on throttled mobile connections.
+ * Page-specific tilda-blocks-page CSS is loaded async (preload+onload via
+ * deferNonCriticalCss) — the hero/Zero Block uses inline styles, so it
+ * renders immediately with just grid CSS. This eliminates render-blocking
+ * CSS as the #1 cause of LCP delay (~2s element render delay).
  */
 export function inlineCriticalCss(head: string): string {
   // Inline tilda-grid (4KB, layout-critical — prevents CLS)
@@ -161,12 +162,6 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
-  // Preload page-specific tilda-blocks CSS (render-blocking, not inlined)
-  const cssMatch = head.match(/href="(\/css\/tilda-blocks-page[^"?]+\.min\.css[^"]*)"/);
-  const cssPreload = cssMatch
-    ? `<link rel="preload" href="${cssMatch[1]}" as="style">`
-    : '';
-
   let heroPreload: string;
   if (isHomepage) {
     // Homepage hero is a <video> with poster — preload the poster with responsive media
@@ -184,7 +179,7 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
       : '';
   }
 
-  return dnsPrefetch + cssPreload + zeroPreload + fontPreload + heroPreload + head;
+  return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
 }
 
 /**
