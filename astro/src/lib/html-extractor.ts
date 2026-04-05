@@ -1222,9 +1222,9 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
     ? html.slice(headStart + 6, headEnd)
     : '';
   let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
-  // Homepage hero uses inline styles → safe to make blocks CSS async (saves ~1s LCP).
-  // Other pages keep it blocking to prevent CLS from late CSS application.
-  if (isHomepage) {
+  // KA homepage hero uses inline styles → safe to make blocks CSS async (saves ~1s LCP).
+  // RU/EN homepages suffer CLS from async CSS, so keep it blocking there.
+  if (isHomepage && lang === 'ka') {
     processedHead = makeBlocksCssAsync(processedHead);
   }
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
