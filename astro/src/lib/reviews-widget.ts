@@ -375,9 +375,10 @@ const JS = `
   var rightBtn = document.querySelector('.ba-reviews__arrow--right');
   var dotsContainer = document.querySelector('.ba-reviews__dots');
 
+  var mqMobile = window.matchMedia('(max-width:640px)');
+  var mqTablet = window.matchMedia('(max-width:1024px)');
   function getVisible() {
-    var w = window.innerWidth;
-    return w <= 640 ? 1 : w <= 1024 ? 2 : 4;
+    return mqMobile.matches ? 1 : mqTablet.matches ? 2 : 4;
   }
 
   var totalPages = Math.ceil(cards.length / getVisible());
