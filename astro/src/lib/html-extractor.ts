@@ -470,6 +470,9 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-cards-1.0',
     'tilda-skiplink-1.0',
     'tilda-events-1.0',
+    'tilda-map-1.0',
+    'tilda-zoom-2.0',
+    'tilda-slds-1.4',
   ];
 
 
@@ -497,6 +500,26 @@ export function rewriteImagesToWebp(content: string): string {
     /((?:data-original|src|srcset|data-bg-src|data-content-cover-bg|content)="[^"]*\/)([\w.-]+)\.(jpe?g|png)(")/gi,
     (match, prefix, name, _ext, suffix) => {
       return WEBP_AVAILABLE.has(name) ? `${prefix}${name}.webp${suffix}` : match;
+    }
+  );
+}
+
+/**
+ * Add content-visibility:auto to below-fold t-rec sections.
+ * Skips the first ABOVE_FOLD sections so the hero/nav render immediately.
+ * Below-fold sections skip layout/paint until near the viewport,
+ * dramatically reducing initial render cost on large pages (277KB+).
+ */
+export function addContentVisibility(content: string): string {
+  const ABOVE_FOLD = 3; // hero + first 1-2 content sections render eagerly
+  let sectionIdx = 0;
+
+  return content.replace(
+    /<div\s+(id="rec\d+")\s+(class="r t-rec[^"]*")\s+(style=")/g,
+    (match, idAttr, classAttr, stylePrefix) => {
+      sectionIdx++;
+      if (sectionIdx <= ABOVE_FOLD) return match;
+      return `<div ${idAttr} ${classAttr} ${stylePrefix}content-visibility:auto;contain-intrinsic-size:auto 500px;`;
     }
   );
 }
@@ -1201,7 +1224,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))), lang, slug));
+  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))), lang, slug)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent, isHomepage),
