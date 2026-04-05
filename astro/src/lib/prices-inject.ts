@@ -40,30 +40,20 @@ function localizePrice(raw: string, lang: Lang): string {
 function buildRow(item: PriceLineItem, lang: Lang): string {
   const name = esc(itemName(item, lang));
   const price = esc(localizePrice(item.price ?? '', lang));
-  const nameStyle = item.isPromo ? ' style="color: var(--ba-color-accent);"' : '';
-  return `<div class="t681__row t-row" style="margin-bottom:40px;"><div class="t-col t-col_3 t-prefix_2"><div class="t681__title t-heading t-heading_sm"${nameStyle}>${name}</div></div><div class="t-col t-col_4 "><div class="t681__tablewrapper"><div class="t681__textwrapper"><div class="t681__descr t-descr t-descr_sm">-------------------------</div></div><div class="t681__pricewrapper"><div class="t681__price t-heading t-heading_sm">${price}</div></div></div></div></div>`;
+  const cls = item.isPromo ? ' ba-price-row--promo' : '';
+  return `<div class="ba-price-row${cls}"><span class="ba-price-name">${name}</span><span class="ba-price-value">${price}</span></div>`;
 }
 
 function buildSection(section: PriceSection, idx: number, lang: Lang): string {
-  const headingId = `sanity-h${idx}`;
-  const tableId = `sanity-p${idx}`;
+  const id = `sanity-s${idx}`;
   const title = esc(sectionTitle(section, lang));
   const rows = (section.items ?? []).map(item => buildRow(item, lang)).join('');
   return [
-    `<div id="${headingId}" class="r t-rec t-rec_pt_75 t-rec_pb_0" style="padding-top:75px;padding-bottom:0px;background-color:#000000;" data-record-type="33" data-bg-color="#000000">`,
-    `<div class="t017"><div class="t-container t-align_left"><div class="t-col t-col_10 t-prefix_2">`,
-    `<h2 class="t017__title t-title t-title_xxs"><span style="color: var(--ba-color-accent);">${title}</span></h2>`,
+    `<div id="${id}" class="r t-rec" style="padding-top:${idx === 0 ? 60 : 48}px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
+    `<div class="t-container"><div class="ba-price-section">`,
+    `<h2 class="ba-price-heading">${title}</h2>`,
+    `<div class="ba-price-list">${rows}</div>`,
     `</div></div></div>`,
-    `<style>#${headingId} .t017__title{font-size:30px;}@media screen and (max-width:960px){#${headingId} .t017__title{font-size:28px;}}@media screen and (max-width:640px){#${headingId} .t017__title{font-size:24px;}}</style>`,
-    `</div>`,
-    `<div id="${tableId}" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px;background-color:#000000;" data-animationappear="off" data-record-type="681" data-bg-color="#000000">`,
-    `<div class="t681">`,
-    `<div class="t-section__container t-container t-container_flex"><div class="t-col t-col_12"><div class="js-block-header-title t-section__title t-title t-title_xs t-align_left"><div style="line-height:38px;"></div></div></div></div>`,
-    `<style>.t-section__descr{max-width:560px;}#${tableId} .t-section__title{margin-bottom:90px;}@media screen and (max-width:960px){#${tableId} .t-section__title{margin-bottom:60px;}}</style>`,
-    `<div class="t-container">${rows}</div>`,
-    `</div>`,
-    `<style>#${tableId} .t681__title{font-size:20px;color:#ffffff;}#${tableId} .t681__descr{color:#ffffff;}#${tableId} .t681__price{font-size:20px;color:#ffffff;}@media screen and (max-width:960px){#${tableId} .t681__title{font-size:18px;}#${tableId} .t681__price{font-size:18px;}}@media screen and (max-width:640px){#${tableId} .t681__title{font-size:16px;}#${tableId} .t681__price{font-size:16px;}}</style>`,
-    `</div>`,
   ].join('');
 }
 
