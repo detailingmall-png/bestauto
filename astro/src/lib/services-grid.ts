@@ -48,7 +48,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       ru: 'Удаление царапин и восстановление заводского блеска',
       en: 'Scratch removal & factory gloss restoration',
     },
-    minPrice: '590',
+    minPrice: '690',
     image: '/images/tild3962-3733-4364-b039-326430393066__pxl_20240229_1140148.webp',
   },
   {
@@ -60,7 +60,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       ru: '9H нано-покрытие — гидрофобный эффект и защита 3-5 лет',
       en: '9H nano-coating — hydrophobic effect & 3-5 year protection',
     },
-    minPrice: '600',
+    minPrice: '500',
     image: '/images/tild3834-6636-4839-a464-316639393139__ceramic.webp',
   },
   {

@@ -18,9 +18,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does car polishing cost?',
       },
       answer: {
-        ka: 'კუზოვის პოლირება — 590 Gel-დან, პოლირება + კერამიკული საფარი — 990 Gel-დან. ასევე ვაკეთებთ ფარების პოლირებას (150 Gel-დან), მინის (250 Gel-დან) და სალონის ელემენტების (200 Gel-დან). ზუსტი ფასი დამოკიდებულია ავტომობილის ზომასა და საღებავის მდგომარეობაზე. მოგვწერეთ WhatsApp-ზე, გამოგვიგზავნეთ ფოტო — და ჩვენ გამოვთვლით ზუსტ ფასს.',
-        ru: 'Полировка кузова — от 590 Gel, полировка + керамическое покрытие — от 990 Gel. Также делаем полировку фар (от 150 Gel), стекла (от 250 Gel) и элементов салона (от 200 Gel). Точная стоимость зависит от размера автомобиля и состояния ЛКП. Напишите нам в WhatsApp, пришлите фото — и мы рассчитаем точную стоимость.',
-        en: 'Paint correction starts from 590 Gel, polishing + ceramic coating from 990 Gel. We also offer headlight polishing (from 150 Gel), windshield polishing (from 250 Gel) and interior elements (from 200 Gel). The exact price depends on car size and paint condition. Send us photos on WhatsApp and we\'ll calculate the exact price.',
+        ka: 'კუზოვის პოლირება — 690 Gel-დან, პოლირება + კერამიკული საფარი — 990 Gel-დან. ასევე ვაკეთებთ ფარების პოლირებას (150 Gel-დან), მინის (250 Gel-დან) და სალონის ელემენტების (200 Gel-დან). ზუსტი ფასი დამოკიდებულია ავტომობილის ზომასა და საღებავის მდგომარეობაზე. მოგვწერეთ WhatsApp-ზე, გამოგვიგზავნეთ ფოტო — და ჩვენ გამოვთვლით ზუსტ ფასს.',
+        ru: 'Полировка кузова — от 690 Gel, полировка + керамическое покрытие — от 990 Gel. Также делаем полировку фар (от 150 Gel), стекла (от 250 Gel) и элементов салона (от 200 Gel). Точная стоимость зависит от размера автомобиля и состояния ЛКП. Напишите нам в WhatsApp, пришлите фото — и мы рассчитаем точную стоимость.',
+        en: 'Paint correction starts from 690 Gel, polishing + ceramic coating from 990 Gel. We also offer headlight polishing (from 150 Gel), windshield polishing (from 250 Gel) and interior elements (from 200 Gel). The exact price depends on car size and paint condition. Send us photos on WhatsApp and we\'ll calculate the exact price.',
       },
     },
     {
@@ -117,9 +117,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does ceramic coating cost?',
       },
       answer: {
-        ka: 'მთლიანი ავტომობილის კერამიკული საფარი — 600 Gel-დან. ასევე ვაკეთებთ ანტიწვიმას მინებზე (150 Gel-დან) და სალონის კერამიკულ საფარს (300 Gel-დან). ზუსტი ფასი დამოკიდებულია ავტომობილის კლასსა და ფენების რაოდენობაზე. მოგვწერეთ WhatsApp-ზე ზუსტი გათვლისთვის.',
-        ru: 'Керамическое покрытие всего авто — от 600 Gel. Также делаем антидождь на стекла (от 150 Gel) и керамическое покрытие салона (от 300 Gel). Точная стоимость зависит от класса автомобиля и количества слоев. Напишите нам в WhatsApp для точного расчета.',
-        en: 'Full car ceramic coating starts from 600 Gel. We also offer rain repellent for glass (from 150 Gel) and interior ceramic coating (from 300 Gel). The exact price depends on vehicle class and number of layers. Message us on WhatsApp for an exact quote.',
+        ka: 'მთლიანი ავტომობილის კერამიკული საფარი — 500 Gel-დან. ასევე ვაკეთებთ ანტიწვიმას მინებზე (150 Gel-დან) და სალონის კერამიკულ საფარს (300 Gel-დან). ზუსტი ფასი დამოკიდებულია ავტომობილის კლასსა და ფენების რაოდენობაზე. მოგვწერეთ WhatsApp-ზე ზუსტი გათვლისთვის.',
+        ru: 'Керамическое покрытие всего авто — от 500 Gel. Также делаем антидождь на стекла (от 150 Gel) и керамическое покрытие салона (от 300 Gel). Точная стоимость зависит от класса автомобиля и количества слоев. Напишите нам в WhatsApp для точного расчета.',
+        en: 'Full car ceramic coating starts from 500 Gel. We also offer rain repellent for glass (from 150 Gel) and interior ceramic coating (from 300 Gel). The exact price depends on vehicle class and number of layers. Message us on WhatsApp for an exact quote.',
       },
     },
     {
