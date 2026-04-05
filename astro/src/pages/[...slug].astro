@@ -24,7 +24,9 @@ import { generateBrandLogosHtml } from '../lib/brand-logos';
 import { generateProcessStepsHtml } from '../lib/process-steps';
 import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
 import { generateVideoGalleryHtml } from '../lib/video-gallery';
-import { removeTildaFaqSchema, removeAccordionByQuestion, generateGrindingAccordionItems, injectAtTopOfFaqAccordion } from '../lib/windshield-faq';
+import { replaceTildaFaqSection, removeTildaFaqSchema, renderFaqAccordion, resolveFaqItems } from '../lib/faq-accordion';
+import { SERVICE_FAQS } from '../data/service-faqs';
+import { generatePpfPageHtml, generatePpfFaqSchema } from '../lib/ppf-page';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -71,6 +73,7 @@ let injectedHtml = injectSanityData(rawHtml, settings);
 
 if (PRICES_SLUGS.has(currentSlug)) {
   injectedHtml = injectPricesData(injectedHtml, pricingPage, lang);
+  injectedHtml = removeRecordBlock(injectedHtml, 'rec713427892');
 }
 
 if (SERVICE_SLUGS.has(baseSlug)) {
@@ -79,15 +82,8 @@ if (SERVICE_SLUGS.has(baseSlug)) {
 
 injectedHtml = replaceGalleries(injectedHtml);
 
-// Windshield-repair page: expand H1, hero description, replace PDR with tinting,
-// fix FAQ (15→30 cm, remove booking question, add grinding FAQ section)
+// Windshield-repair page: expand H1, hero description, replace PDR with tinting
 if (baseSlug === 'windshield-repair') {
-  // Remove Tilda-generated FAQPage JSON-LD first (service-faqs.ts schema is the canonical source).
-  // Must happen before removeAccordionByQuestion — EN/KA pages have JSON-LD before the accordion,
-  // so indexOf would find question text in JSON-LD first and fail to locate the visual block.
-  injectedHtml = removeTildaFaqSchema(injectedHtml);
-
-  // --- Language-specific text replacements ---
   if (lang === 'ru') {
     injectedHtml = injectedHtml.replaceAll(
       'Ремонт лобового стекла в Тбилиси',
@@ -105,7 +101,6 @@ if (baseSlug === 'windshield-repair') {
       'Беспокрасочное удаление вмятин',
       'Тонировка стёкол'
     );
-    // Update section titles to reflect full service range
     injectedHtml = injectedHtml.replaceAll(
       'Преимущества ремонта сколов и трещин',
       'Преимущества реставрации автостекол'
@@ -114,12 +109,7 @@ if (baseSlug === 'windshield-repair') {
       'Цены на ремонт сколов и трещин автостекол',
       'Цены на ремонт сколов и трещин, шлифовку автостекол'
     );
-    // Fix 15→30 cm in FAQ (selective: lowercase plural hits accordion2+6, not price breakdown)
     injectedHtml = injectedHtml.replaceAll('трещины до 15 см', 'трещины до 30 см');
-    // Remove booking question from visual accordion
-    injectedHtml = removeAccordionByQuestion(injectedHtml, 'Нужно ли записываться?');
-    // Inject grinding FAQ items at top of Tilda t585 accordion (rec597296962)
-    injectedHtml = injectAtTopOfFaqAccordion(injectedHtml, 'rec597296962', generateGrindingAccordionItems(lang, 'rec597296962'));
   } else if (lang === 'ka') {
     injectedHtml = injectedHtml.replaceAll(
       'საქარე მინის შეკეთება თბილისში',
@@ -137,7 +127,6 @@ if (baseSlug === 'windshield-repair') {
       'უფერო ნაკბენის მოცილება',
       'მინების ტონირება'
     );
-    // Update section titles to reflect full service range
     injectedHtml = injectedHtml.replaceAll(
       'ჩიპებისა და ბზარების შეკეთების უპირატესობები',
       'ავტომინების რესტავრაციის უპირატესობები'
@@ -146,12 +135,7 @@ if (baseSlug === 'windshield-repair') {
       'საქარე მინის ჩიპის და ბზარების შეკეთება',
       'ავტომინის შეკეთება, შლიფოვკა და პოლირება'
     );
-    // Fix 15→30 cm in FAQ
     injectedHtml = injectedHtml.replaceAll('ბზარები 15 სმ-მდე', 'ბზარები 30 სმ-მდე');
-    // Remove booking question from visual accordion
-    injectedHtml = removeAccordionByQuestion(injectedHtml, 'საჭიროა თუ არა წინასწარ ჩაწერა?');
-    // Inject grinding FAQ items at top of Tilda t585 accordion (rec598873770)
-    injectedHtml = injectAtTopOfFaqAccordion(injectedHtml, 'rec598873770', generateGrindingAccordionItems(lang, 'rec598873770'));
   } else if (lang === 'en') {
     injectedHtml = injectedHtml.replaceAll(
       'Windshield Repair in Tbilisi',
@@ -165,12 +149,10 @@ if (baseSlug === 'windshield-repair') {
       'Paintless dent removal',
       'Window tinting'
     );
-    // Fix mislinked Tilda card: relative URL to ppf → tinting
     injectedHtml = injectedHtml.replaceAll(
       'href="/en/ppf-shield-wrapping"',
       'href="/en/auto-glass-tinting"'
     );
-    // Update section titles to reflect full service range
     injectedHtml = injectedHtml.replaceAll(
       'Prices for windshield chip and crack repair',
       'Prices for chip & crack repair, glass grinding'
@@ -179,12 +161,30 @@ if (baseSlug === 'windshield-repair') {
       'Advantages of chips and cracks repair',
       'Advantages of auto glass restoration'
     );
-    // Fix 15→30 cm in FAQ
     injectedHtml = injectedHtml.replaceAll('cracks up to 15 cm', 'cracks up to 30 cm');
-    // Remove booking question from visual accordion
-    injectedHtml = removeAccordionByQuestion(injectedHtml, 'Do I need to book in advance?');
-    // Inject grinding FAQ items at top of Tilda t585 accordion (rec598440249)
-    injectedHtml = injectAtTopOfFaqAccordion(injectedHtml, 'rec598440249', generateGrindingAccordionItems(lang, 'rec598440249'));
+  }
+}
+
+// Service pages: replace Tilda t585 FAQ accordion with unified component.
+// Uses FAQ data from service-faqs.ts. Skips ppf-shield-wrapping (fully redesigned page).
+const FAQ_SECTION_TITLE: Readonly<Record<string, string>> = {
+  ka: 'ხშირად დასმული კითხვები',
+  ru: 'Часто задаваемые вопросы',
+  en: 'Frequently Asked Questions',
+};
+if (SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wrapping') {
+  const serviceFaqs = SERVICE_FAQS[baseSlug];
+  if (serviceFaqs && injectedHtml.includes('data-record-type="585"')) {
+    // Remove Tilda-generated FAQPage JSON-LD (canonical schema from seo.ts)
+    injectedHtml = removeTildaFaqSchema(injectedHtml);
+    // Replace Tilda t585 + preceding heading block with unified accordion
+    const faqItems = resolveFaqItems(serviceFaqs, lang);
+    const faqTitle = FAQ_SECTION_TITLE[lang] ?? FAQ_SECTION_TITLE['en'];
+    const faqAccordionHtml = renderFaqAccordion(faqItems, faqTitle, {
+      id: `${baseSlug}-faq`,
+      paddingY: 75,
+    });
+    injectedHtml = replaceTildaFaqSection(injectedHtml, faqAccordionHtml);
   }
 }
 
@@ -330,6 +330,25 @@ if (baseSlug === '') {
 }
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
+// PPF page redesign: replace Tilda content with generated layout
+const isPpfRedesign = baseSlug === 'ppf-shield-wrapping';
+if (isPpfRedesign) {
+  // Preserve the Tilda footer block (rec603526076 for RU, or last rec block with type 121/255)
+  const TILDA_FOOTER_IDS = ['rec603526076', 'rec607472568', 'rec607473240', 'rec607481980', 'rec2091645713'];
+  let tildaFooter = '';
+  for (const fid of TILDA_FOOTER_IDS) {
+    const fidIdx = mainContent.indexOf(`id="${fid}"`);
+    if (fidIdx >= 0) {
+      tildaFooter = mainContent.slice(mainContent.lastIndexOf('<div', fidIdx));
+      break;
+    }
+  }
+  // Replace Tilda body with redesigned content; keep placeholder for Elfsight→reviews swap
+  mainContent = generatePpfPageHtml(lang)
+    + '<div class="elfsight-app-ppf-placeholder"></div>'
+    + tildaFooter;
+}
+
 // Blog pages: rewrite bare #anchor links in nav to point to homepage
 // (sections like #about, #photo, #reviews only exist on the homepage)
 const isBlogPage = baseSlug === 'blog' || baseSlug.startsWith('blog/');
@@ -413,7 +432,8 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + generateOrganizationSchema()
   + generateServiceFaqSchema(baseSlug, lang)
   + generateArticleSchema(baseSlug, lang, pageTitle)
-  + (baseSlug === '' ? generateFaqSchema(lang) : '');
+  + (baseSlug === '' ? generateFaqSchema(lang) : '')
+  + (isPpfRedesign ? generatePpfFaqSchema(lang) : '');
 
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
