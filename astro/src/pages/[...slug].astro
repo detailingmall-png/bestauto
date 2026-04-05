@@ -429,15 +429,18 @@ if (lang === 'ru') {
     mainContent = removeRecordBlock(mainContent, headingId);
   }
   if (!mainContent.includes('rec2091246563')) {
-    // Insert before footer (rec603526076), not at the end
+    // Insert contacts block before footer (rec603526076), not at the end
     const FOOTER_ID = 'rec603526076';
     const footerIdx = mainContent.indexOf(`id="${FOOTER_ID}"`);
     if (footerIdx >= 0) {
       const divStart = mainContent.lastIndexOf('<div', footerIdx);
-      mainContent = mainContent.slice(0, divStart) + WHATSAPP_BLOCK + CONTACTS_BLOCK + mainContent.slice(divStart);
+      mainContent = mainContent.slice(0, divStart) + CONTACTS_BLOCK + mainContent.slice(divStart);
     } else {
-      mainContent = mainContent + WHATSAPP_BLOCK + CONTACTS_BLOCK;
+      mainContent = mainContent + CONTACTS_BLOCK;
     }
+  }
+  if (!mainContent.includes('ba-wa-wrap')) {
+    mainContent = mainContent + WHATSAPP_BLOCK;
   }
   // Move gallery+reviews to just above contacts block
   let galleryReviewsRu = '';
