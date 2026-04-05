@@ -37,7 +37,7 @@ export function generateBrandLogosHtml(lang: string): string {
   <style>
     .ba-brands__item { font-size: 18px; }
     .ba-brands__subtitle { font-size: 13px; }
-    .ba-brands__item:hover { color: rgba(228,201,126,0.8) !important; }
+    .ba-brands__item:hover { color: var(--ba-color-accent) !important; }
     @media screen and (max-width: 960px) {
       .ba-brands__item { font-size: 16px; }
     }

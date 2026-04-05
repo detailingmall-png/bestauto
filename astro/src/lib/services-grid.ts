@@ -172,7 +172,7 @@ function renderTier1Card(service: ServiceEntry, lang: string, langPrefix: string
 
   return `<a href="${href}" style="position:relative; display:block; height:360px; border-radius:var(--ba-radius-xl); overflow:hidden; text-decoration:none; transition:transform var(--ba-duration-normal) var(--ba-ease-default);" class="ba-service-card ba-service-card--tier1">
         <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+        <div style="position:absolute; inset:0; background:var(--ba-overlay-t1);"></div>
         <div style="position:relative; z-index:var(--ba-z-card); padding:40px 32px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
           <h3 class="ba-service-card__name ba-service-card__name--t1" style="color:var(--ba-color-text); font-weight:var(--ba-font-weight-bold); margin:0 0 12px; font-family:var(--ba-font-family);">${name}</h3>
           <p class="ba-service-card__tagline ba-service-card__tagline--t1" style="color:var(--ba-color-text-80); margin:0 0 16px; line-height:1.5; font-family:var(--ba-font-family);">${tagline}</p>
@@ -193,7 +193,7 @@ function renderTier2Card(service: ServiceEntry, lang: string, langPrefix: string
 
   return `<a href="${href}" style="position:relative; display:block; height:280px; border-radius:var(--ba-radius-xl); overflow:hidden; text-decoration:none; transition:transform var(--ba-duration-normal) var(--ba-ease-default);" class="ba-service-card ba-service-card--tier2">
         <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="533" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
+        <div style="position:absolute; inset:0; background:var(--ba-overlay-t2);"></div>
         <div style="position:relative; z-index:var(--ba-z-card); padding:24px 20px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; box-sizing:border-box;">
           <h3 class="ba-service-card__name ba-service-card__name--t2" style="color:var(--ba-color-text); font-weight:var(--ba-font-weight-bold); margin:0 0 8px; font-family:var(--ba-font-family);">${name}</h3>
           <p class="ba-service-card__tagline ba-service-card__tagline--t2" style="color:var(--ba-color-text-75); margin:0 0 12px; line-height:1.4; font-family:var(--ba-font-family);">${tagline}</p>

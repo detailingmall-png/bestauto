@@ -118,59 +118,59 @@ export function generateLocationContent(
 
   // Hero section
   sections.push(`
-<div class="r t-rec" style="padding-top:120px;padding-bottom:60px;background-color:#000;">
+<div class="r t-rec" style="padding-top:120px;padding-bottom:60px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
-    <h1 style="color:#fff;font-size:36px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 16px;line-height:1.25;">${heroTitle}</h1>
-    <p style="color:rgba(255,255,255,0.7);font-size:18px;font-family:'TildaSans',Arial,sans-serif;margin:0;line-height:1.5;">${address}</p>
+    <h1 style="color:var(--ba-color-text);font-size:36px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 16px;line-height:1.25;">${heroTitle}</h1>
+    <p style="color:var(--ba-color-text-muted);font-size:18px;font-family:'TildaSans',Arial,sans-serif;margin:0;line-height:1.5;">${address}</p>
   </div>
 </div>`);
 
   // NAP (Name, Address, Phone) + Hours
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;">
       <div>
-        <div style="color:#e4c97e;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-family:'TildaSans',Arial,sans-serif;">
+        <div style="color:var(--ba-color-accent);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-family:'TildaSans',Arial,sans-serif;">
           ${lang === 'ka' ? 'მისამართი' : lang === 'ru' ? 'Адрес' : 'Address'}
         </div>
-        <div style="color:#fff;font-size:18px;font-family:'TildaSans',Arial,sans-serif;line-height:1.5;">${address}</div>
+        <div style="color:var(--ba-color-text);font-size:18px;font-family:'TildaSans',Arial,sans-serif;line-height:1.5;">${address}</div>
       </div>
       <div>
-        <div style="color:#e4c97e;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-family:'TildaSans',Arial,sans-serif;">
+        <div style="color:var(--ba-color-accent);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-family:'TildaSans',Arial,sans-serif;">
           ${lang === 'ka' ? 'ტელეფონი' : lang === 'ru' ? 'Телефон' : 'Phone'}
         </div>
-        <a href="tel:${phone}" style="color:#fff;font-size:18px;font-family:'TildaSans',Arial,sans-serif;text-decoration:none;">${phone}</a>
+        <a href="tel:${phone}" style="color:var(--ba-color-text);font-size:18px;font-family:'TildaSans',Arial,sans-serif;text-decoration:none;">${phone}</a>
       </div>
       <div>
-        <div style="color:#e4c97e;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-family:'TildaSans',Arial,sans-serif;">
+        <div style="color:var(--ba-color-accent);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-family:'TildaSans',Arial,sans-serif;">
           ${lang === 'ka' ? 'სამუშაო საათები' : lang === 'ru' ? 'Часы работы' : 'Working Hours'}
         </div>
-        <div style="color:#fff;font-size:18px;font-family:'TildaSans',Arial,sans-serif;">${hours}</div>
+        <div style="color:var(--ba-color-text);font-size:18px;font-family:'TildaSans',Arial,sans-serif;">${hours}</div>
       </div>
     </div>
     <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="${location.mapsUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#e4c97e;color:#000;font-size:15px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;">${MAP_LABEL[lang] ?? 'View on Map'}</a>
-      <a href="tel:${phone}" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:15px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;">${CALL_LABEL[lang] ?? 'Call'}</a>
+      <a href="${location.mapsUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--ba-color-accent);color:var(--ba-color-bg);font-size:15px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;">${MAP_LABEL[lang] ?? 'View on Map'}</a>
+      <a href="tel:${phone}" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(255,255,255,0.2);color:var(--ba-color-text);font-size:15px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;">${CALL_LABEL[lang] ?? 'Call'}</a>
     </div>
   </div>
 </div>`);
 
   // Description + Parking
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
     <div style="max-width:800px;">
       <p style="color:rgba(255,255,255,0.85);font-size:17px;font-family:'TildaSans',Arial,sans-serif;line-height:1.65;margin:0 0 32px;">${desc}</p>
-      <h2 style="color:#fff;font-size:24px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 12px;">${PARKING_LABEL[lang] ?? 'Parking'}</h2>
-      <p style="color:rgba(255,255,255,0.7);font-size:16px;font-family:'TildaSans',Arial,sans-serif;line-height:1.6;margin:0;">${parking}</p>
+      <h2 style="color:var(--ba-color-text);font-size:24px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 12px;">${PARKING_LABEL[lang] ?? 'Parking'}</h2>
+      <p style="color:var(--ba-color-text-muted);font-size:16px;font-family:'TildaSans',Arial,sans-serif;line-height:1.6;margin:0;">${parking}</p>
     </div>
   </div>
 </div>`);
 
   // Google Maps embed
   sections.push(`
-<div class="r t-rec" style="padding-top:0;padding-bottom:48px;background-color:#000;">
+<div class="r t-rec" style="padding-top:0;padding-bottom:48px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
     <div style="border-radius:12px;overflow:hidden;aspect-ratio:16/9;max-height:450px;">
       <iframe src="${location.mapsEmbed}" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="${name}"></iframe>
@@ -180,9 +180,9 @@ export function generateLocationContent(
 
   // Available Services
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
-    <h2 style="color:#fff;font-size:28px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 32px;text-align:center;">${SERVICES_LABEL[lang] ?? 'Services'}</h2>
+    <h2 style="color:var(--ba-color-text);font-size:28px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 32px;text-align:center;">${SERVICES_LABEL[lang] ?? 'Services'}</h2>
     ${generateServicesList(lang)}
   </div>
 </div>`);
@@ -190,16 +190,16 @@ export function generateLocationContent(
   // FAQ
   if (location.faqs.length > 0) {
     sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:800px;margin:0 auto;padding:0 20px;">
-    <h2 style="color:#fff;font-size:28px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 32px;text-align:center;">${FAQ_LABEL[lang] ?? 'FAQ'}</h2>
+    <h2 style="color:var(--ba-color-text);font-size:28px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 32px;text-align:center;">${FAQ_LABEL[lang] ?? 'FAQ'}</h2>
     ${location.faqs.map((faq) => `
-    <details style="border-bottom:1px solid rgba(255,255,255,0.1);padding:16px 0;">
-      <summary style="color:#fff;font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    <details style="border-bottom:1px solid var(--ba-color-border);padding:16px 0;">
+      <summary style="color:var(--ba-color-text);font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
         ${faq.question[lang] ?? faq.question.en}
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-left:16px;transition:transform 0.25s ease;" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="#e4c97e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-left:16px;transition:transform 0.25s ease;" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" style="color:var(--ba-color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </summary>
-      <div style="color:rgba(255,255,255,0.7);font-size:16px;font-family:'TildaSans',Arial,sans-serif;line-height:1.6;padding-top:12px;">${faq.answer[lang] ?? faq.answer.en}</div>
+      <div style="color:var(--ba-color-text-muted);font-size:16px;font-family:'TildaSans',Arial,sans-serif;line-height:1.6;padding-top:12px;">${faq.answer[lang] ?? faq.answer.en}</div>
     </details>`).join('')}
   </div>
 </div>`);
@@ -207,18 +207,18 @@ export function generateLocationContent(
 
   // CTA — Book at this studio
   sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:#000;">
+<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;text-align:center;">
-    <a href="https://wa.me/${location.whatsapp}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:#e4c97e;color:#000;font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;box-shadow:0px 15px 30px -10px rgba(0,11,48,0.2);">${BOOK_LABEL[lang] ?? 'Book Now'}</a>
+    <a href="https://wa.me/${location.whatsapp}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:var(--ba-color-accent);color:var(--ba-color-bg);font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;border-radius:20px;text-decoration:none;box-shadow:var(--ba-shadow-medium);">${BOOK_LABEL[lang] ?? 'Book Now'}</a>
   </div>
 </div>`);
 
   // Other studio link
   sections.push(`
-<div class="r t-rec" style="padding-top:32px;padding-bottom:64px;background-color:#000;">
+<div class="r t-rec" style="padding-top:32px;padding-bottom:64px;background-color:var(--ba-color-bg);">
   <div class="t-container" style="max-width:1200px;margin:0 auto;padding:0 20px;text-align:center;">
     <p style="color:rgba(255,255,255,0.5);font-size:15px;font-family:'TildaSans',Arial,sans-serif;margin:0 0 12px;">${OTHER_STUDIO_LABEL[lang] ?? 'Other Studio'}:</p>
-    <a href="${buildUrl(lang, otherSlug)}" style="color:#e4c97e;font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s;">${otherName}</a>
+    <a href="${buildUrl(lang, otherSlug)}" style="color:var(--ba-color-accent);font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s;">${otherName}</a>
   </div>
 </div>`);
 
@@ -239,11 +239,16 @@ const SERVICES_LIST: ReadonlyArray<{ slug: string; name: Record<string, string> 
 ];
 
 function generateServicesList(lang: string): string {
-  return `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+  return `<style>
+.ba-loc-svc{display:block;padding:16px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--ba-radius-lg);color:var(--ba-color-text);font-size:15px;font-family:var(--ba-font-family);text-decoration:none;transition:background var(--ba-duration-fast),border-color var(--ba-duration-fast)}
+.ba-loc-svc:hover{background:var(--ba-color-accent-faint);border-color:rgba(228,201,126,0.3)}
+@media(prefers-reduced-motion:reduce){.ba-loc-svc{transition:none}}
+</style>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
     ${SERVICES_LIST.map((s) => {
       const href = lang === 'ka' ? `/${s.slug}/` : `/${lang}/${s.slug}/`;
       const name = s.name[lang] ?? s.name.en;
-      return `<a href="${href}" style="display:block;padding:16px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#fff;font-size:15px;font-family:'TildaSans',Arial,sans-serif;text-decoration:none;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(228,201,126,0.1)';this.style.borderColor='rgba(228,201,126,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)'">${name}</a>`;
+      return `<a href="${href}" class="ba-loc-svc">${name}</a>`;
     }).join('\n    ')}
   </div>`;
 }

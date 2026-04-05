@@ -167,7 +167,7 @@ const CSS = `
   font-size: 20px;
 }
 .ba-reviews__stars {
-  color: #f4b400;
+  color: var(--ba-color-rating);
   font-size: 20px;
   letter-spacing: 2px;
 }
@@ -253,7 +253,7 @@ const CSS = `
   color: #767676;
 }
 .ba-reviews__card-stars {
-  color: #f4b400;
+  color: var(--ba-color-rating);
   font-size: 18px;
   letter-spacing: 2px;
   margin-bottom: 8px;
