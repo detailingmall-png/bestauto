@@ -183,7 +183,7 @@ function renderCard(service: ServiceEntry, lang: string, langPrefix: string): st
 
   return `<a href="${href}" class="ba-related__card">
       <div class="ba-related__img-wrap">
-        <img src="${service.image}" alt="${name}" loading="lazy" width="800" height="600">
+        <img src="${service.image}" alt="${name}" loading="lazy" width="480" height="360">
       </div>
       <p class="ba-related__name">${name}</p>
     </a>`;
