@@ -304,17 +304,20 @@ const CSS = `
   margin-top: 20px;
 }
 .ba-reviews__dots button {
-  width: 10px;
-  height: 10px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  box-sizing: border-box;
   border-radius: var(--ba-radius-full);
   border: none;
   background: var(--ba-color-text-faint);
+  background-clip: content-box;
   cursor: pointer;
-  padding: 0;
   transition: background var(--ba-duration-fast);
 }
 .ba-reviews__dots button.active {
   background: #fff;
+  background-clip: content-box;
 }
 .ba-reviews__cta {
   display: inline-block;

@@ -32,7 +32,7 @@ export function generateBrandLogosHtml(lang: string): string {
     <div class="ba-brands__row" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px 40px;margin-bottom:16px;">
       ${items}
     </div>
-    <p class="ba-brands__subtitle" style="font-family:var(--ba-font-family);color:var(--ba-color-text-faint);letter-spacing:0.5px;margin:0;">${subtitle}</p>
+    <p class="ba-brands__subtitle" style="font-family:var(--ba-font-family);color:var(--ba-color-text-subtle);letter-spacing:0.5px;margin:0;">${subtitle}</p>
   </div>
   <style>
     .ba-brands__item { font-size: 18px; }

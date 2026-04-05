@@ -391,6 +391,15 @@ html {
 }
 
 /* ========================================================================
+   Contrast fixes: override low-opacity text colors for WCAG AA compliance
+   ======================================================================== */
+
+/* C3: Contact cards — --text-dim (0.35) too low, override to 0.55 (5.1:1 contrast) */
+#ba-contacts .ba-hours {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* ========================================================================
    Hero video overlay (injected into Tilda Zero Block t396)
    ======================================================================== */
 /* Video CSS is injected inline per-page by hero-block.ts.
