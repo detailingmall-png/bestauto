@@ -1,54 +1,53 @@
 /**
- * Custom CSS-only hero block generator.
- * Replaces Tilda Zero Block (t396) to eliminate tilda-zero.js dependency.
- * The Zero Block requires 44KB of JS for responsive positioning,
- * adding ~2s to LCP on mobile. This custom hero uses pure CSS flexbox
- * with responsive breakpoints — renders immediately without JS.
+ * Hero block video injection for Tilda Zero Block (t396).
+ *
+ * The original Tilda Zero Block renders correctly via CSS alone —
+ * positions use calc(50vh - ...) and media queries for all breakpoints.
+ * tilda-zero.js (49KB) is NOT needed for initial render.
+ *
+ * This module injects background video into the t396 artboard and
+ * replaces the t396_init() script call with the HLS video loader.
  */
 
-/** Hero content per language. */
-const HERO_CONTENT: Readonly<Record<string, {
-  readonly title: string;
-  readonly subtitle: string;
-  readonly ctaText: string;
-  readonly ctaHref: string;
-}>> = {
-  ka: {
-    title: 'პრემიუმ ავტო დითეილინგი თბილისში — BESTAUTO',
-    subtitle: 'ავტომობილის პროფესიონალური მოვლა და დაცვა: დამცავი PPF ფირით გადაკვრა, ფერადი ფირით გადაკვრა, პოლირება კერამიკული საფარით, მინების დაბურვა და შეკეთება, სალონის ქიმწმენდა.',
-    ctaText: 'მიიღეთ კონსულტაცია',
-    ctaHref: '/#contacts',
-  },
-  ru: {
-    title: 'Премиальный детейлинг автомобилей в Тбилиси',
-    subtitle: 'Профессиональный уход и защита автомобиля: оклейка защитной PPF пленкой, оклейка цветной пленкой, полировка с керамикой, тонировка и ремонт стекол, химчистка салона.',
-    ctaText: 'Получить консультацию',
-    ctaHref: '/ru#contacts',
-  },
-  en: {
-    title: 'PREMIUM CAR DETAILING IN TBILISI — BESTAUTO',
-    subtitle: 'Professional car care and protection: PPF paint protection film, color wrap, polishing with ceramic coating, window tinting and glass repair, interior detailing.',
-    ctaText: 'Get a consultation',
-    ctaHref: '/en#contacts',
-  },
-};
-
-/** Hero record IDs per language (used to find and replace the Zero Block). */
+/** Hero record IDs per language (primary Zero Block for each homepage). */
 export const HERO_REC_IDS: Readonly<Record<string, readonly string[]>> = {
   ka: ['rec2091645383'],
   ru: ['rec593575375', 'rec1828633051'],
   en: ['rec593573287'],
 };
 
-/** HLS video init script — deferred until user interaction or 4s timeout.
+/** Video HTML elements — desktop and mobile variants. */
+const HERO_VIDEO_ELEMENTS = `<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" width="1280" height="720">
+  <source src="/hero-desktop.mp4" type="video/mp4">
+</video>
+<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" width="480" height="854">
+  <source src="/hero-mobile.mp4" type="video/mp4">
+</video>`;
+
+/** CSS for video positioning inside t396 artboard. */
+const HERO_VIDEO_CSS = `<style>
+.t396__artboard .ba-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.t396__artboard .ba-hero-video--mobile { display: none; }
+@media screen and (max-width: 639px) {
+  .t396__artboard .ba-hero-video--desktop { display: none; }
+  .t396__artboard .ba-hero-video--mobile { display: block; }
+}
+</style>`;
+
+/** HLS video init script — starts 1.5s after page load.
  *
- * Strategy: video stays invisible (preload="none", no poster) until the user
- * scrolls, taps, or 4 seconds pass. This prevents the video first-frame from
- * becoming the LCP element — text at FCP (~1.2s) stays as LCP instead.
- * Lighthouse doesn't generate user interaction, so video never plays during
- * the test → LCP = hero text, not video.
+ * 1.5s delay ensures hero text renders and Chrome records it as LCP
+ * before video download begins. On real connections video typically
+ * starts playing within 2-3s total.
  *
- * Real users: scroll within 1-3s → video starts almost immediately.
  * Uses matchMedia instead of offsetWidth to avoid forced reflow.
  */
 const HERO_VIDEO_SCRIPT = `<script>
@@ -59,9 +58,7 @@ const HERO_VIDEO_SCRIPT = `<script>
     var v=getVisible();
     if(v){v.preload='auto';v.setAttribute('autoplay','');v.play().catch(function(){});}
   }
-  var started=false;
   function startVideo(){
-    if(started)return;started=true;
     var v=getVisible();if(!v)return;
     var src=isMobile?'/hls/mobile/index.m3u8':'/hls/desktop/index.m3u8';
     if(v.canPlayType('application/vnd.apple.mpegurl')){
@@ -80,82 +77,109 @@ const HERO_VIDEO_SCRIPT = `<script>
       document.head.appendChild(s);
     }
   }
-  window.addEventListener('scroll',startVideo,{once:true,passive:true});
-  window.addEventListener('click',startVideo,{once:true});
-  window.addEventListener('touchstart',startVideo,{once:true,passive:true});
-  setTimeout(startVideo,8000);
+  setTimeout(startVideo,1500);
 })();
 </script>`;
 
 /**
- * Generate the complete custom hero HTML for a given language.
- * Includes video elements, gradient overlay, and HLS init script.
+ * Inject video elements into the existing Tilda Zero Block hero.
+ *
+ * Strategy:
+ * 1. Find the hero rec block by ID
+ * 2. Insert <video> elements after .t396__carrier (z-index:0 = behind gradient filter)
+ * 3. Add CSS for video positioning
+ * 4. Replace the t396_init() inline script with HLS video loader
+ *
+ * The t396 layout renders correctly via CSS alone (no tilda-zero.js needed).
+ * The gradient overlay (.t396__filter, z-index:1) darkens the video.
+ * Text elements (.tn-elem, z-index:3) stay on top.
  */
-export function generateHeroHtml(lang: string): string {
-  const content = HERO_CONTENT[lang] ?? HERO_CONTENT['ka'];
-
-  return `<div class="ba-hero">
-<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" width="1280" height="720">
-  <source src="/hero-desktop.mp4" type="video/mp4">
-</video>
-<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" width="480" height="854">
-  <source src="/hero-mobile.mp4" type="video/mp4">
-</video>
-<div class="ba-hero__overlay"></div>
-<div class="ba-hero__content">
-  <h1 class="ba-hero__title">${content.title}</h1>
-  <h2 class="ba-hero__subtitle">${content.subtitle}</h2>
-  <a class="ba-hero__cta" href="${content.ctaHref}">${content.ctaText}</a>
-</div>
-${HERO_VIDEO_SCRIPT}
-</div>`;
-}
-
-/**
- * Replace all Zero Block hero blocks in mainContent with the custom hero.
- * Finds each rec ID's wrapper div and replaces it entirely.
- * Returns the modified content.
- */
-export function replaceZeroBlockHero(mainContent: string, lang: string): string {
+export function injectHeroVideo(mainContent: string, lang: string): string {
   const heroRecIds = HERO_REC_IDS[lang] ?? [];
   let result = mainContent;
-  let heroInserted = false;
+  let videoInjected = false;
 
   for (const heroRecId of heroRecIds) {
     if (!result.includes(`id="${heroRecId}"`)) continue;
 
-    // Find the outermost div wrapper for this record block
-    const recIdx = result.indexOf(`id="${heroRecId}"`);
-    const blockStart = result.lastIndexOf('<div', recIdx);
-    if (blockStart < 0) continue;
+    if (!videoInjected) {
+      // Find the carrier div inside this hero block and inject video after it
+      const recIdx = result.indexOf(`id="${heroRecId}"`);
 
-    // Find closing </div> by counting nesting depth
-    let depth = 0;
-    let pos = blockStart;
-    let blockEnd = -1;
-    while (pos < result.length) {
-      if (result.startsWith('<div', pos)) {
-        depth++;
-        pos += 4;
-      } else if (result.startsWith('</div>', pos)) {
-        depth--;
-        if (depth === 0) {
-          blockEnd = pos + 6;
-          break;
-        }
-        pos += 6;
-      } else {
-        pos++;
-      }
+      // Find .t396__carrier closing tag within this block
+      const carrierStart = result.indexOf('t396__carrier', recIdx);
+      if (carrierStart < 0) continue;
+      const carrierClose = result.indexOf('</div>', carrierStart);
+      if (carrierClose < 0) continue;
+      const insertPos = carrierClose + 6;
+
+      // Insert video elements + CSS after carrier, before filter
+      result = result.slice(0, insertPos) + HERO_VIDEO_ELEMENTS + result.slice(insertPos);
+      videoInjected = true;
     }
 
-    if (blockEnd <= blockStart) continue;
+    // Remove the t396_init() inline script (not needed without tilda-zero.js)
+    result = result.replace(
+      new RegExp(`<script>\\s*t_onReady\\(function\\(\\)\\s*\\{\\s*t_onFuncLoad\\('t396_init',function\\(\\)\\s*\\{\\s*t396_init\\('${heroRecId.replace('rec', '')}'\\);\\s*\\}\\);\\s*\\}\\);\\s*</script>`),
+      '',
+    );
+  }
 
-    // Replace with custom hero HTML (only insert the hero once; remove extra blocks)
-    const replacement = heroInserted ? '' : generateHeroHtml(lang);
-    result = result.slice(0, blockStart) + replacement + result.slice(blockEnd);
-    heroInserted = true;
+  if (videoInjected) {
+    // Add video CSS and loader script at the end of the first hero block
+    const firstRecId = heroRecIds[0];
+    const recIdx = result.indexOf(`id="${firstRecId}"`);
+    if (recIdx >= 0) {
+      // Find the closing </div> of the rec block (outermost)
+      const blockStart = result.lastIndexOf('<div', recIdx);
+      let depth = 0;
+      let pos = blockStart;
+      let blockEnd = -1;
+      while (pos < result.length) {
+        if (result.startsWith('<div', pos)) { depth++; pos += 4; }
+        else if (result.startsWith('</div>', pos)) {
+          depth--;
+          if (depth === 0) { blockEnd = pos + 6; break; }
+          pos += 6;
+        } else { pos++; }
+      }
+      if (blockEnd > 0) {
+        // Insert CSS + script just before the closing </div> of the rec block
+        result = result.slice(0, blockEnd - 6) + HERO_VIDEO_CSS + HERO_VIDEO_SCRIPT + result.slice(blockEnd - 6);
+      }
+    }
+  }
+
+  // Remove extra hero blocks (RU has 2 rec blocks for the hero — keep first, remove second)
+  let heroInserted = false;
+  for (const heroRecId of heroRecIds) {
+    if (!result.includes(`id="${heroRecId}"`)) continue;
+    if (!heroInserted) {
+      heroInserted = true;
+      continue; // keep the first block
+    }
+    // Remove duplicate hero blocks
+    result = removeRecBlock(result, heroRecId);
   }
 
   return result;
+}
+
+/** Remove a record block by ID (helper for removing duplicate hero blocks). */
+function removeRecBlock(content: string, recId: string): string {
+  const marker = `id="${recId}"`;
+  const idx = content.indexOf(marker);
+  if (idx < 0) return content;
+  const blockStart = content.lastIndexOf('<div', idx);
+  let depth = 0;
+  let pos = blockStart;
+  while (pos < content.length) {
+    if (content.startsWith('<div', pos)) { depth++; pos += 4; }
+    else if (content.startsWith('</div>', pos)) {
+      depth--;
+      if (depth === 0) return content.slice(0, blockStart) + content.slice(pos + 6);
+      pos += 6;
+    } else { pos++; }
+  }
+  return content;
 }

@@ -8,7 +8,7 @@
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById } from '../lib/html-extractor';
-import { replaceZeroBlockHero } from '../lib/hero-block';
+import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
@@ -316,9 +316,9 @@ if (navCta) {
   );
 }
 
-// Homepage hero: replace Zero Block with custom CSS-only hero (no tilda-zero.js dependency)
+// Homepage hero: inject video into original Tilda Zero Block (no tilda-zero.js dependency)
 if (baseSlug === '') {
-  mainContent = replaceZeroBlockHero(mainContent, lang);
+  mainContent = injectHeroVideo(mainContent, lang);
 }
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
