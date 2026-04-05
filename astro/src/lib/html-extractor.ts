@@ -201,52 +201,51 @@ export function inlineBlocksPageCss(head: string): string {
 }
 
 /**
- * Convert ALL async CSS in <head> back to blocking stylesheets.
+ * Inline ALL remaining external CSS files on the homepage.
  *
- * Two async CSS patterns exist:
- * 1. preload+onload (from deferNonCriticalCss): rel="preload" as="style" onload="..."
- * 2. media=print+onload (from Tilda export): media="print" onload="this.media='all'"
+ * Replaces every <link rel="stylesheet"> (and preload/print async variants)
+ * with inline <style> blocks containing the file content. This eliminates:
+ * - Render-blocking CSS chain (PSI "Avoid chaining critical requests")
+ * - Async style recalculation causing late LCP re-paint
+ * - Extra HTTP round-trips (6 CSS files → 0 external requests)
  *
- * Both trigger style recalculation when they load, causing Chrome to report
- * a new LCP entry. Making them blocking ensures all styles are applied before
- * FCP, so FCP = LCP with no late re-paint.
- *
- * The extra blocking CSS is small (~24KB raw for all non-form files) and
- * downloads in parallel with HTML on HTTP/2.
- *
- * Also strips fonts-tildasans.css entirely (already inlined via ZERO_BLOCK_CRITICAL_CSS),
+ * Also strips fonts-tildasans.css entirely (already inlined via ZERO_BLOCK_CRITICAL_CSS)
  * and removes paired <noscript> fallbacks.
+ *
+ * Total inline CSS: ~67KB raw. Combined with HTML, gzip compresses efficiently
+ * in one stream — net overhead is ~12KB gzip vs 6 separate HTTP requests.
  */
-export function makeAllCssBlocking(head: string): string {
+export function inlineAllPageCss(head: string): string {
   let result = head;
 
   // Remove fonts-tildasans completely (duplicate of inlined @font-face)
   result = result.replace(
-    /<link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?>\s*(?:<noscript><link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?><\/noscript>\s*)?/g,
+    /<link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?>\s*(?:<noscript>\s*<link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?>\s*<\/noscript>\s*)?/g,
     '',
   );
 
-  // Pattern 1: preload+onload → stylesheet
-  // Before: rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
-  // After:  rel="stylesheet"
-  result = result.replace(
-    /rel="preload"\s+as="style"\s+onload="this\.onload=null;this\.rel='stylesheet'"/g,
-    'rel="stylesheet"',
-  );
-
-  // Pattern 2: media="print" onload → media="all"
-  // Before: media="print" onload="this.media='all';"  (or without trailing semicolon)
-  // After:  media="all"
-  result = result.replace(
-    /media="print"\s+onload="this\.media='all';?"/g,
-    'media="all"',
-  );
-
-  // Remove <noscript> fallbacks — now that CSS is blocking, they're redundant.
-  // Pattern: <noscript><link rel="stylesheet" ...></noscript>
+  // Remove all <noscript> fallbacks first (they contain duplicate link tags)
   result = result.replace(
     /\s*<noscript>\s*<link\b[^>]*rel="stylesheet"[^>]*\/?>\s*<\/noscript>/g,
     '',
+  );
+
+  // Find and inline all remaining CSS link tags (blocking, preload, or print patterns)
+  result = result.replace(
+    /<link\b[^>]*href="(\/css\/[^"?]+)[^"]*"[^>]*>/g,
+    (match, cssRelPath) => {
+      // Skip non-stylesheet links (e.g. preconnect, dns-prefetch)
+      if (!match.includes('stylesheet') && !match.includes('as="style"')) return match;
+
+      const cssAbsPath = join(process.cwd(), 'public', cssRelPath);
+      try {
+        const cssContent = readFileSync(cssAbsPath, 'utf8');
+        return `<style>${cssContent}</style>`;
+      } catch {
+        // File not found — keep original tag
+        return match;
+      }
+    },
   );
 
   return result;
@@ -1346,7 +1345,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Chrome reports new LCP on ANY style recalc — even from tiny async CSS files.
   if (isHomepage) {
     processedHead = inlineBlocksPageCss(processedHead);
-    processedHead = makeAllCssBlocking(processedHead);
+    processedHead = inlineAllPageCss(processedHead);
     // Homepage has zero t396 blocks — strip tilda-zero scripts entirely (saves 49KB)
     processedHead = removeZeroBlockScripts(processedHead);
   }
