@@ -31,6 +31,9 @@ const ZERO_BLOCK_CRITICAL_CSS = [
   `.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`,
   // Critical #allrecords styles — prevent re-paint when async CSS loads
   `#allrecords{-webkit-font-smoothing:antialiased}`,
+  // Tilda sets body/allrecords transparent; set html bg to black to prevent
+  // white canvas bleeding through gaps (content-visibility, margin collapse).
+  `html{background-color:#000}`,
   `#allrecords,body{background-color:transparent}`,
   `#allrecords a{color:#ffffff;text-decoration:none}`,
   `body{--t-headline-font:'TildaSans',Arial,sans-serif;--t-text-font:'TildaSans',Arial,sans-serif}`,
@@ -652,16 +655,34 @@ export function rewriteImagesToWebp(content: string): string {
  * Skips the first ABOVE_FOLD sections so the hero/nav render immediately.
  * Below-fold sections skip layout/paint until near the viewport,
  * dramatically reducing initial render cost on large pages (277KB+).
+ *
+ * IMPORTANT: Skips blocks containing position:fixed children (e.g. WhatsApp widget).
+ * content-visibility:auto implies contain:paint which traps fixed-position elements
+ * inside the container instead of positioning them relative to the viewport.
  */
 export function addContentVisibility(content: string): string {
   const ABOVE_FOLD = 3; // hero + first 1-2 content sections render eagerly
   let sectionIdx = 0;
+
+  // Pre-scan for record IDs that contain position:fixed elements (WhatsApp widget).
+  // These blocks must NOT get content-visibility:auto or their fixed children won't render.
+  const fixedChildIds = new Set<string>();
+  const recBlockRegex = /<div\s+id="(rec\d+)"[\s\S]*?(?=<div\s+id="rec\d+"|$)/g;
+  let blockMatch: RegExpExecArray | null;
+  while ((blockMatch = recBlockRegex.exec(content)) !== null) {
+    if (blockMatch[0].includes('ba-wa-wrap') || blockMatch[0].includes('position:fixed') || blockMatch[0].includes('position: fixed')) {
+      fixedChildIds.add(blockMatch[1]);
+    }
+  }
 
   return content.replace(
     /<div\s+(id="rec\d+")\s+(class="r t-rec[^"]*")\s+(style=")/g,
     (match, idAttr, classAttr, stylePrefix) => {
       sectionIdx++;
       if (sectionIdx <= ABOVE_FOLD) return match;
+      // Extract rec ID from the id attribute
+      const idMatch = (idAttr as string).match(/id="(rec\d+)"/);
+      if (idMatch && fixedChildIds.has(idMatch[1])) return match;
       return `<div ${idAttr} ${classAttr} ${stylePrefix}content-visibility:auto;contain-intrinsic-size:auto 500px;`;
     }
   );
