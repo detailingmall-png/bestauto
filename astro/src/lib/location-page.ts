@@ -5,6 +5,7 @@
 import type { LocationData } from '../data/location-data';
 import { META_OVERRIDES } from '../data/meta-overrides';
 import { getHomepageHeadCss } from './shared-blocks';
+import { renderFaqAccordion, type FaqAccordionItem } from './faq-accordion';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -189,20 +190,12 @@ export function generateLocationContent(
 
   // FAQ
   if (location.faqs.length > 0) {
-    sections.push(`
-<div class="r t-rec" style="padding-top:48px;padding-bottom:48px;background-color:var(--ba-color-bg);">
-  <div class="t-container" style="max-width:800px;margin:0 auto;padding:0 20px;">
-    <h2 style="color:var(--ba-color-text);font-size:28px;font-weight:700;font-family:'TildaSans',Arial,sans-serif;margin:0 0 32px;text-align:center;">${FAQ_LABEL[lang] ?? 'FAQ'}</h2>
-    ${location.faqs.map((faq) => `
-    <details style="border-bottom:1px solid var(--ba-color-border);padding:16px 0;">
-      <summary style="color:var(--ba-color-text);font-size:17px;font-weight:600;font-family:'TildaSans',Arial,sans-serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
-        ${faq.question[lang] ?? faq.question.en}
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-left:16px;transition:transform 0.25s ease;" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" style="color:var(--ba-color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </summary>
-      <div style="color:var(--ba-color-text-muted);font-size:16px;font-family:'TildaSans',Arial,sans-serif;line-height:1.6;padding-top:12px;">${faq.answer[lang] ?? faq.answer.en}</div>
-    </details>`).join('')}
-  </div>
-</div>`);
+    const faqItems: ReadonlyArray<FaqAccordionItem> = location.faqs.map((faq) => ({
+      question: faq.question[lang] ?? faq.question.en,
+      answer: faq.answer[lang] ?? faq.answer.en,
+    }));
+    const faqTitle = FAQ_LABEL[lang] ?? 'FAQ';
+    sections.push(renderFaqAccordion(faqItems, faqTitle, { id: 'loc-faq', paddingY: 48 }));
   }
 
   // CTA — Book at this studio

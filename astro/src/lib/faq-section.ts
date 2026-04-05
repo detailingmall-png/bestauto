@@ -1,8 +1,9 @@
 /**
  * Generates the FAQ accordion section + JSON-LD FAQPage schema
- * for the bestauto.ge homepage. Uses native <details>/<summary> (no JS).
- * Returns complete HTML with inline styles (Tilda-compatible).
+ * for the bestauto.ge homepage. Uses the universal faq-accordion component.
  */
+
+import { renderFaqAccordion, renderFaqSchema, resolveFaqItems } from './faq-accordion';
 
 interface FaqItem {
   readonly question: Readonly<Record<string, string>>;
@@ -78,68 +79,14 @@ const SECTION_TITLE: Readonly<Record<string, string>> = {
   en: 'Frequently Asked Questions',
 };
 
-function renderFaqItem(item: FaqItem, lang: string): string {
-  const question = item.question[lang] ?? item.question['en'];
-  const answer = item.answer[lang] ?? item.answer['en'];
-
-  return `<details class="ba-faq__item" style="border-bottom:1px solid var(--ba-color-border);">
-        <summary class="ba-faq__question" style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;list-style:none;font-family:var(--ba-font-family);font-weight:var(--ba-font-weight-semibold);color:var(--ba-color-text);line-height:1.4;gap:16px;">
-          <span>${question}</span>
-          <svg class="ba-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;transition:transform 0.25s ease;"><path d="M5 7.5L10 12.5L15 7.5" style="stroke:var(--ba-color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </summary>
-        <div class="ba-faq__answer" style="padding:0 0 20px;font-family:var(--ba-font-family);color:var(--ba-color-text-muted);line-height:1.6;">${answer}</div>
-      </details>`;
-}
-
 export function generateFaqHtml(lang: string): string {
   const title = SECTION_TITLE[lang] ?? SECTION_TITLE['en'];
-  const items = FAQ_ITEMS.map((item) => renderFaqItem(item, lang)).join('\n      ');
-
-  return `<div id="ba-faq" style="background:var(--ba-color-bg);padding:80px 0;border-top:1px solid var(--ba-color-border-subtle);">
-  <div style="max-width:800px;margin:0 auto;padding:0 24px;">
-    <h2 class="ba-faq__heading" style="color:var(--ba-color-text);font-weight:var(--ba-font-weight-bold);text-align:center;margin:0 0 48px;font-family:var(--ba-font-family);">${title}</h2>
-    <div>
-      ${items}
-    </div>
-  </div>
-  <style>
-    .ba-faq__heading { font-size: 36px; }
-    .ba-faq__question { font-size: 18px; }
-    .ba-faq__answer { font-size: 16px; }
-    .ba-faq__item summary::-webkit-details-marker { display: none; }
-    .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
-    .ba-faq__item summary:hover { color: var(--ba-color-accent) !important; }
-    @media screen and (max-width: 960px) {
-      .ba-faq__heading { font-size: 32px; }
-      .ba-faq__question { font-size: 17px; }
-      .ba-faq__answer { font-size: 15px; }
-    }
-    @media screen and (max-width: 640px) {
-      #ba-faq { padding: 48px 0 !important; }
-      .ba-faq__heading { font-size: 28px; margin-bottom: 32px !important; }
-      .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
-      .ba-faq__answer { font-size: 15px; }
-    }
-  </style>
-</div>`;
+  const items = resolveFaqItems(FAQ_ITEMS, lang);
+  return renderFaqAccordion(items, title);
 }
 
 /** Generates FAQPage JSON-LD structured data for SEO. */
 export function generateFaqSchema(lang: string): string {
-  const items = FAQ_ITEMS.map((item) => ({
-    '@type': 'Question',
-    name: item.question[lang] ?? item.question['en'],
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer[lang] ?? item.answer['en'],
-    },
-  }));
-
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: items,
-  };
-
-  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+  const items = resolveFaqItems(FAQ_ITEMS, lang);
+  return renderFaqSchema(items);
 }

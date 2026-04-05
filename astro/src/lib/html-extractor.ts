@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { IMG_DIMS } from './image-dims';
 import { WEBP_AVAILABLE } from './webp-available';
 import { META_OVERRIDES } from '../data/meta-overrides';
+import { renderBlogFaqAccordion, type FaqAccordionItem } from './faq-accordion';
 
 /** Delay (ms) before loading deferred analytics and non-critical scripts. */
 const DEFER_DELAY_MS = 7000;
@@ -658,44 +659,9 @@ export function convertBlogInlineFaq(content: string, lang: string = 'en'): stri
 
   if (pairs.length === 0) return content;
 
-  // Build accordion HTML (reuse ba-faq__* classes from faq-section.ts)
-  const accordionItems = pairs.map(({ question, answer }) =>
-    `<details class="ba-faq__item" style="border-bottom:1px solid var(--ba-color-border);">
-        <summary class="ba-faq__question" style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;list-style:none;font-family:var(--ba-font-family);font-weight:var(--ba-font-weight-semibold);color:var(--ba-color-text);line-height:1.4;gap:16px;">
-          <span>${question}</span>
-          <svg class="ba-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;transition:transform 0.25s ease;"><path d="M5 7.5L10 12.5L15 7.5" style="stroke:var(--ba-color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </summary>
-        <div class="ba-faq__answer" style="padding:0 0 20px;font-family:var(--ba-font-family);color:var(--ba-color-text-muted);line-height:1.6;">${answer}</div>
-      </details>`
-  ).join('\n      ');
-
+  const faqItems: ReadonlyArray<FaqAccordionItem> = pairs;
   const faqTitle = FAQ_HEADING_TEXT[lang] ?? FAQ_HEADING_TEXT['en'];
-
-  const accordionHtml = `<div class="ba-blog-faq" style="position:relative;left:50%;transform:translateX(-50%);width:100vw;background:#000;padding:64px 24px 48px;box-sizing:border-box;margin:0;">
-      <div style="max-width:800px;margin:0 auto;">
-        <h2 class="ba-blog-faq__title">${faqTitle}</h2>
-        ${accordionItems}
-      </div>
-      <style>
-        .ba-blog-faq__title { font-size: 30px; color: #e4c97e !important; font-weight: 700 !important; margin: 0 0 32px !important; font-family: var(--ba-font-family); line-height: 1.3; text-align: center; }
-        .ba-blog-faq .ba-faq__question { font-size: 18px; color: #fff !important; }
-        .ba-blog-faq .ba-faq__answer { font-size: 16px; color: rgba(255,255,255,0.7) !important; }
-        .ba-blog-faq .ba-faq__item summary::-webkit-details-marker { display: none; }
-        .ba-blog-faq .ba-faq__item[open] .ba-faq__chevron { transform: rotate(180deg); }
-        .ba-blog-faq .ba-faq__item summary:hover { color: #e4c97e !important; }
-        @media screen and (max-width: 960px) {
-          .ba-blog-faq__title { font-size: 28px !important; }
-          .ba-blog-faq .ba-faq__question { font-size: 17px; }
-          .ba-blog-faq .ba-faq__answer { font-size: 15px; }
-        }
-        @media screen and (max-width: 640px) {
-          .ba-blog-faq { padding: 48px 16px 32px !important; }
-          .ba-blog-faq__title { font-size: 24px !important; margin-bottom: 24px !important; }
-          .ba-blog-faq .ba-faq__question { font-size: 16px; padding: 16px 0 !important; }
-          .ba-blog-faq .ba-faq__answer { font-size: 15px; }
-        }
-      </style>
-    </div><!-- /ba-blog-faq -->`;
+  const accordionHtml = renderBlogFaqAccordion(faqItems, faqTitle);
 
   // Replace the entire FAQ section (heading + Q&A pairs) with accordion
   const faqEndIdx = faqIdx + faqMarker.length + sectionEndOffset;
