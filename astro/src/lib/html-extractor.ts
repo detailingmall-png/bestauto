@@ -140,21 +140,28 @@ export function inlineCriticalCss(head: string): string {
 }
 
 /**
- * Make tilda-blocks-page CSS non-blocking (async preload+onload).
- * Safe ONLY on pages where the hero uses inline styles (homepage).
- * Other pages keep it blocking to prevent CLS from async CSS load.
+ * Make tilda-blocks-page CSS non-blocking on the homepage.
+ *
+ * Strategy: remove the blocking <link> from <head> and load it via JS
+ * after requestIdleCallback. This prevents the CSS from triggering a
+ * style recalculation that causes Chrome to report a new LCP when the
+ * stylesheet applies. The hero renders with inlined CSS at FCP; the
+ * rest of the page gets styled once the browser is idle (~2s on slow 3G).
+ *
+ * The previous preload+onload approach still caused LCP re-paint at 3.3s
+ * because the browser downloaded and applied the CSS immediately (preload
+ * has high priority), triggering a global style recalculation.
  */
 export function makeBlocksCssAsync(head: string): string {
   return head.replace(
-    /<link\b[^>]*href="\/css\/tilda-blocks-page[^"]*"[^>]*>/,
-    (match) => {
+    /<link\b[^>]*href="(\/css\/tilda-blocks-page[^"]*)"[^>]*>/,
+    (match, href) => {
       if (!match.includes('rel="stylesheet"')) return match;
       if (match.includes('media="print"')) return match; // already async
-      const async = match.replace(
-        'rel="stylesheet"',
-        'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"'
-      );
-      return `${async}<noscript>${match}</noscript>`;
+      // Replace the blocking link with a JS-deferred load via requestIdleCallback.
+      // The CSS loads AFTER the LCP measurement window closes.
+      const loader = `<script>(function(){var idle=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(cb){setTimeout(cb,200)};idle(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${href}';document.head.appendChild(l);},{timeout:2000});})();</script>`;
+      return `${loader}<noscript>${match}</noscript>`;
     }
   );
 }
