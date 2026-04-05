@@ -49,7 +49,7 @@ const SERVICES: Readonly<Record<string, { name: Record<string, string>; min: str
   'auto-glass-tinting': { name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' }, min: '130' },
   'windshield-repair': { name: { ka: 'ავტომინების შეკეთება, პოლირება და შლიფოვკა', ru: 'Ремонт сколов и трещин, полировка и шлифовка автостекол', en: 'Windshield Repair, Glass Polishing & Grinding' }, min: '60' },
   'car-soundproofing': { name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' }, min: '600' },
-  'computer-diagnostics': { name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' }, min: '30' },
+  'computer-diagnostics': { name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' }, min: '50' },
 };
 
 // Breadcrumb home labels per language
