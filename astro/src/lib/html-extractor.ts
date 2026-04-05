@@ -109,28 +109,17 @@ export function deferNonCriticalCss(head: string): string {
 }
 
 /**
- * Inline tilda-grid CSS (4KB) and page-specific tilda-blocks-page CSS
- * to eliminate render-blocking network requests.
- * Both files are local, static, and safe to inline at build time.
+ * Inline only truly critical CSS (tilda-grid, 4KB) for layout stability.
+ * Page-specific tilda-blocks-page CSS stays as a linked file — it's preloaded
+ * via addResourceHints so the browser fetches it in parallel with HTML.
+ * This keeps the HTML document small (~15KB gzipped instead of ~52KB),
+ * significantly improving parse time and LCP on throttled mobile connections.
  */
 export function inlineCriticalCss(head: string): string {
-  // 1. Inline tilda-grid (always present, pre-loaded at module init)
+  // Inline tilda-grid (4KB, layout-critical — prevents CLS)
   let result = head.replace(
     /<link\b[^>]*href="\/css\/tilda-grid-3\.0\.min\.css"[^>]*\/?>/,
     `<style>${GRID_CSS}</style>`
-  );
-
-  // 2. Inline tilda-blocks-page CSS (page-specific, read dynamically)
-  result = result.replace(
-    /<link\b[^>]*href="(\/css\/tilda-blocks-page[^"?]+\.min\.css)[^"]*"[^>]*\/?>/,
-    (_match, cssPath) => {
-      try {
-        const css = readFileSync(join(process.cwd(), 'public', cssPath), 'utf8');
-        return `<style>${css}</style>`;
-      } catch {
-        return _match; // fallback: keep original <link> if file not found
-      }
-    }
   );
 
   return result;
@@ -172,6 +161,12 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
+  // Preload page-specific tilda-blocks CSS (render-blocking, not inlined)
+  const cssMatch = head.match(/href="(\/css\/tilda-blocks-page[^"?]+\.min\.css[^"]*)"/);
+  const cssPreload = cssMatch
+    ? `<link rel="preload" href="${cssMatch[1]}" as="style">`
+    : '';
+
   let heroPreload: string;
   if (isHomepage) {
     // Homepage hero is a <video> with poster — preload the poster with responsive media
@@ -189,7 +184,7 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
       : '';
   }
 
-  return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
+  return dnsPrefetch + cssPreload + zeroPreload + fontPreload + heroPreload + head;
 }
 
 /**
