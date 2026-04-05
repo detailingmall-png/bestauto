@@ -167,6 +167,40 @@ export function makeBlocksCssAsync(head: string): string {
 }
 
 /**
+ * Inline tilda-blocks-page CSS directly into <head> as a <style> block.
+ *
+ * WHY: When tilda-blocks-page CSS loads asynchronously (media="print" onload),
+ * Chrome triggers a full style recalculation at ~3.3s on slow 3G. This causes
+ * Chrome to report a NEW LCP entry for the hero subtitle, even though the
+ * visual appearance may not change. Result: LCP jumps from FCP (1.2s) to 3.3s.
+ *
+ * By inlining the CSS, all styles are available at parse time. No async load,
+ * no style recalculation, no LCP re-paint. FCP = LCP.
+ *
+ * The CSS is ~45KB raw but only data: URIs (no external resources). Combined
+ * with HTML, gzip compresses both in one stream — net overhead is ~5-7KB gzip,
+ * less than a separate HTTP request would cost on slow 3G.
+ */
+export function inlineBlocksPageCss(head: string): string {
+  const linkMatch = head.match(/<link\b[^>]*href="(\/css\/tilda-blocks-page[^"?]+)[^"]*"[^>]*>/);
+  if (!linkMatch) return head;
+
+  const cssRelPath = linkMatch[1]; // e.g. /css/tilda-blocks-page130343853.min.css
+  const cssAbsPath = join(process.cwd(), 'public', cssRelPath);
+
+  let cssContent: string;
+  try {
+    cssContent = readFileSync(cssAbsPath, 'utf8');
+  } catch {
+    // CSS file not found — fall back to keeping the link tag unchanged
+    return head;
+  }
+
+  // Replace the <link> tag with inline <style>
+  return head.replace(linkMatch[0], `<style>${cssContent}</style>`);
+}
+
+/**
  * Add defer to blocking scripts in <head> (jQuery and polyfill).
  * All other Tilda scripts already have async/defer.
  * Deferred scripts execute after HTML parsing in order, so jQuery → tilda-scripts order is preserved.
@@ -1254,11 +1288,12 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
     ? html.slice(headStart + 6, headEnd)
     : '';
   let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
-  // Homepage hero is now a custom CSS-only block (.ba-hero) that doesn't depend
-  // on tilda-blocks-page CSS → safe to make it async on all homepage languages.
-  // Previously restricted to KA only because Zero Block relied on this CSS.
+  // Homepage hero is a custom CSS-only block (.ba-hero). Inline the entire
+  // tilda-blocks-page CSS to prevent async style recalculation from causing
+  // a late LCP re-paint (Chrome reports new LCP entry at CSS load time ~3.3s).
+  // Inlining makes all styles available at parse time → FCP = LCP.
   if (isHomepage) {
-    processedHead = makeBlocksCssAsync(processedHead);
+    processedHead = inlineBlocksPageCss(processedHead);
     // Homepage has zero t396 blocks — strip tilda-zero scripts entirely (saves 49KB)
     processedHead = removeZeroBlockScripts(processedHead);
   }
