@@ -21,6 +21,11 @@ const GRID_CSS = readFileSync(
   'utf8'
 );
 
+// Critical Zero Block + font-face CSS inlined to avoid waiting for async CSS.
+// .tn-atom needs display:table-cell from tilda-blocks-page (40KB, async).
+// Without this snippet the hero H2 renders with default layout, delaying LCP.
+const ZERO_BLOCK_CRITICAL_CSS = `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:swap;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`;
+
 export interface PageSections {
   readonly headContent: string;
   readonly headerBlock: string;
@@ -116,9 +121,11 @@ export function deferNonCriticalCss(head: string): string {
  */
 export function inlineCriticalCss(head: string): string {
   // Inline tilda-grid (4KB, layout-critical — prevents CLS)
+  // Also inline Zero Block critical CSS + @font-face so the hero H2
+  // renders immediately without waiting for async tilda-blocks-page CSS.
   return head.replace(
     /<link\b[^>]*href="\/css\/tilda-grid-3\.0\.min\.css"[^>]*\/?>/,
-    `<style>${GRID_CSS}</style>`
+    `<style>${GRID_CSS}${ZERO_BLOCK_CRITICAL_CSS}</style>`
   );
 }
 
