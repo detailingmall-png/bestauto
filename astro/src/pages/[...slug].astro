@@ -71,6 +71,7 @@ let injectedHtml = injectSanityData(rawHtml, settings);
 
 if (PRICES_SLUGS.has(currentSlug)) {
   injectedHtml = injectPricesData(injectedHtml, pricingPage, lang);
+  injectedHtml = removeRecordBlock(injectedHtml, 'rec713427892');
 }
 
 if (SERVICE_SLUGS.has(baseSlug)) {
