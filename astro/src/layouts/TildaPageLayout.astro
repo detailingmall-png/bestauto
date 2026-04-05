@@ -22,6 +22,11 @@ interface Props {
   lang?: string;
 }
 
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const CUSTOM_CSS = readFileSync(join(process.cwd(), 'public/css/bestauto-custom.css'), 'utf8');
+
 const {
   headContent,
   seoHead = '',
@@ -36,7 +41,7 @@ const {
 <head>
 <link rel="icon" href="/images/tild3835-3238-4533-b837-373331316562__favicon_1.ico" type="image/x-icon">
 <Fragment set:html={headContent} />
-<link rel="stylesheet" href="/css/bestauto-custom.css?v=16">
+<style set:html={CUSTOM_CSS} />
 <Fragment set:html={seoHead} />
 </head>
 <body class={bodyClass} style="margin:0;">
