@@ -486,6 +486,19 @@ export function delayAnalytics(block: string): string {
 }
 
 /**
+ * Remove tilda-zero.js and tilda-zero-scale.js script tags entirely.
+ * Homepage uses a custom CSS-only hero (.ba-hero) and has zero t396 blocks,
+ * so these 49KB of scripts are completely unnecessary — removing them saves
+ * ~250ms on slow 3G by freeing bandwidth for critical resources (CSS, font).
+ */
+export function removeZeroBlockScripts(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-zero[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
+/**
  * Defer non-critical Tilda scripts via requestIdleCallback.
  * Heavy scripts (forms, zoom, masonry, video) in <head> are not needed until
  * user interacts. Replace <script src="..."> with idle loader (7s timeout).
@@ -1232,6 +1245,8 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Previously restricted to KA only because Zero Block relied on this CSS.
   if (isHomepage) {
     processedHead = makeBlocksCssAsync(processedHead);
+    // Homepage has zero t396 blocks — strip tilda-zero scripts entirely (saves 49KB)
+    processedHead = removeZeroBlockScripts(processedHead);
   }
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
