@@ -182,8 +182,11 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
     'connect.facebook.net',
   ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
 
-  // Preload tilda-zero (cover block/artboard init depends on it → faster LCP)
-  const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
+  // Preload tilda-zero only on non-homepage pages (homepage uses custom CSS hero,
+  // so tilda-zero.js is not needed for LCP there — saves 44KB from critical path)
+  const zeroPreload = isHomepage
+    ? ''
+    : '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
 
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
@@ -1225,9 +1228,10 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
     ? html.slice(headStart + 6, headEnd)
     : '';
   let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
-  // KA homepage hero uses inline styles → safe to make blocks CSS async (saves ~1s LCP).
-  // RU/EN homepages suffer CLS from async CSS, so keep it blocking there.
-  if (isHomepage && lang === 'ka') {
+  // Homepage hero is now a custom CSS-only block (.ba-hero) that doesn't depend
+  // on tilda-blocks-page CSS → safe to make it async on all homepage languages.
+  // Previously restricted to KA only because Zero Block relied on this CSS.
+  if (isHomepage) {
     processedHead = makeBlocksCssAsync(processedHead);
   }
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;

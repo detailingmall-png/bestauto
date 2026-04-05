@@ -8,6 +8,7 @@
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById } from '../lib/html-extractor';
+import { replaceZeroBlockHero } from '../lib/hero-block';
 import { generateRelatedServicesHtml } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
@@ -315,20 +316,9 @@ if (navCta) {
   );
 }
 
-// CTA copy improvements: hero button (homepage only)
+// Homepage hero: replace Zero Block with custom CSS-only hero (no tilda-zero.js dependency)
 if (baseSlug === '') {
-  const CTA_HERO: Readonly<Record<string, readonly [string, string]>> = {
-    ru: ['Записаться', 'Получить консультацию'],
-    ka: ['დაჯავშნეთ ვიზიტი', 'მიიღეთ კონსულტაცია'],
-    en: ['Book a visit', 'Get a consultation'],
-  };
-  const heroCta = CTA_HERO[lang];
-  if (heroCta) {
-    mainContent = mainContent.replaceAll(
-      `tn-atom__button-text">${heroCta[0]}</span>`,
-      `tn-atom__button-text">${heroCta[1]}</span>`
-    );
-  }
+  mainContent = replaceZeroBlockHero(mainContent, lang);
 }
 const reviewsWidgetHtml = getReviewsWidgetHtml(lang);
 
@@ -630,122 +620,6 @@ if (SERVICE_SLUGS.has(baseSlug)) {
     if (faqSection) {
       mainContent = insertAfterSectionById(mainContent, 'ba-reviews', faqSection);
     }
-  }
-}
-
-// Homepage hero: replace background image with video
-if (baseSlug === '') {
-  // Some pages have separate hero blocks for desktop/mobile (e.g. RU: split at 1200px)
-  const HERO_REC_IDS: Readonly<Record<string, readonly string[]>> = {
-    ka: ['rec2091645383'],
-    ru: ['rec593575375', 'rec1828633051'],
-    en: ['rec593573287'],
-  };
-  const heroRecIds = HERO_REC_IDS[lang] ?? [];
-
-  const heroVideoHtml = `
-<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.webp" width="1280" height="720">
-  <source src="/hero-desktop.mp4" type="video/mp4">
-</video>
-<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.webp" width="480" height="854">
-  <source src="/hero-mobile.mp4" type="video/mp4">
-</video>
-<style>
-.t396__artboard { position: relative; overflow: hidden; }
-.ba-hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-.ba-hero-video--mobile { display: none; }
-@media screen and (max-width: 639px) {
-  .ba-hero-video--desktop { display: none; }
-  .ba-hero-video--mobile { display: block; }
-}
-</style>
-<script>
-(function(){
-  var idle=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(cb){setTimeout(cb,200)};
-  function mp4Fallback(){
-    document.querySelectorAll('.ba-hero-video').forEach(function(v){
-      if(v.offsetWidth>0){v.preload='auto';v.setAttribute('autoplay','');v.play().catch(function(){});}
-    });
-  }
-  function initHLS(){
-    var vids=document.querySelectorAll('.ba-hero-video');
-    var needLib=false;
-    vids.forEach(function(v){
-      if(v.offsetWidth===0)return;
-      var src=v.classList.contains('ba-hero-video--desktop')?'/hls/desktop/index.m3u8':'/hls/mobile/index.m3u8';
-      if(v.canPlayType('application/vnd.apple.mpegurl')){
-        v.setAttribute('autoplay','');v.preload='auto';v.src=src;
-        var tryPlay=function(){v.play().catch(function(){});};
-        if(v.readyState>=3)tryPlay();else v.addEventListener('canplay',tryPlay,{once:true});
-      } else { needLib=true; }
-    });
-    if(!needLib)return;
-    var s=document.createElement('script');
-    s.src='/hls/hls.light.min.js';
-    s.onload=function(){
-      if(!window.Hls||!Hls.isSupported()){mp4Fallback();return;}
-      vids.forEach(function(v){
-        if(v.offsetWidth===0||v.src)return;
-        var src=v.classList.contains('ba-hero-video--desktop')?'/hls/desktop/index.m3u8':'/hls/mobile/index.m3u8';
-        var h=new Hls();h.loadSource(src);h.attachMedia(v);
-        h.on(Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){});});
-      });
-    };
-    s.onerror=function(){mp4Fallback();};
-    document.head.appendChild(s);
-  }
-  idle(initHLS,{timeout:1500});
-})();
-</script>`;
-
-  let videoStyleInjected = false;
-  for (const heroRecId of heroRecIds) {
-    if (!mainContent.includes(`id="${heroRecId}"`)) continue;
-
-    // Only inject <style> and <script> once (first hero block), video tags in each block
-    const videoOnly = `
-<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.webp" width="1280" height="720">
-  <source src="/hero-desktop.mp4" type="video/mp4">
-</video>
-<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.webp" width="480" height="854">
-  <source src="/hero-mobile.mp4" type="video/mp4">
-</video>`;
-    const injection = videoStyleInjected ? videoOnly : heroVideoHtml;
-    videoStyleInjected = true;
-
-    // Insert video inside the artboard, right before the first .t396__carrier in this block
-    const heroIdx = mainContent.indexOf(`id="${heroRecId}"`);
-    const carrierIdx = mainContent.indexOf('class="t396__carrier', heroIdx);
-    if (carrierIdx >= 0) {
-      const carrierDivStart = mainContent.lastIndexOf('<div', carrierIdx);
-      mainContent = mainContent.slice(0, carrierDivStart) + injection + mainContent.slice(carrierDivStart);
-    }
-    // Completely hide the carrier div — prevents Tilda JS from re-applying background on mobile
-    // Find the carrier div within this hero block and replace/add display:none
-    const heroBlockIdx = mainContent.indexOf(`id="${heroRecId}"`);
-    const carrierDivIdx = mainContent.indexOf('<div class="t396__carrier', heroBlockIdx);
-    if (carrierDivIdx >= 0) {
-      const carrierEndIdx = mainContent.indexOf('>', carrierDivIdx);
-      let carrierTag = mainContent.slice(carrierDivIdx, carrierEndIdx + 1);
-      // Remove any existing style attributes (from promoteHeroBackground etc.)
-      carrierTag = carrierTag.replace(/\s*style="[^"]*"/g, '');
-      // Add our display:none
-      carrierTag = carrierTag.replace('>', ' style="display:none!important">');
-      mainContent = mainContent.slice(0, carrierDivIdx) + carrierTag + mainContent.slice(carrierEndIdx + 1);
-    }
-    // Bump filter z-index above video
-    mainContent = mainContent.replace(
-      new RegExp(`(#${heroRecId}\\s+\\.t396__filter\\s*\\{)`),
-      '$1z-index:2;'
-    );
   }
 }
 
