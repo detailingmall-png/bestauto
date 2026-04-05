@@ -25,7 +25,8 @@ const HERO_VIDEO_ELEMENTS = `<video class="ba-hero-video ba-hero-video--desktop"
 </video>`;
 
 /** CSS for video positioning inside t396 artboard. */
-const HERO_VIDEO_CSS = `<style>
+function heroVideoCss(recId: string): string {
+  return `<style>
 .t396__artboard .ba-hero-video {
   position: absolute;
   top: 0;
@@ -39,8 +40,10 @@ const HERO_VIDEO_CSS = `<style>
 @media screen and (max-width: 639px) {
   .t396__artboard .ba-hero-video--desktop { display: none; }
   .t396__artboard .ba-hero-video--mobile { display: block; }
+  #${recId} .t396__carrier { background-image: url('/images/hero-poster-mobile.webp') !important; }
 }
 </style>`;
+}
 
 /** HLS video init script — starts 1.5s after page load.
  *
@@ -106,6 +109,14 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       // Find the carrier div inside this hero block and inject video after it
       const recIdx = result.indexOf(`id="${heroRecId}"`);
 
+      // Replace the carrier's 20px LQIP placeholder with the video first-frame poster.
+      // tilda-zero.js normally loads the full image from data-content-cover-bg,
+      // but since we don't load it, we need to provide a proper poster image.
+      result = result.replace(
+        new RegExp(`(#${heroRecId}\\s+\\.t396__carrier\\{[^}]*background-image:url\\()[^)]+\\)`),
+        (match, prefix) => `${prefix}'/images/hero-poster-desktop.webp')`,
+      );
+
       // Find .t396__carrier closing tag within this block
       const carrierStart = result.indexOf('t396__carrier', recIdx);
       if (carrierStart < 0) continue;
@@ -145,7 +156,7 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       }
       if (blockEnd > 0) {
         // Insert CSS + script just before the closing </div> of the rec block
-        result = result.slice(0, blockEnd - 6) + HERO_VIDEO_CSS + HERO_VIDEO_SCRIPT + result.slice(blockEnd - 6);
+        result = result.slice(0, blockEnd - 6) + heroVideoCss(firstRecId) + HERO_VIDEO_SCRIPT + result.slice(blockEnd - 6);
       }
     }
   }
