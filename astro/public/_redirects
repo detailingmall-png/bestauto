@@ -393,3 +393,8 @@
 
 # ── Old Tilda CDN assets (if referenced externally) ──────────────
 # These come from static.tildacdn.com so no redirect needed here
+
+# ── Trailing slash removal (catch-all, MUST be last) ────────────
+# With format:'file', CF Pages serves /slug from slug.html (200)
+# but /slug/ returns 404 — this catch-all redirects /slug/ → /slug
+/*/  /:splat  301
