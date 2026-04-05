@@ -8,6 +8,8 @@ import { IMG_DIMS } from './image-dims';
 import { WEBP_AVAILABLE } from './webp-available';
 import { META_OVERRIDES } from '../data/meta-overrides';
 import { renderBlogFaqAccordion, type FaqAccordionItem } from './faq-accordion';
+import { POPUP_SHIM } from './popup-shim';
+import { SLIDER_SHIM } from './slider-shim';
 
 /** Delay (ms) before loading deferred analytics and non-critical scripts. */
 const DEFER_DELAY_MS = 7000;
@@ -97,7 +99,7 @@ export function removeTildaCdnFallback(content: string): string {
  */
 export function deferNonCriticalCss(head: string): string {
   const DEFERRABLE = [
-    'tilda-animation', 'tilda-forms',
+    'tilda-animation', 'tilda-forms', 'tilda-popup',
     'tilda-cards', 'tilda-cover',
     'fonts-tildasans',
   ];
@@ -284,9 +286,12 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
     'connect.facebook.net',
   ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
 
-  // Preload tilda-zero on all pages — needed for t396_init() which
-  // recalculates Zero Block element positions for the actual viewport.
-  const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
+  // Homepage hero positions are fixed at build time (calc(385px→50vh) so
+  // tilda-zero.js is not needed there. Non-homepage pages still use it
+  // for t396 blocks (service pages with zero-block sections).
+  const zeroPreload = isHomepage
+    ? ''
+    : '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
 
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
@@ -586,14 +591,29 @@ export function delayAnalytics(block: string): string {
 }
 
 /**
- * Remove tilda-zero.js and tilda-zero-scale.js script tags entirely.
- * Homepage uses a custom CSS-only hero (.ba-hero) and has zero t396 blocks,
- * so these 49KB of scripts are completely unnecessary — removing them saves
- * ~250ms on slow 3G by freeing bandwidth for critical resources (CSS, font).
+ * Remove tilda-zero.js and tilda-zero-scale.js script tags.
+ * Hero positions are fixed at build time (calc(385px→50vh) in hero-block.ts),
+ * so the runtime recalculation is not needed on the homepage.
  */
 export function removeZeroBlockScripts(content: string): string {
   return content.replace(
     /<script\b[^>]*src="[^"]*tilda-zero[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
+/** Remove tilda-popup-1.0.min.js script tag (replaced by inline shim). */
+function removeTildaPopupScript(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-popup-1\.0[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
+/** Remove tilda-slds-1.4.min.js script tag (replaced by inline shim). */
+function removeTildaSliderScript(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-slds-1\.4[^"]*"[^>]*>\s*<\/script>\s*/g,
     '',
   );
 }
@@ -610,9 +630,8 @@ export function deferNonCriticalScripts(content: string): string {
     'tilda-video-1.0',
     'tilda-animation-2.0',
     'hammer.min',
-    // tilda-popup-1.0 and tilda-slds-1.4 must load early: popup gallery buttons
-    // use t_popup__showPopup (from popup script) and slider (from slds script).
-    // Deferring them 7s breaks user interaction on gallery tab buttons.
+    // tilda-popup-1.0 and tilda-slds-1.4 are replaced by inline shims
+    // (see popup-shim.ts and slider-shim.ts) — script tags stripped entirely.
     'tilda-cards-1.0',
     'tilda-skiplink-1.0',
     'tilda-events-1.0',
@@ -1366,9 +1385,18 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   if (isHomepage) {
     processedHead = inlineBlocksPageCss(processedHead);
     processedHead = inlineAllPageCss(processedHead);
-    // Homepage HAS a t396 Zero Block hero — keep tilda-zero.js for t396_init()
-    // which recalculates element positions for the actual viewport height.
+    // Hero positions are fixed at build time (calc(385px→50vh) in hero-block.ts,
+    // so tilda-zero.js (43KB) is not needed on the homepage at all.
+    processedHead = removeZeroBlockScripts(processedHead);
   }
+
+  // Replace tilda-popup (3.4KB) and tilda-slds (39KB) with inline shims (~2KB total).
+  // The shims define the same global function signatures that page blocks JS calls.
+  processedHead = removeTildaPopupScript(processedHead);
+  processedHead = removeTildaSliderScript(processedHead);
+  // Inject shims before closing </head> (parsed before async blocks JS executes)
+  processedHead += POPUP_SHIM + SLIDER_SHIM;
+
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
   // Body class

@@ -2,8 +2,8 @@
  * Hero block video injection for Tilda Zero Block (t396).
  *
  * This module injects background video into the t396 artboard.
- * tilda-zero.js is loaded async to provide t396_init() which
- * recalculates element positions for the actual viewport height.
+ * Hero element positions are fixed at build time: calc(385px → calc(50vh
+ * so that tilda-zero.js (43KB) is not needed at runtime.
  */
 
 /** Hero record IDs per language (primary Zero Block for each homepage). */
@@ -144,8 +144,12 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       videoInjected = true;
     }
 
-    // Keep the t396_init() inline script — it recalculates element positions
-    // for the actual viewport height (tilda-zero.js provides the function).
+    // Replace static 385px (half of 770px artboard) with 50vh in CSS
+    // so elements center in the actual viewport without tilda-zero.js runtime.
+    result = replaceZeroBlockCalc(result, heroRecId);
+
+    // Strip the t396_init() inline script — no longer needed after build-time fix
+    result = removeT396InitScript(result, heroRecId);
   }
 
   if (videoInjected) {
@@ -186,6 +190,34 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
   }
 
   return result;
+}
+
+/**
+ * Replace calc(385px with calc(50vh in CSS scoped to the given rec block.
+ * 385 = 770 / 2 (artboard height). On 100vh artboards, 50vh is identical.
+ * This makes element positioning viewport-relative at build time, eliminating
+ * the need for tilda-zero.js runtime recalculation.
+ */
+function replaceZeroBlockCalc(content: string, recId: string): string {
+  const id = recId.startsWith('rec') ? recId : `rec${recId}`;
+  return content.replace(
+    new RegExp(`(#${id}[^}]*?)calc\\(385px`, 'g'),
+    '$1calc(50vh',
+  );
+}
+
+/**
+ * Strip the inline <script> that calls t396_init() for the given rec block.
+ * After build-time CSS replacement, the runtime init is not needed.
+ */
+function removeT396InitScript(content: string, recId: string): string {
+  const numericId = recId.replace('rec', '');
+  return content.replace(
+    new RegExp(
+      `<script>\\s*t_onReady\\(function\\(\\)\\s*\\{\\s*t_onFuncLoad\\('t396_init',function\\(\\)\\s*\\{\\s*t396_init\\('${numericId}'\\);\\s*\\}\\);\\s*\\}\\);\\s*</script>`,
+    ),
+    '',
+  );
 }
 
 /** Remove a record block by ID (helper for removing duplicate hero blocks). */
