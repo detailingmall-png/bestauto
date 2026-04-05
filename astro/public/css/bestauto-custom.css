@@ -364,6 +364,10 @@ html {
     padding: 12px 0;
     gap: 12px;
   }
+  /* Contacts block title: reduce from clamp(1.8rem,...) to fit 2 lines on mobile */
+  #ba-contacts .ba-title {
+    font-size: 1.3rem !important;
+  }
   /* Prices heroes - mobile */
   #rec590032970,
   #rec590466139 {
