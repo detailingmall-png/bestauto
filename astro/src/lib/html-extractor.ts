@@ -82,7 +82,6 @@ export function deferNonCriticalCss(head: string): string {
     'tilda-animation', 'tilda-forms', 'tilda-popup',
     'tilda-cards', 'tilda-cover',
     'fonts-tildasans',
-    'tilda-blocks-page',
   ];
 
   // Temporarily remove <noscript> blocks to avoid transforming their content
@@ -111,19 +110,36 @@ export function deferNonCriticalCss(head: string): string {
 
 /**
  * Inline only truly critical CSS (tilda-grid, 4KB) for layout stability.
- * Page-specific tilda-blocks-page CSS is loaded async (preload+onload via
- * deferNonCriticalCss) — the hero/Zero Block uses inline styles, so it
- * renders immediately with just grid CSS. This eliminates render-blocking
- * CSS as the #1 cause of LCP delay (~2s element render delay).
+ * tilda-blocks-page CSS stays blocking with preload hint by default.
+ * On the homepage, makeBlocksCssAsync() converts it to non-blocking
+ * because the hero Zero Block uses inline styles and doesn't need it.
  */
 export function inlineCriticalCss(head: string): string {
   // Inline tilda-grid (4KB, layout-critical — prevents CLS)
-  let result = head.replace(
+  return head.replace(
     /<link\b[^>]*href="\/css\/tilda-grid-3\.0\.min\.css"[^>]*\/?>/,
     `<style>${GRID_CSS}</style>`
   );
+}
 
-  return result;
+/**
+ * Make tilda-blocks-page CSS non-blocking (async preload+onload).
+ * Safe ONLY on pages where the hero uses inline styles (homepage).
+ * Other pages keep it blocking to prevent CLS from async CSS load.
+ */
+export function makeBlocksCssAsync(head: string): string {
+  return head.replace(
+    /<link\b[^>]*href="\/css\/tilda-blocks-page[^"]*"[^>]*>/,
+    (match) => {
+      if (!match.includes('rel="stylesheet"')) return match;
+      if (match.includes('media="print"')) return match; // already async
+      const async = match.replace(
+        'rel="stylesheet"',
+        'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"'
+      );
+      return `${async}<noscript>${match}</noscript>`;
+    }
+  );
 }
 
 /**
@@ -179,7 +195,15 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
       : '';
   }
 
-  return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
+  // Preload tilda-blocks-page CSS so the browser fetches it in parallel with HTML.
+  // On homepage this CSS is async (makeBlocksCssAsync), preload is already part of the tag.
+  // On other pages the CSS is blocking; this preload starts the download earlier.
+  const cssMatch = !isHomepage && head.match(/href="(\/css\/tilda-blocks-page[^"?]+\.min\.css[^"]*)"/);
+  const cssPreload = cssMatch
+    ? `<link rel="preload" href="${cssMatch[1]}" as="style">`
+    : '';
+
+  return dnsPrefetch + cssPreload + zeroPreload + fontPreload + heroPreload + head;
 }
 
 /**
@@ -1190,7 +1214,12 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  const processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
+  let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
+  // Homepage hero uses inline styles → safe to make blocks CSS async (saves ~1s LCP).
+  // Other pages keep it blocking to prevent CLS from late CSS application.
+  if (isHomepage) {
+    processedHead = makeBlocksCssAsync(processedHead);
+  }
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
   // Body class
