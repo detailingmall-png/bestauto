@@ -21,13 +21,20 @@ const GRID_CSS = readFileSync(
   'utf8'
 );
 
-// Critical Zero Block + font-face CSS inlined to avoid waiting for async CSS.
-// .tn-atom needs display:table-cell from tilda-blocks-page (40KB, async).
-// Without this snippet the hero H2 renders with default layout, delaying LCP.
-// Critical Zero Block + font-face CSS inlined to avoid waiting for async CSS.
-// .tn-atom needs display:table-cell from tilda-blocks-page (40KB, async).
-// Without this snippet the hero H2 renders with default layout, delaying LCP.
-const ZERO_BLOCK_CRITICAL_CSS = `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:optional;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`;
+// Critical CSS inlined to prevent visual re-paint when async tilda-blocks-page CSS loads.
+// Without these rules, async CSS at ~3.3s changes font-smoothing/background on #allrecords,
+// causing Chrome to report a new LCP for hero text. Inlining them ensures zero visual change.
+const ZERO_BLOCK_CRITICAL_CSS = [
+  // Font face (optional = no late font swap → stable LCP)
+  `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:optional;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}`,
+  // Zero Block atoms (for non-homepage pages with t396 blocks)
+  `.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`,
+  // Critical #allrecords styles — prevent re-paint when async CSS loads
+  `#allrecords{-webkit-font-smoothing:antialiased}`,
+  `#allrecords,body{background-color:transparent}`,
+  `#allrecords a{color:#ffffff;text-decoration:none}`,
+  `body{--t-headline-font:'TildaSans',Arial,sans-serif;--t-text-font:'TildaSans',Arial,sans-serif}`,
+].join('');
 
 export interface PageSections {
   readonly headContent: string;
