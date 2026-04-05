@@ -24,7 +24,11 @@ const GRID_CSS = readFileSync(
 // Critical Zero Block + font-face CSS inlined to avoid waiting for async CSS.
 // .tn-atom needs display:table-cell from tilda-blocks-page (40KB, async).
 // Without this snippet the hero H2 renders with default layout, delaying LCP.
-const ZERO_BLOCK_CRITICAL_CSS = `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:swap;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`;
+// font-display:optional prevents the font swap from triggering a late LCP update.
+// On slow connections the browser uses Arial fallback; on fast it gets TildaSans before
+// first paint. The separate @font-face in fonts-tildasans.css (swap) still loads async
+// and provides swap for non-LCP text further down the page.
+const ZERO_BLOCK_CRITICAL_CSS = `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:optional;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`;
 
 export interface PageSections {
   readonly headContent: string;
