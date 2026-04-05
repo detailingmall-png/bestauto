@@ -14,24 +14,29 @@ function t_popup__resizePopup(){}
 function t_popup__addAttributesForAccessibility(h){document.querySelectorAll('a[href="'+h+'"]').forEach(function(a){a.setAttribute('role','button');a.setAttribute('aria-haspopup','dialog')})}
 function t_popup__addClassOnTriggerButton(){}
 function t_popup__addFocusOnTriggerButton(){}
-function t_popup__initTriggers(){
-document.querySelectorAll('a[href^="#popup:"]').forEach(function(a){
-a.addEventListener('click',function(e){
-e.preventDefault();
-var hook=a.getAttribute('href');
+function t_popup__openByHook(hook){
 var popup=document.querySelector('.t-popup[data-tooltip-hook="'+hook+'"]');
 if(popup)t_popup__showPopup(popup);
-})});
-document.querySelectorAll('.t-popup').forEach(function(p){
-p.querySelectorAll('.t-popup__close-wrapper,.t-popup__close-button,.t-popup__block-close-button').forEach(function(b){
-b.addEventListener('click',function(){t_popup__closePopup(p)})});
-p.addEventListener('click',function(e){if(e.target===p)t_popup__closePopup(p)});
+}
+document.addEventListener('click',function(e){
+var a=e.target.closest('a[href^="#popup:"]');
+if(!a)return;
+e.preventDefault();
+t_popup__openByHook(a.getAttribute('href'));
 });
+document.addEventListener('click',function(e){
+var cl=e.target.closest('.t-popup__close-wrapper,.t-popup__close-button,.t-popup__block-close-button');
+if(cl){var p=cl.closest('.t-popup');if(p)t_popup__closePopup(p);return;}
+if(e.target.classList&&e.target.classList.contains('t-popup'))t_popup__closePopup(e.target);
+});
+window.addEventListener('hashchange',function(){
 var h=location.hash;
-if(h&&h.indexOf('#popup:')===0){
-var popup=document.querySelector('.t-popup[data-tooltip-hook="'+h+'"]');
-if(popup)t_popup__showPopup(popup);
-}}
-if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',t_popup__initTriggers)}
-else{t_popup__initTriggers()}
+if(h&&h.indexOf('#popup:')===0)t_popup__openByHook(h);
+});
+function t_popup__initHash(){
+var h=location.hash;
+if(h&&h.indexOf('#popup:')===0)t_popup__openByHook(h);
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',t_popup__initHash)}
+else{t_popup__initHash()}
 </script>`;
