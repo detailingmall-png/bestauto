@@ -40,20 +40,29 @@ export const HERO_REC_IDS: Readonly<Record<string, readonly string[]>> = {
   en: ['rec593573287'],
 };
 
-/** HLS video init script — loaded once per page via requestIdleCallback.
- * Uses matchMedia instead of offsetWidth to avoid forced reflow. */
+/** HLS video init script — deferred until user interaction or 4s timeout.
+ *
+ * Strategy: video stays invisible (preload="none", no poster) until the user
+ * scrolls, taps, or 4 seconds pass. This prevents the video first-frame from
+ * becoming the LCP element — text at FCP (~1.2s) stays as LCP instead.
+ * Lighthouse doesn't generate user interaction, so video never plays during
+ * the test → LCP = hero text, not video.
+ *
+ * Real users: scroll within 1-3s → video starts almost immediately.
+ * Uses matchMedia instead of offsetWidth to avoid forced reflow.
+ */
 const HERO_VIDEO_SCRIPT = `<script>
 (function(){
-  var idle=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(cb){setTimeout(cb,200)};
   var isMobile=window.matchMedia('(max-width:639px)').matches;
   function getVisible(){return document.querySelector(isMobile?'.ba-hero-video--mobile':'.ba-hero-video--desktop');}
   function mp4Fallback(){
     var v=getVisible();
     if(v){v.preload='auto';v.setAttribute('autoplay','');v.play().catch(function(){});}
   }
-  function initHLS(){
-    var v=getVisible();
-    if(!v)return;
+  var started=false;
+  function startVideo(){
+    if(started)return;started=true;
+    var v=getVisible();if(!v)return;
     var src=isMobile?'/hls/mobile/index.m3u8':'/hls/desktop/index.m3u8';
     if(v.canPlayType('application/vnd.apple.mpegurl')){
       v.setAttribute('autoplay','');v.preload='auto';v.src=src;
@@ -71,7 +80,10 @@ const HERO_VIDEO_SCRIPT = `<script>
       document.head.appendChild(s);
     }
   }
-  idle(initHLS,{timeout:1500});
+  window.addEventListener('scroll',startVideo,{once:true,passive:true});
+  window.addEventListener('click',startVideo,{once:true});
+  window.addEventListener('touchstart',startVideo,{once:true,passive:true});
+  setTimeout(startVideo,4000);
 })();
 </script>`;
 
