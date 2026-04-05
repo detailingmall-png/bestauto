@@ -841,6 +841,64 @@ export function extractSectionById(content: string, id: string): [string, string
 }
 
 /**
+ * Extract a <div id="...">...</div> element from the HTML.
+ * Returns [divHtml, contentWithout]. If not found, returns ['', content].
+ */
+export function extractDivById(content: string, id: string): [string, string] {
+  const marker = `<div id="${id}"`;
+  const startIdx = content.indexOf(marker);
+  if (startIdx < 0) return ['', content];
+  let depth = 0;
+  let pos = startIdx;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const endIdx = nextClose + '</div>'.length;
+        return [content.slice(startIdx, endIdx), content.slice(0, startIdx) + content.slice(endIdx)];
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return ['', content];
+}
+
+/**
+ * Insert HTML right after a <section id="...">...</section> element.
+ * Returns the original content unchanged if the section is not found.
+ */
+export function insertAfterSectionById(content: string, id: string, html: string): string {
+  const marker = `<section id="${id}"`;
+  const startIdx = content.indexOf(marker);
+  if (startIdx < 0) return content;
+  let depth = 0;
+  let pos = startIdx;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<section', pos + 1);
+    const nextClose = content.indexOf('</section>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const insertAt = nextClose + '</section>'.length;
+        return content.slice(0, insertAt) + html + content.slice(insertAt);
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return content;
+}
+
+/**
  * Insert HTML right after the first Tilda rec block with the given
  * data-alias-record-type. Returns the original content unchanged if no
  * matching block is found.
