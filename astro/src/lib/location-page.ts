@@ -19,8 +19,8 @@ export function buildLocationHeadContent(
   const meta = META_OVERRIDES[`${lang}/${baseSlug}`];
   const ogTitle = meta?.ogTitle ?? pageTitle;
   const url = lang === 'ka'
-    ? `${BASE_URL}/${baseSlug}/`
-    : `${BASE_URL}/${lang}/${baseSlug}/`;
+    ? `${BASE_URL}/${baseSlug}`
+    : `${BASE_URL}/${lang}/${baseSlug}`;
 
   const parts: string[] = [
     '<meta charset="utf-8" />',
@@ -87,8 +87,8 @@ const OTHER_STUDIO_LABEL: Readonly<Record<string, string>> = {
 };
 
 function buildUrl(lang: string, slug: string): string {
-  if (lang === 'ka') return slug ? `${BASE_URL}/${slug}/` : `${BASE_URL}/`;
-  return slug ? `${BASE_URL}/${lang}/${slug}/` : `${BASE_URL}/${lang}/`;
+  if (lang === 'ka') return slug ? `${BASE_URL}/${slug}` : `${BASE_URL}/`;
+  return slug ? `${BASE_URL}/${lang}/${slug}` : `${BASE_URL}/${lang}`;
 }
 
 /**
