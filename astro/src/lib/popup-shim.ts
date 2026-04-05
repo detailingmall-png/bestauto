@@ -16,12 +16,14 @@ function t_popup__addClassOnTriggerButton(){}
 function t_popup__addFocusOnTriggerButton(){}
 function t_popup__openByHook(hook){
 var popup=document.querySelector('.t-popup[data-tooltip-hook="'+hook+'"]');
+console.log('[popup-shim] openByHook',hook,popup?'FOUND':'NOT FOUND');
 if(popup)t_popup__showPopup(popup);
 }
 document.addEventListener('click',function(e){
 var a=e.target.closest('a[href^="#popup:"]');
 if(!a)return;
 e.preventDefault();
+console.log('[popup-shim] click',a.getAttribute('href'));
 t_popup__openByHook(a.getAttribute('href'));
 });
 document.addEventListener('click',function(e){
@@ -35,6 +37,7 @@ if(h&&h.indexOf('#popup:')===0)t_popup__openByHook(h);
 });
 function t_popup__initHash(){
 var h=location.hash;
+console.log('[popup-shim] initHash',h||'(no hash)','readyState:',document.readyState);
 if(h&&h.indexOf('#popup:')===0)t_popup__openByHook(h);
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',t_popup__initHash)}
