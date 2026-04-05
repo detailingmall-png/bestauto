@@ -109,16 +109,35 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       // Find the carrier div inside this hero block and inject video after it
       const recIdx = result.indexOf(`id="${heroRecId}"`);
 
-      // Replace the carrier's 20px LQIP placeholder with the video first-frame poster.
-      // tilda-zero.js normally loads the full image from data-content-cover-bg,
-      // but since we don't load it, we need to provide a proper poster image.
+      // Replace the carrier's background image with the video first-frame poster.
+      // Three sources must be updated:
+      // 1. CSS rule in <style> block (LQIP placeholder or full image URL)
+      // 2. Inline style on carrier div (takes precedence over CSS rules)
+      // 3. data-original attribute (tilda-scripts reads this to load full image)
       result = result.replace(
         new RegExp(`(#${heroRecId}\\s+\\.t396__carrier\\{[^}]*background-image:url\\()[^)]+\\)`),
         (match, prefix) => `${prefix}'/images/hero-poster-desktop.webp')`,
       );
 
+      // Replace inline style background-image and data-original on the carrier div.
+      // Must search for 'class="t396__carrier' (not just 't396__carrier') to skip
+      // CSS rules in <style> that also contain 't396__carrier'.
+      const carrierClassMarker = `class="t396__carrier`;
+      const carrierDivIdx = result.indexOf(carrierClassMarker, recIdx);
+      if (carrierDivIdx >= 0) {
+        const carrierTagStart = result.lastIndexOf('<div', carrierDivIdx);
+        const carrierTagEnd = result.indexOf('>', carrierDivIdx);
+        if (carrierTagStart >= 0 && carrierTagEnd >= 0) {
+          const carrierTag = result.slice(carrierTagStart, carrierTagEnd + 1);
+          const updatedTag = carrierTag
+            .replace(/style="background-image:url\([^)]+\)/, 'style="background-image:url(/images/hero-poster-desktop.webp)')
+            .replace(/data-original="[^"]*"/, 'data-original="/images/hero-poster-desktop.webp"');
+          result = result.slice(0, carrierTagStart) + updatedTag + result.slice(carrierTagStart + carrierTag.length);
+        }
+      }
+
       // Find .t396__carrier closing tag within this block
-      const carrierStart = result.indexOf('t396__carrier', recIdx);
+      const carrierStart = result.indexOf(carrierClassMarker, recIdx);
       if (carrierStart < 0) continue;
       const carrierClose = result.indexOf('</div>', carrierStart);
       if (carrierClose < 0) continue;
