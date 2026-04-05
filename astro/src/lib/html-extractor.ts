@@ -140,28 +140,28 @@ export function inlineCriticalCss(head: string): string {
 }
 
 /**
- * Make tilda-blocks-page CSS non-blocking on the homepage.
+ * Make tilda-blocks-page CSS non-blocking (media="print" onload pattern).
+ * Safe ONLY on pages where the hero uses inline styles (homepage).
+ * Other pages keep it blocking to prevent CLS from async CSS load.
  *
- * Strategy: remove the blocking <link> from <head> and load it via JS
- * after requestIdleCallback. This prevents the CSS from triggering a
- * style recalculation that causes Chrome to report a new LCP when the
- * stylesheet applies. The hero renders with inlined CSS at FCP; the
- * rest of the page gets styled once the browser is idle (~2s on slow 3G).
- *
- * The previous preload+onload approach still caused LCP re-paint at 3.3s
- * because the browser downloaded and applied the CSS immediately (preload
- * has high priority), triggering a global style recalculation.
+ * Uses media="print" instead of rel="preload" to give the CSS LOWER
+ * download priority, reducing bandwidth contention with critical resources
+ * (HTML, font). The CSS still loads in parallel but doesn't block rendering.
  */
 export function makeBlocksCssAsync(head: string): string {
   return head.replace(
-    /<link\b[^>]*href="(\/css\/tilda-blocks-page[^"]*)"[^>]*>/,
-    (match, href) => {
+    /<link\b[^>]*href="\/css\/tilda-blocks-page[^"]*"[^>]*>/,
+    (match) => {
       if (!match.includes('rel="stylesheet"')) return match;
       if (match.includes('media="print"')) return match; // already async
-      // Replace the blocking link with a JS-deferred load via requestIdleCallback.
-      // The CSS loads AFTER the LCP measurement window closes.
-      const loader = `<script>(function(){var idle=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(cb){setTimeout(cb,200)};idle(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${href}';document.head.appendChild(l);},{timeout:2000});})();</script>`;
-      return `${loader}<noscript>${match}</noscript>`;
+      // Use media="print" onload pattern — downloads with low priority,
+      // applies when loaded. Lower priority than preload = less bandwidth
+      // contention with HTML/font, potentially faster FCP.
+      const async = match.replace(
+        'media="all"',
+        'media="print" onload="this.media=\'all\'"'
+      );
+      return `${async}<noscript>${match}</noscript>`;
     }
   );
 }
