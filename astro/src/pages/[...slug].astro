@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, insertAfterBlockByAliasType } from '../lib/html-extractor';
 import { generateRelatedServicesHtml } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
@@ -601,6 +601,15 @@ mainContent = mainContent.replace(
   /<div\s+class="elfsight-app-[^"]*"[^>]*><\/div>/g,
   ''
 );
+
+// On service pages, move reviews widget right after the advantages block (t502)
+if (mainContent.includes('data-alias-record-type="502"') && mainContent.includes('id="ba-reviews"')) {
+  let reviewsSection: string;
+  [reviewsSection, mainContent] = extractSectionById(mainContent, 'ba-reviews');
+  if (reviewsSection) {
+    mainContent = insertAfterBlockByAliasType(mainContent, '502', reviewsSection);
+  }
+}
 
 // Homepage hero: replace background image with video
 if (baseSlug === '') {

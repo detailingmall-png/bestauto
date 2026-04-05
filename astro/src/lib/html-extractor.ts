@@ -812,6 +812,73 @@ export function findNthRecIdAfter(content: string, startRecId: string, n: number
 }
 
 /**
+ * Extract a <section id="...">...</section> element from the HTML.
+ * Returns [sectionHtml, contentWithout]. If not found, returns ['', content].
+ */
+export function extractSectionById(content: string, id: string): [string, string] {
+  const marker = `<section id="${id}"`;
+  const startIdx = content.indexOf(marker);
+  if (startIdx < 0) return ['', content];
+  let depth = 0;
+  let pos = startIdx;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<section', pos + 1);
+    const nextClose = content.indexOf('</section>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const endIdx = nextClose + '</section>'.length;
+        return [content.slice(startIdx, endIdx), content.slice(0, startIdx) + content.slice(endIdx)];
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return ['', content];
+}
+
+/**
+ * Insert HTML right after the first Tilda rec block with the given
+ * data-alias-record-type. Returns the original content unchanged if no
+ * matching block is found.
+ */
+export function insertAfterBlockByAliasType(content: string, aliasType: string, html: string): string {
+  const typeMarker = `data-alias-record-type="${aliasType}"`;
+  const typeIdx = content.indexOf(typeMarker);
+  if (typeIdx < 0) return content;
+  const before = content.slice(0, typeIdx);
+  const recMatches = [...before.matchAll(/id="(rec\d+)"/g)];
+  if (recMatches.length === 0) return content;
+  const recId = recMatches[recMatches.length - 1][1];
+  const startMarker = `id="${recId}"`;
+  const startIdx = content.indexOf(startMarker);
+  if (startIdx < 0) return content;
+  const divStart = content.lastIndexOf('<div', startIdx);
+  let depth = 0;
+  let pos = divStart;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const insertPos = nextClose + '</div>'.length;
+        return content.slice(0, insertPos) + html + content.slice(insertPos);
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return content;
+}
+
+/**
  * Strip HTML tags from <title> and <meta name="description"> content.
  * Fixes broken SERP snippets caused by Tilda inline markup (e.g. <s> tags).
  */
