@@ -83,7 +83,7 @@ const HERO_VIDEO_SCRIPT = `<script>
   window.addEventListener('scroll',startVideo,{once:true,passive:true});
   window.addEventListener('click',startVideo,{once:true});
   window.addEventListener('touchstart',startVideo,{once:true,passive:true});
-  setTimeout(startVideo,4000);
+  setTimeout(startVideo,8000);
 })();
 </script>`;
 
