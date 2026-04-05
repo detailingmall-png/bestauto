@@ -40,41 +40,36 @@ export const HERO_REC_IDS: Readonly<Record<string, readonly string[]>> = {
   en: ['rec593573287'],
 };
 
-/** HLS video init script — loaded once per page via requestIdleCallback. */
+/** HLS video init script — loaded once per page via requestIdleCallback.
+ * Uses matchMedia instead of offsetWidth to avoid forced reflow. */
 const HERO_VIDEO_SCRIPT = `<script>
 (function(){
   var idle=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(cb){setTimeout(cb,200)};
+  var isMobile=window.matchMedia('(max-width:639px)').matches;
+  function getVisible(){return document.querySelector(isMobile?'.ba-hero-video--mobile':'.ba-hero-video--desktop');}
   function mp4Fallback(){
-    document.querySelectorAll('.ba-hero-video').forEach(function(v){
-      if(v.offsetWidth>0){v.preload='auto';v.setAttribute('autoplay','');v.play().catch(function(){});}
-    });
+    var v=getVisible();
+    if(v){v.preload='auto';v.setAttribute('autoplay','');v.play().catch(function(){});}
   }
   function initHLS(){
-    var vids=document.querySelectorAll('.ba-hero-video');
-    var needLib=false;
-    vids.forEach(function(v){
-      if(v.offsetWidth===0)return;
-      var src=v.classList.contains('ba-hero-video--desktop')?'/hls/desktop/index.m3u8':'/hls/mobile/index.m3u8';
-      if(v.canPlayType('application/vnd.apple.mpegurl')){
-        v.setAttribute('autoplay','');v.preload='auto';v.src=src;
-        var tryPlay=function(){v.play().catch(function(){});};
-        if(v.readyState>=3)tryPlay();else v.addEventListener('canplay',tryPlay,{once:true});
-      } else { needLib=true; }
-    });
-    if(!needLib)return;
-    var s=document.createElement('script');
-    s.src='/hls/hls.light.min.js';
-    s.onload=function(){
-      if(!window.Hls||!Hls.isSupported()){mp4Fallback();return;}
-      vids.forEach(function(v){
-        if(v.offsetWidth===0||v.src)return;
-        var src=v.classList.contains('ba-hero-video--desktop')?'/hls/desktop/index.m3u8':'/hls/mobile/index.m3u8';
+    var v=getVisible();
+    if(!v)return;
+    var src=isMobile?'/hls/mobile/index.m3u8':'/hls/desktop/index.m3u8';
+    if(v.canPlayType('application/vnd.apple.mpegurl')){
+      v.setAttribute('autoplay','');v.preload='auto';v.src=src;
+      var tryPlay=function(){v.play().catch(function(){});};
+      if(v.readyState>=3)tryPlay();else v.addEventListener('canplay',tryPlay,{once:true});
+    } else {
+      var s=document.createElement('script');
+      s.src='/hls/hls.light.min.js';
+      s.onload=function(){
+        if(!window.Hls||!Hls.isSupported()){mp4Fallback();return;}
         var h=new Hls();h.loadSource(src);h.attachMedia(v);
         h.on(Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){});});
-      });
-    };
-    s.onerror=function(){mp4Fallback();};
-    document.head.appendChild(s);
+      };
+      s.onerror=function(){mp4Fallback();};
+      document.head.appendChild(s);
+    }
   }
   idle(initHLS,{timeout:1500});
 })();
@@ -88,10 +83,10 @@ export function generateHeroHtml(lang: string): string {
   const content = HERO_CONTENT[lang] ?? HERO_CONTENT['ka'];
 
   return `<div class="ba-hero">
-<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" poster="/hero-desktop-poster.webp" width="1280" height="720">
+<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" width="1280" height="720">
   <source src="/hero-desktop.mp4" type="video/mp4">
 </video>
-<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" poster="/hero-mobile-poster.webp" width="480" height="854">
+<video class="ba-hero-video ba-hero-video--mobile" muted loop playsinline preload="none" width="480" height="854">
   <source src="/hero-mobile.mp4" type="video/mp4">
 </video>
 <div class="ba-hero__overlay"></div>

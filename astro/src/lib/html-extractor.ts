@@ -193,10 +193,9 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
 
   let heroPreload: string;
   if (isHomepage) {
-    // Homepage hero is a <video> with poster — preload the poster with responsive media
-    heroPreload =
-      '<link rel="preload" href="/hero-mobile-poster.webp" as="image" media="(max-width:639px)" fetchpriority="high">' +
-      '<link rel="preload" href="/hero-desktop-poster.webp" as="image" media="(min-width:640px)" fetchpriority="high">';
+    // Homepage hero uses inline LQIP base64 background (in bestauto-custom.css) — no image preload needed.
+    // Video loads lazily via HLS after requestIdleCallback.
+    heroPreload = '';
   } else {
     // Find first real image in mainContent.
     // Prefer data-original (Tilda lazy-loader attribute = actual content images)
