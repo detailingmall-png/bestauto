@@ -24,11 +24,10 @@ const GRID_CSS = readFileSync(
 // Critical Zero Block + font-face CSS inlined to avoid waiting for async CSS.
 // .tn-atom needs display:table-cell from tilda-blocks-page (40KB, async).
 // Without this snippet the hero H2 renders with default layout, delaying LCP.
-// font-display:optional prevents the font swap from triggering a late LCP update.
-// On slow connections the browser uses Arial fallback; on fast it gets TildaSans before
-// first paint. The separate @font-face in fonts-tildasans.css (swap) still loads async
-// and provides swap for non-LCP text further down the page.
-const ZERO_BLOCK_CRITICAL_CSS = `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:optional;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`;
+// Critical Zero Block + font-face CSS inlined to avoid waiting for async CSS.
+// .tn-atom needs display:table-cell from tilda-blocks-page (40KB, async).
+// Without this snippet the hero H2 renders with default layout, delaying LCP.
+const ZERO_BLOCK_CRITICAL_CSS = `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:swap;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`;
 
 export interface PageSections {
   readonly headContent: string;
@@ -186,10 +185,8 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
   // Preload tilda-zero (cover block/artboard init depends on it → faster LCP)
   const zeroPreload = '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
 
-  // With font-display:optional, font preload competes for bandwidth on slow 3G
-  // and the font won't be used anyway if it arrives late. Skip preload to leave
-  // more bandwidth for HTML, hero poster, and tilda-zero.js (all LCP-critical).
-  const fontPreload = '';
+  // Preload the self-hosted TildaSans font
+  const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
 
   let heroPreload: string;
   if (isHomepage) {
