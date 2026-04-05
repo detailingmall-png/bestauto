@@ -265,6 +265,63 @@ html {
   }
 }
 
+/* ========================================================================
+   Price list (ba-price-*)
+   Universal flexbox layout for prices page and service page price blocks.
+   ======================================================================== */
+.ba-price-section {
+  max-width: 800px;
+  padding: 0 40px;
+}
+.ba-price-heading {
+  font-size: 30px;
+  font-family: var(--ba-font-family);
+  font-weight: var(--ba-font-weight-semibold);
+  color: var(--ba-color-accent);
+  margin: 0 0 var(--ba-space-lg) 0;
+  line-height: 1.3;
+}
+.ba-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--ba-space-md);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ba-color-border);
+}
+.ba-price-row:last-child {
+  border-bottom: none;
+}
+.ba-price-name {
+  font-size: 18px;
+  font-family: var(--ba-font-family);
+  color: var(--ba-color-text);
+  line-height: 1.4;
+  flex: 1;
+  min-width: 0;
+}
+.ba-price-row--promo .ba-price-name {
+  color: var(--ba-color-accent);
+}
+.ba-price-value {
+  font-size: 18px;
+  font-family: var(--ba-font-family);
+  color: var(--ba-color-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Tablet (641-960px) --- price list */
+@media screen and (max-width: 960px) {
+  .ba-price-heading {
+    font-size: 28px;
+  }
+  .ba-price-name,
+  .ba-price-value {
+    font-size: 16px;
+  }
+}
+
 /* --- Mobile (<=640px) --- */
 @media screen and (max-width: 640px) {
   .t182__title [data-customstyle] {
@@ -290,6 +347,21 @@ html {
   .t502__blockdescr,
   .t508__descr {
     font-size: 14px !important;
+  }
+  /* Price list - mobile */
+  .ba-price-section {
+    padding: 0 20px;
+  }
+  .ba-price-heading {
+    font-size: 24px;
+  }
+  .ba-price-name,
+  .ba-price-value {
+    font-size: 15px;
+  }
+  .ba-price-row {
+    padding: 12px 0;
+    gap: 12px;
   }
   /* Prices heroes - mobile */
   #rec590032970,
