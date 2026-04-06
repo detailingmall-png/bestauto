@@ -1467,6 +1467,15 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Inject shims before closing </head> (parsed before async blocks JS executes)
   processedHead += POPUP_SHIM + SLIDER_SHIM;
 
+  // Blog pages have dark text (#000) on transparent block backgrounds.
+  // ZERO_BLOCK_CRITICAL_CSS sets html{background-color:#000} to prevent white canvas
+  // bleeding on dark service pages. Blog content blocks (type 106, 255) lack explicit
+  // bg-color, so dark text becomes invisible on black html bg. Override to white.
+  const isBlogPage = slug === 'blog' || (slug != null && slug.startsWith('blog/'));
+  if (isBlogPage) {
+    processedHead += '<style>html{background-color:#fff}#allrecords a{color:inherit}</style>';
+  }
+
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
   // Body class
