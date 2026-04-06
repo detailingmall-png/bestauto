@@ -1,15 +1,15 @@
 /**
- * Replaces heavy Tilda t979 gallery blocks with a lightweight custom gallery.
+ * Replaces heavy Tilda gallery blocks (t979, T604 slider, or any block with
+ * data-img-zoom-url) with a lightweight custom gallery (~2 KB inline CSS + JS).
  *
- * Tilda's tilda-zoom-2.0.min.js (33 KB) + tilda-slds-1.4.min.js (39 KB)
- * are replaced by ~2 KB of inline CSS + JS with no external dependencies.
+ * Supports both <img data-img-zoom-url alt="..."> (t979) and
+ * <div data-img-zoom-url> (T604 background-image sliders).
  *
- * Each t979 block that contains data-img-zoom-url attributes is replaced.
- * The outer rec wrapper is preserved so repositioning logic in [...slug].astro
- * continues to work.
+ * CSS, lightbox and script are injected once per page; each subsequent gallery
+ * only emits grid + slider markup. The outer rec wrapper is preserved.
  *
- * On mobile (≤640px): rendered as an auto-advancing slider (4s interval).
- * On desktop: CSS grid with lightbox on click.
+ * On mobile (≤640px): auto-advancing slider (4s, independent per gallery).
+ * On desktop: CSS grid with shared lightbox on click.
  */
 
 /**
@@ -22,7 +22,12 @@ const BLOCKED_IMAGES = new Set([
 
 const GALLERY_STYLE = `<style>.ba-gallery{background:var(--ba-color-bg);padding:40px 0}.ba-gallery__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;padding:0 20px}.ba-gallery__item{overflow:hidden;cursor:pointer;aspect-ratio:4/3}.ba-gallery__item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}.ba-gallery__item:hover img{transform:scale(1.04)}.ba-lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.93);align-items:center;justify-content:center}.ba-lb.is-open{display:flex}.ba-lb__img{max-width:94vw;max-height:90vh;object-fit:contain;user-select:none}.ba-lb__btn{position:absolute;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;line-height:1;cursor:pointer;padding:10px 16px;border-radius:4px;transition:background .2s}.ba-lb__btn:hover{background:rgba(255,255,255,.3)}.ba-lb__close{top:16px;right:16px}.ba-lb__prev{left:12px;top:50%;transform:translateY(-50%)}.ba-lb__next{right:12px;top:50%;transform:translateY(-50%)}@media(max-width:640px){.ba-gallery{padding:0}.ba-gallery__grid{display:none!important}.ba-slider{display:block!important}.ba-slider__inner{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--ba-color-bg)}.ba-slider__track{display:flex;height:100%;transition:transform .5s ease}.ba-slider__slide{min-width:100%;height:100%}.ba-slider__slide img{width:100%;height:100%;object-fit:cover;display:block}.ba-slider__dots{display:flex!important;justify-content:center;gap:6px;padding:10px 0;background:var(--ba-color-bg)}.ba-slider__dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;transition:background .2s}.ba-slider__dot.is-active{background:#fff}}</style>`;
 
-const GALLERY_SCRIPT = `<script>(function(){var lbEl=document.getElementById('ba-lb');if(!lbEl)return;var imgEl=lbEl.querySelector('.ba-lb__img');var imgs=[];var cur=0;function open(i){cur=i;imgEl.src=imgs[i].full;imgEl.alt=imgs[i].alt;lbEl.classList.add('is-open')}function close(){lbEl.classList.remove('is-open');imgEl.src=''}function nav(d){cur=(cur+d+imgs.length)%imgs.length;imgEl.src=imgs[cur].full;imgEl.alt=imgs[cur].alt}document.querySelectorAll('.ba-gallery__item').forEach(function(el,i){imgs.push({full:el.dataset.full,alt:el.querySelector('img').alt||''});el.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();open(i)})});var tz=document.querySelector('.t-zoomer__wrapper');if(tz)tz.style.pointerEvents='none';lbEl.querySelector('.ba-lb__close').addEventListener('click',close);lbEl.querySelector('.ba-lb__prev').addEventListener('click',function(){nav(-1)});lbEl.querySelector('.ba-lb__next').addEventListener('click',function(){nav(1)});lbEl.addEventListener('click',function(e){if(e.target===lbEl)close()});document.addEventListener('keydown',function(e){if(!lbEl.classList.contains('is-open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')nav(-1);if(e.key==='ArrowRight')nav(1)});if(window.matchMedia('(max-width:640px)').matches){var slider=document.querySelector('.ba-slider');if(slider){slider.style.display='block';var dotsWrap=slider.querySelector('.ba-slider__dots');if(dotsWrap)dotsWrap.style.display='flex';var track=slider.querySelector('.ba-slider__track');var dots=slider.querySelectorAll('.ba-slider__dot');var total=dots.length;var sc=0;var timer;function goTo(n){sc=(n+total)%total;track.style.transform='translateX(-'+sc*100+'%)';dots.forEach(function(d,i){d.classList.toggle('is-active',i===sc)});}function startAuto(){timer=setInterval(function(){goTo(sc+1)},4000);}function stopAuto(){clearInterval(timer);}dots.forEach(function(d,i){d.addEventListener('click',function(){stopAuto();goTo(i);startAuto();});});var tx=0;var inner=slider.querySelector('.ba-slider__inner');inner.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});inner.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40){stopAuto();goTo(sc+(dx<0?1:-1));startAuto();}},{passive:true});goTo(0);startAuto();}}})();</script>`;
+/**
+ * Single script that handles ALL galleries on the page:
+ * - Lightbox collects images from every .ba-gallery__item
+ * - Each .ba-slider is initialized independently (own auto-advance, swipe, dots)
+ */
+const GALLERY_SCRIPT = `<script>(function(){var lbEl=document.getElementById('ba-lb');if(!lbEl)return;var imgEl=lbEl.querySelector('.ba-lb__img');var imgs=[];var cur=0;function open(i){cur=i;imgEl.src=imgs[i].full;imgEl.alt=imgs[i].alt;lbEl.classList.add('is-open')}function close(){lbEl.classList.remove('is-open');imgEl.src=''}function nav(d){cur=(cur+d+imgs.length)%imgs.length;imgEl.src=imgs[cur].full;imgEl.alt=imgs[cur].alt}document.querySelectorAll('.ba-gallery__item').forEach(function(el,i){imgs.push({full:el.dataset.full,alt:el.querySelector('img').alt||''});el.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();open(i)})});var tz=document.querySelector('.t-zoomer__wrapper');if(tz)tz.style.pointerEvents='none';lbEl.querySelector('.ba-lb__close').addEventListener('click',close);lbEl.querySelector('.ba-lb__prev').addEventListener('click',function(){nav(-1)});lbEl.querySelector('.ba-lb__next').addEventListener('click',function(){nav(1)});lbEl.addEventListener('click',function(e){if(e.target===lbEl)close()});document.addEventListener('keydown',function(e){if(!lbEl.classList.contains('is-open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')nav(-1);if(e.key==='ArrowRight')nav(1)});if(window.matchMedia('(max-width:640px)').matches){document.querySelectorAll('.ba-slider').forEach(function(slider){slider.style.display='block';var dw=slider.querySelector('.ba-slider__dots');if(dw)dw.style.display='flex';var track=slider.querySelector('.ba-slider__track');var dots=slider.querySelectorAll('.ba-slider__dot');var total=dots.length;var sc=0;var timer;function goTo(n){sc=(n+total)%total;track.style.transform='translateX(-'+sc*100+'%)';dots.forEach(function(d,i){d.classList.toggle('is-active',i===sc)})}function startAuto(){timer=setInterval(function(){goTo(sc+1)},4000)}function stopAuto(){clearInterval(timer)}dots.forEach(function(d,i){d.addEventListener('click',function(){stopAuto();goTo(i);startAuto()})});var tx=0;var inner=slider.querySelector('.ba-slider__inner');inner.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});inner.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40){stopAuto();goTo(sc+(dx<0?1:-1));startAuto()}},{passive:true});goTo(0);startAuto()})}})();</script>`;
 
 const LIGHTBOX_HTML = `<div class="ba-lb" id="ba-lb" role="dialog" aria-modal="true"><img class="ba-lb__img" src="" alt=""><button class="ba-lb__btn ba-lb__close" aria-label="Close">&#215;</button><button class="ba-lb__btn ba-lb__prev" aria-label="Previous">&#8249;</button><button class="ba-lb__btn ba-lb__next" aria-label="Next">&#8250;</button></div>`;
 
@@ -44,17 +49,30 @@ function toWebp(p: string): string {
 
 function parseGalleryImages(block: string): Array<{ full: string; alt: string }> {
   const items: Array<{ full: string; alt: string }> = [];
-  const re = /data-img-zoom-url="([^"]*)"[^>]*alt="([^"]*)"/g;
+  const re = /data-img-zoom-url="([^"]*)"/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(block)) !== null) {
     const path = toWebp(normalisePath(m[1]));
     if ([...BLOCKED_IMAGES].some(b => path.includes(b))) continue;
-    items.push({ full: path, alt: m[2] });
+    // Extract alt from the same tag — works for <img> (has alt) and <div> (no alt)
+    const tagEnd = block.indexOf('>', m.index);
+    const tagChunk = block.slice(m.index, tagEnd > 0 ? tagEnd : m.index + 500);
+    const altMatch = /alt="([^"]*)"/.exec(tagChunk);
+    items.push({ full: path, alt: altMatch ? altMatch[1] : '' });
   }
   return items;
 }
 
-function buildGalleryHtml(images: Array<{ full: string; alt: string }>): string {
+/**
+ * Builds gallery HTML for a single block.
+ * @param includeGlobals — true for the first gallery on the page
+ *   (injects shared CSS, lightbox overlay, and script). Subsequent
+ *   galleries only emit grid + slider markup.
+ */
+function buildGalleryHtml(
+  images: Readonly<Array<{ full: string; alt: string }>>,
+  includeGlobals: boolean,
+): string {
   const gridItems = images.map(({ full, alt }) =>
     `<div class="ba-gallery__item" data-full="${escAttr(full)}"><img src="${escAttr(full)}" alt="${escAttr(alt)}" loading="lazy" decoding="async"></div>`
   ).join('');
@@ -67,18 +85,20 @@ function buildGalleryHtml(images: Array<{ full: string; alt: string }>): string 
     `<button class="ba-slider__dot${i === 0 ? ' is-active' : ''}" aria-label="Slide ${i + 1}"></button>`
   ).join('');
 
-  return [
-    GALLERY_STYLE,
+  const parts: string[] = [];
+  if (includeGlobals) parts.push(GALLERY_STYLE);
+  parts.push(
     `<div class="ba-gallery">`,
     `<div class="ba-gallery__grid">${gridItems}</div>`,
     `<div class="ba-slider" style="display:none">`,
     `<div class="ba-slider__inner"><div class="ba-slider__track">${sliderSlides}</div></div>`,
     `<div class="ba-slider__dots" style="display:none">${sliderDots}</div>`,
     `</div>`,
-    LIGHTBOX_HTML,
-    `</div>`,
-    GALLERY_SCRIPT,
-  ].join('');
+  );
+  if (includeGlobals) parts.push(LIGHTBOX_HTML);
+  parts.push(`</div>`);
+  if (includeGlobals) parts.push(GALLERY_SCRIPT);
+  return parts.join('');
 }
 
 /**
@@ -105,13 +125,15 @@ function findBlockEnd(html: string, blockStart: number): number {
 }
 
 /**
- * Replaces all gallery blocks (t979 native or type=121 alias=979) that contain
- * data-img-zoom-url images with a lightweight custom gallery implementation.
+ * Replaces all gallery blocks (t979/T604 or any block with data-img-zoom-url)
+ * with a lightweight custom gallery. CSS, lightbox and script are injected once;
+ * subsequent galleries only emit grid + slider markup.
  */
 export function replaceGalleries(html: string): string {
   let result = html;
   // Track replaced block start positions to avoid double-processing
   const replaced = new Set<number>();
+  let isFirstGallery = true;
 
   let searchFrom = 0;
   while (true) {
@@ -136,10 +158,11 @@ export function replaceGalleries(html: string): string {
     const wrapperMatch = /^(<div id="rec\d+"[^>]*>)/.exec(block);
     const wrapper = wrapperMatch ? wrapperMatch[1] : '<div>';
 
-    const newBlock = wrapper + buildGalleryHtml(images) + '</div>';
+    const newBlock = wrapper + buildGalleryHtml(images, isFirstGallery) + '</div>';
     result = result.slice(0, blockStart) + newBlock + result.slice(blockEnd);
     replaced.add(blockStart);
     searchFrom = blockStart + newBlock.length;
+    isFirstGallery = false;
   }
 
   return result;
