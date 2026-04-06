@@ -157,7 +157,9 @@ html {
 .t017__title [data-customstyle] {
   font-size: 36px !important;
 }
-/* t225 block headings: was 30px or 46px inline */
+/* t225 block headings: was 30px or 46px inline.
+   Some T255 blocks lack data-customstyle on spans, so target both. */
+.t225__title,
 .t225__title [data-customstyle] {
   font-size: 36px !important;
 }
@@ -218,6 +220,7 @@ html {
     font-size: 40px !important;
   }
   .t017__title [data-customstyle],
+  .t225__title,
   .t225__title [data-customstyle] {
     font-size: 32px !important;
   }
@@ -409,6 +412,7 @@ html {
     font-size: 32px !important;
   }
   .t017__title [data-customstyle],
+  .t225__title,
   .t225__title [data-customstyle] {
     font-size: 28px !important;
   }
