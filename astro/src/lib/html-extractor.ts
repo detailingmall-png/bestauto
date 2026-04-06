@@ -36,8 +36,10 @@ const GRID_CSS = readFileSync(
 // Without these rules, async CSS at ~3.3s changes font-smoothing/background on #allrecords,
 // causing Chrome to report a new LCP for hero text. Inlining them ensures zero visual change.
 const ZERO_BLOCK_CRITICAL_CSS = [
-  // Font face (optional = no late font swap → stable LCP)
-  `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:optional;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}`,
+  // Font face: swap ensures text is always visible for LCP detection.
+  // Font is preloaded via <link rel="preload">, so swap happens in <100ms.
+  // optional caused NO_LCP in Lighthouse 13 — text invisible during block period.
+  `@font-face{font-family:'TildaSans';font-style:normal;font-weight:250 1000;font-display:swap;src:url('/fonts/TildaSans-VF.woff2') format('woff2-variations')}`,
   // Zero Block atoms (for non-homepage pages with t396 blocks)
   `.t396 .tn-atom{display:table-cell;vertical-align:middle;width:100%;-webkit-text-size-adjust:100%}.t396 a.tn-atom{text-decoration:none}.t396 .tn-atom__img{width:100%;display:block}`,
   // Critical #allrecords styles — prevent re-paint when async CSS loads
@@ -282,7 +284,7 @@ export function inlineAllPageCss(head: string): string {
  * Loaded 2s after FCP via requestIdleCallback — well before user scrolls
  * to interactive sections (forms, maps). Menu works immediately (separate script).
  */
-const DEFER_CORE_MS = 2000;
+const DEFER_CORE_MS = 3500;
 
 export function deferBlockingScripts(head: string): string {
   // 1. Replace jQuery with inline stub
@@ -297,8 +299,10 @@ export function deferBlockingScripts(head: string): string {
     (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
   );
 
-  // 3. Defer tilda-scripts + tilda-blocks-page + lazyload via rIC (2s timeout)
+  // 3. Defer tilda-scripts + tilda-blocks-page + lazyload via rIC (3.5s timeout).
   // These are the main TBT culprits (forced reflows, DOM queries).
+  // tilda-cover, tilda-zero, tilda-paint-icons moved out: handled separately
+  // (removed or deferred to 5s group) to reduce core bundle size.
   const coreDeferred: string[] = [];
   result = result.replace(
     /<script\b[^>]*src="([^"]*(?:tilda-scripts-3\.0|tilda-blocks-page|lazyload-1\.3)[^"]*)"[^>]*>\s*<\/script>/g,
@@ -674,6 +678,19 @@ function removeHammerScript(content: string): string {
   );
 }
 
+/**
+ * Remove tilda-cover-1.0.min.js script tag.
+ * Cover blocks already render via inline height:100vh + t-valign_middle.
+ * Script only adds parallax and scroll-to-next arrow — not needed.
+ * Running it causes LCP invalidation (recalculates cover heights → DOM mutation).
+ */
+function removeTildaCoverScript(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-cover[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
 /** Remove tilda-video-1.0.min.js script tag (no Tilda video blocks exist; homepage uses custom video-gallery.ts). */
 function removeTildaVideoScript(content: string): string {
   return content.replace(
@@ -694,6 +711,21 @@ function removeTildaZoomCss(content: string): string {
 function removeTildaSldsCss(content: string): string {
   return content.replace(
     /<link\b[^>]*href="[^"]*tilda-slds[^"]*\.css[^"]*"[^>]*\/?>\s*(?:<noscript>\s*<link\b[^>]*href="[^"]*tilda-slds[^"]*\.css[^"]*"[^>]*\/?>\s*<\/noscript>\s*)?/g,
+    '',
+  );
+}
+
+/**
+ * Remove Tilda's first-visit fade-in animation script.
+ * This script sets `.t-records { opacity: 0 }` on desktop for first-time visitors,
+ * then fades in after 400ms. This causes Lighthouse NO_LCP because ALL content
+ * is invisible at paint time — Chrome cannot detect any LCP candidate.
+ * Headless Chrome (Lighthouse) passes the bot-check so the script activates.
+ * Removing it: content renders instantly = correct LCP detection + better UX.
+ */
+function removeTildaFadeInScript(content: string): string {
+  return content.replace(
+    /<script[^>]*>\s*\(function\(\)\s*\{if\(\(\/bot\|google\|yandex[\s\S]*?t_setvisRecs[\s\S]*?<\/script>\s*/g,
     '',
   );
 }
@@ -720,11 +752,16 @@ export function deferNonCriticalScripts(content: string): string {
     // tilda-zoom → replaced by gallery-inject.ts (custom lightbox)
     // hammer.min → touch handled natively by slider-shim + gallery-inject
     // tilda-video → no Tilda video blocks exist; homepage uses custom video-gallery.ts
-    // All five are stripped entirely — script tags removed, not deferred.
+    // tilda-cover → removed entirely (cover renders via inline height:100vh)
+    // All six are stripped entirely — script tags removed, not deferred.
     'tilda-cards-1.0',
     'tilda-skiplink-1.0',
     'tilda-events-1.0',
     'tilda-map-1.0',
+    // tilda-zero, tilda-zero-scale: stay as async scripts.
+    //   Removed on homepage/no-t396 by removeZeroBlockScripts() in extractSections.
+    //   On pages with t396, they load async and run after DOM is ready.
+    // tilda-paint-icons: stays as async (small, needed for SVG icons).
   ];
 
 
@@ -1472,6 +1509,9 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
     : '';
   let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
 
+  // Remove Tilda first-visit fade-in (sets opacity:0 on .t-records → NO_LCP)
+  processedHead = removeTildaFadeInScript(processedHead);
+
   // Inline ALL CSS on every page to eliminate render-blocking requests and
   // async style recalculations that cause late LCP re-paint.
   // Overhead: +12KB gzip — less than one JPEG, saves 6+ HTTP requests.
@@ -1496,6 +1536,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   processedHead = removeTildaZoomScript(processedHead);
   processedHead = removeHammerScript(processedHead);
   processedHead = removeTildaVideoScript(processedHead);
+  processedHead = removeTildaCoverScript(processedHead);
   // Strip CSS for replaced scripts (styles are inline in shims/gallery)
   processedHead = removeTildaZoomCss(processedHead);
   processedHead = removeTildaSldsCss(processedHead);
