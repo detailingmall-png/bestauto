@@ -261,6 +261,21 @@ html {
   font-weight: 500 !important;
 }
 
+/* -- Desktop (>=960px): consistent vertical rhythm per UI/UX guide.
+     H1→H2 gap ~27px, H2→CTA gap ~40px (at 2-line H1 with 42px font).
+     Overrides per-page Tilda positions that cause overlap on RU/EN. -- */
+@media screen and (min-width: 960px) {
+  .t396 .tn-elem[data-elem-id="1470209944682"] {
+    top: calc(50vh - 110px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1684511382614"] {
+    top: calc(50vh + 30px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1473846124811"] {
+    top: calc(50vh + 135px) !important;
+  }
+}
+
 /* -- Mobile (<=639px) -- */
 @media screen and (max-width: 639px) {
   .t396 .tn-elem[data-elem-id="1470209944682"] {
@@ -276,10 +291,6 @@ html {
   }
   .t396 .tn-elem[data-elem-id="1684511382614"] {
     top: calc(50vh + 70px) !important;
-  }
-  /* Hide leading <br> in H2 — spacing handled by top override */
-  .t396 .tn-elem[data-elem-id="1684511382614"] .tn-atom br:first-child {
-    display: none;
   }
   .t396 .tn-elem[data-elem-id="1684511382614"] .tn-atom {
     font-size: 15px !important;
