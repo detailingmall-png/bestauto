@@ -74,6 +74,24 @@ let injectedHtml = injectSanityData(rawHtml, settings);
 if (PRICES_SLUGS.has(currentSlug)) {
   injectedHtml = injectPricesData(injectedHtml, pricingPage, lang);
   injectedHtml = removeRecordBlock(injectedHtml, 'rec713427892');
+  // Fix missing H1: convert hero t001__title <div> to <h1> (KA/RU have a t001 cover block)
+  if (injectedHtml.includes('class="t001__title')) {
+    injectedHtml = injectedHtml.replace(
+      /<div class="t001__title ([^"]*)" field="title">/,
+      '<h1 class="t001__title $1" field="title">'
+    );
+    const h1Start = injectedHtml.indexOf('<h1 class="t001__title');
+    if (h1Start >= 0) {
+      const closeDiv = injectedHtml.indexOf('</div>', h1Start);
+      if (closeDiv >= 0 && closeDiv - h1Start < 500) {
+        injectedHtml = injectedHtml.slice(0, closeDiv) + '</h1>' + injectedHtml.slice(closeDiv + 6);
+      }
+    }
+  } else {
+    // EN prices: hero is a type-18 rec with an inline-styled <div> title — convert to <h1>
+    const heroRe = /(data-record-type="18"[^>]*>\s*)<div (style="[^"]*font-size:\d+[^"]*"[^>]*)>([^<]+)<\/div>/;
+    injectedHtml = injectedHtml.replace(heroRe, '$1<h1 $2>$3</h1>');
+  }
 }
 
 if (SERVICE_SLUGS.has(baseSlug)) {
@@ -276,6 +294,21 @@ const BLOG_INDEX_T404_IDS: Readonly<Record<string, string>> = {
   en: 'rec604491219',
 };
 if (baseSlug === 'blog') {
+  // Fix missing H1: KA and EN blog index pages use <div class="t225__title"> instead of <h1>
+  if (lang !== 'ru') {
+    injectedHtml = injectedHtml.replace(
+      /<div class="t225__title t-title t-title_md" field="title">/,
+      '<h1 class="t225__title t-title t-title_md" field="title">'
+    );
+    // Close the matching tag (find the </div> right after the title text)
+    const t225H1Start = injectedHtml.indexOf('<h1 class="t225__title');
+    if (t225H1Start >= 0) {
+      const closeDivAfter = injectedHtml.indexOf('</div>', t225H1Start);
+      if (closeDivAfter >= 0) {
+        injectedHtml = injectedHtml.slice(0, closeDivAfter) + '</h1>' + injectedHtml.slice(closeDivAfter + 6);
+      }
+    }
+  }
   const t404Id = BLOG_INDEX_T404_IDS[lang];
   if (t404Id && injectedHtml.includes(`id="${t404Id}"`)) {
     const blockStart = injectedHtml.lastIndexOf('<div', injectedHtml.indexOf(`id="${t404Id}"`));
