@@ -101,7 +101,8 @@ export function deferNonCriticalCss(head: string): string {
   const DEFERRABLE = [
     'tilda-animation', 'tilda-forms', 'tilda-popup',
     'tilda-cards', 'tilda-cover',
-    'fonts-tildasans',
+    // fonts-tildasans removed entirely (duplicate of inlined @font-face)
+    // tilda-zoom, tilda-slds CSS removed entirely (replaced by inline shims)
   ];
 
   // Temporarily remove <noscript> blocks to avoid transforming their content
@@ -286,12 +287,11 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
     'connect.facebook.net',
   ].map(h => `<link rel="dns-prefetch" href="//${h}">`).join('');
 
-  // Homepage hero positions are fixed at build time (calc(385px→50vh) so
-  // tilda-zero.js is not needed there. Non-homepage pages still use it
-  // for t396 blocks (service pages with zero-block sections).
-  const zeroPreload = isHomepage
-    ? ''
-    : '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">';
+  // Preload tilda-zero.js only if it's still in the head (not removed).
+  // Removed on: homepage (build-time positioning) + pages without t396 blocks.
+  const zeroPreload = head.includes('tilda-zero')
+    ? '<link rel="preload" href="/js/tilda-zero-1.1.min.js" as="script">'
+    : '';
 
   // Preload the self-hosted TildaSans font
   const fontPreload = '<link rel="preload" href="/fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>';
@@ -312,15 +312,9 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
       : '';
   }
 
-  // Preload tilda-blocks-page CSS so the browser fetches it in parallel with HTML.
-  // On homepage this CSS is async (makeBlocksCssAsync), preload is already part of the tag.
-  // On other pages the CSS is blocking; this preload starts the download earlier.
-  const cssMatch = !isHomepage && head.match(/href="(\/css\/tilda-blocks-page[^"?]+\.min\.css[^"]*)"/);
-  const cssPreload = cssMatch
-    ? `<link rel="preload" href="${cssMatch[1]}" as="style">`
-    : '';
+  // CSS preload no longer needed — all CSS is inlined on every page.
 
-  return dnsPrefetch + cssPreload + zeroPreload + fontPreload + heroPreload + head;
+  return dnsPrefetch + zeroPreload + fontPreload + heroPreload + head;
 }
 
 /**
@@ -618,25 +612,73 @@ function removeTildaSliderScript(content: string): string {
   );
 }
 
+/** Remove tilda-zoom-2.0.min.js script tag (gallery replaced by gallery-inject.ts). */
+function removeTildaZoomScript(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-zoom[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
+/** Remove hammer.min.js script tag (touch handled natively by slider-shim + gallery-inject). */
+function removeHammerScript(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*hammer\.min[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
+/** Remove tilda-video-1.0.min.js script tag (no Tilda video blocks exist; homepage uses custom video-gallery.ts). */
+function removeTildaVideoScript(content: string): string {
+  return content.replace(
+    /<script\b[^>]*src="[^"]*tilda-video[^"]*"[^>]*>\s*<\/script>\s*/g,
+    '',
+  );
+}
+
+/** Remove tilda-zoom-2.0.min.css (gallery replaced by gallery-inject.ts with inline styles). */
+function removeTildaZoomCss(content: string): string {
+  return content.replace(
+    /<link\b[^>]*href="[^"]*tilda-zoom[^"]*\.css[^"]*"[^>]*\/?>\s*(?:<noscript>\s*<link\b[^>]*href="[^"]*tilda-zoom[^"]*\.css[^"]*"[^>]*\/?>\s*<\/noscript>\s*)?/g,
+    '',
+  );
+}
+
+/** Remove tilda-slds-1.4.min.css (slider replaced by slider-shim.ts with inline styles). */
+function removeTildaSldsCss(content: string): string {
+  return content.replace(
+    /<link\b[^>]*href="[^"]*tilda-slds[^"]*\.css[^"]*"[^>]*\/?>\s*(?:<noscript>\s*<link\b[^>]*href="[^"]*tilda-slds[^"]*\.css[^"]*"[^>]*\/?>\s*<\/noscript>\s*)?/g,
+    '',
+  );
+}
+
+/** Remove fonts-tildasans.css (@font-face already inlined via ZERO_BLOCK_CRITICAL_CSS). */
+function removeDuplicateFontsCss(content: string): string {
+  return content.replace(
+    /<link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?>\s*(?:<noscript>\s*<link\b[^>]*href="[^"]*fonts-tildasans[^"]*"[^>]*\/?>\s*<\/noscript>\s*)?/g,
+    '',
+  );
+}
+
 /**
  * Defer non-critical Tilda scripts via requestIdleCallback.
- * Heavy scripts (forms, zoom, masonry, video) in <head> are not needed until
+ * Heavy scripts (forms, masonry, video) in <head> are not needed until
  * user interacts. Replace <script src="..."> with idle loader (7s timeout).
  */
 export function deferNonCriticalScripts(content: string): string {
   const DEFER_SCRIPTS = [
     'tilda-forms-1.0',
     'masonry-imagesloaded',
-    'tilda-video-1.0',
     'tilda-animation-2.0',
-    'hammer.min',
-    // tilda-popup-1.0 and tilda-slds-1.4 are replaced by inline shims
-    // (see popup-shim.ts and slider-shim.ts) — script tags stripped entirely.
+    // tilda-popup, tilda-slds → replaced by inline shims (popup-shim.ts, slider-shim.ts)
+    // tilda-zoom → replaced by gallery-inject.ts (custom lightbox)
+    // hammer.min → touch handled natively by slider-shim + gallery-inject
+    // tilda-video → no Tilda video blocks exist; homepage uses custom video-gallery.ts
+    // All five are stripped entirely — script tags removed, not deferred.
     'tilda-cards-1.0',
     'tilda-skiplink-1.0',
     'tilda-events-1.0',
     'tilda-map-1.0',
-    'tilda-zoom-2.0',
   ];
 
 
@@ -1378,22 +1420,36 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
     ? html.slice(headStart + 6, headEnd)
     : '';
   let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
-  // Homepage hero is a custom CSS-only block (.ba-hero). Eliminate ALL async CSS
-  // to prevent style recalculation from causing late LCP re-paint.
-  // Strategy: inline tilda-blocks-page CSS, make ALL remaining CSS blocking.
-  // Chrome reports new LCP on ANY style recalc — even from tiny async CSS files.
-  if (isHomepage) {
-    processedHead = inlineBlocksPageCss(processedHead);
-    processedHead = inlineAllPageCss(processedHead);
-    // Hero positions are fixed at build time (calc(385px→50vh) in hero-block.ts,
-    // so tilda-zero.js (43KB) is not needed on the homepage at all.
+
+  // Inline ALL CSS on every page to eliminate render-blocking requests and
+  // async style recalculations that cause late LCP re-paint.
+  // Overhead: +12KB gzip — less than one JPEG, saves 6+ HTTP requests.
+  processedHead = inlineBlocksPageCss(processedHead);
+  processedHead = inlineAllPageCss(processedHead);
+
+  // Remove tilda-zero.js (43KB) + tilda-zero-scale.js on pages that don't need it:
+  // - Homepage: hero positions fixed at build time (calc(385px→50vh) in hero-block.ts)
+  // - Pages without t396 blocks: no zero block elements to recalculate
+  const hasZeroBlocks = html.includes('t396__artboard');
+  if (isHomepage || !hasZeroBlocks) {
     processedHead = removeZeroBlockScripts(processedHead);
   }
 
-  // Replace tilda-popup (3.4KB) and tilda-slds (39KB) with inline shims (~2KB total).
-  // The shims define the same global function signatures that page blocks JS calls.
+  // Strip scripts replaced by custom implementations:
+  // - tilda-popup (3.4KB) → popup-shim.ts (~1KB inline)
+  // - tilda-slds (39KB) → slider-shim.ts (~1.5KB inline)
+  // - tilda-zoom (33KB) → gallery-inject.ts (~2.5KB inline lightbox)
+  // - hammer.js (21KB) → touch handled natively by shims
   processedHead = removeTildaPopupScript(processedHead);
   processedHead = removeTildaSliderScript(processedHead);
+  processedHead = removeTildaZoomScript(processedHead);
+  processedHead = removeHammerScript(processedHead);
+  processedHead = removeTildaVideoScript(processedHead);
+  // Strip CSS for replaced scripts (styles are inline in shims/gallery)
+  processedHead = removeTildaZoomCss(processedHead);
+  processedHead = removeTildaSldsCss(processedHead);
+  // fonts-tildasans.css is duplicate — @font-face already inlined via inlineCriticalCss()
+  processedHead = removeDuplicateFontsCss(processedHead);
   // Inject shims before closing </head> (parsed before async blocks JS executes)
   processedHead += POPUP_SHIM + SLIDER_SHIM;
 
