@@ -15,7 +15,7 @@ import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
 import { injectServicePrices } from '../lib/service-prices-inject';
-import { replaceGalleries } from '../lib/gallery-inject';
+import { replaceGalleries, removeDuplicateGalleries } from '../lib/gallery-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { generateServicesGridHtml } from '../lib/services-grid';
@@ -103,7 +103,7 @@ if (baseSlug === 'carwash') {
   injectedHtml = transformT681ToPriceList(injectedHtml);
 }
 
-injectedHtml = replaceGalleries(injectedHtml);
+injectedHtml = removeDuplicateGalleries(replaceGalleries(injectedHtml));
 
 // Remove studio photo gallery popup buttons and popup slideshows
 // (Guramishvili 78 / Anna Politkovskaya 51 toggle buttons + popup photo galleries)

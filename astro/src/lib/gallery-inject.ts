@@ -167,3 +167,109 @@ export function replaceGalleries(html: string): string {
 
   return result;
 }
+
+// ---------------------------------------------------------------------------
+// Remove duplicate studio galleries — some Tilda pages include two gallery
+// rec blocks with identical photos (one lang-specific-alt, one KA-alt).
+// We keep the FIRST occurrence (correct alt texts for the page language)
+// and remove later dupes along with their preceding heading block (T225/T017).
+// ---------------------------------------------------------------------------
+
+/** Find end of a rec block (its closing </div>), counting nested divs properly. */
+function findRecEnd(html: string, recStart: number): number {
+  // Start depth at 1 to account for the opening <div id="rec...">
+  let depth = 1;
+  let pos = recStart;
+  while (pos < html.length) {
+    const nextOpen = html.indexOf('<div', pos + 1);
+    const nextClose = html.indexOf('</div>', pos + 1);
+    if (nextClose < 0) return -1;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      depth--;
+      if (depth === 0) return nextClose + '</div>'.length;
+      pos = nextClose;
+    }
+  }
+  return -1;
+}
+
+export function removeDuplicateGalleries(html: string): string {
+  // 1. Collect all ba-gallery rec blocks with their image fingerprint
+  const galleries: ReadonlyArray<{
+    readonly recStart: number;
+    readonly recEnd: number;
+    readonly imgKey: string;
+  }> = (() => {
+    const found: Array<{ recStart: number; recEnd: number; imgKey: string }> = [];
+    let pos = 0;
+    while (true) {
+      const idx = html.indexOf('class="ba-gallery"', pos);
+      if (idx < 0) break;
+
+      const recStart = html.lastIndexOf('<div id="rec', idx);
+      if (recStart < 0) { pos = idx + 1; continue; }
+
+      const recEnd = findRecEnd(html, recStart);
+      if (recEnd < 0) { pos = idx + 1; continue; }
+
+      // Fingerprint: sorted data-full image URLs
+      const block = html.slice(recStart, recEnd);
+      const urls: string[] = [];
+      const re = /data-full="([^"]*)"/g;
+      let m: RegExpExecArray | null;
+      while ((m = re.exec(block)) !== null) urls.push(m[1]);
+
+      found.push({ recStart, recEnd, imgKey: urls.sort().join('|') });
+      pos = recEnd;
+    }
+    return found;
+  })();
+
+  if (galleries.length < 2) return html;
+
+  // 2. Find later galleries whose images duplicate an earlier gallery.
+  //    Keep the FIRST (language-correct) gallery; remove later dupes.
+  const removeRanges: Array<readonly [number, number]> = [];
+  const removed = new Set<number>();
+
+  for (let i = 0; i < galleries.length - 1; i++) {
+    if (removed.has(i)) continue;
+    for (let j = i + 1; j < galleries.length; j++) {
+      if (removed.has(j)) continue;
+      if (galleries[i].imgKey === galleries[j].imgKey) {
+        let removeStart = galleries[j].recStart;
+        const removeEnd = galleries[j].recEnd;
+
+        // Try to remove the heading block right before the duplicate gallery
+        const prevBlockStart = html.lastIndexOf('<div id="rec', removeStart - 1);
+        if (prevBlockStart >= 0) {
+          const prevBlockEnd = findRecEnd(html, prevBlockStart);
+          if (prevBlockEnd > 0 && prevBlockEnd <= removeStart) {
+            const prevBlock = html.slice(prevBlockStart, prevBlockEnd);
+            if (prevBlock.includes('class="t225"') || prevBlock.includes('class="t017"')) {
+              removeStart = prevBlockStart;
+            }
+          }
+        }
+
+        removeRanges.push([removeStart, removeEnd]);
+        removed.add(j);
+        break;
+      }
+    }
+  }
+
+  if (removeRanges.length === 0) return html;
+
+  // 3. Remove from end to start to preserve positions
+  let result = html;
+  for (let i = removeRanges.length - 1; i >= 0; i--) {
+    const [start, end] = removeRanges[i];
+    result = result.slice(0, start) + result.slice(end);
+  }
+
+  return result;
+}
