@@ -1425,41 +1425,86 @@ function stripButtonInlineStyles(html: string): string {
 
 // ---------------------------------------------------------------------------
 // Remove orphan CTA blocks that are no longer needed.
-// "Есть вопросы? Напишите нам" standalone button (rec-faq-cta, t182) —
-// redundant because every page already has a contacts section with a form.
+// Standalone buttons like "Есть вопросы? Напишите нам", "Остались вопросы?",
+// "Рассчитать стоимость для вашего авто" etc. — redundant because every page
+// already has a contacts section with a form.
+// Matches by block ID or by button text content inside t-rec blocks.
 // ---------------------------------------------------------------------------
 
 const ORPHAN_REC_IDS = ['rec-faq-cta'];
 
+/** Button text substrings — if a t-rec block contains ONLY a t-btnflex with
+ *  one of these texts, the entire block is removed. Matched case-insensitively. */
+const ORPHAN_CTA_TEXTS = [
+  'Остались вопросы',
+  'Есть вопросы',
+  'Have Questions',
+  'გაქვთ შეკითხვ',
+  'Рассчитать стоимость для вашего авто',
+  'Calculate the cost for your car',
+  'გამოთვალეთ ღირებულება',
+];
+
+/** Find end of a <div ...> block starting at blockStart using depth tracking. */
+function findRecBlockEnd(html: string, blockStart: number): number {
+  let depth = 0;
+  let pos = blockStart;
+  while (pos < html.length) {
+    const nextOpen = html.indexOf('<div', pos + 1);
+    const nextClose = html.indexOf('</div>', pos + 1);
+    if (nextClose < 0) return -1;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) return nextClose + '</div>'.length;
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return -1;
+}
+
 function removeOrphanCtaBlocks(html: string): string {
   let result = html;
+
+  // Pass 1: remove by known block IDs
   for (const id of ORPHAN_REC_IDS) {
     const marker = `id="${id}"`;
     const idx = result.indexOf(marker);
     if (idx < 0) continue;
     const blockStart = result.lastIndexOf('<div ', idx);
     if (blockStart < 0) continue;
-    // Find the matching closing </div> using depth tracking
-    let depth = 0;
-    let pos = blockStart;
-    let blockEnd = -1;
-    while (pos < result.length) {
-      const nextOpen = result.indexOf('<div', pos + 1);
-      const nextClose = result.indexOf('</div>', pos + 1);
-      if (nextClose < 0) break;
-      if (nextOpen >= 0 && nextOpen < nextClose) {
-        depth++;
-        pos = nextOpen;
-      } else {
-        if (depth === 0) { blockEnd = nextClose + '</div>'.length; break; }
-        depth--;
-        pos = nextClose;
-      }
-    }
+    const blockEnd = findRecBlockEnd(result, blockStart);
     if (blockEnd > blockStart) {
       result = result.slice(0, blockStart) + result.slice(blockEnd);
     }
   }
+
+  // Pass 2: remove t-rec blocks containing orphan CTA button text
+  for (const text of ORPHAN_CTA_TEXTS) {
+    let searchFrom = 0;
+    while (true) {
+      const textIdx = result.indexOf(text, searchFrom);
+      if (textIdx < 0) break;
+      // Walk back to find the containing t-rec block
+      const blockStart = result.lastIndexOf('<div class="r t-rec', textIdx);
+      if (blockStart < 0) { searchFrom = textIdx + 1; continue; }
+      // Sanity: the text must be within ~2000 chars of block start (not a huge block)
+      if (textIdx - blockStart > 2000) { searchFrom = textIdx + 1; continue; }
+      const blockEnd = findRecBlockEnd(result, blockStart);
+      if (blockEnd < 0) { searchFrom = textIdx + 1; continue; }
+      // Only remove small standalone CTA blocks (< 1500 chars, no form/img/title)
+      const block = result.slice(blockStart, blockEnd);
+      if (block.length > 1500 || block.includes('t-form') || block.includes('<img')) {
+        searchFrom = textIdx + 1;
+        continue;
+      }
+      result = result.slice(0, blockStart) + result.slice(blockEnd);
+      // Don't advance searchFrom — next match might be at same position after removal
+    }
+  }
+
   return result;
 }
 
