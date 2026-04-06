@@ -729,6 +729,18 @@ if (baseSlug === '') {
   }
 }
 
+// Interior cleaning: fix gallery section heading
+if (baseSlug === 'interior-cleaning') {
+  const headingReplacements: Record<string, [string, string]> = {
+    ru: ['Примеры работ детейлинг мойки салона', 'Примеры работ детейлинг химчистки салона'],
+    ka: ['ქიმწმენდის შედეგების მაგალითები', 'ავტომობილის სალონის ქიმწმენდის ნამუშევრების მაგალითები'],
+  };
+  const pair = headingReplacements[lang];
+  if (pair) {
+    mainContent = mainContent.replace(pair[0], pair[1]);
+  }
+}
+
 // PPF page: replace old ba-reels-grid video block with unified video gallery
 if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('ba-reels-grid')) {
   // The reels block sits inside a t-rec div containing 'ba-reels-grid'
