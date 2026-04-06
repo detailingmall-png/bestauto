@@ -267,20 +267,54 @@ export function inlineAllPageCss(head: string): string {
 }
 
 /**
- * Add defer to blocking scripts in <head> (jQuery and polyfill).
- * All other Tilda scripts already have async/defer.
- * Deferred scripts execute after HTML parsing in order, so jQuery → tilda-scripts order is preserved.
+ * Replace jQuery with inline stub and defer tilda-scripts + tilda-blocks-page.
+ *
+ * tilda-scripts (22KB) and tilda-blocks-page (~5KB) cause ~140ms of forced
+ * reflows on the main thread. On 4x CPU throttle (Lighthouse mobile), this
+ * becomes ~560ms blocking time → TBT killer.
+ *
+ * Safe to defer because:
+ * - t_onReady, t_onFuncLoad, t_throttle are already defined inline in <head>
+ * - tilda-menu uses t_throttle (inline stub) and has its own async loading
+ * - Hero positioning is fixed at build time (no tilda-zero.js dependency)
+ * - These scripts handle non-critical interactions (scroll effects, lazy images)
+ *
+ * Loaded 2s after FCP via requestIdleCallback — well before user scrolls
+ * to interactive sections (forms, maps). Menu works immediately (separate script).
  */
+const DEFER_CORE_MS = 2000;
+
 export function deferBlockingScripts(head: string): string {
-  return head
-    .replace(
-      /(<script\s[^>]*src="\/?js\/tilda-polyfill[^"]*"[^>]*)(>)/g,
-      (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
-    )
-    .replace(
-      /<script\s[^>]*src="\/?js\/jquery[^"]*"[^>]*>\s*<\/script>/g,
-      '<script>(function(){var n=function(){return n};n.fn=n.prototype={jquery:"stub"};n.extend=n.each=n.ready=n.on=n.off=n.trigger=n.find=n.filter=n.css=n.attr=n.addClass=n.removeClass=n.toggleClass=n.text=n.html=n.val=n.append=n.prepend=n.remove=n.data=n.animate=n.hide=n.show=n.fadeIn=n.fadeOut=n.slideDown=n.slideUp=n;n.bridget=n;n.isFunction=function(){return false};n.isArray=Array.isArray;window.jQuery=window.$=n})()</script>'
-    );
+  // 1. Replace jQuery with inline stub
+  let result = head.replace(
+    /<script\s[^>]*src="\/?js\/jquery[^"]*"[^>]*>\s*<\/script>/g,
+    '<script>(function(){var n=function(){return n};n.fn=n.prototype={jquery:"stub"};n.extend=n.each=n.ready=n.on=n.off=n.trigger=n.find=n.filter=n.css=n.attr=n.addClass=n.removeClass=n.toggleClass=n.text=n.html=n.val=n.append=n.prepend=n.remove=n.data=n.animate=n.hide=n.show=n.fadeIn=n.fadeOut=n.slideDown=n.slideUp=n;n.bridget=n;n.isFunction=function(){return false};n.isArray=Array.isArray;window.jQuery=window.$=n})()</script>'
+  );
+
+  // 2. Remove polyfill (already handled by removePolyfill, but belt-and-suspenders)
+  result = result.replace(
+    /(<script\s[^>]*src="\/?js\/tilda-polyfill[^"]*"[^>]*)(>)/g,
+    (m, before, close) => before.includes('defer') ? m : `${before} defer${close}`
+  );
+
+  // 3. Defer tilda-scripts + tilda-blocks-page + lazyload via rIC (2s timeout)
+  // These are the main TBT culprits (forced reflows, DOM queries).
+  const coreDeferred: string[] = [];
+  result = result.replace(
+    /<script\b[^>]*src="([^"]*(?:tilda-scripts-3\.0|tilda-blocks-page|lazyload-1\.3)[^"]*)"[^>]*>\s*<\/script>/g,
+    (_match, src) => {
+      coreDeferred.push(src);
+      return '';
+    }
+  );
+
+  if (coreDeferred.length > 0) {
+    // Sequential loading with rIC between each to spread main-thread work
+    const loader = `<script>(function(){${RIC_POLYFILL}function seq(u,i){if(i>=u.length)return;var el=document.createElement('script');el.async=true;el.src=u[i];el.onload=el.onerror=function(){ric(function(){seq(u,i+1)},{timeout:200})};document.head.appendChild(el)}ric(function(){seq(${JSON.stringify(coreDeferred)},0)},{timeout:${DEFER_CORE_MS}});})();</script>`;
+    result += loader;
+  }
+
+  return result;
 }
 
 /**
