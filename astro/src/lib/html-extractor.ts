@@ -688,7 +688,7 @@ export function addContentVisibility(content: string): string {
   const recBlockRegex = /<div\s+id="(rec\d+)"[\s\S]*?(?=<div\s+id="rec\d+"|$)/g;
   let blockMatch: RegExpExecArray | null;
   while ((blockMatch = recBlockRegex.exec(content)) !== null) {
-    if (blockMatch[0].includes('ba-wa-wrap') || blockMatch[0].includes('position:fixed') || blockMatch[0].includes('position: fixed')) {
+    if (blockMatch[0].includes('ba-wa-wrap') || blockMatch[0].includes('position:fixed') || blockMatch[0].includes('position: fixed') || blockMatch[0].includes('t-popup')) {
       fixedChildIds.add(blockMatch[1]);
     }
   }
