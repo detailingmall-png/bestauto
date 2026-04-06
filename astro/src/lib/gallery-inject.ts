@@ -257,7 +257,6 @@ export function removeDuplicateGalleries(html: string): string {
 
         removeRanges.push([removeStart, removeEnd]);
         removed.add(j);
-        break;
       }
     }
   }
