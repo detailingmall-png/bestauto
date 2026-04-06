@@ -169,6 +169,13 @@ html {
   font-size: 36px !important;
 }
 
+/* --- Contacts section heading --- */
+/* Was: clamp(1.8rem,4vw,2.6rem) = 41.6px on desktop. Normalize to 36px. */
+#ba-contacts .ba-title {
+  font-size: 36px !important;
+  margin-bottom: 48px !important;
+}
+
 /* --- H3 List item titles --- */
 /* t502 "numbered advantages": normalize all text inside titles.
    Items 1-2 have extra <div data-customstyle> wrapper with inline font-size;
@@ -226,6 +233,9 @@ html {
   }
   .t502 .t-section__title,
   .t508 .t-section__title {
+    font-size: 32px !important;
+  }
+  #ba-contacts .ba-title {
     font-size: 32px !important;
   }
   .t502__title,
@@ -449,9 +459,10 @@ html {
     padding: 12px 0;
     gap: 12px;
   }
-  /* Contacts block title: reduce from clamp(1.8rem,...) to fit 2 lines on mobile */
+  /* Contacts block title: 28px on mobile (matching other H2 headings) */
   #ba-contacts .ba-title {
-    font-size: 1.3rem !important;
+    font-size: 28px !important;
+    margin-bottom: 32px !important;
   }
   /* Prices heroes - mobile */
   #rec590032970,
