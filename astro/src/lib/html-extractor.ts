@@ -1424,6 +1424,46 @@ function stripButtonInlineStyles(html: string): string {
 }
 
 // ---------------------------------------------------------------------------
+// Remove orphan CTA blocks that are no longer needed.
+// "Есть вопросы? Напишите нам" standalone button (rec-faq-cta, t182) —
+// redundant because every page already has a contacts section with a form.
+// ---------------------------------------------------------------------------
+
+const ORPHAN_REC_IDS = ['rec-faq-cta'];
+
+function removeOrphanCtaBlocks(html: string): string {
+  let result = html;
+  for (const id of ORPHAN_REC_IDS) {
+    const marker = `id="${id}"`;
+    const idx = result.indexOf(marker);
+    if (idx < 0) continue;
+    const blockStart = result.lastIndexOf('<div ', idx);
+    if (blockStart < 0) continue;
+    // Find the matching closing </div> using depth tracking
+    let depth = 0;
+    let pos = blockStart;
+    let blockEnd = -1;
+    while (pos < result.length) {
+      const nextOpen = result.indexOf('<div', pos + 1);
+      const nextClose = result.indexOf('</div>', pos + 1);
+      if (nextClose < 0) break;
+      if (nextOpen >= 0 && nextOpen < nextClose) {
+        depth++;
+        pos = nextOpen;
+      } else {
+        if (depth === 0) { blockEnd = nextClose + '</div>'.length; break; }
+        depth--;
+        pos = nextClose;
+      }
+    }
+    if (blockEnd > blockStart) {
+      result = result.slice(0, blockStart) + result.slice(blockEnd);
+    }
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
 // Strip CMS metadata blocks from newer blog articles (page129xxx series).
 // Removes visible "Сео-заголовок:", "URL:", "Тип:" paragraphs and
 // inline-styled duplicate <h1> elements from editorial templates.
@@ -1613,7 +1653,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(rawMainContent)))))), lang, slug)));
+  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanCtaBlocks(rawMainContent))))))), lang, slug)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent, isHomepage),
