@@ -65,6 +65,9 @@ const STICKY_CTA_TEXT: Record<string, string> = {
 </div>
 <!--/allrecords-->
 <div class="ba-sticky-cta" aria-label="CTA"><a class="ba-sticky-cta__link" href="#contacts">{STICKY_CTA_TEXT[lang] ?? STICKY_CTA_TEXT.ka}</a></div>
+<script>
+(function(){var b=document.querySelector('.ba-sticky-cta');if(!b||window.innerWidth>640)return;var t=window.innerHeight;var on=false;function c(){var s=window.scrollY>=t;if(s!==on){on=s;if(s)b.classList.add('is-visible');else b.classList.remove('is-visible')}}window.addEventListener('scroll',c,{passive:true});c()})();
+</script>
 <script src="/js/tracking.js" defer></script>
 </body>
 </html>

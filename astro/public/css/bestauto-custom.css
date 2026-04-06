@@ -483,19 +483,29 @@ html {
 }
 @media (max-width: 640px) {
   .ba-sticky-cta {
-    display: block;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: var(--ba-z-overlay);
-    padding: 12px 16px;
+    padding: 12px 24px;
     padding-bottom: max(12px, env(safe-area-inset-bottom));
     background: linear-gradient(to top, rgba(0,0,0,0.95) 60%, transparent);
     pointer-events: none;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity var(--ba-duration-normal) var(--ba-ease-default),
+                transform var(--ba-duration-normal) var(--ba-ease-default);
+  }
+  .ba-sticky-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   .ba-sticky-cta__link {
     display: block;
+    max-width: 320px;
     width: 100%;
     padding: 14px 24px;
     background-color: var(--ba-color-accent);
