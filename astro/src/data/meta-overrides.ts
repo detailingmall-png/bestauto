@@ -196,22 +196,629 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     title: 'BESTAUTO Saburtalo — Detailing Studio in Tbilisi | Address & Hours',
     description: 'BESTAUTO Saburtalo studio: Anna Politkovskaya St. 51. PPF, ceramic, polishing, tinting. Mon–Sat 10:00–20:00. Free parking. Book online!',
   },
+  // ── Blog Meta Overrides (from CSV audit 2026-04-06) ────────
+  'ka/blog/10-paint-mistakes': {
+    title: '10 შეცდომა, რომლებიც სწრაფად აზიანებს ავტო საღებავს',
+    description: '10 გავრცელებული შეცდომა, რომლებიც საღებავ-ლაქის საფარს აზიანებს. საქართველოში ყველაზე ხშირი პრობლემები: მთის გზები, მზე, არასწორი თვითმომსახურების რეცხვა.',
+  },
+  'ru/blog/10-paint-mistakes': {
+    title: '10 ошибок, которые быстро портят ЛКП автомобиля',
+    description: '10 распространённых ошибок, из-за которых страдает лакокрасочное покрытие; как их избежать в условиях Грузии.',
+  },
+  'en/blog/10-paint-mistakes': {
+    title: '10 Mistakes That Ruin Car Paint Fast',
+    description: '10 common mistakes that damage car paint and how to avoid them in Georgia',
+  },
 
-  // ── Blog audit KA v3 + EN (2026-04-04) ─────────────────────
-  'en/blog/why-use-car-diagnostic-test': {
-    title: 'Car Diagnostic Test: Importance and Benefits',
-    ogTitle: 'Car Diagnostic Test: Importance and Benefits',
+  'ka/blog/benefits-of-vinyl-wraps': {
+    title: 'ვინილის ფირი ავტოსთვის: პლიუსები და მინუსები',
+    description: 'შესაძლებლობები, რომლებსაც ვინილის შეფუთვა აძლევს თქვენს მანქანას, ასევე რჩევები მასზე მოვლის შესახებ',
+  },
+  'ru/blog/benefits-of-vinyl-wraps': {
+    title: 'Виниловая пленка для авто: плюсы и минусы',
+    description: 'Зачем оклеивать кузов виниловой плёнкой: защита оригинального цвета, варианты текстур и что учесть при выборе в Грузии.',
+  },
+  'en/blog/benefits-of-vinyl-wraps': {
+    title: 'Vinyl Wrap for Cars: Pros and Cons',
+    description: 'Why wrap your car in vinyl: protection for the original paint, available textures, and key considerations for Georgia.',
+  },
+
+  'ka/blog/car-body-color-with-vinyl-wrap': {
+    title: 'როგორ ცვლის ვინილის ფირი ავტომობილის ფერს',
+    description: 'ფაქტორების, ტექნოლოგიებისა და რეკომენდაციების საექსპერტო ანალიზი თქვენი მანქანის იდეალური გარეგნობის მისაღწევად ვინილის ფილმით დაფარვისას.',
+  },
+  'ru/blog/car-body-color-with-vinyl-wrap': {
+    title: 'Как виниловая пленка меняет цвет автомобиля',
+    description: 'Как виниловая оклейка меняет цвет автомобиля без перекраски: доступные варианты, влияние на стоимость и обратимость.',
+  },
+  'en/blog/car-body-color-with-vinyl-wrap': {
+    title: 'How Vinyl Wrap Changes Your Car Color',
+    description: 'How vinyl wrap changes a car’s color without repainting: available finishes, reversibility, and what to expect before wrapping.',
+  },
+
+  'ka/blog/car-body-polishing': {
+    title: 'ძარის პოლირება: როგორ დავაბრუნოთ ბზინვარება',
+    description: 'როგორ აშორებს პროფესიონალური პოლირება ნაკაწრებს, ჰოლოგრამებსა და დაჟანგვის კვალს და როგორ აბრუნებს ფერს სიღრმესა და ბზინვარებას.',
+  },
+  'ru/blog/car-body-polishing': {
+    title: 'Полировка кузова авто: как вернуть блеск',
+    description: 'Как профессиональная полировка кузова убирает царапины, свилы и окисление; возвращает глубину цвета.',
+  },
+  'en/blog/car-body-polishing': {
+    title: 'Car Body Polishing: How to Restore Shine',
+    description: 'How professional paint correction removes scratches, swirl marks, and oxidation: restoring depth and gloss.',
+  },
+
+  'ka/blog/car-detailing-guide': {
+    title: 'ავტო დეტეილინგი: სერვისები, ეტაპები, ფასები | BESTAUTO',
+    description: 'სრული გზამკვლევი ავტო დეტეილინგზე: რა შედის სერვისში, რა ღირს თბილისში და როგორ ავირჩიოთ სწორი დაცვა ავტომობილისთვის.',
+  },
+  'ru/blog/car-detailing-guide': {
+    title: 'Что такое детейлинг авто: услуги, этапы, цены | BESTAUTO',
+    description: 'Что такое детейлинг автомобиля: какие услуги входят, сколько стоит в Тбилиси и зачем он нужен автомобилю.',
+  },
+  'en/blog/car-detailing-guide': {
+    title: 'Car Detailing Guide: Services, Steps, Prices | BESTAUTO',
+    description: 'What car detailing includes: services, costs in Tbilisi, and why your vehicle needs professional care.',
+  },
+
+  'ka/blog/car-diagnostic-test-stages-and-methods': {
+    title: 'კომპიუტერული დიაგნოსტიკა: ძირითადი ეტაპები',
+    description: 'კომპიუტერული დიაგნოსტიკის მიზნები და ეტაპები, გამოყენებული აღჭურვილობა და შეცდომები, რომლებიც გამოვლენილია მანქანის კომპიუტერული დიაგნოსტიკის დროს',
+  },
+  'ru/blog/car-diagnostic-test-stages-and-methods': {
+    title: 'Как работает компьютерная диагностика авто: этапы',
+    description: 'Этапы компьютерной диагностики автомобиля: от подключения сканера до расшифровки ошибок. Какое оборудование используется.',
   },
   'en/blog/car-diagnostic-test-stages-and-methods': {
-    title: 'How Car Diagnostic Tests Work: Key Stages and Methods',
-    ogTitle: 'How Car Diagnostic Tests Work: Key Stages and Methods',
+    title: 'Car Computer Diagnostics: Key Steps Explained',
+    description: 'Car diagnostic stages explained: from scanner connection to fault code interpretation. What equipment is used.',
+  },
+
+  'ka/blog/car-interior-detailing-basics': {
+    title: 'სალონის დეტეილინგი: ეტაპები და რა შედის',
+    description: 'სალონის დეტეილინგის ძირითადი ეტაპები: მტვრის მოცილება, ქსოვილისა და ტყავის წმენდა, პლასტიკის დამუშავება და ის, რაც პროცედურაში შედის.',
+  },
+  'ru/blog/car-interior-detailing-basics': {
+    title: 'Детейлинг салона авто: этапы и что входит',
+    description: 'Основные этапы детейлинг-мойки салона: удаление пыли, чистка ткани и кожи, обработка пластика, что входит в процедуру.',
   },
   'en/blog/car-interior-detailing-basics': {
-    title: 'Key Stages of Interior Detailing: From Dust Removal to Fabric Cleaning',
-    ogTitle: 'Key Stages of Interior Detailing: From Dust Removal to Fabric Cleaning',
+    title: 'Car Interior Detailing: Steps and What’s Included',
+    description: 'Main stages of car interior detailing: vacuuming, fabric and leather cleaning, plastic treatment: what the process includes.',
   },
+
+  'ka/blog/car-interior-disinfection': {
+    title: 'სალონის დეზინფექცია: სუნის მოცილება და სისუფთავე',
+    description: 'მანქანის ინტერიერის ოზონირება, როგორც უსიამოვნო სუნის მოსაშორებლად და სხვადასხვა მავნე ბაქტერიებისა და ვირუსების გასაწმენდად',
+  },
+  'ru/blog/car-interior-disinfection': {
+    title: 'Дезинфекция салона авто: как убрать запахи',
+    description: 'Когда нужна дезинфекция салона, как работает озонирование и какие запахи оно устраняет.',
+  },
+  'en/blog/car-interior-disinfection': {
+    title: 'Car Interior Disinfection: Eliminate Odors Safely',
+    description: 'Car interior ozone treatment to eliminate odors and disinfect from bacteria and viruses. How it works and when your car needs it.',
+  },
+
+  'ka/blog/car-interior-polishing': {
+    title: 'სალონის პოლირება: როდის სჭირდება და რას გვაძლევს',
+    description: 'ინტერიერის პოლირება აუმჯობესებს პლასტიკის, ტყავისა და დეკორის იერს. როდის არის საჭირო და რა შედეგს უნდა ელოდოთ.',
+  },
+  'ru/blog/car-interior-polishing': {
+    title: 'Полировка салона авто: когда нужна и что дает',
+    description: 'Как полировка салона улучшает внешний вид пластика, кожи и декоративных элементов; когда это действительно нужно.',
+  },
+  'en/blog/car-interior-polishing': {
+    title: 'Interior Polishing: When You Need It and Why',
+    description: 'How interior polishing improves plastic, leather, and trim, and when a car interior really needs this service.',
+  },
+
+  'ka/blog/ceramic-coating-care': {
+    title: 'კერამიკის მოვლა: რა შეიძლება და რა არა',
+    description: 'როგორ უნდა გარეცხოთ და მოუაროთ კერამიკით დაფარულ ავტომობილს საქართველოში, რათა საფარმა მაქსიმალურად დიდხანს იმუშაოს.',
+  },
+  'en/blog/ceramic-coating-care': {
+    title: 'Ceramic Coating Care: Do’s and Don’ts',
+    description: 'How to maintain a ceramic-coated car: washing products, techniques, and maintenance schedule.',
+  },
+
+  'ru/blog/ceramic-coating-cost-tbilisi': {
+    title: 'Сколько стоит керамика авто в Тбилиси (2026)',
+    description: 'Сколько стоит керамическое покрытие в Тбилиси: бренды, ценовые категории и что влияет на итоговую стоимость.',
+  },
+
+  'ka/blog/ceramic-coating-durability': {
+    title: 'რამდენ ხანს ძლებს კერამიკა? რისგან არის დამოკიდებული',
+    description: 'რამდენ ხანს ძლებს კერამიკული საფარი პრაქტიკაში, რას ცვლის მოვლა და რატომ არ ემთხვევა რეკლამირებული ვადები რეალობას.',
+  },
+  'en/blog/ceramic-coating-durability': {
+    title: 'How Long Does Ceramic Coating Last? Factors',
+    description: 'How long ceramic coating really lasts in Georgia: 2-5 year range, what affects durability, and how to extend it.',
+  },
+
+  'ka/blog/ceramic-coating-for-car': {
+    title: 'კერამიკული დაფარვა ავტოსთვის: პლიუსები და მინუსები',
+    description: 'როგორ იცავს კერამიკული საფარი ძარას UV-ისგან, ქიმიისგან და ჭუჭყისგან, რამდენ ხანს ძლებს და რა შეზღუდვები აქვს პრაქტიკაში.',
+  },
+  'ru/blog/ceramic-coating-for-car': {
+    title: 'Керамическое покрытие авто: плюсы и минусы',
+    description: 'Как работает керамическое покрытие кузова, сколько держится в условиях Грузии и какую защиту даёт от царапин, UV и грязи.',
+  },
+  'en/blog/ceramic-coating-for-car': {
+    title: 'Ceramic Coating for Cars: Pros and Cons',
+    description: 'How ceramic coating protects car paint in Georgia from UV, chemicals, and dirt, how long it lasts, and where its limits are.',
+  },
+
+  'ru/blog/ceramic-coating-maintenance': {
+    title: 'Уход за керамикой: полный гид (2026)',
+    description: 'Как ухаживать за автомобилем с керамическим покрытием: мойка, средства, периодичность обслуживания.',
+  },
+
+  'ka/blog/ceramic-coating-tbilisi': {
+    title: 'კერამიკული დაფარვა თბილისში: ფასები (2026)',
+    description: 'კერამიკული საფარის ფასები თბილისში: დონეები, ბრენდები, შედარება PPF-თან და რომელი პაკეტი ჯობს გრძელვადიან პერსპექტივაში.',
+  },
+  'en/blog/ceramic-coating-tbilisi': {
+    title: 'Ceramic Coating in Tbilisi: Prices (2026)',
+    description: 'Ceramic coating prices in Tbilisi: brands, price ranges, and what factors affect the final cost.',
+  },
+
+  'ka/blog/ceramic-for-car-glass': {
+    title: 'კერამიკა ავტომინისთვის: ღირს თუ არა?',
+    description: 'როგორ მუშაობს კერამიკული საფარი ავტომობილის მინებზე, რას ცვლის წვიმაში და რით განსხვავდება სხვა დამცავი გადაწყვეტილებებისგან.',
+  },
+  'ru/blog/ceramic-for-car-glass': {
+    title: 'Керамика для стекол авто: что дает и кому нужна',
+    description: 'Как керамическое покрытие стёкол улучшает видимость, упрощает уход и работает в дождливых условиях Грузии.',
+  },
+  'en/blog/ceramic-for-car-glass': {
+    title: 'Ceramic Coating for Car Glass: Is It Worth It?',
+    description: 'How ceramic coating for car glass improves visibility, helps water sheet off, and makes cleaning easier in Georgia.',
+  },
+
+  'ka/blog/detailing-cost-tbilisi': {
+    title: 'რა ღირს ავტო დეტეილინგი თბილისში (2026)',
+    description: 'რა ღირს დეტეილინგი თბილისში, რა ფაქტორები მოქმედებს ფასზე და რატომ არ არის ერთი ფასი ყველა ავტომობილისთვის. პაკეტების მიმოხილვა 2026 წლის მონაცემებით.',
+  },
+  'ru/blog/detailing-cost-tbilisi': {
+    title: 'Сколько стоит детейлинг авто в Тбилиси (2026)',
+    description: 'Обзор стоимости детейлинга в Тбилиси: полировка, керамика, PPF, тонировка и оптимальные комбинации услуг.',
+  },
+  'en/blog/detailing-cost-tbilisi': {
+    title: 'Car Detailing Cost in Tbilisi (2026)',
+    description: 'Detailing costs in Tbilisi: polishing, ceramic, PPF, tinting: prices and optimal service combinations for 2026.',
+  },
+
+  'ka/blog/efficiency-of-windshield-repair': {
+    title: 'რომელი საქარე მინის ნაკენჭარი შეკეთებადია?',
+    description: 'რომელი ნაკენჭარი და ბზარი ექვემდებარება შეკეთებას, რომელი აღარ, და რას უნდა ელოდოთ შედეგისგან ზომისა და მდებარეობის მიხედვით.',
+  },
+  'ru/blog/efficiency-of-windshield-repair': {
+    title: 'Какие сколы на стекле можно отремонтировать',
+    description: 'Какие сколы и трещины на лобовом стекле поддаются ремонту, а какие нет, размеры, расположение и реалистичные ожидания.',
+  },
+  'en/blog/efficiency-of-windshield-repair': {
+    title: 'Which Windshield Chips Can Be Repaired?',
+    description: 'Which windshield chips and cracks can be repaired and which cannot: size, location, and realistic expectations.',
+  },
+
+  'ka/blog/engine-room-cleaning': {
+    title: 'ძრავის განყოფილების წმენდა: როდის და როგორ',
+    description: 'რამდენად ხშირად გჭირდებათ კაპოტის ქვეშ არსებული სივრცის გარეცხვა, რა არის მისი უპირატესობები, მახასიათებლები სხვადასხვა ტიპის ძრავის მქონე მანქანებისთვის',
+  },
+  'ru/blog/engine-room-cleaning': {
+    title: 'Мойка двигателя и подкапотного пространства: когда нужна',
+    description: 'Зачем мыть подкапотное пространство, как часто это делать и на что обратить внимание, чтобы не повредить электронику.',
+  },
+  'en/blog/engine-room-cleaning': {
+    title: 'Engine Bay Cleaning: When and How to Do It',
+    description: 'Why clean your engine bay, how often to do it, and what to avoid so you don',
+  },
+
+  'ka/blog/errors-to-find': {
+    title: 'რას აჩვენებს კომპიუტერული დიაგნოსტიკა',
+    description: 'რა პრობლემებს აჩვენებს კომპიუტერული დიაგნოსტიკა, რომელი შეცდომებია კრიტიკული და რას გეუბნება მათი სწორად წაკითხვა.',
+  },
+  'ru/blog/errors-to-find': {
+    title: 'Что показывает компьютерная диагностика авто',
+    description: 'Какие неисправности выявляет компьютерная диагностика: двигатель, трансмиссия, электроника, датчики и системы безопасности.',
+  },
+  'en/blog/errors-to-find': {
+    title: 'What Car Computer Diagnostics Can Detect',
+    description: 'What a diagnostic scan detects: engine, transmission, electronics, sensor, and safety system faults explained.',
+  },
+
+  'ka/blog/headlight-polishing': {
+    title: 'ფარების პოლირება: როდის მუშაობს და რატომ',
+    description: 'შეიტყვეთ მეტი ფარების გაპრიალების თანამედროვე ტექნიკის, ფარების გაპრიალების მიზეზებისა და გაპრიალების შემდეგ მიღებული სარგებელის შესახებ.',
+  },
+  'ru/blog/headlight-polishing': {
+    title: 'Полировка фар авто: когда нужна и что дает',
+    description: 'Почему тускнеют фары, какие методы полировки существуют и когда восстановление фар дешевле замены, на примерах из Тбилиси.',
+  },
+  'en/blog/headlight-polishing': {
+    title: 'Headlight Polishing: When It Works and Why',
+    description: 'Why headlights get cloudy, available polishing methods, and when restoration is cheaper than replacement: examples from Tbilisi.',
+  },
+
+  'ka/blog/hints-for-vinyl-wrapped-cars': {
+    title: 'ვინილის ფირის მოვლა: როგორ გავრეცხოთ სწორად',
+    description: 'როგორ მოვუაროთ ვინილის ფირით დაფარულ ავტომობილს: რეცხვის წესები, აკრძალული პროდუქტები და რა განსხვავებაა პრიალა და მატე ვინილის მოვლას შორის.',
+  },
+  'ru/blog/hints-for-vinyl-wrapped-cars': {
+    title: 'Уход за авто в виниловой пленке: как мыть и чистить',
+    description: 'Рекомендации по уходу за виниловой оклейкой: мойка, хранение, защита от повреждений и когда нужна замена плёнки.',
+  },
+  'en/blog/hints-for-vinyl-wrapped-cars': {
+    title: 'Vinyl Wrap Care: Cleaning and Maintenance Tips',
+    description: 'Care tips for vinyl-wrapped cars: washing, storage, damage prevention, and when the film needs replacing.',
+  },
+
+  'ru/blog/how-long-ceramic-coating-lasts': {
+    title: 'Сколько держится керамика на авто: честно и по фактам',
+    description: 'Сколько реально держится керамика на авто в условиях Грузии: срок 2–5 лет, что влияет и как продлить.',
+  },
+
+  'ka/blog/how-often-polish-car': {
+    title: 'რამდენად ხშირად უნდა დავპოლიროთ ავტომობილი?',
+    description: 'პოლირების სიხშირე სამი სცენარით: PPF-ით დაფარული, კერამიკით დაცული და დაცვის გარეშე ავტომობილებისთვის. პრაქტიკული ხარჯების ლოგიკა.',
+  },
+  'ru/blog/how-often-polish-car': {
+    title: 'Как часто нужно полировать автомобиль',
+    description: 'Как часто нужно полировать автомобиль: с защитной плёнкой, с керамикой и без покрытия, три сценария ухода.',
+  },
+  'en/blog/how-often-polish-car': {
+    title: 'How Often Should You Polish Your Car?',
+    description: 'How often to polish your car: with PPF, with ceramic coating, and without protection: three maintenance scenarios.',
+  },
+
+  'ka/blog/how-to-choose-detailing-studio': {
+    title: 'როგორ ავარჩიოთ დეტეილინგ სტუდია: 7 კრიტერიუმი',
+    description: 'დეტეილინგ სტუდიის არჩევის 7 კრიტერიუმი: გამოცდილება, მასალები, გარანტია, პორტფოლიო, პროცესის გამჭვირვალობა და რეალური ხარისხის ნიშნები.',
+  },
+  'ru/blog/how-to-choose-detailing-studio': {
+    title: 'Как выбрать детейлинг студию: 7 критериев качества',
+    description: '7 критериев выбора детейлинг-студии: на что смотреть, какие вопросы задать и как оценить качество работы.',
+  },
+  'en/blog/how-to-choose-detailing-studio': {
+    title: 'How to Choose a Detailing Studio: 7 Criteria',
+    description: '7 criteria for choosing a detailing studio: what to look for, questions to ask, and how to evaluate work quality.',
+  },
+
+  'ka/blog/interior-ceramic-coating': {
+    title: 'კერამიკა სალონისთვის: რას იცავს და რატომ',
+    description: 'სალონის კერამიკული საფარი: რომელ ზედაპირებს იცავს, რამდენ ხანს ძლებს და როდის ღირს გამოყენება.',
+  },
+  'ru/blog/interior-ceramic-coating': {
+    title: 'Керамика для салона авто: что защищает и зачем',
+    description: 'Керамическое покрытие для салона: какие поверхности защищает, сколько держится и когда стоит наносить.',
+  },
+  'en/blog/interior-ceramic-coating': {
+    title: 'Ceramic Coating for Interior: What It Protects',
+    description: 'Ceramic coating for car interiors: which surfaces it protects, how long it lasts, and when it makes sense to apply.',
+  },
+
+  'ka/blog/interior-cleaning-for-auto': {
+    title: 'სალონის ქიმწმენდა: რა შედის და როდის საჭიროა',
+    description: 'რა შედის სალონის ქიმწმენდაში, რატომ არის ის მნიშვნელოვანი კომფორტისა და ჰიგიენისთვის და როგორ შევინარჩუნოთ შედეგი უფრო დიდხანს.',
+  },
+  'ru/blog/interior-cleaning-for-auto': {
+    title: 'Химчистка салона авто: что входит и когда нужна',
+    description: 'Что входит в профессиональную химчистку салона, чем она отличается от обычной мойки и когда стоит обращаться в студию в Тбилиси.',
+  },
+  'en/blog/interior-cleaning-for-auto': {
+    title: 'Car Interior Deep Cleaning: What’s Included',
+    description: 'What professional interior cleaning includes, how it differs from a regular wash, and when it makes sense to book a studio in Tbilisi.',
+  },
+
+  'ka/blog/legal-aspects-of-tinting-in-georgia': {
+    title: 'მინების დაბურვა საქართველოში: წესები (2026)',
+    description: 'გაიგეთ, რა დონის ტონირებაა დაშვებული საქართველოში, რომელ მინებზე მოქმედებს შეზღუდვები, რა ჯარიმებია დარღვევის შემთხვევაში და რა გამონაკლისები არსებობს.',
+  },
+  'ru/blog/legal-aspects-of-tinting-in-georgia': {
+    title: 'Тонировка в Грузии: правила и ограничения (2026)',
+    description: 'Какая тонировка разрешена в Грузии: допустимые проценты по типам стёкол, штрафы за нарушение и действующие нормы.',
+  },
+  'en/blog/legal-aspects-of-tinting-in-georgia': {
+    title: 'Window Tinting in Georgia: Rules (2026)',
+    description: 'Current window tinting rules in Georgia: permitted VLT levels by glass type, fines for violations, and legal requirements.',
+  },
+
+  'ka/blog/new-car-detailing': {
+    title: 'ახალი ავტომობილი: რა გავაკეთოთ პირველ რიგში | BESTAUTO',
+    description: 'რა უნდა გააკეთოთ ახალ მანქანასთან პირველ რიგში: პოლირება, კერამიკა თუ PPF და რა არის სწორი თანმიმდევრობა თბილისში.',
+  },
+  'ru/blog/new-car-detailing': {
+    title: 'Новый автомобиль: что сделать в первую очередь | BESTAUTO',
+    description: 'Какую защиту нанести на новый автомобиль в первую очередь: порядок услуг, сроки и на чём не стоит экономить.',
+  },
+  'en/blog/new-car-detailing': {
+    title: 'New Car Detailing: What to Do First | BESTAUTO',
+    description: 'Which protection to apply to a new car first: service order, timing, and where not to cut corners.',
+  },
+
+  'ka/blog/noisemakers-and-wayouts': {
+    title: 'სალონში ხმაური: ძირითადი მიზეზები და გამოსავალი',
+    description: 'გაიგეთ, საიდან მოდის სალონის ხმაური, რომელი ზონების დამუშავება იძლევა ყველაზე მეტ ეფექტს და როგორ უმჯობესდება კომფორტი ხმის იზოლაციის შემდეგ.',
+  },
+  'ru/blog/noisemakers-and-wayouts': {
+    title: 'Шум в салоне авто: основные источники и как убрать',
+    description: 'Откуда берётся шум в салоне, какие зоны обрабатывать в первую очередь и каких результатов ожидать после шумоизоляции.',
+  },
+  'en/blog/noisemakers-and-wayouts': {
+    title: 'Car Cabin Noise: Top Sources and Fixes',
+    description: 'Where cabin noise comes from, which zones to treat first, and what results to expect after soundproofing.',
+  },
+
+  'ka/blog/polishing-after-repair': {
+    title: 'პოლირება შეკეთების შემდეგ: როდის შეიძლება',
+    description: 'რატომ არის საჭირო პოლირება კუზოვის შეკეთების შემდეგ, რა ეტაპებს მოიცავს და როგორ აღდგება ქარხნული ბზინვარება.',
+  },
+  'ru/blog/polishing-after-repair': {
+    title: 'Полировка после ремонта кузова: когда можно делать',
+    description: 'Когда нужна полировка после кузовного ремонта, какие этапы включает и как она возвращает заводской блеск лакокрасочному покрытию.',
+  },
+  'en/blog/polishing-after-repair': {
+    title: 'Polishing After Body Repair: When to Do It',
+    description: 'When and why paint correction is needed after body repair: what defects it removes, how the process works, and what to expect.',
+  },
+
+  'ka/blog/polishing-before-after': {
+    title: 'პოლირება: ადრე და შემდეგ — რა იცვლება',
+    description: 'რეალური მაგალითები ფორმატში „მანამდე / შემდეგ“: ნაკაწრები, ჰოლოგრამები, დაჟანგვის კვალი და რა იცვლება პოლირების შემდეგ.',
+  },
+  'ru/blog/polishing-before-after': {
+    title: 'Полировка авто: до и после — что меняется на практике',
+    description: 'Фото до и после полировки: реальные примеры изменений — царапины, свилы, окисление и итоговый результат на кузове.',
+  },
+  'en/blog/polishing-before-after': {
+    title: 'Car Polishing Before vs After: What Changes',
+    description: 'Before-and-after polishing examples: real changes in scratches, swirl marks, oxidation, and gloss after proper paint correction.',
+  },
+
+  'ka/blog/polishing-before-ceramic': {
+    title: 'საჭიროა თუ არა პოლირება კერამიკამდე?',
+    description: 'საჭიროა თუ არა პოლირება კერამიკის წინ, როდის არის ის აუცილებელი და როგორ მოქმედებს ზედაპირის მომზადება საბოლოო შედეგზე.',
+  },
+  'ru/blog/polishing-before-ceramic': {
+    title: 'Нужно ли полировать авто перед керамикой?',
+    description: 'Нужна ли полировка перед нанесением керамики: когда обязательна, когда можно пропустить и как это влияет на результат.',
+  },
+  'en/blog/polishing-before-ceramic': {
+    title: 'Do You Need Polishing Before Ceramic Coating?',
+    description: 'Is polishing necessary before ceramic coating, when it is required, and how surface preparation affects the final result.',
+  },
+
+  'ka/blog/polishing-cost-tbilisi': {
+    title: 'რა ღირს ავტომობილის პოლირება თბილისში (2026)',
+    description: 'რა ღირს მსუბუქი და ღრმა პოლირება თბილისში, რა შედეგს უნდა ელოდოთ თითოეული ტიპისგან და როდის ღირს ინვესტიცია.',
+  },
+  'ru/blog/polishing-cost-tbilisi': {
+    title: 'Сколько стоит полировка авто в Тбилиси (2026)',
+    description: 'Сколько стоит полировка авто в Тбилиси: цены на мягкую и абразивную полировку и когда её выгодно комбинировать с PPF.',
+  },
+  'en/blog/polishing-cost-tbilisi': {
+    title: 'Car Polishing Cost in Tbilisi (2026)',
+    description: 'Car polishing prices in Tbilisi: soft and abrasive polishing costs, and when combining with PPF saves money.',
+  },
+
+  'ka/blog/ppf-benefits': {
+    title: 'დამცავი ფირი (PPF): ღირს თუ არა ძარის გადაკვრა?',
+    description: 'გაიგეთ, რა არის PPF ფირი, როგორ იცავს ძარას ნაკაწრებისა და ნაკენჭარებისგან, რამდენ ხანს ძლებს და რატომ ირჩევენ მას თბილისში.',
+  },
+  'ru/blog/ppf-benefits': {
+    title: 'Защитная пленка (PPF) для авто: стоит ли оклеивать',
+    description: 'Главные преимущества PPF: от чего защищает пленка, сколько служит и когда оклейка кузова действительно окупается.',
+  },
+  'en/blog/ppf-benefits': {
+    title: 'Paint Protection Film (PPF): Is It Worth It?',
+    description: 'Key advantages of PPF film: what it protects against, how long it lasts, and when the investment pays off.',
+  },
+
+  'ru/blog/ppf-film-benefits': {
+    title: 'Полиуретановая защитная пленка (PPF): преимущества',
+    description: 'Чем полиуретановая плёнка PPF лучше других методов защиты кузова: сравнение с керамикой и винилом по ключевым параметрам.',
+  },
+
+  'ka/blog/ppf-film-for-cars-protection': {
+    title: 'ძარის გადაკვრა დამცავი ფირით (PPF): რა იცავს',
+    description: 'PPF ფირის მახასიათებლები თქვენი მანქანის ძარის ჩიპებისგან დასაცავად. როგორ მიდის მომზადებისა და შეფუთვის პროცესი.',
+  },
+  'ru/blog/ppf-film-for-cars-protection': {
+    title: 'Оклейка кузова защитной пленкой (PPF): что дает',
+    description: 'Как PPF защищает кузов от сколов и царапин: процесс оклейки, выбор зон и реальный результат в условиях Тбилиси.',
+  },
+  'en/blog/ppf-film-for-cars-protection': {
+    title: 'PPF Wrap: What It Protects and How It Works',
+    description: 'How PPF protects your car from chips and scratches: installation process, zone selection, and real results in Tbilisi conditions.',
+  },
+
+  'ka/blog/protection-against-uv-rays-scratches': {
+    title: 'ძარის დაცვა: ნაკაწრები, ქვა, UV — რა მუშაობს?',
+    description: 'როგორ ცვლის ვინილის ფირი ავტომობილის იერს და რა დონის დაცვას იძლევა UV-ის, წვრილი ნაკაწრებისა და ყოველდღიური ცვეთისგან.',
+  },
+  'ru/blog/protection-against-uv-rays-scratches': {
+    title: 'Пленка для кузова: защита от сколов, царапин и UV',
+    description: 'Как виниловая плёнка защищает кузов от UV-лучей, царапин и мелких сколов, сравнение с другими способами защиты.',
+  },
+  'en/blog/protection-against-uv-rays-scratches': {
+    title: 'Paint Protection: Scratches, Chips, UV Explained',
+    description: 'How vinyl wrap shields paint from UV rays and minor scratches: compared with other protection methods.',
+  },
+
+  'ka/blog/replace-or-repair': {
+    title: 'საქარე მინა: შეკეთება თუ შეცვლა? როდის რომელი',
+    description: 'გაიგეთ, როდის შეგიძლიათ ისარგებლოთ მინის შეკეთების სერვისით და როდის არ შეგიძლიათ მის გარეშე, როგორ მუშაობს ეს პროცესი და რა სარგებელს მიიღებთ',
+  },
+  'ru/blog/replace-or-repair': {
+    title: 'Ремонт или замена лобового стекла: когда что нужно',
+    description: 'Когда скол на лобовом стекле можно отремонтировать, а когда нужна замена, критерии размера, расположения и безопасности.',
+  },
+  'en/blog/replace-or-repair': {
+    title: 'Windshield Repair or Replace: When Which One?',
+    description: 'When a windshield chip can be repaired vs. when replacement is needed: size criteria, location, and safety considerations.',
+  },
+
+  'ka/blog/service-on-ppf-wrapped-car': {
+    title: 'დამცავი ფირის (PPF) მოვლა: როგორ ვრეცხოთ',
+    description: 'როგორ მოვუაროთ PPF ფირით დაფარულ ავტომობილს: რეცხვა, აკრძალული პროდუქტები და წესები, რომლებიც ფირს მეტხანს შეინარჩუნებს.',
+  },
+  'ru/blog/service-on-ppf-wrapped-car': {
+    title: 'Уход за авто с защитной пленкой (PPF): как мыть',
+    description: 'Как правильно мыть и обслуживать автомобиль с PPF, чтобы сохранить защитные свойства плёнки на весь срок службы.',
+  },
+  'en/blog/service-on-ppf-wrapped-car': {
+    title: 'PPF Care: How to Wash and Maintain It',
+    description: 'How to properly wash and maintain a PPF-wrapped car to preserve its protective properties for the full service life.',
+  },
+
+  'ka/blog/soft-vs-abrasive-polishing': {
+    title: 'რბილი თუ ღრმა პოლირება: რა განსხვავებაა',
+    description: 'მსუბუქი და ღრმა პოლირების განსხვავება: როდის რომელია საჭირო, რამდენად ინტენსიურია კორექცია და რა დაცვა სჭირდება შედეგის შესანარჩუნებლად.',
+  },
+  'ru/blog/soft-vs-abrasive-polishing': {
+    title: 'Мягкая или глубокая полировка: в чем разница',
+    description: 'Мягкая или глубокая полировка: чем отличаются, сколько лака снимают и какой вариант подходит автомобилюмобилю.',
+  },
+  'en/blog/soft-vs-abrasive-polishing': {
+    title: 'Light vs Heavy Polishing: What’s the Difference?',
+    description: 'Soft vs. deep polishing: differences, how much clear coat each removes, and which option suits your car.',
+  },
+
+  'ka/blog/soundproofing-process': {
+    title: 'ხმის იზოლაცია: როგორ კეთდება, ეტაპებად',
+    description: 'როგორ მიმდინარეობს ავტომობილის ხმის იზოლაცია ეტაპობრივად: დაშლა, მასალების მონტაჟი, აწყობა და შედეგის შემოწმება.',
+  },
+  'ru/blog/soundproofing-process': {
+    title: 'Как делают шумоизоляцию авто: этапы работ',
+    description: 'Как проходит шумоизоляция автомобиля шаг за шагом: разборка, укладка материалов, сборка и проверка результата.',
+  },
+
+  'ka/blog/strength-and-useful-life-of-ppf': {
+    title: 'რამდენ ხანს ძლებს დამცავი ფირი (PPF)?',
+    description: 'რამდენ ხანს ძლებს PPF ფირი პრაქტიკაში, რა ფაქტორები მოქმედებს მის რესურსზე საქართველოში და როდის ღირს მისი შეცვლა.',
+  },
+  'ru/blog/strength-and-useful-life-of-ppf': {
+    title: 'Сколько служит защитная пленка (PPF) на авто',
+    description: 'Как долго служит PPF на автомобиле, от чего зависит срок службы и когда пора менять плёнку, данные по Грузии.',
+  },
+  'en/blog/strength-and-useful-life-of-ppf': {
+    title: 'How Long Does PPF Last? Durability Explained',
+    description: 'How long PPF lasts on a car, what affects its lifespan in Georgia, and when it makes sense to replace worn film.',
+  },
+
+  'ka/blog/summer-car-care-georgia': {
+    title: 'ავტომობილი ზაფხულისთვის: ჩეკლისტი და დაცვა',
+    description: 'საქართველოს ზაფხული ავტომობილს ერთდროულად უქმნის რამდენიმე რისკს: ძლიერი UV, სიცხე, ბიტუმი, მწერები და ზღვის მარილი.',
+  },
+  'en/blog/summer-car-care-georgia': {
+    title: 'Summer Car Care in Georgia: Checklist',
+    description: 'Summer car care checklist for Georgia: protecting paint, interior, and glass from heat, dust, and mountain roads.',
+  },
+
   'ka/blog/technology-and-process': {
-    title: '\u10e0\u10dd\u10d2\u10dd\u10e0 \u10db\u10e3\u10e8\u10d0\u10dd\u10d1\u10e1 \u10d9\u10d4\u10e0\u10d0\u10db\u10d8\u10d9\u10e3\u10da\u10d8 \u10e1\u10d0\u10e4\u10d0\u10e0\u10d8: \u10e2\u10d4\u10e5\u10dc\u10dd\u10da\u10dd\u10d2\u10d8\u10d0 \u10d3\u10d0 \u10d2\u10d0\u10db\u10dd\u10e7\u10d4\u10dc\u10d4\u10d1\u10d8\u10e1 \u10de\u10e0\u10dd\u10ea\u10d4\u10e1\u10d8',
-    ogTitle: '\u10e0\u10dd\u10d2\u10dd\u10e0 \u10db\u10e3\u10e8\u10d0\u10dd\u10d1\u10e1 \u10d9\u10d4\u10e0\u10d0\u10db\u10d8\u10d9\u10e3\u10da\u10d8 \u10e1\u10d0\u10e4\u10d0\u10e0\u10d8: \u10e2\u10d4\u10e5\u10dc\u10dd\u10da\u10dd\u10d2\u10d8\u10d0 \u10d3\u10d0 \u10d2\u10d0\u10db\u10dd\u10e7\u10d4\u10dc\u10d4\u10d1\u10d8\u10e1 \u10de\u10e0\u10dd\u10ea\u10d4\u10e1\u10d8',
+    title: 'კერამიკული დაფარვა: დადების პროცესი და ტექნოლოგია',
+    description: 'როგორ მუშაობს კერამიკული საფარი, რისგან შედგება და როგორ მიმდინარეობს მისი პროფესიონალური დატანა სტუდიაში.',
   },
+  'ru/blog/technology-and-process': {
+    title: 'Керамическое покрытие авто: технология нанесения',
+    description: 'Как работает керамическое покрытие на молекулярном уровне, из чего состоит и как проходит нанесение в студии.',
+  },
+  'en/blog/technology-and-process': {
+    title: 'Ceramic Coating: Application Process Explained',
+    description: 'How ceramic coating works at the molecular level: composition, bonding process, and professional application steps.',
+  },
+
+  'ka/blog/top-11-reasons': {
+    title: 'მინების დაბურვის 11 უპირატესობა',
+    description: '11 მიზეზი, რატომ ღირს ავტომობილის მინების ტონირება: სალონის დაცვა, ნაკლები სიცხე, მეტი კომფორტი და უკეთესი იერი.',
+  },
+  'ru/blog/top-11-reasons': {
+    title: 'Преимущества тонировки стекол автомобиля: 11 причин',
+    description: '11 причин затонировать стёкла автомобиля: от защиты салона до комфорта вождения в жарком климате Грузии.',
+  },
+  'en/blog/top-11-reasons': {
+    title: '11 Benefits of Window Tinting',
+    description: '11 practical reasons to tint your car windows: from interior protection to driving comfort in Georgia',
+  },
+
+  'ka/blog/top-5-car-paint-protection': {
+    title: 'ტოპ 5 ძარის დაცვის ვარიანტი საქართველოში',
+    description: 'ძარის დაცვის 5 მეთოდის შედარება: ფასი, რეალური გამძლეობა, მექანიკური დაცვა და მოვლის სირთულე საქართველოში.',
+  },
+  'ru/blog/top-5-car-paint-protection': {
+    title: 'Топ-5 защиты кузова авто в Грузии: рейтинг',
+    description: 'Рейтинг способов защиты кузова в Грузии: PPF, керамика, винил и воск, сравнение по цене, сроку и эффективности.',
+  },
+  'en/blog/top-5-car-paint-protection': {
+    title: 'Top 5 Paint Protection Options in Georgia',
+    description: 'Ranking paint protection methods in Georgia: PPF, ceramic, vinyl, wax: compared by price, durability, and effectiveness.',
+  },
+
+  'ka/blog/vehicle-tinting-techniques': {
+    title: 'მინების დაბურვა: ტიპები, ტექნიკები, განსხვავებები',
+    description: 'გაიგეთ, როგორ მიმდინარეობს მანქანის მინების ტონირება, რა ტიპის ფირი არსებობს და რას უნდა მიაქციოთ ყურადღება მონტაჟის შემდეგ.',
+  },
+  'ru/blog/vehicle-tinting-techniques': {
+    title: 'Тонировка стекол авто: виды, техники, отличия',
+    description: 'Основные техники тонировки стёкол: виды плёнок, методы нанесения и на что обратить внимание при выборе в Грузии.',
+  },
+  'en/blog/vehicle-tinting-techniques': {
+    title: 'Window Tinting Techniques: Types and Differences',
+    description: 'Main window tinting techniques: film types, application methods, and what to consider when choosing in Georgia.',
+  },
+
+  'ka/blog/why-soundproof-car': {
+    title: 'რატომ სჭირდება ავტომობილს ხმის იზოლაცია?',
+    description: 'შეიტყვეთ მეტი ხმაურის გავლენის შესახებ ჯანმრთელობაზე, ხმაურის ტიპურ წყაროებზე, თქვენი მანქანის ხმის იზოლაციის უპირატესობებზე.',
+  },
+  'ru/blog/why-soundproof-car': {
+    title: 'Шумоизоляция авто: зачем она нужна и что дает',
+    description: 'Зачем нужна шумоизоляция автомобиля: влияние шума на комфорт, типичные источники и что меняется после обработки.',
+  },
+  'en/blog/why-soundproof-car': {
+    title: 'Why Soundproof a Car? Benefits Explained',
+    description: 'Why car soundproofing matters: how noise affects comfort, common noise sources, and what changes after professional treatment.',
+  },
+
+  'ka/blog/why-use-car-diagnostic-test': {
+    title: 'რატომ არის საჭირო კომპიუტერული დიაგნოსტიკა',
+    description: 'რა არის ავტომობილის კომპიუტერული დიაგნოსტიკა? რა ინფორმაციას იღებს მანქანის მფლობელი თავისი მანქანის შესახებ კომპიუტერული დიაგნოსტიკის პროცედურის შემდეგ?',
+  },
+  'ru/blog/why-use-car-diagnostic-test': {
+    title: 'Зачем нужна компьютерная диагностика авто',
+    description: 'Что показывает компьютерная диагностика авто, когда её делать и какие проблемы она выявляет до того, как станут критичными.',
+  },
+  'en/blog/why-use-car-diagnostic-test': {
+    title: 'Why Car Computer Diagnostics Matter',
+    description: 'What a car diagnostic test reveals, when to schedule one, and what issues it catches before they become critical.',
+  },
+
+  'ka/blog/window-tinting-care': {
+    title: 'როგორ მოვუაროთ დაბურულ მინებს',
+    description: 'როგორ მოვუაროთ დაბურულ მინებს: სწორი წმენდა, რა არ უნდა გამოიყენოთ და როგორ გავახანგრძლივოთ ტონირების რესურსი.',
+  },
+  'ru/blog/window-tinting-care': {
+    title: 'Как ухаживать за тонированными стеклами',
+    description: 'Как ухаживать за тонированными стёклами: правильная мойка, чего избегать и как продлить срок службы тонировки.',
+  },
+  'en/blog/window-tinting-care': {
+    title: 'How to Care for Tinted Windows',
+    description: 'How to care for tinted windows: proper cleaning, what to avoid, and how to extend the lifespan of your tint.',
+  },
+
+  'ka/blog/windshield-repair-benefits': {
+    title: 'რატომ ჯობს ნაკენჭარის დროული შეკეთება',
+    description: 'რატომ ჯობს ნაკენჭარის დროული შეკეთება: ნაკლები ხარჯი, სწრაფი შედეგი და ქარხნული მინის შენარჩუნების მეტი შანსი.',
+  },
+  'ru/blog/windshield-repair-benefits': {
+    title: 'Почему лучше отремонтировать скол сразу',
+    description: 'Преимущества ремонта сколов перед заменой стекла: экономия, скорость, сохранение заводской герметичности.',
+  },
+  'en/blog/windshield-repair-benefits': {
+    title: 'Why Repair a Windshield Chip Early',
+    description: 'Advantages of chip repair over windshield replacement: cost savings, speed, and preserving factory seal integrity.',
+  },
+
 };

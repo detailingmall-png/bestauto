@@ -6,7 +6,7 @@
  * Injected inline in <head> to be available before blocks JS executes.
  */
 
-export const POPUP_SHIM = `<style>.t-popup .t-slds__item{width:100%!important;float:none!important}.t-popup .t-slds__item:not(.t-slds__item_active){display:none}.t746__imgwrapper{position:relative;overflow:hidden}.t746__separator{padding-bottom:65.12%}</style>
+export const POPUP_SHIM = `<style>.t-popup .t-slds__item{width:100%!important;float:none!important}.t-popup .t-slds__item:not(.t-slds__item_active){display:none}.t746__imgwrapper{position:relative;overflow:hidden}.t746__separator{padding-bottom:65.12%}.t-popup .t-slds__bgimg{background-size:contain!important;background-repeat:no-repeat;background-position:center!important;background-color:#000}</style>
 <script>
 function t_popup__showPopup(t){if(!t)return;t.style.display='block';setTimeout(function(){t.focus();var c=t.querySelector('.t-popup__container');if(c)c.classList.add('t-popup__container-animated');t.classList.add('t-popup_show');document.body.classList.add('t-body_popupshowed');t_popup__trapFocus(t)},50)}
 function t_popup__closePopup(t){document.body.classList.remove('t-body_popupshowed');t.classList.remove('t-popup_show');var c=t.querySelector('.t-popup__container');if(c){c.style.removeProperty('transition');c.classList.remove('t-popup__container_no-transform')}setTimeout(function(){document.querySelectorAll('.t-popup:not(.t-popup_show)').forEach(function(p){p.style.display='none'})},300)}
