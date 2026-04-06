@@ -38,11 +38,11 @@
     // --- Phone calls ---
     var telLink = e.target.closest('a[href^="tel:"]');
     if (telLink) {
-      e.preventDefault();
       var phone = telLink.getAttribute('href');
       var evt = phone.indexOf('299') !== -1 ? 'phone_call_299' : 'phone_call_199';
       send(evt, { link_url: phone });
-      setTimeout(function () { window.location.href = phone; }, 500);
+      // Don't block — let the browser handle tel: natively (0ms INP).
+      // Analytics fires async; preventDefault + 500ms setTimeout is not needed.
       return;
     }
 

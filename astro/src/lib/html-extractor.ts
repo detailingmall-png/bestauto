@@ -11,8 +11,17 @@ import { renderBlogFaqAccordion, type FaqAccordionItem } from './faq-accordion';
 import { POPUP_SHIM } from './popup-shim';
 import { SLIDER_SHIM } from './slider-shim';
 
-/** Delay (ms) before loading deferred analytics and non-critical scripts. */
-const DEFER_DELAY_MS = 7000;
+/**
+ * Staggered delays (ms) for deferred loaders to avoid a burst of main-thread
+ * work that ruins INP on mobile (mobile CPU is 3-5x slower than desktop).
+ * Three separate timeouts ensure scripts load sequentially, not all at 7s.
+ */
+const DEFER_HEAD_ANALYTICS_MS = 2000;   // Light inline GTM/gtag stubs
+const DEFER_SCRIPTS_MS = 5000;          // Tilda forms, animation, masonry, etc.
+const DEFER_EXT_ANALYTICS_MS = 9000;    // Heavy GA4, Yandex Metrika, FB Pixel
+
+/** requestIdleCallback polyfill snippet (for inline script injection). */
+const RIC_POLYFILL = `var ric=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(f,o){setTimeout(f,o&&o.timeout||0)};`;
 
 /** Max iterations when removing multiple blocks matching a search term. */
 const MAX_BLOCK_REMOVAL_ITERATIONS = 20;
@@ -527,7 +536,7 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const loader = `<script>(function(){function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}setTimeout(run,${DEFER_DELAY_MS});})();</script>`;
+  const loader = `<script>(function(){${RIC_POLYFILL}function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}ric(run,{timeout:${DEFER_HEAD_ANALYTICS_MS}});})();</script>`;
 
   return processed + loader;
 }
@@ -579,7 +588,7 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){function load(){${srcPart}${inlinePart}}setTimeout(load,${DEFER_DELAY_MS});})();</script>`;
+  const loader = `<script>(function(){${RIC_POLYFILL}function load(){${srcPart}${inlinePart}}ric(load,{timeout:${DEFER_EXT_ANALYTICS_MS}});})();</script>`;
 
   return processed + loader;
 }
@@ -691,7 +700,9 @@ export function deferNonCriticalScripts(content: string): string {
 
   if (deferred.length === 0) return content;
 
-  const loader = `<script>(function(){function load(){${JSON.stringify(deferred)}.forEach(function(s){var el=document.createElement('script');el.async=true;el.src=s;document.head.appendChild(el);});}setTimeout(load,${DEFER_DELAY_MS});})();</script>`;
+  // Load scripts one at a time with requestIdleCallback between each to avoid
+  // a burst of main-thread work that ruins INP on mobile devices.
+  const loader = `<script>(function(){${RIC_POLYFILL}function seq(u,i){if(i>=u.length)return;var el=document.createElement('script');el.async=true;el.src=u[i];el.onload=el.onerror=function(){ric(function(){seq(u,i+1)},{timeout:200})};document.head.appendChild(el)}ric(function(){seq(${JSON.stringify(deferred)},0)},{timeout:${DEFER_SCRIPTS_MS}});})();</script>`;
 
   return processed + loader;
 }

@@ -399,12 +399,17 @@ const JS = `
     track.scrollTo({ left: page * getVisible() * cardWidth, behavior: 'smooth' });
   }
 
+  var scrollRaf = 0;
   track.addEventListener('scroll', function() {
-    var cardWidth = cards[0].offsetWidth + 16;
-    var page = Math.round(track.scrollLeft / (getVisible() * cardWidth));
-    var dots = dotsContainer.querySelectorAll('button');
-    dots.forEach(function(d, i) { d.className = i === page ? 'active' : ''; });
-  });
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(function() {
+      scrollRaf = 0;
+      var cardWidth = cards[0].offsetWidth + 16;
+      var page = Math.round(track.scrollLeft / (getVisible() * cardWidth));
+      var dots = dotsContainer.querySelectorAll('button');
+      dots.forEach(function(d, i) { d.className = i === page ? 'active' : ''; });
+    });
+  }, { passive: true });
 
   if (leftBtn) leftBtn.addEventListener('click', function() {
     var cardWidth = cards[0].offsetWidth + 16;
