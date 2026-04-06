@@ -36,7 +36,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
       en: 'Color change — thousands of colors & finishes to choose from',
     },
     minPrice: '300',
-    image: '/images/tild3866-3763-4039-b065-306366336264__noroot.webp',
+    image: '/images/vinyl_card_urus.webp',
   },
   // Tier 2 — compact cards
   {
