@@ -476,6 +476,46 @@ html {
 }
 
 /* ========================================================================
+   Sticky mobile CTA button
+   ======================================================================== */
+.ba-sticky-cta {
+  display: none;
+}
+@media (max-width: 640px) {
+  .ba-sticky-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--ba-z-overlay);
+    padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 60%, transparent);
+    pointer-events: none;
+  }
+  .ba-sticky-cta__link {
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    background-color: var(--ba-color-accent);
+    color: #000;
+    font-family: var(--ba-font-family);
+    font-size: 16px;
+    font-weight: var(--ba-font-weight-semibold);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color var(--ba-duration-fast) var(--ba-ease-default);
+  }
+  .ba-sticky-cta__link:active {
+    background-color: var(--ba-color-accent-hover);
+  }
+}
+
+/* ========================================================================
    Hero video overlay (injected into Tilda Zero Block t396)
    ======================================================================== */
 /* Video CSS is injected inline per-page by hero-block.ts.

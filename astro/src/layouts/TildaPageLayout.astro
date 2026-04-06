@@ -35,6 +35,12 @@ const {
   bodyClass = 't-body',
   lang = 'ka',
 } = Astro.props;
+
+const STICKY_CTA_TEXT: Record<string, string> = {
+  ru: 'Записаться на бесплатный осмотр',
+  en: 'Book a Free Inspection',
+  ka: 'ჩაეწერეთ უფასო დათვალიერებაზე',
+};
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -58,6 +64,7 @@ const {
   <Fragment set:html={mainContent} />
 </div>
 <!--/allrecords-->
+<div class="ba-sticky-cta" aria-label="CTA"><a class="ba-sticky-cta__link" href="#contacts">{STICKY_CTA_TEXT[lang] ?? STICKY_CTA_TEXT.ka}</a></div>
 <script src="/js/tracking.js" defer></script>
 </body>
 </html>
