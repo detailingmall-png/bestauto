@@ -267,11 +267,15 @@ export function inlineAllPageCss(head: string): string {
   );
 
   // Find and inline all remaining CSS link tags (blocking, preload, or print patterns)
+  // Skip tilda-forms CSS (43KB) — forms are below-fold, don't need for initial render.
+  // It stays as async <link> and loads when forms script fires at 5s.
   result = result.replace(
     /<link\b[^>]*href="(\/css\/[^"?]+)[^"]*"[^>]*>/g,
     (match, cssRelPath) => {
       // Skip non-stylesheet links (e.g. preconnect, dns-prefetch)
       if (!match.includes('stylesheet') && !match.includes('as="style"')) return match;
+      // Skip forms CSS — below-fold, 43KB, not needed for initial render
+      if ((cssRelPath as string).includes('tilda-forms')) return match;
 
       const cssAbsPath = join(process.cwd(), 'public', cssRelPath);
       try {
@@ -1538,9 +1542,14 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Remove Tilda first-visit fade-in (sets opacity:0 on .t-records → NO_LCP)
   processedHead = removeTildaFadeInScript(processedHead);
 
-  // Inline ALL CSS on every page to eliminate render-blocking requests and
+  // Strip CSS for replaced scripts BEFORE inlining (they're still <link> tags here).
+  // Must happen before inlineAllPageCss() which converts <link> to <style>.
+  processedHead = removeTildaZoomCss(processedHead);
+  processedHead = removeTildaSldsCss(processedHead);
+  processedHead = removeDuplicateFontsCss(processedHead);
+
+  // Inline remaining CSS to eliminate render-blocking requests and
   // async style recalculations that cause late LCP re-paint.
-  // Overhead: +12KB gzip — less than one JPEG, saves 6+ HTTP requests.
   processedHead = inlineBlocksPageCss(processedHead);
   processedHead = inlineAllPageCss(processedHead);
 
@@ -1563,11 +1572,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   processedHead = removeHammerScript(processedHead);
   processedHead = removeTildaVideoScript(processedHead);
   processedHead = removeTildaCoverScript(processedHead);
-  // Strip CSS for replaced scripts (styles are inline in shims/gallery)
-  processedHead = removeTildaZoomCss(processedHead);
-  processedHead = removeTildaSldsCss(processedHead);
-  // fonts-tildasans.css is duplicate — @font-face already inlined via inlineCriticalCss()
-  processedHead = removeDuplicateFontsCss(processedHead);
+  // Note: CSS removal for zoom/slds/fonts moved BEFORE inlineAllPageCss() above.
   // Inject shims before closing </head> (parsed before async blocks JS executes)
   processedHead += POPUP_SHIM + SLIDER_SHIM;
 
