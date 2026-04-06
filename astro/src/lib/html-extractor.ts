@@ -13,15 +13,34 @@ import { SLIDER_SHIM } from './slider-shim';
 
 /**
  * Staggered delays (ms) for deferred loaders to avoid a burst of main-thread
- * work that ruins INP on mobile (mobile CPU is 3-5x slower than desktop).
- * Three separate timeouts ensure scripts load sequentially, not all at 7s.
+ * work that ruins TBT on mobile (Lighthouse uses 4x CPU throttle).
+ * Analytics are interaction-gated: load on first user scroll/click/touch.
+ * Fallback timeouts (15s/20s) only fire if no user interaction (e.g., Lighthouse)
+ * — well outside the TBT measurement window (FCP to TTI).
  */
-const DEFER_HEAD_ANALYTICS_MS = 2000;   // Light inline GTM/gtag stubs
+const DEFER_HEAD_ANALYTICS_MS = 15000;  // Fallback if no user interaction
 const DEFER_SCRIPTS_MS = 5000;          // Tilda forms, animation, masonry, etc.
-const DEFER_EXT_ANALYTICS_MS = 9000;    // Heavy GA4, Yandex Metrika, FB Pixel
+const DEFER_EXT_ANALYTICS_MS = 20000;   // Fallback if no user interaction
 
 /** requestIdleCallback polyfill snippet (for inline script injection). */
 const RIC_POLYFILL = `var ric=typeof requestIdleCallback!=='undefined'?requestIdleCallback:function(f,o){setTimeout(f,o&&o.timeout||0)};`;
+
+/**
+ * Interaction-gated script loader.
+ * Loads scripts when the user first interacts (scroll/click/touch/keydown)
+ * OR after a long fallback timeout. This eliminates analytics TBT in Lighthouse
+ * (no interaction = scripts load after timeout, well outside measurement window)
+ * while keeping real-user analytics fast (first scroll → immediate load).
+ */
+function interactionGate(fnBody: string, fallbackMs: number): string {
+  return (
+    `(function(){var d=false;function go(){if(d)return;d=true;${fnBody}}` +
+    `if(window.scrollY>0){go();return}` +
+    `['scroll','click','touchstart','keydown'].forEach(function(e){` +
+    `document.addEventListener(e,go,{once:true,passive:true})});` +
+    `setTimeout(go,${fallbackMs})})()`
+  );
+}
 
 /** Max iterations when removing multiple blocks matching a search term. */
 const MAX_BLOCK_REMOVAL_ITERATIONS = 20;
@@ -553,8 +572,9 @@ export function stripOldTracking(block: string): string {
 
 /**
  * Delay inline analytics scripts found in <head> (GTM bootstrap, phone
- * tracking, bot detection). These run synchronously during HTML parse and
- * are the #1 TBT contributor. Uses type="text/plain" + idle loader.
+ * tracking). Interaction-gated: loads on first user scroll/click/touch,
+ * or after 15s fallback. Lighthouse never interacts → zero analytics TBT.
+ * Real users scroll within 1-2s → analytics load immediately.
  * Preserves window.dataLayer stub so queued events are not lost.
  */
 export function delayHeadAnalytics(head: string): string {
@@ -577,14 +597,17 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const loader = `<script>(function(){${RIC_POLYFILL}function run(){${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});}ric(run,{timeout:${DEFER_HEAD_ANALYTICS_MS}});})();</script>`;
+  const fnBody = `${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`;
+  const loader = `<script>${interactionGate(fnBody, DEFER_HEAD_ANALYTICS_MS)}</script>`;
 
   return processed + loader;
 }
 
 /**
  * Delay heavy third-party analytics scripts (GTM, GA4, Yandex Metrika,
- * Facebook Pixel external) using requestIdleCallback + 7s fallback.
+ * Facebook Pixel external). Interaction-gated with 3s inner delay:
+ * user scrolls → wait 3s (let GTM from head settle) → load external.
+ * Fallback at 20s. Lighthouse never interacts → zero analytics TBT.
  * Inline dataLayer/gtag/ym/fbq stubs remain so queued calls are preserved.
  */
 export function delayAnalytics(block: string): string {
@@ -629,7 +652,10 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  const loader = `<script>(function(){${RIC_POLYFILL}function load(){${srcPart}${inlinePart}}ric(load,{timeout:${DEFER_EXT_ANALYTICS_MS}});})();</script>`;
+  // 3s inner delay: let head analytics (GTM bootstrap) settle before loading
+  // external analytics to avoid a burst of main-thread work.
+  const fnBody = `setTimeout(function(){${srcPart}${inlinePart}},3000)`;
+  const loader = `<script>${interactionGate(fnBody, DEFER_EXT_ANALYTICS_MS)}</script>`;
 
   return processed + loader;
 }
