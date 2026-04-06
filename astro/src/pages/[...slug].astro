@@ -729,6 +729,22 @@ if (baseSlug === '') {
   }
 }
 
+// PPF page: replace old ba-reels-grid video block with unified video gallery
+if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('ba-reels-grid')) {
+  // The reels block sits inside a t-rec div containing 'ba-reels-grid'
+  const reelsIdx = mainContent.indexOf('ba-reels-grid');
+  const reelsBlockStart = mainContent.lastIndexOf('<div class="r t-rec', reelsIdx);
+  if (reelsBlockStart >= 0) {
+    // Find the end of this t-rec block (next t-rec sibling or end)
+    const nextRecStart = mainContent.indexOf('<div class="r t-rec', reelsBlockStart + 1);
+    if (nextRecStart > reelsBlockStart) {
+      mainContent = mainContent.slice(0, reelsBlockStart)
+        + generateVideoGalleryHtml(lang)
+        + mainContent.slice(nextRecStart);
+    }
+  }
+}
+
 // Homepage: inject FAQ accordion before contacts block
 if (baseSlug === '' && mainContent.includes('id="rec2091246563"')) {
   const contactsFaqIdx = mainContent.indexOf('id="rec2091246563"');

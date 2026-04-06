@@ -12,21 +12,21 @@ interface VideoEntry {
 
 const VIDEOS: ReadonlyArray<VideoEntry> = [
   {
+    src: '/videos/ppf-reel4.mp4',
+    poster: '/videos/ppf-reel4-poster.webp',
+    label: {
+      ka: 'დეტალური მუშაობა',
+      ru: 'Детальная работа',
+      en: 'Detailed Work',
+    },
+  },
+  {
     src: '/videos/ppf-reel1.mp4',
     poster: '/videos/ppf-reel1-poster.webp',
     label: {
       ka: 'PPF ფირით დაფარვა',
       ru: 'Оклейка PPF плёнкой',
       en: 'PPF Film Installation',
-    },
-  },
-  {
-    src: '/videos/ppf-reel2.mp4',
-    poster: '/videos/ppf-reel2-poster.webp',
-    label: {
-      ka: 'კაპოტის დაცვა',
-      ru: 'Защита капота',
-      en: 'Hood Protection',
     },
   },
   {
@@ -39,12 +39,12 @@ const VIDEOS: ReadonlyArray<VideoEntry> = [
     },
   },
   {
-    src: '/videos/ppf-reel4.mp4',
-    poster: '/videos/ppf-reel4-poster.webp',
+    src: '/videos/ppf-reel2.mp4',
+    poster: '/videos/ppf-reel2-poster.webp',
     label: {
-      ka: 'დეტალური მუშაობა',
-      ru: 'Детальная работа',
-      en: 'Detailed Work',
+      ka: 'კაპოტის დაცვა',
+      ru: 'Защита капота',
+      en: 'Hood Protection',
     },
   },
 ];
@@ -55,17 +55,12 @@ const SECTION_TITLE: Readonly<Record<string, string>> = {
   en: 'Our Work Process',
 };
 
-function renderVideoCard(video: VideoEntry, lang: string): string {
-  const label = video.label[lang] ?? video.label['en'];
-
+function renderVideoCard(video: VideoEntry, _lang: string): string {
   return `<div class="ba-video__card" style="position:relative;border-radius:var(--ba-radius-lg);overflow:hidden;background:var(--ba-color-surface);aspect-ratio:9/16;">
       <video class="ba-video__player" muted loop playsinline preload="none" poster="${video.poster}" style="width:100%;height:100%;object-fit:cover;display:block;" data-src="${video.src}">
       </video>
       <div class="ba-video__overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--ba-overlay-video);transition:opacity var(--ba-duration-normal) var(--ba-ease-default);pointer-events:none;">
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" style="stroke:var(--ba-color-text-80)" stroke-width="2" fill="rgba(0,0,0,0.4)"/><path d="M19 15l14 9-14 9V15z" fill="rgba(255,255,255,0.9)"/></svg>
-      </div>
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.8));pointer-events:none;">
-        <span class="ba-video__label" style="font-family:var(--ba-font-family);font-weight:var(--ba-font-weight-semibold);color:var(--ba-color-text);">${label}</span>
       </div>
     </div>`;
 }
@@ -89,7 +84,6 @@ export function generateVideoGalleryHtml(lang: string): string {
   </div>
   <style>
     .ba-video__heading { font-size: 36px; }
-    .ba-video__label { font-size: 14px; }
     .ba-video__card { cursor: pointer; }
     .ba-video__card.is-playing .ba-video__overlay { opacity: 0; }
     @media screen and (max-width: 960px) {
@@ -99,7 +93,6 @@ export function generateVideoGalleryHtml(lang: string): string {
     @media screen and (max-width: 640px) {
       #ba-video-gallery { padding: 48px 0 !important; }
       .ba-video__heading { font-size: 28px; margin-bottom: 32px !important; }
-      .ba-video__label { font-size: 13px; }
       .ba-video__grid { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; }
     }
   </style>
