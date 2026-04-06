@@ -629,13 +629,62 @@ mainContent = mainContent.replace(
 
 // On service pages, move reviews heading + widget right after the advantages block (t502)
 if (mainContent.includes('data-alias-record-type="502"') && mainContent.includes('id="ba-reviews"')) {
-  // Extract reviews heading blocks (anchor t215 + heading t255 that precede the Elfsight container)
+  // Extract reviews heading blocks (anchor t215 + heading t255 that precede the ba-reviews widget).
+  // Search near ba-reviews to avoid picking up stray navigation anchors elsewhere on the page
+  // (some pages have a second name="reviews" anchor that is just a nav link, not the heading).
   let reviewsHeading = '';
-  const reviewsAnchorRecId = findRecIdContaining(mainContent, 'name="reviews"');
+  const baReviewsIdx = mainContent.indexOf('id="ba-reviews"');
+  // Find the name="reviews" anchor closest to (but before) ba-reviews.
+  // Some pages have multiple anchors; we want the one adjacent to the heading, not a stray nav link.
+  let reviewsAnchorRecId: string | null = null;
+  {
+    let searchFrom = 0;
+    let lastAnchorPos = -1;
+    while (true) {
+      const pos = mainContent.indexOf('name="reviews"', searchFrom);
+      if (pos < 0 || pos >= baReviewsIdx) break;
+      lastAnchorPos = pos;
+      searchFrom = pos + 1;
+    }
+    if (lastAnchorPos >= 0) {
+      reviewsAnchorRecId = findRecIdContaining(mainContent, 'name="reviews"', lastAnchorPos);
+    }
+  }
   if (reviewsAnchorRecId) {
-    const headingRecId = findNthRecIdAfter(mainContent, reviewsAnchorRecId, 1);
+    // Find the t255 heading block after the reviews anchor (not just the next block,
+    // because some pages have intervening anchors like name="about" between them).
+    let headingRecId: string | null = null;
+    {
+      const allIds = [...mainContent.matchAll(/id="(rec\d+)"/g)].map(m => m[1]);
+      const anchorIdx = allIds.indexOf(reviewsAnchorRecId);
+      for (let i = anchorIdx + 1; i < Math.min(anchorIdx + 5, allIds.length); i++) {
+        const blockStart = mainContent.indexOf(`id="${allIds[i]}"`);
+        const blockSnippet = mainContent.slice(blockStart, blockStart + 300);
+        if (blockSnippet.includes('data-record-type="255"')) {
+          headingRecId = allIds[i];
+          break;
+        }
+      }
+    }
     if (headingRecId) {
       [reviewsHeading, mainContent] = extractAndRemoveBlockRange(mainContent, reviewsAnchorRecId, headingRecId);
+    }
+  }
+  // Fallback: if no heading found via anchor, search for the t225 heading block by content.
+  // This handles cases where the heading was relocated by earlier extraction steps.
+  if (!reviewsHeading) {
+    const headingPatterns = ['Real Reviews', 'Реальные отзывы', 'მომხმარებლების', 'კლიენტების რეალური'];
+    for (const pat of headingPatterns) {
+      const patIdx = mainContent.indexOf(pat);
+      if (patIdx < 0) continue;
+      // Look back up to 800 chars (t225 blocks have deep nesting, rec ID can be 500+ chars before text)
+      const before = mainContent.slice(Math.max(0, patIdx - 800), patIdx);
+      const matches = [...before.matchAll(/id="(rec\d+)"/g)];
+      const headingId = matches.length > 0 ? matches[matches.length - 1][1] : null;
+      if (headingId) {
+        [reviewsHeading, mainContent] = extractAndRemoveBlockRange(mainContent, headingId, headingId);
+        break;
+      }
     }
   }
   // Extract ba-reviews section
