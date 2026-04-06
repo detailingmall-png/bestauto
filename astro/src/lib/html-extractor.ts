@@ -1698,8 +1698,12 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  // Fix broken #form anchors → #contacts (polishing, ceramiccoating pages)
-  const fixedAnchors = rawMainContent.replace(/href="#form"/g, 'href="#contacts"');
+  // Fix broken anchors → #contacts (polishing, ceramiccoating pages)
+  // 1) #form anchors (RU/EN pages)
+  // 2) wa.me links inside service card buttons (KA pages — cardbtn IDs)
+  const fixedAnchors = rawMainContent
+    .replace(/href="#form"/g, 'href="#contacts"')
+    .replace(/href="https:\/\/wa\.me\/\d+"([^>]*id="cardbtn)/g, 'href="#contacts"$1');
   const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanCtaBlocks(fixedAnchors))))))), lang, slug)));
 
   return {
