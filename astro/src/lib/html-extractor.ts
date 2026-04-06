@@ -927,6 +927,9 @@ export function removeClientSeoScripts(content: string): string {
   return content
     .replace(/<!-- HREFLANG: Dynamic language alternate links -->\s*<script>[\s\S]*?<\/script>/g, '')
     .replace(/<!-- Schema\.org: Dynamic Service Schema -->\s*<script>[\s\S]*?<\/script>/g, '')
+    // Remove old Tilda @graph AutoRepair schema — replaced by LocalBusiness +
+    // Organization schemas in seo.ts (GSC: "Invalid object type for <parent_node>")
+    .replace(/<!-- Schema\.org: AutoRepair -->\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
     .replace(/<link\s+rel="canonical"[^>]*>/g, '');
 }
 

@@ -179,8 +179,10 @@ const FAQ_SECTION_TITLE: Readonly<Record<string, string>> = {
 };
 if (SERVICE_SLUGS.has(baseSlug)) {
   const serviceFaqs = SERVICE_FAQS[baseSlug];
+  // Always remove Tilda-embedded FAQPage JSON-LD to prevent duplicates with
+  // generateServiceFaqSchema() in seoHead (GSC: "Duplicate field FAQPage")
+  injectedHtml = removeTildaFaqSchema(injectedHtml);
   if (serviceFaqs && injectedHtml.includes('data-record-type="585"')) {
-    injectedHtml = removeTildaFaqSchema(injectedHtml);
     const faqItems = resolveFaqItems(serviceFaqs, lang);
     const faqTitle = FAQ_SECTION_TITLE[lang] ?? FAQ_SECTION_TITLE['en'];
     const faqAccordionHtml = renderFaqAccordion(faqItems, faqTitle, {
