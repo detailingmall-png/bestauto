@@ -89,7 +89,7 @@ function buildGalleryHtml(
   if (includeGlobals) parts.push(GALLERY_STYLE);
   parts.push(
     `<div class="ba-gallery">`,
-    `<div class="ba-gallery__grid"${images.length <= 5 ? ' style="grid-template-columns:repeat(auto-fit,440px)"' : ''}>${gridItems}</div>`,
+    `<div class="ba-gallery__grid"${images.length <= 5 ? ` style="grid-template-columns:repeat(${images.length},1fr)"` : ''}>${gridItems}</div>`,
     `<div class="ba-slider" style="display:none">`,
     `<div class="ba-slider__inner"><div class="ba-slider__track">${sliderSlides}</div></div>`,
     `<div class="ba-slider__dots" style="display:none">${sliderDots}</div>`,
