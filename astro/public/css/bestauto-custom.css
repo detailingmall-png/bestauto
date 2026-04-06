@@ -276,6 +276,15 @@ html {
   }
 }
 
+/* -- Desktop wide (>=1200px): left-align hero content (RU was centered). -- */
+@media screen and (min-width: 1200px) {
+  .t396 .tn-elem[data-elem-id="1470209944682"],
+  .t396 .tn-elem[data-elem-id="1684511382614"],
+  .t396 .tn-elem[data-elem-id="1473846124811"] {
+    left: calc(50% - 588px) !important;
+  }
+}
+
 /* -- Mobile (<=639px) -- */
 @media screen and (max-width: 639px) {
   .t396 .tn-elem[data-elem-id="1470209944682"] {
