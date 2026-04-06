@@ -307,9 +307,12 @@ export function addResourceHints(head: string, mainContent: string, isHomepage =
 
   let heroPreload: string;
   if (isHomepage) {
-    // Homepage hero uses inline LQIP base64 background (in bestauto-custom.css) — no image preload needed.
-    // Video loads lazily via HLS after requestIdleCallback.
-    heroPreload = '';
+    // Homepage hero poster is the LCP element — loaded via CSS background-image
+    // which the browser can't discover until the full HTML/CSS is parsed (~400KB).
+    // Preload with responsive media queries so the correct poster starts downloading
+    // immediately, in parallel with HTML parsing. Saves ~3-4s on slow 4G mobile.
+    heroPreload = '<link rel="preload" href="/images/hero-poster-mobile.webp" as="image" media="(max-width:639px)" fetchpriority="high">'
+      + '<link rel="preload" href="/images/hero-poster-desktop.webp" as="image" media="(min-width:640px)" fetchpriority="high">';
   } else {
     // Find first real image in mainContent.
     // Prefer data-original (Tilda lazy-loader attribute = actual content images)
