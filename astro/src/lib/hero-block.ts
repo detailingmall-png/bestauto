@@ -246,8 +246,8 @@ function cleanHeroSubtitle(content: string, recId: string): string {
 
   let h2Content = content.slice(h2Start, h2End + 5);
 
-  // Remove leading <br> after the h2 opening tag
-  h2Content = h2Content.replace(/(<h2[^>]*>)\s*<br\s*\/?>/i, '$1');
+  // Keep <br> — it provides spacing on desktop.
+  // On mobile, CSS hides it (br:first-child { display: none }).
 
   // Remove <span style="font-weight: ..."> wrappers, keeping inner text
   h2Content = h2Content.replace(/<span\s+style=["']font-weight:\s*\d+;?["']>/gi, '');
