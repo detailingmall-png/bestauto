@@ -1515,7 +1515,7 @@ function removeOrphanCtaBlocks(html: string): string {
 // as visual orphans on ~8 KA service pages (and some RU/EN with "FAQ").
 // ---------------------------------------------------------------------------
 
-const ORPHAN_FAQ_HEADING_TEXTS = ['კითხვები', 'FAQ'];
+const ORPHAN_FAQ_HEADING_TEXTS = ['კითხვები', 'FAQ', 'Frequently asked questions'];
 
 function removeOrphanFaqHeadings(html: string): string {
   let result = html;
