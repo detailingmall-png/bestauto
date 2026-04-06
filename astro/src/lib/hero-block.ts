@@ -13,6 +13,15 @@ export const HERO_REC_IDS: Readonly<Record<string, readonly string[]>> = {
   en: ['rec593573287'],
 };
 
+/**
+ * Hero poster <img> — gives Lighthouse a real LCP element.
+ * CSS background-image is invisible to Lighthouse 13 (causes Error! NO_LCP).
+ * <picture> serves responsive poster (mobile 480x854 / desktop 1280x720).
+ * fetchpriority="high" + preload hint = starts downloading with first HTML chunk.
+ * Video replaces poster visually after 1.5s.
+ */
+const HERO_POSTER_IMG = `<picture class="ba-hero-poster"><source srcset="/images/hero-poster-mobile.webp" media="(max-width:639px)" type="image/webp" width="480" height="854"><img src="/images/hero-poster-desktop.webp" alt="" loading="eager" fetchpriority="high" decoding="sync" width="1280" height="720"></picture>`;
+
 /** Video HTML elements — desktop and mobile variants. */
 const HERO_VIDEO_ELEMENTS = `<video class="ba-hero-video ba-hero-video--desktop" muted loop playsinline preload="none" width="1280" height="720">
   <source src="/hero-desktop.mp4" type="video/mp4">
@@ -21,23 +30,17 @@ const HERO_VIDEO_ELEMENTS = `<video class="ba-hero-video ba-hero-video--desktop"
   <source src="/hero-mobile.mp4" type="video/mp4">
 </video>`;
 
-/** CSS for video positioning inside t396 artboard. */
+/** CSS for poster img + video positioning inside t396 artboard. */
 function heroVideoCss(recId: string): string {
   return `<style>
-.t396__artboard .ba-hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-.t396__artboard .ba-hero-video--mobile { display: none; }
-@media screen and (max-width: 639px) {
-  .t396__artboard .ba-hero-video--desktop { display: none; }
-  .t396__artboard .ba-hero-video--mobile { display: block; }
-  #${recId} .t396__carrier { background-image: url('/images/hero-poster-mobile.webp') !important; }
+.t396__artboard .ba-hero-poster{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+.t396__artboard .ba-hero-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.t396__artboard .ba-hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.t396__artboard .ba-hero-video--mobile{display:none}
+@media screen and (max-width:639px){
+.t396__artboard .ba-hero-video--desktop{display:none}
+.t396__artboard .ba-hero-video--mobile{display:block}
+#${recId} .t396__carrier{background-image:url('/images/hero-poster-mobile.webp')!important}
 }
 </style>`;
 }
@@ -142,9 +145,16 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       if (carrierStart < 0) continue;
       const carrierClose = result.indexOf('</div>', carrierStart);
       if (carrierClose < 0) continue;
-      const insertPos = carrierClose + 6;
 
-      // Insert video elements + CSS after carrier, before filter
+      // Inject <picture> poster INSIDE the carrier (before its </div>).
+      // This gives Lighthouse a real <img> LCP element instead of invisible CSS bg-image.
+      result = result.slice(0, carrierClose) + HERO_POSTER_IMG + result.slice(carrierClose);
+
+      // Re-find carrier close after injection (shifted by poster length)
+      const newCarrierClose = result.indexOf('</div>', carrierStart);
+      const insertPos = (newCarrierClose >= 0 ? newCarrierClose : carrierClose) + 6;
+
+      // Insert video elements after carrier, before filter
       result = result.slice(0, insertPos) + HERO_VIDEO_ELEMENTS + result.slice(insertPos);
       videoInjected = true;
     }
