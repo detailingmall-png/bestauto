@@ -98,6 +98,11 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
   let result = mainContent;
   let videoInjected = false;
 
+  // Remove "— BESTAUTO" from KA hero H1 (shorter title = better mobile layout)
+  if (lang === 'ka') {
+    result = result.replace('თბილისში — BESTAUTO', 'თბილისში');
+  }
+
   for (const heroRecId of heroRecIds) {
     if (!result.includes(`id="${heroRecId}"`)) continue;
 
@@ -143,6 +148,10 @@ export function injectHeroVideo(mainContent: string, lang: string): string {
       result = result.slice(0, insertPos) + HERO_VIDEO_ELEMENTS + result.slice(insertPos);
       videoInjected = true;
     }
+
+    // Clean up H2 subtitle HTML: remove leading <br>, strip inline <span> wrappers
+    // (font-weight is set via CSS in bestauto-custom.css)
+    result = cleanHeroSubtitle(result, heroRecId);
 
     // Replace static 385px (half of 770px artboard) with 50vh in CSS
     // so elements center in the actual viewport without tilda-zero.js runtime.
@@ -218,6 +227,33 @@ function removeT396InitScript(content: string, recId: string): string {
     ),
     '',
   );
+}
+
+/**
+ * Clean up hero subtitle (H2) HTML:
+ * - Remove leading <br> tags
+ * - Strip inline <span style="font-weight: ..."> wrappers (font-weight set via CSS)
+ */
+function cleanHeroSubtitle(content: string, recId: string): string {
+  const subtitleMarker = `tn_text_1684511382614`;
+  const idx = content.indexOf(subtitleMarker);
+  if (idx < 0) return content;
+
+  // Find the h2 opening and closing tags around this marker
+  const h2Start = content.lastIndexOf('<h2', idx);
+  const h2End = content.indexOf('</h2>', idx);
+  if (h2Start < 0 || h2End < 0) return content;
+
+  let h2Content = content.slice(h2Start, h2End + 5);
+
+  // Remove leading <br> after the h2 opening tag
+  h2Content = h2Content.replace(/(<h2[^>]*>)\s*<br\s*\/?>/i, '$1');
+
+  // Remove <span style="font-weight: ..."> wrappers, keeping inner text
+  h2Content = h2Content.replace(/<span\s+style=["']font-weight:\s*\d+;?["']>/gi, '');
+  h2Content = h2Content.replace(/<\/span>/gi, '');
+
+  return content.slice(0, h2Start) + h2Content + content.slice(h2End + 5);
 }
 
 /** Remove a record block by ID (helper for removing duplicate hero blocks). */

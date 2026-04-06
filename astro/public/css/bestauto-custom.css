@@ -250,22 +250,71 @@ html {
 }
 
 /* ========================================================================
-   Hero Zero Block: widen text fields and enlarge subtitle on small mobile.
+   Hero Zero Block: typography, spacing, CTA per UI/UX guide.
    Overrides Tilda JS inline styles (applied from data-field-* attributes).
-   elem 1470209944682 = H1 title, 1684511382614 = subtitle (all 3 homepages).
+   elem 1470209944682 = H1, 1684511382614 = H2 subtitle, 1473846124811 = CTA.
+   Shared across all 3 homepages (KA, RU, EN).
    ======================================================================== */
+
+/* -- H2 subtitle: consistent font-weight (removes need for inline <span>) -- */
+.t396 .tn-elem[data-elem-id="1684511382614"] .tn-atom {
+  font-weight: 500 !important;
+}
+
+/* -- CTA button: padding + min-height on all breakpoints -- */
+.t396 .tn-elem[data-elem-id="1473846124811"] .tn-atom {
+  min-height: 48px !important;
+  padding: 12px 32px !important;
+  border-radius: 20px !important;
+  font-weight: 600 !important;
+}
+
+/* -- Mobile (<=639px) -- */
+@media screen and (max-width: 639px) {
+  .t396 .tn-elem[data-elem-id="1470209944682"] {
+    top: calc(50vh - 30px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1470209944682"] .tn-atom {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+  }
+  .t396 .tn-elem[data-elem-id="1684511382614"] {
+    top: calc(50vh + 70px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1684511382614"] .tn-atom {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* -- Small mobile (<=479px) -- */
 @media screen and (max-width: 479px) {
   .t396 .tn-elem[data-elem-id="1470209944682"] {
+    top: calc(50vh + 5px) !important;
     width: 340px !important;
     left: calc(50% - 170px) !important;
+  }
+  .t396 .tn-elem[data-elem-id="1470209944682"] .tn-atom {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+  }
+  /* Georgian text is wider — reduce H1 to 2 lines at 340px */
+  :lang(ka) .t396 .tn-elem[data-elem-id="1470209944682"] .tn-atom {
+    font-size: 26px !important;
   }
   .t396 .tn-elem[data-elem-id="1684511382614"] {
     width: 340px !important;
     left: calc(50% - 170px) !important;
+    top: calc(50vh + 97px) !important;
   }
   .t396 .tn-elem[data-elem-id="1684511382614"] .tn-atom {
-    font-size: 15px !important;
+    font-size: 14px !important;
     line-height: 1.45 !important;
+  }
+  .t396 .tn-elem[data-elem-id="1473846124811"] {
+    width: 240px !important;
+    left: calc(50% - 120px) !important;
+    top: calc(50vh + 225px) !important;
   }
 }
 
