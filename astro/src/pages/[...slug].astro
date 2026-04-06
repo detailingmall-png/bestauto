@@ -105,6 +105,11 @@ if (baseSlug === 'carwash') {
 
 injectedHtml = replaceGalleries(injectedHtml);
 
+// Remove studio photo gallery popup buttons and popup slideshows
+// (Guramishvili 78 / Anna Politkovskaya 51 toggle buttons + popup photo galleries)
+injectedHtml = removeBlockContaining(injectedHtml, 'popup:guramishvili');
+injectedHtml = removeBlockContaining(injectedHtml, 'popup:politkovskaya');
+
 // Windshield-repair page: expand H1, hero description, replace PDR with tinting, fix 15→30 cm
 if (baseSlug === 'windshield-repair') {
   if (lang === 'ru') {
