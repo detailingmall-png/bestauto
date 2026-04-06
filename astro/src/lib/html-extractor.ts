@@ -1698,7 +1698,9 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
   const rawMainContent = body.slice(mainStart);
-  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanCtaBlocks(rawMainContent))))))), lang, slug)));
+  // Fix broken #form anchors → #contacts (polishing, ceramiccoating pages)
+  const fixedAnchors = rawMainContent.replace(/href="#form"/g, 'href="#contacts"');
+  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanCtaBlocks(fixedAnchors))))))), lang, slug)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent, isHomepage),
