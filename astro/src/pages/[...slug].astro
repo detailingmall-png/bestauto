@@ -712,20 +712,32 @@ if (SERVICE_SLUGS.has(baseSlug)) {
   }
 }
 
-// Homepage: inject video gallery before photo gallery section
-// RU has a separate header block (rec713423972 "Фото двух наших студий") before the gallery
+// Homepage: inject video gallery before photo gallery section heading.
+// Each language has its own T225 header block before the studio photo gallery.
 if (baseSlug === '') {
-  const galleryHeaderId = 'rec713423972';
-  const hasGalleryHeader = mainContent.includes(`id="${galleryHeaderId}"`);
-  const insertMarker = hasGalleryHeader ? `id="${galleryHeaderId}"` : 'class="ba-gallery"';
-  if (mainContent.includes(insertMarker)) {
-    const markerIdx = mainContent.indexOf(insertMarker);
-    const divStart = mainContent.lastIndexOf('<div', markerIdx);
-    if (divStart >= 0) {
-      mainContent = mainContent.slice(0, divStart)
-        + generateVideoGalleryHtml(lang)
-        + mainContent.slice(divStart);
+  const galleryHeaderIds: ReadonlyArray<string> = [
+    'rec713423972',   // RU — "Фото двух наших студий в Тбилиси"
+    'rec2091645453',  // KA — "თბილისში მდებარე ჩვენი ორი სტუდიის ფოტოები"
+    'rec1862088871',  // EN — "Photos of our two studios in Tbilisi"
+  ];
+  let divStart = -1;
+  for (const id of galleryHeaderIds) {
+    const marker = `id="${id}"`;
+    const markerIdx = mainContent.indexOf(marker);
+    if (markerIdx >= 0) {
+      divStart = mainContent.lastIndexOf('<div', markerIdx);
+      break;
     }
+  }
+  // Fallback: insert before ba-gallery div
+  if (divStart < 0 && mainContent.includes('class="ba-gallery"')) {
+    const galleryIdx = mainContent.indexOf('class="ba-gallery"');
+    divStart = mainContent.lastIndexOf('<div', galleryIdx);
+  }
+  if (divStart >= 0) {
+    mainContent = mainContent.slice(0, divStart)
+      + generateVideoGalleryHtml(lang)
+      + mainContent.slice(divStart);
   }
 }
 

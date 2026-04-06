@@ -1487,8 +1487,8 @@ function removeOrphanCtaBlocks(html: string): string {
     while (true) {
       const textIdx = result.indexOf(text, searchFrom);
       if (textIdx < 0) break;
-      // Walk back to find the containing t-rec block
-      const blockStart = result.lastIndexOf('<div class="r t-rec', textIdx);
+      // Walk back to find the containing t-rec block (id comes before class in Tilda HTML)
+      const blockStart = result.lastIndexOf('<div id="rec', textIdx);
       if (blockStart < 0) { searchFrom = textIdx + 1; continue; }
       // Sanity: the text must be within ~2000 chars of block start (not a huge block)
       if (textIdx - blockStart > 2000) { searchFrom = textIdx + 1; continue; }
@@ -1502,6 +1502,62 @@ function removeOrphanCtaBlocks(html: string): string {
       }
       result = result.slice(0, blockStart) + result.slice(blockEnd);
       // Don't advance searchFrom — next match might be at same position after removal
+    }
+  }
+
+  return result;
+}
+
+// ---------------------------------------------------------------------------
+// Remove orphan FAQ/კითხვები heading blocks (T017) left over from Tilda export.
+// These standalone headings used to introduce FAQ sections, but our custom
+// ba-faq component now generates its own heading. The Tilda T017 blocks remain
+// as visual orphans on ~8 KA service pages (and some RU/EN with "FAQ").
+// ---------------------------------------------------------------------------
+
+const ORPHAN_FAQ_HEADING_TEXTS = ['კითხვები', 'FAQ'];
+
+function removeOrphanFaqHeadings(html: string): string {
+  let result = html;
+
+  for (const text of ORPHAN_FAQ_HEADING_TEXTS) {
+    let searchFrom = 0;
+    while (true) {
+      const textIdx = result.indexOf(text, searchFrom);
+      if (textIdx < 0) break;
+
+      // Walk back to the containing t-rec block (id comes before class in Tilda HTML)
+      const blockStart = result.lastIndexOf('<div id="rec', textIdx);
+      if (blockStart < 0) { searchFrom = textIdx + 1; continue; }
+
+      // Text must be close to block start (standalone heading blocks are small)
+      if (textIdx - blockStart > 1000) { searchFrom = textIdx + 1; continue; }
+
+      const blockEnd = findRecBlockEnd(result, blockStart);
+      if (blockEnd < 0) { searchFrom = textIdx + 1; continue; }
+
+      const block = result.slice(blockStart, blockEnd);
+
+      // Only remove T017 heading blocks that are small standalone headers:
+      // - Must contain t017 class (Tilda title block)
+      // - Must be small (< 800 chars — a standalone heading)
+      // - Must NOT contain ba-faq (our custom FAQ component)
+      // - Must NOT contain <details> (FAQ accordion)
+      // - Must NOT contain t-form or <img>
+      if (
+        block.length > 800 ||
+        !block.includes('t017') ||
+        block.includes('ba-faq') ||
+        block.includes('<details') ||
+        block.includes('t-form') ||
+        block.includes('<img')
+      ) {
+        searchFrom = textIdx + 1;
+        continue;
+      }
+
+      result = result.slice(0, blockStart) + result.slice(blockEnd);
+      // Don't advance searchFrom — next match might be at same position
     }
   }
 
@@ -1704,7 +1760,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const fixedAnchors = rawMainContent
     .replace(/href="#form"/g, 'href="#contacts"')
     .replace(/href="https:\/\/wa\.me\/\d+"([^>]*id="cardbtn)/g, 'href="#contacts"$1');
-  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanCtaBlocks(fixedAnchors))))))), lang, slug)));
+  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanFaqHeadings(removeOrphanCtaBlocks(fixedAnchors)))))))), lang, slug)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent, isHomepage),
