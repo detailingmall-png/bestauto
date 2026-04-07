@@ -103,17 +103,17 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
 const CROSS_SELL_TITLES: Readonly<Record<string, Readonly<Record<string, string>>>> = {
   'ppf-shield-wrapping': {
     ru: 'Вместе с оклейкой PPF заказывают',
-    ka: 'PPF დაფარვასთან ერთად შეუკვეთავენ',
+    ka: 'PPF გადაკვრასთან ერთად ხშირად ირჩევენ',
     en: 'Also ordered with PPF wrapping',
   },
   'vinyl-wrapping': {
     ru: 'Вместе с оклейкой кузова заказывают',
-    ka: 'კორპუსის დაფარვასთან ერთად შეუკვეთავენ',
+    ka: 'ვინილის გადაკვრასთან ერთად ხშირად ირჩევენ',
     en: 'Also ordered with vinyl wrapping',
   },
   'polishing': {
     ru: 'Вместе с полировкой заказывают',
-    ka: 'პოლირებასთან ერთად შეუკვეთავენ',
+    ka: 'პოლირებასთან ერთად ხშირად ირჩევენ',
     en: 'Also ordered with polishing',
   },
   'ceramiccoating': {
