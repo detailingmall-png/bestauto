@@ -932,6 +932,52 @@ export function removeBlockByRecordType(content: string, recordType: string): st
   return result;
 }
 
+/**
+ * Remove all t-rec blocks whose class contains the given screen-visibility
+ * class (e.g. "t-screenmin-640px" or "t-screenmax-640px").
+ * These are hidden-by-CSS duplicates — removing them saves DOM/bandwidth.
+ * Navigation blocks (1200px) are NOT affected.
+ */
+export function removeBlocksByScreenClass(html: string, screenClass: string): string {
+  let result = html;
+  for (let i = 0; i < MAX_BLOCK_REMOVAL_ITERATIONS; i++) {
+    const markerIdx = result.indexOf(screenClass);
+    if (markerIdx < 0) break;
+
+    // Verify the marker is inside a t-rec class attribute
+    const classStart = result.lastIndexOf('class="', markerIdx);
+    if (classStart < 0 || markerIdx - classStart > 200) break;
+    if (!result.slice(classStart, markerIdx).includes('t-rec')) break;
+
+    const divStart = result.lastIndexOf('<div', markerIdx);
+    if (divStart < 0) break;
+
+    // Count nested divs to find the matching closing </div>
+    let depth = 0;
+    let pos = divStart;
+    let blockEnd = -1;
+    while (pos < result.length) {
+      if (result.startsWith('<div', pos)) {
+        depth++;
+        pos += 4;
+      } else if (result.startsWith('</div>', pos)) {
+        depth--;
+        if (depth === 0) {
+          blockEnd = pos + 6;
+          break;
+        }
+        pos += 6;
+      } else {
+        pos++;
+      }
+    }
+
+    if (blockEnd <= divStart) break;
+    result = result.slice(0, divStart) + result.slice(blockEnd);
+  }
+  return result;
+}
+
 // ---------------------------------------------------------------------------
 // Blog article cleanup: strip broken CTA placeholder & convert inline FAQ
 // ---------------------------------------------------------------------------
