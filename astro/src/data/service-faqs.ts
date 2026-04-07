@@ -211,7 +211,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'ppf-shield-wrapping': [
     {
       question: {
-        ka: 'რა ღირს PPF დაფარვა?',
+        ka: 'რა ღირს PPF ფირის გადაკვრა?',
         ru: 'Сколько стоит оклейка PPF?',
         en: 'How much does PPF wrapping cost?',
       },
@@ -223,7 +223,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'თქვენი ფირი ორიგინალია?',
+        ka: 'ორიგინალი ფირია თუ არა?',
         ru: 'А у вас точно оригинальная плёнка?',
         en: 'Is your film genuine?',
       },
@@ -247,12 +247,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება დაფარვა?',
+        ka: 'რამდენ ხანს გრძელდება PPF გადაკვრა?',
         ru: 'Сколько времени занимает оклейка?',
         en: 'How long does wrapping take?',
       },
       answer: {
-        ka: 'სრული დაფარვა — 3–5 სამუშაო დღე. კაპოტი და ბამპერი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია კორპუსის სირთულესა და მოდელზე.',
+        ka: 'სრული გადაკვრა — 3–5 სამუშაო დღე. კაპოტი და ბამპერი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია ძარის სირთულეზე.',
         ru: 'Полная оклейка — 3–5 рабочих дней. Капот и бампер — 1–2 дня. Точный срок зависит от сложности кузова и модели.',
         en: 'Full body wrapping takes 3–5 business days. Hood and bumper — 1–2 days. Exact time depends on the body complexity and model.',
       },
@@ -283,7 +283,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შესამჩნევი იქნება ფირი კორპუსზე?',
+        ka: 'ჩანს თუ არა PPF ფირი ძარაზე?',
         ru: 'Будет ли плёнка заметна на кузове?',
         en: 'Will the film be visible on the body?',
       },
@@ -319,7 +319,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შესაძლებელია დამოუკიდებლად დაფარვა?',
+        ka: 'შეიძლება თუ არა PPF-ის თვითონ დაკვრა?',
         ru: 'Можно ли оклеить самостоятельно?',
         en: 'Can I apply it myself?',
       },
@@ -346,12 +346,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'vinyl-wrapping': [
     {
       question: {
-        ka: 'რა ღირს ფერის შეცვლა დამცავი ფირით?',
+        ka: 'რა ღირს ვინილის ფირით გადაკვრა?',
         ru: 'Сколько стоит смена цвета защитной плёнкой?',
         en: 'How much does a color change with protective film cost?',
       },
       answer: {
-        ka: 'სრული ფერის შეცვლა — 9000 GEL-დან. ანტიქრომი — 300 GEL-დან. ზუსტი ღირებულება დამოკიდებულია მარკაზე, მოდელზე და სამუშაოს მოცულობაზე. მოდით უფასო შემოწმებაზე — 15 წუთში გამოვთვლით.',
+        ka: 'სრული გადაკვრა — 9000 GEL-დან. ანტიქრომი — 300 GEL-დან. ზუსტი ფასი დამოკიდებულია მარკაზე, მოდელსა და სამუშაოს მოცულობაზე. მოდით უფასო შემოწმებაზე — 15 წუთში გამოვთვლით.',
         ru: 'Полная смена цвета — от 9000 GEL. Антихром — от 300 GEL. Точная стоимость зависит от марки, модели и объёма работ. Приезжайте на бесплатный осмотр — рассчитаем за 15 минут.',
         en: 'Full color change — from 9,000 GEL. Anti-chrome — from 300 GEL. The exact cost depends on make, model, and scope of work. Come for a free inspection — we\'ll calculate in 15 minutes.',
       },
@@ -382,7 +382,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს ფერადი დამცავი ფირი?',
+        ka: 'რამდენ ხანს ძლებს ვინილის ფირი?',
         ru: 'На сколько хватает цветной защитной плёнки?',
         en: 'How long does the color protective film last?',
       },
@@ -394,12 +394,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება დაფარვა?',
+        ka: 'რამდენ ხანს გრძელდება ვინილის გადაკვრა?',
         ru: 'Сколько времени занимает оклейка?',
         en: 'How long does the installation take?',
       },
       answer: {
-        ka: 'სრული ფერის შეცვლა — 3–5 სამუშაო დღე. ანტიქრომი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია მოდელსა და ძარას სირთულეზე. სამუშაოს დროს გთავაზობთ კომფორტულ მოსაცდელ ზონას მასაჟის სავარძლებითა და ყავით.',
+        ka: 'სრული გადაკვრა — 3–5 სამუშაო დღე. ანტიქრომი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია მოდელსა და ძარის სირთულეზე.',
         ru: 'Полная смена цвета — 3–5 рабочих дней. Антихром — 1–2 дня. Точный срок зависит от модели и сложности кузова. На время работы предоставляем комфортную зону ожидания с массажными креслами и кофе.',
         en: 'Full color change — 3–5 business days. Anti-chrome — 1–2 days. Exact timeline depends on model and body complexity. While we work, enjoy our comfortable waiting area with massage chairs and coffee.',
       },
@@ -418,12 +418,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რით არის ფერადი PPF უკეთესი ვინილის ფირზე?',
+        ka: 'როგორ ითვლება ვინილის გადაკვრის ფასი?',
         ru: 'Чем цветной PPF лучше виниловой плёнки?',
         en: 'How is color PPF better than vinyl wrap?',
       },
       answer: {
-        ka: '2–3-ჯერ სქელი — რეალური დაცვა ქვებისა და ხრეშისგან. ნაკაწრები პარკინგზე თავისთავად ქრება. ძლებს 7–10 წელი ვინილის 2–4 წლის ნაცვლად. არ ყვითლდება, არ სკდება მზეზე. იხსნება სუფთად, წებოვანი კვალის გარეშე. ზედაპირი — როგორც ქარხნული საღებავი, «ფორთოხლის კანის» გარეშე.',
+        ka: 'ფასი დამოკიდებულია ავტომობილის ზომაზე, ძარის სირთულეზე და არჩეულ ფირზე. მოდით უფასო შემოწმებაზე ან გამოგვიგზავნეთ ფოტო WhatsApp-ზე — ზუსტ ფასს 15 წუთში გამოვთვლით.',
         ru: 'Толще в 2–3 раза — реальная защита от камней и гравия. Царапины на парковке затягиваются сами. Служит 7–10 лет вместо 2–4 у винила. Не желтеет, не трескается на солнце. Снимается чисто, без клеевых следов. Поверхность — как заводская покраска, без «апельсиновой корки».',
         en: '2–3 times thicker — real protection from rocks and gravel. Parking scratches heal on their own. Lasts 7–10 years vs. 2–4 for vinyl. No yellowing or cracking in sun. Removes cleanly with no residue. Surface looks like factory paint, not an ‘orange peel’ wrap.',
       },
@@ -679,12 +679,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'auto-glass-tinting': [
     {
       question: {
-        ka: 'რა ღირს მინების ტონირება?',
+        ka: 'რა ღირს მინების დაბურვა?',
         ru: 'Сколько стоит тонировка?',
         en: 'How much does window tinting cost?',
       },
       answer: {
-        ka: 'გვერდითა მინები (უკანა ან წინა) — 130 Gel-დან, უკანა მინა — 160 Gel-დან, საქარე მინა — 290 Gel-დან. ათერმული ტონირება უფრო ძვირია. მოგვწერეთ WhatsApp-ზე — გამოვთვლით ზუსტ ფასს თქვენი ავტომობილისთვის.',
+        ka: 'გვერდითა მინები (უკანა ან წინა) — 130 Gel-დან, უკანა მინა — 160 Gel-დან, საქარე მინა — 290 Gel-დან. ათერმული დაბურვა უფრო ძვირია. მოგვწერეთ WhatsApp-ზე — გამოვთვლით ზუსტ ფასს თქვენი ავტომობილისთვის.',
         ru: 'Тонировка боковых стекол (задних или передних) — от 130 Gel, заднее стекло — от 160 Gel, лобовое стекло — от 290 Gel. Атермальная тонировка стоит дороже. Напишите в WhatsApp — рассчитаем точную стоимость для вашего автомобиля.',
         en: 'Side windows (rear or front) — from 130 Gel, rear windshield — from 160 Gel, front windshield — from 290 Gel. Ceramic (athermal) tinting costs more. Message us on WhatsApp — we\'ll calculate the exact price for your car.',
       },
@@ -715,19 +715,19 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'კანონიერია თუ არა ტონირება საქართველოში?',
+        ka: 'რა დონის დაბურვა არის დაშვებული საქართველოში?',
         ru: 'Легальна ли тонировка в Грузии?',
         en: 'Is window tinting legal in Georgia?',
       },
       answer: {
-        ka: 'დიახ. წინა გვერდითა მინები — მინიმუმ 60% სინათლის გატარება, უკანა — მინიმუმ 75%, უკანა მინა — შეზღუდვის გარეშე. ფირს მკაცრად კანონის ფარგლებში ვარჩევთ.',
+        ka: 'წინა გვერდითა მინები — მინიმუმ 60% სინათლის გატარება, უკანა გვერდითა — მინიმუმ 75%, უკანა მინა — შეზღუდვის გარეშე. ფირს ვარჩევთ მკაცრად კანონის ფარგლებში, ჯარიმის რისკი გამორიცხულია.',
         ru: 'Да. Передние боковые — не менее 60% пропускания света, задние — не менее 75%, заднее стекло — без ограничений. Мы подберем пленку строго в рамках закона.',
         en: 'Yes. Front side windows must allow at least 60% light, rear at least 75%, rear windshield has no restrictions. We select film strictly within the law.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება ტონირება?',
+        ka: 'რამდენ ხანს გრძელდება მინების დაბურვა?',
         ru: 'Сколько времени занимает тонировка?',
         en: 'How long does tinting take?',
       },
@@ -739,7 +739,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რატომ უნდა ტონირება მინებისა?',
+        ka: 'რატომ ღირს მინების დაბურვა?',
         ru: 'Зачем тонировать стекла?',
         en: 'Why tint your windows?',
       },
@@ -751,19 +751,19 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა არის ათერმული ტონირება?',
+        ka: 'რა არის ათერმული დაბურვა?',
         ru: 'Что такое атермальная тонировка?',
         en: 'What is ceramic (athermal) tinting?',
       },
       answer: {
-        ka: 'ათერმული ფირი სითბოს 60%-მდე ასხივებს თითქმის გამჭვირვალე რჩება. იდეალურია საქარე და წინა მინებისთვის. კონდიციონერი უფრო ეფექტურად მუშაობს, საწვავის ხარჯი გაგრილებაზე მცირდება.',
+        ka: 'ათერმული ფირი სითბოს 60%-მდე ასხივებს და თითქმის გამჭვირვალე რჩება. იდეალურია საქარე და წინა მინებისთვის — კონდიციონერი ეფექტურად მუშაობს, საწვავის ხარჯი მცირდება.',
         ru: 'Атермальная пленка отражает до 60% тепла, оставаясь почти прозрачной. Идеальна для лобового и передних стекол. Кондиционер работает эффективнее, расход топлива на охлаждение снижается.',
         en: 'Ceramic film reflects up to 60% of heat while remaining nearly transparent. Ideal for windshield and front windows. Air conditioning works more efficiently, fuel consumption for cooling decreases.',
       },
     },
     {
       question: {
-        ka: 'შემიძლია თუ არა მინების თვითონ ტონირება?',
+        ka: 'შეიძლება თუ არა მინების თვითონ დაბურვა?',
         ru: 'Можно ли затонировать самостоятельно?',
         en: 'Can I tint my windows myself?',
       },
@@ -778,7 +778,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'windshield-repair': [
     {
       question: {
-        ka: 'რა ღირს ჩიპის შეკეთება?',
+        ka: 'რა ღირს საქარე მინის შეკეთება?',
         ru: 'Сколько стоит ремонт скола?',
         en: 'How much does chip repair cost?',
       },
@@ -790,7 +790,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა ტიპის დაზიანებების შეკეთება შეიძლება?',
+        ka: 'რომელი დაზიანება შეიძლება შეკეთდეს?',
         ru: 'Какие повреждения можно отремонтировать?',
         en: 'What types of damage can be repaired?',
       },
@@ -814,7 +814,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს შეკეთება?',
+        ka: 'რამდენ ხანს ძლებს შეკეთებული მინა?',
         ru: 'Надолго ли хватает ремонта?',
         en: 'How long does the repair last?',
       },
@@ -826,7 +826,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება შეკეთება?',
+        ka: 'რამდენ ხანს სჭირდება შეკეთება?',
         ru: 'Сколько времени занимает ремонт?',
         en: 'How long does the repair take?',
       },
@@ -850,7 +850,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შესამჩნევი იქნება შეკეთების ადგილი?',
+        ka: 'შესამჩნევია თუ არა შეკეთების ადგილი?',
         ru: 'Будет ли видно место ремонта?',
         en: 'Will the repair spot be visible?',
       },
