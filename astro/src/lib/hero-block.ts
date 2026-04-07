@@ -45,11 +45,11 @@ function heroVideoCss(recId: string): string {
 </style>`;
 }
 
-/** HLS video init script — starts 1.5s after page load.
+/** HLS video init script — starts 1s after page load.
  *
- * 1.5s delay ensures hero text renders and Chrome records it as LCP
+ * 1s delay ensures hero text renders and Chrome records it as LCP
  * before video download begins. On real connections video typically
- * starts playing within 2-3s total.
+ * starts playing within 1.5-2.5s total.
  *
  * Uses matchMedia instead of offsetWidth to avoid forced reflow.
  */
@@ -80,7 +80,7 @@ const HERO_VIDEO_SCRIPT = `<script>
       document.head.appendChild(s);
     }
   }
-  setTimeout(startVideo,1500);
+  setTimeout(startVideo,1000);
 })();
 </script>`;
 
