@@ -449,6 +449,8 @@ const seoHead = generateHreflangTags(baseSlug, lang)
 
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
+  // Remove duplicate Tilda sticky CTA (ba-sticky-cta already provides this)
+  mainContent = removeRecordBlock(mainContent, 'rec1859912571');
   // Remove old contact blocks (unique ID per page — use content-based removal)
   mainContent = removeBlockContaining(mainContent, '550 000 199');
   // Remove "Error get alias" broken Tilda blocks
@@ -516,6 +518,17 @@ if (lang === 'ka') {
   mainContent = removeRecordBlock(mainContent, 'rec1860227531');
   // Remove old contact block shared across new pages (same ID as RU)
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
+  // Remove empty mobile CTA wrapper (t943 screenmax-640px, no content)
+  mainContent = removeRecordBlock(mainContent, 'rec1860190721');
+  // Remove duplicate Tilda sticky CTA (ba-sticky-cta already provides this)
+  mainContent = removeRecordBlock(mainContent, 'rec1859912571');
+
+  // interior-cleaning: remove stale RU navigation blocks (wrong language on KA page)
+  if (baseSlug === 'interior-cleaning') {
+    for (const navId of ['rec598873683', 'rec598873684', 'rec598891593', 'rec603094201', 'rec603094867']) {
+      mainContent = removeRecordBlock(mainContent, navId);
+    }
+  }
   if (!mainContent.includes('ba-contacts')) {
     // Extract reviews+gallery from homepage and place just above contacts
     let reviewsGallery = '';
@@ -555,6 +568,9 @@ if (lang === 'en') {
   mainContent = removeRecordBlock(mainContent, 'rec1862088901');
   // Remove old contact block shared across new pages (same ID as RU)
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
+  // Remove duplicate Tilda sticky CTA (ba-sticky-cta already provides this)
+  mainContent = removeRecordBlock(mainContent, 'rec1862125261');
+  mainContent = removeRecordBlock(mainContent, 'rec1859912571');
   if (!mainContent.includes('ba-contacts')) {
     // Extract gallery+reviews from homepage and place just above contacts
     let galleryEn = '';

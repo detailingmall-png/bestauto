@@ -49,11 +49,11 @@ const NAV_BLOCKS: Readonly<Record<string, readonly [string, string]>> = {
   ka: ['rec2091645363', 'rec2091645373'],
 };
 
-// ── Footer blocks (copyright bar + mobile CTA) ──
+// ── Footer blocks (copyright bar only; Tilda sticky CTA removed — ba-sticky-cta provides it) ──
 const FOOTER_BLOCKS: Readonly<Record<string, readonly string[]>> = {
-  ru: ['rec603526076', 'rec1859912571'],
-  en: ['rec607472568', 'rec1862125261'],
-  ka: ['rec2091645713', 'rec1859912571'],
+  ru: ['rec603526076'],
+  en: ['rec607472568'],
+  ka: ['rec2091645713'],
 };
 
 function htmlForLang(lang: string): string {
