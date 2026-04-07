@@ -96,9 +96,27 @@ export function injectPricesData(
   // Discontinued service section keys (no longer rendered on prices page)
   const DISCONTINUED_KEYS = new Set(['s3', 's4']);
 
-  // Generate Sanity-driven price sections
+  // Filter active sections
   const activeSections = pricingPage.sections.filter(s => !DISCONTINUED_KEYS.has(s._key));
-  const generated = activeSections
+
+  // Reorder: PPF first, then color change, then the rest
+  const isPPF = (s: PriceSection) => (s.titleRu ?? '').includes('PPF');
+  const isColorChange = (s: PriceSection) =>
+    (s.titleRu ?? '').includes('смен') && (s.titleRu ?? '').toLowerCase().includes('цвет');
+
+  const ppfSections = activeSections.filter(isPPF);
+  const colorChangeSections = activeSections.filter(isColorChange);
+  const otherSections = activeSections.filter(s => !isPPF(s) && !isColorChange(s));
+
+  // Rename PPF section title across all languages
+  for (const s of ppfSections) {
+    s.titleRu = 'Цены на оклейку защитной пленкой PPF';
+    s.titleEn = 'PPF Protective Film Wrapping Prices';
+    s.titleKa = 'PPF დამცავი ფირის გადაკვრის ფასები';
+  }
+
+  const reordered = [...ppfSections, ...colorChangeSections, ...otherSections];
+  const generated = reordered
     .map((section, i) => buildSection(section, i, lang))
     .join('\n');
 
