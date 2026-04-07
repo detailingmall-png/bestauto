@@ -10,6 +10,7 @@ import { META_OVERRIDES } from '../data/meta-overrides';
 import { renderBlogFaqAccordion, type FaqAccordionItem } from './faq-accordion';
 import { POPUP_SHIM } from './popup-shim';
 import { SLIDER_SHIM } from './slider-shim';
+import { ALT_TRANSLATIONS } from '../data/alt-translations';
 
 /**
  * Staggered delays (ms) for deferred loaders to avoid a burst of main-thread
@@ -928,6 +929,25 @@ export function removeBlockByRecordType(content: string, recordType: string): st
     const next = removeRecordBlock(result, recId);
     if (next === result) break;
     result = next;
+  }
+  return result;
+}
+
+/**
+ * Replace Russian alt texts with translations for non-RU pages.
+ * Tilda exports gallery/service images with Russian alt regardless of page language.
+ */
+export function translateAltTexts(html: string, lang: string): string {
+  if (lang === 'ru') return html;
+  const targetLang = lang === 'en' ? 'en' : 'ka';
+  let result = html;
+  for (const [ru, translations] of Object.entries(ALT_TRANSLATIONS)) {
+    const translated = translations[targetLang as 'en' | 'ka'];
+    if (!translated) continue;
+    // Replace in alt="..." attributes
+    result = result.replaceAll(`alt="${ru}"`, `alt="${translated}"`);
+    // Replace in itemprop="caption" content="..." (Tilda gallery metadata)
+    result = result.replaceAll(`content="${ru}"`, `content="${translated}"`);
   }
   return result;
 }

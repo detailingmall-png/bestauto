@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
@@ -608,6 +608,9 @@ if (lang === 'en') {
 // Nav blocks (1200px) are NOT affected.
 mainContent = removeBlocksByScreenClass(mainContent, 't-screenmin-640px');
 mainContent = removeBlocksByScreenClass(mainContent, 't-screenmax-640px');
+
+// Translate Russian alt texts on non-RU pages (Tilda exports all alts in Russian)
+mainContent = translateAltTexts(mainContent, lang);
 
 // Strip old Tilda cross-sell blocks (t692) and insert dynamic cross-sell
 mainContent = removeBlockByRecordType(mainContent, '692');
