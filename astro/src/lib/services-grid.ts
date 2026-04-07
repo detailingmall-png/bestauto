@@ -29,9 +29,9 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'vinyl-wrapping',
     tier: 1,
-    name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Оклейка цветной плёнкой', en: 'Color Change Wrap' },
+    name: { ka: 'ფერადი ფირის გადაკვრა ავტომობილზე', ru: 'Оклейка цветной плёнкой', en: 'Color Change Wrap' },
     tagline: {
-      ka: 'მანქანის ფერის შეცვლა — ფერების და ფაქტურების ათასობით ვარიანტი',
+      ka: 'ფერების და ფაქტურების მრავალფეროვანი არჩევანი',
       ru: 'Смена цвета кузова — тысячи цветов и фактур на выбор',
       en: 'Color change — thousands of colors & finishes to choose from',
     },
