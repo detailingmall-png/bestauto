@@ -253,9 +253,10 @@ if (servicesBlockId && injectedHtml.includes(`id="${servicesBlockId}"`)) {
 }
 
 // Homepage: convert hero subtitle from <h2> to <p> for correct semantics
+// RU export has a stray <br> at the start — strip it to fix spacing
 if (baseSlug === '') {
   injectedHtml = injectedHtml.replace(
-    /<h2 (class='tn-atom'[^>]*field='tn_text_1684511382614'[^>]*)>([\s\S]*?)<\/h2>/,
+    /<h2 (class='tn-atom'[^>]*field='tn_text_1684511382614'[^>]*)>(?:<br>)?([\s\S]*?)<\/h2>/,
     '<p $1>$2</p>'
   );
 }
