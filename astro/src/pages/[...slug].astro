@@ -252,6 +252,14 @@ if (servicesBlockId && injectedHtml.includes(`id="${servicesBlockId}"`)) {
   }
 }
 
+// Homepage: convert hero subtitle from <h2> to <p> for correct semantics
+if (baseSlug === '') {
+  injectedHtml = injectedHtml.replace(
+    /<h2 (class='tn-atom'[^>]*field='tn_text_1684511382614'[^>]*)>([\s\S]*?)<\/h2>/,
+    '<p $1>$2</p>'
+  );
+}
+
 // Homepage: inject process steps section after services grid
 if (baseSlug === '' && injectedHtml.includes('id="ba-services-grid"')) {
   const gridEndMarker = 'id="ba-services-grid"';
