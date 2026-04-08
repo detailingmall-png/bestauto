@@ -25,7 +25,7 @@ const EXPORT_DIR = join(process.cwd(), 'tilda-export');
  * Maps slug → image path. Checked before falling back to og:image from HTML.
  * Source: Pexels (free, no attribution required).
  */
-const IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
+export const IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
   'blog/new-car-detailing': '/images/blog/new-car-detailing.webp',
   'blog/detailing-cost-tbilisi': '/images/blog/detailing-cost-tbilisi.webp',
   'blog/polishing-before-after': '/images/blog/polishing-before-after.webp',

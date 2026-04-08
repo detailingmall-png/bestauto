@@ -1651,6 +1651,30 @@ export function stripBlogCmsMetadata(content: string): string {
 }
 
 /**
+ * Replace the hero cover image in blog articles that use duplicate/default thumbnails.
+ * Matches the same IMAGE_OVERRIDES used for blog grid cards.
+ * Replaces background-image url(), data-content-cover-bg, and meta itemprop="image".
+ */
+export function replaceBlogHeroCover(content: string, slug: string, overrideUrl: string): string {
+  // Replace data-content-cover-bg value (first occurrence = hero)
+  let result = content.replace(
+    /data-content-cover-bg="[^"]+"/,
+    `data-content-cover-bg="${overrideUrl}"`,
+  );
+  // Replace background-image in .t-cover inline style
+  result = result.replace(
+    /(class="t-cover"[^>]*style="[^"]*?)background-image:\s*url\([^)]+\)/,
+    `$1background-image:url('${overrideUrl}')`,
+  );
+  // Replace meta itemprop="image" inside cover carrier
+  result = result.replace(
+    /(<meta itemprop="image" content=")[^"]+(")/,
+    `$1${overrideUrl}$2`,
+  );
+  return result;
+}
+
+/**
  * Converts a static Tilda t681 price table block into the new ba-price-* flexbox layout.
  * Used for pages (like carwash) where prices come from static Tilda HTML, not Sanity CMS.
  * Parses t681__title + t681__price from each row and rebuilds as ba-price-row spans.

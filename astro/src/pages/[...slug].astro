@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, replaceBlogHeroCover } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
@@ -20,7 +20,7 @@ import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, 
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
-import { generateBlogGridHtml, DISCONTINUED_BLOG_SLUGS } from '../lib/blog-grid';
+import { generateBlogGridHtml, DISCONTINUED_BLOG_SLUGS, IMAGE_OVERRIDES } from '../lib/blog-grid';
 import { generateBrandLogosHtml } from '../lib/brand-logos';
 import { generateProcessStepsHtml } from '../lib/process-steps';
 import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
@@ -378,6 +378,12 @@ if (isBlogPage && baseSlug !== 'blog') {
   mainContent = stripBlogCtaPlaceholder(mainContent);
   mainContent = stripBlogCmsMetadata(mainContent);
   mainContent = convertBlogInlineFaq(mainContent, lang);
+
+  // Replace duplicate hero cover images with unique Pexels photos
+  const heroOverride = IMAGE_OVERRIDES[baseSlug];
+  if (heroOverride) {
+    mainContent = replaceBlogHeroCover(mainContent, baseSlug, heroOverride);
+  }
 
   // Blog audit text corrections (build-time transforms)
   if (lang === 'ru') {
