@@ -20,6 +20,29 @@ interface ArticleMeta {
 
 const EXPORT_DIR = join(process.cwd(), 'tilda-export');
 
+/**
+ * Override og:image for blog posts that share duplicate/default thumbnails.
+ * Maps slug → image path. Checked before falling back to og:image from HTML.
+ * Source: Pexels (free, no attribution required).
+ */
+const IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
+  'blog/new-car-detailing': '/images/blog/new-car-detailing.webp',
+  'blog/detailing-cost-tbilisi': '/images/blog/detailing-cost-tbilisi.webp',
+  'blog/polishing-before-after': '/images/blog/polishing-before-after.webp',
+  'blog/polishing-before-ceramic': '/images/blog/polishing-before-ceramic.webp',
+  'blog/polishing-cost-tbilisi': '/images/blog/polishing-cost-tbilisi.webp',
+  'blog/ppf-film-benefits': '/images/blog/ppf-film-benefits.webp',
+  'blog/ceramic-coating-care': '/images/blog/ceramic-coating-care.webp',
+  'blog/ceramic-coating-durability': '/images/blog/ceramic-coating-durability.webp',
+  'blog/ceramic-coating-tbilisi': '/images/blog/ceramic-coating-tbilisi.webp',
+  'blog/summer-car-care-georgia': '/images/blog/summer-car-care-georgia.webp',
+  'blog/how-to-choose-detailing-studio': '/images/blog/how-to-choose-detailing-studio.webp',
+  'blog/top-5-car-paint-protection': '/images/blog/top-5-car-paint-protection.webp',
+  'blog/10-paint-mistakes': '/images/blog/10-paint-mistakes.webp',
+  'blog/how-often-polish-car': '/images/blog/how-often-polish-car.webp',
+  'blog/soft-vs-abrasive-polishing': '/images/blog/soft-vs-abrasive-polishing.webp',
+};
+
 /** Blog slugs removed from the site (discontinued services). Shared with [...slug].astro. */
 export const DISCONTINUED_BLOG_SLUGS: ReadonlySet<string> = new Set([
   'blog/pdr-method', 'blog/pdr-after-hail', 'blog/pdr-guidelines-and-techniques',
@@ -54,11 +77,12 @@ function loadArticles(): readonly ArticleMeta[] {
     const html = readFileSync(join(EXPORT_DIR, entry.file), 'utf-8');
     const { description, image } = extractOgMeta(html);
     const langPrefix = entry.lang === 'ka' ? '' : `/${entry.lang}`;
+    const fallbackImage = image.startsWith('/') ? image : `/images/${image.replace(/^images\//, '')}`;
     return {
       slug: entry.slug,
       title: entry.title.replace(/\s*\|\s*BESTAUTO$/, ''),
       description,
-      image: image.startsWith('/') ? image : `/images/${image.replace(/^images\//, '')}`,
+      image: IMAGE_OVERRIDES[entry.slug] ?? fallbackImage,
       lang: entry.lang,
       href: `${langPrefix}/${entry.slug}`,
     };
