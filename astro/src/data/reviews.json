@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 174,
-  "fetchedAt": "2026-04-07T08:19:31.866Z",
+  "fetchedAt": "2026-04-09T08:52:13.137Z",
   "reviews": [
     {
       "authorName": "jean pierre nehme",
@@ -49,7 +49,7 @@
       "authorName": "Николай жидков",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWh3rs9B1iQpr5_O9pZ3HgnNzVlAeAJc7788W7qM5YdXmkq5ln5zw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "2 months ago",
+      "relativeTime": "3 months ago",
       "text": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин. Ребята — настоящие профессионалы и просто классные люди! Делают всё на высшем уровне, результат всегда «супер». Что особенно радует — это индивидуальный подход к каждому клиенту и внимание к деталям. Однозначно рекомендую!\n\nI’ve been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and just great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail. Highly recommended!",
       "time": 1767770321,
       "profileUrl": "https://www.google.com/maps/contrib/115733878456850340696/reviews",
@@ -59,9 +59,9 @@
         "en": "I've been using Best Auto for a long time and have trusted them with dozens of my cars. These guys are true professionals and simply great people! They do everything at the highest level, and the results are always superb. What's especially pleasing is their individual approach to each client and attention to detail. I definitely recommend them!\n\nI've been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and simply great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to each client and attention to detail. Highly recommended!"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "en": "2 months ago",
-        "ka": "2 თვის წინ"
+        "ru": "3 месяца назад",
+        "en": "3 months ago",
+        "ka": "3 თვის წინ"
       },
       "originalLang": "ru"
     },
