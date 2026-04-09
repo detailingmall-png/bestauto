@@ -1118,6 +1118,33 @@ export function removeClientSeoScripts(content: string): string {
 }
 
 /**
+ * Fix og:type meta tags:
+ * 1) Remove duplicate og:type tags (Tilda exports two)
+ * 2) Set og:type to "article" for blog pages (Tilda defaults to "website")
+ *
+ * Correct og:type helps Google differentiate blog articles from generic pages,
+ * reducing "Duplicate, Google chose different canonical" in Search Console.
+ */
+export function fixOgType(head: string, slug?: string): string {
+  const isBlog = slug != null && (slug === 'blog' || slug.startsWith('blog/'));
+  const correctType = isBlog ? 'article' : 'website';
+  // Remove ALL og:type tags (Tilda may emit duplicates)
+  const stripped = head.replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/g, '');
+  // Insert correct og:type after og:description (or og:title, or any og: tag)
+  const ogInsertPoint = stripped.lastIndexOf('property="og:');
+  if (ogInsertPoint >= 0) {
+    const afterTag = stripped.indexOf('>', ogInsertPoint);
+    if (afterTag >= 0) {
+      return stripped.slice(0, afterTag + 1) +
+        `<meta property="og:type" content="${correctType}" />` +
+        stripped.slice(afterTag + 1);
+    }
+  }
+  // Fallback: append
+  return stripped + `<meta property="og:type" content="${correctType}" />`;
+}
+
+/**
  * Language-specific fallback alt text for images.
  * Service pages get "{ServiceName} — BESTAUTO", homepage gets localized tagline.
  */
@@ -1818,6 +1845,9 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   if (isBlogPage) {
     processedHead += '<style>html{background-color:#fff}#allrecords a{color:inherit}</style>';
   }
+
+  // Fix og:type: remove Tilda duplicates, set "article" for blog pages
+  processedHead = fixOgType(processedHead, slug);
 
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 
