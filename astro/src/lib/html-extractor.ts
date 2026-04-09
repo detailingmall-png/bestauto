@@ -34,11 +34,14 @@ const RIC_POLYFILL = `var ric=typeof requestIdleCallback!=='undefined'?requestId
  * while keeping real-user analytics fast (first scroll → immediate load).
  */
 function interactionGate(fnBody: string, fallbackMs: number): string {
+  // Defer go() via setTimeout(0) so the interaction paint completes before
+  // analytics JS parses/executes — avoids inflating INP.
   return (
     `(function(){var d=false;function go(){if(d)return;d=true;${fnBody}}` +
-    `if(window.scrollY>0){go();return}` +
+    `function goAsync(){setTimeout(go,0)}` +
+    `if(window.scrollY>0){goAsync();return}` +
     `['scroll','click','touchstart','keydown'].forEach(function(e){` +
-    `document.addEventListener(e,go,{once:true,passive:true})});` +
+    `document.addEventListener(e,goAsync,{once:true,passive:true})});` +
     `setTimeout(go,${fallbackMs})})()`
   );
 }

@@ -394,9 +394,11 @@ const JS = `
     dotsContainer.appendChild(dot);
   }
 
+  // Cache cardWidth to avoid forced layout reads on every interaction
+  var cachedCardWidth = cards[0].offsetWidth + 16;
+
   function scrollTo(page) {
-    var cardWidth = cards[0].offsetWidth + 16;
-    track.scrollTo({ left: page * getVisible() * cardWidth, behavior: 'smooth' });
+    track.scrollTo({ left: page * getVisible() * cachedCardWidth, behavior: 'smooth' });
   }
 
   var scrollRaf = 0;
@@ -404,20 +406,17 @@ const JS = `
     if (scrollRaf) return;
     scrollRaf = requestAnimationFrame(function() {
       scrollRaf = 0;
-      var cardWidth = cards[0].offsetWidth + 16;
-      var page = Math.round(track.scrollLeft / (getVisible() * cardWidth));
+      var page = Math.round(track.scrollLeft / (getVisible() * cachedCardWidth));
       var dots = dotsContainer.querySelectorAll('button');
       dots.forEach(function(d, i) { d.className = i === page ? 'active' : ''; });
     });
   }, { passive: true });
 
   if (leftBtn) leftBtn.addEventListener('click', function() {
-    var cardWidth = cards[0].offsetWidth + 16;
-    track.scrollBy({ left: -(getVisible() * cardWidth), behavior: 'smooth' });
+    track.scrollBy({ left: -(getVisible() * cachedCardWidth), behavior: 'smooth' });
   });
   if (rightBtn) rightBtn.addEventListener('click', function() {
-    var cardWidth = cards[0].offsetWidth + 16;
-    track.scrollBy({ left: getVisible() * cardWidth, behavior: 'smooth' });
+    track.scrollBy({ left: getVisible() * cachedCardWidth, behavior: 'smooth' });
   });
 
   // Rebuild dots on window resize (e.g. orientation change)
@@ -425,6 +424,7 @@ const JS = `
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
+      cachedCardWidth = cards[0].offsetWidth + 16;
       var newTotal = Math.ceil(cards.length / getVisible());
       if (newTotal !== totalPages) {
         totalPages = newTotal;
