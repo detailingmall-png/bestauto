@@ -1780,7 +1780,7 @@ export function transformT681ToPriceList(content: string): string {
 
   const newBlock = [
     `<div id="${recId}" class="r t-rec" style="padding-top:60px;padding-bottom:60px;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
-    `<div class="t-container"><div id="prices" class="ba-price-section">`,
+    `<div class="t-container"><div class="ba-price-section">`,
     `<div class="ba-price-list">${priceRows}</div>`,
     `</div></div></div>`,
   ].join('');

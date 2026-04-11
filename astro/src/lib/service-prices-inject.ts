@@ -66,7 +66,7 @@ function buildRow(item: PriceLineItem, lang: Lang): string {
 
 function buildRows(section: PriceSection, lang: Lang): string {
   const rows = (section.items ?? []).map(item => buildRow(item, lang)).join('');
-  return `<div id="prices" class="ba-price-section"><div class="ba-price-list">${rows}</div></div>`;
+  return `<div class="ba-price-section"><div class="ba-price-list">${rows}</div></div>`;
 }
 
 /**
@@ -113,8 +113,8 @@ function buildFullSection(section: PriceSection, lang: Lang): string {
   const title = esc(sectionTitle(section, lang));
   const rows = (section.items ?? []).map(item => buildRow(item, lang)).join('');
   return [
-    `<div id="${id}" class="r t-rec" style="padding-top:60px;padding-bottom:60px;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
-    `<div class="t-container"><div id="prices" class="ba-price-section">`,
+    `<div id="prices" class="r t-rec" style="padding-top:60px;padding-bottom:60px;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
+    `<div class="t-container"><div class="ba-price-section">`,
     `<h2 class="ba-price-heading">${title}</h2>`,
     `<div class="ba-price-list">${rows}</div>`,
     `</div></div></div>`,
@@ -133,6 +133,36 @@ function insertBeforeFooter(html: string, block: string, footerIds: readonly str
     }
   }
   return html + block;
+}
+
+/**
+ * Adds `id="prices"` to the Tilda wrapper div (e.g. `<div class="t017">`)
+ * inside the heading rec block that precedes the t681 price rows.
+ * Placing the anchor INSIDE the rec block avoids content-visibility scroll issues.
+ */
+export function addPricesAnchor(html: string): string {
+  const priceIdx = html.indexOf('ba-price-section');
+  if (priceIdx < 0) return html;
+
+  // Walk back to find the t681 rec block start: <div id="rec..."
+  const before = html.slice(0, priceIdx);
+  const recPattern = '<div id="rec';
+  const t681RecStart = before.lastIndexOf(recPattern);
+  if (t681RecStart < 0) return html;
+
+  // Walk back further to find the preceding rec block (the heading)
+  const beforeT681 = html.slice(0, t681RecStart).trimEnd();
+  const headingRecStart = beforeT681.lastIndexOf(recPattern);
+  if (headingRecStart < 0) return html;
+
+  // Add id="prices" to the Tilda type wrapper (e.g. <div class="t017"> → <div id="prices" class="t017">)
+  const tildaWrapperRe = /<div class="(t\d)/;
+  const headingContent = html.slice(headingRecStart, t681RecStart);
+  const wrapperMatch = headingContent.match(tildaWrapperRe);
+  if (!wrapperMatch?.index) return html;
+
+  const insertPos = headingRecStart + wrapperMatch.index;
+  return html.slice(0, insertPos) + '<div id="prices" class="' + wrapperMatch[1] + html.slice(insertPos + wrapperMatch[0].length);
 }
 
 /**
@@ -157,7 +187,8 @@ export function injectServicePrices(
 
   if (html.includes('t681__row')) {
     // All service pages have an existing price block (native type=681 or alias type=121)
-    return replaceExistingRows(html, section, lang);
+    let result = replaceExistingRows(html, section, lang);
+    return addPricesAnchor(result);
   }
 
   // Fallback: no price block found — inject full section before footer

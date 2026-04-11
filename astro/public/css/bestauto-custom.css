@@ -362,6 +362,9 @@ html {
    Price list (ba-price-*)
    Universal flexbox layout for prices page and service page price blocks.
    ======================================================================== */
+#prices {
+  scroll-margin-top: 80px;
+}
 .ba-price-section {
   max-width: 800px;
   margin: 0 auto;
