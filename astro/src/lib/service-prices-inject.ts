@@ -66,7 +66,7 @@ function buildRow(item: PriceLineItem, lang: Lang): string {
 
 function buildRows(section: PriceSection, lang: Lang): string {
   const rows = (section.items ?? []).map(item => buildRow(item, lang)).join('');
-  return `<div class="ba-price-section"><div class="ba-price-list">${rows}</div></div>`;
+  return `<div id="prices" class="ba-price-section"><div class="ba-price-list">${rows}</div></div>`;
 }
 
 /**
@@ -114,7 +114,7 @@ function buildFullSection(section: PriceSection, lang: Lang): string {
   const rows = (section.items ?? []).map(item => buildRow(item, lang)).join('');
   return [
     `<div id="${id}" class="r t-rec" style="padding-top:60px;padding-bottom:60px;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
-    `<div class="t-container"><div class="ba-price-section">`,
+    `<div class="t-container"><div id="prices" class="ba-price-section">`,
     `<h2 class="ba-price-heading">${title}</h2>`,
     `<div class="ba-price-list">${rows}</div>`,
     `</div></div></div>`,

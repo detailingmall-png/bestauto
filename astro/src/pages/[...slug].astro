@@ -9,7 +9,7 @@ import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, replaceBlogHeroCover } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
-import { generateRelatedServicesHtml } from '../lib/related-services';
+import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
@@ -380,6 +380,23 @@ if (isBlogPage) {
     /href="#((?!contacts\b)[^"]+)"/g,
     `href="${homePath}#$1"`
   );
+}
+
+// Nav "Prices" link: anchor to #prices on service pages, deep-link on blog pages
+const pricesHref = lang === 'ka' ? '/prices' : `/${lang}/prices`;
+const isServicePage = SERVICE_SLUGS.has(baseSlug);
+const isBlogArticle = baseSlug.startsWith('blog/') && baseSlug !== 'blog';
+if (isServicePage || baseSlug === 'carwash') {
+  mainContent = mainContent.replaceAll(`href="${pricesHref}"`, 'href="#prices"');
+} else if (isBlogArticle) {
+  const parentService = BLOG_SERVICE_MAP[baseSlug];
+  if (parentService) {
+    const langPrefix = lang === 'ka' ? '' : `${lang}/`;
+    mainContent = mainContent.replaceAll(
+      `href="${pricesHref}"`,
+      `href="/${langPrefix}${parentService}#prices"`
+    );
+  }
 }
 
 // Blog articles: strip broken CTA placeholder, CMS metadata, and convert inline FAQ to accordion
