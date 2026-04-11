@@ -19,7 +19,7 @@ const STEPS: ReadonlyArray<ProcessStep> = [
       en: 'Request',
     },
     description: {
-      ka: 'დატოვეთ ნომერი ან მოგვწერეთ WhatsApp-ში — ვუპასუხებთ 15 წუთში',
+      ka: 'დატოვეთ ნომერი ან მოგვწერეთ WhatsApp-ში — სწრაფად დაგიკავშირდებით და დაგეხმარებით სწორი სერვისის არჩევაში',
       ru: 'Оставьте номер или напишите в WhatsApp — ответим за 15 минут',
       en: 'Leave your number or message us on WhatsApp — reply in 15 min',
     },
@@ -27,12 +27,12 @@ const STEPS: ReadonlyArray<ProcessStep> = [
   {
     icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="9" style="stroke:var(--ba-color-accent)" stroke-width="2.5" fill="none"/><path d="M20.5 20.5L28 28" style="stroke:var(--ba-color-accent)" stroke-width="2.5" stroke-linecap="round"/></svg>`,
     title: {
-      ka: 'დათვალიერება',
+      ka: 'უფასო დათვალიერება',
       ru: 'Осмотр',
       en: 'Inspection',
     },
     description: {
-      ka: 'ავტომობილის უფასო დათვალიერება, ღირებულებისა და ვადების გაანგარიშება',
+      ka: 'ადგილზე ვაფასებთ ავტომობილის მდგომარეობას, ვარჩევთ სწორ გადაწყვეტას, ვანგარიშობთ ღირებულებასა და ვადებს',
       ru: 'Бесплатный осмотр автомобиля, расчёт стоимости и сроков',
       en: 'Free vehicle inspection, cost and timeline estimate',
     },
@@ -45,7 +45,7 @@ const STEPS: ReadonlyArray<ProcessStep> = [
       en: 'Work',
     },
     description: {
-      ka: 'შესრულება სტუდიაში — ფოტო და ვიდეო პროცესის მიმდინარეობისას',
+      ka: 'სამუშაო სრულდება სტუდიაში პროფესიონალური მასალებითა და პროცესის სრული კონტროლით',
       ru: 'Выполнение в студии — отправляем фото и видео процесса',
       en: 'Work at our studio — we send photos and videos of the process',
     },
@@ -53,12 +53,12 @@ const STEPS: ReadonlyArray<ProcessStep> = [
   {
     icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2L4 7v7c0 7.73 5.11 14.96 12 17 6.89-2.04 12-9.27 12-17V7L16 2zm-2 20l-4-4 1.41-1.41L14 19.17l6.59-6.59L22 14l-8 8z" style="fill:var(--ba-color-accent)"/></svg>`,
     title: {
-      ka: 'გარანტია',
+      ka: 'ჩაბარება და რეკომენდაციები',
       ru: 'Гарантия',
       en: 'Guarantee',
     },
     description: {
-      ka: 'მიღება თქვენთან ერთად — საგარანტიო სერტიფიკატი',
+      ka: 'ავტომობილს გაბარებთ საბოლოო შემოწმების შემდეგ და გაწვდით რეკომენდაციებს შემდგომი მოვლისთვის',
       ru: 'Приёмка вместе с вами — гарантийный сертификат',
       en: 'Final check together — warranty certificate included',
     },

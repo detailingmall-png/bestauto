@@ -29,7 +29,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'vinyl-wrapping',
     tier: 1,
-    name: { ka: 'ფერადი ფირის გადაკვრა ავტომობილზე', ru: 'Оклейка цветной плёнкой', en: 'Color Change Wrap' },
+    name: { ka: 'ფერის შეცვლა ფირით', ru: 'Оклейка цветной плёнкой', en: 'Color Change Wrap' },
     tagline: {
       ka: 'ფერების და ფაქტურების მრავალფეროვანი არჩევანი',
       ru: 'Смена цвета кузова — тысячи цветов и фактур на выбор',
@@ -132,7 +132,7 @@ const SECTION_TITLE: Record<string, string> = {
 };
 
 const SECTION_SUBTITLE: Record<string, string> = {
-  ka: 'თქვენი მანქანის დეტალური და ტექნიკური მომსახურების სრული სპექტრი',
+  ka: 'ავტომობილის დაცვის, ვიზუალის გაუმჯობესებისა და პროფესიონალური მოვლის ძირითადი სერვისები თბილისში',
   ru: 'Полный спектр детейлинг и технических услуг для вашего автомобиля',
   en: 'Full range of detailing and technical services for your car',
 };

@@ -260,6 +260,13 @@ if (baseSlug === '') {
     /<h2 (class='tn-atom'[^>]*field='tn_text_1684511382614'[^>]*)>(?:<br>)?([\s\S]*?)<\/h2>/,
     '<p $1>$2</p>'
   );
+  // KA homepage: update hero subtitle text per SEO spec
+  if (lang === 'ka') {
+    injectedHtml = injectedHtml.replace(
+      'ავტომობილის პროფესიონალური მოვლა და დაცვა: დამცავი PPF ფირით გადაკვრა, ფერადი ფირით გადაკვრა, პოლირება კერამიკული საფარით, მინების დაბურვა და შეკეთება, სალონის ქიმწმენდა.',
+      'ავტომობილის პროფესიონალური მოვლა და დაცვა: PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, საქარე მინის შეკეთება და სალონის ქიმწმენდა.'
+    );
+  }
 }
 
 // Homepage: inject process steps section after services grid
@@ -300,6 +307,69 @@ if (baseSlug === '') {
         + injectedHtml.slice(aboutDivStart);
     }
   }
+}
+
+// Homepage KA: inject SEO intro block before trust/advantages section
+if (baseSlug === '' && lang === 'ka') {
+  const trustBlockMarker = 'id="rec2091645403"';
+  const trustIdx = injectedHtml.indexOf(trustBlockMarker);
+  if (trustIdx >= 0) {
+    const trustDivStart = injectedHtml.lastIndexOf('<div', trustIdx);
+    if (trustDivStart >= 0) {
+      const seoBlock = `<div style="background:var(--ba-color-bg);padding:48px 0 0;">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;text-align:center;">
+    <h2 class="ba-seo-intro__heading" style="color:var(--ba-color-text);font-weight:var(--ba-font-weight-bold);margin:0 0 16px;font-family:var(--ba-font-family);">ავტო დითეილინგი თბილისში — რას აკეთებს BESTAUTO</h2>
+    <p style="color:var(--ba-color-text-muted);font-size:16px;line-height:1.6;margin:0;font-family:var(--ba-font-family);">BESTAUTO არის პრემიუმ ავტო დითეილინგ სტუდია თბილისში, სადაც შეგიძლიათ მიიღოთ PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, სალონის ქიმწმენდა და დეტეილინგ რეცხვა. ვმუშაობთ ორ ლოკაციაზე თბილისში და გეხმარებით მომსახურების სწორ შერჩევაში ავტომობილის მდგომარეობისა და თქვენი მიზნის მიხედვით.</p>
+  </div>
+  <style>
+    .ba-seo-intro__heading { font-size: 28px; }
+    @media screen and (max-width: 960px) { .ba-seo-intro__heading { font-size: 24px; } }
+    @media screen and (max-width: 640px) { .ba-seo-intro__heading { font-size: 22px; } }
+  </style>
+</div>`;
+      injectedHtml = injectedHtml.slice(0, trustDivStart) + seoBlock + injectedHtml.slice(trustDivStart);
+    }
+  }
+}
+
+// KA homepage: update trust/advantages block texts
+if (baseSlug === '' && lang === 'ka') {
+  injectedHtml = injectedHtml.replace(
+    'რატომ უნდა აირჩიოთ ჩვენი დითეილინგ ცენტრი??',
+    'რატომ ირჩევენ BESTAUTO-ს თბილისში'
+  );
+  injectedHtml = injectedHtml.replace(
+    'თქვენ აუცილებლად კმაყოფილი დარჩებით',
+    'პრემიუმ მომსახურება, სერტიფიცირებული მასალები და ორი მოსახერხებელი ლოკაცია თბილისში'
+  );
+  injectedHtml = injectedHtml.replace(
+    'დეტეილინგში 5 წლიანი გამოცდილება',
+    '5+ წლიანი პრაქტიკული გამოცდილება'
+  );
+  injectedHtml = injectedHtml.replace(
+    'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა',
+    'სხვადასხვა მარკისა და მოდელის ავტომობილებზე ყოველდღიური პრაქტიკა და პროფესიონალური შესრულება'
+  );
+  injectedHtml = injectedHtml.replace(
+    'გურამიშვილი 78 და ანა პოლიტკოვსკაია 51 — აირჩიეთ მოსახერხებელი ლოკაცია',
+    'გურამიშვილსა და საბურთალოზე — აირჩიეთ თქვენთვის უფრო მოსახერხებელი ფილიალი'
+  );
+  injectedHtml = injectedHtml.replace(
+    '2,000 კმაყოფილი მომხმარებელი',
+    '4.9★ რეიტინგი და ასობით რეალური შეფასება'
+  );
+  injectedHtml = injectedHtml.replace(
+    'ასობით მიმოხილვა, 4.9★ რეიტინგი Google-ზე',
+    'მაღალი შეფასება Google-ზე და კლიენტების რეალური გამოცდილება სხვადასხვა სერვისზე'
+  );
+  injectedHtml = injectedHtml.replace(
+    '10 წლიანი გარანტია ფირზე',
+    'სერტიფიცირებული მასალები და გარანტია'
+  );
+  injectedHtml = injectedHtml.replace(
+    'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს',
+    'ვმუშაობთ მხოლოდ დადასტურებული ბრენდებით და კონკრეტულ სერვისებზე გთავაზობთ გარანტიას'
+  );
 }
 
 // Blog index pages: replace static t404 card grid with dynamic one
@@ -830,6 +900,32 @@ if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('ba-reels-grid'))
   }
 }
 
+// KA homepage: update reviews section heading + add subheading
+if (baseSlug === '' && lang === 'ka') {
+  mainContent = mainContent.replace(
+    'ჩვენი მომხმარებლების რეალური მიმოხილვა',
+    'ჩვენი მომხმარებლების რეალური შეფასებები'
+  );
+  const reviewsSubtext = '<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">რეალური გამოცდილება Google-იდან სხვადასხვა სერვისზე — PPF, პოლირება, ქიმწმენდა, მინების დაბურვა და სხვა</p>';
+  mainContent = mainContent.replace(
+    'ჩვენი მომხმარებლების რეალური შეფასებები</span></div></div>',
+    'ჩვენი მომხმარებლების რეალური შეფასებები</span></div>' + reviewsSubtext + '</div>'
+  );
+}
+
+// KA homepage: update studios/gallery section heading + add subheading
+if (baseSlug === '' && lang === 'ka') {
+  mainContent = mainContent.replace(
+    'თბილისში მდებარე ჩვენი ორი სტუდიის ფოტოები',
+    'ჩვენი სტუდიები და სამუშაო პროცესი'
+  );
+  const studiosSubtext = '<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">ორივე ლოკაციის გარემო, სამუშაო სივრცე და რეალური პროცესები თბილისში</p>';
+  mainContent = mainContent.replace(
+    'ჩვენი სტუდიები და სამუშაო პროცესი</span></div>',
+    'ჩვენი სტუდიები და სამუშაო პროცესი</span></div>' + studiosSubtext
+  );
+}
+
 // Homepage: inject FAQ accordion before contacts block
 if (baseSlug === '' && mainContent.includes('id="rec2091246563"')) {
   const contactsFaqIdx = mainContent.indexOf('id="rec2091246563"');
@@ -839,6 +935,14 @@ if (baseSlug === '' && mainContent.includes('id="rec2091246563"')) {
       + generateFaqHtml(lang)
       + mainContent.slice(contactsFaqDiv);
   }
+}
+
+// KA homepage: inject contacts section subtitle after h2 heading
+if (baseSlug === '' && lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
+  mainContent = mainContent.replace(
+    'და ჩაეწერეთ ვიზიტზე</span></h2>',
+    'და ჩაეწერეთ ვიზიტზე</span></h2><p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;text-align:center;margin:12px auto 28px;max-width:560px;font-family:var(--ba-font-family);">ორივე ფილიალში ხელმისაწვდომია უფასო დათვალიერება, წინასწარი კონსულტაცია და ჩაწერა ძირითად სერვისებზე</p>'
+  );
 }
 
 // === Fix misplaced anchors after all block reordering ===
