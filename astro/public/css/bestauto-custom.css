@@ -375,6 +375,15 @@ html {
   margin: 0 0 var(--ba-space-lg) 0;
   line-height: 1.3;
 }
+.ba-price-heading-link {
+  color: var(--ba-color-accent) !important;
+  text-decoration: none;
+  transition: opacity var(--ba-duration-fast) var(--ba-ease-default);
+}
+.ba-price-heading-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 .ba-price-row {
   display: flex;
   justify-content: space-between;

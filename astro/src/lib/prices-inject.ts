@@ -8,6 +8,19 @@ import type { PricingPage, PriceSection, PriceLineItem } from './sanity';
 
 type Lang = 'ru' | 'ka' | 'en';
 
+/** Reverse mapping: Sanity section _key → service page slug. */
+const SECTION_KEY_TO_SLUG: Record<string, string> = {
+  s0: 'polishing',
+  s1: 'ceramiccoating',
+  s2: 'interior-cleaning',
+  s5: 'windshield-repair',
+  s6: 'ppf-shield-wrapping',
+  s7: 'vinyl-wrapping',
+  s8: 'auto-glass-tinting',
+  s9: 'car-soundproofing',
+  s10: 'computer-diagnostics',
+};
+
 function esc(s: string): string {
   // Don't re-encode existing HTML entities (e.g. &nbsp; from Sanity/Tilda data)
   return s
@@ -44,14 +57,24 @@ function buildRow(item: PriceLineItem, lang: Lang): string {
   return `<div class="ba-price-row${cls}"><span class="ba-price-name">${name}</span><span class="ba-price-value">${price}</span></div>`;
 }
 
+function serviceHref(sectionKey: string, lang: Lang): string {
+  const slug = SECTION_KEY_TO_SLUG[sectionKey];
+  if (!slug) return '';
+  return lang === 'ka' ? `/${slug}` : `/${lang}/${slug}`;
+}
+
 function buildSection(section: PriceSection, idx: number, lang: Lang): string {
   const id = `sanity-s${idx}`;
   const title = esc(sectionTitle(section, lang));
+  const href = serviceHref(section._key, lang);
+  const titleHtml = href
+    ? `<a href="${href}" class="ba-price-heading-link">${title}</a>`
+    : title;
   const rows = (section.items ?? []).map(item => buildRow(item, lang)).join('');
   return [
     `<div id="${id}" class="r t-rec" style="padding-top:${idx === 0 ? 60 : 48}px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000">`,
     `<div class="t-container"><div class="ba-price-section">`,
-    `<h2 class="ba-price-heading">${title}</h2>`,
+    `<h2 class="ba-price-heading">${titleHtml}</h2>`,
     `<div class="ba-price-list">${rows}</div>`,
     `</div></div></div>`,
   ].join('');
