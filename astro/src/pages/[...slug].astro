@@ -14,7 +14,7 @@ import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
-import { injectServicePrices } from '../lib/service-prices-inject';
+import { injectServicePrices, addPricesAnchor } from '../lib/service-prices-inject';
 import { replaceGalleries, removeDuplicateGalleries } from '../lib/gallery-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
@@ -27,6 +27,7 @@ import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
 import { generateVideoGalleryHtml } from '../lib/video-gallery';
 import { replaceTildaFaqSection, removeTildaFaqSchema, renderFaqAccordion, resolveFaqItems } from '../lib/faq-accordion';
 import { SERVICE_FAQS } from '../data/service-faqs';
+import { injectBlogInternalLinks } from '../lib/blog-internal-links';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -100,7 +101,7 @@ if (SERVICE_SLUGS.has(baseSlug)) {
 
 // Carwash: no Sanity pricing section — transform static t681 HTML to ba-price-* layout
 if (baseSlug === 'carwash') {
-  injectedHtml = transformT681ToPriceList(injectedHtml);
+  injectedHtml = addPricesAnchor(transformT681ToPriceList(injectedHtml));
 }
 
 injectedHtml = removeDuplicateGalleries(replaceGalleries(injectedHtml));
@@ -466,6 +467,9 @@ if (isBlogPage && baseSlug !== 'blog') {
     mainContent = mainContent.replaceAll('gain through zonation', 'gain through ozone treatment');
     mainContent = mainContent.replaceAll('car amateurs', 'car owners');
   }
+
+  // Inject internal service links into KA blog articles
+  mainContent = injectBlogInternalLinks(mainContent, baseSlug, lang);
 }
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
