@@ -17,7 +17,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'ppf-shield-wrapping',
     tier: 1,
-    name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
+    name: { ka: 'დამცავი ფირის გადაკვრა', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
     tagline: {
       ka: 'უხილავი დაცვა ქვებისგან, ნაკაწრებისგან და UV — 10 წლის გარანტია',
       ru: 'Невидимая защита от сколов, царапин и UV — гарантия 10 лет',
