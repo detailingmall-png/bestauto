@@ -28,6 +28,8 @@ import { generateVideoGalleryHtml } from '../lib/video-gallery';
 import { replaceTildaFaqSection, removeTildaFaqSchema, renderFaqAccordion, resolveFaqItems } from '../lib/faq-accordion';
 import { SERVICE_FAQS } from '../data/service-faqs';
 import { injectBlogInternalLinks } from '../lib/blog-internal-links';
+import { buildSeoBlock, buildContentBlock, replaceMetaTitle, replaceMetaDescription, injectAfterHero } from '../lib/seo-blocks';
+import { KA_SEO_PAGES } from '../data/ka-seo-changes';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -418,8 +420,25 @@ if (baseSlug === 'blog') {
   }
 }
 
-const { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml, lang, baseSlug, baseSlug === '');
+let { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml, lang, baseSlug, baseSlug === '');
 let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
+
+// KA service pages: SEO text changes (meta, hero, benefits, trust, SEO/content blocks)
+if (lang === 'ka') {
+  const pageSeo = KA_SEO_PAGES[baseSlug];
+  if (pageSeo) {
+    headContent = replaceMetaTitle(headContent, pageSeo.meta.title);
+    headContent = replaceMetaDescription(headContent, pageSeo.meta.description);
+    for (const { from, to } of pageSeo.textReplacements) {
+      mainContent = mainContent.replaceAll(from, to);
+    }
+    let seoBlocks = pageSeo.seoBlock;
+    if (pageSeo.contentBlocks) {
+      seoBlocks += '\n' + pageSeo.contentBlocks.join('\n');
+    }
+    mainContent = injectAfterHero(mainContent, seoBlocks);
+  }
+}
 
 // CTA copy improvements: nav button
 const CTA_NAV: Readonly<Record<string, readonly [string, string]>> = {

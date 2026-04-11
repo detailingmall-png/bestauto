@@ -559,6 +559,91 @@ html {
 }
 
 /* ========================================================================
+   SEO Content Blocks (.ba-seo-block, .ba-content-block)
+   ======================================================================== */
+.ba-seo-block,
+.ba-content-block {
+  font-family: var(--ba-font-family);
+  color: var(--ba-color-text);
+}
+.ba-seo-block__heading,
+.ba-content-block__heading {
+  font-size: 28px;
+  font-weight: var(--ba-font-weight-bold);
+  line-height: 1.3;
+  margin: 0 0 20px;
+  color: var(--ba-color-text);
+}
+.ba-seo-block__text,
+.ba-content-block__text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ba-color-text-muted);
+  margin: 0 0 24px;
+}
+.ba-seo-block__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.ba-seo-block__point {
+  font-size: 14px;
+  font-weight: var(--ba-font-weight-semibold);
+  color: var(--ba-color-accent);
+  white-space: nowrap;
+}
+.ba-seo-block__point::before {
+  content: "\2022\00a0";
+}
+.ba-seo-block__point:first-child::before {
+  content: none;
+}
+.ba-content-block__items {
+  display: grid;
+  gap: 20px;
+  margin-top: 8px;
+}
+.ba-content-block__item {
+  padding: 20px;
+  border: 1px solid var(--ba-color-border);
+  border-radius: var(--ba-radius-lg);
+}
+.ba-content-block__item-title {
+  font-size: 18px;
+  font-weight: var(--ba-font-weight-semibold);
+  margin: 0 0 8px;
+  color: var(--ba-color-accent);
+}
+.ba-content-block__item-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--ba-color-text-muted);
+}
+.ba-content-block__footer {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 24px 0 0;
+  color: var(--ba-color-text-subtle);
+}
+@media screen and (max-width: 640px) {
+  .ba-seo-block__heading,
+  .ba-content-block__heading {
+    font-size: 22px;
+  }
+  .ba-seo-block__text,
+  .ba-content-block__text {
+    font-size: 15px;
+  }
+  .ba-content-block__item {
+    padding: 16px;
+  }
+  .ba-content-block__item-title {
+    font-size: 16px;
+  }
+}
+
+/* ========================================================================
    Contrast fixes: override low-opacity text colors for WCAG AA compliance
    ======================================================================== */
 

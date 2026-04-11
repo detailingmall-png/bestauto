@@ -25,19 +25,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'არის თუ არა გარანტია პოლირების შედეგზე?',
-        ru: 'Есть ли гарантия на полировку?',
-        en: 'Is there a warranty on polishing?',
-      },
-      answer: {
-        ka: 'დიახ, ვაძლევთ გარანტიას შედეგის ხარისხზე. თუ საჭირო გახდა მცირე კორექცია, ამას ოპერატიულად გავასწორებთ.',
-        ru: 'Да. Мы даем 14 дней гарантии на результат полировки. За 5 лет работы менее 1% гарантийных случаев — мы уверены в качестве своей работы.',
-        en: 'Yes. We offer a 14-day warranty on polishing results. Over 5 years of work, less than 1% of warranty cases — we are confident in our quality.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს სჭირდება პოლირება?',
+        ka: 'რამდენ ხანს გრძელდება მანქანის პოლირება?',
         ru: 'Сколько времени занимает полировка?',
         en: 'How long does polishing take?',
       },
@@ -49,7 +37,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენად ხშირად არის საჭირო პოლირება?',
+        ka: 'რამდენ ხანს ძლებს პოლირების შედეგი?',
         ru: 'Как часто нужно полировать автомобиль?',
         en: 'How often should I polish my car?',
       },
@@ -61,43 +49,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რატომ BESTAUTO პოლირებისთვის?',
-        ru: 'Почему стоит полировать именно у вас?',
-        en: 'Why choose your polishing service?',
-      },
-      answer: {
-        ka: 'ვმუშაობთ პროფესიონალური აღჭურვილობით, ვზომავთ საღებავის სისქეს დაწყებამდე და შედეგს ვამოწმებთ სწორ განათებაში. ეს გვაძლევს საშუალებას მივიღოთ ძლიერი ვიზუალური ეფექტი ზედმეტი რისკის გარეშე.',
-        ru: 'Более 5 лет опыта, профессиональное оборудование Rupes, материалы Koch Chemie из Германии. Два удобных адреса в Тбилиси. 10 лет гарантии на плёнку. Мы замеряем толщину ЛКП перед работой и показываем результат при специальном освещении.',
-        en: 'Over 5 years of experience, professional Rupes equipment, Koch Chemie materials from Germany. Two convenient locations in Tbilisi. Over 2000 satisfied clients. We measure paint thickness before work and show the result under special lighting.',
-      },
-    },
-    {
-      question: {
-        ka: 'დააზიანებს თუ არა პოლირება საღებავს?',
-        ru: 'Полировка не повредит краску?',
-        en: 'Will polishing damage the paint?',
-      },
-      answer: {
-        ka: 'პროფესიონალური პოლირება უსაფრთხოა, როცა პროცესი სწორად იგეგმება. მუშაობის დაწყებამდე ვამოწმებთ ლაქის მდგომარეობას და შესაბამის სქემას ვარჩევთ კონკრეტული ავტომობილისთვის.',
-        ru: 'Нет. Мы обязательно замеряем толщину лакокрасочного покрытия перед началом работы. При профессиональной полировке снимается всего 1–3 микрона из 80–120 микрон запаса. Это абсолютно безопасно и не влияет на защитные свойства ЛКП.',
-        en: 'No. We always measure paint thickness before starting. Professional polishing removes only 1–3 microns out of 80–120 microns of available clearcoat. This is completely safe and does not affect the protective properties of the paint.',
-      },
-    },
-    {
-      question: {
-        ka: 'საჭიროა თუ არა მანქანის გარეცხვა პოლირებამდე?',
-        ru: 'Нужно ли мыть машину перед полировкой?',
-        en: 'Do I need to wash my car before polishing?',
-      },
-      answer: {
-        ka: 'არა, მოიყვანეთ ავტომობილი ისე, როგორც არის. საფუძვლიანი რეცხვა და ზედაპირის მომზადება შედის პოლირების ფასში. ჩვენ თვითონ მოვამზადებთ ზედაპირს იდეალური შედეგისთვის.',
-        ru: 'Нет, привозите автомобиль как есть. Тщательная мойка и подготовка кузова входят в стоимость полировки. Мы сами подготовим поверхность для идеального результата.',
-        en: 'No, bring your car as is. Thorough washing and surface preparation are included in the polishing price. We handle all the prep work for a perfect result.',
-      },
-    },
-    {
-      question: {
-        ka: 'რა არის ავტომობილის პოლირება?',
+        ka: 'რომელ ნაკაწრებს აშორებს პოლირება?',
         ru: 'Что такое полировка автомобиля?',
         en: 'What is car polishing?',
       },
@@ -105,6 +57,30 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'პოლირება არის წვრილი ნაკაწრების, გახეხილობისა და სხვა დეფექტების მოცილების პროცესი კუზოვის, ფარების ან მინის საფარიდან. იგი აღადგენს ბზინვარებას და ფერის სიღრმეს, ავტომობილი ისევ ახალივით გამოიყურება.',
         ru: 'Полировка — это процесс удаления мелких царапин, потертостей и других дефектов с лакокрасочного покрытия кузова, оптики или стекол. Она восстанавливает блеск и глубину цвета, и автомобиль снова выглядит как новый.',
         en: 'Polishing is the process of removing minor scratches, swirl marks, and other defects from the car body, headlights, or windshield coating. It restores shine and color depth, making your car look brand new again.',
+      },
+    },
+    {
+      question: {
+        ka: 'რამდენი ეტაპის პოლირება მჭირდება?',
+        ru: 'Сколько этапов полировки мне нужно?',
+        en: 'How many polishing stages do I need?',
+      },
+      answer: {
+        ka: 'ეტაპების რაოდენობა დამოკიდებულია საღებავის მდგომარეობაზე. მსუბუქი ნაკაწრებისთვის საკმარისია ერთეტაპიანი პოლირება, უფრო ღრმა დეფექტებისთვის კი შეიძლება ორი ან სამი ეტაპი დასჭირდეს.',
+        ru: 'Количество этапов зависит от состояния краски. Для лёгких царапин достаточно одного этапа, для более глубоких дефектов может понадобиться два или три.',
+        en: 'The number of stages depends on the paint condition. Light scratches need one stage, while deeper defects may require two or three.',
+      },
+    },
+    {
+      question: {
+        ka: 'საჭიროა თუ არა კერამიკა პოლირების შემდეგ?',
+        ru: 'Нужна ли керамика после полировки?',
+        en: 'Do I need ceramic coating after polishing?',
+      },
+      answer: {
+        ka: 'კერამიკული საფარი არ არის სავალდებულო, მაგრამ ეხმარება პოლირების შედეგს უფრო დიდხანს შენარჩუნებაში. თუ გსურთ მაქსიმალურად ხანგრძლივი ეფექტი, კერამიკა კარგი დამატებაა.',
+        ru: 'Керамика не обязательна, но помогает сохранить результат полировки дольше. Если хотите максимально длительный эффект — керамика будет хорошим дополнением.',
+        en: 'Ceramic coating is not mandatory but helps preserve the polishing result longer. If you want the longest-lasting effect, ceramic is a great addition.',
       },
     },
   ],
@@ -124,7 +100,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს კერამიკა?',
+        ka: 'რამდენ ხანს ძლებს კერამიკული საფარი?',
         ru: 'На сколько хватает керамического покрытия?',
         en: 'How long does ceramic coating last?',
       },
@@ -136,7 +112,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რატომ აკეთებენ კერამიკას ავტომობილზე?',
+        ka: 'რატომ აკეთებენ კერამიკას მანქანაზე?',
         ru: 'Зачем наносить керамику, если можно просто мыть?',
         en: 'Why apply ceramic coating if I can just wash my car?',
       },
@@ -148,7 +124,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'საჭიროა თუ არა მანქანის მომზადება დატანამდე?',
+        ka: 'საჭიროა თუ არა პოლირება კერამიკამდე?',
         ru: 'Нужно ли готовить машину перед нанесением?',
         en: 'Do I need to prepare my car before application?',
       },
@@ -160,19 +136,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'როგორ გამოიყურება ავტომობილი დატანის შემდეგ?',
-        ru: 'Как будет выглядеть автомобиль после нанесения?',
-        en: 'What will my car look like after application?',
-      },
-      answer: {
-        ka: 'საფარი იძლევა ღრმა „სველ“ ბზინვარებას და გამოხატულ ჰიდროფობიურობას — წყალი წვეთებად გროვდება და ზედაპირიდან სრიალებს. მოგვწერეთ WhatsApp-ზე — გაჩვენებთ ნამდვილი მაგალითების ფოტოებსა და ვიდეოებს.',
-        ru: 'Покрытие дает глубокий "мокрый" блеск и выраженную гидрофобность — вода собирается в капли и скатывается с поверхности. Напишите нам в WhatsApp — покажем фото и видео реальных примеров.',
-        en: 'The coating gives a deep "wet look" shine and strong hydrophobicity — water beads up and rolls off the surface. Message us on WhatsApp — we\'ll show you photos and videos of real examples.',
-      },
-    },
-    {
-      question: {
-        ka: 'როგორ გავიგო, რომ კერამიკის განახლების დროა?',
+        ka: 'როგორ გავიგო, როდის სჭირდება კერამიკის განახლება?',
         ru: 'Как понять, что пора обновить керамику?',
         en: 'How do I know when to refresh the ceramic coating?',
       },
@@ -184,7 +148,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შემიძლია თუ არა კერამიკის თვითონ დატანა?',
+        ka: 'იცავს თუ არა კერამიკა ღრმა ნაკაწრებისგან?',
         ru: 'Можно ли нанести керамику самостоятельно?',
         en: 'Can I apply ceramic coating myself?',
       },
@@ -196,7 +160,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა არის კერამიკული საფარი?',
+        ka: 'რას აკეთებს კერამიკული საფარი?',
         ru: 'Что такое керамическое покрытие?',
         en: 'What is ceramic coating?',
       },
@@ -204,6 +168,30 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'კერამიკული საფარი არის დამცავი ფენა, რომელიც გამოიყენება ავტომობილის ზედაპირზე, აძლიერებს ბზინვარებას და ამარტივებს მოვლას.',
         ru: 'Это жидкий состав на основе диоксида кремния (SiO2), который после нанесения образует прозрачный защитный слой на поверхности автомобиля. Керамика защищает от UV-лучей, царапин, химии и держится до 3 лет.',
         en: 'It\'s a liquid compound based on silicon dioxide (SiO2) that forms a transparent protective layer on the car surface after application. Ceramic coating protects against UV, scratches, chemicals, and lasts up to 3 years.',
+      },
+    },
+    {
+      question: {
+        ka: 'რით განსხვავდება კერამიკა PPF-ისგან?',
+        ru: 'Чем отличается керамика от PPF?',
+        en: 'How is ceramic coating different from PPF?',
+      },
+      answer: {
+        ka: 'კერამიკა ეხმარება ზედაპირს შეინარჩუნოს ბზინვარება, ჰიდროფობიურობა და სისუფთავე. PPF კი ფიზიკურად იცავს ლაქს ჩიპებისგან, ნაკაწრებისგან და ქვებისგან. ისინი სხვადასხვა ამოცანას წყვეტენ და ზოგჯერ ერთმანეთის შემავსებლადაც გამოიყენება.',
+        ru: 'Керамика помогает поверхности сохранять блеск, гидрофобность и чистоту. PPF физически защищает от сколов, царапин и камней. Они решают разные задачи и иногда используются вместе.',
+        en: 'Ceramic helps the surface maintain shine, hydrophobicity, and cleanliness. PPF physically protects from chips, scratches, and stones. They solve different tasks and are sometimes used together.',
+      },
+    },
+    {
+      question: {
+        ka: 'კერამიკის შემდეგ მანქანა ნაკლებად ისვრება?',
+        ru: 'Машина меньше пачкается после керамики?',
+        en: 'Does the car get dirty less after ceramic coating?',
+      },
+      answer: {
+        ka: 'კერამიკული საფარი ქმნის ჰიდროფობიურ ეფექტს, რის გამოც წყალი და დაბინძურება ზედაპირზე ნაკლებად ჩერდება. ეს ამარტივებს რეცხვას და ეხმარება ავტომობილს უფრო სუფთად გამოიყურებოდეს ორ რეცხვას შორის.',
+        ru: 'Керамическое покрытие создаёт гидрофобный эффект — вода и грязь меньше задерживаются на поверхности. Это упрощает мойку и помогает машине дольше выглядеть чистой между мойками.',
+        en: 'Ceramic coating creates a hydrophobic effect — water and dirt are less likely to stick. This makes washing easier and keeps the car looking cleaner between washes.',
       },
     },
   ],
@@ -216,45 +204,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does PPF wrapping cost?',
       },
       answer: {
-        ka: 'ფასი დამოკიდებულია ავტომობილის მარკაზე, სამუშაოს მოცულობასა და არჩეულ ფირზე. კაპოტი — 800 GEL-დან, წინა ნაწილი (კაპოტი, ბამპერი, ფრთები, სვეტები, სარკეები და ფარები) — 2 500 GEL-დან, სრული დაფარვა — 7 500 GEL-დან. მობრძანდით უფასო შემოწმებაზე — ზუსტ ფასს 15 წუთში გამოვთვლით.',
+        ka: 'ფასი დამოკიდებულია დაფარვის ზონაზე, ავტომობილის ზომაზე და არჩეულ ფირზე. შესაძლებელია როგორც რისკ-ზონების, ისე სრული ავტომობილის შეთავაზება.',
         ru: 'Цена зависит от марки автомобиля, объёма работ и выбранной плёнки. Капот — от 800 GEL, передняя часть (капот, бампер, крылья, стойки, зеркала и фары) — от 2 500 GEL, полная оклейка — от 7 500 GEL. Приезжайте на бесплатный осмотр — рассчитаем точную стоимость за 15 минут.',
         en: 'The price depends on the car make, scope of work and chosen film. Hood — from 800 GEL, front section (hood, bumper, fenders, pillars, mirrors and headlights) — from 2,500 GEL, full body — from 7,500 GEL. Come for a free inspection — we will calculate the exact cost in 15 minutes.',
-      },
-    },
-    {
-      question: {
-        ka: 'ორიგინალი ფირია თუ არა?',
-        ru: 'А у вас точно оригинальная плёнка?',
-        en: 'Is your film genuine?',
-      },
-      answer: {
-        ka: 'ჩვენ ვართ LLumar, Quantum და LuxArmor ბრენდების ოფიციალური და ერთადერთი დილერები საქართველოში, ამიტომ ჩვენთან 100% ორიგინალური ფირებია მწარმოებლისგან ოფიციალური გარანტიით.',
-        ru: 'Мы — официальные и единственные в Грузии дилеры брендов LLumar, Quantum и LuxArmor, поэтому у нас 100% оригинальные плёнки от производителя с официальной гарантией.',
-        en: 'We are the official and only dealers of LLumar, Quantum, and LuxArmor brands in Georgia, so we use 100% original films from the manufacturer with an official warranty.',
-      },
-    },
-    {
-      question: {
-        ka: 'არის თუ არა გარანტია?',
-        ru: 'Есть ли гарантия на работу?',
-        en: 'Is there a warranty?',
-      },
-      answer: {
-        ka: 'დიახ. ვაძლევთ 10 წლამდე გარანტიას ფირზე და სამუშაოზე. ასობით მიმოხილვა, 4.9★ რეიტინგი Google-ზე. საგარანტიო შემთხვევას ვაგვარებთ ჩვენს ხარჯზე ნებისმიერ სტუდიაში.',
-        ru: 'Да. Мы даём гарантию до 10 лет на плёнку и работу. Сотни отзывов, рейтинг 4.9★ на Google.. Гарантийный случай решаем за наш счёт в любой из двух студий.',
-        en: 'Yes. We provide a warranty of up to 10 years on the film and work. Hundreds of reviews, 4.9★ rating on Google. Warranty cases are resolved at our expense at either of our two studios.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს გრძელდება PPF გადაკვრა?',
-        ru: 'Сколько времени занимает оклейка?',
-        en: 'How long does wrapping take?',
-      },
-      answer: {
-        ka: 'სრული გადაკვრა — 3–5 სამუშაო დღე. კაპოტი და ბამპერი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია ძარის სირთულეზე.',
-        ru: 'Полная оклейка — 3–5 рабочих дней. Капот и бампер — 1–2 дня. Точный срок зависит от сложности кузова и модели.',
-        en: 'Full body wrapping takes 3–5 business days. Hood and bumper — 1–2 days. Exact time depends on the body complexity and model.',
       },
     },
     {
@@ -264,81 +216,69 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How long does PPF last?',
       },
       answer: {
-        ka: 'ნორმალური ექსპლუატაციისას — 10 წლამდე. ფირი არ ყვითლდება, არ ბუნდდება და ინარჩუნებს ბრწყინვალებას. წვრილი ნაკაწრები თავისთავად იხევა სითბოს ზემოქმედებით.',
+        ka: 'ხარისხიანი ფირი და სწორი მოვლა საშუალებას იძლევა PPF-მა მრავალი წელი შეინარჩუნოს თავისი თვისებები.',
         ru: 'При нормальной эксплуатации — до 10 лет. Плёнка не желтеет, не мутнеет и сохраняет блеск. Мелкие царапины затягиваются сами под воздействием тепла.',
         en: 'Under normal use — up to 10 years. The film does not yellow, cloud or lose its gloss. Minor scratches heal on their own under heat.',
       },
     },
     {
       question: {
-        ka: 'საჭიროა თუ არა მანქანის გარეცხვა მოსვლამდე?',
-        ru: 'Нужно ли мыть машину перед приездом?',
-        en: 'Do I need to wash the car before coming?',
-      },
-      answer: {
-        ka: 'არა. ჩვენ სრულად მოვამზადებთ ავტომობილს — გავრეცხავთ, გავატარებთ დეკონტამინაციას და საჭიროებისამებრ გავაპოლირებთ. უბრალოდ მოიყვანეთ მანქანა როგორც არის.',
-        ru: 'Нет. Мы полностью подготовим автомобиль — помоем, проведём деконтаминацию и при необходимости отполируем. Просто привозите машину как есть.',
-        en: 'No. We fully prepare the car — wash, decontaminate and polish if needed. Just bring the car as it is.',
-      },
-    },
-    {
-      question: {
-        ka: 'ჩანს თუ არა PPF ფირი ძარაზე?',
-        ru: 'Будет ли плёнка заметна на кузове?',
-        en: 'Will the film be visible on the body?',
-      },
-      answer: {
-        ka: 'არა. ფირი სრულად გამჭვირვალეა, არ ამახინჯებს ფერს და ამატებს პრიალა ბრწყინვალებას. დაფარული ავტომობილის დაუფარავისგან გარჩევა პრაქტიკულად შეუძლებელია.',
-        ru: 'Нет. Плёнка полностью прозрачная, не искажает цвет и добавляет глянцевый блеск. Отличить оклеенный автомобиль от неоклеенного практически невозможно.',
-        en: 'No. The film is completely transparent, does not distort color and adds a glossy shine. It is virtually impossible to tell a wrapped car from an unwrapped one.',
-      },
-    },
-    {
-      question: {
-        ka: 'როგორ მოვუაროთ ფირს დაფარვის შემდეგ?',
-        ru: 'Как ухаживать за плёнкой после оклейки?',
-        en: 'How to care for the film after wrapping?',
-      },
-      answer: {
-        ka: 'პირველი 48 საათის განმავლობაში არ გარეცხოთ ავტომობილი. შემდეგ — ჩვეულებრივი უკონტაქტო რეცხვა, აბრაზიული საშუალებებისა და ხისტი ჯაგრისების გარეშე. პოლირება და სპეციალური ქიმია არ არის საჭირო. წვრილი ნაკაწრები თავისთავად ქრება მზეზე.',
-        ru: 'Первые 48 часов не мойте автомобиль. Дальше — обычная бесконтактная мойка, без абразивных средств и жёстких щёток. Полировка и специальная химия не нужны. Мелкие царапины исчезают сами на солнце.',
-        en: 'Do not wash the car for the first 48 hours. After that — regular contactless washing, no abrasive products or harsh brushes. Polishing and special chemicals are not needed. Minor scratches disappear on their own in sunlight.',
-      },
-    },
-    {
-      question: {
-        ka: 'შესაძლებელია ფირის მოხსნა?',
-        ru: 'Можно ли снять плёнку?',
-        en: 'Can the film be removed?',
-      },
-      answer: {
-        ka: 'დიახ, ფირი იხსნება კვალისა და საღებავის დაზიანების გარეშე. მის ქვეშ კორპუსი იმავე მდგომარეობაში დარჩება, რაც დაფარვის დღეს იყო.',
-        ru: 'Да, плёнка снимается без следов и повреждений лакокрасочного покрытия. Под ней кузов останется в том же состоянии, что и в день оклейки.',
-        en: 'Yes, the film is removed without traces or damage to the paint. Under it, the body will remain in the same condition as the day it was wrapped.',
-      },
-    },
-    {
-      question: {
-        ka: 'შეიძლება თუ არა PPF-ის თვითონ დაკვრა?',
-        ru: 'Можно ли оклеить самостоятельно?',
-        en: 'Can I apply it myself?',
-      },
-      answer: {
-        ka: 'თეორიულად დიახ, მაგრამ არ გირჩევთ. დაფარვა მოითხოვს სუფთა სათავსს, სპეციალურ ინსტრუმენტს და გამოცდილებას. შეცდომამ შეიძლება გამოიწვიოს ათასობით ლარის ღირებულების ფირის გაფუჭება და საღებავის დაზიანება.',
-        ru: 'Теоретически да, но мы не рекомендуем. Оклейка требует чистого помещения, специального инструмента и опыта. Ошибка может привести к порче плёнки стоимостью в тысячи лари и повреждению лакокрасочного покрытия.',
-        en: 'Technically yes, but we do not recommend it. Wrapping requires a clean room, specialized tools and experience. A mistake can ruin film worth thousands of GEL and damage the paint.',
-      },
-    },
-    {
-      question: {
-        ka: 'რა არის PPF?',
+        ka: 'რა არის PPF ფირი?',
         ru: 'Что такое PPF?',
         en: 'What is PPF?',
       },
       answer: {
-        ka: 'PPF (Paint Protection Film) — გამჭვირვალე პოლიურეთანის ფირი, რომელიც იცავს კორპუსს ჩიპებისგან, ნაკაწრებისგან, ულტრაიისფერი სხივებისა და ქიმიური რეაგენტებისგან. მუშაობს როგორც უხილავი ფარი — ინარჩუნებს ავტომობილის ქარხნულ სახეს წლების განმავლობაში.',
+        ka: 'PPF არის გამჭვირვალე პოლიურეთანის დამცავი ფირი, რომელიც აკრავთ ავტომობილის კორპუსზე საღებავის დასაცავად.',
         ru: 'PPF (Paint Protection Film) — прозрачная полиуретановая плёнка, которая защищает кузов от сколов, царапин, ультрафиолета и химических реагентов. Работает как невидимый щит — сохраняет заводской вид автомобиля на годы.',
         en: 'PPF (Paint Protection Film) is a transparent polyurethane film that protects the body from chips, scratches, UV rays and chemical agents. It works as an invisible shield — preserving the factory look of the car for years.',
+      },
+    },
+    {
+      question: {
+        ka: 'რა განსხვავებაა PPF-სა და ვინილის ფირს შორის?',
+        ru: 'Чем отличается PPF от виниловой плёнки?',
+        en: 'What is the difference between PPF and vinyl film?',
+      },
+      answer: {
+        ka: 'PPF ძირითადად დაცვისთვის გამოიყენება, ხოლო ვინილი — ვიზუალური ცვლილებისთვის. PPF უფრო გამძლეა და უკეთ იცავს ლაქს ყოველდღიური ზემოქმედებისგან.',
+        ru: 'PPF используется в основном для защиты, а винил — для визуальных изменений. PPF более прочный и лучше защищает лак от ежедневного воздействия.',
+        en: 'PPF is primarily used for protection, while vinyl is for visual changes. PPF is more durable and better protects the paint from daily wear.',
+      },
+    },
+    {
+      question: {
+        ka: 'იცავს თუ არა PPF ქვებისგან და ნაკაწრებისგან?',
+        ru: 'Защищает ли PPF от камней и царапин?',
+        en: 'Does PPF protect against stones and scratches?',
+      },
+      answer: {
+        ka: 'დიახ. სწორედ ეს არის მისი მთავარი ამოცანა — შეამციროს გზაზე მიღებული წვრილი დაზიანებების და ზედაპირული ნაკაწრების რისკი.',
+        ru: 'Да. Именно это его главная задача — снизить риск мелких повреждений от дороги и поверхностных царапин.',
+        en: 'Yes. That is its main purpose — to reduce the risk of minor road damage and surface scratches.',
+      },
+    },
+    {
+      question: {
+        ka: 'შესაძლებელია თუ არა ნაწილობრივი დაფარვა?',
+        ru: 'Возможна ли частичная оклейка?',
+        en: 'Is partial coverage possible?',
+      },
+      answer: {
+        ka: 'დიახ. შესაძლებელია მხოლოდ რისკ-ზონების დაფარვა — მაგალითად კაპოტის, ბამპერის, ფარების, სარკეების ან სხვა ყველაზე დაუცველი ელემენტების.',
+        ru: 'Да. Можно оклеить только зоны риска — например, капот, бампер, фары, зеркала или другие наиболее уязвимые элементы.',
+        en: 'Yes. You can cover just the risk zones — for example, the hood, bumper, headlights, mirrors, or other most vulnerable elements.',
+      },
+    },
+    {
+      question: {
+        ka: 'შეიძლება თუ არა მატოვი ან სატინის ეფექტის PPF?',
+        ru: 'Можно ли PPF с матовым или сатиновым эффектом?',
+        en: 'Is matte or satin finish PPF available?',
+      },
+      answer: {
+        ka: 'დიახ. სურვილის მიხედვით შესაძლებელია არა მხოლოდ გამჭვირვალე გლუვი, არამედ მატოვი ან სატინის ეფექტის დამცავი PPF ვარიანტებიც.',
+        ru: 'Да. По желанию доступен не только прозрачный глянцевый, но и матовый или сатиновый варианты защитного PPF.',
+        en: 'Yes. In addition to transparent gloss, matte and satin finish protective PPF options are also available.',
       },
     },
   ],
@@ -346,110 +286,74 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'vinyl-wrapping': [
     {
       question: {
-        ka: 'რა ღირს ვინილის ფირით გადაკვრა?',
-        ru: 'Сколько стоит смена цвета защитной плёнкой?',
-        en: 'How much does a color change with protective film cost?',
+        ka: 'რით განსხვავდება ფერადი PPF და ვინილი?',
+        ru: 'Чем отличается цветной PPF от винила?',
+        en: 'What is the difference between colored PPF and vinyl?',
       },
       answer: {
-        ka: 'სრული გადაკვრა — 9000 GEL-დან. ანტიქრომი — 300 GEL-დან. ზუსტი ფასი დამოკიდებულია მარკაზე, მოდელსა და სამუშაოს მოცულობაზე. მოდით უფასო შემოწმებაზე — 15 წუთში გამოვთვლით.',
-        ru: 'Полная смена цвета — от 9000 GEL. Антихром — от 300 GEL. Точная стоимость зависит от марки, модели и объёма работ. Приезжайте на бесплатный осмотр — рассчитаем за 15 минут.',
-        en: 'Full color change — from 9,000 GEL. Anti-chrome — from 300 GEL. The exact cost depends on make, model, and scope of work. Come for a free inspection — we\'ll calculate in 15 minutes.',
+        ka: 'ფერადი PPF უფრო პრემიუმ გადაწყვეტაა, რომელიც ვიზუალურ ეფექტთან ერთად დამატებით დაცვასაც იძლევა. ვინილი ძირითადად სტილისა და ფერის შეცვლისთვის გამოიყენება და უფრო ხელმისაწვდომი ალტერნატივაა.',
+        ru: 'Цветной PPF — более премиальное решение, которое помимо визуального эффекта обеспечивает дополнительную защиту. Винил используется в основном для смены стиля и цвета и является более доступной альтернативой.',
+        en: 'Colored PPF is a more premium solution that provides additional protection along with the visual effect. Vinyl is primarily used for style and color changes and is a more affordable alternative.',
       },
     },
     {
       question: {
-        ka: 'რა ფირებს იყენებთ?',
-        ru: 'Какие плёнки используете?',
-        en: 'What films do you use?',
+        ka: 'რომელი ჯობია ფერის შეცვლისთვის?',
+        ru: 'Что лучше для смены цвета?',
+        en: 'Which is better for a color change?',
       },
       answer: {
-        ka: 'ვმუშაობთ მხოლოდ Quantum-ით და LuxArmor-ით — ჩვენ ამ ბრენდების ოფიციალური დილერები ვართ საქართველოში. ორივე ფირს აქვს ნაკაწრების თვითაღდგენა და 10 წლამდე გარანტია. Quantum — პრემიუმ-კლასი მაქსიმალური დაცვისთვის, LuxArmor — შესანიშნავი ფასისა და ხარისხის თანაფარდობა.',
-        ru: 'Работаем только с Quantum и LuxArmor — мы официальные дилеры этих брендов в Грузии. Обе плёнки с самовосстановлением царапин и гарантией до 10 лет. Quantum — премиум-класс для максимальной защиты, LuxArmor — отличное соотношение цены и качества.',
-        en: 'We work exclusively with Quantum and LuxArmor — we are the official dealers of these brands in Georgia. Both films feature self-healing technology and up to 10-year warranty. Quantum is premium-class for maximum protection, LuxArmor offers excellent value for money.',
+        ka: 'თუ გსურთ უფრო მაღალი დონის შედეგი და დამატებითი დაცვა, ხშირად უკეთესი არჩევანია ფერადი PPF. თუ პრიორიტეტი უფრო მოქნილი ბიუჯეტია, კარგი ვარიანტია ვინილი.',
+        ru: 'Если хотите результат более высокого уровня и дополнительную защиту, чаще лучший выбор — цветной PPF. Если приоритет — более гибкий бюджет, хороший вариант — винил.',
+        en: 'If you want a higher-quality result with additional protection, colored PPF is often the better choice. If budget flexibility is the priority, vinyl is a good option.',
       },
     },
     {
       question: {
-        ka: 'არის თუ არა გარანტია?',
-        ru: 'Есть ли гарантия?',
-        en: 'Is there a warranty?',
+        ka: 'დიდია თუ არა სხვაობა ბიუჯეტში ფერად PPF-სა და ვინილს შორის?',
+        ru: 'Большая ли разница в бюджете между цветным PPF и винилом?',
+        en: 'Is there a big budget difference between colored PPF and vinyl?',
       },
       answer: {
-        ka: 'დიახ. გარანტია 10 წლამდე ფირზე და სამუშაოზე. ასობით მიმოხილვა, 4.9★ რეიტინგი Google-ზე. საგარანტიო შემთხვევას ჩვენი ხარჯით ვაგვარებთ ნებისმიერ სტუდიაში.',
-        ru: 'Да. Гарантия до 10 лет на плёнку и работу. Сотни отзывов, рейтинг 4.9★ на Google.. Гарантийный случай решаем за наш счёт в любой из двух студий.',
-        en: 'Yes. Warranty up to 10 years on film and workmanship. We cover peeling, yellowing, and material defects. Warranty claims are resolved at our expense at either studio.',
+        ka: 'სხვაობა დამოკიდებულია ავტომობილზე, მასალასა და სამუშაოს მოცულობაზე. ბევრ შემთხვევაში ფერადი PPF უფრო ძვირია, მაგრამ კლიენტისთვის უფრო ღირებული გადაწყვეტაა, რადგან ვიზუალთან ერთად დაცვასაც იღებს.',
+        ru: 'Разница зависит от автомобиля, материала и объёма работ. Во многих случаях цветной PPF дороже, но для клиента это более ценное решение, так как визуал сочетается с защитой.',
+        en: 'The difference depends on the car, material, and scope of work. In many cases colored PPF costs more, but it offers greater value since you get both visual effect and protection.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს ვინილის ფირი?',
-        ru: 'На сколько хватает цветной защитной плёнки?',
-        en: 'How long does the color protective film last?',
+        ka: 'თუ მინდა უფრო ხელმისაწვდომი ვარიანტი, აკეთებთ ვინილითაც?',
+        ru: 'Если хочу более доступный вариант, делаете ли винилом тоже?',
+        en: 'If I want a more affordable option, do you also work with vinyl?',
       },
       answer: {
-        ka: '7–10 წელი ნორმალური ექსპლუატაციისას. ფირი არ ყვითლდება, არ ბუნდდება და ინარჩუნებს ღრმა ბრწყინვალებას. წვრილი ნაკაწრები მზეზე თავისთავად ქრება. შედარებისთვის: ვინილის ფირი მხოლოდ 2–4 წელი ძლებს.',
-        ru: '7–10 лет при нормальной эксплуатации. Плёнка не желтеет, не мутнеет и сохраняет глубокий блеск. Мелкие царапины затягиваются сами на солнце. Для сравнения: виниловая плёнка служит всего 2–4 года. Гаражное хранение продлевает.',
-        en: '7–10 years under normal conditions. The film doesn\'t yellow, cloud, or lose its deep gloss. Minor scratches heal on their own in sunlight. For comparison: vinyl wrap lasts only 2–4 years.',
+        ka: 'დიახ. BESTAUTO-ში შესაძლებელია როგორც ფერადი PPF-ით, ისე ვინილით ფერის შეცვლა.',
+        ru: 'Да. В BESTAUTO возможна смена цвета как цветным PPF, так и винилом.',
+        en: 'Yes. At BESTAUTO, color change is available with both colored PPF and vinyl.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება ვინილის გადაკვრა?',
-        ru: 'Сколько времени занимает оклейка?',
-        en: 'How long does the installation take?',
+        ka: 'იცავს თუ არა ფერადი PPF ავტომობილს დამატებით?',
+        ru: 'Обеспечивает ли цветной PPF дополнительную защиту?',
+        en: 'Does colored PPF provide additional protection?',
       },
       answer: {
-        ka: 'სრული გადაკვრა — 3–5 სამუშაო დღე. ანტიქრომი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია მოდელსა და ძარის სირთულეზე.',
-        ru: 'Полная смена цвета — 3–5 рабочих дней. Антихром — 1–2 дня. Точный срок зависит от модели и сложности кузова. На время работы предоставляем комфортную зону ожидания с массажными креслами и кофе.',
-        en: 'Full color change — 3–5 business days. Anti-chrome — 1–2 days. Exact timeline depends on model and body complexity. While we work, enjoy our comfortable waiting area with massage chairs and coffee.',
+        ka: 'დიახ. სწორედ ეს არის მისი ერთ-ერთი მთავარი უპირატესობა — ვიზუალური ცვლილება და დამატებითი დაცვა ერთდროულად.',
+        ru: 'Да. Именно это одно из главных преимуществ — визуальное изменение и дополнительная защита одновременно.',
+        en: 'Yes. This is one of its key advantages — visual change and additional protection at the same time.',
       },
     },
     {
       question: {
-        ka: 'შესაძლებელია ფირის მოხსნა?',
-        ru: 'Можно ли снять плёнку потом?',
-        en: 'Can the film be removed later?',
+        ka: 'თუ მჭირდება მხოლოდ საღებავის დაცვა და არა ფერის შეცვლა?',
+        ru: 'Если нужна только защита краски, а не смена цвета?',
+        en: 'What if I only need paint protection, not a color change?',
       },
       answer: {
-        ka: 'დიახ, საღებავის დაზიანების გარეშე. პოლიურეთანის ფირი იხსნება დიდი ნაჭრებით, წებოვანი კვალის გარეშე — ვინილისგან განსხვავებით, რომელიც რამდენიმე წლის შემდეგ ნატეხებად იშლება და ლაქს იზიდავს. ფირის ქვეშ ძარა იმავე მდგომარეობაშია, როგორც დაფარვის დღეს.',
-        ru: 'Да, без повреждения краски. Полиуретановая плёнка снимается крупными листами, не оставляя клеевых следов — в отличие от винила, который после нескольких лет рассыпается и тянет лак. Под плёнкой кузов остаётся в том же состоянии, что и в день оклейки.',
-        en: 'Yes, without damaging the paint. Polyurethane film comes off in large sheets with no adhesive residue — unlike vinyl, which crumbles and pulls the clear coat after a few years. The body underneath stays in the same condition as the day it was wrapped.',
-      },
-    },
-    {
-      question: {
-        ka: 'როგორ ითვლება ვინილის გადაკვრის ფასი?',
-        ru: 'Чем цветной PPF лучше виниловой плёнки?',
-        en: 'How is color PPF better than vinyl wrap?',
-      },
-      answer: {
-        ka: 'ფასი დამოკიდებულია ავტომობილის ზომაზე, ძარის სირთულეზე და არჩეულ ფირზე. მოდით უფასო შემოწმებაზე ან გამოგვიგზავნეთ ფოტო WhatsApp-ზე — ზუსტ ფასს 15 წუთში გამოვთვლით.',
-        ru: 'Толще в 2–3 раза — реальная защита от камней и гравия. Царапины на парковке затягиваются сами. Служит 7–10 лет вместо 2–4 у винила. Не желтеет, не трескается на солнце. Снимается чисто, без клеевых следов. Поверхность — как заводская покраска, без «апельсиновой корки».',
-        en: '2–3 times thicker — real protection from rocks and gravel. Parking scratches heal on their own. Lasts 7–10 years vs. 2–4 for vinyl. No yellowing or cracking in sun. Removes cleanly with no residue. Surface looks like factory paint, not an ‘orange peel’ wrap.',
-      },
-    },
-    {
-      question: {
-        ka: 'რა არის თვითაღდგენა?',
-        ru: 'Что такое самовосстановление?',
-        en: 'What is self-healing?',
-      },
-      answer: {
-        ka: 'Quantum-ისა და LuxArmor-ის ფირის ზედა ფენა შეიცავს ელასტიურ პოლიმერს, რომელიც «აკეთებს» წვრილ ნაკაწრებს გახურებისას. საკმარისია მანქანა მზეზე დატოვოთ ან თბილი წყალი დაასხათ — ნაკაწრი წუთებში ქრება. ღრმა ჭრილობები საბაზისო ფენამდე თვითაღდგენას არ ექვემდებარება.',
-        ru: 'Верхний слой плёнки Quantum и LuxArmor содержит эластичный полимер, который «заплавляет» мелкие царапины при нагреве. Достаточно оставить машину на солнце или облить тёплой водой — царапина исчезает за минуты. Глубокие порезы до базового слоя самовосстановлению не поддаются.',
-        en: 'The top layer of Quantum and LuxArmor film contains an elastic polymer that ‘repairs’ minor scratches when heated. Just leave the car in the sun or pour warm water — the scratch disappears in minutes. Deep cuts through to the base layer cannot self-heal.',
-      },
-    },
-    {
-      question: {
-        ka: 'დააზიანებს თუ არა ფირი საღებავს?',
-        ru: 'Повредит ли плёнка краску?',
-        en: 'Will the film damage the paint?',
-      },
-      answer: {
-        ka: 'არა. Quantum-ისა და LuxArmor-ის ფირები სუფთად იხსნება და იცავს ლაქ-საღებავს ჩიპებისგან, ნაკაწრებისგან და ულტრაიისფერი სხივებისგან. გაყიდვისას საღებავი ფირის ქვეშ იდეალურ მდგომარეობაშია — ეს ზრდის ავტომობილის ღირებულებას.',
-        ru: 'Нет. Плёнки Quantum и LuxArmor снимаются чисто и даже защищают лакокрасочное покрытие от сколов, царапин и ультрафиолета. При продаже автомобиля краска под плёнкой будет в идеальном состоянии — это повышает стоимость при перепродаже.',
-        en: 'No. Quantum and LuxArmor films remove cleanly and even protect the clear coat from chips, scratches, and UV rays. When you sell the car, the paint underneath will be in perfect condition — this increases resale value.',
+        ka: 'ამ შემთხვევაში უკეთესია იხილოთ ჩვენი ცალკე PPF გვერდი, რომელიც გამჭვირვალე დამცავ ფირზეა ორიენტირებული.',
+        ru: 'В этом случае лучше посмотреть нашу отдельную страницу PPF, ориентированную на прозрачную защитную плёнку.',
+        en: 'In that case, check our separate PPF page focused on transparent protective film.',
       },
     },
   ],
@@ -457,7 +361,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'interior-cleaning': [
     {
       question: {
-        ka: 'რა ღირს სალონის ქიმწმენდა?',
+        ka: 'რა ღირს მანქანის ქიმწმენდა?',
         ru: 'Сколько стоит химчистка салона?',
         en: 'How much does interior cleaning cost?',
       },
@@ -469,31 +373,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'არის თუ არა გარანტია ქიმწმენდაზე?',
-        ru: 'Есть ли гарантия на химчистку?',
-        en: 'Is there a warranty on interior cleaning?',
-      },
-      answer: {
-        ka: 'დიახ, თუ სამუშაოს შემდეგ საჭირო გახდა მცირე კორექცია, ოპერატიულად გავასწორებთ. ჩვენი მიზანია შედეგი ბოლომდე დაგაკმაყოფილოთ.',
-        ru: 'Да, 7 дней гарантии на доработку. Если вас что-то не устроит — приезжайте, доработаем бесплатно. За 5 лет работы менее 2% гарантийных случаев.',
-        en: 'Yes, 7-day warranty for touch-ups. If anything doesn\'t meet your expectations — come back, we\'ll fix it free. Less than 2% warranty cases over 5 years of work.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს სჭირდება ქიმწმენდა?',
-        ru: 'Сколько времени занимает химчистка?',
-        en: 'How long does interior cleaning take?',
-      },
-      answer: {
-        ka: 'ვადა დამოკიდებულია სალონის მდგომარეობასა და არჩეულ სერვისზე. საბაზისო სამუშაო უფრო სწრაფად სრულდება, სრული ღრმა ქიმწმენდა — უფრო მეტ დროს მოითხოვს, განსაკუთრებით თუ საჭიროა სრული გამოშრობაც.',
-        ru: 'Качественная химчистка делается от 1 до 3 дней. Базовая занимает 4–5 часов, полная — 6–8 часов. С полной сушкой лучше оставить автомобиль на ночь.',
-        en: 'Quality interior cleaning takes 1 to 3 days. Basic cleaning takes 4–5 hours, full cleaning 6–8 hours. For complete drying, it\'s best to leave the car overnight.',
-      },
-    },
-    {
-      question: {
-        ka: 'აშორებთ თუ არა უსიამოვნო სუნს?',
+        ka: 'შეგიძლიათ თუ არა უსიამოვნო სუნის მოცილება?',
         ru: 'Уберете ли запах сигарет или животных?',
         en: 'Can you remove cigarette or pet odors?',
       },
@@ -505,31 +385,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'უსაფრთხოა თუ არა გამოყენებული ქიმია?',
-        ru: 'Какую химию используете? Безопасна ли она?',
-        en: 'What chemicals do you use? Are they safe?',
-      },
-      answer: {
-        ka: 'ვიყენებთ პროფესიონალურ და უსაფრთხო ქიმიას, რომელიც სწორად შერჩევისას არ აზიანებს სალონის მასალებს და არ ტოვებს მძაფრ, უსიამოვნო სუნს.',
-        ru: 'Работаем с Koch Chemie, Grass, используем аппарат Tornador. Все составы гипоаллергенны, безопасны для детей и животных. Не оставляют резких запахов после обработки.',
-        en: 'We work with Koch Chemie, Grass, and use Tornador equipment. All products are hypoallergenic, safe for children and pets. They leave no harsh odors after treatment.',
-      },
-    },
-    {
-      question: {
-        ka: 'რაიმე უნდა გავაკეთო მოყვანამდე?',
-        ru: 'Нужно ли что-то сделать перед приездом?',
-        en: 'Do I need to do anything before bringing my car?',
-      },
-      answer: {
-        ka: 'უბრალოდ ამოიღეთ პირადი ნივთები სალონიდან. მანქანის გარეცხვა არ არის საჭირო — ყველაფერს ჩვენ გავაკეთებთ მომზადების პროცესში.',
-        ru: 'Просто уберите личные вещи из салона. Мыть машину не нужно — мы всё сделаем сами в процессе подготовки.',
-        en: 'Just remove your personal belongings from the cabin. No need to wash the car — we handle everything during preparation.',
-      },
-    },
-    {
-      question: {
-        ka: 'როდის შემიძლია ავტომობილის გამოყენება ქიმწმენდის შემდეგ?',
+        ka: 'რამდენ ხანში შრება სალონი ქიმწმენდის შემდეგ?',
         ru: 'Когда можно пользоваться автомобилем после химчистки?',
         en: 'When can I use my car after cleaning?',
       },
@@ -541,7 +397,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შესაძლებელია თუ არა ძველი ლაქების მოცილება?',
+        ka: 'შეიძლება თუ არა ძველი ლაქების მოცილება?',
         ru: 'Можно ли вывести старые пятна?',
         en: 'Can you remove old stains?',
       },
@@ -553,14 +409,26 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რით განსხვავდება დეტეილინგ-ქიმწმენდა ჩვეულებრივი რეცხვისგან?',
-        ru: 'Чем детейлинг-химчистка отличается от обычной мойки?',
-        en: 'How is detailing different from a regular car wash?',
+        ka: 'რა შედის სრულ ქიმწმენდაში?',
+        ru: 'Что входит в полную химчистку?',
+        en: 'What is included in a full interior cleaning?',
       },
       answer: {
-        ka: 'ჩვეულებრივ რეცხვაზე ზედაპირს 30 წუთში ასუფთავებენ. დეტეილინგ-ქიმწმენდა არის სალონის ყოველი სანტიმეტრის ღრმა დამუშავება: სავარძლები, ჭერი, პლასტმასა, ხალიჩები. ვაშორებთ ბაქტერიებს, ალერგენებს, სუნებს. შედეგი — როგორც ახალი სალონი.',
-        ru: 'На обычной мойке чистят поверхностно за 30 минут. Детейлинг-химчистка — это глубокая обработка каждого сантиметра салона: сиденья, потолок, пластик, ковры. Удаляем бактерии, аллергены, запахи. Результат — как новый салон.',
-        en: 'A regular wash cleans the surface in 30 minutes. Detailing is deep treatment of every inch of the cabin: seats, headliner, plastic, carpets. We remove bacteria, allergens, and odors. The result is like a brand-new interior.',
+        ka: 'სრული ქიმწმენდა მოიცავს სავარძლების, ჭერის, იატაკის, კარის ბარათების, საბარგულის და პლასტმასის ელემენტების ღრმა წმენდას. ზუსტი შემადგენლობა დამოკიდებულია ავტომობილის მდგომარეობაზე.',
+        ru: 'Полная химчистка включает глубокую очистку сидений, потолка, пола, дверных карт, багажника и пластиковых элементов. Точный состав зависит от состояния автомобиля.',
+        en: 'Full cleaning includes deep treatment of seats, headliner, floor, door panels, trunk, and plastic elements. The exact scope depends on the car condition.',
+      },
+    },
+    {
+      question: {
+        ka: 'სად მდებარეობთ?',
+        ru: 'Где вы находитесь?',
+        en: 'Where are you located?',
+      },
+      answer: {
+        ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
+        ru: 'BESTAUTO работает на двух локациях в Тбилиси — на Гурамишвили и на Сабуртало. При записи поможем выбрать удобную студию.',
+        en: 'BESTAUTO operates at two locations in Tbilisi — Guramishvili and Saburtalo. We\'ll help you choose the most convenient studio when booking.',
       },
     },
   ],
@@ -679,7 +547,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'auto-glass-tinting': [
     {
       question: {
-        ka: 'რა ღირს მინების დაბურვა?',
+        ka: 'რა ღირს მანქანის მინების დაბურვა?',
         ru: 'Сколько стоит тонировка?',
         en: 'How much does window tinting cost?',
       },
@@ -691,7 +559,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა ფირს იყენებთ?',
+        ka: 'რით განსხვავდება ატერმალური და კერამიკული ფირი?',
         ru: 'Какую пленку используете?',
         en: 'What film do you use?',
       },
@@ -715,7 +583,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა დონის დაბურვა არის დაშვებული საქართველოში?',
+        ka: 'რა დონის დაბურვაა ნებადართული საქართველოში?',
         ru: 'Легальна ли тонировка в Грузии?',
         en: 'Is window tinting legal in Georgia?',
       },
@@ -739,19 +607,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რატომ ღირს მინების დაბურვა?',
-        ru: 'Зачем тонировать стекла?',
-        en: 'Why tint your windows?',
-      },
-      answer: {
-        ka: 'ბლოკავს ულტრაიისფერის 99%-ს, ამცირებს სალონის გახურებას 60%-ით, უზრუნველყოფს კონფიდენციალურობას. თბილისის კლიმატში ეს აუცილებლობაა და არა ფუფუნება.',
-        ru: 'Блокирует 99% ультрафиолета, снижает нагрев салона на 60%, обеспечивает приватность. В условиях Тбилиси — это необходимость, а не роскошь.',
-        en: 'Blocks 99% of UV rays, reduces cabin heat by 60%, provides privacy. In Tbilisi\'s climate, it\'s a necessity, not a luxury.',
-      },
-    },
-    {
-      question: {
-        ka: 'რა არის ათერმული დაბურვა?',
+        ka: 'ატერმალური ფირი რას აკეთებს?',
         ru: 'Что такое атермальная тонировка?',
         en: 'What is ceramic (athermal) tinting?',
       },
@@ -763,14 +619,14 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შეიძლება თუ არა მინების თვითონ დაბურვა?',
-        ru: 'Можно ли затонировать самостоятельно?',
-        en: 'Can I tint my windows myself?',
+        ka: 'შეიძლება თუ არა წინა საქარე მინაზე დაბურვა?',
+        ru: 'Можно ли тонировать лобовое стекло?',
+        en: 'Can the front windshield be tinted?',
       },
       answer: {
-        ka: 'ბუშტუკები, მტვერი ფირის ქვეშ, მრუდე კიდეები — თვითტონირების ტიპიური პრობლემებია. გადაკეთება უფრო ძვირი დაჯდება. პროფესიონალური დაყენება 2–4 საათს იღებს და შედეგი გარანტირებულია.',
-        ru: 'Пузыри, пыль под пленкой, кривые края — типичные проблемы самостоятельной тонировки. Переклейка обойдется дороже. Профессиональная установка занимает 2–4 часа и результат гарантирован.',
-        en: 'Bubbles, dust under the film, crooked edges — typical problems of DIY tinting. Re-doing it will cost more. Professional installation takes 2–4 hours and the result is guaranteed.',
+        ka: 'დიახ. საქარე მინაზე შესაძლებელია ატერმალური ფირის დატანა, რომელიც ამცირებს სიცხეს და ულტრაიისფერ ზემოქმედებას, ხილვადობის შენარჩუნებით.',
+        ru: 'Да. На лобовое стекло можно нанести атермальную плёнку, которая снижает нагрев и ультрафиолет при сохранении видимости.',
+        en: 'Yes. An athermal film can be applied to the windshield, reducing heat and UV while maintaining visibility.',
       },
     },
   ],
@@ -778,7 +634,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'windshield-repair': [
     {
       question: {
-        ka: 'რა ღირს საქარე მინის შეკეთება?',
+        ka: 'რა ღირს საქარე მინის აღდგენა?',
         ru: 'Сколько стоит ремонт скола?',
         en: 'How much does chip repair cost?',
       },
@@ -790,7 +646,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რომელი დაზიანება შეიძლება შეკეთდეს?',
+        ka: 'ყველა ბზარის შეკეთება შეიძლება?',
         ru: 'Какие повреждения можно отремонтировать?',
         en: 'What types of damage can be repaired?',
       },
@@ -802,31 +658,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'არის თუ არა გარანტია?',
-        ru: 'Есть ли гарантия?',
-        en: 'Is there a warranty?',
-      },
-      answer: {
-        ka: 'დიახ, 1-წლიანი გარანტია იმაზე, რომ ბზარი შემდეგ არ გაგრძელდება. პოლიმერი, რომელსაც ვიყენებთ, სიმტკიცით მინას უტოლდება.',
-        ru: 'Да, 1 год гарантии на то, что трещина не пойдет дальше. Полимер, который мы используем, по прочности сопоставим со стеклом.',
-        en: 'Yes, 1-year warranty that the crack won\'t spread further. The polymer we use is comparable in strength to glass itself.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს ძლებს შეკეთებული მინა?',
-        ru: 'Надолго ли хватает ремонта?',
-        en: 'How long does the repair last?',
-      },
-      answer: {
-        ka: 'მინის მთელი ვადის განმავლობაში. ხარისხიანი პოლიმერი UV-გამოშრობის შემდეგ მინის ტოლ სიმტკიცეს აღწევს. შეკეთების გამეორება არ არის საჭირო.',
-        ru: 'На весь срок службы стекла. Качественный полимер после УФ-отверждения набирает прочность, равную самому стеклу. Ремонт не нужно повторять.',
-        en: 'For the entire lifespan of the windshield. Quality polymer after UV curing reaches the strength of glass itself. No need to repeat the repair.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენ ხანს სჭირდება შეკეთება?',
+        ka: 'რამდენ ხანს გრძელდება საქარე მინის შეკეთება?',
         ru: 'Сколько времени занимает ремонт?',
         en: 'How long does the repair take?',
       },
@@ -838,7 +670,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'როდის უნდა შეკეთება და როდის შეცვლა?',
+        ka: 'რა ჯობს — შეკეთება თუ შეცვლა?',
         ru: 'Когда ремонтировать, а когда менять стекло?',
         en: 'When to repair and when to replace?',
       },
@@ -850,7 +682,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შესამჩნევია თუ არა შეკეთების ადგილი?',
+        ka: 'რამდენად შესამჩნევი რჩება კვალი შეკეთების შემდეგ?',
         ru: 'Будет ли видно место ремонта?',
         en: 'Will the repair spot be visible?',
       },
@@ -862,26 +694,14 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'საჭიროა თუ არა წინასწარ ჩაწერა?',
-        ru: 'Нужно ли записываться?',
-        en: 'Do I need to book in advance?',
+        ka: 'რატომ არ უნდა გადავდო შეკეთება?',
+        ru: 'Почему не стоит откладывать ремонт?',
+        en: 'Why shouldn\'t I delay the repair?',
       },
       answer: {
-        ka: 'ჩიპის შეკეთება სწრაფი მომსახურებაა — ხშირად იმავე დღეს შეგვიძლია. მოგვწერეთ WhatsApp-ზე — გირჩევთ უახლოეს თავისუფალ დროს.',
-        ru: 'Ремонт сколов — быстрая услуга, часто можем принять в тот же день. Напишите в WhatsApp — подскажем ближайшее свободное время.',
-        en: 'Chip repair is a quick service — we can often handle it same day. Message us on WhatsApp — we\'ll suggest the nearest available slot.',
-      },
-    },
-    {
-      question: {
-        ka: 'როგორ მუშაობს ჩიპის შეკეთება?',
-        ru: 'Как работает ремонт сколов?',
-        en: 'How does chip repair work?',
-      },
-      answer: {
-        ka: 'ვასუფთავებთ ჩიპს, წნევით შეგვაქვს სპეციალური პოლიმერი, ულტრაიისფერით ვამაგრებთ, შემდეგ ვაპოლირებთ. პოლიმერი ბზარს ავსებს და მინის სიმტკიცეს აღადგენს.',
-        ru: 'Очищаем скол от грязи, вводим специальный полимер под давлением, отверждаем ультрафиолетом, полируем место ремонта. Полимер заполняет трещину и восстанавливает прочность стекла.',
-        en: 'We clean the chip, inject special polymer under pressure, cure it with ultraviolet light, then polish the repair area. The polymer fills the crack and restores the glass strength.',
+        ka: 'რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი მიიღწევა. დროის გასვლასთან ერთად ბზარი შეიძლება გაიზარდოს, ჭუჭყი მოხვდეს შიგნით და შეკეთება გაძნელდეს ან შეუძლებელი გახდეს.',
+        ru: 'Чем свежее повреждение, тем лучше результат. Со временем трещина может разрастись, грязь попадёт внутрь, и ремонт станет сложнее или невозможен.',
+        en: 'The fresher the damage, the better the result. Over time, cracks can grow, dirt can get inside, and repair becomes harder or impossible.',
       },
     },
   ],
@@ -913,31 +733,19 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენად ჩუმად გახდება სალონში?',
-        ru: 'Насколько тише станет в салоне?',
-        en: 'How much quieter will the cabin be?',
+        ka: 'ხმის იზოლაცია რას აუმჯობესებს?',
+        ru: 'Что такое шумоизоляция автомобиля?',
+        en: 'What is car soundproofing?',
       },
       answer: {
-        ka: 'ხმაურის შემცირება 30–50%-ით (3–8 დბ). სხვაობა მაშინვე იგრძნობა — განსაკუთრებით ავტობანზე და გრუნტის გზებზე. აუდიოსისტემაც გაცილებით უკეთ ჟღერს.',
-        ru: 'Снижение шума на 30–50% (3–8 дБ). Разница ощущается сразу — особенно на трассе и по грунтовым дорогам. Аудиосистема зазвучит значительно лучше.',
-        en: 'Noise reduction of 30–50% (3–8 dB). The difference is noticeable immediately — especially on highways and gravel roads. Your audio system will sound much better too.',
+        ka: 'ეს არის სპეციალური მასალების (ვიბრო- და ხმაურშთამნთქმელი) დაყენება ავტომობილის კუზოვის პანელებზე. ამცირებს გზის ხმაურს, ვიბრაციას, აუმჯობესებს კომფორტს და აუდიოსისტემის ხმის ხარისხს.',
+        ru: 'Это установка специальных материалов (вибро- и шумопоглощающих) на кузовные панели автомобиля. Снижает дорожный шум, вибрации, улучшает комфорт и качество звука аудиосистемы.',
+        en: 'It\'s the installation of special materials (vibration-dampening and sound-absorbing) on the car\'s body panels. Reduces road noise, vibrations, improves comfort and audio system sound quality.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება მონტაჟი?',
-        ru: 'Сколько времени занимает установка?',
-        en: 'How long does installation take?',
-      },
-      answer: {
-        ka: 'კარები — 1 დღე, იატაკი — 1–2 დღე, სრული ხმაურიზოლაცია — 3–5 დღე. სირთულე ავტომობილის მოდელზეა დამოკიდებული.',
-        ru: 'Двери — 1 день, пол — 1–2 дня, полная шумоизоляция — 3–5 дней. Сложность зависит от модели автомобиля.',
-        en: 'Doors — 1 day, floor — 1–2 days, full soundproofing — 3–5 days. Complexity depends on the car model.',
-      },
-    },
-    {
-      question: {
-        ka: 'რომელი ზონების ხმაურიზოლაცია შეიძლება?',
+        ka: 'რომელი ზონების იზოლაცია იძლევა ყველაზე დიდ ეფექტს?',
         ru: 'Какие зоны можно шумоизолировать?',
         en: 'What areas can be soundproofed?',
       },
@@ -949,50 +757,50 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა მასალებს იყენებთ?',
-        ru: 'Какие материалы используете?',
-        en: 'What materials do you use?',
+        ka: 'რით განსხვავდება ხმის და ვიბრო იზოლაცია?',
+        ru: 'Чем отличается звуко- и виброизоляция?',
+        en: 'What is the difference between sound and vibration insulation?',
       },
       answer: {
-        ka: 'STP, Shumoff, Comfort Mat — წამყვანი ბრენდები. ყველა მასალა სერტიფიცირებულია, უსუნოა, არ შთანთქავს ტენს და არ იწვევს კოროზიას.',
-        ru: 'STP, Шумoff, Comfort Mat — ведущие бренды. Все материалы сертифицированы, не имеют запаха, не впитывают влагу и не вызывают коррозию.',
-        en: 'STP, Shumoff, Comfort Mat — leading brands. All materials are certified, odorless, moisture-resistant, and non-corrosive.',
+        ka: 'ვიბრო იზოლაცია პირველ რიგში ამცირებს კორპუსის პანელების ვიბრაციას, ხოლო ხმის იზოლაცია სალონში შემოსულ გარე ხმაურს ამცირებს. საუკეთესო შედეგისთვის ხშირად გამოიყენება ორივეს კომბინაცია.',
+        ru: 'Виброизоляция в первую очередь снижает вибрацию панелей кузова, а шумоизоляция уменьшает внешний шум, проникающий в салон. Для лучшего результата часто используется комбинация обоих.',
+        en: 'Vibration insulation primarily reduces body panel vibration, while sound insulation reduces external noise entering the cabin. For the best result, a combination of both is often used.',
       },
     },
     {
       question: {
-        ka: 'როგორ მიმდინარეობს მონტაჟი?',
-        ru: 'Как проходит установка?',
-        en: 'How does the installation process work?',
+        ka: 'რამდენად იმატებს ავტომობილის წონა?',
+        ru: 'Насколько увеличивается вес автомобиля?',
+        en: 'How much weight does it add to the car?',
       },
       answer: {
-        ka: 'დამუშავებული ზონების სრული დაშლა, ცხიმის მოცილება. 2+ ფენის დაგება: ვიბრო-იზოლაცია + ხმაურ-იზოლაცია. აწყობა სამაგრების შემოწმებით. ყოველი ეტაპის ფოტოანგარიშს გაწვდით.',
-        ru: 'Полная разборка обрабатываемых зон, обезжиривание. Укладка 2+ слоев: виброизоляция + шумоизоляция. Сборка с проверкой всех креплений. Предоставляем фотоотчет о каждом этапе.',
-        en: 'Complete disassembly of treated areas, degreasing. Laying 2+ layers: vibration damping + sound insulation. Reassembly with fastener checks. We provide a photo report of every stage.',
+        ka: 'სრული ხმის იზოლაცია საშუალოდ 20–40 კგ-ს ამატებს, რაც ავტომობილის დინამიკაზე და საწვავის ხარჯზე პრაქტიკულად არ აისახება.',
+        ru: 'Полная шумоизоляция добавляет в среднем 20–40 кг, что практически не влияет на динамику автомобиля и расход топлива.',
+        en: 'Full soundproofing adds an average of 20–40 kg, which has virtually no effect on the car\'s dynamics or fuel consumption.',
       },
     },
     {
       question: {
-        ka: 'შემიძლია თუ არა ხმაურიზოლაციის თვითონ გაკეთება?',
-        ru: 'Можно ли сделать шумоизоляцию самостоятельно?',
-        en: 'Can I do soundproofing myself?',
+        ka: 'შეიძლება თუ არა მხოლოდ კარების ან საბარგულის იზოლაცია?',
+        ru: 'Можно ли сделать только двери или багажник?',
+        en: 'Can I soundproof just the doors or trunk?',
       },
       answer: {
-        ka: 'კარები — თეორიულად შესაძლებელია, მაგრამ დაშლის გამოცდილება სჭირდება. იატაკი და ჭერი — არ გირჩევთ: ელექტროგაყვანილობა, ბალიშები, აწყობისას ხმაურის რისკი. აწყობის შეცდომები არასასურველ ხმაურებს გამოიწვევს.',
-        ru: 'Двери — теоретически можно, но нужен опыт разборки. Пол и потолок — не рекомендуем: электрика, подушки безопасности, риск скрипов при сборке. Ошибки в сборке приведут к посторонним звукам.',
-        en: 'Doors — theoretically possible, but requires disassembly experience. Floor and roof — not recommended: wiring, airbags, risk of rattles during reassembly. Assembly mistakes will lead to unwanted noises.',
+        ka: 'დიახ. შესაძლებელია კონკრეტული ზონების ნაწილობრივი დამუშავება — კარები, საბარგული, იატაკი ან თაღები ცალ-ცალკე.',
+        ru: 'Да. Возможна обработка отдельных зон — дверей, багажника, пола или арок по отдельности.',
+        en: 'Yes. Partial treatment of specific zones is possible — doors, trunk, floor, or arches separately.',
       },
     },
     {
       question: {
-        ka: 'რა არის ავტომობილის ხმაურის იზოლაცია?',
-        ru: 'Что такое шумоизоляция автомобиля?',
-        en: 'What is car soundproofing?',
+        ka: 'რამდენ ხანს გრძელდება ხმის იზოლაციის მონტაჟი?',
+        ru: 'Сколько времени занимает установка шумоизоляции?',
+        en: 'How long does soundproofing installation take?',
       },
       answer: {
-        ka: 'ეს არის სპეციალური მასალების (ვიბრო- და ხმაურშთამნთქმელი) დაყენება ავტომობილის კუზოვის პანელებზე. ამცირებს გზის ხმაურს, ვიბრაციას, აუმჯობესებს კომფორტს და აუდიოსისტემის ხმის ხარისხს.',
-        ru: 'Это установка специальных материалов (вибро- и шумопоглощающих) на кузовные панели автомобиля. Снижает дорожный шум, вибрации, улучшает комфорт и качество звука аудиосистемы.',
-        en: 'It\'s the installation of special materials (vibration-dampening and sound-absorbing) on the car\'s body panels. Reduces road noise, vibrations, improves comfort and audio system sound quality.',
+        ka: 'კარები — 1 დღე, იატაკი — 1–2 დღე, სრული ხმის იზოლაცია — 3–5 დღე. ვადა დამოკიდებულია ავტომობილის მოდელზე.',
+        ru: 'Двери — 1 день, пол — 1–2 дня, полная шумоизоляция — 3–5 дней. Сроки зависят от модели автомобиля.',
+        en: 'Doors — 1 day, floor — 1–2 days, full soundproofing — 3–5 days. Timing depends on the car model.',
       },
     },
   ],
@@ -1210,7 +1018,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'carwash': [
     {
       question: {
-        ka: 'რით განსხვავდება დეტეილინგ რეცხვა ჩვეულებრივი რეცხვისგან?',
+        ka: 'რა განსხვავებაა 2-ფაზიან და 3-ფაზიან დეტეილინგ რეცხვას შორის?',
         ru: 'Чем детейлинг мойка отличается от обычной мойки?',
         en: 'What is the difference between a detailing wash and a regular car wash?',
       },
@@ -1222,7 +1030,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება დეტეილინგ რეცხვა?',
+        ka: 'რამდენ ხანს გრძელდება მანქანის რეცხვა?',
         ru: 'Сколько времени занимает детейлинг мойка?',
         en: 'How long does a detailing car wash take?',
       },
@@ -1234,7 +1042,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შეიძლება თუ არა კერამიკული ან PPF საფარიანი ავტომობილის რეცხვა?',
+        ka: 'უსაფრთხოა თუ არა რეცხვა PPF-ისთვის და კერამიკისთვის?',
         ru: 'Можно ли мыть автомобиль с керамическим покрытием или PPF?',
         en: 'Can I wash a car with a ceramic coating or PPF?',
       },
@@ -1246,7 +1054,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა ქიმიას იყენებთ რეცხვის დროს?',
+        ka: 'რა ქიმიას იყენებთ?',
         ru: 'Какую химию вы используете при мойке?',
         en: 'What products do you use for washing?',
       },
@@ -1258,7 +1066,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა ღირს ავტომობილის დეტეილინგ რეცხვა?',
+        ka: 'რა ღირს მანქანის რეცხვა?',
         ru: 'Сколько стоит детейлинг мойка автомобиля?',
         en: 'How much does a detailing car wash cost?',
       },
@@ -1268,31 +1076,69 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'A detailing wash starts from 40 GEL for a two-phase wash of a sedan. The final price depends on the vehicle size and selected services.',
       },
     },
+  ],
+
+  '': [
     {
       question: {
-        ka: 'როგორ ჩავეწერო დეტეილინგ რეცხვაზე?',
-        ru: 'Как записаться на детейлинг мойку?',
-        en: 'How do I book a detailing wash?',
+        ka: 'რა სერვისებს გვთავაზობთ?',
+        ru: 'Какие услуги вы предлагаете?',
+        en: 'What services do you offer?',
       },
       answer: {
-        ka: 'ჩაწერა შეგიძლიათ ტელეფონით, WhatsApp-ით ან ვებსაიტზე არსებული ფორმის საშუალებით. ჩვენი მენეჯერი დაადასტურებს ვიზიტს და უპასუხებს ყველა კითხვას.',
-        ru: 'Записаться можно по телефону, через WhatsApp или с помощью формы на сайте. Наш менеджер подтвердит время и ответит на все вопросы.',
-        en: 'You can book via phone, WhatsApp, or through the booking form on our website. Our team will confirm your appointment and answer any questions.',
+        ka: 'ჩვენთან ხელმისაწვდომია PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, სალონის ქიმწმენდა, დეტეილინგ რეცხვა, ხმის იზოლაცია და საქარე მინის აღდგენა.',
+        ru: 'Мы предлагаем оклейку PPF, смену цвета плёнкой, полировку, керамическое покрытие, тонировку стёкол, химчистку салона, детейлинг-мойку, шумоизоляцию и ремонт лобового стекла.',
+        en: 'We offer PPF wrapping, color change with film, polishing, ceramic coating, window tinting, interior cleaning, detailing wash, soundproofing, and windshield repair.',
       },
     },
     {
       question: {
-        ka: 'რამდენად ხშირად უნდა ჩავატარო დეტეილინგ რეცხვა?',
-        ru: 'Как часто нужно делать детейлинг мойку?',
-        en: 'How often should I get a detailing car wash?',
+        ka: 'სად მდებარეობს BESTAUTO?',
+        ru: 'Где находится BESTAUTO?',
+        en: 'Where is BESTAUTO located?',
       },
       answer: {
-        ka: 'ვირეკომენდებთ დეტეილინგ რეცხვას ყოველ 2–4 კვირაში ერთხელ, ავტომობილის გამოყენების ინტენსივობისა და ამინდის პირობების მიხედვით.',
-        ru: 'Мы рекомендуем детейлинг мойку раз в 2–4 недели в зависимости от интенсивности использования автомобиля и погодных условий.',
-        en: 'We recommend a detailing wash every 2–4 weeks, depending on how frequently you drive and the current weather conditions.',
+        ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
+        ru: 'BESTAUTO работает на двух локациях в Тбилиси — на Гурамишвили и на Сабуртало. При записи поможем выбрать удобную студию.',
+        en: 'BESTAUTO operates at two locations in Tbilisi — Guramishvili and Saburtalo. We\'ll help you choose the most convenient studio when booking.',
+      },
+    },
+    {
+      question: {
+        ka: 'როგორ გავიგო რომელი სერვისი მჭირდება?',
+        ru: 'Как понять, какая услуга мне нужна?',
+        en: 'How do I know which service I need?',
+      },
+      answer: {
+        ka: 'თუ არ ხართ დარწმუნებული რომელი მომსახურებაა თქვენთვის სწორი, საუკეთესო გზაა უფასო დათვალიერება. ადგილზე გირჩევთ ოპტიმალურ გადაწყვეტას ავტომობილის მდგომარეობისა და თქვენი მიზნის მიხედვით.',
+        ru: 'Если не уверены, какая услуга вам подходит, лучший путь — бесплатный осмотр. На месте подберём оптимальное решение с учётом состояния автомобиля и вашей цели.',
+        en: 'If you\'re not sure which service is right for you, the best approach is a free inspection. We\'ll recommend the optimal solution based on your car\'s condition and your goals.',
+      },
+    },
+    {
+      question: {
+        ka: 'შესაძლებელია რამდენიმე სერვისის ერთად გაკეთება?',
+        ru: 'Можно ли сделать несколько услуг одновременно?',
+        en: 'Can multiple services be done at the same time?',
+      },
+      answer: {
+        ka: 'დიახ. ხშირად კლიენტები აერთიანებენ რამდენიმე მომსახურებას — მაგალითად, პოლირებას და კერამიკულ საფარს, ან PPF-სა და მინების დაბურვას.',
+        ru: 'Да. Клиенты часто объединяют несколько услуг — например, полировку и керамику, или PPF и тонировку.',
+        en: 'Yes. Clients often combine multiple services — for example, polishing and ceramic coating, or PPF and window tinting.',
+      },
+    },
+    {
+      question: {
+        ka: 'რამდენ ხანში მპასუხობთ ჩაწერის შემდეგ?',
+        ru: 'Как быстро вы отвечаете после записи?',
+        en: 'How quickly do you respond after booking?',
+      },
+      answer: {
+        ka: 'როგორც წესი, მოთხოვნის გამოგზავნის შემდეგ სწრაფად გიკავშირდებით. ასევე შეგიძლიათ მოგვწეროთ WhatsApp-ზე ან დაგვირეკოთ პირდაპირ.',
+        ru: 'Как правило, отвечаем быстро после отправки заявки. Также можете написать в WhatsApp или позвонить напрямую.',
+        en: 'We typically respond quickly after you submit a request. You can also message us on WhatsApp or call directly.',
       },
     },
   ],
 
 };
-
