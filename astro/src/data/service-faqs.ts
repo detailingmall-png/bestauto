@@ -18,7 +18,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does car polishing cost?',
       },
       answer: {
-        ka: 'ძარის პოლირების ფასი იწყება 690 ლარიდან. ზუსტი ღირებულება დამოკიდებულია ავტომობილის ზომაზე, მდგომარეობასა და არჩეულ პროცესზე.',
+        ka: 'ძარის პოლირება იწყება 690 Gel-დან. ასევე ხელმისაწვდომია პოლირება + კერამიკული საფარი, ფარების პოლირება, მინის პოლირება და სალონის დეტალების პოლირება. ზუსტი ფასი დამოკიდებულია ავტომობილის ზომასა და ლაქის მდგომარეობაზე.',
         ru: 'Полировка кузова — от 690 Gel, полировка + керамическое покрытие — от 990 Gel. Также делаем полировку фар (от 150 Gel), стекла (от 250 Gel) и элементов салона (от 200 Gel). Точная стоимость зависит от размера автомобиля и состояния ЛКП. Напишите нам в WhatsApp, пришлите фото — и мы рассчитаем точную стоимость.',
         en: 'Paint correction starts from 690 Gel, polishing + ceramic coating from 990 Gel. We also offer headlight polishing (from 150 Gel), windshield polishing (from 250 Gel) and interior elements (from 200 Gel). The exact price depends on car size and paint condition. Send us photos on WhatsApp and we\'ll calculate the exact price.',
       },
@@ -49,12 +49,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს პოლირების შედეგი?',
+        ka: 'რამდენად ხშირად არის საჭირო პოლირება?',
         ru: 'Как часто нужно полировать автомобиль?',
         en: 'How often should I polish my car?',
       },
       answer: {
-        ka: 'ეს დამოკიდებულია მოვლაზე, ექსპლუატაციაზე და იმაზე, გაკეთდება თუ არა დამატებითი დაცვა პოლირების შემდეგ.',
+        ka: 'პოლირების საჭიროება დამოკიდებულია ავტომობილის ექსპლუატაციაზე, რეცხვის მეთოდზე და ლაქის მდგომარეობაზე. ბევრ შემთხვევაში რეგულარული უსაფრთხო მოვლა და კერამიკული საფარი საშუალებას გაძლევთ შედეგი უფრო დიდხანს შეინარჩუნოთ.',
         ru: 'Рекомендуем полировать раз в год для поддержания блеска. Если после полировки нанести керамическое покрытие — эффект сохранится на 3 года. А с защитной пленкой PPF полировка может не понадобиться до 10 лет. Спросите нас о комплексных пакетах — это выгоднее.',
         en: 'We recommend polishing once a year to maintain the shine. If you apply ceramic coating after polishing, the effect lasts up to 3 years. With PPF protection film, polishing may not be needed for up to 10 years. Ask us about package deals — they offer better value.',
       },
@@ -107,42 +107,6 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Polishing is the process of removing minor scratches, swirl marks, and other defects from the car body, headlights, or windshield coating. It restores shine and color depth, making your car look brand new again.',
       },
     },
-    {
-      question: {
-        ka: 'რომელ ნაკაწრებს აშორებს პოლირება?',
-        ru: 'Какие царапины убирает полировка?',
-        en: 'What scratches does polishing remove?',
-      },
-      answer: {
-        ka: 'პოლირება ყველაზე კარგად მუშაობს ზედაპირულ დეფექტებზე და მიკრონაკაწრებზე. უფრო ღრმა დაზიანებების შემთხვევაში შედეგი დამოკიდებულია ლაქის მდგომარეობაზე.',
-        ru: 'Полировка лучше всего справляется с поверхностными дефектами и микроцарапинами. При более глубоких повреждениях результат зависит от состояния ЛКП.',
-        en: 'Polishing works best on surface defects and micro-scratches. For deeper damage, the result depends on the paint condition.',
-      },
-    },
-    {
-      question: {
-        ka: 'რამდენი ეტაპის პოლირება მჭირდება?',
-        ru: 'Сколько этапов полировки мне нужно?',
-        en: 'How many polishing stages do I need?',
-      },
-      answer: {
-        ka: 'ეს დამოკიდებულია ავტომობილის ზედაპირის მდგომარეობაზე. დათვალიერების შემდეგ გირჩევთ ოპტიმალურ ვარიანტს.',
-        ru: 'Это зависит от состояния поверхности автомобиля. После осмотра порекомендуем оптимальный вариант.',
-        en: 'It depends on the condition of the car surface. After inspection, we will recommend the optimal option.',
-      },
-    },
-    {
-      question: {
-        ka: 'საჭიროა თუ არა კერამიკა პოლირების შემდეგ?',
-        ru: 'Нужна ли керамика после полировки?',
-        en: 'Is ceramic coating needed after polishing?',
-      },
-      answer: {
-        ka: 'ხშირად - დიახ. პოლირების შემდეგ კერამიკული საფარი ეხმარება მიღებული ვიზუალის უფრო დიდხანს შენარჩუნებას.',
-        ru: 'Часто — да. После полировки керамическое покрытие помогает сохранить полученный визуальный эффект дольше.',
-        en: 'Often — yes. After polishing, ceramic coating helps maintain the visual effect longer.',
-      },
-    },
   ],
 
   'ceramiccoating': [
@@ -160,49 +124,49 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს კერამიკული საფარი?',
+        ka: 'რამდენ ხანს ძლებს კერამიკა?',
         ru: 'На сколько хватает керамического покрытия?',
         en: 'How long does ceramic coating last?',
       },
       answer: {
-        ka: 'ეს დამოკიდებულია პროდუქტზე, მომზადებაზე, მოვლასა და ექსპლუატაციის პირობებზე.',
+        ka: 'გამძლეობა დამოკიდებულია მასალაზე, მოვლასა და იმაზე, თუ რომელ ზონაზე კეთდება დამუშავება. ზუსტ მოლოდინს გეუბნებით კონკრეტული სერვისის არჩევისას.',
         ru: 'Керамика на кузове держится до 3 лет, на стеклах и в салоне — до 1 года. Мы даем гарантию на покрытие и бесплатно обновим при потере гидрофобности в гарантийный период.',
         en: 'Ceramic coating on the body lasts up to 3 years, on glass and interior up to 1 year. We provide a warranty on the coating and will refresh it free of charge if hydrophobicity is lost during the warranty period.',
       },
     },
     {
       question: {
-        ka: 'რით განსხვავდება კერამიკა PPF-ისგან?',
+        ka: 'რატომ აკეთებენ კერამიკას ავტომობილზე?',
         ru: 'Зачем наносить керамику, если можно просто мыть?',
         en: 'Why apply ceramic coating if I can just wash my car?',
       },
       answer: {
-        ka: 'კერამიკა ძირითადად მუშაობს ზედაპირის ვიზუალზე, ჰიდროფობურ ეფექტსა და მოვლის გამარტივებაზე, ხოლო PPF პირველ რიგში ფიზიკური დაცვისთვის გამოიყენება.',
+        ka: 'კერამიკა ეხმარება ავტომობილს უფრო დიდხანს შეინარჩუნოს სუფთა და მოვლილი იერი, ამარტივებს რეცხვას და ამცირებს ყოველდღიური დაბინძურების გავლენას ზედაპირზე.',
         ru: 'Керамическое покрытие — это не только блеск. Оно защищает от ультрафиолета, мелких царапин, птичьего помета и реагентов. Мойка становится в 2 раза быстрее — грязь просто скатывается. Это инвестиция в сохранение внешнего вида и стоимости автомобиля.',
         en: 'Ceramic coating is not just about shine. It protects against UV, minor scratches, bird droppings, and chemicals. Washing becomes 2x faster — dirt simply slides off. It\'s an investment in preserving your car\'s appearance and value.',
       },
     },
     {
       question: {
-        ka: 'საჭიროა თუ არა პოლირება კერამიკამდე?',
+        ka: 'საჭიროა თუ არა მანქანის მომზადება დატანამდე?',
         ru: 'Нужно ли готовить машину перед нанесением?',
         en: 'Do I need to prepare my car before application?',
       },
       answer: {
-        ka: 'ბევრ შემთხვევაში - დიახ. თუ ზედაპირზე არის მიკრონაკაწრები ან ვიზუალური დეფექტები, პოლირება ეხმარება უკეთესი საბოლოო შედეგის მიღებას.',
+        ka: 'მოიყვანეთ ისე, როგორც არის — ჩვენ თვითონ მოვამზადებთ ყველაფერს. მომზადება (რეცხვა, დეკონტამინაცია, პოლირება) შედეგის 80%-ია, და ჩვენ მაქსიმალურ ყურადღებას ვუთმობთ. სწორედ ამიტომ გვძლებს შედეგი ასე დიდხანს.',
         ru: 'Привозите как есть — мы сами всё подготовим. Подготовка (мойка, деконтаминация, полировка) — это 80% результата, и мы уделяем ей максимум внимания. Именно поэтому результат держится так долго.',
         en: 'Bring it as is — we handle all preparation. Prep work (washing, decontamination, polishing) accounts for 80% of the result, and we give it maximum attention. That\'s why our results last so long.',
       },
     },
     {
       question: {
-        ka: 'კერამიკის შემდეგ მანქანა ნაკლებად ისვრება?',
+        ka: 'როგორ გამოიყურება ავტომობილი დატანის შემდეგ?',
         ru: 'Как будет выглядеть автомобиль после нанесения?',
         en: 'What will my car look like after application?',
       },
       answer: {
-        ka: 'კერამიკა არ გამორიცხავს დაბინძურებას, მაგრამ ზედაპირი ხშირად უფრო მარტივად იწმინდება და ვიზუალურად უფრო მოვლილი რჩება.',
-        ru: 'Покрытие дает глубокий “мокрый” блеск и выраженную гидрофобность — вода собирается в капли и скатывается с поверхности. Напишите нам в WhatsApp — покажем фото и видео реальных примеров.',
+        ka: 'საფარი იძლევა ღრმა „სველ“ ბზინვარებას და გამოხატულ ჰიდროფობიურობას — წყალი წვეთებად გროვდება და ზედაპირიდან სრიალებს. მოგვწერეთ WhatsApp-ზე — გაჩვენებთ ნამდვილი მაგალითების ფოტოებსა და ვიდეოებს.',
+        ru: 'Покрытие дает глубокий "мокрый" блеск и выраженную гидрофобность — вода собирается в капли и скатывается с поверхности. Напишите нам в WhatsApp — покажем фото и видео реальных примеров.',
         en: 'The coating gives a deep "wet look" shine and strong hydrophobicity — water beads up and rolls off the surface. Message us on WhatsApp — we\'ll show you photos and videos of real examples.',
       },
     },
@@ -232,12 +196,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რას აკეთებს კერამიკული საფარი?',
+        ka: 'რა არის კერამიკული საფარი?',
         ru: 'Что такое керамическое покрытие?',
         en: 'What is ceramic coating?',
       },
       answer: {
-        ka: 'კერამიკა აძლიერებს ბზინვარებას, ქმნის ჰიდროფობურ ეფექტს და ამარტივებს ავტომობილის შემდგომ მოვლას.',
+        ka: 'კერამიკული საფარი არის დამცავი ფენა, რომელიც გამოიყენება ავტომობილის ზედაპირზე, აძლიერებს ბზინვარებას და ამარტივებს მოვლას.',
         ru: 'Это жидкий состав на основе диоксида кремния (SiO2), который после нанесения образует прозрачный защитный слой на поверхности автомобиля. Керамика защищает от UV-лучей, царапин, химии и держится до 3 лет.',
         en: 'It\'s a liquid compound based on silicon dioxide (SiO2) that forms a transparent protective layer on the car surface after application. Ceramic coating protects against UV, scratches, chemicals, and lasts up to 3 years.',
       },
@@ -252,7 +216,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does PPF wrapping cost?',
       },
       answer: {
-        ka: 'ფასი დამოკიდებულია დაფარვის ზონაზე, ავტომობილის ზომაზე და არჩეულ ფირზე. შესაძლებელია როგორც რისკ-ზონების, ისე სრული ავტომობილის შეთავაზება.',
+        ka: 'ფასი დამოკიდებულია ავტომობილის მარკაზე, სამუშაოს მოცულობასა და არჩეულ ფირზე. კაპოტი — 800 GEL-დან, წინა ნაწილი (კაპოტი, ბამპერი, ფრთები, სვეტები, სარკეები და ფარები) — 2 500 GEL-დან, სრული დაფარვა — 7 500 GEL-დან. მობრძანდით უფასო შემოწმებაზე — ზუსტ ფასს 15 წუთში გამოვთვლით.',
         ru: 'Цена зависит от марки автомобиля, объёма работ и выбранной плёнки. Капот — от 800 GEL, передняя часть (капот, бампер, крылья, стойки, зеркала и фары) — от 2 500 GEL, полная оклейка — от 7 500 GEL. Приезжайте на бесплатный осмотр — рассчитаем точную стоимость за 15 минут.',
         en: 'The price depends on the car make, scope of work and chosen film. Hood — from 800 GEL, front section (hood, bumper, fenders, pillars, mirrors and headlights) — from 2,500 GEL, full body — from 7,500 GEL. Come for a free inspection — we will calculate the exact cost in 15 minutes.',
       },
@@ -295,12 +259,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რამდენ ხანს ძლებს PPF?',
+        ka: 'რამდენ ხანს ძლებს PPF ფირი?',
         ru: 'На сколько хватает плёнки PPF?',
         en: 'How long does PPF last?',
       },
       answer: {
-        ka: 'ხარისხიანი ფირი და სწორი მოვლა საშუალებას იძლევა PPF-მა მრავალი წელი შეინარჩუნოს თავისი თვისებები. კონკრეტული ვადა დამოკიდებულია ბრენდზე, ექსპლუატაციასა და მოვლაზე.',
+        ka: 'ნორმალური ექსპლუატაციისას — 10 წლამდე. ფირი არ ყვითლდება, არ ბუნდდება და ინარჩუნებს ბრწყინვალებას. წვრილი ნაკაწრები თავისთავად იხევა სითბოს ზემოქმედებით.',
         ru: 'При нормальной эксплуатации — до 10 лет. Плёнка не желтеет, не мутнеет и сохраняет блеск. Мелкие царапины затягиваются сами под воздействием тепла.',
         en: 'Under normal use — up to 10 years. The film does not yellow, cloud or lose its gloss. Minor scratches heal on their own under heat.',
       },
@@ -367,38 +331,14 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'რა არის PPF ფირი?',
+        ka: 'რა არის PPF?',
         ru: 'Что такое PPF?',
         en: 'What is PPF?',
       },
       answer: {
-        ka: 'PPF არის გამჭვირვალე პოლიურეთანის დამცავი ფირი, რომელიც აკრავთ ავტომობილის კორპუსზე საღებავის დასაცავად.',
+        ka: 'PPF (Paint Protection Film) — გამჭვირვალე პოლიურეთანის ფირი, რომელიც იცავს კორპუსს ჩიპებისგან, ნაკაწრებისგან, ულტრაიისფერი სხივებისა და ქიმიური რეაგენტებისგან. მუშაობს როგორც უხილავი ფარი — ინარჩუნებს ავტომობილის ქარხნულ სახეს წლების განმავლობაში.',
         ru: 'PPF (Paint Protection Film) — прозрачная полиуретановая плёнка, которая защищает кузов от сколов, царапин, ультрафиолета и химических реагентов. Работает как невидимый щит — сохраняет заводской вид автомобиля на годы.',
         en: 'PPF (Paint Protection Film) is a transparent polyurethane film that protects the body from chips, scratches, UV rays and chemical agents. It works as an invisible shield — preserving the factory look of the car for years.',
-      },
-    },
-    {
-      question: {
-        ka: 'რა განსხვავებაა PPF-სა და ვინილის ფირს შორის?',
-        ru: 'В чём разница между PPF и виниловой плёнкой?',
-        en: 'What is the difference between PPF and vinyl wrap?',
-      },
-      answer: {
-        ka: 'PPF ძირითადად დაცვისთვის გამოიყენება, ხოლო ვინილი - ვიზუალური ცვლილებისთვის. PPF უფრო გამძლეა და უკეთ იცავს ლაქს ყოველდღიური ზემოქმედებისგან.',
-        ru: 'PPF используется в первую очередь для защиты, а винил — для визуальных изменений. PPF более прочный и лучше защищает лак от повседневного воздействия.',
-        en: 'PPF is primarily used for protection, while vinyl is for visual changes. PPF is more durable and better protects the paint from everyday exposure.',
-      },
-    },
-    {
-      question: {
-        ka: 'იცავს თუ არა PPF ქვებისგან და ნაკაწრებისგან?',
-        ru: 'Защищает ли PPF от камней и царапин?',
-        en: 'Does PPF protect against rocks and scratches?',
-      },
-      answer: {
-        ka: 'დიახ. სწორედ ეს არის მისი მთავარი ამოცანა - შეამციროს გზაზე მიღებული წვრილი დაზიანებების და ზედაპირული ნაკაწრების რისკი.',
-        ru: 'Да. Именно это его основная задача — снизить риск мелких повреждений и поверхностных царапин, полученных на дороге.',
-        en: 'Yes. That is its main purpose — to reduce the risk of minor damage and surface scratches received on the road.',
       },
     },
   ],
@@ -406,72 +346,72 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'vinyl-wrapping': [
     {
       question: {
-        ka: 'რით განსხვავდება ფერადი PPF და ვინილი?',
+        ka: 'რა ღირს ვინილის ფირით გადაკვრა?',
         ru: 'Сколько стоит смена цвета защитной плёнкой?',
         en: 'How much does a color change with protective film cost?',
       },
       answer: {
-        ka: 'ფერადი PPF უფრო პრემიუმ გადაწყვეტაა, რომელიც ვიზუალურ ეფექტთან ერთად დამატებით დაცვასაც იძლევა. ვინილი ძირითადად სტილისა და ფერის შეცვლისთვის გამოიყენება და უფრო ხელმისაწვდომი ალტერნატივაა.',
+        ka: 'სრული გადაკვრა — 9000 GEL-დან. ანტიქრომი — 300 GEL-დან. ზუსტი ფასი დამოკიდებულია მარკაზე, მოდელსა და სამუშაოს მოცულობაზე. მოდით უფასო შემოწმებაზე — 15 წუთში გამოვთვლით.',
         ru: 'Полная смена цвета — от 9000 GEL. Антихром — от 300 GEL. Точная стоимость зависит от марки, модели и объёма работ. Приезжайте на бесплатный осмотр — рассчитаем за 15 минут.',
         en: 'Full color change — from 9,000 GEL. Anti-chrome — from 300 GEL. The exact cost depends on make, model, and scope of work. Come for a free inspection — we\'ll calculate in 15 minutes.',
       },
     },
     {
       question: {
-        ka: 'რომელი ჯობია ფერის შეცვლისთვის?',
+        ka: 'რა ფირებს იყენებთ?',
         ru: 'Какие плёнки используете?',
         en: 'What films do you use?',
       },
       answer: {
-        ka: 'თუ გსურთ უფრო მაღალი დონის შედეგი და დამატებითი დაცვა, ხშირად უკეთესი არჩევანია ფერადი PPF. თუ პრიორიტეტი უფრო მოქნილი ბიუჯეტია, კარგი ვარიანტია ვინილი.',
+        ka: 'ვმუშაობთ მხოლოდ Quantum-ით და LuxArmor-ით — ჩვენ ამ ბრენდების ოფიციალური დილერები ვართ საქართველოში. ორივე ფირს აქვს ნაკაწრების თვითაღდგენა და 10 წლამდე გარანტია. Quantum — პრემიუმ-კლასი მაქსიმალური დაცვისთვის, LuxArmor — შესანიშნავი ფასისა და ხარისხის თანაფარდობა.',
         ru: 'Работаем только с Quantum и LuxArmor — мы официальные дилеры этих брендов в Грузии. Обе плёнки с самовосстановлением царапин и гарантией до 10 лет. Quantum — премиум-класс для максимальной защиты, LuxArmor — отличное соотношение цены и качества.',
         en: 'We work exclusively with Quantum and LuxArmor — we are the official dealers of these brands in Georgia. Both films feature self-healing technology and up to 10-year warranty. Quantum is premium-class for maximum protection, LuxArmor offers excellent value for money.',
       },
     },
     {
       question: {
-        ka: 'დიდია თუ არა სხვაობა ბიუჯეტში ფერად PPF-სა და ვინილს შორის?',
+        ka: 'არის თუ არა გარანტია?',
         ru: 'Есть ли гарантия?',
         en: 'Is there a warranty?',
       },
       answer: {
-        ka: 'სხვაობა დამოკიდებულია ავტომობილზე, მასალასა და სამუშაოს მოცულობაზე. ბევრ შემთხვევაში ფერადი PPF უფრო ძვირია, მაგრამ კლიენტისთვის უფრო ღირებული გადაწყვეტაა, რადგან ვიზუალთან ერთად დაცვასაც იღებს.',
+        ka: 'დიახ. გარანტია 10 წლამდე ფირზე და სამუშაოზე. ასობით მიმოხილვა, 4.9★ რეიტინგი Google-ზე. საგარანტიო შემთხვევას ჩვენი ხარჯით ვაგვარებთ ნებისმიერ სტუდიაში.',
         ru: 'Да. Гарантия до 10 лет на плёнку и работу. Сотни отзывов, рейтинг 4.9★ на Google.. Гарантийный случай решаем за наш счёт в любой из двух студий.',
         en: 'Yes. Warranty up to 10 years on film and workmanship. We cover peeling, yellowing, and material defects. Warranty claims are resolved at our expense at either studio.',
       },
     },
     {
       question: {
-        ka: 'თუ მინდა უფრო ხელმისაწვდომი ვარიანტი, აკეთებთ ვინილითაც?',
+        ka: 'რამდენ ხანს ძლებს ვინილის ფირი?',
         ru: 'На сколько хватает цветной защитной плёнки?',
         en: 'How long does the color protective film last?',
       },
       answer: {
-        ka: 'დიახ. BESTAUTO-ში შესაძლებელია როგორც ფერადი PPF-ით, ისე ვინილით ფერის შეცვლა.',
+        ka: '7–10 წელი ნორმალური ექსპლუატაციისას. ფირი არ ყვითლდება, არ ბუნდდება და ინარჩუნებს ღრმა ბრწყინვალებას. წვრილი ნაკაწრები მზეზე თავისთავად ქრება. შედარებისთვის: ვინილის ფირი მხოლოდ 2–4 წელი ძლებს.',
         ru: '7–10 лет при нормальной эксплуатации. Плёнка не желтеет, не мутнеет и сохраняет глубокий блеск. Мелкие царапины затягиваются сами на солнце. Для сравнения: виниловая плёнка служит всего 2–4 года. Гаражное хранение продлевает.',
         en: '7–10 years under normal conditions. The film doesn\'t yellow, cloud, or lose its deep gloss. Minor scratches heal on their own in sunlight. For comparison: vinyl wrap lasts only 2–4 years.',
       },
     },
     {
       question: {
-        ka: 'იცავს თუ არა ფერადი PPF ავტომობილს დამატებით?',
+        ka: 'რამდენ ხანს გრძელდება ვინილის გადაკვრა?',
         ru: 'Сколько времени занимает оклейка?',
         en: 'How long does the installation take?',
       },
       answer: {
-        ka: 'დიახ. სწორედ ეს არის მისი ერთ-ერთი მთავარი უპირატესობა - ვიზუალური ცვლილება და დამატებითი დაცვა ერთდროულად.',
+        ka: 'სრული გადაკვრა — 3–5 სამუშაო დღე. ანტიქრომი — 1–2 დღე. ზუსტი ვადა დამოკიდებულია მოდელსა და ძარის სირთულეზე.',
         ru: 'Полная смена цвета — 3–5 рабочих дней. Антихром — 1–2 дня. Точный срок зависит от модели и сложности кузова. На время работы предоставляем комфортную зону ожидания с массажными креслами и кофе.',
         en: 'Full color change — 3–5 business days. Anti-chrome — 1–2 days. Exact timeline depends on model and body complexity. While we work, enjoy our comfortable waiting area with massage chairs and coffee.',
       },
     },
     {
       question: {
-        ka: 'თუ მჭირდება მხოლოდ საღებავის დაცვა და არა ფერის შეცვლა?',
+        ka: 'შესაძლებელია ფირის მოხსნა?',
         ru: 'Можно ли снять плёнку потом?',
         en: 'Can the film be removed later?',
       },
       answer: {
-        ka: 'ამ შემთხვევაში უკეთესია იხილოთ ჩვენი ცალკე PPF გვერდი, რომელიც სწორედ გამჭვირვალე დამცავ ფირზეა ორიენტირებული.',
+        ka: 'დიახ, საღებავის დაზიანების გარეშე. პოლიურეთანის ფირი იხსნება დიდი ნაჭრებით, წებოვანი კვალის გარეშე — ვინილისგან განსხვავებით, რომელიც რამდენიმე წლის შემდეგ ნატეხებად იშლება და ლაქს იზიდავს. ფირის ქვეშ ძარა იმავე მდგომარეობაშია, როგორც დაფარვის დღეს.',
         ru: 'Да, без повреждения краски. Полиуретановая плёнка снимается крупными листами, не оставляя клеевых следов — в отличие от винила, который после нескольких лет рассыпается и тянет лак. Под плёнкой кузов остаётся в том же состоянии, что и в день оклейки.',
         en: 'Yes, without damaging the paint. Polyurethane film comes off in large sheets with no adhesive residue — unlike vinyl, which crumbles and pulls the clear coat after a few years. The body underneath stays in the same condition as the day it was wrapped.',
       },
@@ -517,72 +457,72 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'interior-cleaning': [
     {
       question: {
-        ka: 'რა ღირს მანქანის ქიმწმენდა?',
+        ka: 'რა ღირს სალონის ქიმწმენდა?',
         ru: 'Сколько стоит химчистка салона?',
         en: 'How much does interior cleaning cost?',
       },
       answer: {
-        ka: 'ფასი იწყება 400 ლარიდან. ზუსტი ღირებულება დამოკიდებულია ავტომობილის ზომაზე, სალონის მდგომარეობასა და სამუშაოს მოცულობაზე.',
+        ka: 'ფასი დამოკიდებულია დაბინძურების დონეზე, მასალებზე და სამუშაოს სიღრმეზე. მსუბუქი დაბინძურების შემთხვევაში ფასი იწყება 400 Gel-დან. ზუსტი ღირებულებისთვის საკმარისია მოგვწეროთ და გამოგვიგზავნოთ სალონის ფოტოები.',
         ru: 'Химчистка при легком загрязнении — от 400 Gel, при среднем — от 500 Gel, при сильном — от 550 Gel. Также делаем ручную детейлинг-мойку (от 40 Gel) и устранение запахов озоном (от 50 Gel). Пришлите фото салона в WhatsApp — и мы назовем точную стоимость.',
         en: 'Light contamination cleaning starts from 400 Gel, medium from 500 Gel, heavy from 550 Gel. We also offer hand detailing wash (from 40 Gel) and ozone odor removal (from 50 Gel). Send us photos on WhatsApp and we\'ll give you an exact quote.',
       },
     },
     {
       question: {
-        ka: 'რა შედის სრულ ქიმწმენდაში?',
+        ka: 'არის თუ არა გარანტია ქიმწმენდაზე?',
         ru: 'Есть ли гарантия на химчистку?',
         en: 'Is there a warranty on interior cleaning?',
       },
       answer: {
-        ka: 'როგორც წესი, სრული ქიმწმენდა მოიცავს სავარძლების, იატაკის, ჭერის, კარის ბარათების, საბარგულის, პლასტმასის ელემენტების და სხვა ინტერიერის დეტალების ღრმა წმენდას.',
+        ka: 'დიახ, თუ სამუშაოს შემდეგ საჭირო გახდა მცირე კორექცია, ოპერატიულად გავასწორებთ. ჩვენი მიზანია შედეგი ბოლომდე დაგაკმაყოფილოთ.',
         ru: 'Да, 7 дней гарантии на доработку. Если вас что-то не устроит — приезжайте, доработаем бесплатно. За 5 лет работы менее 2% гарантийных случаев.',
         en: 'Yes, 7-day warranty for touch-ups. If anything doesn\'t meet your expectations — come back, we\'ll fix it free. Less than 2% warranty cases over 5 years of work.',
       },
     },
     {
       question: {
-        ka: 'შეიძლება თუ არა ძველი ლაქების მოცილება?',
+        ka: 'რამდენ ხანს სჭირდება ქიმწმენდა?',
         ru: 'Сколько времени занимает химчистка?',
         en: 'How long does interior cleaning take?',
       },
       answer: {
-        ka: 'ბევრ შემთხვევაში - დიახ. თუმცა შედეგი დამოკიდებულია ლაქის ტიპზე, ასაკზე და მასალაზე, რომელზეც ის არის.',
+        ka: 'ვადა დამოკიდებულია სალონის მდგომარეობასა და არჩეულ სერვისზე. საბაზისო სამუშაო უფრო სწრაფად სრულდება, სრული ღრმა ქიმწმენდა — უფრო მეტ დროს მოითხოვს, განსაკუთრებით თუ საჭიროა სრული გამოშრობაც.',
         ru: 'Качественная химчистка делается от 1 до 3 дней. Базовая занимает 4–5 часов, полная — 6–8 часов. С полной сушкой лучше оставить автомобиль на ночь.',
         en: 'Quality interior cleaning takes 1 to 3 days. Basic cleaning takes 4–5 hours, full cleaning 6–8 hours. For complete drying, it\'s best to leave the car overnight.',
       },
     },
     {
       question: {
-        ka: 'შეგიძლიათ თუ არა უსიამოვნო სუნის მოცილება?',
+        ka: 'აშორებთ თუ არა უსიამოვნო სუნს?',
         ru: 'Уберете ли запах сигарет или животных?',
         en: 'Can you remove cigarette or pet odors?',
       },
       answer: {
-        ka: 'დიახ. საჭიროების შემთხვევაში შესაძლებელია დამატებითი ანტიბაქტერიული ან ოზონის დამუშავებაც.',
+        ka: 'დიახ, საჭიროების შემთხვევაში ვიყენებთ ოზონირებას და პროფესიონალურ საშუალებებს, რომლებიც სუნს უბრალოდ არ ფარავს, არამედ რეალურად ამცირებს მის მიზეზს.',
         ru: 'Да. Используем озонатор и профессиональные энзимные составы, которые разрушают молекулы запаха, а не маскируют его. В 95% случаев полностью убираем запах за один сеанс.',
         en: 'Yes. We use an ozone generator and professional enzyme-based products that break down odor molecules rather than masking them. In 95% of cases, we completely eliminate the odor in a single session.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანში შრება სალონი ქიმწმენდის შემდეგ?',
+        ka: 'უსაფრთხოა თუ არა გამოყენებული ქიმია?',
         ru: 'Какую химию используете? Безопасна ли она?',
         en: 'What chemicals do you use? Are they safe?',
       },
       answer: {
-        ka: 'ზუსტი დრო დამოკიდებულია მასალაზე, დამუშავების მოცულობაზე და სეზონზე, თუმცა წინასწარ აგიხსნით რას უნდა ელოდოთ.',
+        ka: 'ვიყენებთ პროფესიონალურ და უსაფრთხო ქიმიას, რომელიც სწორად შერჩევისას არ აზიანებს სალონის მასალებს და არ ტოვებს მძაფრ, უსიამოვნო სუნს.',
         ru: 'Работаем с Koch Chemie, Grass, используем аппарат Tornador. Все составы гипоаллергенны, безопасны для детей и животных. Не оставляют резких запахов после обработки.',
         en: 'We work with Koch Chemie, Grass, and use Tornador equipment. All products are hypoallergenic, safe for children and pets. They leave no harsh odors after treatment.',
       },
     },
     {
       question: {
-        ka: 'სად მდებარეობთ?',
+        ka: 'რაიმე უნდა გავაკეთო მოყვანამდე?',
         ru: 'Нужно ли что-то сделать перед приездом?',
         en: 'Do I need to do anything before bringing my car?',
       },
       answer: {
-        ka: 'ვმუშაობთ ორ ლოკაციაზე თბილისში. ჩაწერისას შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ ფილიალს.',
+        ka: 'უბრალოდ ამოიღეთ პირადი ნივთები სალონიდან. მანქანის გარეცხვა არ არის საჭირო — ყველაფერს ჩვენ გავაკეთებთ მომზადების პროცესში.',
         ru: 'Просто уберите личные вещи из салона. Мыть машину не нужно — мы всё сделаем сами в процессе подготовки.',
         en: 'Just remove your personal belongings from the cabin. No need to wash the car — we handle everything during preparation.',
       },
@@ -739,48 +679,48 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'auto-glass-tinting': [
     {
       question: {
-        ka: 'რით განსხვავდება სტანდარტული და კერამიკული ფირი?',
+        ka: 'რა ღირს მინების დაბურვა?',
         ru: 'Сколько стоит тонировка?',
         en: 'How much does window tinting cost?',
       },
       answer: {
-        ka: 'კერამიკული ფირი, როგორც წესი, უკეთ აკონტროლებს სიცხეს, კომფორტულია ყოველდღიური გამოყენებისთვის და უფრო მაღალი ხარისხის შედეგს იძლევა.',
+        ka: 'გვერდითა მინები (უკანა ან წინა) — 130 Gel-დან, უკანა მინა — 160 Gel-დან, საქარე მინა — 290 Gel-დან. ათერმული დაბურვა უფრო ძვირია. მოგვწერეთ WhatsApp-ზე — გამოვთვლით ზუსტ ფასს თქვენი ავტომობილისთვის.',
         ru: 'Тонировка боковых стекол (задних или передних) — от 130 Gel, заднее стекло — от 160 Gel, лобовое стекло — от 290 Gel. Атермальная тонировка стоит дороже. Напишите в WhatsApp — рассчитаем точную стоимость для вашего автомобиля.',
         en: 'Side windows (rear or front) — from 130 Gel, rear windshield — from 160 Gel, front windshield — from 290 Gel. Ceramic (athermal) tinting costs more. Message us on WhatsApp — we\'ll calculate the exact price for your car.',
       },
     },
     {
       question: {
-        ka: 'ატერმალური ფირი რას აკეთებს?',
+        ka: 'რა ფირს იყენებთ?',
         ru: 'Какую пленку используете?',
         en: 'What film do you use?',
       },
       answer: {
-        ka: 'ატერმალური ფირი პირველ რიგში სიცხისა და მზის ზემოქმედების შემცირებაზეა ორიენტირებული და ხელს უწყობს სალონის უფრო კომფორტულ ტემპერატურას.',
+        ka: 'LLumar — ჩვენ ოფიციალური დილერი ვართ. მწარმოებლის გარანტია 5 წლამდე. არ ვიყენებთ იაფ ჩინურ ანალოგებს, რომლებიც ნახევარ წელში ფერმკრთალდება.',
         ru: 'LLumar — мы официальный дилер. Гарантия от производителя до 5 лет. Не используем дешевые китайские аналоги, которые выгорают за полгода.',
         en: 'LLumar — we are an official dealer. Manufacturer warranty up to 5 years. We don\'t use cheap Chinese alternatives that fade in six months.',
       },
     },
     {
       question: {
-        ka: 'რა დონის დაბურვა არის ნებადართული?',
+        ka: 'არის თუ არა გარანტია?',
         ru: 'Есть ли гарантия?',
         en: 'Is there a warranty?',
       },
       answer: {
-        ka: 'ეს დამოკიდებულია კონკრეტულ მინაზე და მოქმედ წესებზე. სამუშაოს დაწყებამდე აგიხსნით რომელ ვარიანტებს აქვს აზრი როგორც ვიზუალურად, ისე პრაქტიკულად.',
+        ka: 'დიახ. სამუშაოზე გარანტია — 1 წელი, LLumar ფირზე — მწარმოებლისგან 5 წლამდე. ნორმალური ექსპლუატაციისას ფირი გაცილებით მეტს ძლებს.',
         ru: 'Да. Гарантия на работу — 1 год, на пленку LLumar — до 5 лет от производителя. При нормальной эксплуатации пленка служит значительно дольше.',
         en: 'Yes. Warranty on work — 1 year, on LLumar film — up to 5 years from the manufacturer. With normal use, the film lasts significantly longer.',
       },
     },
     {
       question: {
-        ka: 'შეიძლება თუ არა წინა საქარე მინაზე დაბურვა?',
+        ka: 'რა დონის დაბურვა არის დაშვებული საქართველოში?',
         ru: 'Легальна ли тонировка в Грузии?',
         en: 'Is window tinting legal in Georgia?',
       },
       answer: {
-        ka: 'ეს კითხვა ყოველთვის ინდივიდუალურად უნდა განიხილოთ წესებთან და თქვენს მიზანთან ერთად. თუ გსურთ კონკრეტული ვარიანტი, დაგიკონკრეტებთ ადგილზე.',
+        ka: 'წინა გვერდითა მინები — მინიმუმ 60% სინათლის გატარება, უკანა გვერდითა — მინიმუმ 75%, უკანა მინა — შეზღუდვის გარეშე. ფირს ვარჩევთ მკაცრად კანონის ფარგლებში, ჯარიმის რისკი გამორიცხულია.',
         ru: 'Да. Передние боковые — не менее 60% пропускания света, задние — не менее 75%, заднее стекло — без ограничений. Мы подберем пленку строго в рамках закона.',
         en: 'Yes. Front side windows must allow at least 60% light, rear at least 75%, rear windshield has no restrictions. We select film strictly within the law.',
       },
@@ -792,7 +732,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How long does tinting take?',
       },
       answer: {
-        ka: 'სამუშაოს დრო დამოკიდებულია ავტომობილის ტიპზე და მოცულობაზე, თუმცა ზუსტ ვადას ჩაწერის დროს გეტყვით.',
+        ka: '2–4 საათი მინების რაოდენობის მიხედვით. მნიშვნელოვანი: დაყენებიდან 3 დღე არ ჩამოუშვათ მინები, რათა ფირი სრულად მოეწყოს.',
         ru: '2–4 часа в зависимости от количества стекол. Важно: не опускайте стекла 3 дня после установки, чтобы пленка полностью приклеилась.',
         en: '2–4 hours depending on the number of windows. Important: don\'t lower windows for 3 days after installation to let the film fully adhere.',
       },
@@ -838,60 +778,60 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'windshield-repair': [
     {
       question: {
-        ka: 'ყველა ბზარის შეკეთება შეიძლება?',
+        ka: 'რა ღირს საქარე მინის შეკეთება?',
         ru: 'Сколько стоит ремонт скола?',
         en: 'How much does chip repair cost?',
       },
       answer: {
-        ka: 'არა. შეკეთების შესაძლებლობა დამოკიდებულია დაზიანების ზომაზე, ტიპზე და მდებარეობაზე.',
+        ka: 'ჩიპი 1 სმ-მდე — 60 Gel-დან, ჩიპი 1–2 სმ — 80 Gel-დან. ბზარი 15 სმ-მდე — 95 Gel-დან, ბზარი 15–30 სმ — 140 Gel-დან. 5–10-ჯერ იაფია ვიდრე მინის შეცვლა. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
         ru: 'Скол до 1 см — от 60 Gel, скол 1–2 см — от 80 Gel. Трещина до 15 см — от 95 Gel, трещина 15–30 см — от 140 Gel. В 5–10 раз дешевле замены стекла. Пришлите фото в WhatsApp — оценим бесплатно.',
         en: 'Chip up to 1 cm — from 60 Gel, chip 1–2 cm — from 80 Gel. Crack up to 15 cm — from 95 Gel, crack 15–30 cm — from 140 Gel. 5–10 times cheaper than windshield replacement. Send a photo on WhatsApp — we\'ll estimate for free.',
       },
     },
     {
       question: {
-        ka: 'რამდენად შესამჩნევი რჩება კვალი შეკეთების შემდეგ?',
+        ka: 'რომელი დაზიანება შეიძლება შეკეთდეს?',
         ru: 'Какие повреждения можно отремонтировать?',
         en: 'What types of damage can be repaired?',
       },
       answer: {
-        ka: 'ეს დამოკიდებულია დაზიანების ტიპზე და ზომაზე. მიზანია მინის ფუნქციური მდგომარეობის და ვიზუალის მაქსიმალურად გაუმჯობესება.',
+        ka: 'ჩიპები 25 მმ-მდე, ბზარები 15 სმ-მდე. რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი. თუ ჩიპში ჭუჭყი უკვე მოხვდა — შედეგი შეიძლება ცოტა უარესი იყოს, მაგრამ შეკეთება მაინც შეაჩერებს გავრცელებას.',
         ru: 'Сколы до 25 мм, трещины до 15 см. Чем свежее повреждение — тем лучше результат. Если в скол уже попала грязь — результат может быть хуже, но ремонт всё равно остановит распространение.',
         en: 'Chips up to 25 mm, cracks up to 15 cm. The fresher the damage, the better the result. If dirt has already entered the chip, the result may be slightly worse, but repair will still stop it from spreading.',
       },
     },
     {
       question: {
-        ka: 'რა ჯობს - შეკეთება თუ შეცვლა?',
+        ka: 'არის თუ არა გარანტია?',
         ru: 'Есть ли гарантия?',
         en: 'Is there a warranty?',
       },
       answer: {
-        ka: 'თუ დაზიანება ჯერ კიდევ შეკეთებადია, უმეტეს შემთხვევაში დროული აღდგენა უფრო სწრაფი და ეკონომიური გადაწყვეტაა.',
+        ka: 'დიახ, 1-წლიანი გარანტია იმაზე, რომ ბზარი შემდეგ არ გაგრძელდება. პოლიმერი, რომელსაც ვიყენებთ, სიმტკიცით მინას უტოლდება.',
         ru: 'Да, 1 год гарантии на то, что трещина не пойдет дальше. Полимер, который мы используем, по прочности сопоставим со стеклом.',
         en: 'Yes, 1-year warranty that the crack won\'t spread further. The polymer we use is comparable in strength to glass itself.',
       },
     },
     {
       question: {
-        ka: 'რატომ არ უნდა გადავდო შეკეთება?',
+        ka: 'რამდენ ხანს ძლებს შეკეთებული მინა?',
         ru: 'Надолго ли хватает ремонта?',
         en: 'How long does the repair last?',
       },
       answer: {
-        ka: 'დროის გასვლასთან ერთად ბზარი შეიძლება გაიზარდოს და შეკეთება უკვე შეუძლებელი გახდეს.',
+        ka: 'მინის მთელი ვადის განმავლობაში. ხარისხიანი პოლიმერი UV-გამოშრობის შემდეგ მინის ტოლ სიმტკიცეს აღწევს. შეკეთების გამეორება არ არის საჭირო.',
         ru: 'На весь срок службы стекла. Качественный полимер после УФ-отверждения набирает прочность, равную самому стеклу. Ремонт не нужно повторять.',
         en: 'For the entire lifespan of the windshield. Quality polymer after UV curing reaches the strength of glass itself. No need to repeat the repair.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება საქარე მინის შეკეთება?',
+        ka: 'რამდენ ხანს სჭირდება შეკეთება?',
         ru: 'Сколько времени занимает ремонт?',
         en: 'How long does the repair take?',
       },
       answer: {
-        ka: 'სამუშაოს დრო დამოკიდებულია დაზიანების ტიპზე, თუმცა პროცესი ჩვეულებრივ ბევრად უფრო სწრაფია, ვიდრე მინის სრული შეცვლა.',
+        ka: 'ჩიპი — 20–30 წუთი, ბზარი — 30–60 წუთი. შეკეთებისთანავე შეგიძლიათ წახვიდეთ.',
         ru: 'Скол — 20–30 минут, трещина — 30–60 минут. Уехать можно сразу после ремонта.',
         en: 'Chip — 20–30 minutes, crack — 30–60 minutes. You can drive away immediately after repair.',
       },
@@ -949,60 +889,60 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'car-soundproofing': [
     {
       question: {
-        ka: 'ხმის იზოლაცია რას აუმჯობესებს?',
+        ka: 'რა ღირს ხმაურის იზოლაცია?',
         ru: 'Сколько стоит шумоизоляция?',
         en: 'How much does soundproofing cost?',
       },
       answer: {
-        ka: 'ხმის იზოლაცია ამცირებს გარე ხმაურს, გზის ხმას და სალონში საერთო დისკომფორტს.',
+        ka: 'კარების ხმაურიზოლაცია — 900 Gel-დან, იატაკის — 1000 Gel-დან, საბარგულის — 600 Gel-დან, თაღების — 600 Gel-დან. ავტომობილის სრული ხმაურიზოლაცია — 2100 Gel-დან. მოგვწერეთ WhatsApp-ზე ფასის გათვლისთვის.',
         ru: 'Шумоизоляция дверей — от 900 Gel, пола — от 1000 Gel, багажника — от 600 Gel, колесных арок — от 600 Gel. Полная шумоизоляция автомобиля — от 2100 Gel. Напишите в WhatsApp для расчета стоимости.',
         en: 'Door soundproofing — from 900 Gel, floor — from 1000 Gel, trunk — from 600 Gel, wheel arches — from 600 Gel. Full car soundproofing — from 2100 Gel. Message us on WhatsApp for a price quote.',
       },
     },
     {
       question: {
-        ka: 'რით განსხვავდება ხმის და ვიბრო იზოლაცია?',
+        ka: 'არის თუ არა გარანტია?',
         ru: 'Есть ли гарантия?',
         en: 'Is there a warranty?',
       },
       answer: {
-        ka: 'ვიბრო იზოლაცია ვიბრაციის შემცირებაზე მუშაობს, ხმის იზოლაცია კი ხმაურის შემცირებაზე. ხშირად საუკეთესო შედეგისთვის ორივე ერთად გამოიყენება.',
+        ka: 'დიახ, 2-წლიანი გარანტია სამუშაოზე. მასალები ავტომობილის მთელი ვადის განმავლობაში ძლებს. მუშაობის მთელი პერიოდის განმავლობაში არცერთი საგარანტიო შემთხვევა.',
         ru: 'Да, 2 года гарантии на работу. Материалы служат весь срок эксплуатации автомобиля. За всё время работы ни одного гарантийного случая.',
         en: 'Yes, 2-year warranty on workmanship. Materials last the entire life of the car. In all our years of work, not a single warranty case.',
       },
     },
     {
       question: {
-        ka: 'რომელი ზონების იზოლაცია იძლევა ყველაზე დიდ ეფექტს?',
+        ka: 'რამდენად ჩუმად გახდება სალონში?',
         ru: 'Насколько тише станет в салоне?',
         en: 'How much quieter will the cabin be?',
       },
       answer: {
-        ka: 'ეს დამოკიდებულია ავტომობილსა და ხმაურის წყაროზე, თუმცა ყველაზე ხშირად ეფექტურია კარები, იატაკი, საბარგული და თაღები.',
+        ka: 'ხმაურის შემცირება 30–50%-ით (3–8 დბ). სხვაობა მაშინვე იგრძნობა — განსაკუთრებით ავტობანზე და გრუნტის გზებზე. აუდიოსისტემაც გაცილებით უკეთ ჟღერს.',
         ru: 'Снижение шума на 30–50% (3–8 дБ). Разница ощущается сразу — особенно на трассе и по грунтовым дорогам. Аудиосистема зазвучит значительно лучше.',
         en: 'Noise reduction of 30–50% (3–8 dB). The difference is noticeable immediately — especially on highways and gravel roads. Your audio system will sound much better too.',
       },
     },
     {
       question: {
-        ka: 'რამდენად იმატებს ავტომობილის წონა?',
+        ka: 'რამდენ ხანს გრძელდება მონტაჟი?',
         ru: 'Сколько времени занимает установка?',
         en: 'How long does installation take?',
       },
       answer: {
-        ka: 'წონის ცვლილება დამოკიდებულია დამუშავებული ზონების რაოდენობასა და გამოყენებულ მასალებზე.',
+        ka: 'კარები — 1 დღე, იატაკი — 1–2 დღე, სრული ხმაურიზოლაცია — 3–5 დღე. სირთულე ავტომობილის მოდელზეა დამოკიდებული.',
         ru: 'Двери — 1 день, пол — 1–2 дня, полная шумоизоляция — 3–5 дней. Сложность зависит от модели автомобиля.',
         en: 'Doors — 1 day, floor — 1–2 days, full soundproofing — 3–5 days. Complexity depends on the car model.',
       },
     },
     {
       question: {
-        ka: 'შეიძლება თუ არა მხოლოდ კარების ან საბარგულის იზოლაცია?',
+        ka: 'რომელი ზონების ხმაურიზოლაცია შეიძლება?',
         ru: 'Какие зоны можно шумоизолировать?',
         en: 'What areas can be soundproofed?',
       },
       answer: {
-        ka: 'დიახ. სრული იზოლაციის გარდა შესაძლებელია კონკრეტული ზონების ნაწილობრივი დამუშავებაც.',
+        ka: 'კარები, იატაკი, ჭერი, თაღები, ძრავის ფარი, საბარგული. კარები + იატაკი ეფექტის 70%-ს იძლევა სრული ხმაურიზოლაციის ღირებულების 40%-ად — ეს ოპტიმალური ვარიანტია უმეტესი ავტომობილებისთვის.',
         ru: 'Двери, пол, потолок, арки, моторный щит, багажник. Двери + пол дают 70% эффекта за 40% стоимости полной шумоизоляции — это оптимальный вариант для большинства автомобилей.',
         en: 'Doors, floor, roof, wheel arches, firewall, trunk. Doors + floor provide 70% of the effect for 40% of the full soundproofing cost — the optimal choice for most cars.',
       },
@@ -1270,60 +1210,60 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
   'carwash': [
     {
       question: {
-        ka: 'რა ღირს მანქანის რეცხვა?',
+        ka: 'რით განსხვავდება დეტეილინგ რეცხვა ჩვეულებრივი რეცხვისგან?',
         ru: 'Чем детейлинг мойка отличается от обычной мойки?',
         en: 'What is the difference between a detailing wash and a regular car wash?',
       },
       answer: {
-        ka: 'ფასი იწყება 40 ლარიდან. ზუსტი ღირებულება დამოკიდებულია მომსახურების ტიპზე, ავტომობილის ზომასა და არჩეულ პაკეტზე.',
+        ka: 'დეტეილინგ რეცხვა არის საფუძვლიანი ხელით რეცხვა ორი ვედრის მეთოდით. პროცესი 2–3 საათს გრძელდება, გამოიყენება pH-ნეიტრალური ქიმია, რომელიც უსაფრთხოა კერამიკული და PPF საფარისთვის, და ხსნის დაბინძურებას, რომელსაც ავტომატური სარეცხი ვერ ხსნის.',
         ru: 'Детейлинг мойка — это тщательная ручная мойка методом двух вёдер. Она занимает 2–3 часа, выполняется с применением pH-нейтральной химии, безопасной для керамических покрытий и PPF, и устраняет загрязнения, которые не удаляет автоматизированная мойка.',
         en: 'A detailing wash is a thorough hand wash using the two-bucket method. It takes 2–3 hours, uses pH-neutral chemicals safe for ceramic coatings and PPF, and removes contamination that automated car washes cannot.',
       },
     },
     {
       question: {
-        ka: 'რა განსხვავებაა 2-ფაზიან და 3-ფაზიან რეცხვას შორის?',
+        ka: 'რამდენ ხანს გრძელდება დეტეილინგ რეცხვა?',
         ru: 'Сколько времени занимает детейлинг мойка?',
         en: 'How long does a detailing car wash take?',
       },
       answer: {
-        ka: '2-ფაზიანი რეცხვა მოიცავს უსაფრთხო და ხარისხიან ძირითად გაწმენდას, ხოლო 3-ფაზიანი უფრო საფუძვლიანია და დამატებით მოიცავს ღრმა დამუშავებას უკეთესი საბოლოო შედეგისთვის.',
+        ka: 'დეტეილინგ რეცხვა საშუალოდ 2–3 საათს მოითხოვს, ავტომობილის ზომისა და დაბინძურების ხარისხის მიხედვით.',
         ru: 'Детейлинг мойка занимает в среднем 2–3 часа в зависимости от размера и степени загрязнения автомобиля.',
         en: 'A detailing car wash typically takes 2–3 hours, depending on the vehicle\'s size and level of contamination.',
       },
     },
     {
       question: {
-        ka: 'რამდენ ხანს გრძელდება რეცხვა?',
+        ka: 'შეიძლება თუ არა კერამიკული ან PPF საფარიანი ავტომობილის რეცხვა?',
         ru: 'Можно ли мыть автомобиль с керамическим покрытием или PPF?',
         en: 'Can I wash a car with a ceramic coating or PPF?',
       },
       answer: {
-        ka: 'ზუსტი დრო დამოკიდებულია მომსახურების ტიპზე, ავტომობილის ზომასა და დაბინძურების ხარისხზე.',
+        ka: 'დიახ. ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ქიმიას, რომელიც სრულიად უსაფრთხოა კერამიკული საფარისა და PPF-ფილმისთვის.',
         ru: 'Да. Мы используем профессиональную pH-нейтральную химию, которая полностью безопасна для керамических покрытий и PPF-плёнок.',
         en: 'Yes. We use professional pH-neutral products that are completely safe for ceramic coatings and PPF films.',
       },
     },
     {
       question: {
-        ka: 'რა ქიმიას იყენებთ?',
+        ka: 'რა ქიმიას იყენებთ რეცხვის დროს?',
         ru: 'Какую химию вы используете при мойке?',
         en: 'What products do you use for washing?',
       },
       answer: {
-        ka: 'ვიყენებთ პროფესიონალურ, სწორად შერჩეულ ქიმიას, რომელიც უსაფრთხოა როგორც ლაქისთვის, ისე შესაბამისი დამცავი საფარებისთვის.',
+        ka: 'ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ავტოქიმიას, რომელიც უსაფრთხოა ყველა სახის საფარისთვის, საღებავისა და დამცავი ფილმისთვის.',
         ru: 'Мы применяем профессиональные pH-нейтральные автокосметические средства, безопасные для всех видов покрытий, лакокрасочного покрытия и защитных плёнок.',
         en: 'We use professional pH-neutral car care products that are safe for all types of coatings, paintwork, and protective films.',
       },
     },
     {
       question: {
-        ka: 'უსაფრთხოა თუ არა რეცხვა PPF-ისთვის და კერამიკისთვის?',
+        ka: 'რა ღირს ავტომობილის დეტეილინგ რეცხვა?',
         ru: 'Сколько стоит детейлинг мойка автомобиля?',
         en: 'How much does a detailing car wash cost?',
       },
       answer: {
-        ka: 'დიახ. ჩვენი რეცხვის პროცესი გათვლილია იმაზე, რომ არ დაზიანდეს დამცავი ფირები და საფარები.',
+        ka: 'დეტეილინგ რეცხვის ფასი იწყება 40 ლარიდან სედანის ორფაზიანი რეცხვისთვის. საბოლოო ფასი დამოკიდებულია ავტომობილის კლასსა და შერჩეულ მომსახურებაზე.',
         ru: 'Стоимость детейлинг мойки начинается от 40 лари за двухфазную мойку седана. Итоговая цена зависит от класса автомобиля и выбранных услуг.',
         en: 'A detailing wash starts from 40 GEL for a two-phase wash of a sedan. The final price depends on the vehicle size and selected services.',
       },
@@ -1350,57 +1290,6 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'ვირეკომენდებთ დეტეილინგ რეცხვას ყოველ 2–4 კვირაში ერთხელ, ავტომობილის გამოყენების ინტენსივობისა და ამინდის პირობების მიხედვით.',
         ru: 'Мы рекомендуем детейлинг мойку раз в 2–4 недели в зависимости от интенсивности использования автомобиля и погодных условий.',
         en: 'We recommend a detailing wash every 2–4 weeks, depending on how frequently you drive and the current weather conditions.',
-      },
-    },
-  ],
-
-  'homepage': [
-    {
-      question: {
-        ka: 'რა სერვისებს გვთავაზობთ?',
-        ru: 'Какие услуги вы предлагаете?',
-        en: 'What services do you offer?',
-      },
-      answer: {
-        ka: 'ჩვენთან ხელმისაწვდომია PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, მინების დაბურვა, პოლირება, კერამიკული საფარი, სალონის ქიმწმენდა, დეტეილინგ რეცხვა, ხმის იზოლაცია და საქარე მინის აღდგენა.',
-        ru: 'У нас доступны: оклейка PPF, смена цвета плёнкой, тонировка стёкол, полировка, керамическое покрытие, химчистка салона, детейлинг мойка, шумоизоляция и ремонт лобового стекла.',
-        en: 'We offer PPF film wrapping, color change wraps, window tinting, polishing, ceramic coating, interior cleaning, detailing wash, soundproofing, and windshield repair.',
-      },
-    },
-    {
-      question: {
-        ka: 'სად მდებარეობს BESTAUTO?',
-        ru: 'Где находится BESTAUTO?',
-        en: 'Where is BESTAUTO located?',
-      },
-      answer: {
-        ka: 'BESTAUTO მუშაობს ორი ლოკაციით თბილისში. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ ფილიალს.',
-        ru: 'BESTAUTO работает в двух локациях в Тбилиси. При записи поможем выбрать удобный для вас филиал.',
-        en: 'BESTAUTO operates from two locations in Tbilisi. When booking, we\'ll help you choose the most convenient studio.',
-      },
-    },
-    {
-      question: {
-        ka: 'როგორ გავიგო რომელი სერვისი მჭირდება?',
-        ru: 'Как понять, какая услуга мне нужна?',
-        en: 'How do I know which service I need?',
-      },
-      answer: {
-        ka: 'საუკეთესო გზაა უფასო დათვალიერება. ადგილზე შეგირჩევთ ოპტიმალურ გადაწყვეტას ავტომობილის მდგომარეობისა და თქვენი მიზნის მიხედვით.',
-        ru: 'Лучший способ — бесплатный осмотр. На месте подберём оптимальное решение с учётом состояния автомобиля и ваших целей.',
-        en: 'The best way is a free inspection. On-site, we\'ll recommend the optimal solution based on your car\'s condition and your goals.',
-      },
-    },
-    {
-      question: {
-        ka: 'შესაძლებელია თუ არა რამდენიმე სერვისის ერთად გაკეთება?',
-        ru: 'Можно ли сделать несколько услуг одновременно?',
-        en: 'Can I get multiple services done at once?',
-      },
-      answer: {
-        ka: 'დიახ. ხშირად ვაკეთებთ კომბინირებულ მომსახურებას, მაგალითად პოლირება და კერამიკა, ან ფირით დაცვა და მინების დაბურვა.',
-        ru: 'Да. Мы часто выполняем комбинированные услуги, например полировка и керамика, или оклейка плёнкой и тонировка.',
-        en: 'Yes. We often combine services, such as polishing and ceramic coating, or film wrapping and window tinting.',
       },
     },
   ],
