@@ -494,6 +494,71 @@ html {
 }
 
 /* ========================================================================
+   Blog article hero: ~30% smaller title/description vs default t-title_xl
+   Default Tilda: 72px/68px/32px (title), 24px/22px/20px (descr)
+   Blog target:  50px/46px/24px (title), 17px/16px/15px (descr)
+   ======================================================================== */
+.is-blog-article .t001__title.t-title_xl {
+  font-size: 50px !important;
+  line-height: 1.2 !important;
+}
+.is-blog-article .t001__descr.t-descr_xl {
+  font-size: 17px !important;
+}
+@media screen and (max-width: 960px) {
+  .is-blog-article .t001__title.t-title_xl {
+    font-size: 46px !important;
+  }
+  .is-blog-article .t001__descr.t-descr_xl {
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 640px) {
+  .is-blog-article .t001__title.t-title_xl {
+    font-size: 24px !important;
+  }
+  .is-blog-article .t001__descr.t-descr_xl {
+    font-size: 15px !important;
+  }
+}
+
+/* ========================================================================
+   Blog article tables: converted from markdown pipe-tables at build time
+   ======================================================================== */
+.ba-blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-family: var(--ba-font-family);
+  font-size: 15px;
+  color: inherit;
+}
+.ba-blog-table th {
+  text-align: left;
+  font-weight: var(--ba-font-weight-semibold);
+  color: var(--ba-color-accent);
+  padding: 12px 16px;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+.ba-blog-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  vertical-align: top;
+}
+.ba-blog-table tr:last-child td {
+  border-bottom: none;
+}
+@media screen and (max-width: 640px) {
+  .ba-blog-table {
+    font-size: 14px;
+  }
+  .ba-blog-table th,
+  .ba-blog-table td {
+    padding: 10px 12px;
+  }
+}
+
+/* ========================================================================
    Contrast fixes: override low-opacity text colors for WCAG AA compliance
    ======================================================================== */
 

@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, replaceBlogHeroCover } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, replaceBlogHeroCover } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
@@ -475,6 +475,7 @@ if (isBlogPage && baseSlug !== 'blog') {
   mainContent = stripBlogCtaPlaceholder(mainContent);
   mainContent = stripBlogCmsMetadata(mainContent);
   mainContent = convertBlogInlineFaq(mainContent, lang);
+  mainContent = convertBlogMarkdownTables(mainContent);
 
   // Replace duplicate hero cover images with unique Pexels photos
   const heroOverride = IMAGE_OVERRIDES[baseSlug];
@@ -994,6 +995,6 @@ mainContent = mainContent.replace(
   seoHead={seoHead}
   headerBlock={headerBlock}
   mainContent={mainContent}
-  bodyClass={bodyClass}
+  bodyClass={isBlogPage && baseSlug !== 'blog' ? `${bodyClass} is-blog-article` : bodyClass}
   lang={lang}
 />

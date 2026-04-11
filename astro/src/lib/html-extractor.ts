@@ -1104,6 +1104,72 @@ export function convertBlogInlineFaq(content: string, lang: string = 'en'): stri
 }
 
 /**
+ * Converts markdown-style pipe tables rendered as plain `<p>` tags into proper
+ * HTML `<table class="ba-blog-table">` elements.
+ *
+ * Targets KA blog articles where markdown tables were pasted as text:
+ *   <p>| header1 | header2 |</p>
+ *   <p>| --- | --- |</p>
+ *   <p>| data1 | data2 |</p>
+ */
+export function convertBlogMarkdownTables(html: string): string {
+  // Match <p> tags whose text content is a markdown table row: | ... | ... |
+  const rowRe = /<p>\s*\|(.+)\|\s*<\/p>/g;
+  const sepRe = /^\s*[-|\s]+$/;
+
+  let result = html;
+  let match: RegExpExecArray | null;
+
+  // Collect all table-row <p> positions
+  const rows: Array<{ start: number; end: number; cells: string[] }> = [];
+  while ((match = rowRe.exec(html)) !== null) {
+    const inner = match[1]; // content between outer pipes
+    const cells = inner.split('|').map(c => c.trim());
+    rows.push({ start: match.index, end: match.index + match[0].length, cells });
+  }
+
+  if (rows.length < 3) return html; // need header + separator + at least 1 data row
+
+  // Group consecutive rows into tables (rows that are adjacent in the HTML)
+  const tables: Array<{ rows: typeof rows }> = [];
+  let group: typeof rows = [rows[0]];
+
+  for (let i = 1; i < rows.length; i++) {
+    const gap = html.slice(group[group.length - 1].end, rows[i].start).trim();
+    if (gap === '') {
+      group.push(rows[i]);
+    } else {
+      if (group.length >= 3) tables.push({ rows: [...group] });
+      group = [rows[i]];
+    }
+  }
+  if (group.length >= 3) tables.push({ rows: [...group] });
+
+  if (tables.length === 0) return html;
+
+  // Replace from last to first to preserve offsets
+  for (let t = tables.length - 1; t >= 0; t--) {
+    const tbl = tables[t];
+    const headerCells = tbl.rows[0].cells;
+    // Row 1 must be separator (all dashes)
+    if (!sepRe.test(tbl.rows[1].cells.join('|'))) continue;
+
+    const thead = `<thead><tr>${headerCells.map(c => `<th>${c}</th>`).join('')}</tr></thead>`;
+    const bodyRows = tbl.rows.slice(2).map(r =>
+      `<tr>${r.cells.map(c => `<td>${c}</td>`).join('')}</tr>`
+    ).join('');
+    const tbody = `<tbody>${bodyRows}</tbody>`;
+    const table = `<table class="ba-blog-table">${thead}${tbody}</table>`;
+
+    const start = tbl.rows[0].start;
+    const end = tbl.rows[tbl.rows.length - 1].end;
+    result = result.slice(0, start) + table + result.slice(end);
+  }
+
+  return result;
+}
+
+/**
  * Remove JS-based SEO scripts from Tilda HTML (hreflang + dynamic Service schema).
  * These are replaced by static equivalents generated at build time in seo.ts.
  */
