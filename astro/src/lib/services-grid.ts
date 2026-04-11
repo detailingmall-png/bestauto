@@ -56,7 +56,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
     tier: 2,
     name: { ka: 'კერამიკული საფარი', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
     tagline: {
-      ka: '9H ნანოსაფარი — ჰიდროფობიური ეფექტი და 3-5 წლის დაცვა',
+      ka: '9H ნანოსაფარი — ჰიდროფობიური ეფექტი და 1–3 წლიანი დაცვა',
       ru: '9H нано-покрытие — гидрофобный эффект и защита 3-5 лет',
       en: '9H nano-coating — hydrophobic effect & 3-5 year protection',
     },
