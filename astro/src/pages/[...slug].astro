@@ -312,6 +312,28 @@ if (baseSlug === '') {
 }
 
 // Homepage KA: inject SEO intro block before trust/advantages section
+if (baseSlug === '' && lang === 'ka') {
+  const trustBlockMarker = 'id="rec2091645403"';
+  const trustIdx = injectedHtml.indexOf(trustBlockMarker);
+  if (trustIdx >= 0) {
+    const trustDivStart = injectedHtml.lastIndexOf('<div', trustIdx);
+    if (trustDivStart >= 0) {
+      const seoBlock = `<div style="background:var(--ba-color-bg);padding:48px 0 0;">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;text-align:center;">
+    <h2 class="ba-seo-intro__heading" style="color:var(--ba-color-text);font-weight:var(--ba-font-weight-bold);margin:0 0 16px;font-family:var(--ba-font-family);">ავტო დითეილინგი თბილისში — რას აკეთებს BESTAUTO</h2>
+    <p style="color:var(--ba-color-text-muted);font-size:16px;line-height:1.6;margin:0;font-family:var(--ba-font-family);">BESTAUTO არის პრემიუმ ავტო დითეილინგ სტუდია თბილისში, სადაც შეგიძლიათ მიიღოთ PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, სალონის ქიმწმენდა და დეტეილინგ რეცხვა. ვმუშაობთ ორ ლოკაციაზე თბილისში და გეხმარებით მომსახურების სწორ შერჩევაში ავტომობილის მდგომარეობისა და თქვენი მიზნის მიხედვით.</p>
+  </div>
+  <style>
+    .ba-seo-intro__heading { font-size: 28px; }
+    @media screen and (max-width: 960px) { .ba-seo-intro__heading { font-size: 24px; } }
+    @media screen and (max-width: 640px) { .ba-seo-intro__heading { font-size: 22px; } }
+  </style>
+</div>`;
+      injectedHtml = injectedHtml.slice(0, trustDivStart) + seoBlock + injectedHtml.slice(trustDivStart);
+    }
+  }
+}
+
 // KA homepage: update trust/advantages block texts
 if (baseSlug === '' && lang === 'ka') {
   injectedHtml = injectedHtml.replace(
