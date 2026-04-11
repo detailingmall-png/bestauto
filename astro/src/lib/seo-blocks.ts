@@ -47,7 +47,7 @@ export function buildContentBlock(cfg: ContentBlockConfig): string {
   const footerHtml = cfg.footer
     ? `<p class="ba-content-block__footer">${cfg.footer}</p>`
     : '';
-  return `<div class="r t-rec ba-content-block" style="padding:60px 0;background:var(--ba-color-surface);">
+  return `<div class="r t-rec ba-content-block" style="padding:60px 0;background:var(--ba-color-bg);">
 <div class="t-container" style="max-width:800px;margin:0 auto;padding:0 24px;">
 <h2 class="ba-content-block__heading">${cfg.heading}</h2>
 <p class="ba-content-block__text">${cfg.text}</p>
