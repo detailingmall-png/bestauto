@@ -921,8 +921,8 @@ if (baseSlug === '' && mainContent.includes('id="rec2091246563"')) {
   }
 }
 
-// KA homepage: inject contacts section subtitle after h2 heading
-if (baseSlug === '' && lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
+// KA pages: inject contacts section subtitle after h2 heading
+if (lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
   mainContent = mainContent.replace(
     'უფასო კონსულტაციისთვის</span></h2>',
     'უფასო კონსულტაციისთვის</span></h2><p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;text-align:center;margin:12px auto 28px;max-width:560px;font-family:var(--ba-font-family);">ორივე ფილიალში ხელმისაწვდომია უფასო დათვალიერება, წინასწარი კონსულტაცია და ჩაწერა ძირითად სერვისებზე</p>'
