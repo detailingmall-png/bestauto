@@ -334,46 +334,6 @@ if (baseSlug === '' && lang === 'ka') {
   }
 }
 
-// KA homepage: update trust/advantages block texts
-if (baseSlug === '' && lang === 'ka') {
-  injectedHtml = injectedHtml.replace(
-    'რატომ უნდა აირჩიოთ ჩვენი დითეილინგ ცენტრი??',
-    'რატომ ირჩევენ BESTAUTO-ს თბილისში'
-  );
-  injectedHtml = injectedHtml.replace(
-    'თქვენ აუცილებლად კმაყოფილი დარჩებით',
-    ''
-  );
-  injectedHtml = injectedHtml.replace(
-    'დეტეილინგში 5 წლიანი გამოცდილება',
-    '5+ წლიანი პრაქტიკული გამოცდილება'
-  );
-  injectedHtml = injectedHtml.replace(
-    'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა',
-    'სხვადასხვა მარკისა და მოდელის ავტომობილებზე ყოველდღიური პრაქტიკა და პროფესიონალური შესრულება'
-  );
-  injectedHtml = injectedHtml.replace(
-    'გურამიშვილი 78 და ანა პოლიტკოვსკაია 51 — აირჩიეთ მოსახერხებელი ლოკაცია',
-    'გურამიშვილსა და საბურთალოზე — აირჩიეთ თქვენთვის უფრო მოსახერხებელი ფილიალი'
-  );
-  injectedHtml = injectedHtml.replace(
-    '2,000 კმაყოფილი მომხმარებელი',
-    '4.9★ რეიტინგი და ასობით რეალური შეფასება'
-  );
-  injectedHtml = injectedHtml.replace(
-    'ასობით მიმოხილვა, 4.9★ რეიტინგი Google-ზე',
-    'მაღალი შეფასება Google-ზე და კლიენტების რეალური გამოცდილება სხვადასხვა სერვისზე'
-  );
-  injectedHtml = injectedHtml.replace(
-    '10 წლიანი გარანტია ფირზე',
-    'სერტიფიცირებული მასალები და გარანტია'
-  );
-  injectedHtml = injectedHtml.replace(
-    'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს',
-    'ვმუშაობთ მხოლოდ დადასტურებული ბრენდებით და კონკრეტულ სერვისებზე გთავაზობთ გარანტიას'
-  );
-}
-
 // Blog index pages: replace static t404 card grid with dynamic one
 const BLOG_INDEX_T404_IDS: Readonly<Record<string, string>> = {
   ka: 'rec607481069',
