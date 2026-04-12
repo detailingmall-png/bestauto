@@ -93,7 +93,7 @@ export function buildStepsBlock(cfg: StepsBlockConfig): string {
 <div class="t-section__container t-container t-container_flex">
 <div class="t-col t-col_12">
 <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto">
-<span style="color:#ffffff;"><h2>${cfg.heading}</h2></span>
+<span style="color:#e4c97e;"><h2 style="margin:0;font:inherit;color:inherit;">${cfg.heading}</h2></span>
 </div>
 </div>
 </div>
@@ -131,6 +131,42 @@ export function injectAfterHero(html: string, block: string): string {
 
   // Walk backwards to find the opening <div of the rec block
   const recStart = html.lastIndexOf('<div', idx);
+  if (recStart < 0) return html;
+
+  // Count div depth to find matching close
+  let depth = 0;
+  let pos = recStart;
+  while (pos < html.length) {
+    const nextOpen = html.indexOf('<div', pos + 1);
+    const nextClose = html.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const insertAt = nextClose + 6;
+        return html.slice(0, insertAt) + '\n' + block + html.slice(insertAt);
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return html;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Inject block after first native Tilda t508 (benefits section)     */
+/* ------------------------------------------------------------------ */
+
+export function injectAfterBenefits(html: string, block: string): string {
+  // Find the first native Tilda t508 block (id="rec..." + data-record-type="508")
+  // Skip generated blocks (ba-steps-section) which also use type 508
+  const re = /id="rec\d+"\s[^>]*data-record-type="508"/;
+  const match = re.exec(html);
+  if (!match) return html;
+
+  const recStart = html.lastIndexOf('<div', match.index);
   if (recStart < 0) return html;
 
   // Count div depth to find matching close
