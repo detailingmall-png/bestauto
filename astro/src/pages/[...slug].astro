@@ -399,7 +399,7 @@ if (lang === 'ka') {
       mainContent = mainContent.replaceAll(from, to);
     }
     let seoBlocks = pageSeo.seoBlock;
-    if (pageSeo.contentBlocks) {
+    if (pageSeo.contentBlocks && !pageSeo.brandsBlock) {
       seoBlocks += '\n' + pageSeo.contentBlocks.join('\n');
     }
     mainContent = injectAfterHero(mainContent, seoBlocks);
@@ -408,6 +408,10 @@ if (lang === 'ka') {
       let stepsPayload = buildStepsBlock(pageSeo.stepsBlock);
       if (pageSeo.brandsBlock) {
         stepsPayload += '\n' + buildBrandsBlock(pageSeo.brandsBlock);
+        // When brandsBlock exists, contentBlocks go after brands instead of after hero
+        if (pageSeo.contentBlocks) {
+          stepsPayload += '\n' + pageSeo.contentBlocks.join('\n');
+        }
       }
       mainContent = injectAfterBenefits(mainContent, stepsPayload);
     }
