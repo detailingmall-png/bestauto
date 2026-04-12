@@ -749,8 +749,11 @@ mainContent = mainContent.replace(
   ''
 );
 
-// On service pages, move reviews heading + widget right after the advantages block (t502)
-if (mainContent.includes('data-alias-record-type="502"') && mainContent.includes('id="ba-reviews"')) {
+// On service pages, move reviews heading + widget right after the advantages block (t502).
+// PPF page: skip — reviews stay in natural position (below gallery) for better conversion flow.
+// Research: pricing + process before reviews follows the psychological decision funnel
+// (Awareness → Interest → Desire → Trust → Action), converting both quick and deliberate buyers.
+if (baseSlug !== 'ppf-shield-wrapping' && mainContent.includes('data-alias-record-type="502"') && mainContent.includes('id="ba-reviews"')) {
   // Extract reviews heading blocks (anchor t215 + heading t255 that precede the ba-reviews widget).
   // Search near ba-reviews to avoid picking up stray navigation anchors elsewhere on the page
   // (some pages have a second name="reviews" anchor that is just a nav link, not the heading).
@@ -829,20 +832,26 @@ if (SERVICE_SLUGS.has(baseSlug)) {
   }
 }
 
-// Service pages: move price block (heading + table) before FAQ for better conversion
-// Must run AFTER the FAQ reorder above so we insert relative to the FAQ's final position
+// Service pages: move price block (heading + table) for better conversion.
+// PPF page: prices right after trust block (t502) — show pricing early for transparency.
+// Other pages: prices before FAQ (must run AFTER FAQ reorder so insertion target is correct).
 if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.includes('id="prices"')) {
-  const faqId = `id="${baseSlug}-faq"`;
-  if (mainContent.includes(faqId)) {
-    let priceBlock: string;
-    [priceBlock, mainContent] = extractPriceSection(mainContent);
-    if (priceBlock) {
-      // Also extract the CTA button that follows prices (vinyl-wrapping, ppf-shield-wrapping)
-      let pricesCta: string;
-      [pricesCta, mainContent] = extractPricesCta(mainContent);
-      const faqIdx = mainContent.indexOf(faqId);
-      const faqDivStart = mainContent.lastIndexOf('<div', faqIdx);
-      mainContent = mainContent.slice(0, faqDivStart) + priceBlock + pricesCta + mainContent.slice(faqDivStart);
+  let priceBlock: string;
+  [priceBlock, mainContent] = extractPriceSection(mainContent);
+  if (priceBlock) {
+    let pricesCta: string;
+    [pricesCta, mainContent] = extractPricesCta(mainContent);
+    if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('data-alias-record-type="502"')) {
+      // PPF: prices after trust block — conversion research shows price transparency
+      // early in the funnel eliminates friction for deliberate buyers
+      mainContent = insertAfterBlockByAliasType(mainContent, '502', priceBlock + pricesCta);
+    } else {
+      const faqId = `id="${baseSlug}-faq"`;
+      if (mainContent.includes(faqId)) {
+        const faqIdx = mainContent.indexOf(faqId);
+        const faqDivStart = mainContent.lastIndexOf('<div', faqIdx);
+        mainContent = mainContent.slice(0, faqDivStart) + priceBlock + pricesCta + mainContent.slice(faqDivStart);
+      }
     }
   }
 }
