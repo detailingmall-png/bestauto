@@ -974,6 +974,11 @@ if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('ba-reels-grid'))
   }
 }
 
+// PPF page KA: rename video gallery heading
+if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
+  mainContent = mainContent.replace('სამუშაო პროცესი', 'ავტომობილების ფირით გადაკვრის პროცესი');
+}
+
 // KA homepage: update reviews section heading + add subheading
 if (baseSlug === '' && lang === 'ka') {
   mainContent = mainContent.replace(
