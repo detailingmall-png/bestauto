@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, replaceBlogHeroCover } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
@@ -633,8 +633,9 @@ if (lang === 'ka') {
     }
     mainContent = insertBeforeFooter(mainContent, reviewsGallery + CONTACTS_BLOCK_KA, ['rec2091645713', 'rec607481980', 'rec607472568', 'rec603526076']);
   }
-  // Subpages: move gallery+reviews above contacts block
-  if ((currentSlug !== '' && currentSlug !== undefined) && mainContent.includes('id="rec713418578"')) {
+  // Subpages: move gallery+reviews above contacts block.
+  // Service pages are handled separately by the reorder pipeline (gallery after FAQ).
+  if ((currentSlug !== '' && currentSlug !== undefined) && !SERVICE_SLUGS.has(baseSlug) && mainContent.includes('id="rec713418578"')) {
     const galleryStartPos = mainContent.indexOf('id="rec713418578"');
     const reviewsStartId = findRecIdContaining(mainContent, 'name="reviews"', galleryStartPos);
     const reviewsEndId = reviewsStartId ? findNthRecIdAfter(mainContent, reviewsStartId, 2) : null;
@@ -839,17 +840,17 @@ if (SERVICE_SLUGS.has(baseSlug)) {
 }
 
 // Service pages: move price block (heading + table) for better conversion.
-// PPF page: prices right after trust block (t502) — show pricing early for transparency.
-// Other pages: prices before FAQ (must run AFTER FAQ reorder so insertion target is correct).
+// KA: prices right after trust block (t502) — conversion research shows price
+// transparency early in the funnel eliminates friction for deliberate buyers.
+// RU/EN: prices before FAQ (existing behavior, must run AFTER FAQ reorder).
 if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.includes('id="prices"')) {
   let priceBlock: string;
   [priceBlock, mainContent] = extractPriceSection(mainContent);
   if (priceBlock) {
     let pricesCta: string;
     [pricesCta, mainContent] = extractPricesCta(mainContent);
-    if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('data-alias-record-type="502"')) {
-      // PPF: prices after trust block — conversion research shows price transparency
-      // early in the funnel eliminates friction for deliberate buyers
+    if (lang === 'ka' && mainContent.includes('data-alias-record-type="502"')) {
+      // KA: prices after trust block (t502) — conversion-optimized funnel
       mainContent = insertAfterBlockByAliasType(mainContent, '502', priceBlock + pricesCta);
     } else {
       const faqId = `id="${baseSlug}-faq"`;
@@ -858,6 +859,34 @@ if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.inclu
         const faqDivStart = mainContent.lastIndexOf('<div', faqIdx);
         mainContent = mainContent.slice(0, faqDivStart) + priceBlock + pricesCta + mainContent.slice(faqDivStart);
       }
+    }
+  }
+}
+
+// KA service pages (except PPF): move gallery section after FAQ.
+// Gallery = name="photo" anchor (t215) + heading rec713418578 (T225) + ba-gallery content blocks.
+// Some pages (interior-cleaning, windshield-repair) have TWO ba-gallery blocks — extract all.
+// PPF has its own gallery reorder in the PPF-specific block below.
+if (lang === 'ka' && SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wrapping') {
+  const faqId = `${baseSlug}-faq`;
+  if (mainContent.includes(`id="${faqId}"`) && mainContent.includes('class="ba-gallery"')) {
+    // 1. Extract ALL ba-gallery content blocks (some pages have 2: service-specific + shared studio)
+    let allGalleryBlocks = '';
+    while (mainContent.includes('class="ba-gallery"')) {
+      let block: string;
+      [block, mainContent] = extractTRecBlock(mainContent, 'class="ba-gallery"');
+      if (!block) break;
+      allGalleryBlocks += block;
+    }
+    // 2. Extract heading block (rec713418578 = shared "ჩვენი ორი სტუდიის ფოტოები" on all KA service pages)
+    let galleryHeading: string;
+    [galleryHeading, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec713418578', 'rec713418578');
+    // 3. Extract photo anchor block (t215 with name="photo", just before heading)
+    let photoAnchor: string;
+    [photoAnchor, mainContent] = extractTRecBlock(mainContent, 'name="photo"');
+    const gallerySection = photoAnchor + galleryHeading + allGalleryBlocks;
+    if (gallerySection) {
+      mainContent = insertAfterDivById(mainContent, faqId, gallerySection);
     }
   }
 }
@@ -970,57 +999,6 @@ if (lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
 //       → Reviews → FAQ → Gallery → Contacts → CrossSell
 // ===================================================================
 if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
-  /** Extract the nearest t-rec block containing `marker` text.
-   *  Returns [extracted, remaining]. Anonymous blocks (no rec ID) OK. */
-  const extractTRecBlock = (html: string, marker: string): [string, string] => {
-    const idx = html.indexOf(marker);
-    if (idx < 0) return ['', html];
-    let blockStart = -1;
-    let scan = idx;
-    while (scan > 0) {
-      const d = html.lastIndexOf('<div', scan - 1);
-      if (d < 0) break;
-      const tagEnd = html.indexOf('>', d);
-      const tag = html.slice(d, tagEnd + 1);
-      if (tag.includes('class="r t-rec') || (/id="rec\d+"/.test(tag) && tag.includes('class='))) {
-        blockStart = d;
-        break;
-      }
-      scan = d;
-    }
-    if (blockStart < 0) return ['', html];
-    let depth = 0, pos = blockStart;
-    while (pos < html.length) {
-      const no = html.indexOf('<div', pos + 1);
-      const nc = html.indexOf('</div>', pos + 1);
-      if (nc < 0) break;
-      if (no >= 0 && no < nc) { depth++; pos = no; }
-      else if (depth === 0) {
-        const end = nc + 6;
-        return [html.slice(blockStart, end), html.slice(0, blockStart) + html.slice(end)];
-      } else { depth--; pos = nc; }
-    }
-    return ['', html];
-  };
-
-  /** Insert content right after the rec block with the given ID. */
-  const insertAfterRecId = (html: string, recId: string, content: string): string => {
-    const idx = html.indexOf(`id="${recId}"`);
-    if (idx < 0) return html;
-    const divStart = html.lastIndexOf('<div', idx);
-    if (divStart < 0) return html;
-    let depth = 0, pos = divStart;
-    while (pos < html.length) {
-      const no = html.indexOf('<div', pos + 1);
-      const nc = html.indexOf('</div>', pos + 1);
-      if (nc < 0) break;
-      if (no >= 0 && no < nc) { depth++; pos = no; }
-      else if (depth === 0) { return html.slice(0, nc + 6) + content + html.slice(nc + 6); }
-      else { depth--; pos = nc; }
-    }
-    return html;
-  };
-
   // 1. Move t502 (Trust) right after t508 (PPF Advantages)
   let t502: string;
   [t502, mainContent] = extractTRecBlock(mainContent, 'data-alias-record-type="502"');

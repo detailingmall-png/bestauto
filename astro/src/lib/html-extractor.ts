@@ -1430,6 +1430,98 @@ export function insertAfterSectionById(content: string, id: string, html: string
 }
 
 /**
+ * Insert HTML right after a <div id="...">...</div> element.
+ * Returns the original content unchanged if the div is not found.
+ */
+export function insertAfterDivById(content: string, id: string, html: string): string {
+  const marker = `id="${id}"`;
+  const markerIdx = content.indexOf(marker);
+  if (markerIdx < 0) return content;
+  const startIdx = content.lastIndexOf('<div', markerIdx);
+  if (startIdx < 0) return content;
+  let depth = 0;
+  let pos = startIdx;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const insertAt = nextClose + '</div>'.length;
+        return content.slice(0, insertAt) + html + content.slice(insertAt);
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return content;
+}
+
+/**
+ * Extract the nearest t-rec block whose HTML contains `marker`.
+ * Works with both named blocks (id="recNNN") and anonymous blocks
+ * (no rec ID, just class="r t-rec"). Walks backwards from the marker
+ * to find the enclosing `<div class="r t-rec...">`, then forward to
+ * find the matching `</div>`.
+ * @returns [extractedBlock, remainingHtml] — empty string if not found.
+ */
+export function extractTRecBlock(html: string, marker: string): [string, string] {
+  const idx = html.indexOf(marker);
+  if (idx < 0) return ['', html];
+  let blockStart = -1;
+  let scan = idx;
+  while (scan > 0) {
+    const d = html.lastIndexOf('<div', scan - 1);
+    if (d < 0) break;
+    const tagEnd = html.indexOf('>', d);
+    const tag = html.slice(d, tagEnd + 1);
+    if (tag.includes('class="r t-rec') || (/id="rec\d+"/.test(tag) && tag.includes('class='))) {
+      blockStart = d;
+      break;
+    }
+    scan = d;
+  }
+  if (blockStart < 0) return ['', html];
+  let depth = 0, pos = blockStart;
+  while (pos < html.length) {
+    const no = html.indexOf('<div', pos + 1);
+    const nc = html.indexOf('</div>', pos + 1);
+    if (nc < 0) break;
+    if (no >= 0 && no < nc) { depth++; pos = no; }
+    else if (depth === 0) {
+      const end = nc + 6;
+      return [html.slice(blockStart, end), html.slice(0, blockStart) + html.slice(end)];
+    } else { depth--; pos = nc; }
+  }
+  return ['', html];
+}
+
+/**
+ * Insert content right after the t-rec block with the given rec ID.
+ * Finds the block by `id="recNNN"`, walks to its closing `</div>`,
+ * and inserts the content immediately after.
+ */
+export function insertAfterRecId(html: string, recId: string, content: string): string {
+  const idx = html.indexOf(`id="${recId}"`);
+  if (idx < 0) return html;
+  const divStart = html.lastIndexOf('<div', idx);
+  if (divStart < 0) return html;
+  let depth = 0, pos = divStart;
+  while (pos < html.length) {
+    const no = html.indexOf('<div', pos + 1);
+    const nc = html.indexOf('</div>', pos + 1);
+    if (nc < 0) break;
+    if (no >= 0 && no < nc) { depth++; pos = no; }
+    else if (depth === 0) { return html.slice(0, nc + 6) + content + html.slice(nc + 6); }
+    else { depth--; pos = nc; }
+  }
+  return html;
+}
+
+/**
  * Insert HTML right after the first Tilda rec block with the given
  * data-alias-record-type. Returns the original content unchanged if no
  * matching block is found.
