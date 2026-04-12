@@ -105,6 +105,40 @@ ${stepsHtml}
 }
 
 /* ------------------------------------------------------------------ */
+/*  Brands / film cards block (2-column cards with footer)            */
+/* ------------------------------------------------------------------ */
+
+interface BrandsBlockConfig {
+  readonly heading: string;
+  readonly cards: readonly {
+    readonly name: string;
+    readonly subtitle: string;
+    readonly description: string;
+  }[];
+  readonly footer: string;
+}
+
+export function buildBrandsBlock(cfg: BrandsBlockConfig): string {
+  const cardsHtml = cfg.cards.map(card =>
+    `<div class="ba-ppf-card"><div class="t-name t-name_xl">${card.name}</div><div class="t-descr t-descr_xs ba-subtitle">${card.subtitle}</div><div class="t-descr t-descr_xs ba-body">${card.description}</div></div>`
+  ).join('');
+
+  return `<div class="r t-rec ba-brands-section" style="padding-top:105px;padding-bottom:105px;background-color:#000000;" data-bg-color="#000000" data-animationappear="off">
+<div class="t-section__container t-container t-container_flex">
+<div class="t-col t-col_12">
+<div class="js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle" style="margin-bottom:60px;">
+<span style="color:#e4c97e;">${cfg.heading}</span>
+</div></div></div>
+<style>.ba-brands-section .t-section__title{font-size:36px}@media(max-width:960px){.ba-brands-section .t-section__title{font-size:32px}}@media(max-width:640px){.ba-brands-section .t-section__title{font-size:28px}}.ba-ppf-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:30px;margin-bottom:30px}.ba-ppf-card{background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:30px;text-align:left}.ba-ppf-card .t-name{color:#e4c97e;margin-bottom:8px}.ba-ppf-card .ba-subtitle{color:#999;font-size:13px;margin-bottom:12px}.ba-ppf-card .ba-body{color:#fff;line-height:1.6}.ba-ppf-footer{color:#fff;text-align:center}</style>
+<div class="t-container" style="padding:0 40px;box-sizing:border-box;">
+<div class="ba-ppf-cards">${cardsHtml}</div>
+<div class="t-descr t-descr_xs ba-ppf-footer">${cfg.footer}</div>
+</div></div>`;
+}
+
+export type { BrandsBlockConfig };
+
+/* ------------------------------------------------------------------ */
 /*  Meta title/description replacement helper                         */
 /* ------------------------------------------------------------------ */
 

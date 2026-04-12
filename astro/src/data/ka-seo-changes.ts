@@ -4,7 +4,8 @@
  * SEO block, and content block changes.
  */
 
-import { buildSeoBlock, buildContentBlock } from '../lib/seo-blocks';
+import { buildSeoBlock, buildContentBlock, buildBrandsBlock } from '../lib/seo-blocks';
+import type { BrandsBlockConfig } from '../lib/seo-blocks';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -34,6 +35,7 @@ interface PageSeoConfig {
   readonly seoBlock: string;
   readonly contentBlocks?: readonly string[];
   readonly stepsBlock?: StepsBlockConfig;
+  readonly brandsBlock?: BrandsBlockConfig;
 }
 
 /* ------------------------------------------------------------------ */
@@ -299,6 +301,14 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
         { title: 'ხარისხის კონტროლი', description: 'ვამოწმებთ შედეგს და ყველა დეტალს იდეალურ იერს ვაძლევთ.' },
         { title: 'რეკომენდაციები მონტაჟის შემდეგ', description: 'გაწვდით გასაგებ რჩევებს, როგორ მოუაროთ დაბურულ მინებს პირველ დღეებში.' },
       ],
+    },
+    brandsBlock: {
+      heading: 'მინების დაბურვა თბილისში — ტონირების ფირების არჩევანი',
+      cards: [
+        { name: 'LLumar', subtitle: 'პრემიუმ-კლასი', description: 'LLumar-ის ტონირების ფირი გამოირჩევა მაღალი ხარისხით, სუფთა ვიზუალით და კომფორტით ყოველდღიურ გამოყენებაში. ხელმისაწვდომია დაბურვის სხვადასხვა ვარიანტი. 10-წლიანი გარანტია.' },
+        { name: 'LuxArmor', subtitle: 'ნანოკერამიკა', description: 'LuxArmor-ის ნანოკერამიკული ტონირების ფირი კარგად იცავს სიცხისგან, ამცირებს მზის დისკომფორტს და აუმჯობესებს კომფორტს სალონში. ხელმისაწვდომია დაბურვის სხვადასხვა ვარიანტი. 10-წლიანი გარანტია.' },
+      ],
+      footer: 'შევარჩევთ თქვენი ავტომობილისთვის ოპტიმალურ ტონირების ფირს ვიზუალის, კომფორტისა და ბიუჯეტის მიხედვით',
     },
   },
 

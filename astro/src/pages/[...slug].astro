@@ -28,7 +28,7 @@ import { generateVideoGalleryHtml } from '../lib/video-gallery';
 import { replaceTildaFaqSection, removeTildaFaqSchema, renderFaqAccordion, resolveFaqItems } from '../lib/faq-accordion';
 import { SERVICE_FAQS } from '../data/service-faqs';
 import { injectBlogInternalLinks } from '../lib/blog-internal-links';
-import { buildSeoBlock, buildContentBlock, buildStepsBlock, replaceMetaTitle, replaceMetaDescription, injectAfterHero, injectAfterBenefits } from '../lib/seo-blocks';
+import { buildSeoBlock, buildContentBlock, buildStepsBlock, buildBrandsBlock, replaceMetaTitle, replaceMetaDescription, injectAfterHero, injectAfterBenefits } from '../lib/seo-blocks';
 import { KA_SEO_PAGES } from '../data/ka-seo-changes';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
@@ -405,7 +405,11 @@ if (lang === 'ka') {
     mainContent = injectAfterHero(mainContent, seoBlocks);
     // Steps block: inject after benefits (first native t508), not after hero
     if (pageSeo.stepsBlock) {
-      mainContent = injectAfterBenefits(mainContent, buildStepsBlock(pageSeo.stepsBlock));
+      let stepsPayload = buildStepsBlock(pageSeo.stepsBlock);
+      if (pageSeo.brandsBlock) {
+        stepsPayload += '\n' + buildBrandsBlock(pageSeo.brandsBlock);
+      }
+      mainContent = injectAfterBenefits(mainContent, stepsPayload);
     }
   }
 }
