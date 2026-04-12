@@ -571,7 +571,7 @@ html {
 }
 .ba-seo-block__heading,
 .ba-content-block__heading {
-  font-size: 28px;
+  font-size: 36px;
   font-weight: var(--ba-font-weight-bold);
   line-height: 1.3;
   margin: 0 0 20px;
@@ -629,10 +629,16 @@ html {
   margin: 24px 0 0;
   color: var(--ba-color-text-subtle);
 }
+@media screen and (max-width: 960px) {
+  .ba-seo-block__heading,
+  .ba-content-block__heading {
+    font-size: 32px;
+  }
+}
 @media screen and (max-width: 640px) {
   .ba-seo-block__heading,
   .ba-content-block__heading {
-    font-size: 22px;
+    font-size: 28px;
   }
   .ba-seo-block__text,
   .ba-content-block__text {
