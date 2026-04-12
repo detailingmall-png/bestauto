@@ -37,6 +37,15 @@ interface PageSeoConfig {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Helpers                                                            */
+/* ------------------------------------------------------------------ */
+
+/** Wrap text in a styled <p> for reviews section subtitle injection. */
+function reviewsSubtitle(text: string): string {
+  return `<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">${text}</p>`;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Per-page configs                                                   */
 /* ------------------------------------------------------------------ */
 
@@ -72,6 +81,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური მომსახურება', to: 'ასობით ავტომობილის პროფესიონალური პოლირება — მსუბუქიდან აღდგენითამდე' },
       // Process heading
       { from: 'დეტეილინგის რეცხვის ეტაპები', to: 'როგორ სრულდება დეტეილინგ რეცხვა' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან პოლირების სერვისზე — კორპუსის, ფარების და საქარე მინის პოლირება')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [
@@ -121,6 +132,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'თქვენ აუცილებლად კმაყოფილი დარჩებით', to: '' },
       // Difference block heading
       { from: 'რა განსხვავებაა ქიმწმენდასა და ჩვეულებრივ რეცხვას შორის', to: 'რით განსხვავდება ქიმწმენდა ჩვეულებრივი რეცხვისგან' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან ქიმწმენდის სერვისზე — სალონის ღრმა წმენდა, ლაქების მოცილება და სუნის აღმოფხვრა')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [
@@ -174,6 +187,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'ავტომინის შეკეთება, შლიფოვკა და პოლირება', to: 'საქარე მინის აღდგენის ფასები' },
       // Examples heading
       { from: 'დაზიანებული მინის შეკეთებული მაგალითი', to: 'აღდგენილი დაზიანების მაგალითები' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან მინის აღდგენის სერვისზე — ნაკენჭარის და ბზარის შეკეთება')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [
@@ -234,6 +249,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს', to: 'ვიყენებთ სპეციალიზებულ ვიბრო და ხმის საიზოლაციო მასალებს' },
       // Price heading
       { from: 'ხმის საიზოლაციო ფასები', to: 'მანქანის ხმის იზოლაციის ფასები' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან ხმის იზოლაციის სერვისზე — კარების, იატაკის და საბარგულის დამუშავება')}</div>` },
     ],
     seoBlock: buildSeoBlock({
       heading: 'მანქანის ხმის იზოლაცია — რას გაძლევთ ეს სერვისი',
@@ -281,6 +298,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Trust card: item 4 (PPF warranty → tinting films)
       { from: '10 წლიანი გარანტია ფირზე', to: 'ატერმალური და კერამიკული ფირები' },
       { from: 'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს', to: 'ვიყენებთ მხოლოდ ხარისხიან ფირებს UV დაცვითა და გამძლეობით' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან დაბურვის სერვისზე — მინების დაბურვა, შუშების დამუქება და ატერმალური ფირები')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [
@@ -327,6 +346,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური მომსახურება', to: 'ყოველდღიურად ასობით ავტომობილის უსაფრთხო რეცხვა დეტეილინგის სტანდარტით' },
       // Process heading
       { from: 'დეტეილინგის რეცხვის ეტაპები', to: 'როგორ სრულდება დეტეილინგ რეცხვა' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან რეცხვის სერვისზე — ავტოსამრეცხაო საბურთალოზე და გლდანში')}</div>` },
     ],
     seoBlock: buildSeoBlock({
       heading: 'ავტოსამრეცხაო თბილისში — რით განსხვავდება BESTAUTO',
@@ -371,6 +392,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'ძარას სრული კერამიკული საფარი', to: 'ძარის კერამიკული საფარი' },
       { from: 'მინაზე წვიმის საწინააღმდეგო', to: 'მინის კერამიკული საფარი / ანტიწვიმა' },
       { from: 'შიდა კერამიკული საფარი', to: 'სალონის კერამიკული საფარი' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან კერამიკის სერვისზე — კერამიკული საფარის დატანა და კორპუსის დაცვა')}</div>` },
     ],
     seoBlock: buildSeoBlock({
       heading: 'მანქანის კერამიკა — რას გაძლევთ ეს სერვისი',
@@ -422,6 +445,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'თქვენ აუცილებლად კმაყოფილი დარჩებით', to: '' },
       // Trust card: item 1 desc
       { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა', to: 'ფერადი PPF-ით და ვინილით ფერის შეცვლა სხვადასხვა მარკის ავტომობილებზე' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან ფერის შეცვლის სერვისზე — ფერადი PPF, ვინილი და ანტიქრომი')}</div>` },
     ],
     seoBlock: buildSeoBlock({
       heading: 'ფერის შეცვლა ფირით — რომელი ვარიანტია თქვენთვის სწორი',
@@ -460,6 +485,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'თქვენ აუცილებლად კმაყოფილი დარჩებით', to: '' },
       // Trust card: item 1 desc
       { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა', to: 'ასობით ავტომობილის სრული და ნაწილობრივი PPF გადაკვრა' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური შეფასებები</h2></span></div>', to: `მომხმარებლების რეალური შეფასებები</h2></span>${reviewsSubtitle('რეალური გამოცდილება Google-იდან PPF სერვისზე — დამცავი ფირის გადაკვრა, კაპოტის დაცვა და სრული დაფარვა')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [
@@ -492,6 +519,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Trust card: item 4 (PPF warranty → transparent assessment)
       { from: '10 წლიანი გარანტია ფირზე', to: 'გამჭვირვალე შეფასება' },
       { from: 'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს', to: 'ნათლად გეტყვით, რა პრობლემაა და რა გამოსწორებაა საჭირო' },
+      // Reviews subtitle
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეალური გამოცდილება Google-იდან დიაგნოსტიკის სერვისზე — კომპიუტერული შემოწმება და შეცდომების წაკითხვა')}</div>` },
     ],
     seoBlock: '',
   },
