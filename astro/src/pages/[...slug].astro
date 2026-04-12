@@ -100,6 +100,12 @@ if (PRICES_SLUGS.has(currentSlug)) {
 if (SERVICE_SLUGS.has(baseSlug)) {
   injectedHtml = injectServicePrices(injectedHtml, pricingPage, baseSlug, lang);
 }
+// PPF: addPricesAnchor (called inside injectServicePrices) incorrectly tags the t508
+// block as the price "heading" because t508 is the last rec-ID block before t681
+// (anonymous blocks between them have no rec IDs). Remove the misplaced id="prices".
+if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
+  injectedHtml = injectedHtml.replace(' id="prices" class="t508"', ' class="t508"');
+}
 
 // Carwash: no Sanity pricing section — transform static t681 HTML to ba-price-* layout
 if (baseSlug === 'carwash') {
@@ -956,6 +962,222 @@ if (lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
     'უფასო კონსულტაციისთვის</span></h2>',
     'უფასო კონსულტაციისთვის</span></h2><p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;text-align:center;margin:12px auto 28px;max-width:560px;font-family:var(--ba-font-family);">ორივე ფილიალში ხელმისაწვდომია უფასო დათვალიერება, წინასწარი კონსულტაცია და ჩაწერა ძირითად სერვისებზე</p>'
   );
+}
+
+// ===================================================================
+// PPF page (KA only): comprehensive block reorder for conversion funnel.
+// Target: Hero → t508 → t502 → Prices → Process → Brands+Finishes
+//       → Reviews → FAQ → Gallery → Contacts → CrossSell
+// ===================================================================
+if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
+  /** Extract the nearest t-rec block containing `marker` text.
+   *  Returns [extracted, remaining]. Anonymous blocks (no rec ID) OK. */
+  const extractTRecBlock = (html: string, marker: string): [string, string] => {
+    const idx = html.indexOf(marker);
+    if (idx < 0) return ['', html];
+    let blockStart = -1;
+    let scan = idx;
+    while (scan > 0) {
+      const d = html.lastIndexOf('<div', scan - 1);
+      if (d < 0) break;
+      const tagEnd = html.indexOf('>', d);
+      const tag = html.slice(d, tagEnd + 1);
+      if (tag.includes('class="r t-rec') || (/id="rec\d+"/.test(tag) && tag.includes('class='))) {
+        blockStart = d;
+        break;
+      }
+      scan = d;
+    }
+    if (blockStart < 0) return ['', html];
+    let depth = 0, pos = blockStart;
+    while (pos < html.length) {
+      const no = html.indexOf('<div', pos + 1);
+      const nc = html.indexOf('</div>', pos + 1);
+      if (nc < 0) break;
+      if (no >= 0 && no < nc) { depth++; pos = no; }
+      else if (depth === 0) {
+        const end = nc + 6;
+        return [html.slice(blockStart, end), html.slice(0, blockStart) + html.slice(end)];
+      } else { depth--; pos = nc; }
+    }
+    return ['', html];
+  };
+
+  /** Insert content right after the rec block with the given ID. */
+  const insertAfterRecId = (html: string, recId: string, content: string): string => {
+    const idx = html.indexOf(`id="${recId}"`);
+    if (idx < 0) return html;
+    const divStart = html.lastIndexOf('<div', idx);
+    if (divStart < 0) return html;
+    let depth = 0, pos = divStart;
+    while (pos < html.length) {
+      const no = html.indexOf('<div', pos + 1);
+      const nc = html.indexOf('</div>', pos + 1);
+      if (nc < 0) break;
+      if (no >= 0 && no < nc) { depth++; pos = no; }
+      else if (depth === 0) { return html.slice(0, nc + 6) + content + html.slice(nc + 6); }
+      else { depth--; pos = nc; }
+    }
+    return html;
+  };
+
+  // 1. Move t502 (Trust) right after t508 (PPF Advantages)
+  let t502: string;
+  [t502, mainContent] = extractTRecBlock(mainContent, 'data-alias-record-type="502"');
+  if (t502) {
+    mainContent = insertAfterRecId(mainContent, 'rec598482590', t502);
+  }
+
+  // 2. Move Prices (anonymous heading block + t681 table) right after t502
+  //    The prices heading is the anonymous t-rec immediately before rec618600545 (t681).
+  let pricesHeading = '';
+  const t681Idx = mainContent.indexOf('id="rec618600545"');
+  if (t681Idx >= 0) {
+    const before681 = mainContent.slice(0, mainContent.lastIndexOf('<div', t681Idx));
+    const prevBlockStart = before681.lastIndexOf('<div class="r t-rec');
+    if (prevBlockStart >= 0) {
+      let depth = 0, pos = prevBlockStart;
+      while (pos < mainContent.length) {
+        const no = mainContent.indexOf('<div', pos + 1);
+        const nc = mainContent.indexOf('</div>', pos + 1);
+        if (nc < 0) break;
+        if (no >= 0 && no < nc) { depth++; pos = no; }
+        else if (depth === 0) {
+          pricesHeading = mainContent.slice(prevBlockStart, nc + 6);
+          mainContent = mainContent.slice(0, prevBlockStart) + mainContent.slice(nc + 6);
+          break;
+        } else { depth--; pos = nc; }
+      }
+    }
+  }
+  let t681: string;
+  [t681, mainContent] = extractTRecBlock(mainContent, 'id="rec618600545"');
+  const pricesBlock = pricesHeading + t681;
+  if (pricesBlock && mainContent.includes('data-alias-record-type="502"')) {
+    mainContent = insertAfterBlockByAliasType(mainContent, '502', pricesBlock);
+  }
+
+  // 3. Move Process BESTAUTO block to merge with the Process+Video section.
+  //    ProcessBA is an anonymous block containing "პროცესი BESTAUTO" (KA),
+  //    "Процесс оклейки в BESTAUTO" (RU), or "wrapping process at BESTAUTO" (EN).
+  const processBAMarkers = ['პროცესი BESTAUTO', 'Процесс оклейки в BESTAUTO', 'wrapping process at BESTAUTO', 'coating process at BESTAUTO'];
+  for (const pm of processBAMarkers) {
+    if (!mainContent.includes(pm)) continue;
+    let processBA: string;
+    [processBA, mainContent] = extractTRecBlock(mainContent, pm);
+    if (processBA && mainContent.includes('ba-video-gallery')) {
+      // Insert after the video gallery's parent t-rec block
+      const vIdx = mainContent.indexOf('ba-video-gallery');
+      let vBlockStart = -1, scan = vIdx;
+      while (scan > 0) {
+        const d = mainContent.lastIndexOf('<div', scan - 1);
+        if (d < 0) break;
+        const tag = mainContent.slice(d, mainContent.indexOf('>', d) + 1);
+        if (tag.includes('class="r t-rec')) { vBlockStart = d; break; }
+        scan = d;
+      }
+      if (vBlockStart >= 0) {
+        let depth = 0, pos = vBlockStart;
+        while (pos < mainContent.length) {
+          const no = mainContent.indexOf('<div', pos + 1);
+          const nc = mainContent.indexOf('</div>', pos + 1);
+          if (nc < 0) break;
+          if (no >= 0 && no < nc) { depth++; pos = no; }
+          else if (depth === 0) {
+            mainContent = mainContent.slice(0, nc + 6) + processBA + mainContent.slice(nc + 6);
+            break;
+          } else { depth--; pos = nc; }
+        }
+      }
+    }
+    break;
+  }
+
+  // 4. Move Finish Options (ba-seo-content-block) from after hero to after Film Brands.
+  //    Film Brands is the anonymous block containing "ფირებს" / "пленки" / "films".
+  let finishOpts: string;
+  [finishOpts, mainContent] = extractTRecBlock(mainContent, 'r t-rec ba-content-block');
+  if (finishOpts) {
+    const brandsMarkers = ['ფირებს ვიყენებთ', 'пленки мы используем', 'films do we use'];
+    for (const bm of brandsMarkers) {
+      if (!mainContent.includes(bm)) continue;
+      const bmIdx = mainContent.indexOf(bm);
+      let bStart = -1, scan = bmIdx;
+      while (scan > 0) {
+        const d = mainContent.lastIndexOf('<div', scan - 1);
+        if (d < 0) break;
+        const tag = mainContent.slice(d, mainContent.indexOf('>', d) + 1);
+        if (tag.includes('class="r t-rec')) { bStart = d; break; }
+        scan = d;
+      }
+      if (bStart >= 0) {
+        let depth = 0, pos = bStart;
+        while (pos < mainContent.length) {
+          const no = mainContent.indexOf('<div', pos + 1);
+          const nc = mainContent.indexOf('</div>', pos + 1);
+          if (nc < 0) break;
+          if (no >= 0 && no < nc) { depth++; pos = no; }
+          else if (depth === 0) {
+            mainContent = mainContent.slice(0, nc + 6) + finishOpts + mainContent.slice(nc + 6);
+            break;
+          } else { depth--; pos = nc; }
+        }
+      }
+      break;
+    }
+  }
+
+  // 5. Move Gallery section from before Reviews to after FAQ.
+  //    Extract gallery heading (rec713423972) through gallery content (rec2072063053).
+  if (mainContent.includes('id="rec713423972"') && mainContent.includes('id="rec2072063053"')) {
+    let gallerySection: string;
+    // Also include spacing/anchor blocks between heading and gallery (rec713438303, rec598482614, rec598482615)
+    const galleryStartRecIds = ['rec598482614', 'rec598482615', 'rec713438303', 'rec713423972'];
+    let galleryStart = -1;
+    for (const gid of galleryStartRecIds) {
+      const gIdx = mainContent.indexOf(`id="${gid}"`);
+      if (gIdx >= 0) {
+        const divStart = mainContent.lastIndexOf('<div', gIdx);
+        if (galleryStart < 0 || divStart < galleryStart) galleryStart = divStart;
+      }
+    }
+    // Gallery content end = end of rec2072063053
+    const galContentIdx = mainContent.indexOf('id="rec2072063053"');
+    if (galleryStart >= 0 && galContentIdx > galleryStart) {
+      const galDivStart = mainContent.lastIndexOf('<div', galContentIdx);
+      let depth = 0, pos = galDivStart;
+      let galleryEnd = -1;
+      while (pos < mainContent.length) {
+        const no = mainContent.indexOf('<div', pos + 1);
+        const nc = mainContent.indexOf('</div>', pos + 1);
+        if (nc < 0) break;
+        if (no >= 0 && no < nc) { depth++; pos = no; }
+        else if (depth === 0) { galleryEnd = nc + 6; break; }
+        else { depth--; pos = nc; }
+      }
+      if (galleryEnd > galleryStart) {
+        gallerySection = mainContent.slice(galleryStart, galleryEnd);
+        mainContent = mainContent.slice(0, galleryStart) + mainContent.slice(galleryEnd);
+        // Insert after FAQ section
+        const faqId = 'ppf-shield-wrapping-faq';
+        if (mainContent.includes(`id="${faqId}"`)) {
+          const faqIdx = mainContent.indexOf(`id="${faqId}"`);
+          const faqDivStart = mainContent.lastIndexOf('<div', faqIdx);
+          let fd = 0, fp = faqDivStart;
+          while (fp < mainContent.length) {
+            const no = mainContent.indexOf('<div', fp + 1);
+            const nc = mainContent.indexOf('</div>', fp + 1);
+            if (nc < 0) break;
+            if (no >= 0 && no < nc) { fd++; fp = no; }
+            else if (fd === 0) {
+              mainContent = mainContent.slice(0, nc + 6) + gallerySection + mainContent.slice(nc + 6);
+              break;
+            } else { fd--; fp = nc; }
+          }
+        }
+      }
+    }
+  }
 }
 
 // === Fix misplaced anchors after all block reordering ===
