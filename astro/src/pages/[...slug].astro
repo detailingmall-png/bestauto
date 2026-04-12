@@ -863,28 +863,23 @@ if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.inclu
   }
 }
 
-// KA service pages (except PPF): move gallery section after FAQ.
-// Gallery = name="photo" anchor (t215) + heading rec713418578 (T225) + ba-gallery content blocks.
-// Some pages (interior-cleaning, windshield-repair) have TWO ba-gallery blocks — extract all.
+// KA service pages (except PPF): move shared studio gallery section after FAQ.
+// Shared gallery = name="photo" anchor (t215) + heading rec713418578 (T225) + rec713405036 (ba-gallery).
+// Service-specific galleries (interior-cleaning, windshield-repair) stay with their heading.
 // PPF has its own gallery reorder in the PPF-specific block below.
 if (lang === 'ka' && SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wrapping') {
   const faqId = `${baseSlug}-faq`;
-  if (mainContent.includes(`id="${faqId}"`) && mainContent.includes('class="ba-gallery"')) {
-    // 1. Extract ALL ba-gallery content blocks (some pages have 2: service-specific + shared studio)
-    let allGalleryBlocks = '';
-    while (mainContent.includes('class="ba-gallery"')) {
-      let block: string;
-      [block, mainContent] = extractTRecBlock(mainContent, 'class="ba-gallery"');
-      if (!block) break;
-      allGalleryBlocks += block;
-    }
-    // 2. Extract heading block (rec713418578 = shared "ჩვენი ორი სტუდიის ფოტოები" on all KA service pages)
+  if (mainContent.includes(`id="${faqId}"`) && mainContent.includes('id="rec713405036"')) {
+    // 1. Extract shared studio gallery (rec713405036 — same on all KA service pages)
+    let sharedGallery: string;
+    [sharedGallery, mainContent] = extractDivById(mainContent, 'rec713405036');
+    // 2. Extract shared heading (rec713418578 = "ჩვენი ორი სტუდიის ფოტოები")
     let galleryHeading: string;
     [galleryHeading, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec713418578', 'rec713418578');
-    // 3. Extract photo anchor block (t215 with name="photo", just before heading)
+    // 3. Extract photo anchor (t215 with name="photo")
     let photoAnchor: string;
     [photoAnchor, mainContent] = extractTRecBlock(mainContent, 'name="photo"');
-    const gallerySection = photoAnchor + galleryHeading + allGalleryBlocks;
+    const gallerySection = photoAnchor + galleryHeading + sharedGallery;
     if (gallerySection) {
       mainContent = insertAfterDivById(mainContent, faqId, gallerySection);
     }
