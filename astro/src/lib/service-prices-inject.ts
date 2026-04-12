@@ -166,6 +166,69 @@ export function addPricesAnchor(html: string): string {
 }
 
 /**
+ * Extracts the full price section (heading + table) from the page HTML.
+ * Handles both two-block (Tilda rec pair) and single-block (injected) formats.
+ * Returns [extractedHtml, remainingHtml]. If not found returns ['', html].
+ */
+export function extractPriceSection(html: string): [string, string] {
+  const anchor = html.indexOf('id="prices"');
+  if (anchor < 0) return ['', html];
+
+  // Find the <div that directly contains id="prices"
+  const anchorDiv = html.lastIndexOf('<div', anchor);
+  if (anchorDiv < 0) return ['', html];
+  const tag = html.slice(anchorDiv, html.indexOf('>', anchorDiv) + 1);
+
+  let blockStart: number;
+  let tableBlockStart: number;
+
+  // Single-block (buildFullSection) has class="r t-rec" on the same div as id="prices"
+  // Two-block (Tilda) has id="prices" on an inner div like <div id="prices" class="t017">
+  if (tag.includes('id="prices"') && tag.includes('t-rec')) {
+    // Single-block: id="prices" is on the outer rec div
+    blockStart = anchorDiv;
+    tableBlockStart = anchorDiv;
+  } else {
+    // Two-block (Tilda): id="prices" is on an inner div (e.g. <div id="prices" class="t017">)
+    // Walk back to find the rec wrapper of the heading block
+    const headingRec = html.lastIndexOf('<div id="rec', anchorDiv);
+    if (headingRec < 0) return ['', html];
+    blockStart = headingRec;
+
+    // Find the next rec block (the price table) — it must contain ba-price-section
+    const nextRec = html.indexOf('<div id="rec', headingRec + 10);
+    if (nextRec < 0 || !html.slice(nextRec, nextRec + 3000).includes('ba-price-section')) {
+      return ['', html];
+    }
+    tableBlockStart = nextRec;
+  }
+
+  // Walk to find closing </div> of the table block
+  let depth = 0;
+  let pos = tableBlockStart;
+  while (pos < html.length) {
+    const nextOpen = html.indexOf('<div', pos + 1);
+    const nextClose = html.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const blockEnd = nextClose + 6;
+        return [
+          html.slice(blockStart, blockEnd),
+          html.slice(0, blockStart) + html.slice(blockEnd),
+        ];
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return ['', html];
+}
+
+/**
  * Main entry point: injects service-page prices from Sanity CMS.
  *
  * @param html      Page HTML (after injectSanityData)

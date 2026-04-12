@@ -7,6 +7,7 @@ import pageMap from './page-map.json';
 import reviewsData from '../data/reviews.json';
 import { SERVICE_FAQS } from '../data/service-faqs';
 import { LOCATIONS } from '../data/location-data';
+import type { PricingPage } from './sanity';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -38,18 +39,114 @@ const slugLangs: ReadonlyMap<string, LangSet> = (() => {
 // Service data (migrated from Tilda JS → static)
 // ──────────────────────────────────────────────
 
-const SERVICES: Readonly<Record<string, { name: Record<string, string>; min: string }>> = {
-  'polishing': { name: { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' }, min: '690' },
-  'ceramiccoating': { name: { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' }, min: '500' },
-  'ppf-shield-wrapping': { name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' }, min: '2500' },
-  'vinyl-wrapping': { name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета защитной плёнкой', en: 'Color Change with Protective Film' }, min: '300' },
-  'interior-cleaning': { name: { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' }, min: '400' },
+interface ServiceMeta {
+  readonly name: Record<string, string>;
+  readonly min: string;
+  readonly description: Record<string, string>;
+  readonly sectionKey: string;
+}
 
-  'carwash': { name: { ka: 'მანქანის სარეცხი', ru: 'Детейлинг мойка автомобиля', en: 'Premium Car Wash' }, min: '40' },
-  'auto-glass-tinting': { name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' }, min: '130' },
-  'windshield-repair': { name: { ka: 'ავტომინების შეკეთება, პოლირება და შლიფოვკა', ru: 'Ремонт сколов и трещин, полировка и шлифовка автостекол', en: 'Windshield Repair, Glass Polishing & Grinding' }, min: '60' },
-  'car-soundproofing': { name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' }, min: '600' },
-  'computer-diagnostics': { name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' }, min: '50' },
+const SERVICES: Readonly<Record<string, ServiceMeta>> = {
+  'polishing': {
+    name: { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' },
+    min: '690',
+    description: {
+      ka: 'მანქანის ძარის პროფესიონალური პოლირება თბილისში — ნაკაწრების, ჰოლოგრამების და მიკროდეფექტების აღმოფხვრა.',
+      ru: 'Профессиональная полировка кузова автомобиля в Тбилиси — устранение царапин, голограмм и микродефектов.',
+      en: 'Professional car body polishing in Tbilisi — removal of scratches, holograms and micro-defects.',
+    },
+    sectionKey: 's0',
+  },
+  'ceramiccoating': {
+    name: { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
+    min: '500',
+    description: {
+      ka: 'კერამიკული საფარის დატანა ავტომობილის ძარაზე, მინებზე და სალონში — ჰიდროფობიური დაცვა და ბზინვარება.',
+      ru: 'Нанесение керамического покрытия на кузов, стёкла и салон автомобиля — гидрофобная защита и блеск.',
+      en: 'Ceramic coating application on car body, glass and interior — hydrophobic protection and gloss.',
+    },
+    sectionKey: 's1',
+  },
+  'ppf-shield-wrapping': {
+    name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
+    min: '2500',
+    description: {
+      ka: 'PPF დამცავი ფირის გადაკვრა ავტომობილზე თბილისში — ძარის დაცვა ნაკაწრებისგან, ქვებისგან და UV-სხივებისგან.',
+      ru: 'Оклейка автомобиля защитной плёнкой PPF в Тбилиси — защита кузова от царапин, сколов и UV-лучей.',
+      en: 'PPF paint protection film installation in Tbilisi — protect your car body from scratches, chips and UV rays.',
+    },
+    sectionKey: 's6',
+  },
+  'vinyl-wrapping': {
+    name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета защитной плёнкой', en: 'Color Change with Protective Film' },
+    min: '300',
+    description: {
+      ka: 'ავტომობილის ფერის შეცვლა დამცავი ვინილის ფირით თბილისში — მატი, გლოსი, სატინი და ექსკლუზიური ფერები.',
+      ru: 'Смена цвета автомобиля защитной виниловой плёнкой в Тбилиси — матовые, глянцевые, сатиновые и эксклюзивные цвета.',
+      en: 'Car color change with protective vinyl wrap in Tbilisi — matte, gloss, satin and exclusive colors.',
+    },
+    sectionKey: 's7',
+  },
+  'interior-cleaning': {
+    name: { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' },
+    min: '400',
+    description: {
+      ka: 'ავტომობილის სალონის პროფესიონალური ქიმწმენდა თბილისში — ტყავი, ტექსტილი, ხალიჩები, ჭერი.',
+      ru: 'Профессиональная химчистка салона автомобиля в Тбилиси — кожа, текстиль, ковры, потолок.',
+      en: 'Professional car interior cleaning in Tbilisi — leather, textile, carpets, ceiling.',
+    },
+    sectionKey: 's2',
+  },
+  'carwash': {
+    name: { ka: 'მანქანის სარეცხი', ru: 'Детейлинг мойка автомобиля', en: 'Premium Car Wash' },
+    min: '40',
+    description: {
+      ka: 'პრემიუმ დეტეილინგ რეცხვა თბილისში — ხელით რეცხვა, ინტერიერი, ძრავი, დისკები.',
+      ru: 'Премиум детейлинг мойка автомобиля в Тбилиси — ручная мойка, интерьер, двигатель, диски.',
+      en: 'Premium detailing car wash in Tbilisi — hand wash, interior, engine, wheels.',
+    },
+    sectionKey: '',
+  },
+  'auto-glass-tinting': {
+    name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' },
+    min: '130',
+    description: {
+      ka: 'ავტომობილის მინების პროფესიონალური დაბურვა თბილისში — სითბოსგან, UV-სხივებისგან და თვალისგან დაცვა.',
+      ru: 'Профессиональная тонировка стёкол автомобиля в Тбилиси — защита от жары, UV-лучей и посторонних глаз.',
+      en: 'Professional car window tinting in Tbilisi — protection from heat, UV rays and prying eyes.',
+    },
+    sectionKey: 's8',
+  },
+  'windshield-repair': {
+    name: { ka: 'ავტომინების შეკეთება, პოლირება და შლიფოვკა', ru: 'Ремонт сколов и трещин, полировка и шлифовка автостекол', en: 'Windshield Repair, Glass Polishing & Grinding' },
+    min: '60',
+    description: {
+      ka: 'საქარე მინის და ავტომინების შეკეთება, პოლირება და შლიფოვკა თბილისში — ნაკენჭარი, ბზარები, ნაკაწრები.',
+      ru: 'Ремонт сколов и трещин, полировка и шлифовка автостекол в Тбилиси — сколы, трещины, царапины.',
+      en: 'Windshield repair, glass polishing and grinding in Tbilisi — chips, cracks, scratches.',
+    },
+    sectionKey: 's5',
+  },
+  'car-soundproofing': {
+    name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' },
+    min: '600',
+    description: {
+      ka: 'ავტომობილის ხმის იზოლაცია თბილისში — კარებები, იატაკი, სახურავი, საბარგული.',
+      ru: 'Шумоизоляция автомобиля в Тбилиси — двери, пол, крыша, багажник.',
+      en: 'Car soundproofing in Tbilisi — doors, floor, roof, trunk.',
+    },
+    sectionKey: 's9',
+  },
+  'computer-diagnostics': {
+    name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' },
+    min: '50',
+    description: {
+      ka: 'ავტომობილის კომპ���უტერული დიაგნოსტიკა თბილისში — შეცდომების წაკითხვა და ანალიზი.',
+      ru: 'Компьютерная диагностика автомобиля в Тбилиси — считывание и анализ ошибок.',
+      en: 'Computer diagnostics of your car in Tbilisi — error code reading and analysis.',
+    },
+    sectionKey: 's10',
+  },
 };
 
 // Breadcrumb home labels per language
@@ -163,16 +260,44 @@ export function generateBreadcrumbSchema(baseSlug: string, lang: string, pageTit
 // 3. Service Schema (static replacement for JS)
 // ──────────────────────────────────────────────
 
-export function generateServiceSchema(baseSlug: string, lang: string): string {
+export function generateServiceSchema(
+  baseSlug: string,
+  lang: string,
+  pricingPage?: PricingPage | null,
+): string {
   const service = SERVICES[baseSlug];
   if (!service) return '';
+
+  const serviceName = service.name[lang] ?? service.name.en;
+
+  // Build offer catalog from Sanity pricing data if available
+  const section = pricingPage?.sections?.find(s => s._key === service.sectionKey);
+  const offers: Record<string, unknown>[] = (section?.items ?? [])
+    .filter(item => item.price)
+    .map(item => {
+      const name = (lang === 'ru' ? item.nameRu : lang === 'ka' ? item.nameKa : item.nameEn) || item.nameRu;
+      const rawPrice = item.price;
+      // Extract numeric price: "от 7500 Gel" → "7500"
+      const numMatch = rawPrice.match(/(\d[\d\s]*)/);
+      const price = numMatch ? numMatch[1].replace(/\s/g, '') : rawPrice;
+      return {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name },
+        price,
+        priceCurrency: 'GEL',
+      };
+    });
 
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: service.name[lang] ?? service.name.en,
+    name: serviceName,
+    serviceType: serviceName,
+    description: service.description[lang] ?? service.description.en,
+    url: buildUrl(lang, baseSlug),
     provider: {
-      '@type': 'AutomotiveBusiness',
+      '@type': 'AutoRepair',
+      '@id': `${BASE_URL}/#business`,
       name: 'BESTAUTO',
       url: BASE_URL,
     },
@@ -180,7 +305,17 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
       '@type': 'City',
       name: 'Tbilisi',
     },
-    offers: {
+  };
+
+  if (offers.length > 0) {
+    schema.hasOfferCatalog = {
+      '@type': 'OfferCatalog',
+      name: serviceName,
+      itemListElement: offers,
+    };
+  } else {
+    // Fallback: static minPrice when Sanity data unavailable
+    schema.offers = {
       '@type': 'Offer',
       priceCurrency: 'GEL',
       priceSpecification: {
@@ -188,8 +323,8 @@ export function generateServiceSchema(baseSlug: string, lang: string): string {
         minPrice: service.min,
         priceCurrency: 'GEL',
       },
-    },
-  };
+    };
+  }
 
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
@@ -199,7 +334,7 @@ export function generateReviewSchema(lang: string = 'en'): string {
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'AutoRepair',
     '@id': `${BASE_URL}/#business`,
     name: 'BESTAUTO',
     image: `${BASE_URL}/img/logo.png`,

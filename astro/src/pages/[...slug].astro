@@ -14,7 +14,7 @@ import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
-import { injectServicePrices, addPricesAnchor } from '../lib/service-prices-inject';
+import { injectServicePrices, addPricesAnchor, extractPriceSection } from '../lib/service-prices-inject';
 import { replaceGalleries, removeDuplicateGalleries } from '../lib/gallery-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
@@ -529,7 +529,7 @@ if (isBlogPage && baseSlug !== 'blog') {
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
-  + generateServiceSchema(baseSlug, lang)
+  + generateServiceSchema(baseSlug, lang, pricingPage)
   + generateReviewSchema(lang)
   + generateWebSiteSchema()
   + generateOrganizationSchema()
@@ -702,6 +702,8 @@ mainContent = removeBlocksByScreenClass(mainContent, 't-screenmax-640px');
 // Translate Russian alt texts on non-RU pages (Tilda exports all alts in Russian)
 mainContent = translateAltTexts(mainContent, lang);
 
+// Note: price block reorder runs AFTER reviews/FAQ reorder below (~line 840)
+
 // Strip old Tilda cross-sell blocks (t692) and insert dynamic cross-sell
 mainContent = removeBlockByRecordType(mainContent, '692');
 const FOOTER_IDS: Readonly<Record<string, readonly string[]>> = {
@@ -823,6 +825,21 @@ if (SERVICE_SLUGS.has(baseSlug)) {
     [faqSection, mainContent] = extractDivById(mainContent, faqId);
     if (faqSection) {
       mainContent = insertAfterSectionById(mainContent, 'ba-reviews', faqSection);
+    }
+  }
+}
+
+// Service pages: move price block (heading + table) before FAQ for better conversion
+// Must run AFTER the FAQ reorder above so we insert relative to the FAQ's final position
+if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.includes('id="prices"')) {
+  const faqId = `id="${baseSlug}-faq"`;
+  if (mainContent.includes(faqId)) {
+    let priceBlock: string;
+    [priceBlock, mainContent] = extractPriceSection(mainContent);
+    if (priceBlock) {
+      const faqIdx = mainContent.indexOf(faqId);
+      const faqDivStart = mainContent.lastIndexOf('<div', faqIdx);
+      mainContent = mainContent.slice(0, faqDivStart) + priceBlock + mainContent.slice(faqDivStart);
     }
   }
 }
