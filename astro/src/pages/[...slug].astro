@@ -14,7 +14,7 @@ import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
-import { injectServicePrices, addPricesAnchor, extractPriceSection } from '../lib/service-prices-inject';
+import { injectServicePrices, addPricesAnchor, extractPriceSection, extractPricesCta } from '../lib/service-prices-inject';
 import { replaceGalleries, removeDuplicateGalleries } from '../lib/gallery-inject';
 import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
@@ -837,9 +837,12 @@ if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.inclu
     let priceBlock: string;
     [priceBlock, mainContent] = extractPriceSection(mainContent);
     if (priceBlock) {
+      // Also extract the CTA button that follows prices (vinyl-wrapping, ppf-shield-wrapping)
+      let pricesCta: string;
+      [pricesCta, mainContent] = extractPricesCta(mainContent);
       const faqIdx = mainContent.indexOf(faqId);
       const faqDivStart = mainContent.lastIndexOf('<div', faqIdx);
-      mainContent = mainContent.slice(0, faqDivStart) + priceBlock + mainContent.slice(faqDivStart);
+      mainContent = mainContent.slice(0, faqDivStart) + priceBlock + pricesCta + mainContent.slice(faqDivStart);
     }
   }
 }

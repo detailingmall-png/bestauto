@@ -229,6 +229,61 @@ export function extractPriceSection(html: string): [string, string] {
 }
 
 /**
+ * Extracts the "prices CTA" block — a standalone div.r.t-rec that contains
+ * an #contacts button with pricing-related text. Present on ppf / vinyl pages.
+ * Returns [extracted, remaining]. If not found returns ['', html].
+ */
+export function extractPricesCta(html: string): [string, string] {
+  // First try the named block (vinyl-wrapping)
+  if (html.includes('id="rec-prices-cta"')) {
+    const marker = '<div id="rec-prices-cta"';
+    const start = html.indexOf(marker);
+    if (start >= 0) return extractBlock(html, start);
+  }
+  // Unnamed CTA block (ppf-shield-wrapping): <div class="r t-rec t-rec_pt_30 t-rec_pb_60">
+  // containing href="#contacts" and a t-btnflex button, positioned BEFORE the prices section
+  const ctaMarker = 't-rec_pt_30 t-rec_pb_60';
+  let pos = 0;
+  while (pos < html.length) {
+    const idx = html.indexOf(ctaMarker, pos);
+    if (idx < 0) break;
+    // Verify this block contains href="#contacts" and a CTA button (within 800 chars)
+    const snippet = html.slice(idx, idx + 800);
+    if (snippet.includes('href="#contacts"') && snippet.includes('t-btnflex__text')) {
+      const divStart = html.lastIndexOf('<div', idx);
+      if (divStart >= 0) return extractBlock(html, divStart);
+    }
+    pos = idx + 1;
+  }
+  return ['', html];
+}
+
+function extractBlock(html: string, blockStart: number): [string, string] {
+  let depth = 0;
+  let pos = blockStart;
+  while (pos < html.length) {
+    const nextOpen = html.indexOf('<div', pos + 1);
+    const nextClose = html.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        const blockEnd = nextClose + 6;
+        return [
+          html.slice(blockStart, blockEnd),
+          html.slice(0, blockStart) + html.slice(blockEnd),
+        ];
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  return ['', html];
+}
+
+/**
  * Main entry point: injects service-page prices from Sanity CMS.
  *
  * @param html      Page HTML (after injectSanityData)
