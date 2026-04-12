@@ -471,10 +471,13 @@ html {
     padding: 12px 0;
     gap: 12px;
   }
-  /* Contacts block title: 28px on mobile (matching other H2 headings) */
+  /* Contacts block title: 24px on mobile to fit heading in fewer lines */
   #ba-contacts .ba-title {
-    font-size: 28px !important;
+    font-size: 24px !important;
     margin-bottom: 12px !important;
+  }
+  #ba-contacts .ba-title br {
+    display: none;
   }
   /* Prices heroes - mobile */
   #rec590032970,
