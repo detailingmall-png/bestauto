@@ -573,8 +573,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'ჩვენი მომხმარებლების შეფასებები', to: 'ჩვენი მომხმარებლების რეალური შეფასებები' },
       // Photo heading
       { from: 'ჩვენი სტუდიები', to: 'ჩვენი სტუდიები და სამუშაო პროცესი' },
-      // Studio selection heading
-      { from: 'აირჩიეთ სტუდია', to: 'აირჩიეთ თქვენთვის მოსახერხებელი სტუდია თბილისში' },
+      // Studio selection heading (now set directly in whatsapp-blocks.ts)
     ],
     seoBlock: '',
   },

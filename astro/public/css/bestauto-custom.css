@@ -173,7 +173,7 @@ html {
 /* Was: clamp(1.8rem,4vw,2.6rem) = 41.6px on desktop. Normalize to 36px. */
 #ba-contacts .ba-title {
   font-size: 36px !important;
-  margin-bottom: 48px !important;
+  margin-bottom: 16px !important;
 }
 
 /* --- H3 List item titles --- */
@@ -474,7 +474,7 @@ html {
   /* Contacts block title: 28px on mobile (matching other H2 headings) */
   #ba-contacts .ba-title {
     font-size: 28px !important;
-    margin-bottom: 32px !important;
+    margin-bottom: 12px !important;
   }
   /* Prices heroes - mobile */
   #rec590032970,
