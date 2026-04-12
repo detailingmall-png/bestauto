@@ -891,6 +891,19 @@ if (lang === 'ka' && SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wra
   }
 }
 
+// Vinyl-wrapping KA: move process-steps and brands-section from after gallery
+// to between prices CTA and reviews — matching PPF funnel order.
+if (lang === 'ka' && baseSlug === 'vinyl-wrapping') {
+  let processSteps: string;
+  [processSteps, mainContent] = extractDivById(mainContent, 'rec-process-steps');
+  let brandsSection: string;
+  [brandsSection, mainContent] = extractDivById(mainContent, 'rec-brands-section');
+  const insertPayload = processSteps + brandsSection;
+  if (insertPayload && mainContent.includes('id="rec-prices-cta"')) {
+    mainContent = insertAfterDivById(mainContent, 'rec-prices-cta', insertPayload);
+  }
+}
+
 // Homepage: inject video gallery before photo gallery section heading.
 // Each language has its own T225 header block before the studio photo gallery.
 if (baseSlug === '') {
