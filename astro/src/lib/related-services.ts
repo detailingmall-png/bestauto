@@ -18,7 +18,7 @@ const CROSS_SELL_MAP: Readonly<Record<string, readonly string[]>> = {
   'vinyl-wrapping':      ['ppf-shield-wrapping', 'polishing', 'ceramiccoating', 'auto-glass-tinting'],
   'polishing':           ['ceramiccoating', 'ppf-shield-wrapping', 'vinyl-wrapping', 'windshield-repair'],
   'ceramiccoating':      ['polishing', 'ppf-shield-wrapping', 'vinyl-wrapping', 'auto-glass-tinting'],
-  'interior-cleaning':   ['polishing', 'ceramiccoating', 'ppf-shield-wrapping', 'auto-glass-tinting'],
+  'interior-cleaning':   ['carwash', 'polishing', 'ceramiccoating', 'ppf-shield-wrapping'],
   'auto-glass-tinting':  ['ppf-shield-wrapping', 'polishing', 'ceramiccoating', 'vinyl-wrapping'],
   'windshield-repair':   ['polishing', 'ceramiccoating', 'ppf-shield-wrapping', 'auto-glass-tinting'],
   // Other services

@@ -57,6 +57,54 @@ ${itemsHtml}${footerHtml}
 }
 
 /* ------------------------------------------------------------------ */
+/*  Steps / process block (numbered gold circles, t508-compatible)    */
+/* ------------------------------------------------------------------ */
+
+interface StepsBlockConfig {
+  readonly heading: string;
+  readonly steps: readonly {
+    readonly title: string;
+    readonly description: string;
+  }[];
+}
+
+export function buildStepsBlock(cfg: StepsBlockConfig): string {
+  const stepsHtml = cfg.steps.map((s, i) =>
+    `<li class="t-col t-col_8 t-prefix_2 t-item t-list__item" style="margin-top:${i === 0 ? 0 : 55}px;">
+<div class="t-cell t-valign_top">
+<div class="t508__bgimg ba-steps-circle" style="width:50px;height:50px;">${i + 1}</div>
+</div>
+<div class="t508__textwrapper t-cell t-valign_top">
+<div class="t-name t-name_md t508__bottommargin">${s.title}</div>
+<div class="t508__descr t-descr t-descr_sm">${s.description}</div>
+</div>
+</li>`
+  ).join('\n');
+
+  return `<div class="r t-rec ba-steps-section" style="padding-top:120px;padding-bottom:120px;background-color:#000000;" data-record-type="508" data-bg-color="#000000">
+<style>.ba-steps-circle{background-color:#e4c97e;color:#000;width:50px;height:50px;font-size:20px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ba-steps-section .t508__bottommargin{margin-bottom:0;}
+.ba-steps-section .t508__descr{line-height:1.5;color:rgba(255,255,255,0.7);padding-top:4px;}
+.ba-steps-section .t-name{color:#fff;padding-top:5px;}
+.ba-steps-section .t-section__title{margin-bottom:90px;}
+@media screen and (max-width:960px){.ba-steps-section .t-section__title{margin-bottom:45px;}}
+</style>
+<div class="t508">
+<div class="t-section__container t-container t-container_flex">
+<div class="t-col t-col_12">
+<div class="t-section__title t-title t-title_xs t-align_center t-margin_auto">
+<span style="color:#ffffff;"><h2>${cfg.heading}</h2></span>
+</div>
+</div>
+</div>
+<ul role="list" class="t508__container t-container">
+${stepsHtml}
+</ul>
+</div>
+</div>`;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Meta title/description replacement helper                         */
 /* ------------------------------------------------------------------ */
 

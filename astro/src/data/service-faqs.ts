@@ -421,14 +421,26 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'სად მდებარეობთ?',
-        ru: 'Где вы находитесь?',
-        en: 'Where are you located?',
+        ka: 'სად მდებარეობთ? საბურთალო და გლდანი?',
+        ru: 'Где вы находитесь? Сабуртало и Глдани?',
+        en: 'Where are you located? Saburtalo and Gldani?',
       },
       answer: {
-        ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
-        ru: 'BESTAUTO работает на двух локациях в Тбилиси — на Гурамишвили и на Сабуртало. При записи поможем выбрать удобную студию.',
-        en: 'BESTAUTO operates at two locations in Tbilisi — Guramishvili and Saburtalo. We\'ll help you choose the most convenient studio when booking.',
+        ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — საბურთალოზე (ანა პოლიტკოვსკაიას 51) და გლდანში (გურამიშვილის 78). ჩაწერის დროს შეგარჩევინებთ მოსახერხებელ სტუდიას.',
+        ru: 'BESTAUTO работает на двух локациях в Тбилиси — на Сабуртало (Анны Политковской 51) и в Глдани (Гурамишвили 78). При записи поможем выбрать удобную студию.',
+        en: 'BESTAUTO operates at two locations in Tbilisi — Saburtalo (Anna Politkovskaya 51) and Gldani (Guramishvili 78). We\'ll help you choose the most convenient studio when booking.',
+      },
+    },
+    {
+      question: {
+        ka: 'რამდენი ხანი სჭირდება ქიმწმენდას?',
+        ru: 'Сколько времени занимает химчистка?',
+        en: 'How long does interior cleaning take?',
+      },
+      answer: {
+        ka: 'ბაზისური ქიმწმენდა — 4–6 საათი, სრული ღრმა ქიმწმენდა — 1–2 დღე ავტომობილის ზომისა და დაბინძურების ხარისხის მიხედვით.',
+        ru: 'Базовая химчистка — 4–6 часов, полная глубокая — 1–2 дня в зависимости от размера автомобиля и степени загрязнения.',
+        en: 'Basic cleaning takes 4–6 hours, full deep cleaning 1–2 days depending on the car size and contamination level.',
       },
     },
   ],
@@ -629,6 +641,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Yes. An athermal film can be applied to the windshield, reducing heat and UV while maintaining visibility.',
       },
     },
+    {
+      question: {
+        ka: 'ხდებით თუ არა ადგილზე მისვლით?',
+        ru: 'Вы выезжаете на место для тонировки?',
+        en: 'Do you offer mobile tinting service?',
+      },
+      answer: {
+        ka: 'მინების დაბურვა ადგილზე მისვლით შესაძლებელია შეთანხმებით. დაგვიკავშირდით WhatsApp-ზე — შევათანხმებთ დროსა და პირობებს.',
+        ru: 'Тонировка с выездом возможна по договоренности. Свяжитесь с нами в WhatsApp — согласуем время и условия.',
+        en: 'Mobile tinting is available by arrangement. Contact us on WhatsApp — we\'ll agree on time and conditions.',
+      },
+    },
   ],
 
   'windshield-repair': [
@@ -702,6 +726,30 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი მიიღწევა. დროის გასვლასთან ერთად ბზარი შეიძლება გაიზარდოს, ჭუჭყი მოხვდეს შიგნით და შეკეთება გაძნელდეს ან შეუძლებელი გახდეს.',
         ru: 'Чем свежее повреждение, тем лучше результат. Со временем трещина может разрастись, грязь попадёт внутрь, и ремонт станет сложнее или невозможен.',
         en: 'The fresher the damage, the better the result. Over time, cracks can grow, dirt can get inside, and repair becomes harder or impossible.',
+      },
+    },
+    {
+      question: {
+        ka: 'ხდებით თუ არა გამოძახებით?',
+        ru: 'Вы выезжаете на место?',
+        en: 'Do you offer mobile repair?',
+      },
+      answer: {
+        ka: 'დიახ, საქარე მინის აღდგენა გამოძახებით შესაძლებელია. დაგვიკავშირდით WhatsApp-ზე — შევათანხმებთ დროსა და ადგილს.',
+        ru: 'Да, ремонт лобового стекла возможен с выездом. Свяжитесь с нами в WhatsApp — согласуем время и место.',
+        en: 'Yes, mobile windshield repair is available. Contact us on WhatsApp — we\'ll agree on time and location.',
+      },
+    },
+    {
+      question: {
+        ka: 'რამდენ ხანში აღდგება ნაკენჭარი?',
+        ru: 'За сколько времени заделается скол?',
+        en: 'How quickly is a chip repaired?',
+      },
+      answer: {
+        ka: 'ნაკენჭარის აღდგენა 20–30 წუთს გრძელდება. შეკეთებისთანავე შეგიძლიათ ავტომობილით წახვიდეთ.',
+        ru: 'Ремонт скола занимает 20–30 минут. Уехать можно сразу после завершения.',
+        en: 'Chip repair takes 20–30 minutes. You can drive away immediately after.',
       },
     },
   ],
@@ -1074,6 +1122,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'დეტეილინგ რეცხვის ფასი იწყება 40 ლარიდან სედანის ორფაზიანი რეცხვისთვის. საბოლოო ფასი დამოკიდებულია ავტომობილის კლასსა და შერჩეულ მომსახურებაზე.',
         ru: 'Стоимость детейлинг мойки начинается от 40 лари за двухфазную мойку седана. Итоговая цена зависит от класса автомобиля и выбранных услуг.',
         en: 'A detailing wash starts from 40 GEL for a two-phase wash of a sedan. The final price depends on the vehicle size and selected services.',
+      },
+    },
+    {
+      question: {
+        ka: 'სად მდებარეობს ავტოსამრეცხაო? საბურთალო?',
+        ru: 'Где находится автомойка? Сабуртало?',
+        en: 'Where is the car wash located? Saburtalo?',
+      },
+      answer: {
+        ka: 'ავტოსამრეცხაო საბურთალოზე — ანა პოლიტკოვსკაიას ქ. 51. ასევე ვმუშაობთ გლდანში — გურამიშვილის გამზ. 78. ორივე ლოკაცია ორშ.–შაბ. 10:00–20:00.',
+        ru: 'Автомойка на Сабуртало — ул. Анны Политковской 51. Также работаем в Глдани — пр. Гурамишвили 78. Обе локации: пн–сб 10:00–20:00.',
+        en: 'Car wash in Saburtalo — Anna Politkovskaya St. 51. Also in Gldani — Guramishvili Ave. 78. Both locations: Mon–Sat 10:00–20:00.',
       },
     },
   ],
