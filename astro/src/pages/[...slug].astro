@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
@@ -850,8 +850,18 @@ if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.inclu
     let pricesCta: string;
     [pricesCta, mainContent] = extractPricesCta(mainContent);
     if (lang === 'ka' && mainContent.includes('data-alias-record-type="502"')) {
-      // KA: prices after trust block (t502) — conversion-optimized funnel
-      mainContent = insertAfterBlockByAliasType(mainContent, '502', priceBlock + pricesCta);
+      // KA service pages: make t508 → t502 → Prices consecutive.
+      // Extract intermediate blocks (injected steps, content, Tilda sections)
+      // from between t508 and t502, append them after prices.
+      let intermediateBlocks = '';
+      if (SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wrapping') {
+        const firstT508RecId = findRecIdContaining(mainContent, 'data-record-type="508"');
+        if (firstT508RecId) {
+          [intermediateBlocks, mainContent] = extractContentBetweenBlocks(mainContent, firstT508RecId, 'rec589478282');
+        }
+      }
+      // KA: prices (+ intermediate blocks) after trust block (t502)
+      mainContent = insertAfterBlockByAliasType(mainContent, '502', priceBlock + pricesCta + intermediateBlocks);
     } else {
       const faqId = `id="${baseSlug}-faq"`;
       if (mainContent.includes(faqId)) {

@@ -1461,6 +1461,60 @@ export function insertAfterDivById(content: string, id: string, html: string): s
 }
 
 /**
+ * Extract all HTML content between the end of the div with `afterId`
+ * and the start of the div with `beforeId`.
+ * Both IDs are matched via `id="..."` attributes.
+ * Returns [extracted, remaining]. If either block is not found or they're
+ * not in the expected order, returns ['', content].
+ */
+export function extractContentBetweenBlocks(
+  content: string,
+  afterId: string,
+  beforeId: string
+): [string, string] {
+  // Find and walk past afterId's div
+  const afterMarker = `id="${afterId}"`;
+  const afterMarkerPos = content.indexOf(afterMarker);
+  if (afterMarkerPos < 0) return ['', content];
+  const afterDivStart = content.lastIndexOf('<div', afterMarkerPos);
+  if (afterDivStart < 0) return ['', content];
+
+  let depth = 0;
+  let pos = afterDivStart;
+  let afterEnd = -1;
+  while (pos < content.length) {
+    const nextOpen = content.indexOf('<div', pos + 1);
+    const nextClose = content.indexOf('</div>', pos + 1);
+    if (nextClose < 0) break;
+    if (nextOpen >= 0 && nextOpen < nextClose) {
+      depth++;
+      pos = nextOpen;
+    } else {
+      if (depth === 0) {
+        afterEnd = nextClose + '</div>'.length;
+        break;
+      }
+      depth--;
+      pos = nextClose;
+    }
+  }
+  if (afterEnd < 0) return ['', content];
+
+  // Find start of beforeId's div
+  const beforeMarker = `id="${beforeId}"`;
+  const beforeMarkerPos = content.indexOf(beforeMarker, afterEnd);
+  if (beforeMarkerPos < 0) return ['', content];
+  const beforeDivStart = content.lastIndexOf('<div', beforeMarkerPos);
+  if (beforeDivStart <= afterEnd) return ['', content];
+
+  const extracted = content.slice(afterEnd, beforeDivStart);
+  if (!extracted.trim()) return ['', content];
+
+  const remaining = content.slice(0, afterEnd) + content.slice(beforeDivStart);
+  return [extracted, remaining];
+}
+
+/**
  * Extract the nearest t-rec block whose HTML contains `marker`.
  * Works with both named blocks (id="recNNN") and anonymous blocks
  * (no rec ID, just class="r t-rec"). Walks backwards from the marker
