@@ -1127,7 +1127,14 @@ if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
     }
   }
 
-  // 5. Move Gallery section from before Reviews to after FAQ.
+  // 5. Move CTA1 ("გაიგეთ ფასი") → after prices (rec618600545)
+  let cta1: string;
+  [cta1, mainContent] = extractTRecBlock(mainContent, 'გაიგეთ ფასი');
+  if (cta1) {
+    mainContent = insertAfterRecId(mainContent, 'rec618600545', cta1);
+  }
+
+  // 6. Move Gallery section from before Reviews to after FAQ.
   //    Extract gallery heading (rec713423972) through gallery content (rec2072063053).
   if (mainContent.includes('id="rec713423972"') && mainContent.includes('id="rec2072063053"')) {
     let gallerySection: string;
@@ -1176,6 +1183,25 @@ if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
           }
         }
       }
+    }
+  }
+
+  // 7. Move CTA2 ("გაქვთ შეკითხვები") → after FAQ (before gallery)
+  let cta2: string;
+  [cta2, mainContent] = extractTRecBlock(mainContent, 'გაქვთ შეკითხვები');
+  if (cta2 && mainContent.includes('id="ppf-shield-wrapping-faq"')) {
+    const faqIdx = mainContent.indexOf('id="ppf-shield-wrapping-faq"');
+    const faqDiv = mainContent.lastIndexOf('<div', faqIdx);
+    let fd = 0, fp = faqDiv;
+    while (fp < mainContent.length) {
+      const no = mainContent.indexOf('<div', fp + 1);
+      const nc = mainContent.indexOf('</div>', fp + 1);
+      if (nc < 0) break;
+      if (no >= 0 && no < nc) { fd++; fp = no; }
+      else if (fd === 0) {
+        mainContent = mainContent.slice(0, nc + 6) + cta2 + mainContent.slice(nc + 6);
+        break;
+      } else { fd--; fp = nc; }
     }
   }
 }
