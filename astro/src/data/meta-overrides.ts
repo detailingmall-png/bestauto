@@ -209,8 +209,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Какие привычки чаще всего вредят кузову: мойка со щетками, агрессивная химия, игнорирование водяных пятен, отсутствие защиты после полировки и другие ошибки. Практичные советы, как сохранить лакокрасочное покрытие в хорошем состоянии.',
   },
   'en/blog/10-paint-mistakes': {
-    title: '10 Mistakes That Ruin Car Paint Fast',
-    description: '10 common mistakes that damage car paint and how to avoid them in Georgia',
+    title: '10 Mistakes That Ruin Your Car’s Paintwork the Fastest',
+    description: 'Which habits damage the body most often: brush washes, aggressive chemicals, ignoring water spots, leaving paint unprotected after polishing, and more. Practical tips to keep your paintwork in good condition.',
   },
 
   'ka/blog/benefits-of-vinyl-wraps': {
@@ -222,8 +222,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Виниловая пленка позволяет изменить внешний вид автомобиля без покраски. Разбираем ее главные преимущества, ограничения, правила ухода и случаи, когда лучше выбрать PPF.',
   },
   'en/blog/benefits-of-vinyl-wraps': {
-    title: 'Vinyl Wrap for Cars: Pros and Cons',
-    description: 'Why wrap your car in vinyl: protection for the original paint, available textures, and key considerations for Georgia.',
+    title: 'Vinyl Wrap: Benefits, Styling, and Maintenance',
+    description: 'Vinyl film lets you change the look of a car without repainting. Learn its main advantages, limitations, care rules, and when PPF is the better option.',
   },
 
   'ka/blog/car-body-color-with-vinyl-wrap': {
@@ -235,8 +235,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как виниловая пленка реально меняет визуальное восприятие автомобиля: цвет, фактуру, блеск, тень, мат, глянец и сатин. Разбираем, что видно на солнце, что в тени и почему так важен уровень монтажа.',
   },
   'en/blog/car-body-color-with-vinyl-wrap': {
-    title: 'How Vinyl Wrap Changes Your Car Color',
-    description: 'How vinyl wrap changes a car’s color without repainting: available finishes, reversibility, and what to expect before wrapping.',
+    title: 'How Vinyl Wrap Changes the Look and Color of a Car',
+    description: 'How vinyl wrap really changes a car’s visual perception: color, texture, gloss, shadow, matte, gloss, and satin. We break down what you see in sunlight, what changes in shade, and why installation quality matters so much.',
   },
 
   'ka/blog/car-body-polishing': {
@@ -248,8 +248,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, какие дефекты устраняет полировка кузова, чем отличаются легкая, средняя и глубокая коррекция, сколько стоит услуга в Тбилиси и когда разумнее выбрать защиту PPF.',
   },
   'en/blog/car-body-polishing': {
-    title: 'Car Body Polishing: How to Restore Shine',
-    description: 'How professional paint correction removes scratches, swirl marks, and oxidation: restoring depth and gloss.',
+    title: 'Car Body Polishing in Tbilisi: What Defects It Corrects and When It Makes Sense',
+    description: 'Learn which paint defects body polishing can reduce, how light, medium, and deep correction differ, how much the service costs in Tbilisi, and when PPF protection is the smarter choice.',
   },
 
   'ka/blog/car-detailing-guide': {
@@ -261,8 +261,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Что такое детейлинг, что включает внешний и внутренний уход, как выбрать правильную защиту, сколько стоят услуги в Тбилиси и почему PPF остается самым надежным решением.',
   },
   'en/blog/car-detailing-guide': {
-    title: 'Car Detailing Guide: Services, Steps, Prices | BESTAUTO',
-    description: 'What car detailing includes: services, costs in Tbilisi, and why your vehicle needs professional care.',
+    title: 'Car Detailing in Tbilisi: A Complete Guide to Exterior and Interior Care | BESTAUTO',
+    description: 'What detailing is, what exterior and interior care include, how to choose the right protection, what services cost in Tbilisi, and why PPF remains the most reliable solution.',
   },
 
   'ka/blog/car-diagnostic-test-stages-and-methods': {
@@ -274,8 +274,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как проводится компьютерная диагностика: OBD-сканирование, расшифровка ошибок, live data, дополнительные тесты и рекомендации. Цена в Тбилиси — от 50 GEL.',
   },
   'en/blog/car-diagnostic-test-stages-and-methods': {
-    title: 'Car Computer Diagnostics: Key Steps Explained',
-    description: 'Car diagnostic stages explained: from scanner connection to fault code interpretation. What equipment is used.',
+    title: 'Computer Diagnostics for Cars: Stages, Methods, and Results | BESTAUTO',
+    description: 'Learn how computer diagnostics are performed: OBD-II scanning, fault code reading, live data analysis, additional testing, and recommendations. A practical guide for drivers in Tbilisi.',
   },
 
   'ka/blog/car-interior-detailing-basics': {
@@ -287,8 +287,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, из каких этапов состоит детейлинг салона, чем он отличается от химчистки, когда нужна дезинфекция озоном, полировка интерьерных деталей или внутреннее керамическое покрытие и сколько это стоит в Тбилиси.',
   },
   'en/blog/car-interior-detailing-basics': {
-    title: 'Car Interior Detailing: Steps and What’s Included',
-    description: 'Main stages of car interior detailing: vacuuming, fabric and leather cleaning, plastic treatment: what the process includes.',
+    title: 'Interior Detailing in Tbilisi: Main Stages, Services, and Pricing',
+    description: 'Learn which stages interior detailing includes, how it differs from standard interior cleaning, when ozone disinfection, interior polishing, or interior ceramic coating are worth it, and what the service costs in Tbilisi.',
   },
 
   'ka/blog/car-interior-disinfection': {
@@ -300,8 +300,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как работает озонирование салона автомобиля, когда оно действительно нужно, что оно убирает на практике и когда лучше выбрать химчистку плюс озонирование. Актуальные цены по BESTAUTO.',
   },
   'en/blog/car-interior-disinfection': {
-    title: 'Car Interior Disinfection: Eliminate Odors Safely',
-    description: 'Car interior ozone treatment to eliminate odors and disinfect from bacteria and viruses. How it works and when your car needs it.',
+    title: 'Interior Disinfection and Odor Removal: Ozone Treatment, When It Is Needed, and What Results to Expect',
+    description: 'How car interior ozone treatment works, when it is actually useful, what it removes in practice, and when interior deep cleaning plus ozone treatment is the better choice. Current BESTAUTO pricing included.',
   },
 
   'ka/blog/car-interior-polishing': {
@@ -313,8 +313,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Полировка интерьерного пластика, piano black и декоративных элементов уменьшает мелкие царапины и возвращает аккуратный вид. Разбираем процесс, результат, ограничения и цену в Тбилиси.',
   },
   'en/blog/car-interior-polishing': {
-    title: 'Interior Polishing: When You Need It and Why',
-    description: 'How interior polishing improves plastic, leather, and trim, and when a car interior really needs this service.',
+    title: 'Interior Element Polishing: Which Parts, What Results, and What the Limits Are',
+    description: 'Polishing interior plastic, piano black trim, and decorative panels helps reduce fine scratches and restore a cleaner look. We explain the process, expected results, limitations, and pricing in Tbilisi.',
   },
 
   'ka/blog/ceramic-coating-care': {
@@ -322,8 +322,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'კერამიკიანი ავტომობილის მოვლის პრაქტიკული გზამკვლევი: პირველი დღეები დატანის შემდეგ, სწორი რეცხვა, pH-ნეიტრალური ქიმია, refresh და რა აზიანებს საფარს ყველაზე ხშირად.',
   },
   'en/blog/ceramic-coating-care': {
-    title: 'Ceramic Coating Care: Do’s and Don’ts',
-    description: 'How to maintain a ceramic-coated car: washing products, techniques, and maintenance schedule.',
+    title: 'Ceramic Coating Care: How to Wash the Car, What to Avoid, and How to Preserve the Effect',
+    description: 'A practical guide to caring for a ceramic-coated vehicle: the first days after application, correct washing, pH-neutral chemistry, refresh maintenance, and the mistakes that most often weaken the coating.',
   },
 
   'ru/blog/ceramic-coating-cost-tbilisi': {
@@ -336,8 +336,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'რამდენ ხანს ძლებს კერამიკული საფარი რეალურად, რატომ არ ემთხვევა რეკლამა ყოველდღიურ შედეგს, რას ცვლის მოვლა და როდის ჯობს PPF უფრო სერიოზული დაცვისთვის.',
   },
   'en/blog/ceramic-coating-durability': {
-    title: 'How Long Does Ceramic Coating Last? Factors',
-    description: 'How long ceramic coating really lasts in Georgia: 2-5 year range, what affects durability, and how to extend it.',
+    title: 'How Long Does Ceramic Coating Really Last on a Car? — A Practical Lifespan for Georgia',
+    description: 'How long does ceramic coating really last, why marketing claims do not always match daily use, how care affects longevity, and when it makes more sense to choose PPF for stronger protection.',
   },
 
   'ka/blog/ceramic-coating-for-car': {
@@ -349,8 +349,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Что реально дает керамическое покрытие, чего оно не делает, сколько держится и когда для более сильной защиты лучше выбрать PPF-пленку.',
   },
   'en/blog/ceramic-coating-for-car': {
-    title: 'Ceramic Coating for Cars: Pros and Cons',
-    description: 'How ceramic coating protects car paint in Georgia from UV, chemicals, and dirt, how long it lasts, and where its limits are.',
+    title: 'Ceramic Coating for a Car Body: Benefits, Service Life, and Maintenance',
+    description: 'What ceramic coating actually does, what it does not do, how long it lasts, and when PPF film is the better choice for stronger protection.',
   },
 
   'ru/blog/ceramic-coating-maintenance': {
@@ -363,8 +363,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'რა ღირს ავტომობილის კერამიკული საფარი თბილისში 2026 წელს, რაზეა დამოკიდებული ფასი, როდის ჯობს პოლირება + კერამიკა და როდის სჯობს PPF უფრო სერიოზული დაცვისთვის.',
   },
   'en/blog/ceramic-coating-tbilisi': {
-    title: 'Ceramic Coating in Tbilisi: Prices (2026)',
-    description: 'Ceramic coating prices in Tbilisi: brands, price ranges, and what factors affect the final cost.',
+    title: 'How Much Does Ceramic Coating Cost in Tbilisi in 2026 — Prices, Comparison, and What to Choose',
+    description: 'How much does ceramic coating cost in Tbilisi in 2026? We explain what affects the price, when polishing + ceramic makes sense, and when PPF is the smarter choice for stronger protection.',
   },
 
   'ka/blog/ceramic-for-car-glass': {
@@ -376,8 +376,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Керамическое покрытие для стекол улучшает видимость в дождь, уменьшает задержку воды и грязи и упрощает уход. Узнайте, как работает антидождь, сколько держится и сколько стоит в Тбилиси.',
   },
   'en/blog/ceramic-for-car-glass': {
-    title: 'Ceramic Coating for Car Glass: Is It Worth It?',
-    description: 'How ceramic coating for car glass improves visibility, helps water sheet off, and makes cleaning easier in Georgia.',
+    title: 'Glass Ceramic Coating in Tbilisi — Rain Repellent, Visibility, Price, and Durability',
+    description: 'Ceramic coating for car glass improves visibility in the rain, reduces water and dirt buildup, and makes maintenance easier. Learn how rain repellent works, how long it lasts, and what it costs in Tbilisi.',
   },
 
   'ka/blog/detailing-cost-tbilisi': {
@@ -389,8 +389,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Сколько стоит детейлинг в Тбилиси в 2026 году: ручная мойка, химчистка, полировка, керамика, PPF и тонировка. Узнайте, что влияет на цену и какой пакет практичен именно для вашего автомобиля.',
   },
   'en/blog/detailing-cost-tbilisi': {
-    title: 'Car Detailing Cost in Tbilisi (2026)',
-    description: 'Detailing costs in Tbilisi: polishing, ceramic, PPF, tinting: prices and optimal service combinations for 2026.',
+    title: 'How Much Car Detailing Costs in Tbilisi in 2026 — Prices, Packages, and What Is Included',
+    description: 'How much detailing costs in Tbilisi in 2026: hand wash, interior detailing, polishing, ceramic coating, PPF, and window tint. Learn what affects the price and which package makes the most sense for your car.',
   },
 
   'ka/blog/efficiency-of-windshield-repair': {
@@ -402,8 +402,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Какие сколы и трещины на лобовом стекле подлежат ремонту, когда восстановление уже нецелесообразно и сколько стоит ремонт стекла в BESTAUTO в Тбилиси.',
   },
   'en/blog/efficiency-of-windshield-repair': {
-    title: 'Which Windshield Chips Can Be Repaired?',
-    description: 'Which windshield chips and cracks can be repaired and which cannot: size, location, and realistic expectations.',
+    title: 'Windshield Chip and Crack Repair in Tbilisi — When Repair Is Actually Worth It | BESTAUTO',
+    description: 'Which chips and cracks in a windshield can be repaired, when restoration is no longer worth it, and how much windshield repair costs at BESTAUTO in Tbilisi.',
   },
 
   'ka/blog/engine-room-cleaning': {
@@ -415,8 +415,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, когда действительно нужна чистка моторного отсека, какую пользу она дает, какие есть риски при неправильной мойке и как должны быть защищены датчики, электроника и разъемы.',
   },
   'en/blog/engine-room-cleaning': {
-    title: 'Engine Bay Cleaning: When and How to Do It',
-    description: 'Why clean your engine bay, how often to do it, and what to avoid so you don',
+    title: 'Engine Bay Cleaning in Tbilisi — When You Need It and How to Do It Safely',
+    description: 'Learn when engine bay cleaning is really necessary, what benefits it offers, what risks come with improper washing, and how sensors, electronics, and connectors should be protected.',
   },
 
   'ka/blog/errors-to-find': {
@@ -428,8 +428,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Какие системы проверяет компьютерная диагностика, какие ошибки показывает сканер и когда стоит записаться на проверку в Тбилиси. Практическое руководство от BESTAUTO.',
   },
   'en/blog/errors-to-find': {
-    title: 'What Car Computer Diagnostics Can Detect',
-    description: 'What a diagnostic scan detects: engine, transmission, electronics, sensor, and safety system faults explained.',
+    title: 'What Computer Diagnostics Can Reveal About a Car | BESTAUTO',
+    description: 'Which systems computer diagnostics can check, what types of faults the scanner can detect, and when it makes sense to book a diagnostic check in Tbilisi.',
   },
 
   'ka/blog/headlight-polishing': {
@@ -441,8 +441,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Полировка фар возвращает прозрачность, улучшает видимость ночью и освежает внешний вид автомобиля. Разбираем, когда она действительно помогает, когда уже нет и почему защита пленкой — лучшее продолжение после восстановления.',
   },
   'en/blog/headlight-polishing': {
-    title: 'Headlight Polishing: When It Works and Why',
-    description: 'Why headlights get cloudy, available polishing methods, and when restoration is cheaper than replacement: examples from Tbilisi.',
+    title: 'Headlight Polishing in Tbilisi: When It Is Needed, How It Is Done, and How to Preserve the Result',
+    description: 'Headlight polishing restores clarity, improves nighttime visibility, and refreshes a car’s appearance. We explain when it really helps, when it no longer does, and why film protection is the best next step after restoration.',
   },
 
   'ka/blog/hints-for-vinyl-wrapped-cars': {
@@ -454,8 +454,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как ухаживать за автомобилем, оклеенным винилом: правила мойки, какая химия нежелательна, чем отличается уход за матовым и глянцевым винилом и как надолго сохранить аккуратный вид пленки.',
   },
   'en/blog/hints-for-vinyl-wrapped-cars': {
-    title: 'Vinyl Wrap Care: Cleaning and Maintenance Tips',
-    description: 'Care tips for vinyl-wrapped cars: washing, storage, damage prevention, and when the film needs replacing.',
+    title: 'Vinyl Wrap Care: Washing, Chemicals, and Products to Avoid',
+    description: 'How to care for a vinyl-wrapped car: washing rules, which chemicals to avoid, how matte and gloss vinyl require different treatment, and how to keep the wrap looking clean for as long as possible.',
   },
 
   'ru/blog/how-long-ceramic-coating-lasts': {
@@ -472,8 +472,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как часто машине нужна полировка в Тбилиси? Разбираем, от чего зависит интервал, как на него влияют мойка, керамика и почему PPF-пленка заметно снижает потребность в частой полировке.',
   },
   'en/blog/how-often-polish-car': {
-    title: 'How Often Should You Polish Your Car?',
-    description: 'How often to polish your car: with PPF, with ceramic coating, and without protection: three maintenance scenarios.',
+    title: 'How Often Should You Polish a Car in Tbilisi — A Practical Guide',
+    description: 'How often does a car need polishing in Tbilisi? We explain what really affects the interval, how washing and ceramic coating change the picture, and why PPF can greatly reduce the need for frequent polishing.',
   },
 
   'ka/blog/how-to-choose-detailing-studio': {
@@ -485,8 +485,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как выбрать детейлинг-студию: 7 практических критериев, какие вопросы задавать, что проверять на месте и почему именно PPF лучше всего показывает реальный уровень качества.',
   },
   'en/blog/how-to-choose-detailing-studio': {
-    title: 'How to Choose a Detailing Studio: 7 Criteria',
-    description: '7 criteria for choosing a detailing studio: what to look for, questions to ask, and how to evaluate work quality.',
+    title: 'How to Choose a Detailing Studio in Tbilisi — 7 Criteria',
+    description: 'How to choose a detailing studio: 7 practical criteria, what questions to ask, what to check on-site, and why PPF is the clearest test of real quality.',
   },
 
   'ka/blog/interior-ceramic-coating': {
@@ -498,8 +498,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Какие поверхности защищает керамическое покрытие салона, сколько оно держится, какие есть ограничения и когда его действительно стоит делать в Тбилиси.',
   },
   'en/blog/interior-ceramic-coating': {
-    title: 'Ceramic Coating for Interior: What It Protects',
-    description: 'Ceramic coating for car interiors: which surfaces it protects, how long it lasts, and when it makes sense to apply.',
+    title: 'Interior Ceramic Coating: Protection from Stains and Everyday Wear',
+    description: 'Learn which interior surfaces ceramic coating protects, how long it lasts, what its limitations are, and when it actually makes sense in Tbilisi.',
   },
 
   'ka/blog/interior-cleaning-for-auto': {
@@ -511,8 +511,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Что включает профессиональная химчистка салона, сколько времени она занимает, от чего зависит цена и какие стартовые тарифы сейчас указаны у BESTAUTO.',
   },
   'en/blog/interior-cleaning-for-auto': {
-    title: 'Car Interior Deep Cleaning: What’s Included',
-    description: 'What professional interior cleaning includes, how it differs from a regular wash, and when it makes sense to book a studio in Tbilisi.',
+    title: 'Car Interior Deep Cleaning in Tbilisi: What Is Included, How Much It Costs, and How to Keep the Result',
+    description: 'What professional interior deep cleaning includes, how long it takes, what affects the price, and what starting rates are currently listed by BESTAUTO.',
   },
 
   'ka/blog/legal-aspects-of-tinting-in-georgia': {
@@ -524,8 +524,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Какой уровень тонировки разрешен в Грузии, на какие стекла действуют ограничения, как правильно понимать проценты и на что обратить внимание, чтобы избежать штрафов.',
   },
   'en/blog/legal-aspects-of-tinting-in-georgia': {
-    title: 'Window Tinting in Georgia: Rules (2026)',
-    description: 'Current window tinting rules in Georgia: permitted VLT levels by glass type, fines for violations, and legal requirements.',
+    title: 'Window Tinting in Georgia: Rules, Percentages, and Fines (2026)',
+    description: 'What tint level is allowed in Georgia, which windows are restricted, how to read percentages correctly, and what to watch out for to avoid fines.',
   },
 
   'ka/blog/new-car-detailing': {
@@ -537,8 +537,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как правильно защитить новый автомобиль в первые дни: в какой последовательности делать мойку, подготовку поверхности, PPF, керамику и защиту салона. Практичный выбор для разного бюджета.',
   },
   'en/blog/new-car-detailing': {
-    title: 'New Car Detailing: What to Do First | BESTAUTO',
-    description: 'Which protection to apply to a new car first: service order, timing, and where not to cut corners.',
+    title: 'Protecting a New Car in Tbilisi — What to Do First | PPF, Ceramic Coating, Polishing | BESTAUTO',
+    description: 'How to protect a new car correctly in the first days: in what order to wash, prepare the surface, apply PPF, ceramic coating, and interior protection. A practical choice for different budgets.',
   },
 
   'ka/blog/noisemakers-and-wayouts': {
@@ -550,8 +550,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Откуда появляется шум в салоне, как определить источник по симптомам и какие зоны дают наибольший эффект при шумоизоляции.',
   },
   'en/blog/noisemakers-and-wayouts': {
-    title: 'Car Cabin Noise: Top Sources and Fixes',
-    description: 'Where cabin noise comes from, which zones to treat first, and what results to expect after soundproofing.',
+    title: 'Sources of Noise in a Car: How to Find the Cause and What Actually Works',
+    description: 'Where cabin noise comes from, how to identify the source by the symptoms, and which areas deliver the biggest effect when it comes to soundproofing.',
   },
 
   'ka/blog/polishing-after-repair': {
@@ -563,8 +563,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Когда можно полировать автомобиль после кузовного ремонта, какие задачи решает процедура и когда стоит добавить защиту керамикой или PPF-пленкой.',
   },
   'en/blog/polishing-after-repair': {
-    title: 'Polishing After Body Repair: When to Do It',
-    description: 'When and why paint correction is needed after body repair: what defects it removes, how the process works, and what to expect.',
+    title: 'Car Polishing After Body Repair: When You Can Do It and What Results to Expect',
+    description: 'When a car can be polished after body repair, what the procedure actually solves, and when it makes sense to add ceramic coating or PPF film.',
   },
 
   'ka/blog/polishing-before-after': {
@@ -576,8 +576,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Полировка уменьшает микрориски, усиливает блеск и делает отражение чище. Разбираем реальные эффекты «до/после», объясняем, что исчезает на практике, а что полировка не убирает.',
   },
   'en/blog/polishing-before-after': {
-    title: 'Car Polishing Before vs After: What Changes',
-    description: 'Before-and-after polishing examples: real changes in scratches, swirl marks, oxidation, and gloss after proper paint correction.',
+    title: 'What Changes After Polishing: Real Before-and-After Results | BESTAUTO',
+    description: 'Polishing reduces micro-scratches, enhances gloss, and makes reflections cleaner. We break down real before-and-after effects, what actually disappears in practice, and what polishing cannot remove.',
   },
 
   'ka/blog/polishing-before-ceramic': {
@@ -589,8 +589,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Нужна ли полировка перед керамическим покрытием? Разбираем, когда без нее нельзя, когда ее можно пропустить и как правильно подготовить поверхность автомобиля для хорошего результата.',
   },
   'en/blog/polishing-before-ceramic': {
-    title: 'Do You Need Polishing Before Ceramic Coating?',
-    description: 'Is polishing necessary before ceramic coating, when it is required, and how surface preparation affects the final result.',
+    title: 'Polishing Before Ceramic Coating: Is It Necessary and When Is It Essential?',
+    description: 'Is polishing needed before ceramic coating? We explain when it is essential, when it can be skipped, and how to prepare a car’s surface properly for the best final result.',
   },
 
   'ka/blog/polishing-cost-tbilisi': {
@@ -602,8 +602,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, сколько стоит полировка автомобиля в Тбилиси, чем отличается легкая, средняя и глубокая коррекция, что влияет на цену и когда после полировки лучше выбрать керамику или PPF.',
   },
   'en/blog/polishing-cost-tbilisi': {
-    title: 'Car Polishing Cost in Tbilisi (2026)',
-    description: 'Car polishing prices in Tbilisi: soft and abrasive polishing costs, and when combining with PPF saves money.',
+    title: 'How Much Car Polishing Costs in Tbilisi in 2026 — Prices, Types, and the Right Protection',
+    description: 'Learn how much car polishing costs in Tbilisi, the difference between light, medium, and deep correction, what affects the price, and when ceramic coating or PPF makes more sense after polishing.',
   },
 
   'ka/blog/ppf-benefits': {
@@ -615,8 +615,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, какие преимущества дает защитная PPF-пленка, когда стоит ее клеить, какие зоны защищают чаще всего и какие цены актуальны сегодня в BESTAUTO в Тбилиси.',
   },
   'en/blog/ppf-benefits': {
-    title: 'Paint Protection Film (PPF): Is It Worth It?',
-    description: 'Key advantages of PPF film: what it protects against, how long it lasts, and when the investment pays off.',
+    title: 'The Benefits of PPF Film: Why It Is Worth Protecting Your Car’s Bodywork',
+    description: 'Learn what benefits protective PPF film offers, when it is worth installing, which zones are protected most often, and what prices are currently available at BESTAUTO in Tbilisi.',
   },
 
   'ru/blog/ppf-film-benefits': {
@@ -633,8 +633,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Что такое защитная PPF-пленка, где ее лучше клеить, от чего она действительно защищает и почему так важны качественный монтаж и правильный выбор бренда.',
   },
   'en/blog/ppf-film-for-cars-protection': {
-    title: 'PPF Wrap: What It Protects and How It Works',
-    description: 'How PPF protects your car from chips and scratches: installation process, zone selection, and real results in Tbilisi conditions.',
+    title: 'PPF Wrap: How It Protects the Body from Scratches and Stone Chips',
+    description: 'What protective PPF film is, where it should be applied, what it really protects against, and why quality installation and the right brand choice matter so much.',
   },
 
   'ka/blog/protection-against-uv-rays-scratches': {
@@ -646,8 +646,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, чем отличается виниловая пленка от PPF, что лучше подходит для внешнего вида и что эффективнее защищает кузов от UV, царапин и сколов.',
   },
   'en/blog/protection-against-uv-rays-scratches': {
-    title: 'Paint Protection: Scratches, Chips, UV Explained',
-    description: 'How vinyl wrap shields paint from UV rays and minor scratches: compared with other protection methods.',
+    title: 'Vinyl or PPF: Which Protects Better from UV, Scratches, and Stone Chips?',
+    description: 'Learn how vinyl wrap differs from PPF, which option is better for appearance, and which one protects the body more effectively from UV, scratches, and chips.',
   },
 
   'ka/blog/replace-or-repair': {
@@ -659,8 +659,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Практический гид по выбору: размер повреждения, расположение, зона обзора водителя, безопасность и стоимость. Разбираем, когда стекло можно отремонтировать, а когда лучше заменить.',
   },
   'en/blog/replace-or-repair': {
-    title: 'Windshield Repair or Replace: When Which One?',
-    description: 'When a windshield chip can be repaired vs. when replacement is needed: size criteria, location, and safety considerations.',
+    title: 'Windshield: When to Repair It and When to Replace It',
+    description: 'A practical guide to choosing between repair and replacement: damage size, location, driver’s line of sight, safety, and cost.',
   },
 
   'ka/blog/service-on-ppf-wrapped-car': {
@@ -672,8 +672,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как правильно ухаживать за PPF-пленкой: частота мойки, безопасная химия, правила для высокого давления, что вредит пленке и когда стоит показать автомобиль студии.',
   },
   'en/blog/service-on-ppf-wrapped-car': {
-    title: 'PPF Care: How to Wash and Maintain It',
-    description: 'How to properly wash and maintain a PPF-wrapped car to preserve its protective properties for the full service life.',
+    title: 'PPF Film Care: How to Wash Your Car and How to Avoid Damage',
+    description: 'How to care for PPF film properly: washing frequency, safe chemicals, pressure washer rules, what damages the film, and when it is worth showing the car to a detailing studio.',
   },
 
   'ka/blog/soft-vs-abrasive-polishing': {
@@ -685,8 +685,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Подробное сравнение мягкой и глубокой полировки: какие дефекты уменьшает каждый вариант, когда нужна более глубокая коррекция и как защитить результат после полировки.',
   },
   'en/blog/soft-vs-abrasive-polishing': {
-    title: 'Light vs Heavy Polishing: What’s the Difference?',
-    description: 'Soft vs. deep polishing: differences, how much clear coat each removes, and which option suits your car.',
+    title: 'Soft vs Deep Polishing — What Is the Difference and When Do You Need Which One? | BESTAUTO',
+    description: 'A detailed comparison of soft and deep polishing: which defects each option reduces, when deeper correction is justified, and how to protect the result afterward.',
   },
 
   'ka/blog/soundproofing-process': {
@@ -707,8 +707,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, сколько на практике служит PPF-пленка, что влияет на ее долговечность, как правильно за ней ухаживать, когда возможен локальный ремонт и какие признаки говорят о необходимости замены.',
   },
   'en/blog/strength-and-useful-life-of-ppf': {
-    title: 'How Long Does PPF Last? Durability Explained',
-    description: 'How long PPF lasts on a car, what affects its lifespan in Georgia, and when it makes sense to replace worn film.',
+    title: 'How Long PPF Lasts: Real Lifespan, Durability, and When It Is Time to Replace It',
+    description: 'Learn how long PPF film really lasts, what affects its durability, how to maintain it correctly, when local replacement is possible, and which signs mean it is time for renewal.',
   },
 
   'ka/blog/summer-car-care-georgia': {
@@ -720,8 +720,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Как подготовить автомобиль к лету в Грузии: UV, пыль, насекомые, морская соль, горные дороги, PPF, керамика, тонировка и уход за салоном — практичный чек-лист в одной статье.',
   },
   'en/blog/summer-car-care-georgia': {
-    title: 'Summer Car Care in Georgia: Checklist',
-    description: 'Summer car care checklist for Georgia: protecting paint, interior, and glass from heat, dust, and mountain roads.',
+    title: 'Preparing Your Car for Summer in Georgia — The Complete Detailing Checklist',
+    description: 'How to prepare your car for summer in Georgia: UV, dust, insects, sea salt, mountain roads, PPF, ceramic coating, window tint, and interior care — all in one practical checklist.',
   },
 
   'ka/blog/technology-and-process': {
@@ -733,8 +733,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Узнайте, как работает керамическое покрытие, из каких этапов состоит его нанесение, когда нужна полировка и когда PPF будет более сильной защитой.',
   },
   'en/blog/technology-and-process': {
-    title: 'Ceramic Coating: Application Process Explained',
-    description: 'How ceramic coating works at the molecular level: composition, bonding process, and professional application steps.',
+    title: 'Ceramic Coating in Tbilisi: How It Works, How It Is Applied, and When It Is Worth It',
+    description: 'Learn how ceramic coating works, which steps are involved in application, when polishing is needed, and when PPF is the stronger form of protection.',
   },
 
   'ka/blog/top-11-reasons': {
@@ -746,8 +746,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Почему стоит сделать тонировку стекол автомобиля в Тбилиси: 11 ключевых преимуществ, комфорт, UV-защита, приватность, обзор и актуальные цены в BESTAUTO.',
   },
   'en/blog/top-11-reasons': {
-    title: '11 Benefits of Window Tinting',
-    description: '11 practical reasons to tint your car windows: from interior protection to driving comfort in Georgia',
+    title: '11 Main Benefits of Car Window Tinting in Tbilisi',
+    description: 'Why it makes sense to tint your car windows in Tbilisi: 11 key benefits, more comfort, UV protection, privacy, better visibility, and current BESTAUTO prices.',
   },
 
   'ka/blog/top-5-car-paint-protection': {
@@ -759,8 +759,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Сравниваем 5 самых популярных вариантов защиты кузова автомобиля в Грузии: PPF, керамику, PPF + керамику, винил и регулярный детейлинг. Разберем, какой вариант лучше именно для вашего сценария.',
   },
   'en/blog/top-5-car-paint-protection': {
-    title: 'Top 5 Paint Protection Options in Georgia',
-    description: 'Ranking paint protection methods in Georgia: PPF, ceramic, vinyl, wax: compared by price, durability, and effectiveness.',
+    title: 'The 5 Best Ways to Protect Car Paint in Georgia: PPF, Ceramic Coating, Vinyl, or Something Else?',
+    description: 'We compare the 5 most popular ways to protect a car body in Georgia: PPF, ceramic coating, PPF + ceramic coating, vinyl, and regular detailing. Find out which option suits your real-world use case best.',
   },
 
   'ka/blog/vehicle-tinting-techniques': {
@@ -772,8 +772,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Разбираем, как выполняется тонировка стекол автомобиля, чем отличаются dyed, metalized и ceramic пленки, как выбрать подходящий вариант и как ухаживать за стеклами после установки в Тбилиси.',
   },
   'en/blog/vehicle-tinting-techniques': {
-    title: 'Window Tinting Techniques: Types and Differences',
-    description: 'Main window tinting techniques: film types, application methods, and what to consider when choosing in Georgia.',
+    title: 'Car Window Tinting in Tbilisi — Film Types, Installation Process, Care, and Pricing',
+    description: 'Learn how car window tinting is done, how dyed, metalized, and ceramic films differ, how to choose the right option, and how to care for tinted glass after installation in Tbilisi.',
   },
 
   'ka/blog/why-soundproof-car': {
@@ -785,8 +785,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Шумоизоляция автомобиля в Тбилиси: на каких зонах выполняется, какого эффекта ждать, сколько стоит полная и частичная шумоизоляция и кому она особенно полезна.',
   },
   'en/blog/why-soundproof-car': {
-    title: 'Why Soundproof a Car? Benefits Explained',
-    description: 'Why car soundproofing matters: how noise affects comfort, common noise sources, and what changes after professional treatment.',
+    title: 'Car Soundproofing in Tbilisi: Why It Matters and What Results to Expect',
+    description: 'Car soundproofing in Tbilisi: which zones are treated, what kind of effect to expect, how much partial and full soundproofing costs, and who benefits from it most.',
   },
 
   'ka/blog/why-use-car-diagnostic-test': {
@@ -798,8 +798,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Когда стоит делать компьютерную диагностику, какие ошибки она показывает, чего не скажет один только сканер и сколько стоит полная диагностика в BESTAUTO.',
   },
   'en/blog/why-use-car-diagnostic-test': {
-    title: 'Why Car Computer Diagnostics Matter',
-    description: 'What a car diagnostic test reveals, when to schedule one, and what issues it catches before they become critical.',
+    title: 'Car Computer Diagnostics in Tbilisi: Why It Matters and What It Shows',
+    description: 'When you should run computer diagnostics, what kinds of errors it reveals, what a scanner alone cannot tell you, and how much full diagnostics costs at BESTAUTO.',
   },
 
   'ka/blog/window-tinting-care': {
@@ -811,8 +811,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Практические правила ухода за тонировкой: первые дни после установки, безопасная мойка, запрещенная химия, что вредит пленке и как надолго сохранить результат.',
   },
   'en/blog/window-tinting-care': {
-    title: 'How to Care for Tinted Windows',
-    description: 'How to care for tinted windows: proper cleaning, what to avoid, and how to extend the lifespan of your tint.',
+    title: 'Caring for Tinted Windows: When You Can Wash Them and What You Should Not Do',
+    description: 'Practical tint-care rules: the first days after installation, safe cleaning, chemicals to avoid, what damages window film, and how to keep the result looking clean for longer.',
   },
 
   'ka/blog/windshield-repair-benefits': {
@@ -824,8 +824,8 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Почему важно вовремя ремонтировать скол на лобовом стекле: безопасность, расходы, время и случаи, когда уже необходима замена.',
   },
   'en/blog/windshield-repair-benefits': {
-    title: 'Why Repair a Windshield Chip Early',
-    description: 'Advantages of chip repair over windshield replacement: cost savings, speed, and preserving factory seal integrity.',
+    title: 'Windshield Chip Repair: Benefits and When It Makes Sense',
+    description: 'Why it is worth repairing a windshield chip in time: safety, cost, time savings, and the cases where replacement is already the better choice.',
   },
 
 };
