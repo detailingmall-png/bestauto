@@ -164,16 +164,15 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'Transparency and invisibility on the car body', to: 'Clear protection or chosen finish on the body' },
       // Price heading
       { from: 'Prices for PPF wrapping', to: 'PPF Paint Protection Film Prices in Tbilisi' },
-      // Trust block
-      { from: 'Why Choose Our Detailing Center?', to: 'Why Clients Choose BESTAUTO for PPF' },
-      { from: "You'll love the result", to: '' },
+      // Trust block (EN PPF uses different Tilda base text: "Our Company" instead of "Our Detailing Center")
+      { from: 'Why Choose Our Company?', to: 'Why Clients Choose BESTAUTO for PPF' },
+      { from: 'You will be completely satisfied', to: '' },
       // Trust card: item 1 desc
       { from: 'Professional wrapping of hundreds of cars of different makes and models', to: 'Full and partial PPF wrapping of hundreds of vehicles' },
       // Add 2 items to PPF prices (after last existing row)
       { from: '<span class="ba-price-name">Windshield wrapping</span><span class="ba-price-value">from 1100 Gel</span></div>', to: '<span class="ba-price-name">Windshield wrapping</span><span class="ba-price-value">from 1100 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Interior elements PPF wrapping</span><span class="ba-price-value">from 800 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Fender PPF wrapping</span><span class="ba-price-value">from 600 Gel</span></div>' },
-
-      // Reviews subtitle
-      { from: 'Real reviews from our clients</span></div></div> </div> </div>', to: `Real reviews from our clients</span></div></div> </div>${reviewsSubtitle('Client experiences with PPF — protective film wrapping and hood protection, as well as other services')}</div>` },
+      // Reviews subtitle (EN PPF uses </h2></span> and title-case heading)
+      { from: 'Real Reviews from Our Clients</h2></span></div> </div> </div>', to: `Real Reviews from Our Clients</h2></span></div> </div>${reviewsSubtitle('Client experiences with PPF — protective film wrapping and hood protection, as well as other services')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [

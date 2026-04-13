@@ -170,8 +170,8 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Add 2 items to PPF prices (after last existing row)
       { from: '<span class="ba-price-name">Оклейка лобового стекла</span><span class="ba-price-value">от 1100 Gel</span></div>', to: '<span class="ba-price-name">Оклейка лобового стекла</span><span class="ba-price-value">от 1100 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Оклейка элементов салона защитной плёнкой</span><span class="ba-price-value">от 800 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Оклейка крыла защитной плёнкой</span><span class="ba-price-value">от 600 Gel</span></div>' },
 
-      // Reviews subtitle
-      { from: 'Реальные отзывы наших клиентов</span></div> </div> </div>', to: `Реальные отзывы наших клиентов</span></div> </div>${reviewsSubtitle('Опыт клиентов с PPF — оклейка защитной плёнкой и защита капота, а также другие сервисы')}</div>` },
+      // Reviews subtitle (PPF uses </h2></span> instead of </span> in the heading)
+      { from: 'Реальные отзывы наших клиентов</h2></span></div> </div> </div>', to: `Реальные отзывы наших клиентов</h2></span></div> </div>${reviewsSubtitle('Опыт клиентов с PPF — оклейка защитной плёнкой и защита капота, а также другие сервисы')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [
