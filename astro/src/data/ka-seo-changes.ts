@@ -545,8 +545,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს', to: 'ვმუშაობთ მხოლოდ დადასტურებული ბრენდებით და კონკრეტულ სერვისებზე გთავაზობთ გარანტიას' },
       // Reviews heading
       { from: 'ჩვენი მომხმარებლების შეფასებები', to: 'ჩვენი მომხმარებლების რეალური შეფასებები' },
-      // Photo heading
-      { from: 'ჩვენი სტუდიები', to: 'ჩვენი სტუდიები და სამუშაო პროცესი' },
+      // Photo heading — now handled globally in [...slug].astro for all KA pages
       // Studio selection heading (now set directly in whatsapp-blocks.ts)
     ],
     seoBlock: '',

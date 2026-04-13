@@ -971,17 +971,19 @@ if (baseSlug === '' && lang === 'ka') {
   );
 }
 
-// KA homepage: update studios/gallery section heading + add subheading
-if (baseSlug === '' && lang === 'ka') {
+// KA: update studios/gallery section heading on all pages + add subheading on homepage
+if (lang === 'ka') {
   mainContent = mainContent.replace(
     'თბილისში მდებარე ჩვენი ორი სტუდიის ფოტოები',
-    'ჩვენი სტუდიები და სამუშაო პროცესი'
+    'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი'
   );
-  const studiosSubtext = '<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">ორივე ლოკაციის გარემო, სამუშაო სივრცე და რეალური პროცესები თბილისში</p>';
-  mainContent = mainContent.replace(
-    'ჩვენი სტუდიები და სამუშაო პროცესი</span></div>',
-    'ჩვენი სტუდიები და სამუშაო პროცესი</span></div>' + studiosSubtext
-  );
+  if (baseSlug === '') {
+    const studiosSubtext = '<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">ორივე ლოკაციის გარემო, სამუშაო სივრცე და რეალური პროცესები თბილისში</p>';
+    mainContent = mainContent.replace(
+      'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი</span></div>',
+      'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი</span></div>' + studiosSubtext
+    );
+  }
 }
 
 // Homepage: inject FAQ accordion before contacts block
