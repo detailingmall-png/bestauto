@@ -966,35 +966,69 @@ if (baseSlug === 'ppf-shield-wrapping' && mainContent.includes('ba-reels-grid'))
   }
 }
 
-// PPF page KA: rename video gallery heading
-if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
-  mainContent = mainContent.replace('სამუშაო პროცესი', 'ავტომობილების ფირით გადაკვრის პროცესი');
+// PPF page: rename video gallery heading (all languages)
+if (baseSlug === 'ppf-shield-wrapping') {
+  const videoHeadingMap: Readonly<Record<string, { from: string; to: string }>> = {
+    ka: { from: 'სამუშაო პროცესი', to: 'ავტომობილების ფირით გადაკვრის პროცესი' },
+    ru: { from: 'Процесс работы', to: 'Процесс оклейки автомобилей защитной плёнкой' },
+    en: { from: 'Our Work', to: 'Car PPF Film Wrapping Process' },
+  };
+  const vh = videoHeadingMap[lang];
+  if (vh) mainContent = mainContent.replace(vh.from, vh.to);
 }
 
-// KA homepage: update reviews section heading + add subheading
-if (baseSlug === '' && lang === 'ka') {
-  mainContent = mainContent.replace(
-    'ჩვენი მომხმარებლების რეალური მიმოხილვა',
-    'ჩვენი მომხმარებლების რეალური შეფასებები'
-  );
-  const reviewsSubtext = '<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">რეალური გამოცდილება Google-იდან სხვადასხვა სერვისზე — PPF, პოლირება, ქიმწმენდა, მინების დაბურვა და სხვა</p>';
-  mainContent = mainContent.replace(
-    'ჩვენი მომხმარებლების რეალური შეფასებები</span></div></div>',
-    'ჩვენი მომხმარებლების რეალური შეფასებები</span></div>' + reviewsSubtext + '</div>'
-  );
+// Homepage: update reviews section heading + add subheading (all languages)
+if (baseSlug === '') {
+  const reviewsHeadingMap: Readonly<Record<string, { from: string; to: string; subtitleFrom: string; subtitleText: string }>> = {
+    ka: {
+      from: 'ჩვენი მომხმარებლების რეალური მიმოხილვა',
+      to: 'ჩვენი მომხმარებლების რეალური შეფასებები',
+      subtitleFrom: 'ჩვენი მომხმარებლების რეალური შეფასებები</span></div></div>',
+      subtitleText: 'რეალური გამოცდილება Google-იდან სხვადასხვა სერვისზე — PPF, პოლირება, ქიმწმენდა, მინების დაბურვა და სხვა',
+    },
+    ru: {
+      from: '', to: '', // RU heading stays as-is
+      subtitleFrom: '', subtitleText: '', // RU homepage reviews subtitle already injected via seo-changes
+    },
+    en: {
+      from: '', to: '',
+      subtitleFrom: '', subtitleText: '',
+    },
+  };
+  const rh = reviewsHeadingMap[lang];
+  if (rh?.from) mainContent = mainContent.replace(rh.from, rh.to);
+  if (rh?.subtitleFrom) {
+    const reviewsSubtext = `<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">${rh.subtitleText}</p>`;
+    mainContent = mainContent.replace(rh.subtitleFrom, rh.to + '</span></div>' + reviewsSubtext + '</div>');
+  }
 }
 
-// KA: update studios/gallery section heading on all pages + add subheading on homepage
-if (lang === 'ka') {
-  mainContent = mainContent.replace(
-    'თბილისში მდებარე ჩვენი ორი სტუდიის ფოტოები',
-    'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი'
-  );
+// Update studios/gallery section heading on all pages + add subheading on homepage (all languages)
+const studiosHeadingMap: Readonly<Record<string, { from: string; to: string; subtitle: string }>> = {
+  ka: {
+    from: 'თბილისში მდებარე ჩვენი ორი სტუდიის ფოტოები',
+    to: 'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი',
+    subtitle: 'ორივე ლოკაციის გარემო, სამუშაო სივრცე და რეალური პროცესები თბილისში',
+  },
+  ru: {
+    from: 'Фото двух наших студий в Тбилиси',
+    to: 'Фото наших детейлинг центров и рабочего процесса',
+    subtitle: 'Обстановка, рабочее пространство и реальные процессы в обеих локациях в Тбилиси',
+  },
+  en: {
+    from: 'Photos of our two studios in Tbilisi',
+    to: 'Photos of Our Detailing Centers and Work Process',
+    subtitle: 'Environment, workspace and real processes at both locations in Tbilisi',
+  },
+};
+const sh = studiosHeadingMap[lang];
+if (sh) {
+  mainContent = mainContent.replace(sh.from, sh.to);
   if (baseSlug === '') {
-    const studiosSubtext = '<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">ორივე ლოკაციის გარემო, სამუშაო სივრცე და რეალური პროცესები თბილისში</p>';
+    const studiosSubtext = `<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">${sh.subtitle}</p>`;
     mainContent = mainContent.replace(
-      'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი</span></div>',
-      'ჩვენი დეტეილინგ ცენტრების ფოტოები და სამუშაო პროცესი</span></div>' + studiosSubtext
+      sh.to + '</span></div>',
+      sh.to + '</span></div>' + studiosSubtext
     );
   }
 }
@@ -1010,12 +1044,27 @@ if (baseSlug === '' && mainContent.includes('id="rec2091246563"')) {
   }
 }
 
-// KA pages: inject contacts section subtitle after h2 heading
-if (lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
-  mainContent = mainContent.replace(
-    'უფასო კონსულტაციისთვის</span></h2>',
-    'უფასო კონსულტაციისთვის</span></h2><p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;text-align:center;margin:12px auto 28px;max-width:560px;font-family:var(--ba-font-family);">ორივე ფილიალში ხელმისაწვდომია უფასო დათვალიერება, წინასწარი კონსულტაცია და ჩაწერა ძირითად სერვისებზე</p>'
-  );
+// All pages: inject contacts section subtitle after h2 heading (all languages)
+if (mainContent.includes('id="ba-contacts"')) {
+  const contactsSubtitleMap: Readonly<Record<string, { from: string; subtitle: string }>> = {
+    ka: {
+      from: 'უფასო კონსულტაციისთვის</span></h2>',
+      subtitle: 'ორივე ფილიალში ხელმისაწვდომია უფასო დათვალიერება, წინასწარი კონსულტაცია და ჩაწერა ძირითად სერვისებზე',
+    },
+    ru: {
+      from: 'бесплатной консультации</span></h2>',
+      subtitle: 'В обоих филиалах доступен бесплатный осмотр, предварительная консультация и запись на основные сервисы',
+    },
+    en: {
+      from: 'free consultation</span></h2>',
+      subtitle: 'Free inspection, pre-consultation and booking for main services available at both locations',
+    },
+  };
+  const cs = contactsSubtitleMap[lang];
+  if (cs) {
+    const contactsSubtext = `<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;text-align:center;margin:12px auto 28px;max-width:560px;font-family:var(--ba-font-family);">${cs.subtitle}</p>`;
+    mainContent = mainContent.replace(cs.from, cs.from + contactsSubtext);
+  }
 }
 
 // ===================================================================
