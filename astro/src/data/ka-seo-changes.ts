@@ -552,4 +552,16 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
     ],
     seoBlock: '',
   },
+
+  /* ====== PRICES ====== */
+  'prices': {
+    meta: {
+      title: 'ფასები — ავტო დითეილინგ მომსახურება თბილისში | BESTAUTO',
+      description: 'BESTAUTO-ს ფასები თბილისში — PPF, პოლირება, კერამიკა, ქიმწმენდა, მინების დაბურვა, რეცხვა და სხვა სერვისების ღირებულება.',
+    },
+    textReplacements: [
+      { from: 'ფერადი დამცავი ფირით ფერის შეცვლის ფასები', to: 'ფერის შეცვლისთვის ფირის გადაკვრის ფასები' },
+    ],
+    seoBlock: '',
+  },
 };
