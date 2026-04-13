@@ -196,7 +196,11 @@ def _split_into_sections(body: str) -> list:
 
 
 def _paragraphs_to_html(text: str) -> str:
-    """Convert text with paragraphs and lists to HTML for a Tilda 106 block."""
+    """Convert text with paragraphs, lists and tables to HTML for a Tilda 106 block.
+
+    Wraps text paragraphs in <p> tags for natural spacing via CSS margins.
+    Lists and tables render as block elements without extra wrappers.
+    """
     paragraphs = re.split(r"\n\n+", text.strip())
     html_parts = []
 
@@ -206,8 +210,12 @@ def _paragraphs_to_html(text: str) -> str:
             continue
 
         lines = para.split("\n")
-        # Check if this is a list
-        if all(re.match(r"^\s*[-*]\s+", l) for l in lines if l.strip()):
+
+        # Check if this is a markdown table (lines starting with |)
+        if _is_table(lines):
+            html_parts.append(_table_to_html(lines))
+        # Check if this is an unordered list (- or * items)
+        elif all(re.match(r"^\s*[-*]\s+", l) for l in lines if l.strip()):
             items = []
             for l in lines:
                 l = l.strip()
@@ -215,12 +223,74 @@ def _paragraphs_to_html(text: str) -> str:
                     item_text = re.sub(r"^[-*]\s+", "", l)
                     items.append(f"<li>{_format_inline(item_text)}</li>")
             html_parts.append("<ul>" + "".join(items) + "</ul>")
+        # Check if this is an ordered list (1. 2. 3. items)
+        elif _is_ordered_list(lines):
+            items = []
+            for l in lines:
+                l = l.strip()
+                if l:
+                    item_text = re.sub(r"^\d+\.\s+", "", l)
+                    items.append(f"<li>{_format_inline(item_text)}</li>")
+            html_parts.append("<ol>" + "".join(items) + "</ol>")
         else:
-            # Regular paragraph - join lines
+            # Regular paragraph - wrap in <p> for CSS-controlled spacing
             joined = " ".join(l.strip() for l in lines if l.strip())
-            html_parts.append(_format_inline(joined))
+            html_parts.append(f"<p>{_format_inline(joined)}</p>")
 
-    return "<br /><br />".join(html_parts)
+    return "".join(html_parts)
+
+
+def _is_ordered_list(lines: list) -> bool:
+    """Check if lines form an ordered list (1. item, 2. item, ...)."""
+    content_lines = [l for l in lines if l.strip()]
+    if len(content_lines) < 2:
+        return False
+    return all(re.match(r"^\s*\d+\.\s+", l) for l in content_lines)
+
+
+def _is_table(lines: list) -> bool:
+    """Check if lines form a markdown table."""
+    content_lines = [l for l in lines if l.strip()]
+    if len(content_lines) < 2:
+        return False
+    has_pipes = all("|" in l for l in content_lines)
+    has_separator = any(re.match(r"^\|?\s*[-:]+\s*\|", l) for l in content_lines)
+    return has_pipes and has_separator
+
+
+def _table_to_html(lines: list) -> str:
+    """Convert markdown table lines to HTML <table>."""
+    content_lines = [l.strip() for l in lines if l.strip()]
+    rows = []
+    for line in content_lines:
+        if re.match(r"^\|?\s*[-:|\s]+$", line):
+            continue
+        cells = [c.strip() for c in line.split("|")]
+        if cells and not cells[0]:
+            cells = cells[1:]
+        if cells and not cells[-1]:
+            cells = cells[:-1]
+        if cells:
+            rows.append(cells)
+
+    if not rows:
+        return ""
+
+    html = '<table class="ba-blog-table">'
+    html += "<thead><tr>"
+    for cell in rows[0]:
+        html += f"<th>{_format_inline(cell)}</th>"
+    html += "</tr></thead>"
+    if len(rows) > 1:
+        html += "<tbody>"
+        for row in rows[1:]:
+            html += "<tr>"
+            for cell in row:
+                html += f"<td>{_format_inline(cell)}</td>"
+            html += "</tr>"
+        html += "</tbody>"
+    html += "</table>"
+    return html
 
 
 def _format_inline(text: str) -> str:

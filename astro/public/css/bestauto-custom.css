@@ -539,6 +539,24 @@ html {
 }
 
 /* ========================================================================
+   Blog article text: paragraph spacing, lists
+   ======================================================================== */
+.t-text p {
+  margin: 0 0 0.75em 0;
+}
+.t-text p:last-child {
+  margin-bottom: 0;
+}
+.t-text ul,
+.t-text ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+.t-text li {
+  margin-bottom: 0.3em;
+}
+
+/* ========================================================================
    Blog article tables: converted from markdown pipe-tables at build time
    ======================================================================== */
 .ba-blog-table {
