@@ -71,6 +71,18 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
       en: 'Yes, a brand-new car is the perfect time for PPF and ceramic coating. The paint is still pristine, ensuring optimal adhesion. Many clients drive to us straight from the dealership.',
     },
   },
+  {
+    question: {
+      ka: 'რა მასალებს ვიყენებთ?',
+      ru: 'Можно ли приехать без записи?',
+      en: 'Can I visit without an appointment?',
+    },
+    answer: {
+      ka: 'ვმუშაობთ მხოლოდ სერტიფიცირებულ ბრენდებთან — LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON და 3M. ეს ნიშნავს მაღალ ხარისხს, სანდო შედეგს და მწარმოებლის ოფიციალურ გარანტიას.',
+      ru: 'Рекомендуем записаться заранее — так мы гарантируем наличие мастера и бокса. Запишитесь через WhatsApp или по телефону, и мы подберём удобное время.',
+      en: 'We recommend booking ahead to ensure a technician and bay are available. Schedule via WhatsApp or phone, and we\'ll find a convenient time.',
+    },
+  },
 ];
 
 const SECTION_TITLE: Readonly<Record<string, string>> = {
