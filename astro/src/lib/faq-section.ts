@@ -30,7 +30,7 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
       en: 'What materials do you use?',
     },
     answer: {
-      ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩანერის შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
+      ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
       ru: 'Работаем только с сертифицированными брендами: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. Это гарантирует качество и заводскую гарантию материалов.',
       en: 'We work exclusively with certified brands: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. This ensures quality and manufacturer warranty on materials.',
     },
@@ -66,7 +66,7 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
       en: 'Do you work with brand-new cars from the dealership?',
     },
     answer: {
-      ka: 'როგორც წესი, მოთხოვნის გამოგზავნის შემდეგ სწრაფად გიკავშირდებით. ასევე შეგიძლიათ მოგვწეროთ WhatsApp-ზე ან დაგვირეკოთ პირდაპირ.',
+      ka: 'როგორც წესი, მოთხოვნის გამოგზავნიდან 15 წუთის განმავლობაში გიკავშირდებით. ასევე შეგიძლიათ მოგვწეროთ WhatsApp-ზე ან დაგვირეკოთ პირდაპირ.',
       ru: 'Да, новый автомобиль — идеальное время для нанесения PPF и керамики. Лак ещё чистый, что обеспечивает лучшую адгезию. Многие клиенты приезжают к нам прямо из салона.',
       en: 'Yes, a brand-new car is the perfect time for PPF and ceramic coating. The paint is still pristine, ensuring optimal adhesion. Many clients drive to us straight from the dealership.',
     },

@@ -117,7 +117,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Why apply ceramic coating if I can just wash my car?',
       },
       answer: {
-        ka: 'კერამიკა ეხმარება ავტომობილს უფრო დიდხანს შეინარჩუნოს სუფთა და მოვლილი იერი, ამარტივებს რეცხვას და ამცირებს ყოველდღიური დაბინძურების გავლენას ზედაპირზე.',
+        ka: 'კერამიკას აკეთებენ ისინი, ვისაც სურს ავტომობილის გარეგნობის შენარჩუნება ხანგრძლივად — ნაკლები რეცხვა, ადვილი მოვლა, UV-სგან და ქიმიური ზემოქმედებისგან დაცვა. განსაკუთრებით რეკომენდებულია ახალი ავტომობილებისთვის და პოლირების შემდეგ.',
         ru: 'Керамическое покрытие — это не только блеск. Оно защищает от ультрафиолета, мелких царапин, птичьего помета и реагентов. Мойка становится в 2 раза быстрее — грязь просто скатывается. Это инвестиция в сохранение внешнего вида и стоимости автомобиля.',
         en: 'Ceramic coating is not just about shine. It protects against UV, minor scratches, bird droppings, and chemicals. Washing becomes 2x faster — dirt simply slides off. It\'s an investment in preserving your car\'s appearance and value.',
       },
@@ -165,7 +165,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What is ceramic coating?',
       },
       answer: {
-        ka: 'კერამიკული საფარი არის დამცავი ფენა, რომელიც გამოიყენება ავტომობილის ზედაპირზე, აძლიერებს ბზინვარებას და ამარტივებს მოვლას.',
+        ka: 'კერამიკული საფარი არის სილიციუმის დიოქსიდზე (SiO2) დაფუძნებული თხევადი შემადგენლობა, რომელიც წასმის შემდეგ გამჭვირვალე დამცავ ფენას ქმნის ზედაპირზე. იგი იცავს UV-სგან, წვრილი ნაკაწრებისგან და ქიმიური ნივთიერებებისგან, ძლებს 3 წლამდე.',
         ru: 'Это жидкий состав на основе диоксида кремния (SiO2), который после нанесения образует прозрачный защитный слой на поверхности автомобиля. Керамика защищает от UV-лучей, царапин, химии и держится до 3 лет.',
         en: 'It\'s a liquid compound based on silicon dioxide (SiO2) that forms a transparent protective layer on the car surface after application. Ceramic coating protects against UV, scratches, chemicals, and lasts up to 3 years.',
       },
@@ -576,7 +576,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What film do you use?',
       },
       answer: {
-        ka: 'LLumar — ჩვენ ოფიციალური დილერი ვართ. მწარმოებლის გარანტია 5 წლამდე. არ ვიყენებთ იაფ ჩინურ ანალოგებს, რომლებიც ნახევარ წელში ფერმკრთალდება.',
+        ka: 'ატერმალური ფირი ძირითადად სითბოს უკუგდებას ემსახურება და მაღალ სინათლეგამტარობას ინარჩუნებს — იდეალურია საქარე და წინა მინებისთვის. კერამიკული ფირი კი კერამიკული ნანონაწილაკების წყალობით ერთდროულად იცავს სითბოსგან, ულტრაიისფერი გამოსხივებისგან და არ უშლის ხელს ტელეფონის ან GPS სიგნალს.',
         ru: 'LLumar — мы официальный дилер. Гарантия от производителя до 5 лет. Не используем дешевые китайские аналоги, которые выгорают за полгода.',
         en: 'LLumar — we are an official dealer. Manufacturer warranty up to 5 years. We don\'t use cheap Chinese alternatives that fade in six months.',
       },
@@ -1119,9 +1119,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does a detailing car wash cost?',
       },
       answer: {
-        ka: 'დეტეილინგ რეცხვის ფასი იწყება 40 ლარიდან სედანის ორფაზიანი რეცხვისთვის. საბოლოო ფასი დამოკიდებულია ავტომობილის კლასსა და შერჩეულ მომსახურებაზე.',
-        ru: 'Стоимость детейлинг мойки начинается от 40 лари за двухфазную мойку седана. Итоговая цена зависит от класса автомобиля и выбранных услуг.',
-        en: 'A detailing wash starts from 40 GEL for a two-phase wash of a sedan. The final price depends on the vehicle size and selected services.',
+        ka: 'დეტეილინგ რეცხვის ფასი იწყება 45 ლარიდან სედანის ორფაზიანი რეცხვისთვის. საბოლოო ფასი დამოკიდებულია ავტომობილის კლასსა და შერჩეულ მომსახურებაზე.',
+        ru: 'Стоимость детейлинг мойки начинается от 45 лари за двухфазную мойку седана. Итоговая цена зависит от класса автомобиля и выбранных услуг.',
+        en: 'A detailing wash starts from 45 GEL for a two-phase wash of a sedan. The final price depends on the vehicle size and selected services.',
       },
     },
     {
@@ -1159,7 +1159,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
       },
       answer: {
         ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
-        ru: 'BESTAUTO работает на двух локациях в Тбилиси — на Гурамишвили и на Сабуртало. При записи поможем выбрать удобную студию.',
+        ru: 'BESTAUTO работает на двух локациях в Тбилиси — Гурамишвили и Сабуртало. При записи поможем выбрать удобную студию.',
         en: 'BESTAUTO operates at two locations in Tbilisi — Guramishvili and Saburtalo. We\'ll help you choose the most convenient studio when booking.',
       },
     },
@@ -1194,9 +1194,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How quickly do you respond after booking?',
       },
       answer: {
-        ka: 'როგორც წესი, მოთხოვნის გამოგზავნის შემდეგ სწრაფად გიკავშირდებით. ასევე შეგიძლიათ მოგვწეროთ WhatsApp-ზე ან დაგვირეკოთ პირდაპირ.',
-        ru: 'Как правило, отвечаем быстро после отправки заявки. Также можете написать в WhatsApp или позвонить напрямую.',
-        en: 'We typically respond quickly after you submit a request. You can also message us on WhatsApp or call directly.',
+        ka: 'როგორც წესი, მოთხოვნის გამოგზავნიდან 15 წუთის განმავლობაში გიკავშირდებით. ასევე შეგიძლიათ მოგვწეროთ WhatsApp-ზე ან დაგვირეკოთ პირდაპირ.',
+        ru: 'Как правило, отвечаем в течение 15 минут после отправки заявки. Также можете написать в WhatsApp или позвонить напрямую.',
+        en: 'We typically respond within 15 minutes after you submit a request. You can also message us on WhatsApp or call directly.',
       },
     },
   ],
