@@ -561,6 +561,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
     },
     textReplacements: [
       { from: 'ფერადი დამცავი ფირით ფერის შეცვლის ფასები', to: 'ფერის შეცვლისთვის ფირის გადაკვრის ფასები' },
+      { from: 'PPF დამცავი ფირის გადაკვრის ფასები', to: 'ავტომობილის PPF დამცავი ფირით გადაკვრის ფასები' },
     ],
     seoBlock: '',
   },
