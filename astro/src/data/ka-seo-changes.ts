@@ -130,6 +130,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'რა განსხვავებაა ქიმწმენდასა და ჩვეულებრივ რეცხვას შორის', to: 'რით განსხვავდება ქიმწმენდა ჩვეულებრივი რეცხვისგან' },
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('ქიმწმენდის სერვისით სარგებლობის გამოცდილება — სავარძლების, ჭერის, იატაკის და საბარგულის ღრმა წმენდა, ასევე სხვა სერვისები')}</div>` },
+      // Remove "hand detailing wash" from service prices
+      { from: '<div class="ba-price-row"><span class="ba-price-name">ხელით დეტეილინგ მრეცხავი</span><span class="ba-price-value">40 Gel-დან</span></div>', to: '' },
     ],
     seoBlock: '',
     contentBlocks: [],
@@ -564,6 +566,12 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'PPF დამცავი ფირის გადაკვრის ფასები', to: 'ავტომობილის PPF დამცავი ფირით გადაკვრის ფასები' },
       { from: 'საქარე მინის ნახვრეტებისა და ბზარების შეკეთება', to: 'საქარე მინის აღდგენის ფასები' },
       { from: 'დეტეილინგ ქიმწმენდის და მრეცხავი ფასები', to: 'მანქანის ქიმწმენდის ფასები' },
+      // Remove "hand detailing wash" from cleaning prices section
+      { from: '<div class="ba-price-row"><span class="ba-price-name">ხელით დეტეილინგ მრეცხავი</span><span class="ba-price-value">40 Gel-დან</span></div>', to: '' },
+      // Add 2 items to PPF section (after last existing item)
+      { from: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div>', to: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სალონის ელემენტების დამცავი ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ფრთის დამცავი ფირით გადაკვრა</span><span class="ba-price-value">600 Gel-დან</span></div>' },
+      // Add 2 items to vinyl/color change section (after last existing item)
+      { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div>' },
     ],
     seoBlock: '',
   },
