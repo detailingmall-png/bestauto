@@ -1,7 +1,47 @@
 /**
- * SEO content blocks for KA service pages.
+ * SEO content blocks for service pages (all languages).
  * Generates HTML blocks injected at build time into service pages.
  */
+
+/* ------------------------------------------------------------------ */
+/*  Shared types                                                       */
+/* ------------------------------------------------------------------ */
+
+export interface MetaChange {
+  readonly title: string;
+  readonly description: string;
+}
+
+export interface TextReplacement {
+  readonly from: string;
+  readonly to: string;
+}
+
+export interface StepsBlockConfig {
+  readonly heading: string;
+  readonly steps: readonly {
+    readonly title: string;
+    readonly description: string;
+  }[];
+}
+
+export interface PageSeoConfig {
+  readonly meta: MetaChange;
+  readonly textReplacements: readonly TextReplacement[];
+  readonly seoBlock: string;
+  readonly contentBlocks?: readonly string[];
+  readonly stepsBlock?: StepsBlockConfig;
+  readonly brandsBlock?: BrandsBlockConfig;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Helpers                                                            */
+/* ------------------------------------------------------------------ */
+
+/** Wrap text in a styled <p> for reviews section subtitle injection. */
+export function reviewsSubtitle(text: string): string {
+  return `<p style="color:var(--ba-color-text-subtle);font-size:16px;line-height:1.5;margin:12px auto 0;max-width:640px;font-family:var(--ba-font-family);">${text}</p>`;
+}
 
 /* ------------------------------------------------------------------ */
 /*  SEO text block (H2 + paragraph + mini-points)                     */

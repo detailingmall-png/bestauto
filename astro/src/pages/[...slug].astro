@@ -30,6 +30,8 @@ import { SERVICE_FAQS } from '../data/service-faqs';
 import { injectBlogInternalLinks } from '../lib/blog-internal-links';
 import { buildSeoBlock, buildContentBlock, buildStepsBlock, buildBrandsBlock, replaceMetaTitle, replaceMetaDescription, injectAfterHero, injectAfterBenefits } from '../lib/seo-blocks';
 import { KA_SEO_PAGES } from '../data/ka-seo-changes';
+import { RU_SEO_PAGES } from '../data/ru-seo-changes';
+import { EN_SEO_PAGES } from '../data/en-seo-changes';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 const SERVICE_SLUGS = new Set([
@@ -368,9 +370,10 @@ if (baseSlug === 'blog') {
 let { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml, lang, baseSlug, baseSlug === '');
 let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
 
-// KA service pages: SEO text changes (meta, hero, benefits, trust, SEO/content blocks)
-if (lang === 'ka') {
-  const pageSeo = KA_SEO_PAGES[baseSlug];
+// Service pages: SEO text changes (meta, hero, benefits, trust, SEO/content blocks)
+{
+  const SEO_PAGES_MAP: Readonly<Record<string, Readonly<Record<string, import('../lib/seo-blocks').PageSeoConfig>>>> = { ka: KA_SEO_PAGES, ru: RU_SEO_PAGES, en: EN_SEO_PAGES };
+  const pageSeo = SEO_PAGES_MAP[lang]?.[baseSlug];
   if (pageSeo) {
     headContent = replaceMetaTitle(headContent, pageSeo.meta.title);
     headContent = replaceMetaDescription(headContent, pageSeo.meta.description);
@@ -860,19 +863,28 @@ if ((SERVICE_SLUGS.has(baseSlug) || baseSlug === 'carwash') && mainContent.inclu
   }
 }
 
-// KA service pages (except PPF): move shared studio gallery section after FAQ.
-// Shared gallery = name="photo" anchor (t215) + heading rec713418578 (T225) + rec713405036 (ba-gallery).
-// Service-specific galleries (interior-cleaning, windshield-repair) stay with their heading.
+// Service pages (except PPF): move shared studio gallery section after FAQ.
+// Each language has its own Tilda rec IDs for the shared gallery block.
+// Service-specific galleries (interior-cleaning, windshield-repair) stay in place
+// because their gallery ID differs from the shared one — the check below won't match.
 // PPF has its own gallery reorder in the PPF-specific block below.
-if (lang === 'ka' && SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wrapping') {
+const SHARED_GALLERY_IDS: Readonly<Record<string, string>> = {
+  ka: 'rec713405036', ru: 'rec2072063053', en: 'rec2072063803',
+};
+const GALLERY_HEADING_IDS: Readonly<Record<string, string>> = {
+  ka: 'rec713418578', ru: 'rec713423972', en: 'rec1862088871',
+};
+if (SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wrapping') {
   const faqId = `${baseSlug}-faq`;
-  if (mainContent.includes(`id="${faqId}"`) && mainContent.includes('id="rec713405036"')) {
-    // 1. Extract shared studio gallery (rec713405036 — same on all KA service pages)
+  const sharedGalleryId = SHARED_GALLERY_IDS[lang];
+  const galleryHeadingId = GALLERY_HEADING_IDS[lang];
+  if (sharedGalleryId && galleryHeadingId && mainContent.includes(`id="${faqId}"`) && mainContent.includes(`id="${sharedGalleryId}"`)) {
+    // 1. Extract shared studio gallery
     let sharedGallery: string;
-    [sharedGallery, mainContent] = extractDivById(mainContent, 'rec713405036');
-    // 2. Extract shared heading (rec713418578 = "ჩვენი ორი სტუდიის ფოტოები")
+    [sharedGallery, mainContent] = extractDivById(mainContent, sharedGalleryId);
+    // 2. Extract shared heading (T225 studio photos heading)
     let galleryHeading: string;
-    [galleryHeading, mainContent] = extractAndRemoveBlockRange(mainContent, 'rec713418578', 'rec713418578');
+    [galleryHeading, mainContent] = extractAndRemoveBlockRange(mainContent, galleryHeadingId, galleryHeadingId);
     // 3. Extract photo anchor (t215 with name="photo")
     let photoAnchor: string;
     [photoAnchor, mainContent] = extractTRecBlock(mainContent, 'name="photo"');
@@ -883,9 +895,10 @@ if (lang === 'ka' && SERVICE_SLUGS.has(baseSlug) && baseSlug !== 'ppf-shield-wra
   }
 }
 
-// Vinyl-wrapping KA: move process-steps and brands-section from after gallery
+// Vinyl-wrapping: move process-steps and brands-section from after gallery
 // to between prices CTA and reviews — matching PPF funnel order.
-if (lang === 'ka' && baseSlug === 'vinyl-wrapping') {
+// Block IDs (rec-process-steps, rec-brands-section, rec-prices-cta) are shared across all languages.
+if (baseSlug === 'vinyl-wrapping') {
   let processSteps: string;
   [processSteps, mainContent] = extractDivById(mainContent, 'rec-process-steps');
   let brandsSection: string;
@@ -1006,11 +1019,12 @@ if (lang === 'ka' && mainContent.includes('id="ba-contacts"')) {
 }
 
 // ===================================================================
-// PPF page (KA only): comprehensive block reorder for conversion funnel.
+// PPF page: comprehensive block reorder for conversion funnel.
 // Target: Hero → t508 → t502 → Prices → Process → Brands+Finishes
 //       → Reviews → FAQ → Gallery → Contacts → CrossSell
+// Rec IDs are shared across KA/RU/EN for the PPF page.
 // ===================================================================
-if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
+if (baseSlug === 'ppf-shield-wrapping') {
   // 1. Move t502 (Trust) right after t508 (PPF Advantages)
   let t502: string;
   [t502, mainContent] = extractTRecBlock(mainContent, 'data-alias-record-type="502"');
@@ -1050,7 +1064,7 @@ if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
   // 3. Move Process BESTAUTO block to merge with the Process+Video section.
   //    ProcessBA is an anonymous block containing "პროცესი BESTAUTO" (KA),
   //    "Процесс оклейки в BESTAUTO" (RU), or "wrapping process at BESTAUTO" (EN).
-  const processBAMarkers = ['პროცესი BESTAUTO', 'Процесс оклейки в BESTAUTO', 'wrapping process at BESTAUTO', 'coating process at BESTAUTO'];
+  const processBAMarkers = ['პროცესი BESTAUTO', 'Процесс оклейки в BESTAUTO', 'Как проходит оклейка в BESTAUTO', 'wrapping process at BESTAUTO', 'coating process at BESTAUTO'];
   for (const pm of processBAMarkers) {
     if (!mainContent.includes(pm)) continue;
     let processBA: string;
@@ -1088,7 +1102,7 @@ if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
   let finishOpts: string;
   [finishOpts, mainContent] = extractTRecBlock(mainContent, 'r t-rec ba-content-block');
   if (finishOpts) {
-    const brandsMarkers = ['ფირებს ვიყენებთ', 'пленки мы используем', 'films do we use'];
+    const brandsMarkers = ['ფირებს ვიყენებთ', 'Какие плёнки мы используем', 'пленки мы используем', 'Films We Use', 'films do we use'];
     for (const bm of brandsMarkers) {
       if (!mainContent.includes(bm)) continue;
       const bmIdx = mainContent.indexOf(bm);
@@ -1117,9 +1131,14 @@ if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
     }
   }
 
-  // 5. Move CTA1 ("გაიგეთ ფასი") → after prices (rec618600545)
-  let cta1: string;
-  [cta1, mainContent] = extractTRecBlock(mainContent, 'გაიგეთ ფასი');
+  // 5. Move CTA1 (price calculation CTA) → after prices (rec618600545)
+  const cta1Markers = ['გაიგეთ ფასი', 'Рассчитать стоимость', 'Get a Quote'];
+  let cta1: string = '';
+  for (const cm of cta1Markers) {
+    if (!mainContent.includes(cm)) continue;
+    [cta1, mainContent] = extractTRecBlock(mainContent, cm);
+    break;
+  }
   if (cta1) {
     cta1 = cta1.replace('padding-top:30px', 'padding-top:0px');
     mainContent = insertAfterRecId(mainContent, 'rec618600545', cta1);
@@ -1177,9 +1196,14 @@ if (baseSlug === 'ppf-shield-wrapping' && lang === 'ka') {
     }
   }
 
-  // 7. Move CTA2 ("გაქვთ შეკითხვები") → after FAQ (before gallery)
-  let cta2: string;
-  [cta2, mainContent] = extractTRecBlock(mainContent, 'გაქვთ შეკითხვები');
+  // 7. Move CTA2 (questions CTA) → after FAQ (before gallery)
+  const cta2Markers = ['გაქვთ შეკითხვები', 'Остались вопросы', 'Have Questions'];
+  let cta2: string = '';
+  for (const cm of cta2Markers) {
+    if (!mainContent.includes(cm)) continue;
+    [cta2, mainContent] = extractTRecBlock(mainContent, cm);
+    break;
+  }
   if (cta2) {
     cta2 = cta2.replace('padding-top:40px', 'padding-top:0px');
   }
