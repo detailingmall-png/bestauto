@@ -14,73 +14,73 @@ const FAQ_ITEMS: ReadonlyArray<FaqItem> = [
   {
     question: {
       ka: 'რა სერვისებს გვთავაზობთ?',
-      ru: 'Сколько времени занимает оклейка PPF?',
-      en: 'How long does PPF installation take?',
+      ru: 'Какие услуги вы предоставляете?',
+      en: 'What services do you offer?',
     },
     answer: {
       ka: 'ჩვენთან ხელმისაწვდომია PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, სალონის ქიმწმენდა, დეტეილინგ რეცხვა, ხმის იზოლაცია და საქარე მინის აღდგენა.',
-      ru: 'Полная оклейка PPF обычно занимает 3–5 рабочих дней, частичная (капот, фары, бампер) — 1–2 дня. Сроки зависят от размера и сложности автомобиля.',
-      en: 'Full PPF wrap typically takes 3–5 business days, partial coverage (hood, headlights, bumper) — 1–2 days. Timeline depends on the vehicle size and complexity.',
+      ru: 'У нас доступны оклейка PPF плёнкой, смена цвета плёнкой, полировка, керамическое покрытие, тонировка стёкол, химчистка салона, детейлинг мойка, шумоизоляция и ремонт лобового стекла.',
+      en: 'We offer PPF film wrapping, color change with film, polishing, ceramic coating, window tinting, interior cleaning, detailing car wash, soundproofing and windshield repair.',
     },
   },
   {
     question: {
       ka: 'სად მდებარეობს BESTAUTO?',
-      ru: 'Какие материалы вы используете?',
-      en: 'What materials do you use?',
+      ru: 'Где находится BESTAUTO?',
+      en: 'Where is BESTAUTO located?',
     },
     answer: {
       ka: 'BESTAUTO მუშაობს ორ ლოკაციაზე თბილისში — გურამიშვილსა და საბურთალოზე. ჩაწერის დროს შეგარჩევინებთ თქვენთვის უფრო მოსახერხებელ სტუდიას.',
-      ru: 'Работаем только с сертифицированными брендами: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. Это гарантирует качество и заводскую гарантию материалов.',
-      en: 'We work exclusively with certified brands: LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON, 3M. This ensures quality and manufacturer warranty on materials.',
+      ru: 'BESTAUTO работает в двух локациях в Тбилиси — на Гурамишвили и Сабуртало. При записи поможем выбрать удобную для вас студию.',
+      en: 'BESTAUTO operates at two locations in Tbilisi — Guramishvili and Saburtalo. When booking, we\'ll help you choose the most convenient studio.',
     },
   },
   {
     question: {
       ka: 'როგორ გავიგო რომელი სერვისი მჭირდება?',
-      ru: 'Что включает гарантия и как ей воспользоваться?',
-      en: 'What does the warranty cover and how do I use it?',
+      ru: 'Как понять, какая услуга мне нужна?',
+      en: 'How do I know which service I need?',
     },
     answer: {
       ka: 'თუ არ ხართ დარწმუნებული რომელი მომსახურებაა თქვენთვის სწორი, საუკეთესო გზაა უფასო დათვალიერება. ადგილზე გირჩევთ ოპტიმალურ გადაწყვეტას ავტომობილის მდგომარეობისა და თქვენი მიზნის მიხედვით.',
-      ru: 'На PPF плёнку — до 10 лет гарантии от пожелтения и отслаивания. При приёмке выдаём гарантийный сертификат. Для обращения по гарантии свяжитесь с нами с номером сертификата.',
-      en: 'PPF film — up to 10-year warranty against yellowing and peeling. You receive a warranty certificate at handover. To make a claim, contact us with your certificate number.',
+      ru: 'Если не уверены, какая услуга подходит — лучший вариант бесплатный осмотр. На месте подберём оптимальное решение с учётом состояния автомобиля и ваших целей.',
+      en: 'If you\'re not sure which service is right for you, a free inspection is the best option. We\'ll recommend the optimal solution based on your car\'s condition and your goals.',
     },
   },
   {
     question: {
       ka: 'შესაძლებელია რამდენიმე სერვისის ერთად გაკეთება?',
-      ru: 'Можно ли мыть машину после керамики / PPF?',
-      en: 'Can I wash my car after ceramic coating / PPF?',
+      ru: 'Можно ли сделать несколько услуг одновременно?',
+      en: 'Can I combine multiple services?',
     },
     answer: {
       ka: 'დიახ. ხშირად კლიენტები აერთიანებენ რამდენიმე მომსახურებას — მაგალითად, პოლირებას და კერამიკულ საფარს, ან PPF-სა და მინების დაბურვას.',
-      ru: 'После керамики рекомендуем не мыть машину 7 дней, после PPF — 48 часов. Затем можно мыть вручную pH-нейтральными средствами. Автоматическая мойка не рекомендуется.',
-      en: 'After ceramic coating, avoid washing for 7 days. After PPF — 48 hours. Then hand wash with pH-neutral products is fine. Automated car washes are not recommended.',
+      ru: 'Да. Клиенты часто совмещают несколько услуг — например, полировку и керамическое покрытие, или PPF и тонировку стёкол.',
+      en: 'Yes. Clients often combine several services — for example, polishing with ceramic coating, or PPF with window tinting.',
     },
   },
   {
     question: {
       ka: 'რამდენ ხანში მპასუხობთ ჩაწერის შემდეგ?',
-      ru: 'Работаете ли вы с новыми авто из салона?',
-      en: 'Do you work with brand-new cars from the dealership?',
+      ru: 'Как быстро вы отвечаете после записи?',
+      en: 'How quickly do you respond after booking?',
     },
     answer: {
       ka: 'როგორც წესი, მოთხოვნის გამოგზავნიდან 15 წუთის განმავლობაში გიკავშირდებით. ასევე შეგიძლიათ მოგვწეროთ WhatsApp-ზე ან დაგვირეკოთ პირდაპირ.',
-      ru: 'Да, новый автомобиль — идеальное время для нанесения PPF и керамики. Лак ещё чистый, что обеспечивает лучшую адгезию. Многие клиенты приезжают к нам прямо из салона.',
-      en: 'Yes, a brand-new car is the perfect time for PPF and ceramic coating. The paint is still pristine, ensuring optimal adhesion. Many clients drive to us straight from the dealership.',
+      ru: 'Как правило, свяжемся с вами в течение 15 минут после отправки заявки. Также можно написать нам в WhatsApp или позвонить напрямую.',
+      en: 'We typically get back to you within 15 minutes of your request. You can also message us on WhatsApp or call directly.',
     },
   },
   {
     question: {
       ka: 'რა მასალებს ვიყენებთ?',
-      ru: 'Можно ли приехать без записи?',
-      en: 'Can I visit without an appointment?',
+      ru: 'Какие материалы вы используете?',
+      en: 'What materials do you use?',
     },
     answer: {
       ka: 'ვმუშაობთ მხოლოდ სერტიფიცირებულ ბრენდებთან — LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON და 3M. ეს ნიშნავს მაღალ ხარისხს, სანდო შედეგს და მწარმოებლის ოფიციალურ გარანტიას.',
-      ru: 'Рекомендуем записаться заранее — так мы гарантируем наличие мастера и бокса. Запишитесь через WhatsApp или по телефону, и мы подберём удобное время.',
-      en: 'We recommend booking ahead to ensure a technician and bay are available. Schedule via WhatsApp or phone, and we\'ll find a convenient time.',
+      ru: 'Работаем только с сертифицированными брендами — LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON и 3M. Это означает высокое качество, надёжный результат и официальную гарантию производителя.',
+      en: 'We work exclusively with certified brands — LLumar, Quantum, LuxArmor, Koch-Chemie, GYEON and 3M. This means high quality, reliable results and official manufacturer warranty.',
     },
   },
 ];
