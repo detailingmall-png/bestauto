@@ -338,6 +338,10 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'დეტეილინგის რეცხვის ეტაპები', to: 'როგორ სრულდება დეტეილინგ რეცხვა' },
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('რეცხვის სერვისით სარგებლობის გამოცდილება — მანქანის უსაფრთხო რეცხვა საბურთალოზე და გლდანში, ასევე სხვა სერვისები')}</div>` },
+      // Price section heading
+      { from: '2-ფაზიანი და 3-ფაზიანი რეცხვის ფასები', to: 'ავტოსამრეცხაოს ფასები' },
+      // Add engine wash item (after last existing row)
+      { from: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 Gel</span></div>', to: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 Gel</span></div>' },
     ],
     seoBlock: '',
     contentBlocks: [],
