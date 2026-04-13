@@ -433,6 +433,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა', to: 'ფერადი PPF-ით და ვინილით ფერის შეცვლა სხვადასხვა მარკის ავტომობილებზე' },
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('ფერის შეცვლის სერვისით სარგებლობის გამოცდილება — ფერადი PPF-ით და ვინილით გადაკვრა, ასევე სხვა სერვისები')}</div>` },
+      // Add 2 items to vinyl/color change prices (after last existing item)
+      { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div>' },
     ],
     seoBlock: '',
   },
@@ -469,6 +471,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა', to: 'ასობით ავტომობილის სრული და ნაწილობრივი PPF გადაკვრა' },
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური შეფასებები</h2></span></div>', to: `მომხმარებლების რეალური შეფასებები</h2></span>${reviewsSubtitle('PPF სერვისით სარგებლობის გამოცდილება — დამცავი ფირის გადაკვრა და კაპოტის დაცვა, ასევე სხვა სერვისები')}</div>` },
+      // Add 2 items to PPF prices (after last existing item)
+      { from: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div>', to: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სალონის ელემენტების დამცავი ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ფრთის დამცავი ფირით გადაკვრა</span><span class="ba-price-value">600 Gel-დან</span></div>' },
     ],
     seoBlock: '',
     contentBlocks: [
