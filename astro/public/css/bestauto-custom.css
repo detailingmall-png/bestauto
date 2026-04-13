@@ -163,6 +163,11 @@ html {
 .t225__title [data-customstyle] {
   font-size: 36px !important;
 }
+/* H3 blog headings: smaller than H2. Class ba-h3 set by blog update scripts. */
+.ba-h3 .t225__title,
+.ba-h3 .t225__title [data-customstyle] {
+  font-size: 22px !important;
+}
 /* t502/t508 section headings (t-section__title) */
 .t502 .t-section__title,
 .t508 .t-section__title {
@@ -230,6 +235,10 @@ html {
   .t225__title,
   .t225__title [data-customstyle] {
     font-size: 32px !important;
+  }
+  .ba-h3 .t225__title,
+  .ba-h3 .t225__title [data-customstyle] {
+    font-size: 20px !important;
   }
   .t502 .t-section__title,
   .t508 .t-section__title {
@@ -437,6 +446,10 @@ html {
   .t225__title,
   .t225__title [data-customstyle] {
     font-size: 28px !important;
+  }
+  .ba-h3 .t225__title,
+  .ba-h3 .t225__title [data-customstyle] {
+    font-size: 18px !important;
   }
   .t502 .t-section__title,
   .t508 .t-section__title {
