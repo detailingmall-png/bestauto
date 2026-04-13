@@ -518,8 +518,9 @@ if (isBlogPage && baseSlug !== 'blog') {
     mainContent = mainContent.replaceAll('car amateurs', 'car owners');
   }
 
-  // Inject internal service links into KA blog articles
-  mainContent = injectBlogInternalLinks(mainContent, baseSlug, lang);
+  // Disabled: internal keyword links in blog articles (all languages)
+  // TODO: re-enable with improved linking logic after review
+  // mainContent = injectBlogInternalLinks(mainContent, baseSlug, lang);
 }
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
