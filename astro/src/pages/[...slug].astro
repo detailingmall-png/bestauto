@@ -20,7 +20,7 @@ import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, 
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
-import { generateBlogGridHtml, DISCONTINUED_BLOG_SLUGS, IMAGE_OVERRIDES } from '../lib/blog-grid';
+import { generateBlogGridHtml, IMAGE_OVERRIDES } from '../lib/blog-grid';
 import { generateBrandLogosHtml } from '../lib/brand-logos';
 import { generateProcessStepsHtml } from '../lib/process-steps';
 import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
   const pages = getAllPages();
   const validPages = pages
     .filter(p => !p.path.includes('.html'))
-    .filter(p => !discontinuedServiceSlugs.has(p.slug) && !DISCONTINUED_BLOG_SLUGS.has(p.slug));
+    .filter(p => !discontinuedServiceSlugs.has(p.slug));
 
   // Fetch once for all pages
   const [settings, pricingPage] = await Promise.all([
