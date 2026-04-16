@@ -15,7 +15,6 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !page.includes('/paintless-dent-repair') &&
-        !page.includes('/interior-restoration') &&
         !page.includes('/blog/pdr-method') &&
         !page.includes('/blog/pdr-after-hail') &&
         !page.includes('/blog/pdr-guidelines-and-techniques') &&

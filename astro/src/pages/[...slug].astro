@@ -41,7 +41,7 @@ const SERVICE_SLUGS = new Set([
 ]);
 
 export async function getStaticPaths() {
-  const discontinuedServiceSlugs = new Set(['paintless-dent-repair', 'interior-restoration']);
+  const discontinuedServiceSlugs = new Set(['paintless-dent-repair']);
   const pages = getAllPages();
   const validPages = pages
     .filter(p => !p.path.includes('.html'))
