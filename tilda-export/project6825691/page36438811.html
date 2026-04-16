@@ -756,8 +756,9 @@ document.addEventListener('click', function(e) {
     if (!isOpen) {
       form.classList.add('open');
       btn.style.display = 'none';
+      try { form.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) { form.scrollIntoView(); }
       var tel = form.querySelector('input[type="tel"]');
-      if (tel) tel.focus();
+      if (tel && window.matchMedia('(min-width: 769px)').matches) tel.focus();
     }
   };
   window.baClearError = function(input) {
