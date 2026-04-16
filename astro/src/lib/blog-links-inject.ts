@@ -18,7 +18,7 @@
  */
 
 import type { BlogLinkRule } from '../data/blog-links';
-import { isKnownServiceKeyword } from '../data/service-target-keywords';
+import { isKnownServiceKeyword } from '../data/seo-service-keywords';
 
 const LINK_STYLE = 'color:#e4c97e;text-decoration:underline;';
 const STEM_LEN = 5;          // Russian stem heuristic: first N chars match the root
@@ -80,8 +80,8 @@ export function injectEditorialBlogLinks(
   let duplicateStem = 0;
 
   for (const link of rule.links) {
-    if (lang === 'ru' && !isKnownServiceKeyword(link.target, link.anchor)) {
-      console.warn(`[blog-links] unknown-keyword ${baseSlug} (${lang}) role=${link.role} → ${link.target}: anchor "${link.anchor}" not in ВЧ-list for ${link.target}`);
+    if (!isKnownServiceKeyword(link.target, link.anchor, lang)) {
+      console.warn(`[blog-links] unknown-keyword ${baseSlug} (${lang}) role=${link.role} → ${link.target}: anchor "${link.anchor}" not in HF-list for ${link.target} (${lang})`);
       unknownKeyword++;
     }
 

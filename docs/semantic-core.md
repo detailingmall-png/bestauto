@@ -206,3 +206,78 @@
 1. **meta-overrides.ts** — update title/description for target queries
 2. **service-faqs.ts** — add/update FAQ per page (carwash expand, others add questions)
 3. **related-services.ts** — strengthen vinyl <-> ppf cross-links
+
+---
+
+## Machine-readable dictionary
+
+The narrative report above is paired with a structured TypeScript file used at
+build time:
+
+**`astro/src/data/seo-service-keywords.ts`**
+
+```ts
+SERVICE_KEYWORDS_RU['/polishing']  // ['полировка машины', 'полировка авто', ...]
+SERVICE_KEYWORDS_KA['/polishing']  // ['მანქანის პოლირება', 'პოლირება', ...]
+SERVICE_KEYWORDS_EN['/polishing']  // ['car polishing', ...]
+
+isKnownServiceKeyword('/polishing', 'Полировка авто', 'ru')  // → true
+isKnownServiceKeyword('/polishing', 'Описание услуги', 'ru') // → false
+```
+
+### What it contains
+
+Top 5–8 HF (high-frequency) search keywords per service × language, ordered by
+real GSC click data (16 months) and validated through:
+
+- **GSC** (Downloads/gsc_service_pages_16months.csv, ~6.4k rows) — actual
+  clicks/impressions per query that bring traffic to bestauto.ge.
+- **Competitor scan** (Apr 2026) — performance.ge, adetailing.ge,
+  detailing-ge.com, servisebi.ge, nam.ge, fixup.ge, priala.ge, cleancar.ge,
+  qimwmenda.ge. Captures local Georgian terminology that GSC alone misses.
+- **SERP intent check** — confirmed each term returns commercial service-page
+  results, not informational/news SERP.
+- **KA disambiguation** — manual review of cannibalising terms (`მანქანის ფირი`
+  for PPF vs vinyl, `შუშის აღდგენა` too generic, etc).
+
+### Current consumers
+
+1. `lib/blog-links-inject.ts` — `isKnownServiceKeyword(target, anchor, lang)`
+   validates that every editorial blog→service anchor text is a real HF query
+   before allowing the link injection at build time. Unknown anchors trigger
+   `unknown-keyword` warning in build log.
+
+### Planned consumers
+
+Same dictionary is reusable anywhere we make targeting decisions for service
+pages. Planned uses:
+
+- **Meta title/description rewrites** — when updating `{ka,ru,en}-seo-changes.ts`,
+  pull the top-2 HF terms for the page and require them in the new meta.
+- **Schema.org Service.name + alternateName** — populate per-language alternate
+  names from the dictionary so structured data matches search demand.
+- **On-page H2/FAQ audit** — script that scans rendered HTML and flags service
+  pages missing top-3 HF keywords from the dictionary.
+- **Ad copy keyword targeting** — single source of truth for paid campaigns
+  rather than a separate sheet maintained by hand.
+
+### Refresh cadence
+
+Re-run quarterly to keep up with seasonal shifts and new search trends:
+
+```bash
+cd ~/bestauto-content
+python3 scripts/gsc_export_2y.py
+# Then update SERVICE_KEYWORDS_* in seo-service-keywords.ts
+# and regenerate the narrative tables above from the new export.
+```
+
+### Adding a new keyword
+
+1. Confirm in `Downloads/gsc_service_pages_16months.csv` (or fresh GSC export)
+   that the term has real clicks/impressions on the target service page.
+2. (KA only) Verify a Georgian competitor uses the term in their H1/menu/title.
+3. Add to the appropriate `SERVICE_KEYWORDS_{LANG}[target]` array, in
+   priority order (top = most clicks).
+4. Note the source as a comment, e.g. `// GSC: 137 clicks` or
+   `// ALT: performance.ge H1`.
