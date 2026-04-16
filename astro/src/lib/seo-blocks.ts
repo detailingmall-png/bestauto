@@ -56,7 +56,7 @@ interface SeoBlockConfig {
 export function buildSeoBlock(cfg: SeoBlockConfig): string {
   const pts = cfg.points.map(p => `<span class="ba-seo-block__point">${p}</span>`).join('');
   return `<div class="r t-rec ba-seo-block" style="padding:60px 0;background:var(--ba-color-bg);">
-<div class="t-container" style="max-width:800px;margin:0 auto;padding:0 24px;">
+<div class="t-container" style="max-width:800px;margin:0 auto;padding:0 24px;box-sizing:border-box;">
 <h2 class="ba-seo-block__heading">${cfg.heading}</h2>
 <p class="ba-seo-block__text">${cfg.text}</p>
 <div class="ba-seo-block__points">${pts}</div>
@@ -88,7 +88,7 @@ export function buildContentBlock(cfg: ContentBlockConfig): string {
     ? `<p class="ba-content-block__footer">${cfg.footer}</p>`
     : '';
   return `<div class="r t-rec ba-content-block" style="padding:60px 0;background:var(--ba-color-bg);">
-<div class="t-container" style="max-width:800px;margin:0 auto;padding:0 24px;">
+<div class="t-container" style="max-width:800px;margin:0 auto;padding:0 24px;box-sizing:border-box;">
 <h2 class="ba-content-block__heading">${cfg.heading}</h2>
 <p class="ba-content-block__text">${cfg.text}</p>
 ${itemsHtml}${footerHtml}
