@@ -28,6 +28,8 @@ import { generateVideoGalleryHtml } from '../lib/video-gallery';
 import { replaceTildaFaqSection, removeTildaFaqSchema, renderFaqAccordion, resolveFaqItems } from '../lib/faq-accordion';
 import { SERVICE_FAQS } from '../data/service-faqs';
 import { injectBlogInternalLinks } from '../lib/blog-internal-links';
+import { injectEditorialBlogLinks } from '../lib/blog-links-inject';
+import { getBlogLinksForLang } from '../data/blog-links';
 import { buildSeoBlock, buildContentBlock, buildStepsBlock, buildBrandsBlock, replaceMetaTitle, replaceMetaDescription, injectAfterHero, injectAfterBenefits } from '../lib/seo-blocks';
 import { KA_SEO_PAGES } from '../data/ka-seo-changes';
 import { RU_SEO_PAGES } from '../data/ru-seo-changes';
@@ -518,9 +520,16 @@ if (isBlogPage && baseSlug !== 'blog') {
     mainContent = mainContent.replaceAll('car amateurs', 'car owners');
   }
 
-  // Disabled: internal keyword links in blog articles (all languages)
-  // TODO: re-enable with improved linking logic after review
+  // Disabled: automatic keyword-match injector (low-quality anchors, user opted out).
   // mainContent = injectBlogInternalLinks(mainContent, baseSlug, lang);
+
+  // Editorial link injection: explicit {contextQuote, anchor, target} pairs per article.
+  const editorialRules = getBlogLinksForLang(lang);
+  const injected = injectEditorialBlogLinks(mainContent, baseSlug, lang, editorialRules);
+  mainContent = injected.html;
+  if (injected.stats.applied + injected.stats.missed + injected.stats.ambiguous + injected.stats.unknownKeyword + injected.stats.duplicateStem > 0) {
+    console.log(`[blog-links] ${baseSlug} (${lang}): applied=${injected.stats.applied} missed=${injected.stats.missed} ambiguous=${injected.stats.ambiguous} unknown-kw=${injected.stats.unknownKeyword} dup-stem=${injected.stats.duplicateStem}`);
+  }
 }
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
