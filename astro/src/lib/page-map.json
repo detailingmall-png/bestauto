@@ -63,14 +63,6 @@
     "lang": "ru",
     "slug": "polishing"
   },
-  "36918868": {
-    "file": "page36918868.html",
-    "url": "https://bestauto.ge/ru/interior-restoration",
-    "path": "/ru/interior-restoration",
-    "title": "Восстановление элементов салона в Тбилиси",
-    "lang": "ru",
-    "slug": "interior-restoration"
-  },
   "36940808": {
     "file": "page36940808.html",
     "url": "https://bestauto.ge/ru/interior-cleaning",
@@ -94,14 +86,6 @@
     "title": "Car Interior Cleaning & Detailing in Tbilisi — from 200 GEL | BESTAUTO",
     "lang": "en",
     "slug": "interior-cleaning"
-  },
-  "36963981": {
-    "file": "page36963981.html",
-    "url": "https://bestauto.ge/en/interior-restoration",
-    "path": "/en/interior-restoration",
-    "title": "Car Interior Parts Restoration in Tbilisi",
-    "lang": "en",
-    "slug": "interior-restoration"
   },
   "36963983": {
     "file": "page36963983.html",
@@ -142,14 +126,6 @@
     "title": "მანქანის პოლირება თბილისში — BESTAUTO დეტეილინგი",
     "lang": "ka",
     "slug": "polishing"
-  },
-  "37069119": {
-    "file": "page37069119.html",
-    "url": "https://bestauto.ge/interior-restoration",
-    "path": "/interior-restoration",
-    "title": "ინტერიერის რესტავრაცია თბილისში",
-    "lang": "ka",
-    "slug": "interior-restoration"
   },
   "37069123": {
     "file": "page37069123.html",
@@ -367,30 +343,6 @@
     "lang": "ru",
     "slug": "computer-diagnostics"
   },
-  "37794273": {
-    "file": "page37794273.html",
-    "url": "https://bestauto.ge/ru/blog/why-restore-interior-elements",
-    "path": "/ru/blog/why-restore-interior-elements",
-    "title": "Реставрация салона автомобиля в Тбилиси",
-    "lang": "ru",
-    "slug": "blog/why-restore-interior-elements"
-  },
-  "37795736": {
-    "file": "page37795736.html",
-    "url": "https://bestauto.ge/en/blog/why-restore-interior-elements",
-    "path": "/en/blog/why-restore-interior-elements",
-    "title": "Interior Restoration for Cars in Tbilisi",
-    "lang": "en",
-    "slug": "blog/why-restore-interior-elements"
-  },
-  "37796062": {
-    "file": "page37796062.html",
-    "url": "https://bestauto.ge/blog/why-restore-interior-elements",
-    "path": "/blog/why-restore-interior-elements",
-    "title": "მანქანის ინტერიერის სალონის რესტავრაცია თბილისში",
-    "lang": "ka",
-    "slug": "blog/why-restore-interior-elements"
-  },
   "37880280": {
     "file": "page37880280.html",
     "url": "https://bestauto.ge/ru/blog/ppf-film-for-cars-protection",
@@ -454,30 +406,6 @@
     "title": "მანქანის კომპიუტერული დიაგნოსტიკა თბილისში — BESTAUTO | 50 ლარიდან",
     "lang": "ka",
     "slug": "computer-diagnostics"
-  },
-  "38043378": {
-    "file": "page38043378.html",
-    "url": "https://bestauto.ge/ru/blog/pdr-method",
-    "path": "/ru/blog/pdr-method",
-    "title": "Беспокрасочное удаление вмятин (PDR) - инновационный метод в автоиндустрии",
-    "lang": "ru",
-    "slug": "blog/pdr-method"
-  },
-  "38043698": {
-    "file": "page38043698.html",
-    "url": "https://bestauto.ge/blog/pdr-method",
-    "path": "/blog/pdr-method",
-    "title": "უფერო ნაკბენის მოცილება: ინოვაციური მეთოდი საავტომობილო ინდუსტრიაში",
-    "lang": "ka",
-    "slug": "blog/pdr-method"
-  },
-  "38071724": {
-    "file": "page38071724.html",
-    "url": "https://bestauto.ge/en/blog/pdr-method",
-    "path": "/en/blog/pdr-method",
-    "title": "Paintless Dent Repair (PDR): An Innovative Method in the Automotive Industry",
-    "lang": "en",
-    "slug": "blog/pdr-method"
   },
   "38099075": {
     "file": "page38099075.html",
@@ -647,30 +575,6 @@
     "lang": "en",
     "slug": "blog/engine-room-cleaning"
   },
-  "38741194": {
-    "file": "page38741194.html",
-    "url": "https://bestauto.ge/ru/blog/steering-wheel-restoration",
-    "path": "/ru/blog/steering-wheel-restoration",
-    "title": "Как новый: Реставрация руля для вашего комфорта",
-    "lang": "ru",
-    "slug": "blog/steering-wheel-restoration"
-  },
-  "38765977": {
-    "file": "page38765977.html",
-    "url": "https://bestauto.ge/blog/steering-wheel-restoration",
-    "path": "/blog/steering-wheel-restoration",
-    "title": "საჭის რესტავრაცია თქვენი კომფორტისთვის",
-    "lang": "ka",
-    "slug": "blog/steering-wheel-restoration"
-  },
-  "38766378": {
-    "file": "page38766378.html",
-    "url": "https://bestauto.ge/en/blog/steering-wheel-restoration",
-    "path": "/en/blog/steering-wheel-restoration",
-    "title": "As Good As New: Steering Wheel Restoration For Your Comfort",
-    "lang": "en",
-    "slug": "blog/steering-wheel-restoration"
-  },
   "38848576": {
     "file": "page38848576.html",
     "url": "https://bestauto.ge/ru/blog/ppf-benefits",
@@ -718,30 +622,6 @@
     "title": "Vinyl or PPF: Which Protects Better from UV, Scratches, and Stone Chips?",
     "lang": "en",
     "slug": "blog/protection-against-uv-rays-scratches"
-  },
-  "39006216": {
-    "file": "page39006216.html",
-    "url": "https://bestauto.ge/ru/blog/pdr-after-hail",
-    "path": "/ru/blog/pdr-after-hail",
-    "title": "Погода не помеха: беспокрасочное удаление вмятин от града",
-    "lang": "ru",
-    "slug": "blog/pdr-after-hail"
-  },
-  "39006920": {
-    "file": "page39006920.html",
-    "url": "https://bestauto.ge/blog/pdr-after-hail",
-    "path": "/blog/pdr-after-hail",
-    "title": "ამინდი პრობლემას არ წარმოადგენს: ნასეტყვარის ცივად გასწორება.",
-    "lang": "ka",
-    "slug": "blog/pdr-after-hail"
-  },
-  "39033206": {
-    "file": "page39033206.html",
-    "url": "https://bestauto.ge/en/blog/pdr-after-hail",
-    "path": "/en/blog/pdr-after-hail",
-    "title": "Weather Is Not A Problem: PDR After Hail",
-    "lang": "en",
-    "slug": "blog/pdr-after-hail"
   },
   "39061588": {
     "file": "page39061588.html",
@@ -911,30 +791,6 @@
     "lang": "en",
     "slug": "blog/car-interior-disinfection"
   },
-  "40122483": {
-    "file": "page40122483.html",
-    "url": "https://bestauto.ge/ru/blog/restoring-car-seats",
-    "path": "/ru/blog/restoring-car-seats",
-    "title": "Реставрация сидений автомобиля: стиль и качество",
-    "lang": "ru",
-    "slug": "blog/restoring-car-seats"
-  },
-  "40123147": {
-    "file": "page40123147.html",
-    "url": "https://bestauto.ge/blog/restoring-car-seats",
-    "path": "/blog/restoring-car-seats",
-    "title": "მანქანის სავარძლების რესტავრაცია: სტილი და ხარისხი",
-    "lang": "ka",
-    "slug": "blog/restoring-car-seats"
-  },
-  "40188573": {
-    "file": "page40188573.html",
-    "url": "https://bestauto.ge/en/blog/restoring-car-seats",
-    "path": "/en/blog/restoring-car-seats",
-    "title": "Car Seat Restoration: Style and Best Quality",
-    "lang": "en",
-    "slug": "blog/restoring-car-seats"
-  },
   "40249617": {
     "file": "page40249617.html",
     "url": "https://bestauto.ge/ru/blog/service-on-ppf-wrapped-car",
@@ -982,30 +838,6 @@
     "title": "Vinyl Wrap Care: Washing, Chemicals, and Products to Avoid",
     "lang": "en",
     "slug": "blog/hints-for-vinyl-wrapped-cars"
-  },
-  "40418526": {
-    "file": "page40418526.html",
-    "url": "https://bestauto.ge/ru/blog/pdr-guidelines-and-techniques",
-    "path": "/ru/blog/pdr-guidelines-and-techniques",
-    "title": "Как работает беспокрасочное удаление вмятин (PDR): основные принципы и техники",
-    "lang": "ru",
-    "slug": "blog/pdr-guidelines-and-techniques"
-  },
-  "40419406": {
-    "file": "page40419406.html",
-    "url": "https://bestauto.ge/blog/pdr-guidelines-and-techniques",
-    "path": "/blog/pdr-guidelines-and-techniques",
-    "title": "როგორ მუშაობს ცივად გასწორება (PDR): ძირითადი პრინციპები და ტექნიკა",
-    "lang": "ka",
-    "slug": "blog/pdr-guidelines-and-techniques"
-  },
-  "40453479": {
-    "file": "page40453479.html",
-    "url": "https://bestauto.ge/en/blog/pdr-guidelines-and-techniques",
-    "path": "/en/blog/pdr-guidelines-and-techniques",
-    "title": "How Paintless Dent Repair (PDR) Works: Basic Guidelines and Techniques",
-    "lang": "en",
-    "slug": "blog/pdr-guidelines-and-techniques"
   },
   "40487726": {
     "file": "page40487726.html",
@@ -1174,30 +1006,6 @@
     "title": "Interior Detailing in Tbilisi: Main Stages, Services, and Pricing",
     "lang": "en",
     "slug": "blog/car-interior-detailing-basics"
-  },
-  "41734485": {
-    "file": "page41734485.html",
-    "url": "https://bestauto.ge/ru/blog/plastic-elements-restoration",
-    "path": "/ru/blog/plastic-elements-restoration",
-    "title": "Ремонт пластиковых элементов автомобиля для сохранения его стиля и ценности",
-    "lang": "ru",
-    "slug": "blog/plastic-elements-restoration"
-  },
-  "41735359": {
-    "file": "page41735359.html",
-    "url": "https://bestauto.ge/blog/plastic-elements-restoration",
-    "path": "/blog/plastic-elements-restoration",
-    "title": "თქვენი მანქანის პლასტმასის ნაწილების შეკეთება მისი სტილისა და ღირებულების შესანა",
-    "lang": "ka",
-    "slug": "blog/plastic-elements-restoration"
-  },
-  "41766639": {
-    "file": "page41766639.html",
-    "url": "https://bestauto.ge/en/blog/plastic-elements-restoration",
-    "path": "/en/blog/plastic-elements-restoration",
-    "title": "Repairing Сar Plastic Elements to Preserve Its Style and Value",
-    "lang": "en",
-    "slug": "blog/plastic-elements-restoration"
   },
   "41931643": {
     "file": "page41931643.html",

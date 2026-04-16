@@ -43,13 +43,6 @@ export const IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
   'blog/soft-vs-abrasive-polishing': '/images/blog/soft-vs-abrasive-polishing.webp',
 };
 
-/** Blog slugs removed from the site (discontinued services). Shared with [...slug].astro. */
-export const DISCONTINUED_BLOG_SLUGS: ReadonlySet<string> = new Set([
-  'blog/pdr-method', 'blog/pdr-after-hail', 'blog/pdr-guidelines-and-techniques',
-  'blog/plastic-elements-restoration', 'blog/restoring-car-seats',
-  'blog/steering-wheel-restoration', 'blog/why-restore-interior-elements',
-]);
-
 function extractOgMeta(html: string): { description: string; image: string } {
   const description =
     html.match(/property="og:description"\s+content="([^"]*)"/)?.[1]
@@ -70,8 +63,7 @@ function loadArticles(): readonly ArticleMeta[] {
 
   const entries = Object.values(
     pageMap as Record<string, { file: string; title: string; lang: string; slug: string }>
-  ).filter(p => p.slug?.startsWith('blog/') && p.slug !== 'blog')
-    .filter(p => !DISCONTINUED_BLOG_SLUGS.has(p.slug));
+  ).filter(p => p.slug?.startsWith('blog/') && p.slug !== 'blog');
 
   const articles: ArticleMeta[] = entries.map(entry => {
     const html = readFileSync(join(EXPORT_DIR, entry.file), 'utf-8');
