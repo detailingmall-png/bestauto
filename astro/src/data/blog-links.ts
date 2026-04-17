@@ -357,6 +357,209 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- Polishing cluster ---
+  {
+    article: 'blog/car-body-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'Полировка кузова',
+        contextQuote: 'Полировка кузова — одна из самых востребованных услуг среди водителей',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие</strong> — создает химическую и гидрофобную защиту',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка',
+        originalPhrase: 'PPF-пленка',
+        contextQuote: 'В таких случаях более правильным решением часто становится PPF-пленка',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-interior-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка авто',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Основная задача химчистки — удалить из салона грязь, пятна, пыль, запахи и накопившиеся загрязнения',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка интерьера — не «волшебная реставрация»',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка на авто',
+        originalPhrase: 'защитная пленка',
+        contextQuote: 'иногда более разумным решением становится защитная пленка',
+      },
+    ],
+  },
+  {
+    article: 'blog/headlight-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка автомобиля',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка фар — это контролируемое восстановление поверхности',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка',
+        originalPhrase: 'пленка',
+        contextQuote: 'На практике именно пленка выглядит особенно интересным решением, потому что она защищает поверхность не только от UV-излучения',
+      },
+      // TODO: blog/headlight-polishing (ru) — no ceramic context in body; only 2 rules
+    ],
+  },
+  {
+    article: 'blog/how-often-polish-car',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка машины',
+        originalPhrase: 'полировки',
+        contextQuote: 'Частота полировки всегда зависит от того, в каких условиях живет автомобиль',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие авто',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие упрощает уход, усиливает гидрофобный эффект',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF работает иначе. Это не просто покрытие для облегчения мойки — это полноценный защитный слой',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-after-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'полировки',
+        contextQuote: 'Задача полировки — оптически выровнять поверхность, чтобы деталь естественно вписалась',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'Для этого можно использовать воск, синтетический силант или керамическое покрытие',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'защитная PPF-пленка',
+        contextQuote: 'наиболее эффективным решением чаще всего становится именно защитная PPF-пленка',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-before-after',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка лкп',
+        originalPhrase: 'полировка',
+        contextQuote: 'На самом деле полировка работает с тем, как свет взаимодействует с лаком',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'керамике',
+        contextQuote: 'Если приоритет — просто блеск и более легкий уход, можно остановиться на полировке + керамике',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'Владелец премиального авто выбрал полную защиту PPF LLumar',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-cost-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'полировка автомобиля',
+        contextQuote: 'Для многих полировка автомобиля — это просто вернуть блеск',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'Керамика',
+        contextQuote: 'Керамика подходит, если вы хотите усилить блеск, получить гидрофобный эффект',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF имеет смысл тогда, когда после полировки вы хотите максимально сохранить результат именно от механических повреждений',
+      },
+    ],
+  },
+  {
+    article: 'blog/soft-vs-abrasive-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'Глубокая полировка',
+        contextQuote: 'Глубокая полировка — это уже более интенсивная коррекция',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'керамика',
+        contextQuote: '<strong>керамика</strong> — если нужен более легкий уход',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'бронирование авто пленкой',
+        originalPhrase: 'PPF',
+        contextQuote: '<strong>PPF</strong> — если важна именно физическая защита от сколов',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -644,6 +847,209 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'ფერადი ფირის გადაკვრა',
         originalPhrase: 'ვინილის ფირი',
         contextQuote: 'ვინილის ფირი ბევრ ადამიანს იზიდავს',
+      },
+    ],
+  },
+  // --- Polishing cluster ---
+  {
+    article: 'blog/car-body-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'ძარას პოლირება',
+        contextQuote: 'ძარას პოლირება ერთ-ერთი ყველაზე მოთხოვნადი სერვისია იმ მძღოლებისთვის',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: '<strong>კერამიკული საფარი</strong> — ქმნის ქიმიურ და ჰიდროფობურ დაცვას',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის გადაკვრა',
+        originalPhrase: 'PPF დამცავი ფირია',
+        contextQuote: 'ასეთ სიტუაციებში უფრო სწორი არჩევანი ხშირად PPF დამცავი ფირია',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-interior-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'მანქანის ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'ქიმწმენდის მთავარი ამოცანაა სალონში არსებული ჭუჭყის, ლაქების, მტვრის, სუნის და დაგროვილი დაბინძურების მოცილება',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'გაპრიალება',
+        originalPhrase: 'გაპრიალება',
+        contextQuote: 'ინტერიერის გაპრიალება არ არის “სასწაული რესტავრაცია”',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირის',
+        contextQuote: 'ზოგჯერ უფრო სწორი გადაწყვეტილებაა დამცავი ფირის გამოყენება',
+      },
+    ],
+  },
+  {
+    article: 'blog/headlight-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'ავტომობილის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ფარების პოლირება არის ზედაპირის კონტროლირებადი აღდგენა',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'ფარების პოლირების შემდეგ არსებობს რამდენიმე გზა შედეგის შესანარჩუნებლად: სპეციალური დამცავი საფარი, ლაქი ან დამცავი ფირი',
+      },
+      // TODO: blog/headlight-polishing (ka) — no ceramic context in body; only 2 rules
+    ],
+  },
+  {
+    article: 'blog/how-often-polish-car',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'პოლირების სიხშირე ყოველთვის დამოკიდებულია იმაზე, რა პირობებში ცხოვრობს მანქანა',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ამარტივებს მოვლას, აუმჯობესებს ჰიდროფობურობას',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'PPF დამცავი ფირი',
+        contextQuote: 'PPF დამცავი ფირი სხვა ლოგიკით მუშაობს',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-after-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'პოლირების მიზანია ზედაპირის ოპტიკური გასწორება, რათა დეტალი ბუნებრივად ჩაჯდეს მთელ ავტომობილში',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'შეიძლება გამოყენებულ იქნას ცვილი, სინთეტიკური სილანტი ან კერამიკული საფარი',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'PPF დამცავი ფირია',
+        contextQuote: 'ყველაზე ეფექტური გადაწყვეტა ხშირად სწორედ PPF დამცავი ფირია',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-before-after',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'გაპრიალება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'სინამდვილეში პოლირება მუშაობს იმაზე, თუ როგორ ურთიერთობს სინათლე ლაქთან',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ავტომობილის კერამიკა',
+        originalPhrase: 'კერამიკას',
+        contextQuote: 'ვინც შემდეგ ნაბიჯად გეგმავენ კერამიკას ან PPF-ს და სურთ, რომ დამცავი ფენა სწორად მომზადებულ',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის დამცავი ფირი',
+        originalPhrase: 'PPF',
+        contextQuote: 'პოლირება აუმჯობესებს იმას, რაც უკვე გაქვთ. PPF კი ეხმარება ამ შედეგის შენარჩუნებას',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-cost-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება ფასი',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ეს ერთ-ერთი ყველაზე ხშირი კითხვაა. ბევრს ჰგონია, რომ პოლირება უკვე დაცვაც არის',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი კარგია მაშინ, როცა გსურთ ზედაპირის უფრო მარტივი მოვლა, უკეთესი ვიზუალი',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'PPF',
+        contextQuote: 'უფრო საიმედო გადაწყვეტილება ხშირად PPF-ია. პოლირება ავტომობილს აძლევს უკეთეს იერს',
+      },
+    ],
+  },
+  {
+    article: 'blog/soft-vs-abrasive-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'ღრმა პოლირება',
+        contextQuote: 'ღრმა პოლირება უკვე უფრო ინტენსიური კორექციაა. ის გამოიყენება მაშინ',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'კერამიკა უკეთ მუშაობს სწორად მომზადებულ ზედაპირზე. მსუბუქი პოლირება ხშირად სწორედ ის ეტაპია',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის ფირი',
+        originalPhrase: 'PPF ფირია',
+        contextQuote: 'ყველაზე სწორი გაგრძელება ხშირად PPF ფირია. BESTAUTO მუშაობს',
       },
     ],
   },
@@ -942,6 +1348,203 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car wrap',
         originalPhrase: 'Vinyl wrap',
         contextQuote: 'Vinyl wrap is a valid and useful option',
+      },
+    ],
+  },
+  // --- Polishing cluster ---
+  {
+    article: 'blog/car-body-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing is a controlled correction of the paint surface using dedicated compounds',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'before applying ceramic coating',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'PPF',
+        contextQuote: 'In that case, PPF is usually the more logical solution, because it creates an actual physical barrier',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-interior-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'car interior cleaning',
+        originalPhrase: 'Deep cleaning',
+        contextQuote: 'Deep cleaning focuses on removing dirt, stains, dust, grease, and contamination',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Interior polishing is not a “magic restoration” that removes every kind of damage',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'protective film',
+        contextQuote: 'a protective film may be more sensible than repeatedly polishing the same part',
+      },
+    ],
+  },
+  {
+    article: 'blog/headlight-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Headlight polishing',
+        contextQuote: 'Headlight polishing is a controlled restoration of the outer surface',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'film',
+        contextQuote: 'In practice, film is often one of the most interesting solutions because it protects not only from UV',
+      },
+      // TODO: blog/headlight-polishing (en) — no ceramic context in body; only 2 rules
+    ],
+  },
+  {
+    article: 'blog/how-often-polish-car',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polish service',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing frequency always depends on the environment in which the car lives',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating simplifies maintenance, improves hydrophobic behavior',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF works differently. It is not just a coating that makes washing easier — it is a true protective layer',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-after-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'The purpose of polishing is to optically even the surface out',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'a ceramic coating may be a logical next step',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF is usually the stronger solution',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-before-after',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'What polishing actually changes is the way light interacts with the paint',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF',
+        contextQuote: 'polishing + PPF is often the most rational strategy',
+      },
+      // TODO: blog/polishing-before-after (en) — no clean ceramic context in body; only 2 rules
+    ],
+  },
+  {
+    article: 'blog/polishing-cost-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing is a controlled correction of the upper portion of the paintwork',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating makes sense if you want stronger gloss, a hydrophobic effect',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf for car',
+        originalPhrase: 'PPF',
+        contextQuote: 'it often makes more sense to think not only about ceramic coating after polishing, but also about PPF',
+      },
+    ],
+  },
+  {
+    article: 'blog/soft-vs-abrasive-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing a car is not just about restoring gloss',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'car ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: '<strong>ceramic coating</strong> — if the goal is easier maintenance, hydrophobic behavior',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF',
+        contextQuote: '<strong>PPF</strong> — if physical protection from chips, road abrasion',
       },
     ],
   },
