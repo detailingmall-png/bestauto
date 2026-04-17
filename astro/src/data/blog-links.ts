@@ -212,6 +212,152 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- PPF cluster ---
+  {
+    article: 'blog/ppf-benefits',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка на авто',
+        originalPhrase: 'защитную PPF-пленку',
+        contextQuote: 'рассматривают не только полировку и керамическое покрытие, но и защитную PPF-пленку как долгосрочное решение',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие автомобиля',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие облегчает уход, усиливает гидрофобность',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка работает в первую очередь на визуальный результат',
+      },
+    ],
+  },
+  // NOTE: blog/ppf-film-benefits (ru) — skipped; RU HTML contains Georgian body content, not Russian
+  {
+    article: 'blog/ppf-film-for-cars-protection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'оклейка полиуретановой пленкой',
+        originalPhrase: 'полиуретановая защитная пленка',
+        contextQuote: 'PPF — это paint protection film, то есть полиуретановая защитная пленка, которая наносится либо на самые уязвимые зоны',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие</strong> больше помогает в уходе: усиливает гидрофобный эффект',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировку',
+        contextQuote: 'вы уже сделали полировку и хотите сохранить результат',
+      },
+    ],
+  },
+  {
+    article: 'blog/protection-against-uv-rays-scratches',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'защитная полиуретановая пленка',
+        contextQuote: 'то в большинстве случаев лучшим выбором будет PPF — защитная полиуретановая пленка',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'виниловая пленка',
+        originalPhrase: 'Виниловая пленка',
+        contextQuote: 'Виниловая пленка в основном используется',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'керамике',
+        contextQuote: 'Поэтому и в материалах о полировке, керамике, смене цвета и защите кузова',
+      },
+    ],
+  },
+  {
+    article: 'blog/service-on-ppf-wrapped-car',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF — один из лучших способов защитить лакокрасочное покрытие автомобиля',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'мойка авто',
+        originalPhrase: 'мойка',
+        contextQuote: 'Для PPF лучшая мойка — безопасная ручная мойка',
+      },
+      // TODO: blog/service-on-ppf-wrapped-car (ru) — couldn't find clean 3rd anchor; /polishing and /ceramiccoating only in reviews
+    ],
+  },
+  {
+    article: 'blog/strength-and-useful-life-of-ppf',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'оклейка автомобиля защитной пленкой',
+        originalPhrase: 'полное покрытие PPF',
+        contextQuote: 'полное покрытие PPF начинается от 7500 GEL',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие отлично работает на блеск, гидрофобность и упрощение ухода',
+      },
+      // TODO: blog/strength-and-useful-life-of-ppf (ru) — couldn't find clean 3rd anchor; /polishing only in reviews
+    ],
+  },
+  {
+    article: 'blog/top-5-car-paint-protection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'бронирование авто пленкой',
+        originalPhrase: 'защитная полиуретановая пленка',
+        contextQuote: 'Это защитная полиуретановая пленка, которая принимает часть удара на себя',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'Керамика',
+        contextQuote: 'Керамика — это не физическая броня',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'виниловая пленка',
+        originalPhrase: 'Винил',
+        contextQuote: 'Винил отлично работает тогда, когда вы хотите изменить внешний вид машины',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -354,6 +500,151 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'დამცავი ფირი',
         originalPhrase: 'PPF',
         contextQuote: 'PPF უფრო საიმედო გადაწყვეტაა',
+      },
+    ],
+  },
+  // --- PPF cluster ---
+  {
+    article: 'blog/ppf-benefits',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის დამცავი ფირი',
+        originalPhrase: 'PPF დამცავ ფირსაც',
+        contextQuote: 'არა მხოლოდ პოლირებას ან კერამიკულ საფარს, არამედ PPF დამცავ ფირსაც განიხილავს როგორც გრძელვადიან გადაწყვეტილებას',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ამარტივებს მოვლას, აძლიერებს ჰიდროფობურობას',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება ძირითადად მუშაობს ვიზუალურ შედეგზე',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-film-for-cars-protection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის გადაკვრა',
+        originalPhrase: 'პოლიურეთანის დამცავი ფირი',
+        contextQuote: 'PPF არის paint protection film — პოლიურეთანის დამცავი ფირი, რომელიც ავტომობილის ძარაზე ეკვრის',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ავტომობილის კერამიკა',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: '<strong>კერამიკული საფარი</strong> კი უფრო მეტად ამარტივებს მოვლას',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'ავტომობილის პოლირება',
+        originalPhrase: 'უკვე გააკეთეთ პოლირება',
+        contextQuote: 'უკვე გააკეთეთ პოლირება და გინდათ შედეგის შენარჩუნება',
+      },
+    ],
+  },
+  {
+    article: 'blog/protection-against-uv-rays-scratches',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'დამცავი პოლიურეთანის ფირი',
+        contextQuote: 'უმეტეს შემთხვევაში უკეთესი არჩევანია PPF — დამცავი პოლიურეთანის ფირი',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირი',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'ვინილის ფირი ძირითადად გამოიყენება',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული დაფარვა',
+        originalPhrase: 'კერამიკაზე',
+        contextQuote: 'ამიტომ პოლირებაზე, კერამიკაზე და ზოგადად ძარის დაცვაზე საუბრისას',
+      },
+    ],
+  },
+  {
+    article: 'blog/service-on-ppf-wrapped-car',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'PPF დამცავი ფირი',
+        contextQuote: 'PPF დამცავი ფირი ერთ-ერთი საუკეთესო გზაა მანქანის საღებავის დასაცავად',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'ხელით რეცხვა',
+        contextQuote: 'PPF-ისთვის საუკეთესო რეცხვა არის უსაფრთხო ხელით რეცხვა',
+      },
+      // TODO: blog/service-on-ppf-wrapped-car (ka) — couldn't find clean 3rd anchor
+    ],
+  },
+  {
+    article: 'blog/strength-and-useful-life-of-ppf',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის ფირი',
+        originalPhrase: 'PPF ფირი',
+        contextQuote: 'მოკლე პასუხი ასეთია: ხარისხიანი PPF ფირი პრაქტიკაში ხშირად',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ძალიან კარგია ბზინვარებისთვის',
+      },
+      // TODO: blog/strength-and-useful-life-of-ppf (ka) — couldn't find clean 3rd anchor
+    ],
+  },
+  {
+    article: 'blog/top-5-car-paint-protection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ფირის გადაკვრა',
+        originalPhrase: 'PPF ყველაზე ძლიერი არჩევანია',
+        contextQuote: 'ყოველდღიური ექსპლუატაციისგან, PPF ყველაზე ძლიერი არჩევანია',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული პოლირება',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი კარგი არჩევანია მათთვის',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ფერადი ფირის გადაკვრა',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'ვინილის ფირი ბევრ ადამიანს იზიდავს',
       },
     ],
   },
@@ -507,6 +798,151 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ppf for car',
         originalPhrase: 'PPF',
         contextQuote: 'That is where PPF becomes the more logical option',
+      },
+    ],
+  },
+  // --- PPF cluster ---
+  {
+    article: 'blog/ppf-benefits',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'protective PPF film',
+        contextQuote: 'drivers today consider not only polishing and ceramic coating, but also protective PPF film as a long-term solution',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating makes maintenance easier, increases hydrophobicity',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing is primarily about visual improvement',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-film-for-cars-protection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF stands for paint protection film',
+        contextQuote: 'PPF stands for paint protection film. It is a polyurethane film applied to the most vulnerable panels',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'car ceramic coating',
+        originalPhrase: 'ceramic may be enough',
+        contextQuote: 'If your priority is easier washing and visual enhancement, ceramic may be enough',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'polishing may be necessary so the film is applied over a better visual base',
+      },
+    ],
+  },
+  {
+    article: 'blog/protection-against-uv-rays-scratches',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'car ppf',
+        originalPhrase: 'PPF—a protective polyurethane film',
+        contextQuote: 'then in most cases PPF—a protective polyurethane film—is the better choice',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl wrap',
+        originalPhrase: 'Vinyl',
+        contextQuote: 'Vinyl\u2019s strongest side is aesthetics',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'articles about polishing, ceramic coating, and body protection',
+      },
+    ],
+  },
+  {
+    article: 'blog/service-on-ppf-wrapped-car',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf for car',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF is one of the best ways to protect automotive paint from everyday damage',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'car wash',
+        originalPhrase: 'hand wash',
+        contextQuote: 'The best washing method for PPF is a safe hand wash or a detailing wash that knows how to work with film-covered cars',
+      },
+      // TODO: blog/service-on-ppf-wrapped-car (en) — couldn't find clean 3rd anchor
+    ],
+  },
+  {
+    article: 'blog/strength-and-useful-life-of-ppf',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'high-quality PPF',
+        contextQuote: 'high-quality PPF often lasts <strong>5 to 10 years</strong> in real use',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'PPF is the stronger solution',
+        contextQuote: 'If the goal is long-term defense against impact and real paint preservation, PPF is the stronger solution',
+      },
+      // TODO: blog/strength-and-useful-life-of-ppf (en) — couldn't find clean 3rd anchor
+    ],
+  },
+  {
+    article: 'blog/top-5-car-paint-protection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF is the strongest option',
+        contextQuote: 'If your main goal is protecting the paint from chips, road debris, light abrasion, and daily mechanical stress, PPF is the strongest option',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'car ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is a very popular solution for owners who want stronger gloss',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'car wrap',
+        originalPhrase: 'Vinyl wrap',
+        contextQuote: 'Vinyl wrap is a valid and useful option',
       },
     ],
   },
