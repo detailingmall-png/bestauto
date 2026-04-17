@@ -239,7 +239,6 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
-  // NOTE: blog/ppf-film-benefits (ru) — skipped; RU HTML contains Georgian body content, not Russian
   {
     article: 'blog/ppf-film-for-cars-protection',
     links: [

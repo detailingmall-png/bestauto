@@ -59,7 +59,6 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/interior-ceramic-coating':     'ceramiccoating',
   // PPF
   'blog/ppf-benefits':                       'ppf-shield-wrapping',
-  'blog/ppf-film-benefits':                  'ppf-shield-wrapping',
   'blog/ppf-film-for-cars-protection':       'ppf-shield-wrapping',
   'blog/service-on-ppf-wrapped-car':         'ppf-shield-wrapping',
   'blog/strength-and-useful-life-of-ppf':    'ppf-shield-wrapping',

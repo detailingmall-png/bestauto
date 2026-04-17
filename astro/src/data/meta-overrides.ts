@@ -619,11 +619,6 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Learn what benefits protective PPF film offers, when it is worth installing, which zones are protected most often, and what prices are currently available at BESTAUTO in Tbilisi.',
   },
 
-  'ru/blog/ppf-film-benefits': {
-    title: 'Полиуретановая защитная пленка (PPF): преимущества',
-    description: 'Чем полиуретановая плёнка PPF лучше других методов защиты кузова: сравнение с керамикой и винилом по ключевым параметрам.',
-  },
-
   'ka/blog/ppf-film-for-cars-protection': {
     title: 'PPF ფირით დაფარვა: როგორ იცავს ძარას ნაკაწრებისა და ნაკენჭარებისგან',
     description: 'რა არის PPF დამცავი ფირი, სად ჯობს მისი დაკვრა, რას იცავს რეალურად და რატომ არის მნიშვნელოვანი ხარისხიანი მონტაჟი და სწორი ბრენდის შერჩევა.',

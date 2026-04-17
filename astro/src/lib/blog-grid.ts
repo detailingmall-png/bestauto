@@ -31,7 +31,6 @@ export const IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
   'blog/polishing-before-after': '/images/blog/polishing-before-after.webp',
   'blog/polishing-before-ceramic': '/images/blog/polishing-before-ceramic.webp',
   'blog/polishing-cost-tbilisi': '/images/blog/polishing-cost-tbilisi.webp',
-  'blog/ppf-film-benefits': '/images/blog/ppf-film-benefits.webp',
   'blog/ceramic-coating-care': '/images/blog/ceramic-coating-care.webp',
   'blog/ceramic-coating-durability': '/images/blog/ceramic-coating-durability.webp',
   'blog/ceramic-coating-tbilisi': '/images/blog/ceramic-coating-tbilisi.webp',
