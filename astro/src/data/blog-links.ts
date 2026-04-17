@@ -560,6 +560,237 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- Vinyl cluster ---
+  {
+    article: 'blog/benefits-of-vinyl-wraps',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'оклейка авто пленкой тбилиси',
+        originalPhrase: 'оклейкой',
+        contextQuote: 'Поэтому перед оклейкой нужен правильный осмотр',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка на авто',
+        originalPhrase: 'цветную защитную пленку',
+        contextQuote: 'правильнее выбирать PPF или цветную защитную пленку',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'легкого восстановления',
+        contextQuote: 'Одному автомобилю достаточно глубокой мойки и деконтаминации, другому — легкого восстановления или локальной коррекции',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-body-color-with-vinyl-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'виниловая пленка',
+        originalPhrase: 'Виниловая пленка',
+        contextQuote: 'Виниловая пленка в первую очередь меняет',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка',
+        originalPhrase: 'цветной защитной пленки',
+        contextQuote: 'разумнее смотреть в сторону цветной защитной пленки',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие авто',
+        originalPhrase: 'хорошо отполированного кузова',
+        contextQuote: 'Глянцевый винил ближе всего к восприятию свежевыкрашенного или хорошо отполированного кузова',
+      },
+    ],
+  },
+  {
+    article: 'blog/hints-for-vinyl-wrapped-cars',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'оклейка винилом',
+        originalPhrase: 'оклейка винилом',
+        contextQuote: 'Для многих оклейка винилом — самый гибкий способ',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'детейлинг мойка',
+        originalPhrase: 'детейлинг-мойка',
+        contextQuote: 'детейлинг-мойка, где умеют работать с оклеенными автомобилями',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'максимальная защита от камней',
+        contextQuote: 'если ваша цель — максимальная защита от камней и интенсивного механического воздействия',
+      },
+    ],
+  },
+  // --- Tinting cluster ---
+  {
+    article: 'blog/legal-aspects-of-tinting-in-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка в грузии',
+        originalPhrase: 'Тонировка стекол в Грузии',
+        contextQuote: 'Тонировка стекол в Грузии — одна из самых востребованных услуг',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка лобового стекла',
+        originalPhrase: 'Лобовое стекло',
+        contextQuote: 'Лобовое стекло в Грузии — самая деликатная зона с точки зрения регулирования',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'ремонт лобового стекла',
+        originalPhrase: 'Неправильно подобранная или неправильно установленная пленка',
+        contextQuote: 'Неправильно подобранная или неправильно установленная пленка может создать не только юридические, но и технические проблемы',
+      },
+    ],
+  },
+  {
+    article: 'blog/vehicle-tinting-techniques',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка стекол авто',
+        originalPhrase: 'Тонировка стекол автомобиля',
+        contextQuote: 'Тонировка стекол автомобиля — одна из самых востребованных услуг',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'атермальная тонировка',
+        originalPhrase: 'технологичной',
+        contextQuote: 'может быть технологичной, где основной акцент делается на снижение теплопритока',
+      },
+      // TODO: blog/vehicle-tinting-techniques (ru) — no /ppf or /windshield context in body; 2 rules
+    ],
+  },
+  {
+    article: 'blog/window-tinting-care',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'сама тонировка',
+        contextQuote: 'Поэтому сама тонировка — только начало',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка тбилиси',
+        originalPhrase: 'тонировка начинается',
+        contextQuote: 'По текущему открытому прайсу BESTAUTO тонировка начинается со следующих ориентиров',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'бесконтактная мойка',
+        originalPhrase: 'автоматических моек',
+        contextQuote: 'Особенно это касается автоматических моек с жесткими щетками',
+      },
+    ],
+  },
+  // --- Windshield cluster ---
+  {
+    article: 'blog/efficiency-of-windshield-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт сколов на лобовом стекле',
+        originalPhrase: 'ремонта сколов и трещин',
+        contextQuote: 'Эффективность ремонта сколов и трещин зависит от четырех основных факторов',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт трещин лобового стекла',
+        originalPhrase: '«можно ли отремонтировать стекло»',
+        contextQuote: 'Поэтому вопрос не только в том, «можно ли отремонтировать стекло»',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка автомобиля',
+        originalPhrase: 'полировку',
+        contextQuote: 'специалист может рекомендовать дополнительную процедуру — например, полировку или более глубокую коррекцию',
+      },
+    ],
+  },
+  {
+    article: 'blog/replace-or-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт лобового стекла',
+        originalPhrase: 'отремонтировать стекло',
+        contextQuote: 'Главный вопрос почти всегда один: можно ли отремонтировать стекло или уже нужна замена',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт стекла автомобиля',
+        originalPhrase: 'Профессиональный ремонт',
+        contextQuote: 'Профессиональный ремонт — это не просто нанесение какого-то состава сверху',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'атермальная тонировка',
+        originalPhrase: 'наличия датчиков',
+        contextQuote: 'потому что она зависит от модели автомобиля, самого стекла, наличия датчиков, обогрева',
+      },
+    ],
+  },
+  {
+    article: 'blog/windshield-repair-benefits',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'восстановление лобового стекла',
+        originalPhrase: 'реставрацию лобового стекла',
+        contextQuote: 'Поэтому реставрацию лобового стекла чаще стоит воспринимать',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт автостекол',
+        originalPhrase: 'ремонта',
+        contextQuote: 'основная польза своевременного ремонта скола на лобовом стекле',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка авто',
+        originalPhrase: 'подогревом',
+        contextQuote: 'где стекло интегрировано с ассистентами, подогревом или камерами',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -1050,6 +1281,237 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'მანქანის ფირი',
         originalPhrase: 'PPF ფირია',
         contextQuote: 'ყველაზე სწორი გაგრძელება ხშირად PPF ფირია. BESTAUTO მუშაობს',
+      },
+    ],
+  },
+  // --- Vinyl cluster ---
+  {
+    article: 'blog/benefits-of-vinyl-wraps',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ფირის გადაკვრა',
+        originalPhrase: 'ვინილის ფირის გადაკვრა',
+        contextQuote: 'ვინილის ფირის გადაკვრა ნიშნავს ავტომობილის ძარაზე სპეციალური დეკორატიული ფირის დაკვრას',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'ფერადი დამცავი ფირი',
+        contextQuote: 'უფრო სწორი არჩევანია PPF ან ფერადი დამცავი ფირი',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'ახლად გაპრიალებული',
+        contextQuote: 'ავტომობილი ახალია ან ახლად გაპრიალებული',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-body-color-with-vinyl-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ფერადი ფირის გადაკვრა',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'ვინილის ფირი პირველ რიგში ცვლის ავტომობილის',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის დამცავი ფირი',
+        originalPhrase: 'ფერადი დამცავი ფირი',
+        contextQuote: 'ბევრ შემთხვევაში ჯობს ფერადი დამცავი ფირი',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული პოლირება',
+        originalPhrase: 'კარგად გაპრიალებული',
+        contextQuote: 'პრიალა ვინილი ყველაზე ახლოს დგას ახლად შეღებილი ან კარგად გაპრიალებული ძარის ვიზუალთან',
+      },
+    ],
+  },
+  {
+    article: 'blog/hints-for-vinyl-wrapped-cars',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირი',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'ვინილის ფირი განსაკუთრებით მგრძნობიარე ხდება მაშინ',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'ხელით რეცხვა',
+        contextQuote: 'ვინილით დაფარული ავტომობილისთვის საუკეთესო ვარიანტი არის უსაფრთხო ხელით რეცხვა',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის გადაკვრა',
+        originalPhrase: 'PPF დამცავი ფირია',
+        contextQuote: 'ამ ამოცანისთვის უკეთესი არჩევანი ხშირად PPF დამცავი ფირია',
+      },
+    ],
+  },
+  // --- Tinting cluster ---
+  {
+    article: 'blog/legal-aspects-of-tinting-in-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მინების დაბურვა',
+        originalPhrase: 'საავტომობილო ფანჯრებისთვის დაბურვის ფირები',
+        contextQuote: 'როდესაც პირველად გამოიყენეს საავტომობილო ფანჯრებისთვის დაბურვის ფირები',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'შუშების დაბურვა',
+        originalPhrase: 'საქართველოში ავტომობილის შუშის დაბურვა',
+        contextQuote: 'საქართველოში ავტომობილის შუშის დაბურვა რეგულირდება მკაცრი კანონმდებლობით',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის აღდგენა',
+        originalPhrase: 'საქარე მინის დაბურვა',
+        contextQuote: 'საქარე მინის დაბურვა საქართველოში',
+      },
+    ],
+  },
+  {
+    article: 'blog/vehicle-tinting-techniques',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მანქანის მინების დაბურვა',
+        originalPhrase: 'მანქანის მინების დაბურვა',
+        contextQuote: 'მანქანის მინების დაბურვა ერთ-ერთი ყველაზე მოთხოვნადი სერვისია',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მინების დამუქება',
+        originalPhrase: 'სწორად შესრულებული მინების დაბურვა',
+        contextQuote: 'ასეთ დროს სწორად შესრულებული მინების დაბურვა არა მხოლოდ უკეთეს იერს',
+      },
+      // TODO: blog/vehicle-tinting-techniques (ka) — no /ppf or /windshield context; 2 rules
+    ],
+  },
+  {
+    article: 'blog/window-tinting-care',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მინის დაბურვა',
+        originalPhrase: 'ახლად დაბურულ მინაზე',
+        contextQuote: 'ახლად დაბურულ მინაზე ზედმეტი ჩარევა',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მანქანის დაბურვა',
+        originalPhrase: 'დაბურული მინები',
+        contextQuote: 'დაბურული მინები ყველაზე ხშირად არა ცუდი მონტაჟის',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'მანქანის გარეცხვა',
+        originalPhrase: 'მინების გარეცხვა',
+        contextQuote: 'როდის შეიძლება მინების გარეცხვა',
+      },
+    ],
+  },
+  // --- Windshield cluster ---
+  {
+    article: 'blog/efficiency-of-windshield-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის აღდგენა',
+        originalPhrase: 'საქარე მინის შეკეთება',
+        contextQuote: 'როგორ ხდება საქარე მინის შეკეთება',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'მანქანის შუშის აღდგენა',
+        originalPhrase: 'საქარე მინის რემონტი',
+        contextQuote: 'რამდენად ეფექტურია საქარე მინის რემონტი',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'მინების დაბურვა',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'სპეციალისტმა შეიძლება გირჩიოთ რემონტის შემდეგ დამატებითი პროცედურა — მაგალითად, პოლირება ან უფრო ღრმა კორექცია',
+      },
+    ],
+  },
+  {
+    article: 'blog/replace-or-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინების აღდგენა',
+        originalPhrase: 'საქარე მინის შეკეთება',
+        contextQuote: 'როდის შეიძლება საქარე მინის შეკეთება',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'მანქანის მინის აღდგენა',
+        originalPhrase: 'პროფესიონალური შეკეთება',
+        contextQuote: 'პროფესიონალური შეკეთება არ ნიშნავს უბრალოდ ზედაპირზე რაღაც მასალის დატანას',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'შუშების დამუქება',
+        originalPhrase: 'სენსორებზე',
+        contextQuote: 'დამოკიდებულია ავტომობილის მოდელზე, მინაზე, სენსორებზე, გამათბობლებზე',
+      },
+    ],
+  },
+  {
+    article: 'blog/windshield-repair-benefits',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის შეკეთება',
+        originalPhrase: 'საქარე მინის რესტავრაცია',
+        contextQuote: 'საქარე მინის რესტავრაცია უმეტეს შემთხვევაში',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის აღდგენა',
+        originalPhrase: 'დროული დათვალიერება',
+        contextQuote: 'დროული დათვალიერება გეხმარებათ სწორად განსაზღვროთ',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'მანქანის დაბურვა',
+        originalPhrase: 'გათბობასთან',
+        contextQuote: 'როცა მინა ინტეგრირებულია სხვადასხვა დამხმარე სისტემასთან, გათბობასთან ან კამერებთან',
       },
     ],
   },
@@ -1545,6 +2007,231 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ppf wrap',
         originalPhrase: 'PPF',
         contextQuote: '<strong>PPF</strong> — if physical protection from chips, road abrasion',
+      },
+    ],
+  },
+  // --- Vinyl cluster ---
+  {
+    article: 'blog/benefits-of-vinyl-wraps',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'car wrapping',
+        originalPhrase: 'Vinyl wrapping',
+        contextQuote: 'Vinyl wrapping means applying a decorative film to the body of the vehicle',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'car ppf',
+        originalPhrase: 'PPF',
+        contextQuote: 'In those cases, PPF or colored protective film usually works better',
+      },
+      // TODO: blog/benefits-of-vinyl-wraps (en) — no clean /polishing or /ceramiccoating context outside reviews; 2 rules
+    ],
+  },
+  {
+    article: 'blog/car-body-color-with-vinyl-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'wrap car',
+        originalPhrase: 'Vinyl wrap',
+        contextQuote: 'Vinyl wrap primarily changes the',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf for car',
+        originalPhrase: 'Colored PPF',
+        contextQuote: 'Colored PPF, by contrast, combines a color change with a noticeably higher level of real physical protection',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'well-polished body',
+        contextQuote: 'Gloss vinyl is the closest thing to the visual impression of a freshly painted or well-polished body',
+      },
+    ],
+  },
+  {
+    article: 'blog/hints-for-vinyl-wrapped-cars',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'car wrap',
+        originalPhrase: 'wrapping a car in vinyl',
+        contextQuote: 'For many owners, wrapping a car in vinyl is the most flexible way to change its appearance without repainting it',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'premium car wash',
+        originalPhrase: 'hand wash',
+        contextQuote: 'The best option for a vinyl-wrapped vehicle is a safe hand wash or a detailing wash that actually understands wrap care',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF is the more appropriate solution',
+        contextQuote: 'if the main goal is preserving the paint from real impacts and front-end abuse, PPF is the more appropriate solution',
+      },
+    ],
+  },
+  // --- Tinting cluster ---
+  {
+    article: 'blog/legal-aspects-of-tinting-in-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tinting',
+        originalPhrase: 'Window tinting in Georgia',
+        contextQuote: 'Window tinting in Georgia is one of the most requested services',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'car window tint',
+        originalPhrase: 'tint',
+        contextQuote: 'Knowing the tint rules saves time and money first of all',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'compromising this area',
+        contextQuote: 'Even if a darker look seems appealing, compromising this area is rarely a smart practical decision',
+      },
+    ],
+  },
+  {
+    article: 'blog/vehicle-tinting-techniques',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'car tinting',
+        originalPhrase: 'Car window tinting',
+        contextQuote: 'Car window tinting is one of the most practical upgrades',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'a properly selected window film',
+        contextQuote: 'a properly selected window film does not just improve the way the car looks',
+      },
+      // TODO: blog/vehicle-tinting-techniques (en) — no /ppf or /windshield context; 2 rules
+    ],
+  },
+  {
+    article: 'blog/window-tinting-care',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'car window tint',
+        originalPhrase: 'Tinted windows',
+        contextQuote: 'Tinted windows are often chosen for appearance first',
+      },
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tinting',
+        originalPhrase: 'getting the film installed',
+        contextQuote: 'That is why getting the film installed is only the beginning',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'car wash',
+        originalPhrase: 'Exterior washing',
+        contextQuote: 'Exterior washing is less risky because the film is installed on the inside of the glass',
+      },
+    ],
+  },
+  // --- Windshield cluster ---
+  {
+    article: 'blog/efficiency-of-windshield-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'Windshield repair',
+        contextQuote: 'Windshield repair can be very effective — but only when expectations are realistic',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'auto glass repair',
+        originalPhrase: 'repair',
+        contextQuote: 'when is it smarter to stop thinking about repair and start thinking about replacement',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'car window tint',
+        originalPhrase: 'polishing',
+        contextQuote: 'a specialist may recommend an additional procedure such as polishing or a more thorough correction',
+      },
+    ],
+  },
+  {
+    article: 'blog/replace-or-repair',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'car glass repair',
+        originalPhrase: 'the glass still be repaired',
+        contextQuote: 'can the glass still be repaired, or is replacement already necessary',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windscreen repair',
+        originalPhrase: 'A professional repair',
+        contextQuote: 'A professional repair is not just “putting some product on top.”',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'heating elements',
+        contextQuote: 'because it depends on the vehicle model, the specific windshield, the presence of sensors, heating elements, and other technical features',
+      },
+    ],
+  },
+  {
+    article: 'blog/windshield-repair-benefits',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'windshield restoration',
+        contextQuote: 'windshield restoration should usually be seen not as a “second-rate option,”',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'auto glass repair',
+        originalPhrase: 'timely repair of a small chip',
+        contextQuote: 'timely repair of a small chip has several serious advantages at once',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'car tinting',
+        originalPhrase: 'heating elements',
+        contextQuote: 'on cars where the windshield is integrated with driver-assistance systems, heating elements, or cameras',
       },
     ],
   },
