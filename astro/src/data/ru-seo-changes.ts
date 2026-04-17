@@ -18,8 +18,10 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== HOMEPAGE ====== */
   '': {
     meta: {
-      title: 'Авто детейлинг в Тбилиси — PPF, полировка, керамика | BESTAUTO',
-      description: 'BESTAUTO — премиум авто детейлинг студия в Тбилиси. Оклейка PPF плёнкой, оклейка цветной плёнкой, полировка, керамическое покрытие, тонировка стёкол, химчистка и 2 локации в Тбилиси.',
+      // GSC: 'детейлинг тбилиси' (102 clicks top); adds 'тонировка' (27 clicks on /ru/auto-glass-tinting top query 'тонировка в грузии')
+      title: 'Авто детейлинг в Тбилиси — PPF, полировка, керамика, тонировка | BESTAUTO',
+      // Trust signals first (guarantee, rating, experience); no district names (kept in trust-block body only)
+      description: 'Премиум авто детейлинг в Тбилиси — оклейка PPF плёнкой (гарантия 10 лет), полировка, керамика, тонировка стёкол, ремонт лобового стекла, химчистка салона. 4.9★ Google рейтинг, 5+ лет опыта.',
     },
     textReplacements: [
       // Hero subtitle (note: \xa0 = non-breaking space after colon in original Tilda HTML)
@@ -152,8 +154,9 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== PPF ====== */
   'ppf-shield-wrapping': {
     meta: {
-      title: 'Оклейка авто защитной плёнкой PPF в Тбилиси — гарантия 10 лет | BESTAUTO',
-      description: 'Оклейка автомобиля защитной PPF плёнкой в Тбилиси — прозрачная, матовая, сатиновая. Самовосстановление, защита капота, полное и частичное покрытие, гарантия 10 лет в BESTAUTO.',
+      // GSC/dict top: 'защитная пленка на авто' #1 HF; lead with canonical phrase not 'оклейка'
+      title: 'Защитная плёнка PPF на авто в Тбилиси — оклейка, гарантия 10 лет | BESTAUTO',
+      description: 'Защитная плёнка PPF на авто в Тбилиси — оклейка защитной PPF плёнкой, прозрачная, матовая, сатиновая. Самовосстановление, защита капота, полное и частичное покрытие, гарантия 10 лет в BESTAUTO.',
     },
     textReplacements: [
       // Hero H1
