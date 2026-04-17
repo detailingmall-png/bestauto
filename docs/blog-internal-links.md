@@ -153,7 +153,42 @@ Healthy build: `applied = N, everything else = 0`.
 
 ---
 
-## How to add a new article rule
+## Quick start: adding rules for a new article
+
+### The easy way — slash command
+
+In a Claude session inside the `bestauto-site` repo, run:
+
+```
+/blog-links <article-slug>
+```
+
+Examples:
+```
+/blog-links ceramic-coating-maintenance
+/blog-links ppf-benefits
+/blog-links car-body-polishing --langs ru,ka
+/blog-links polishing-cost-tbilisi --apply
+```
+
+What happens:
+1. Claude checks the article exists in all 3 language builds.
+2. Spawns a focused agent that reads each language version, proposes 2–3 rules per language, validates against the HF dictionary and all 4 build-time checks.
+3. Returns 3 clean TypeScript code blocks (RU / KA / EN).
+4. Asks you to confirm before editing `blog-links.ts`.
+5. Runs `npm run build` and shows you the `[blog-links]` log line per language (should be `applied=N missed=0 ambiguous=0 unknown-kw=0 dup-stem=0`).
+6. Shows spot-check grep output from rendered HTML.
+7. Asks whether to commit.
+
+Flags:
+- `--langs ru,ka,en` — process only selected languages (default: all 3)
+- `--apply` — skip the confirmation step, auto-insert and build
+
+The slash command itself lives at `.claude/commands/blog-links.md`.
+
+---
+
+## Manual workflow (when you need fine control)
 
 ### 1. Pick the article and target services
 
