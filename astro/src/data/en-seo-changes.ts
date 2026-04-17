@@ -100,7 +100,8 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== CERAMIC COATING ====== */
   'ceramiccoating': {
     meta: {
-      title: 'Ceramic Coating for Cars in Tbilisi — from 600 ₾ | BESTAUTO',
+      // GSC: 'ceramic coating' 4c + 'car ceramic coating' 2c. Use exact HF phrase order
+      title: 'Car Ceramic Coating in Tbilisi — from 600 ₾ | BESTAUTO',
       description: 'Car ceramic coating in Tbilisi — ceramic coating for body, glass and interior. Deep gloss, hydrophobic effect, easier maintenance and professional preparation at BESTAUTO.',
     },
     textReplacements: [
@@ -293,8 +294,9 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== INTERIOR CLEANING ====== */
   'interior-cleaning': {
     meta: {
-      title: 'Car Interior Cleaning in Tbilisi — from 400 ₾ | BESTAUTO',
-      description: 'Car interior cleaning in Tbilisi — deep cleaning of seats, ceiling, floor and trunk. Saburtalo and Gldani. Price from 400 ₾, interior detailing at BESTAUTO.',
+      // GSC: 'car dry cleaning' 3c (top HF — Soviet-era terminology); include alongside 'interior cleaning'
+      title: 'Car Dry Cleaning & Interior Detailing in Tbilisi — from 400 ₾ | BESTAUTO',
+      description: 'Car dry cleaning and interior cleaning in Tbilisi — deep cleaning of seats, ceiling, floor and trunk. Saburtalo and Gldani. Price from 400 ₾ at BESTAUTO.',
     },
     textReplacements: [
       // Hero subtitle

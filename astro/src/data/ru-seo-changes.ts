@@ -49,8 +49,9 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== POLISHING ====== */
   'polishing': {
     meta: {
-      title: 'Полировка автомобиля в Тбилиси — от 690 ₾ | BESTAUTO',
-      description: 'Полировка автомобиля в Тбилиси — кузова, фар, лобового стекла и деталей салона. Восстановление блеска, уменьшение царапин и ухоженный вид в BESTAUTO.',
+      // GSC top: 'полировка машины' 12c (HF #1). Include variant alongside 'автомобиля' for wider capture
+      title: 'Полировка машины в Тбилиси — полировка авто, от 690 ₾ | BESTAUTO',
+      description: 'Полировка машины и автомобиля в Тбилиси — кузова, фар, лобового стекла и деталей салона. Восстановление блеска, уменьшение царапин и ухоженный вид в BESTAUTO.',
     },
     textReplacements: [
       // Hero H1
@@ -101,8 +102,9 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== CERAMIC COATING ====== */
   'ceramiccoating': {
     meta: {
-      title: 'Керамическое покрытие автомобиля в Тбилиси — от 600 ₾ | BESTAUTO',
-      description: 'Керамика для автомобиля в Тбилиси — керамическое покрытие кузова, стёкол и салона. Блеск, гидрофобный эффект, простой уход и профессиональная подготовка в BESTAUTO.',
+      // GSC: 'керамическое покрытие авто' 8c (top) + 'керамика на авто' 4c (colloquial HF); both in title
+      title: 'Керамическое покрытие авто в Тбилиси — керамика на авто, от 600 ₾ | BESTAUTO',
+      description: 'Керамика на авто в Тбилиси — керамическое покрытие кузова, стёкол и салона. Блеск, гидрофобный эффект, простой уход и профессиональная подготовка в BESTAUTO.',
     },
     textReplacements: [
       // Hero H1
