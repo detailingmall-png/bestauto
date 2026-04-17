@@ -791,6 +791,165 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- General detailing cluster ---
+  // Note: blog/errors-to-find skipped (topic is OBD diagnostics, not detailing)
+  {
+    article: 'blog/10-paint-mistakes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'Избыточная агрессивная полировка',
+        contextQuote: 'Избыточная агрессивная полировка — плохая стратегия',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'керамика',
+        contextQuote: 'Если важнее визуальный эффект и более легкий уход, подойдет керамика',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка на авто',
+        originalPhrase: 'PPF',
+        contextQuote: 'Но если нужен именно физический барьер от сколов, дорожного абразива и механического воздействия, надежнее работает PPF',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-detailing-guide',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка',
+        contextQuote: 'Если лак помутнел, появились swirls, голограммы, легкие водяные следы и потеря блеска, применяется полировка',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамика',
+        contextQuote: 'Керамика усиливает блеск, упрощает мойку, снижает фиксацию грязи',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'оклейка полиуретановой пленкой',
+        originalPhrase: 'PPF — это прозрачная защитная полиуретановая пленка',
+        contextQuote: 'PPF — это прозрачная защитная полиуретановая пленка, которая берет на себя часть механического воздействия',
+      },
+    ],
+  },
+  {
+    article: 'blog/detailing-cost-tbilisi',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка улучшает вид и возвращает блеск',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие автомобиля',
+        originalPhrase: 'Керамика',
+        contextQuote: 'Керамика подходит тем, кто хочет более глубокий блеск',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'бронирование авто пленкой',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF будет гораздо более сильным решением, чем просто полировка или керамика',
+      },
+    ],
+  },
+  {
+    article: 'blog/how-to-choose-detailing-studio',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'защитной PPF-пленке',
+        contextQuote: 'Когда речь идет о полировке, керамике, химчистке салона, тонировке стекол или особенно о защитной PPF-пленке',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка лкп',
+        originalPhrase: 'полировку',
+        contextQuote: 'Одни особенно хорошо делают полировку, другие',
+      },
+      // TODO: blog/how-to-choose-detailing-studio (ru) — 3rd /ceramiccoating anchor trips dup-stem; 2 rules only
+    ],
+  },
+  {
+    article: 'blog/summer-car-care-georgia',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие авто',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие летом тоже очень актуально',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'атермальная тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'Летом в Грузии особенно заметно, насколько сильно нагревается салон. Поэтому тонировка',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf пленка',
+        originalPhrase: 'PPF, полиуретановая защитная пленка',
+        contextQuote: 'Самый сильный ответ здесь — PPF, полиуретановая защитная пленка',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Поэтому перед сезоном особенно полезны: - глубокая уборка или химчистка',
+      },
+    ],
+  },
+  {
+    article: 'blog/technology-and-process',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'керамика',
+        contextQuote: 'керамика может уменьшать визуальное влияние очень легких микродефектов',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'полировка',
+        contextQuote: 'нужна правильная подготовка, а часто и легкая или средняя полировка',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf пленка',
+        originalPhrase: 'PPF-пленка',
+        contextQuote: 'Для такой задачи гораздо лучше подходит PPF-пленка, которая создает физический барьер',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -1515,6 +1674,165 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- General detailing cluster ---
+  // Note: blog/errors-to-find skipped (topic is OBD diagnostics, not detailing)
+  {
+    article: 'blog/10-paint-mistakes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება ეფექტური გზაა ვიზუალური განახლებისთვის',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული დაფარვა',
+        originalPhrase: 'კერამიკული დაცვა',
+        contextQuote: 'თუ მიზანი პირველ რიგში ვიზუალური ეფექტისა და მოვლის გამარტივებაა, შეიძლება კერამიკული დაცვა გამოგადგეთ',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის დამცავი ფირი',
+        originalPhrase: 'დამცავი PPF ფირია',
+        contextQuote: 'უფრო საიმედო გამოსავალი დამცავი PPF ფირია',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-detailing-guide',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'ავტომობილის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'კეთდება პოლირება. ეს შეიძლება იყოს მსუბუქი, საშუალო ან ღრმა კორექცია',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი</strong></p> <p style="margin-bottom: 16px;">SiO2-ზე დაფუძნებული',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'დამცავი პოლიურეთანის ფირი',
+        contextQuote: 'დამცავი პოლიურეთანის ფირი (PPF) ამ ჩამონათვალში ერთადერთი ვარიანტია, რომელიც მექანიკურ ზემოქმედებას რეალურად იღებს თავის თავზე',
+      },
+    ],
+  },
+  {
+    article: 'blog/detailing-cost-tbilisi',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება ფასი',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მრავალეტაპიანი პოლირება მესამე',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'კერამიკა ამარტივებს მოვლას და ეხმარება ზედაპირის შენარჩუნებას',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ფირის გადაკვრა',
+        originalPhrase: 'PPF-ის გადაკვრა',
+        contextQuote: 'PPF-ის გადაკვრა უკვე სრულიად სხვა სეგმენტია',
+      },
+    ],
+  },
+  {
+    article: 'blog/how-to-choose-detailing-studio',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის გადაკვრა',
+        originalPhrase: 'ფირის ხარისხიან დაყენებას სჭირდება',
+        contextQuote: 'PPF ერთ-ერთი ყველაზე მკაფიო მაჩვენებელია სტუდიის რეალური დონის. ფირის ხარისხიან დაყენებას სჭირდება',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება ფასი',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'რამდენად უსაფრთხოა პოლირება',
+      },
+      // TODO: blog/how-to-choose-detailing-studio (ka) — 3rd /ceramiccoating anchor trips dup-stem; 2 rules only
+    ],
+  },
+  {
+    article: 'blog/summer-car-care-georgia',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ზაფხულის სეზონისთვის ნამდვილად სასარგებლოა',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'მინების დაბურვა',
+        originalPhrase: 'ტონირება',
+        contextQuote: 'ტონირება ბევრ მძღოლს სწორედ ზაფხულის წინ ახსენდება',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'დამცავი პოლიურეთანის ფირი',
+        contextQuote: 'ამ კითხვაზე ყველაზე ძლიერი პასუხი არის PPF — დამცავი პოლიურეთანის ფირი',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ავტომობილის ქიმწმენდა',
+        originalPhrase: 'მანქანის ქიმწმენდა',
+        contextQuote: 'მსუბუქად დაბინძურებული მანქანის ქიმწმენდა იწყება 400 GEL-დან',
+      },
+    ],
+  },
+  {
+    article: 'blog/technology-and-process',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'კერამიკა შეიძლება ამცირებდეს ძალიან მსუბუქ მიკროდაზიანებებზე ვიზუალურ გავლენას',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირებაც',
+        contextQuote: 'ხშირად კი მსუბუქი ან საშუალო პოლირებაც',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'PPF ფირი',
+        contextQuote: 'ასეთ როლს ბევრად უკეთ ასრულებს PPF ფირი, რომელიც ქმნის ფიზიკურ ბარიერს',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -2232,6 +2550,165 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car tinting',
         originalPhrase: 'heating elements',
         contextQuote: 'on cars where the windshield is integrated with driver-assistance systems, heating elements, or cameras',
+      },
+    ],
+  },
+  // --- General detailing cluster ---
+  // Note: blog/errors-to-find skipped (topic is OBD diagnostics, not detailing)
+  {
+    article: 'blog/10-paint-mistakes',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing improves the look of the paint. It does not create a lasting physical barrier against new damage',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'If your priority is gloss and easier maintenance, ceramic coating may be enough',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF is usually the more dependable solution',
+        contextQuote: 'But if your priority is physical protection from chips, road abrasion, and daily mechanical wear, PPF is usually the more dependable solution',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-detailing-guide',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'If the paint looks tired, hazy, scratched, or uneven, polishing becomes the stage that restores clarity and reflection',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is primarily about stronger gloss, easier washing, better hydrophobic behavior',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF is the most serious option',
+        contextQuote: 'PPF is the most serious option when the goal is real physical protection',
+      },
+    ],
+  },
+  {
+    article: 'blog/detailing-cost-tbilisi',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Multi-stage polishing is a third',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is the right choice when the goal is easier maintenance',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'PPF is a much stronger solution',
+        contextQuote: 'PPF is a much stronger solution than polishing or ceramic coating alone',
+      },
+    ],
+  },
+  {
+    article: 'blog/how-to-choose-detailing-studio',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'protective PPF film',
+        contextQuote: 'When we are talking about polishing, ceramic coating, interior deep cleaning, window tinting, or especially protective PPF film',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'One place may be especially good at polishing, another at PPF, and another at tinting or interior cleaning',
+      },
+      // TODO: blog/how-to-choose-detailing-studio (en) — 3rd /ceramiccoating anchor trips dup-stem; 2 rules only
+    ],
+  },
+  {
+    article: 'blog/summer-car-care-georgia',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is also very relevant in summer, but it solves a different problem',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'car window tint',
+        originalPhrase: 'window tint',
+        contextQuote: 'That is why window tint is not just a styling element but a practical comfort upgrade',
+      },
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'PPF — paint protection film',
+        contextQuote: 'The strongest answer here is PPF — paint protection film',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'car interior detailing',
+        originalPhrase: 'interior detailing',
+        contextQuote: 'deep cleaning or full interior detailing',
+      },
+    ],
+  },
+  {
+    article: 'blog/technology-and-process',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'auto ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is a special protective composition that forms a very thin but durable layer',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'polishing may be needed before ceramic',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF',
+        contextQuote: 'not in the same category as PPF when it comes to impact protection',
       },
     ],
   },
