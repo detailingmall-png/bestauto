@@ -18,8 +18,9 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== HOMEPAGE ====== */
   '': {
     meta: {
-      title: 'Car Detailing in Tbilisi — PPF, Polishing, Ceramic | BESTAUTO',
-      description: 'BESTAUTO — premium car detailing studio in Tbilisi. PPF film wrapping, color change wrap, polishing, ceramic coating, window tinting, interior detailing, and 2 locations in Tbilisi.',
+      // Adds 'Georgia' for geo precision + 'Window Tinting' (strongest EN service-page signal)
+      title: 'Car Detailing in Tbilisi, Georgia — PPF, Polishing, Ceramic, Window Tinting | BESTAUTO',
+      description: 'Premium car detailing in Tbilisi, Georgia — PPF film wrapping (10-year warranty), polishing, ceramic coating, window tinting, windshield repair, interior cleaning. 4.9★ Google rating, 5+ years experience.',
     },
     textReplacements: [
       // Hero subtitle
@@ -152,8 +153,9 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== PPF ====== */
   'ppf-shield-wrapping': {
     meta: {
-      title: 'PPF Paint Protection Film in Tbilisi — 10-Year Warranty | BESTAUTO',
-      description: 'PPF paint protection film wrapping in Tbilisi — clear, matte, satin finish. Self-healing, hood protection, full or partial coverage, 10-year warranty at BESTAUTO.',
+      // Adds 'ppf wrap' short form (HF dict + real GSC query)
+      title: 'PPF Wrap & Paint Protection Film in Tbilisi — Full Body Coverage, 10-Year Warranty | BESTAUTO',
+      description: 'PPF wrap in Tbilisi — paint protection film, clear, matte, satin finish. Self-healing, hood protection, full or partial coverage, 10-year warranty at BESTAUTO.',
     },
     textReplacements: [
       // Hero H1
@@ -229,8 +231,9 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== TINTING ====== */
   'auto-glass-tinting': {
     meta: {
-      title: 'Car Window Tinting in Tbilisi — Athermal and Ceramic Film | BESTAUTO',
-      description: 'Car window tinting in Tbilisi — athermal and ceramic film, comfort, UV protection and privacy. Professional tinting at BESTAUTO.',
+      // GSC: bare 'tint' = 282 clicks (33% of page traffic); add 'Tint Service' anchor
+      title: 'Car Window Tinting in Tbilisi — Tint Service, Athermal & Ceramic Film | BESTAUTO',
+      description: 'Car window tinting service in Tbilisi — athermal and ceramic tint film, comfort, UV protection and privacy. Professional tint at BESTAUTO.',
     },
     textReplacements: [
       // Hero subtitle
