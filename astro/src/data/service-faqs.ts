@@ -1136,6 +1136,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'We typically respond within 15 minutes after you submit a request. You can also message us on WhatsApp or call directly.',
       },
     },
+    {
+      question: {
+        ka: 'რა ფასი აქვს დითეილინგ სერვისებს?',
+        ru: 'Сколько стоят услуги детейлинг-центра?',
+        en: 'How much do detailing services cost?',
+      },
+      answer: {
+        ka: 'ფასი დამოკიდებულია კონკრეტულ სერვისზე და ავტომობილის ზომაზე. მანქანის პოლირება იწყება 690 ₾-დან, კერამიკული საფარი — 600 ₾-დან, PPF ფირის გადაკვრა — 2500 ₾-დან, სალონის ქიმწმენდა — 400 ₾-დან. სრული პრაისი და უფასო კონსულტაცია — WhatsApp-ზე.',
+        ru: 'Цена зависит от конкретной услуги и размера автомобиля. Полировка машины — от 690 ₾, керамическое покрытие — от 600 ₾, оклейка PPF-плёнкой — от 2500 ₾, химчистка салона — от 400 ₾. Полный прайс и бесплатная консультация — в WhatsApp.',
+        en: 'Price depends on the specific service and car size. Car polishing starts from 690 ₾, ceramic coating from 600 ₾, PPF wrapping from 2500 ₾, interior cleaning from 400 ₾. Full pricing and free consultation — on WhatsApp.',
+      },
+    },
   ],
 
 };

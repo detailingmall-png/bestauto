@@ -500,12 +500,18 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== HOMEPAGE ====== */
   '': {
     meta: {
-      title: 'ავტო დითეილინგი თბილისში — PPF, პოლირება, კერამიკა | BESTAUTO',
-      description: 'BESTAUTO — პრემიუმ ავტო დითეილინგ სტუდია თბილისში. PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, ქიმწმენდა და 2 ლოკაცია თბილისში.',
+      // GSC top: 'დითეილინგ ცენტრი' 40 clicks/257 impr (completely uncovered before); 'ფასი' price-intent
+      title: 'დითეილინგ ცენტრი თბილისში — ავტო მოვლა, ფასი | BESTAUTO',
+      // Different angle than title: leads with 'ავტო მოვლა და დაცვა' (maintenance+protection umbrella)
+      description: 'პროფესიონალური ავტო მოვლა და დაცვა — PPF ფირი, პოლირება, კერამიკა, ქიმწმენდა, მინების დაბურვა. 4.9★ Google რეიტინგი, 2 ლოკაცია თბილისში.',
     },
     textReplacements: [
-      // Hero subtitle
+      // Hero subtitle — stage 1: normalize old Tilda phrasing to canonical form (already applied; keep as safety net)
       { from: 'ავტომობილის პროფესიონალური მოვლა და დაცვა: დამცავი PPF ფირით გადაკვრა, ფერადი ფირით გადაკვრა, პოლირება კერამიკული საფარით, მინების დაბურვა და შეკეთება, სალონის ქიმწმენდა.', to: 'ავტომობილის პროფესიონალური მოვლა და დაცვა: PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, საქარე მინის შეკეთება და სალონის ქიმწმენდა.' },
+      // Hero subtitle — stage 2: append geo + price signal to current canonical form (body-visible trust info).
+      // `from:` includes closing </p> to make replacement idempotent — after this applies, the old exact
+      // pattern no longer exists (new pattern has extra sentences between the old text and </p>).
+      { from: 'საქარე მინის შეკეთება და სალონის ქიმწმენდა.</p>', to: 'საქარე მინის შეკეთება და სალონის ქიმწმენდა. ორი ლოკაცია — საბურთალო და გლდანი. ფასი გამჭვირვალე.</p>' },
       // Benefits heading
       { from: 'რატომ უნდა აირჩიოთ ჩვენი დითეილინგ ცენტრი??', to: 'რატომ ირჩევენ BESTAUTO-ს თბილისში' },
       { from: 'რატომ უნდა აირჩიოთ ჩვენი დითეილინგ ცენტრი?', to: 'რატომ ირჩევენ BESTAUTO-ს თბილისში' },
