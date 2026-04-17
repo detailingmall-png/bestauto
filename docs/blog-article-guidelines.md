@@ -311,16 +311,24 @@ Vinyl:
 | **/ceramiccoating** (керамика) | **Gyeon** |
 | **/auto-glass-tinting** (тонировка) | **LLumar**, **LuxArmor** (только эти два) |
 | **/carwash** (химия для мойки) | **Koch Chemie** |
+| **/polishing, /vinyl-wrapping, /windshield-repair, /interior-cleaning** | **НЕТ whitelist → НЕ упоминать конкретные бренды вообще** |
+
+**Ключевое правило (2026-04-17 update):** если для кластера whitelist не определён — использовать **дженерик-формулировки** («премиум-винил», «европейские плёнки», «профессиональная автохимия», «инжектор смолы»), НЕ называть конкретные бренды. Это относится и к сравнительным таблицам.
 
 **Что НЕ делать:**
 - PPF: не упоминать XPEL, Stek, 3M, SunTek в рекомендательном контексте
 - Керамика: не упоминать Gtechniq, Ceramic Pro, Nanolex, CarPro как «наши» — только Gyeon
 - Тонировка: не упоминать 3M, SunTek, Johnson, Solar Gard — только LLumar и LuxArmor
 - Мойка: не называть SONAX, Meguiar's, Chemical Guys как «нашу» химию — только Koch Chemie
+- **Винил: не упоминать Hexis, KPMF, Oracal, Avery Dennison, Ravoony, Teckwrap, 3M ни в каком контексте**
+- **Ремонт стекла: не упоминать 3M, Equalizer, GlassGlue и прочие индустриальные бренды материалов**
+- **Полировка: не упоминать Meguiar's, SONAX, Chemical Guys, Menzerna, Turtle Wax, Mothers и др.**
+- **Химчистка: кроме Koch Chemie (и то аккуратно в мойке — для интерьера generic)** — не упоминать Tornador, Leather Master, ValetPRO и др.
 - Ни в одном кластере не ставить whitelist-бренд в один список с чужими брендами без выделения «с чем работает BESTAUTO»
 
 **Сравнительные таблицы:**
-- В сравнительных таблицах можно упомянуть конкурирующие бренды (напр. «PPF-рынок: XPEL, 3M, Llumar, LuxArmor…»), но всегда подчёркивать: «в BESTAUTO мы работаем с Llumar, LuxArmor и Quantum — потому что…»
+- В кластерах С whitelist (PPF/Ceramic/Tinting/Wash) можно упомянуть конкурирующие бренды (напр. «PPF-рынок: XPEL, 3M, Llumar, LuxArmor…»), но всегда подчёркивать: «в BESTAUTO мы работаем с Llumar, LuxArmor и Quantum — потому что…»
+- В кластерах БЕЗ whitelist (POL/VIN/WIN/INT) — сравнение только через ДЖЕНЕРИКИ («премиум-сегмент», «бюджетный сегмент», «европейские производители», «китайские производители») без конкретных имён.
 
 **Формулировки для статей:**
 
