@@ -136,6 +136,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის პოლირება ფასი',      // GSC: 137 (with price)
     'პოლირება ფასი',               // GSC: 119
     'გაპრიალება',                  // ALT: performance.ge synonym
+    'მანქანის პალიროვკა',         // GSC: Russism, 755 imp
   ],
   '/ceramiccoating': [
     'მანქანის კერამიკა',           // GSC: 197 (top — real users say "ceramic", not "coating")
@@ -161,6 +162,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'ვინილის ფირი',                // GSC: 46 + bestauto's own H1
     'ფირის გადაკვრა იაფად',        // GSC: 26 (with "cheap" modifier)
     'მანქანის ფირები',             // GSC: 83 (plural, ambiguous)
+    'ფირის დაკვრა',                // GSC: colloquial variant, 220 imp
   ],
   '/auto-glass-tinting': [
     'მინების დაბურვა',             // GSC: 801 (largest single-keyword traffic on site)
@@ -173,7 +175,9 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
   ],
   '/windshield-repair': [
     'საქარე მინის აღდგენა',        // GSC: 429 (canonical)
+    'ლაბავოის აღდგენა',            // GSC: folk term, 1,023 imp
     'მანქანის შუშის აღდგენა',      // GSC: 55
+    'ნაკენჭარის აღდგენა',          // GSC: 327 imp (specific damage type)
     'საქარე მინების აღდგენა',      // GSC: 21 (plural variant)
     'მანქანის მინის აღდგენა',      // GSC: 9
     'საქარე მინის შეკეთება',       // GSC: 6
@@ -186,6 +190,8 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის რეცხვა ფასები',      // GSC: 43 (with price)
     'მანქანის გარეცხვა',           // GSC: 18 (verb form)
     'მანქანის სამრეცხაო',          // GSC: 10
+    'მანქანის სამრეცხაო თბილისში', // GSC: geo-qualified, 387 imp
+    'ავტოსამრეცხაო საბურთალოზე',   // GSC: geo (Saburtalo), 396 imp
   ],
   '/interior-cleaning': [
     'მანქანის ქიმწმენდა',          // GSC: 199 (top)
@@ -194,6 +200,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'სალონის ქიმწმენდა',           // GSC: 18 + competitor confirmed
     'მანქანის სალონის ქიმწმენდა',  // GSC: 8
     'ავტო ქიმწმენდა',              // GSC: 9
+    'ხიმჩისტკა მანქანის',          // GSC: Russism variant, 337 imp
   ],
 };
 

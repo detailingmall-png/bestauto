@@ -68,7 +68,7 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
     sectionKey: 's1',
   },
   'ppf-shield-wrapping': {
-    name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
+    name: { ka: 'დამცავი ფირის გადაკვრა (PPF)', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
     min: '2500',
     description: {
       ka: 'PPF დამცავი ფირის გადაკვრა ავტომობილზე თბილისში — ძარის დაცვა ნაკაწრებისგან, ქვებისგან და UV-სხივებისგან.',
@@ -78,7 +78,7 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
     sectionKey: 's6',
   },
   'vinyl-wrapping': {
-    name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета защитной плёнкой', en: 'Color Change with Protective Film' },
+    name: { ka: 'ფირის გადაკვრა — ფერის შეცვლა', ru: 'Смена цвета защитной плёнкой', en: 'Color Change with Protective Film' },
     min: '300',
     description: {
       ka: 'ავტომობილის ფერის შეცვლა დამცავი ვინილის ფირით თბილისში — მატი, გლოსი, სატინი და ექსკლუზიური ფერები.',

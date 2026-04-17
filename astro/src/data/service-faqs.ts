@@ -83,6 +83,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Ceramic coating is not mandatory, but it helps preserve the polishing result longer. If you want the longest-lasting effect, ceramic coating is a great addition.',
       },
     },
+    {
+      question: {
+        ka: 'რა ღირს პალიროვკა (მანქანის პოლირება)?',
+        ru: 'Сколько стоит палировка (полировка автомобиля)?',
+        en: 'How much does car polishing (palirovka) cost?',
+      },
+      answer: {
+        ka: 'მანქანის პალიროვკა (პოლირება) იწყება 690 ლარიდან. ფასი დამოკიდებულია ავტომობილის ზომაზე, ლაქის მდგომარეობაზე და ეტაპების რაოდენობაზე. მოგვწერეთ WhatsApp-ზე — გამოგვიგზავნეთ ფოტო და გამოვთვლით ზუსტ ფასს.',
+        ru: 'Палировка (полировка) автомобиля начинается от 690 лари. Цена зависит от размера автомобиля, состояния краски и количества этапов. Напишите нам в WhatsApp — пришлите фото, и мы рассчитаем точную стоимость.',
+        en: 'Car polishing starts from 690 GEL. The price depends on the car size, paint condition, and number of stages. Message us on WhatsApp — send a photo, and we\'ll calculate the exact price.',
+      },
+    },
   ],
 
   'ceramiccoating': [
@@ -192,6 +204,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'კერამიკული საფარი ქმნის ჰიდროფობიურ ეფექტს, რის გამოც წყალი და დაბინძურება ზედაპირზე ნაკლებად ჩერდება. ეს ამარტივებს რეცხვას და ეხმარება ავტომობილს უფრო სუფთად გამოიყურებოდეს ორ რეცხვას შორის.',
         ru: 'Керамическое покрытие создаёт гидрофобный эффект, благодаря чему вода и грязь меньше задерживаются на поверхности. Это упрощает мойку и помогает автомобилю выглядеть чище между мойками.',
         en: 'Ceramic coating creates a hydrophobic effect, which means water and dirt are less likely to stay on the surface. This makes washing easier and helps the car look cleaner between washes.',
+      },
+    },
+    {
+      question: {
+        ka: 'რა განსხვავებაა კერამიკულ საფარსა და კერამიკულ პოლირებას შორის?',
+        ru: 'В чём разница между керамическим покрытием и керамической полировкой?',
+        en: 'What is the difference between ceramic coating and ceramic polishing?',
+      },
+      answer: {
+        ka: 'კერამიკული საფარი არის დამცავი ფენა, რომელიც ეხმარება ავტომობილს შეინარჩუნოს ბზინვარება, ჰიდროფობიურობა და სისუფთავე ხანგრძლივად. კერამიკული პოლირება კი ნიშნავს პოლირებას კერამიკული საფარის დატანის წინ — ზედაპირის მომზადებას, ნაკაწრების მოცილებას. ერთი — დაცვაა, მეორე — მომზადება.',
+        ru: 'Керамическое покрытие — это защитный слой, который помогает автомобилю сохранять блеск, гидрофобность и чистоту долгое время. Керамическая полировка — это полировка перед нанесением керамического покрытия: подготовка поверхности, удаление царапин. Одно — защита, другое — подготовка.',
+        en: 'Ceramic coating is a protective layer that helps the car maintain its shine, hydrophobicity, and cleanliness long-term. Ceramic polishing refers to polishing done before applying the ceramic coating — surface preparation and scratch removal. One is protection, the other is preparation.',
       },
     },
   ],
@@ -443,6 +467,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Basic cleaning takes 4–6 hours, full deep cleaning 1–2 days depending on the car size and contamination level.',
       },
     },
+    {
+      question: {
+        ka: 'რა განსხვავებაა ბაზისურ და სრულ ქიმწმენდას შორის?',
+        ru: 'В чём разница между базовой и полной химчисткой?',
+        en: 'What is the difference between basic and full interior cleaning?',
+      },
+      answer: {
+        ka: 'ბაზისური ქიმწმენდა მოიცავს სავარძლებისა და იატაკის წმენდას — საკმარისია მსუბუქი დაბინძურებისთვის. სრული ავტომობილის ქიმწმენდა კი მოიცავს ჭერს, კარის ბარათებს, საბარგულსა და პლასტმასის ელემენტებს, ოზონირების ჩათვლით. თუ არ ხართ დარწმუნებული — გამოგვიგზავნეთ სალონის ფოტო და გირჩევთ ოპტიმალურ ვარიანტს.',
+        ru: 'Базовая химчистка включает чистку сидений и пола — достаточно при лёгком загрязнении. Полная химчистка автомобиля охватывает потолок, дверные карты, багажник и пластиковые элементы, включая озонирование. Если не уверены — пришлите фото салона, и мы подберём оптимальный вариант.',
+        en: 'Basic cleaning covers seats and floor — sufficient for light contamination. Full car interior cleaning includes the headliner, door panels, trunk, and plastic elements, including ozone treatment. If unsure, send us a photo of the interior and we\'ll recommend the best option.',
+      },
+    },
   ],
 
   'auto-glass-tinting': [
@@ -540,6 +576,18 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         ka: 'მინების დაბურვა ადგილზე მისვლით შესაძლებელია შეთანხმებით. დაგვიკავშირდით WhatsApp-ზე — შევათანხმებთ დროსა და პირობებს.',
         ru: 'Тонировка с выездом возможна по договорённости. Свяжитесь с нами в WhatsApp — согласуем время и условия.',
         en: 'Mobile tinting service is available by arrangement. Contact us on WhatsApp — we\'ll agree on time and conditions.',
+      },
+    },
+    {
+      question: {
+        ka: 'რა პროცენტის მინების დაბურვა შემიძლია — 60%, 50% თუ სხვა?',
+        ru: 'Какой процент тонировки выбрать — 60%, 50% или другой?',
+        en: 'What tint percentage should I choose — 60%, 50%, or other?',
+      },
+      answer: {
+        ka: 'პროცენტი ნიშნავს სინათლეგამტარობას: 60% — მსუბუქი დამუქება, 50% — საშუალო, 35% — ძლიერი (მხოლოდ უკანა მინებზე). წინა მინებზე კანონით მინიმუმ 60% უნდა იყოს. დაბურვისას გეხმარებით ოპტიმალური პროცენტის არჩევაში — კანონის ფარგლებში და თქვენი სურვილის მიხედვით.',
+        ru: 'Процент означает светопропускание: 60% — лёгкое затемнение, 50% — среднее, 35% — сильное (только на задние стёкла). На передних стёклах по закону должно быть минимум 60%. При тонировке поможем выбрать оптимальный процент — в рамках закона и по вашим пожеланиям.',
+        en: 'The percentage refers to light transmission: 60% — light tint, 50% — medium, 35% — dark (rear windows only). Front windows require at least 60% by law. We\'ll help you choose the optimal percentage — within legal limits and your preferences.',
       },
     },
   ],
