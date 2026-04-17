@@ -192,8 +192,9 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== VINYL WRAPPING (COLOR CHANGE) ====== */
   'vinyl-wrapping': {
     meta: {
-      title: 'Car Color Change with Film in Tbilisi — Color PPF and Vinyl, Prices | BESTAUTO',
-      description: 'Car color change with film in Tbilisi — color PPF premium solution, vinyl affordable alternative. Prices, full or partial wrap, anti-chrome and free inspection at BESTAUTO.',
+      // GSC top: "car wrap" 22 clicks (strongest EN signal on site)
+      title: 'Car Wrap in Tbilisi — Color Change with PPF and Vinyl, Prices | BESTAUTO',
+      description: 'Car wrap in Tbilisi — color change with premium PPF or affordable vinyl. Full or partial car wrapping, anti-chrome, free inspection at BESTAUTO.',
     },
     textReplacements: [
       // Hero H1
