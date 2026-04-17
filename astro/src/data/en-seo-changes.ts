@@ -3,6 +3,11 @@
  * Each entry maps a base slug to its meta, hero, benefits, trust,
  * SEO block, and content block changes.
  * Mirrors the structure of ka-seo-changes.ts (KA is the reference).
+ *
+ * MAINTENANCE (2026-04-17 audit): 6 no-op rules on /ppf-shield-wrapping
+ * (section renames) and /vinyl-wrapping (H1) where `from:` no longer
+ * matches — prior run already applied. Harmless. When adding new rules,
+ * verify `from:` exists in current dist/en/{slug}.html body.
  */
 
 import { buildContentBlock, buildBrandsBlock, reviewsSubtitle } from '../lib/seo-blocks';

@@ -3,6 +3,11 @@
  * Each entry maps a base slug to its meta, hero, benefits, trust,
  * SEO block, and content block changes.
  * Mirrors the structure of ka-seo-changes.ts (KA is the reference).
+ *
+ * MAINTENANCE (2026-04-17 audit): 3 no-op rules where `from:` no longer
+ * matches HTML (prior run applied with ё→е variation or headings already
+ * renamed). Harmless. When adding new rules, verify `from:` exists in
+ * current dist/ru/{slug}.html body. Full audit: tmp/seo_audit.py.
  */
 
 import { buildContentBlock, buildBrandsBlock, reviewsSubtitle } from '../lib/seo-blocks';

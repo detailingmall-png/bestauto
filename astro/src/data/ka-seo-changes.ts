@@ -2,6 +2,24 @@
  * KA SEO text changes for service pages.
  * Each entry maps a base slug to its meta, hero, benefits, trust,
  * SEO block, and content block changes.
+ *
+ * ------------------------------------------------------------------
+ * MAINTENANCE NOTE (2026-04-17 audit):
+ * ------------------------------------------------------------------
+ * Many textReplacements are silent no-ops because `from:` no longer matches
+ * current HTML — either the Tilda export changed, or an earlier run already
+ * applied the `to:` (sometimes with minor unicode variations: ё/е, nbsp,
+ * curly quotes). Status breakdown from audit (tmp/seo_audit.py):
+ *   applied:     120 ✓ (from missing, to present — prior run applied)
+ *   pending:      15 ✓ (from present, will apply on next build)
+ *   deletion_ok:  14 ✓ (empty-to removals already done)
+ *   broken:       11  no-ops; mostly reviewsSubtitle wrapper that moved or
+ *                     headings/hero already renamed to equivalent text
+ *
+ * The 11 broken rules are harmless — they don't error, they just do nothing.
+ * When adding a NEW rule, verify `from:` exists in current dist/{slug}.html
+ * body text (not meta tags) to avoid silent no-op.
+ * ------------------------------------------------------------------
  */
 
 import { buildSeoBlock, buildContentBlock, buildBrandsBlock, reviewsSubtitle } from '../lib/seo-blocks';
@@ -475,25 +493,9 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
     seoBlock: '',
   },
 
-  /* ====== AUTO POLISHING ====== */
-  'auto-polishing': {
-    meta: {
-      title: 'მანქანის პოლირება თბილისში — ფასი 690 ₾-დან | BESTAUTO',
-      description: 'მანქანის პოლირება თბილისში — ძარის, ფარების და საქარე მინის პროფესიონალური პოლირება BESTAUTO-ში.',
-    },
-    textReplacements: [
-      // Trust block
-      { from: 'რატომ აირჩიოთ ჩვენი დეტეილინგ ცენტრი?', to: 'რატომ ირჩევენ BESTAUTO-ს პოლირებისთვის' },
-      { from: 'რატომ ავირჩიოთ ჩვენი კომპანია?', to: 'რატომ ირჩევენ BESTAUTO-ს პოლირებისთვის' },
-      { from: 'თქვენ აუცილებლად კმაყოფილი დარჩებით', to: '' },
-      // Trust card: item 1 desc
-      { from: 'სხვადასხვა მარკისა და მოდელის ასობით ავტომობილის პროფესიონალური დაფარვა', to: 'ასობით ავტომობილის პროფესიონალური პოლირება — მსუბუქიდან აღდგენითამდე' },
-      // Trust card: item 4 (PPF warranty → quality guarantee)
-      { from: '10 წლიანი გარანტია ფირზე', to: 'შედეგის გარანტია' },
-      { from: 'ვფარავთ აქერცვლას, გაყვითლებას და მასალის დეფექტებს', to: 'არ ხართ კმაყოფილი? გადავაკეთებთ უფასოდ' },
-    ],
-    seoBlock: '',
-  },
+  // NOTE: 'auto-polishing' block removed — the slug /auto-polishing is a 301 redirect
+  // to /polishing (see _redirects). The entry never rendered, so its 6 replaceAll rules
+  // were silent no-ops. If the redirect is ever undone, restore from git history.
 
   /* ====== HOMEPAGE ====== */
   '': {
