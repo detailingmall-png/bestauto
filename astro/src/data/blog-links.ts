@@ -950,6 +950,131 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- Interior cleaning cluster ---
+  {
+    article: 'blog/car-interior-detailing-basics',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона авто',
+        originalPhrase: 'химчистка',
+        contextQuote: 'достаточно ли легкой чистки или нужна полная химчистка',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'внутреннее керамическое покрытие',
+        contextQuote: 'имеет смысл добавить внутреннее керамическое покрытие',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'полировка',
+        contextQuote: 'более эффективной будет полировка интерьерных деталей',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-interior-disinfection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка авто тбилиси',
+        originalPhrase: 'химчистка',
+        contextQuote: 'если проблема в грязи и запахе одновременно — химчистка',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона',
+        originalPhrase: 'химчистка',
+        contextQuote: 'иногда — химчистка плюс озонирование',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'чистка салона авто',
+        originalPhrase: 'химчистку',
+        contextQuote: 'сначала сделать химчистку, а при необходимости',
+      },
+    ],
+  },
+  {
+    article: 'blog/engine-room-cleaning',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'мойка авто',
+        originalPhrase: 'мойка',
+        contextQuote: 'правильнее, чем «полная мойка»',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона авто',
+        originalPhrase: 'химчистке салона',
+        contextQuote: 'внимания мойке кузова, химчистке салона',
+      },
+      // TODO: blog/engine-room-cleaning (ru) — no ceramic mentions in body; 2 rules only
+    ],
+  },
+  {
+    article: 'blog/interior-cleaning-for-auto',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона авто',
+        originalPhrase: 'химчистка салона',
+        contextQuote: 'В Тбилиси химчистка салона особенно востребована у водителей',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'мойка авто',
+        originalPhrase: 'мойки',
+        contextQuote: 'профессиональная химчистка отличается от «просто мойки»',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистка автомобиля',
+        originalPhrase: 'химчистка',
+        contextQuote: 'лучшим решением становится комплексная химчистка',
+      },
+    ],
+  },
+  {
+    article: 'blog/new-car-detailing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'самым надежным шагом будет именно PPF',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'керамика',
+        contextQuote: 'керамика — как дополнительный слой удобства',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'полировка',
+        contextQuote: 'Агрессивная глубокая полировка новой машины',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -1833,6 +1958,131 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  // --- Interior cleaning cluster ---
+  {
+    article: 'blog/car-interior-detailing-basics',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'მანქანის ქიმწმენდა',
+        originalPhrase: 'სრული ქიმწმენდა',
+        contextQuote: 'საკმარისია მსუბუქი წმენდა თუ საჭიროა სრული ქიმწმენდა',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'შიდა კერამიკული საფარი',
+        contextQuote: 'როდის ღირს ინტერიერის პოლირება ან შიდა კერამიკული საფარი',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'უფრო ეფექტურია ინტერიერის დეტალების პოლირება',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-interior-disinfection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'მანქანის ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ბევრად სწორი იქნება ჯერ ქიმწმენდა და შემდეგ ოზონირება',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ავტომობილის ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'უფრო სწორი არჩევანია ქიმწმენდა',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'ქიმწმენდის შემდეგ ოზონირება',
+      },
+    ],
+  },
+  {
+    article: 'blog/engine-room-cleaning',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'ძარის რეცხვას',
+        contextQuote: 'დიდ ყურადღებას აქცევს ძარის რეცხვას',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდას',
+        contextQuote: 'სალონის ქიმწმენდას და ინტერიერის ვიზუალს',
+      },
+      // TODO: blog/engine-room-cleaning (ka) — no ceramic content in body; 2 rules only
+    ],
+  },
+  {
+    article: 'blog/interior-cleaning-for-auto',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'მანქანის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდის',
+        contextQuote: 'თბილისში სალონის ქიმწმენდის მოთხოვნა განსაკუთრებით მაღალია',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'რეცხვისგან',
+        contextQuote: 'აქ განსხვავდება "უბრალოდ რეცხვისგან"',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ავტომობილის ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'კომპლექსური ქიმწმენდა საუკეთესო გამოსავალია',
+      },
+    ],
+  },
+  {
+    article: 'blog/new-car-detailing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'PPF',
+        contextQuote: 'PPF-ის დაყენება რისკიან ზონებზე ან მთლიან ძარაზე',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკა მანქანაზე',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ღია საღებავზე და სურვილის შემთხვევაში ფირის ზედაპირზეც',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მსუბუქი პოლირება ან ზედაპირის მომზადება',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -2709,6 +2959,131 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ppf wrap',
         originalPhrase: 'PPF',
         contextQuote: 'not in the same category as PPF when it comes to impact protection',
+      },
+    ],
+  },
+  // --- Interior cleaning cluster ---
+  {
+    article: 'blog/car-interior-detailing-basics',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'car interior detailing',
+        originalPhrase: 'interior deep cleaning',
+        contextQuote: 'car needs light cleaning, full interior deep cleaning',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'interior ceramic coating',
+        contextQuote: 'interior ceramic coating on suitable surfaces',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'interior detail polishing starts from 200 GEL',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-interior-disinfection',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'car interior cleaning',
+        originalPhrase: 'deep cleaning',
+        contextQuote: 'deep cleaning plus ozone treatment is usually the right path',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'car dry cleaning',
+        originalPhrase: 'deep cleaning',
+        contextQuote: 'do deep cleaning first and ozone treatment afterward',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'car interior detailing',
+        originalPhrase: 'deep interior cleaning',
+        contextQuote: 'deep interior cleaning plus ozone treatment is the right combination',
+      },
+    ],
+  },
+  {
+    article: 'blog/engine-room-cleaning',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'car wash tbilisi',
+        originalPhrase: 'body washing',
+        contextQuote: 'close attention to body washing',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'car interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'interior cleaning, and the overall look',
+      },
+      // TODO: blog/engine-room-cleaning (en) — no ceramic mentions in body; 2 rules only
+    ],
+  },
+  {
+    article: 'blog/interior-cleaning-for-auto',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'car interior detailing',
+        originalPhrase: 'Interior deep cleaning',
+        contextQuote: 'Interior deep cleaning is often seen as a purely cosmetic service',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'car dry cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'demand for interior cleaning is especially high',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'car interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'Professional interior cleaning usually consists of several stages',
+      },
+    ],
+  },
+  {
+    article: 'blog/new-car-detailing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'PPF',
+        contextQuote: 'the most reliable first step is PPF',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'combining PPF with ceramic coating is often the most balanced',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Aggressive deep polishing is usually unnecessary',
       },
     ],
   },
