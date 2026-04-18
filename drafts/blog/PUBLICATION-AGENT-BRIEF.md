@@ -35,35 +35,51 @@
 
 ## Архитектура автоматизации
 
-**Semi-automated pipeline** с 3 ручными шагами:
+**Fully automated pipeline** — user только approve'ит перед коммитом. Tilda admin UI НЕ используется. Агент создаёт HTML файлы из существующих Tilda-export template'ов (программный patch):
 
 ```
-┌────────────────────────────┐
-│ 1. Photo prep (agent)      │  ← fal.ai Flux или архив BESTAUTO
-│    → drafts/blog-images/   │
-└────────────────────────────┘
-              ↓
-┌────────────────────────────┐
-│ 2. Tilda page create       │  ← ЧЕЛОВЕК (user) + agent helper prompt
-│    (user's 10 min)         │
-└────────────────────────────┘
-              ↓
-┌────────────────────────────┐
-│ 3. Tilda export HTML       │  ← ЧЕЛОВЕК (user кликает Export)
-│    (user's 1 min)          │
-└────────────────────────────┘
-              ↓
-┌────────────────────────────┐
-│ 4. page-map.json update    │  ← AGENT
-│    Astro build              │
-│    Git commit + push        │
-│    GSC request indexing     │
-│    blog-links.ts update     │
-│    Roadmap status update    │
-│                              │
-│    (agent's 5 min)          │
-└────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ 1. Photo prep (agent)                    │  Pollinations.ai → cwebp optimization
+│    → tilda-export/.../images/{slug}-*    │
+└─────────────────────────────────────────┘
+                  ↓
+┌─────────────────────────────────────────┐
+│ 2. HTML generation (agent)              │  Clone template HTML, patch content
+│    • Read template page129335723.html    │  title, meta, hero, body, images
+│    • Patch with article content          │  Save as page{NEW_ID}.html per lang
+│    • Generate new unique page ID         │
+└─────────────────────────────────────────┘
+                  ↓
+┌─────────────────────────────────────────┐
+│ 3. Blog index patch (agent)              │  Parse t404 block in page37357691/…
+│    Add new preview card at top           │  Insert t404__col HTML, save back
+└─────────────────────────────────────────┘
+                  ↓
+┌─────────────────────────────────────────┐
+│ 4. Registry & build (agent)              │
+│    • page-map.json — add 3 entries       │
+│    • live_urls.txt — add 3 URLs          │
+│    • blog-links.ts — add editorial rules │
+│    • bun run build (validate)            │
+│    • status: published в frontmatter    │
+└─────────────────────────────────────────┘
+                  ↓
+┌─────────────────────────────────────────┐
+│ 5. USER APPROVE (diff review)            │  ← ЕДИНСТВЕННЫЙ human step
+│    Agent показывает diff, user:          │  Если OK — «push»
+│    — одобряет → commit + push           │  Если нет — «поправь X» → agent патчит
+└─────────────────────────────────────────┘
+                  ↓
+┌─────────────────────────────────────────┐
+│ 6. Deploy & index (agent)                │
+│    • git push origin main                │
+│    • Wait Cloudflare deploy              │
+│    • python request_indexing.py (GSC)    │
+│    • Verify live URLs                    │
+└─────────────────────────────────────────┘
 ```
+
+**Time budget**: ~20 мин agent wallclock per 1 статья × 3 языка (photo gen + HTML gen + index patch + build + push). User time: ~5 мин (approve).
 
 ---
 
@@ -130,113 +146,227 @@
 
 **Варианты** (decision tree):
 
-**2a. AI-генерация (Flux через fal.ai skill)** — default для быстрых публикаций:
-- Используй skill `fal-ai-media`
-- Модель: `flux/dev` (быстро) или `flux-pro/v1.1-ultra` (качество)
-- Промпт: адаптируй `drafts/blog/README.md` cluster-specific template
-- Генерируй hero (1920×1080) + 2 inline (1200×800)
-- Сохраняй в `drafts/blog-images/{slug}/{shot}.webp`
+**2a. AI-генерация (Pollinations.ai)** — default, бесплатно, без ключа:
+```bash
+# Hero (1920×1080)
+curl -o drafts/blog-images/{slug}/hero-raw.png \
+  "https://image.pollinations.ai/prompt/$(jq -rn --arg p '{PROMPT}' '$p|@uri')?width=1920&height=1080&model=flux&nologo=true&enhance=true"
 
-**2b. BESTAUTO архив** — если user даст доступ к папке студии.
-- Просмотр папки архива, выбор подходящего кадра, copy to `drafts/blog-images/{slug}/`
-
-### Step 3: Prepare content for Tilda paste
-
-Открыть `drafts/blog/{slug}.md`, извлечь нужную языковую секцию (RU первой, KA и EN в следующих раундах), подготовить:
-
-```
-HERO TITLE: [hero_title]
-HERO SUBTITLE: [hero_subtitle]
-
-META TITLE: [meta_title]
-META DESCRIPTION: [meta_description]
-
-BODY:
-[H1]
-
-[intro paragraph]
-
-## [H2 #1]
-...
-
-## FAQ
-...
-
-## Заключение
-...
-
-## CTA
-...
+# Inline (1200×800) — по 2-4 штуки per article
+curl -o drafts/blog-images/{slug}/inline-1-raw.png "...width=1200&height=800..."
 ```
 
-Сформировать как text file или прямо в stdout агента → user копирует в Tilda.
+Промпт берётся из cluster-specific шаблонов в `drafts/blog/README.md` раздел «AI-генерация: базовый prompt template».
 
-### Step 4 — HUMAN: Create Tilda article page
+**2b. BESTAUTO архив** (приоритет если есть):
+- Путь: `/Users/fedorzubrickij/bestauto-site/archive/bestauto-photos/`
+- Проверяй эту папку **до** генерации AI — если есть подходящий кадр под тему/кластер, используй его.
 
-User (или junior + agent assist):
-1. Tilda admin → Pages → **Create page**
-2. Template: использовать existing blog article template (page ID = XXXXXXX; посмотри существующие статьи как образец)
-3. Paste: hero title + subtitle в block 1
-4. Upload hero image в block 2
-5. Paste body в TextPlus / Zero block
-6. Upload inline images между H2
-7. Settings → SEO → paste Meta title + description
-8. Save → **получить numeric page ID** из URL admin страницы
-9. Сообщить ID агенту: «page ID: 658XXXXX»
+### Step 2.5: Photo optimization (ОБЯЗАТЕЛЬНО)
 
-### Step 4b — HUMAN: Update blog index page (КАРТОЧКА ПРЕВЬЮ)
+AI-generated PNG или JPEG из архива **не загружать в Tilda напрямую** — они слишком тяжёлые и убивают PageSpeed. Оптимизируй:
 
-**Критически важный шаг, часто забывают.** Без него статья существует по прямому URL, но не появляется на странице `/blog`, `/ru/blog`, `/en/blog` — читатели её не увидят в списке.
+```bash
+# Установка cwebp (один раз, если нет): brew install webp
+# Для resize: brew install imagemagick
 
-Blog index pages (по одной на язык):
+# Hero: 1920×1080, quality 80 (баланс качество/размер)
+cwebp -q 80 -resize 1920 1080 drafts/blog-images/{slug}/hero-raw.png -o drafts/blog-images/{slug}/hero.webp
 
-| Язык | URL | Tilda page ID |
+# Inline: 1200×800, quality 75
+cwebp -q 75 -resize 1200 800 drafts/blog-images/{slug}/inline-1-raw.png -o drafts/blog-images/{slug}/inline-1.webp
+
+# Проверка размера
+ls -lh drafts/blog-images/{slug}/*.webp
+# Hero target: < 300 KB (если больше — уменьшай quality до 70)
+# Inline target: < 150 KB
+```
+
+**Target values**:
+| Тип | Dimensions | Quality | Max size |
+|---|---|---|---|
+| Hero | 1920×1080 | 80 | 300 KB |
+| Inline | 1200×800 | 75 | 150 KB |
+| Mobile hero (опц.) | 1200×675 | 80 | 180 KB |
+
+**Если cwebp недоступен** — fallback на Python:
+```python
+from PIL import Image
+img = Image.open('hero-raw.png')
+img.thumbnail((1920, 1080), Image.LANCZOS)
+img.save('hero.webp', 'webp', quality=80, method=6)
+```
+
+**Удалить -raw.png файлы** после конвертации (не нужны, занимают место):
+```bash
+rm drafts/blog-images/{slug}/*-raw.png
+```
+
+**Зачем это важно**:
+- PageSpeed Insights страдает от картинок >500KB — LCP растёт, Core Web Vitals падают
+- Tilda НЕ оптимизирует загружаемые картинки автоматически для blog-статей — если загрузишь 5MB PNG, он таким и останется на CDN
+- Hero-картинка = LCP element, прямо влияет на ранжирование
+- При 5 статей/неделю за год это 780 картинок — разница 300KB vs 3MB = 2+ GB в bandwidth
+
+### Step 3 — AGENT: Generate article HTML via template cloning
+
+Tilda admin УЖЕ НЕ ИСПОЛЬЗУЕТСЯ. Agent сам создаёт HTML файлы на основе существующих экспортов.
+
+**Template pages** (уже есть в `tilda-export/project6825691/`):
+
+| Lang | Template page | URL pattern |
 |---|---|---|
-| RU | https://bestauto.ge/ru/blog | **37357691** |
-| EN | https://bestauto.ge/en/blog | **37416946** |
-| KA | https://bestauto.ge/blog | **37602384** |
+| RU | `page129335723.html` | `/ru/blog/car-detailing-guide` |
+| KA | `page129335883.html` | `/blog/car-detailing-guide` |
+| EN | `page129335960.html` (проверь в page-map.json если нет — используй любую другую EN blog article) |
 
-Для каждого языка:
+**Генерация unique page ID**:
+- Существующий max page ID ≈ 130,000,000 (динамическое)
+- Используй схему: **`9{YYYYMMDD}{idx}`** (9 + 8 цифр дата + 2 цифры счётчика)
+  - Например, `920260420001` для первой статьи 2026-04-20
+  - Не конфликтует с Tilda-generated IDs (Tilda < 200M)
+  - Sortable by date
+- Или увеличить max existing ID на 100,000: `max_id + 100_000 + lang_offset`
 
-1. Tilda admin → открыть соответствующую blog index page (по ID)
-2. Найти блок **T404** (список карточек статей)
-3. **Добавить новую карточку** в начало списка (свежие сверху):
-   - **Preview image**: hero-фото статьи (drag & drop)
-   - **Date**: текущая дата в формате `DD-MM-YYYY` (например `20-04-2026`)
-   - **Title** (~60-80 chars): обычно = Hero title или короче. Это то, что видно в карточке.
-   - **Description** (~120-150 chars): preview-описание. Можно взять Meta description или адаптировать.
-   - **Link**: `/ru/blog/{slug}` (или соответствующий language path)
-4. Save страницу
-5. Сообщить агенту: «blog index updated for RU» (повторить для KA и EN после создания тех language-страниц)
+**HTML patch steps**:
 
-**Agent помогает**: перед этим шагом готовит готовый блок для копирования в Tilda админку:
+1. **Clone template**:
+   ```bash
+   cp tilda-export/project6825691/page129335723.html tilda-export/project6825691/page{NEW_ID}.html
+   ```
 
+2. **Patch HTML** через Python с BeautifulSoup (регексы слишком хрупкие):
+   ```python
+   from bs4 import BeautifulSoup
+   with open('tilda-export/project6825691/page{NEW_ID}.html', 'r', encoding='utf-8') as f:
+       soup = BeautifulSoup(f.read(), 'html.parser')
+   
+   # 1. Meta tags
+   soup.find('title').string = meta_title
+   soup.find('meta', attrs={'name':'description'})['content'] = meta_description
+   soup.find('meta', attrs={'property':'og:title'})['content'] = meta_title
+   soup.find('meta', attrs={'property':'og:description'})['content'] = meta_description
+   soup.find('meta', attrs={'property':'og:url'})['content'] = f'https://bestauto.ge/ru/blog/{slug}'
+   soup.find('link', attrs={'rel':'canonical'})['href'] = f'https://bestauto.ge/ru/blog/{slug}'
+   # og:image — hero photo
+   soup.find('meta', attrs={'property':'og:image'})['content'] = f'https://bestauto.ge/tilda-export/project6825691/images/{slug}-hero.webp'
+   
+   # 2. Hero block (обычно class t182 или tn-atom на Tilda Zero Block)
+   # Найди heading по контексту, замени innerText
+   hero_title_el = soup.find(class_='t182__title') or soup.find('h1', class_='t-title')
+   hero_title_el.string = hero_title
+   hero_subtitle_el = soup.find(class_='t182__descr') or soup.find(class_='t-descr')
+   hero_subtitle_el.string = hero_subtitle
+   # Hero background image
+   hero_img = soup.find(class_='t182__bgimg') or soup.find(class_='t-bgimg', recursive=True)
+   if hero_img:
+       hero_img['style'] = f"background-image: url('images/{slug}-hero.webp');"
+   
+   # 3. Body block (TextPlus) — replace full inner HTML
+   body_el = soup.find(class_='t004') or soup.find(class_='t040') or soup.find(class_='t030')
+   body_el.clear()
+   body_el.append(BeautifulSoup(body_html, 'html.parser'))
+   
+   # 4. Breadcrumbs / navigation — если есть slug references, обновить
+   # (обычно template содержит ссылку "Блог > car-detailing-guide" — замени на {hero_title[:50]})
+   
+   # 5. Save
+   with open(f'tilda-export/project6825691/page{NEW_ID}.html', 'w', encoding='utf-8') as f:
+       f.write(str(soup))
+   ```
+
+3. **Body HTML** — agent конвертирует markdown body в HTML. Простая разметка:
+   - `# H1` → `<h1 class="t-heading">...</h1>`
+   - `## H2` → `<h2 class="t-heading t-heading_sm">...</h2>`
+   - `### H3` → `<h3 class="t-heading t-heading_xs">...</h3>`
+   - абзацы → `<p class="t-text t-text_md">...</p>`
+   - bullet list `- ...` → `<ul class="t-list"><li class="t-list__item">...</li></ul>`
+   - **bold** → `<strong>...</strong>`
+   - `[link](url)` → `<a href="url">...</a>`
+   - Inline фото между H2 → `<img src="images/{slug}-inline-N.webp" alt="..." class="t-img" loading="lazy">`
+
+Можно использовать Python `markdown` library с custom renderer:
+```python
+import markdown
+body_html = markdown.markdown(body_md, extensions=['extra', 'nl2br'])
+# Затем post-process: add t-* классы, конвертировать img в Tilda format
 ```
-=== PREVIEW CARD для RU blog index (ID 37357691) ===
-Image: drafts/blog-images/{slug}/hero-ru.webp
-Date: 20-04-2026
-Title: {preview_title — 60-80 chars}
-Description: {preview_description — 120-150 chars}
-Link: /ru/blog/{slug}
-Position: top (свежие первыми)
+
+4. **Упаковка images в tilda-export**:
+   ```bash
+   cp drafts/blog-images/{slug}/hero.webp tilda-export/project6825691/images/{slug}-hero.webp
+   cp drafts/blog-images/{slug}/inline-1.webp tilda-export/project6825691/images/{slug}-inline-1.webp
+   ```
+
+**Repeat per language**: если публикуешь все 3 языка за слот → 3 новых HTML файла (разные page ID) + 3 набора images (или reuse hero если фото языконезависимо).
+
+### Step 4 — AGENT: Patch blog index page (preview card)
+
+**Критически важно**. Blog index пополняется агентом автоматически — добавляется новая t404 card в начало списка.
+
+**Index page paths**:
+- `tilda-export/project6825691/page37357691.html` — RU (/ru/blog)
+- `tilda-export/project6825691/page37416946.html` — EN (/en/blog)
+- `tilda-export/project6825691/page37602384.html` — KA (/blog)
+
+**Patch script (Python)**:
+```python
+from bs4 import BeautifulSoup
+from datetime import datetime
+
+def patch_blog_index(index_file, slug, hero_title, hero_subtitle, lang):
+    with open(index_file, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f.read(), 'html.parser')
+    
+    # Найти t404 блок (первый вхождение)
+    t404_block = soup.find('div', class_='t404')
+    if not t404_block:
+        raise ValueError("t404 block not found in index page")
+    
+    lang_prefix = {'ru': '/ru/', 'ka': '/', 'en': '/en/'}[lang]
+    date_str = datetime.now().strftime('%d-%m-%Y')
+    
+    # Новая карточка (copy structure from existing first card)
+    first_card = t404_block.find('div', class_='t404__col')
+    new_card_html = str(first_card)  # клонируем структуру
+    new_card = BeautifulSoup(new_card_html, 'html.parser').find('div', class_='t404__col')
+    
+    # Patch new card
+    new_card.find('a', class_='t404__link')['href'] = f'{lang_prefix}blog/{slug}'
+    new_card.find('div', class_='t404__img')['style'] = f"background-image: url('images/{slug}-hero.webp');"
+    new_card.find('div', class_='t404__img')['data-original'] = f"images/{slug}-hero.webp"
+    new_card.find('span', class_='t404__date').string = date_str
+    new_card.find('div', class_='t404__title').string = hero_title[:80]  # обрезать если длинно
+    new_card.find('div', class_='t404__descr').string = hero_subtitle[:150]
+    
+    # Insert at top of list (before first existing card)
+    first_card.insert_before(new_card)
+    
+    with open(index_file, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
 ```
 
-### Step 5 — HUMAN: Export HTML (статья + blog index)
+**Применить per language**: 3 index файла патчатся отдельно (разные hero_title/subtitle для RU/KA/EN из соответствующих секций markdown-драфта).
 
-User экспортирует **ДВЕ** страницы после обновления:
+### Step 5 — AGENT: page-map.json update
 
-1. **Новая статья** (page ID = 658XXXXX):
-   - Settings → Export → Static HTML
-   - Download zip → unzip → найти `page{ID}.html`
-   - Move to `/Users/fedorzubrickij/bestauto-site/tilda-export/project6825691/page{ID}.html`
+```python
+import json
+pm = json.load(open('page-map.json'))
 
-2. **Blog index** для соответствующего языка (например 37357691 для RU):
-   - То же самое: export → `page37357691.html`
-   - Move to `/Users/fedorzubrickij/bestauto-site/tilda-export/project6825691/page37357691.html` (перезапишет старый)
+# Add entry per language
+for lang, lang_prefix in [('ru', '/ru/'), ('ka', '/'), ('en', '/en/')]:
+    new_id = str(generate_new_page_id(lang))  # из Step 3
+    pm[new_id] = {
+        "url": f"https://bestauto.ge{lang_prefix}blog/{slug}",
+        "path": f"{lang_prefix}blog/{slug}",
+        "title": meta_title_by_lang[lang],
+        "lang": lang,
+        "slug": f"blog/{slug}"
+    }
 
-Сообщить агенту: «exported: article 658XXXXX + index 37357691»
-
-**При Variant A (3 языка подряд)**: в конце слота надо экспортировать статью × 3 + index × 3 = 6 HTML файлов.
+json.dump(pm, open('page-map.json','w'), ensure_ascii=False, indent=2)
+```
 
 ### Step 6 — AGENT: page-map.json update
 
@@ -266,21 +396,108 @@ cd /Users/fedorzubrickij/bestauto-site/astro && bun run build
 
 Если build fails → stop, report error, **не пушить**.
 
-### Step 8 — AGENT: blog-links update
+### Step 8 — AGENT: Editorial blog-links update (КРИТИЧЕСКИ ВАЖНО для SEO)
 
-Добавить 2-3 editorial anchors blog→service в `astro/src/data/blog-links.ts`. Использовать `/blog-links` slash command (если доступна) или вручную:
+Механизм описан в `/Users/fedorzubrickij/bestauto-site/docs/blog-internal-links.md` — прочитай перед первым использованием.
 
+**Зачем**: каждая новая статья должна содержать 2-3 анкорные ссылки на pillar-сервисные страницы (`/polishing`, `/ceramiccoating`, `/ppf-shield-wrapping` и т.д.). Это поднимает сервисные страницы в Google через внутренний анкор-сигнал. Без этого шага — статья опубликована, но SEO-эффект на service pages НЕ реализуется.
+
+**Архитектура**:
+```
+astro/src/data/blog-links.ts  →  BLOG_LINKS_RU / _KA / _EN arrays
+astro/src/lib/blog-links-inject.ts  →  инжектор на build-time
+astro/src/data/seo-service-keywords.ts  →  whitelist HF-анкоров (validation)
+```
+
+**Формат правила** в `blog-links.ts`:
 ```typescript
 {
-  slug: '{slug}',
-  anchors: [
-    { term: 'полировка машины', target: '/polishing', contextQuote: 'первый релевантный абзац' },
-    ...
+  article: 'what-is-ppf-explainer',  // slug без языкового префикса
+  links: [
+    {
+      role: 'pillar',                          // pillar | cross-blog | cross-service
+      target: '/polishing',                    // куда ссылка (без lang-prefix)
+      anchor: 'полировка машины',              // HF-запрос из seo-service-keywords.ts
+      originalPhrase: 'полировка',             // что заменяем в тексте статьи
+      contextQuote: 'после нанесения PPF полировка уже не нужна в первые 2 года',
+                                                // уникальный фрагмент где найти originalPhrase
+    },
+    // ещё 1-2 link'а на другие сервисы
   ]
 }
 ```
 
-Запустить ещё раз `bun run build`, проверить лог `[blog-links] applied=N, 0 warnings`.
+**4 validation checks** (применяются при build-time, нарушение = warning, ссылка не инжектируется):
+1. `anchor` — должен быть в `seo-service-keywords.ts` для target+lang (case-insensitive)
+2. `contextQuote` — уникален в HTML статьи (ровно 1 match)
+3. `originalPhrase` — substring от contextQuote (валидность замены)
+4. Нет duplicate-stem (не добавлять ссылку с анкором однокоренным к уже существующей в той же секции)
+
+### Step 8 — AGENT workflow:
+
+**1. Прочитай статью** (RU секцию файла `drafts/blog/{slug}.md`):
+- Определи 2-3 упоминания сервисов, которые можно сделать анкорными ссылками
+- Для PPF-статьи это могут быть ссылки на `/ceramiccoating`, `/polishing`, `/vinyl-wrapping` (cross-cluster context)
+- Для POL-статьи — `/ceramiccoating` (natural follow-up), `/ppf-shield-wrapping` (upsell)
+
+**2. Подбери anchor из HF-словаря**:
+- Открой `astro/src/data/seo-service-keywords.ts`
+- Найди секцию `SERVICE_KEYWORDS_RU[target]` — там массив HF-запросов
+- Выбери один, который читается естественно в контексте статьи
+- Для KA/EN секций — аналогично из `SERVICE_KEYWORDS_KA`/`_EN`
+
+**3. Найди originalPhrase + contextQuote**:
+- `originalPhrase` — короткое слово/фраза в статье, которую заменим на анкор (например "полировка")
+- `contextQuote` — окружающий текст 30-80 chars с уникальным контекстом (чтобы инжектор нашёл правильное место, не любое вхождение слова "полировка")
+
+**4. Добавь правила в `blog-links.ts`**:
+```typescript
+// В файле astro/src/data/blog-links.ts
+export const BLOG_LINKS_RU: BlogLinkRule[] = [
+  // ...существующие правила...
+  {
+    article: 'what-is-ppf-explainer',
+    links: [
+      {
+        role: 'cross-service',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамика',
+        contextQuote: 'PPF работает с керамикой поверх — двойная защита',
+      },
+      {
+        role: 'cross-service',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка',
+        contextQuote: 'перед нанесением PPF часто нужна полировка лака',
+      },
+    ],
+  },
+];
+
+// Аналогично добавить правила в BLOG_LINKS_KA и BLOG_LINKS_EN
+```
+
+**5. Верификация**:
+```bash
+cd /Users/fedorzubrickij/bestauto-site/astro && bun run build
+# Смотри лог: `[blog-links] what-is-ppf-explainer (ru): applied=2 missed=0 ambiguous=0 unknown=0`
+```
+
+Ожидаемый результат:
+- `applied=2-3` (сколько правил успешно инжектировалось)
+- `missed=0`, `ambiguous=0`, `unknown=0` (нет warning'ов)
+
+**Если есть warning'и** — читай логи, исправляй contextQuote или anchor, пересобирай. НЕ пушить с warning'ами.
+
+**Per-language**: правила добавляются ОТДЕЛЬНО для каждого языка (разные HF-анкоры на RU/KA/EN). Если публикуешь все 3 языка за один слот — добавь 3 набора правил (BLOG_LINKS_RU + _KA + _EN).
+
+**Anti-pattern** (не делать):
+- ❌ Использовать не-HF анкоры (например «услугу полировки» — это НЕ запрос, его нет в словаре)
+- ❌ Одинаковые анкоры на 3 языках (натурально разные формулировки)
+- ❌ Более 3 ссылок в одной статье (выглядит спамно)
+- ❌ Ссылки на ту же услугу 2 раза в одной статье (duplicate-stem)
 
 ### Step 9 — AGENT: Status update
 
@@ -360,12 +577,13 @@ Default: **Вариант A** — 1 слот расписания = 1 стать
 
 ### Pre-publish (agent before Step 4)
 - [ ] `status: drafted` в frontmatter (не уже published)
-- [ ] Hero фото есть (проверить file на диске)
-- [ ] Inline фото есть (минимум 1 для P1/P2)
+- [ ] Hero фото есть **и конвертирован в WebP** (проверить file на диске, размер < 300 KB)
+- [ ] Inline фото есть **в WebP** (минимум 1 для P1/P2, размер < 150 KB каждый)
 - [ ] RU секция длиной в range (1300-2200 слов через `wc -w`)
 - [ ] Цены только из §8a.1 (Python check)
 - [ ] Бренды только whitelist (Python check)
 - [ ] Нет Глдани/Сабуртало/Лило (Python check)
+- [ ] Editorial anchors в `blog-links.ts` спроектированы (2-3 per lang) и HF-анкоры в словаре
 
 ### Post-publish (agent after Step 11)
 - [ ] `bun run build` в astro/ прошёл без ошибок
@@ -601,22 +819,38 @@ Workflow + photo guidance: /Users/fedorzubrickij/bestauto-site/drafts/blog/READM
 
 Ключевые настройки:
 1. Photo archive: /Users/fedorzubrickij/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pollinations.ai — free, no key)
-2. Tilda страницы user создаёт вручную; ты готовишь copy-paste блок и продолжаешь после экспорта HTML
-3. **Для каждой статьи две Tilda правки**: (а) новая article page, (б) добавить preview card в blog index (IDs: 37357691 RU / 37416946 EN / 37602384 KA)
-4. GSC indexing готов: `cd /Users/fedorzubrickij/bestauto-content && python scripts/request_indexing.py`
-5. Ошибки пиши прямо в сессии с префиксом «⚠ ERROR:» (без Telegram/Slack)
-6. AI фото через Pollinations.ai (curl на https://image.pollinations.ai/prompt/... — бесплатно)
-7. Languages: все 3 (RU/KA/EN) в один слот расписания (Вариант A)
+2. **Tilda admin НЕ используется**. Агент сам создаёт HTML файлы на основе существующих templates:
+   - RU template: tilda-export/project6825691/page129335723.html (/ru/blog/car-detailing-guide)
+   - KA template: tilda-export/project6825691/page129335883.html (/blog/car-detailing-guide)
+   - Clone + patch (BeautifulSoup) → save as page{NEW_ID}.html с unique ID по схеме 9YYYYMMDD{idx}
+3. **Blog index patch** (автоматически): агент добавляет t404 card в начало списков на page37357691 (RU) / page37602384 (KA) / page37416946 (EN)
+4. **Photos** хостятся в tilda-export/project6825691/images/ (коммитятся в repo, деплоятся через Cloudflare Pages)
+5. **Conversion PNG → WebP**: `cwebp -q 80 -resize 1920 1080 ... -o hero.webp` (hero <300KB, inline <150KB)
+6. Editorial links: после создания HTML → добавь 2-3 правила в astro/src/data/blog-links.ts (см. docs/blog-internal-links.md), 4 validation checks, анкоры из seo-service-keywords.ts
+7. GSC indexing: `cd /Users/fedorzubrickij/bestauto-content && python scripts/request_indexing.py`
+8. Ошибки пиши в сессии с префиксом «⚠ ERROR:»
+9. AI фото через Pollinations.ai (curl https://image.pollinations.ai/prompt/...)
+10. Languages: все 3 (RU/KA/EN) в один слот (Вариант A)
 
-Прочитай brief + README + guidelines §8a, потом:
-1. Настрой расписание через /schedule: `0 10 * * SAT,SUN,MON,WED,THU` Asia/Tbilisi (5 статей/неделю)
-2. Сделай dry-run первой статьи (пропусти #1 chem-cleaning — это pilot, уже в продукте; начни с #2 what-is-ppf-explainer):
-   - Сгенерируй hero-фото через Pollinations.ai → сохрани в drafts/blog-images/what-is-ppf-explainer/
-   - Подготовь RU секцию для копирования в Tilda:
-     • Article page: hero title/subtitle/meta/body
-     • Preview card для blog index: preview title (60-80c) + description (120-150c) + date + link
-   - Покажи мне результат
-3. После моего ОК — я создаю обе страницы (article + add card в RU blog index), сообщаю page ID, ты продолжаешь (page-map для обеих / build / push / GSC для обоих URL)
+Прочитай brief + README + guidelines §8a + docs/blog-internal-links.md, потом:
+1. Настрой расписание через /schedule: `0 10 * * SAT,SUN,MON,WED,THU` Asia/Tbilisi (5/неделю, Сб-Вс-Пн-Ср-Чт)
+2. Сделай dry-run первой статьи (пропусти #1 chem-cleaning — pilot в продукте; начни с #2 what-is-ppf-explainer):
+   - Сгенерируй 1 hero + 2 inline фото через Pollinations.ai, конвертируй в WebP (cwebp)
+   - Clone RU template page129335723.html, patch meta/hero/body через BeautifulSoup
+   - Clone KA template page129335883.html, patch аналогично
+   - Clone EN template (найди в page-map.json), patch
+   - Patch blog index pages (37357691 RU + 37602384 KA + 37416946 EN): add t404 card
+   - Update page-map.json (3 новых entries)
+   - Update blog-links.ts (2-3 editorial anchors per lang)
+   - Run `bun run build` — проверь 0 warnings
+   - Покажи мне diff (git status + git diff summary)
+3. Я approve'ю изменения (или попрошу корректировки). После OK:
+   - git commit + push origin main
+   - Wait Cloudflare deploy (gh run list)
+   - Verify live URLs (curl https://bestauto.ge/ru/blog/what-is-ppf-explainer | grep hero_title)
+   - Add 3 URLs в live_urls.txt, run python scripts/request_indexing.py
+   - Update status: published в frontmatter
+   - Отчёт по Step 14 format
 
 Ответь коротко: "готов, прочитал брифы" — и начинай с dry-run.
 ```
