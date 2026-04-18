@@ -60,7 +60,7 @@ sources:
 
 При этом цена керамики салона ниже — от 300 ₾ против 500 ₾ за кузов. Это связано с меньшей площадью покрытия и более коротким циклом работы.
 
-На практике получается такая математика: химчистка раз в 12-18 месяцев (от 400-550 ₾) плюс керамика после неё (от 300 ₾) — итого защита салона стоит 700-850 ₾ на полтора года, то есть 40-50 ₾ в месяц. Для сравнения, полная замена тканевой обивки одного сиденья у обойщика — от 500-700 ₾, а с перепродажной стоимостью машины связано ещё больше.
+На практике получается такая математика: химчистка раз в 12-18 месяцев (от 400 ₾) плюс керамика после неё (от 300 ₾) — защита салона оплачивается в два этапа, и каждая процедура со своим сроком службы. Связь с перепродажной стоимостью машины здесь тоже есть: чистый защищённый салон при продаже воспринимается заметно лучше изношенного.
 
 Актуальный прайс — на страницах [керамического покрытия салона](/ru/ceramiccoating) и [химчистки салона авто](/ru/interior-cleaning).
 
@@ -100,7 +100,7 @@ sources:
 
 **Семья с детьми до 10 лет.** Соки, еда, мелкая грязь — в таком режиме тканевая обивка без защиты изнашивается за 2-3 года до неприятного состояния. С керамикой большинство инцидентов стирается салфеткой на месте, обивка остаётся презентабельной.
 
-**Перепродажа через 2-3 года.** Если машина покупается «в плюс» — под сдачу или перепродажу — чистый салон прямо влияет на скорость продажи и финальную цену. Химчистка перед продажей стоит 500 ₾, керамика ещё 300 ₾, а разница в цене за счёт «как новый салон» — часто 2000-3000 ₾.
+**Перепродажа через 2-3 года.** Если машина покупается «в плюс» — под сдачу или перепродажу — чистый салон прямо влияет на скорость продажи и финальную цену. Химчистка перед продажей стоит 500 ₾, керамика ещё 300 ₾, а разница в цене за счёт «как новый салон» обычно многократно перекрывает эти расходы.
 
 **Активный городской использователь.** Каждый день минимум 2 часа в машине, кофе на ходу, пыль из открытого окна. Без защиты салон теряет вид за 12 месяцев, с защитой — за 24-30.
 
@@ -110,11 +110,11 @@ sources:
 
 ### Сколько стоит керамика салона в Тбилиси?
 
-От 300 ₾ за керамическое покрытие салона. Если заказывается в комплекте с химчисткой — общая сумма от 700 ₾ (легкая категория химчистки 400 ₾ плюс керамика 300 ₾). Актуальный прайс — на странице [керамического покрытия салона](/ru/ceramiccoating). Финальная цифра зависит от типа материалов (кожа, пластик, ткань, алькантара) и площади покрытия.
+От 300 ₾ за керамическое покрытие салона. Если заказывается в комплекте с химчисткой — обе процедуры оплачиваются отдельно: лёгкая категория химчистки от 400 ₾ плюс керамика от 300 ₾. Актуальный прайс — на странице [керамического покрытия салона](/ru/ceramiccoating). Финальная цифра зависит от типа материалов (кожа, пластик, ткань, алькантара) и площади покрытия.
 
 ### Можно ли сделать керамику без химчистки?
 
-Технически — да, но нельзя рекомендовать. Керамика работает только на чистой поверхности. Если нанести на грязный салон, покрытие ляжет поверх загрязнений и отойдёт в первые недели. Это гарантированно потраченные деньги. Минимум — лёгкая категория химчистки за 400 ₾, затем керамика; суммарно 700 ₾ даёт защиту на 12-18 месяцев.
+Технически — да, но нельзя рекомендовать. Керамика работает только на чистой поверхности. Если нанести на грязный салон, покрытие ляжет поверх загрязнений и отойдёт в первые недели. Это гарантированно потраченные деньги. Минимум — лёгкая категория химчистки от 400 ₾, затем керамика от 300 ₾; обе процедуры оплачиваются раздельно, суммарный результат — защита на 12-18 месяцев.
 
 ### Сколько керамика держится в салоне по сравнению с кузовом?
 
@@ -135,7 +135,7 @@ sources:
 **Ключевые выводы:**
 
 - Керамика салона — только на чистую поверхность; керамика без химчистки даёт отрицательный результат
-- Цена — от 300 ₾, сумма с химчисткой — от 700 ₾ за полный комплект защиты
+- Цена — от 300 ₾; в связке с химчисткой каждая процедура оплачивается отдельно по прайсу
 - Срок службы в салоне — 12-18 месяцев против 2-3 лет на кузове
 - Используется система Gyeon с отдельными составами под кожу, пластик, ткань
 - Окупается быстрее всего в семейных машинах, при перепродаже и на новых авто
@@ -197,7 +197,7 @@ sources:
 
 ამასთან სალონის კერამიკის ფასი უფრო დაბალია — 300 ₾-დან 500 ₾-ის ნაცვლად კუზოვზე. ეს დაკავშირებულია საფარის უფრო მცირე ფართობთან და უფრო ხანმოკლე სამუშაო ციკლთან.
 
-პრაქტიკაში ასეთი მათემატიკა გამოდის: ქიმწმენდა 12-18 თვეში ერთხელ (400-550 ₾-დან) პლიუს მის შემდეგ კერამიკა (300 ₾-დან) — სულ სალონის დაცვა წელიწად-ნახევარზე ღირს 700-850 ₾, ანუ 40-50 ₾ თვეში. შედარებისთვის, ერთი სავარძლის ქსოვილიანი გარსის სრული შეცვლა ოსტატთან — 500-700 ₾-დან, ხოლო მანქანის გასაყიდ ფასთან ბევრად მეტი დაკავშირებულია.
+პრაქტიკაში ასეთი მათემატიკა გამოდის: ქიმწმენდა 12-18 თვეში ერთხელ (400 ₾-დან) პლიუს მის შემდეგ კერამიკა (300 ₾-დან) — სალონის დაცვა იხდება ორ ეტაპად, ყოველი პროცედურა საკუთარი მომსახურების ვადით. მანქანის გასაყიდ ფასთან კავშირიც არის: სუფთა დაცული სალონი გაყიდვისას აღიქმება შესამჩნევად უკეთ, ვიდრე ცვდომილი.
 
 აქტუალური პრაისი — გვერდებზე [სალონის კერამიკული საფარი](/ceramiccoating) და [სალონის ქიმწმენდა](/interior-cleaning).
 
@@ -237,7 +237,7 @@ sources:
 
 **ოჯახი 10 წლამდე ბავშვებით.** წვენები, საჭმელი, წვრილი ჭუჭყი — ასეთ რეჟიმში დაუცველი ქსოვილიანი გარსი 2-3 წელში ცვდება უსიამოვნო მდგომარეობამდე. კერამიკით ინციდენტების უმრავლესობა ადგილზე იხსნება ხელსახოცით, გარსი რჩება წარმოსადგენი.
 
-**გადაყიდვა 2-3 წელიწადში.** თუ მანქანა იყიდება „პლუსით" — იჯარით ან გადაყიდვად — სუფთა სალონი პირდაპირ მოქმედებს გაყიდვის სიჩქარესა და საბოლოო ფასზე. გაყიდვამდე ქიმწმენდა ღირს 500 ₾, კერამიკა კიდევ 300 ₾, ხოლო ფასის სხვაობა „ახალი სახის სალონის" ხარჯზე — ხშირად 2000-3000 ₾.
+**გადაყიდვა 2-3 წელიწადში.** თუ მანქანა იყიდება „პლუსით" — იჯარით ან გადაყიდვად — სუფთა სალონი პირდაპირ მოქმედებს გაყიდვის სიჩქარესა და საბოლოო ფასზე. გაყიდვამდე ქიმწმენდა ღირს 500 ₾, კერამიკა კიდევ 300 ₾, ხოლო ფასის სხვაობა „ახალი სახის სალონის" ხარჯზე ჩვეულებრივ ამ ხარჯებს მრავალჯერ ფარავს.
 
 **აქტიური ქალაქის მომხმარებელი.** ყოველდღიურად მინიმუმ 2 საათი მანქანაში, ყავა გზაში, მტვერი გახსნილი ფანჯრიდან. დაცვის გარეშე სალონი კარგავს სახეს 12 თვეში, დაცვით — 24-30-ში.
 
@@ -247,11 +247,11 @@ sources:
 
 ### რა ღირს სალონის კერამიკა თბილისში?
 
-300 ₾-დან სალონის კერამიკულ საფარზე. თუ შეკვეთილია კომპლექტში ქიმწმენდასთან — საერთო თანხა 700 ₾-დან (მსუბუქი კატეგორიის ქიმწმენდა 400 ₾ პლიუს კერამიკა 300 ₾). აქტუალური პრაისი — გვერდზე [სალონის კერამიკული საფარი](/ceramiccoating). საბოლოო ციფრი დამოკიდებულია მასალების ტიპზე (ტყავი, პლასტმასი, ქსოვილი, ალკანტარა) და საფარის ფართობზე.
+300 ₾-დან სალონის კერამიკულ საფარზე. თუ შეკვეთილია კომპლექტში ქიმწმენდასთან — ორივე პროცედურა იხდება ცალკე: მსუბუქი კატეგორიის ქიმწმენდა 400 ₾-დან პლიუს კერამიკა 300 ₾-დან. აქტუალური პრაისი — გვერდზე [სალონის კერამიკული საფარი](/ceramiccoating). საბოლოო ციფრი დამოკიდებულია მასალების ტიპზე (ტყავი, პლასტმასი, ქსოვილი, ალკანტარა) და საფარის ფართობზე.
 
 ### შეიძლება კერამიკის გაკეთება ქიმწმენდის გარეშე?
 
-ტექნიკურად — დიახ, მაგრამ ამის რეკომენდება არ შეიძლება. კერამიკა მუშაობს მხოლოდ სუფთა ზედაპირზე. თუ დაიდება ჭუჭყიან სალონზე, საფარი ლაგდება დაბინძურების ზემოდან და ცდება პირველ კვირებში. ესაა გარანტირებულად დახარჯული ფული. მინიმუმი — მსუბუქი კატეგორიის ქიმწმენდა 400 ₾-ად, შემდეგ კერამიკა; ჯამურად 700 ₾ აძლევს დაცვას 12-18 თვე.
+ტექნიკურად — დიახ, მაგრამ ამის რეკომენდება არ შეიძლება. კერამიკა მუშაობს მხოლოდ სუფთა ზედაპირზე. თუ დაიდება ჭუჭყიან სალონზე, საფარი ლაგდება დაბინძურების ზემოდან და ცდება პირველ კვირებში. ესაა გარანტირებულად დახარჯული ფული. მინიმუმი — მსუბუქი კატეგორიის ქიმწმენდა 400 ₾-დან, შემდეგ კერამიკა 300 ₾-დან; ორივე პროცედურა იხდება ცალკე, ჯამური შედეგი — დაცვა 12-18 თვე.
 
 ### რამდენი ხანი ინარჩუნებს კერამიკა სალონში კუზოვთან შედარებით?
 
@@ -272,7 +272,7 @@ sources:
 **ძირითადი დასკვნები:**
 
 - სალონის კერამიკა — მხოლოდ სუფთა ზედაპირზე; კერამიკა ქიმწმენდის გარეშე იძლევა უარყოფით შედეგს
-- ფასი — 300 ₾-დან, თანხა ქიმწმენდასთან ერთად — 700 ₾-დან სრული დაცვის კომპლექტზე
+- ფასი — 300 ₾-დან; ქიმწმენდასთან კავშირში ყოველი პროცედურა ცალკე იხდება პრაისით
 - მომსახურების ვადა სალონში — 12-18 თვე 2-3 წლის ნაცვლად კუზოვზე
 - გამოიყენება Gyeon-ის სისტემა ცალკე შემადგენლობებით ტყავზე, პლასტმასზე, ქსოვილზე
 - ყველაზე ჩქარა იხდის ოჯახურ მანქანებში, გადაყიდვისას და ახალ ავტომობილებზე
@@ -334,7 +334,7 @@ The body is one surface type (clearcoat) under external loads: washes, road grim
 
 At the same time interior ceramic is cheaper — from 300 ₾ vs 500 ₾ for the body. That reflects smaller coated area and a shorter work cycle.
 
-The practical math: dry cleaning every 12-18 months (400-550 ₾ range) plus ceramic on top (from 300 ₾) — total interior protection runs 700-850 ₾ for eighteen months, i.e. 40-50 ₾ per month. For comparison, full fabric reupholstery of a single seat at an upholsterer — from 500-700 ₾, and resale impact runs higher still.
+The practical math: dry cleaning every 12-18 months (from 400 ₾) plus ceramic on top (from 300 ₾) — interior protection is paid in two stages, each with its own service life. A resale connection exists too: a clean, protected cabin at sale time reads noticeably better than a worn one.
 
 Current pricing is on the [interior ceramic coating](/en/ceramiccoating) and [interior cleaning](/en/interior-cleaning) service pages.
 
@@ -374,7 +374,7 @@ Ceramic helps any car, but there are scenarios where it pays back faster than av
 
 **Family with kids under 10.** Juice, food, small dirt — under that load, unprotected fabric degrades to an unpleasant state in 2-3 years. With ceramic, most incidents wipe off on the spot and upholstery stays presentable.
 
-**Resale in 2-3 years.** If the car is bought to flip or resell, a clean cabin directly affects time-on-market and final price. Pre-sale dry cleaning — 500 ₾, ceramic another 300 ₾, and price uplift from "like-new interior" — often 2000-3000 ₾.
+**Resale in 2-3 years.** If the car is bought to flip or resell, a clean cabin directly affects time-on-market and final price. Pre-sale dry cleaning — 500 ₾, ceramic another 300 ₾, and the price uplift from a "like-new interior" typically covers those costs several times over.
 
 **Active city user.** At least 2 hours a day in the car, coffee on the go, dust from an open window. Without protection the cabin loses its look in 12 months; with protection — in 24-30.
 
@@ -384,11 +384,11 @@ Ceramic helps any car, but there are scenarios where it pays back faster than av
 
 ### How much does interior ceramic cost in Tbilisi?
 
-From 300 ₾ for interior ceramic coating. Ordered together with dry cleaning — total from 700 ₾ (light-category cleaning 400 ₾ plus ceramic 300 ₾). Current pricing is on the [interior ceramic coating](/en/ceramiccoating) service page. Final figure depends on material types covered (leather, plastic, fabric, alcantara) and surface area.
+From 300 ₾ for interior ceramic coating. Ordered together with dry cleaning — both procedures are paid separately: light-category cleaning from 400 ₾ plus ceramic from 300 ₾. Current pricing is on the [interior ceramic coating](/en/ceramiccoating) service page. Final figure depends on material types covered (leather, plastic, fabric, alcantara) and surface area.
 
 ### Can I skip dry cleaning and just do ceramic?
 
-Technically — yes, but not advisable. Ceramic only works on a clean surface. On a dirty cabin, the coating sits on top of dirt and lifts within weeks. That is guaranteed wasted money. Minimum — light-category dry cleaning at 400 ₾, then ceramic; combined 700 ₾ delivers 12-18 months of protection.
+Technically — yes, but not advisable. Ceramic only works on a clean surface. On a dirty cabin, the coating sits on top of dirt and lifts within weeks. That is guaranteed wasted money. Minimum — light-category dry cleaning from 400 ₾, then ceramic from 300 ₾; both procedures paid separately, combined result is 12-18 months of protection.
 
 ### How long does interior ceramic last vs body ceramic?
 
@@ -409,7 +409,7 @@ Interior ceramic is the logical continuation of dry cleaning, not an alternative
 **Key takeaways:**
 
 - Interior ceramic — clean surfaces only; ceramic without dry cleaning is a negative-result investment
-- Pricing — from 300 ₾; combined with cleaning — from 700 ₾ for a full protection package
+- Pricing — from 300 ₾; in a combined visit with cleaning, each procedure is paid separately by its line price
 - Service life in cabin — 12-18 months vs 2-3 years on the body
 - Gyeon system with dedicated formulas for leather, plastic, fabric
 - Pays back fastest in family cars, resale preparation, and new vehicles
