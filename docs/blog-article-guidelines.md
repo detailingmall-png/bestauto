@@ -326,9 +326,11 @@ Vinyl:
 - **Химчистка: кроме Koch Chemie (и то аккуратно в мойке — для интерьера generic)** — не упоминать Tornador, Leather Master, ValetPRO и др.
 - Ни в одном кластере не ставить whitelist-бренд в один список с чужими брендами без выделения «с чем работает BESTAUTO»
 
-**Сравнительные таблицы:**
-- В кластерах С whitelist (PPF/Ceramic/Tinting/Wash) можно упомянуть конкурирующие бренды (напр. «PPF-рынок: XPEL, 3M, Llumar, LuxArmor…»), но всегда подчёркивать: «в BESTAUTO мы работаем с Llumar, LuxArmor и Quantum — потому что…»
-- В кластерах БЕЗ whitelist (POL/VIN/WIN/INT) — сравнение только через ДЖЕНЕРИКИ («премиум-сегмент», «бюджетный сегмент», «европейские производители», «китайские производители») без конкретных имён.
+**Сравнительные таблицы (2026-04-18 update — usage's directive):**
+- НЕЛЬЗЯ упоминать любые бренды, не входящие в whitelist BESTAUTO, ни в одном контексте, включая сравнительные таблицы.
+- Сравнения — только между брендами whitelist (например, Llumar vs LuxArmor vs Quantum) или через дженерики («премиум-сегмент», «бюджетный сегмент», «европейские производители», «китайские производители», «международные премиум-производители»).
+- Запрещено: XPEL, Stek, SunTek, 3M, KDX, Hexis, KPMF, Oracal, Avery Dennison, Ravoony, Teckwrap, Gtechniq, Ceramic Pro, Nanolex, CarPro, Meguiar, SONAX, Chemical Guys, Turtle Wax, Mothers, Menzerna, Solar Gard, Johnson, Lintec, Huper Optik, CPFilms, Tornador, Leather Master, ValetPRO, Cquartz, Nasiol, Opti-Coat — и любой другой бренд, с которым BESTAUTO не работает.
+- Это касается и упоминаний в meta description, frontmatter, sources, body, FAQ, заключении.
 
 **Формулировки для статей:**
 

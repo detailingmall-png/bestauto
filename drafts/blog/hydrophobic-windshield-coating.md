@@ -71,13 +71,13 @@ sources:
 
 Керамика на лобовое стекло — это про удобство в дождь, а не про защиту от камней. От сколов и трещин она не помогает: слой керамики толщиной в доли микрона физического удара на себя не принимает. Если на трассе прилетел камень — стекло треснет ровно так же, как без покрытия.
 
-Для защиты от сколов работает другая технология — плёнка для лобового стекла, разновидность [защитной плёнки PPF](/ppf-shield-wrapping). Это полиуретановая плёнка толщиной 150–200 микрон, которая наклеивается на внешнюю сторону стекла и принимает удар. Она не заменяет гидрофобную керамику — наоборот, сверху на плёнку часто наносят то же самое керамическое покрытие для отталкивания воды. Комбинация работает: плёнка держит камни, керамика держит воду.
+Для защиты от сколов работает другая технология — плёнка для лобового стекла, разновидность [защитной плёнки PPF](/ru/ppf-shield-wrapping). Это полиуретановая плёнка толщиной 150–200 микрон, которая наклеивается на внешнюю сторону стекла и принимает удар. Она не заменяет гидрофобную керамику — наоборот, сверху на плёнку часто наносят то же самое керамическое покрытие для отталкивания воды. Комбинация работает: плёнка держит камни, керамика держит воду.
 
 Также керамика не заменяет антиобледенительные составы зимой. Гидрофобное покрытие отталкивает жидкую воду, но не мешает образованию ледяной корки за ночь. Утром всё равно придётся скрести или прогревать стекло.
 
 ## Цена и сроки в Тбилиси
 
-Гидрофобное покрытие на стёкла в BESTAUTO — от 150 ₾ (см. прайс на странице [керамического покрытия](/ceramiccoating)). В базовую цену входит обработка лобового стекла и боковых зеркал — это минимальный набор для города. Обработка всех стёкол (лобовое + боковые + заднее) — отдельный расчёт на осмотре, обычно пропорционально площади.
+Гидрофобное покрытие на стёкла в BESTAUTO — от 150 ₾ (см. прайс на странице [керамического покрытия](/ru/ceramiccoating)). В базовую цену входит обработка лобового стекла и боковых зеркал — это минимальный набор для города. Обработка всех стёкол (лобовое + боковые + заднее) — отдельный расчёт на осмотре, обычно пропорционально площади.
 
 По времени нанесение занимает 1–2 часа, плюс 6–12 часов полимеризации. Машину в этот промежуток лучше оставить в студии или сухом боксе — мыть или ездить под дождём нельзя. Первая полноценная мойка с напором — через 7 дней.
 
@@ -121,7 +121,7 @@ sources:
 
 ## CTA
 
-Записать авто на [гидрофобное покрытие стекла](/ceramiccoating) в BESTAUTO можно через форму на странице услуги или звонком в удобную вам студию:
+Записать авто на [гидрофобное покрытие стекла](/ru/ceramiccoating) в BESTAUTO можно через форму на странице услуги или звонком в удобную вам студию:
 
 - **BESTAUTO на Гурамишвили** — пр. Гурамишвили 78, тел. +995 550 000 299
 - **BESTAUTO на Политковской** — ул. Анна Политковская 51, тел. +995 550 000 199
@@ -305,7 +305,7 @@ Refreshes cost less than the first application: glass is already in decent shape
 
 Ceramic on a windshield is about comfort in rain, not stone defence. It doesn't stop chips or cracks — a fraction-of-a-micron film doesn't absorb physical impact. A stone off a lorry cracks the glass the same way with or without coating.
 
-For stone-chip defence, a different product does the job — windshield-grade [PPF paint protection film](/ppf-shield-wrapping). That's a 150–200-micron polyurethane film applied to the outside of the glass that takes the hit. It doesn't replace hydrophobic ceramic — on the contrary, the same ceramic is often laid over the film to keep water shedding. The combo works: film stops stones, ceramic handles the rain.
+For stone-chip defence, a different product does the job — windshield-grade [PPF paint protection film](/en/ppf-shield-wrapping). That's a 150–200-micron polyurethane film applied to the outside of the glass that takes the hit. It doesn't replace hydrophobic ceramic — on the contrary, the same ceramic is often laid over the film to keep water shedding. The combo works: film stops stones, ceramic handles the rain.
 
 Ceramic also doesn't replace winter anti-icing products. Hydrophobic coating repels liquid water but doesn't stop a sheet of ice forming overnight. You'll still be scraping or running the defroster in the morning.
 
