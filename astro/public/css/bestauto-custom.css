@@ -741,6 +741,26 @@ html {
 }
 
 /* ========================================================================
+   Blog body text (t004 / .t-text_md)
+   Old blog exports (page37xxx CSS) define .t-text_md at 20/18/16px.
+   New template exports (page129xxx CSS) omit these rules entirely.
+   This global definition fills the gap for all blog articles.
+   ======================================================================== */
+.t-text_md {
+  font-size: 20px;
+  line-height: 1.55;
+}
+@media screen and (max-width: 980px) {
+  .t-text_md { font-size: 18px; }
+}
+@media screen and (max-width: 640px) {
+  .t-text_md {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+}
+
+/* ========================================================================
    Hero video overlay (injected into Tilda Zero Block t396)
    ======================================================================== */
 /* Video CSS is injected inline per-page by hero-block.ts.
