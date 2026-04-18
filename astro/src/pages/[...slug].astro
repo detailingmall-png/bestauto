@@ -1325,8 +1325,28 @@ mainContent = relocateAnchor(mainContent, 'contacts', 'id="rec2091246563"');
 // #reviews → before self-hosted reviews widget
 mainContent = relocateAnchor(mainContent, 'reviews', 'id="ba-reviews"');
 
-// #photo → before gallery
-mainContent = relocateAnchor(mainContent, 'photo', 'class="ba-gallery"');
+// #photo → before gallery heading block (so heading is visible when landing on #photo).
+// Tries per-page heading IDs first (homepage + service pages, all languages), falls back
+// to the ba-gallery container if none of the heading blocks are present.
+const PHOTO_HEADING_MARKERS: ReadonlyArray<string> = [
+  'id="rec713423972"',   // RU homepage + RU service "Фото ... студий"
+  'id="rec2091645453"',  // KA homepage "თბილისში..."
+  'id="rec1862088871"',  // EN homepage + EN service
+  'id="rec713418578"',   // KA service
+];
+{
+  let photoRelocated = false;
+  for (const marker of PHOTO_HEADING_MARKERS) {
+    if (mainContent.includes(marker)) {
+      mainContent = relocateAnchor(mainContent, 'photo', marker);
+      photoRelocated = true;
+      break;
+    }
+  }
+  if (!photoRelocated) {
+    mainContent = relocateAnchor(mainContent, 'photo', 'class="ba-gallery"');
+  }
+}
 
 // H3: Hide empty named anchors from screen readers
 mainContent = mainContent.replace(
