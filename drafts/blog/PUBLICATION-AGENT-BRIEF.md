@@ -148,13 +148,12 @@
 
 **2a. AI-генерация (Pollinations.ai)** — default, бесплатно, без ключа:
 ```bash
-# Hero (1920×1080)
+# Hero ONLY (1920×1080) — inline-изображения в body статьи НЕ нужны
 curl -o drafts/blog-images/{slug}/hero-raw.png \
   "https://image.pollinations.ai/prompt/$(jq -rn --arg p '{PROMPT}' '$p|@uri')?width=1920&height=1080&model=flux&nologo=true&enhance=true"
-
-# Inline (1200×800) — по 2-4 штуки per article
-curl -o drafts/blog-images/{slug}/inline-1-raw.png "...width=1200&height=800..."
 ```
+
+> **⚠ НЕТ inline-изображений в body статьи** — только hero. Подтверждено на what-is-ppf-explainer.
 
 Промпт берётся из cluster-specific шаблонов в `drafts/blog/README.md` раздел «AI-генерация: базовый prompt template».
 
@@ -375,10 +374,27 @@ body_html = markdown.markdown(body_md, extensions=['extra', 'nl2br'])
 4. **Упаковка images в tilda-export**:
    ```bash
    cp drafts/blog-images/{slug}/hero.webp tilda-export/project6825691/images/{slug}-hero.webp
-   cp drafts/blog-images/{slug}/inline-1.webp tilda-export/project6825691/images/{slug}-inline-1.webp
+   # КРИТИЧНО: tilda-export/images/ находится в .gitignore и НЕ деплоится!
+   # Обязательно скопировать также в astro/public/images/ — только этот путь коммитится и достигает Cloudflare Pages
+   cp drafts/blog-images/{slug}/hero.webp astro/public/images/{slug}-hero.webp
    ```
 
-**Repeat per language**: если публикуешь все 3 языка за слот → 3 новых HTML файла (разные page ID) + 3 набора images (или reuse hero если фото языконезависимо).
+**Orphaned blocks** (multi-rec style, ОБЯЗАТЕЛЬНО):
+
+Источники (page129xxx) всегда содержат один dt=131 блок с `ba-blog-content` — это контент предыдущей статьи, который НЕ совпадает с regex для удаления body-рекордов (например `rec1296496\d+`). После удаления старых body-рекордов по ID-паттерну — явно удалить все оставшиеся orphaned блоки:
+
+```python
+orphaned = [
+    r for r in soup.find_all('div', attrs={'data-record-type': '131'})
+    if r.find('div', class_='ba-blog-content')
+]
+for r in orphaned:
+    r.decompose()
+```
+
+**Reference implementation**: `/tmp/patch_ppf.py` функция `patch_template()` — полная реализация pipeline (metatextblock, hero patch, multi/single body, orphaned removal).
+
+**Repeat per language**: если публикуешь все 3 языка за слот → 3 новых HTML файла (разные page ID) + hero image reuse (языконезависимо).
 
 ### Step 4 — AGENT: Patch blog index page (preview card)
 
@@ -389,55 +405,59 @@ body_html = markdown.markdown(body_md, extensions=['extra', 'nl2br'])
 - `tilda-export/project6825691/page37416946.html` — EN (/en/blog)
 - `tilda-export/project6825691/page37602384.html` — KA (/blog)
 
-**Patch script (Python)**:
-```python
-from bs4 import BeautifulSoup
-from datetime import datetime
+**Patch script (Python) — ТОЛЬКО regex injection, НЕ BeautifulSoup:**
 
-def patch_blog_index(index_file, slug, hero_title, hero_subtitle, lang):
-    with open(index_file, 'r', encoding='utf-8') as f:
-        soup = BeautifulSoup(f.read(), 'html.parser')
-    
-    # Найти t404 блок (первый вхождение)
-    t404_block = soup.find('div', class_='t404')
-    if not t404_block:
-        raise ValueError("t404 block not found in index page")
-    
-    lang_prefix = {'ru': '/ru/', 'ka': '/', 'en': '/en/'}[lang]
-    date_str = datetime.now().strftime('%d-%m-%Y')
-    
-    # Новая карточка (copy structure from existing first card)
-    first_card = t404_block.find('div', class_='t404__col')
-    new_card_html = str(first_card)  # клонируем структуру
-    new_card = BeautifulSoup(new_card_html, 'html.parser').find('div', class_='t404__col')
-    
-    # Patch new card
-    new_card.find('a', class_='t404__link')['href'] = f'{lang_prefix}blog/{slug}'
-    new_card.find('div', class_='t404__img')['style'] = f"background-image: url('images/{slug}-hero.webp');"
-    new_card.find('div', class_='t404__img')['data-original'] = f"images/{slug}-hero.webp"
-    new_card.find('span', class_='t404__date').string = date_str
-    new_card.find('div', class_='t404__title').string = hero_title[:80]  # обрезать если длинно
-    new_card.find('div', class_='t404__descr').string = hero_subtitle[:150]
-    
-    # Insert at top of list (before first existing card)
-    first_card.insert_before(new_card)
-    
-    with open(index_file, 'w', encoding='utf-8') as f:
-        f.write(str(soup))
+> ⚠ BeautifulSoup НЕ использовать для index pages — BS4 реформатирует 38-104 строки per файл (всё что внутри блока), git diff становится нечитаемым. Используй plain string injection.
+
+```python
+def build_card(href, img, date, title, descr):
+    return (
+        '<div class="t404__col t-col t-col_6 t-align_left"> '
+        f'<a class="t404__link" href="{href}"> '
+        '<div class="t404__imgbox"> '
+        f'<div class="t404__img t-bgimg" data-original="{img}" style="background-image: url(\'{img}\');"></div> '
+        '<div class="t404__separator"></div> '
+        '</div> '
+        '<div class="t404__textwrapper"> '
+        '<div class="t404__uptitle t-uptitle"> '
+        f'<span class="t404__date">{date}</span> '
+        '</div> '
+        f'<div class="t404__title t-heading t-heading_xs">{title}</div> '
+        f'<div class="t404__descr t-descr t-descr_xs">{descr}</div> '
+        '</div> '
+        '</a> '
+        '</div>'
+    )
+
+def patch_index(path, href, img, date, title, descr):
+    html = path.read_text()
+    if href in html:  # idempotency check
+        return
+    # Маркер — первая t404 карточка. Trailing space внутри кавычек обязателен!
+    marker = '<div class="t404__col t-col t-col_6 t-align_left '
+    idx = html.find(marker)
+    assert idx != -1, f'marker not found in {path.name}'
+    card = build_card(href, img, date, title, descr)
+    path.write_text(html[:idx] + card + ' ' + html[idx:])
 ```
 
-**Применить per language**: 3 index файла патчатся отдельно (разные hero_title/subtitle для RU/KA/EN из соответствующих секций markdown-драфта).
+**Reference implementation**: `/tmp/patch_blog_index_regex.py` (what-is-ppf-explainer сессия).
+
+**Применить per language**: 3 index файла патчатся отдельно (разные title/descr/href для RU/KA/EN).
 
 ### Step 5 — AGENT: page-map.json update
 
 ```python
 import json
-pm = json.load(open('page-map.json'))
+# КРИТИЧНО: редактировать astro/src/lib/page-map.json
+# Верхнеуровневый page-map.json — это orphan/deprecated файл, НЕ используется сайтом
+pm = json.load(open('astro/src/lib/page-map.json'))
 
 # Add entry per language
 for lang, lang_prefix in [('ru', '/ru/'), ('ka', '/'), ('en', '/en/')]:
     new_id = str(generate_new_page_id(lang))  # из Step 3
     pm[new_id] = {
+        "file": f"page{new_id}.html",
         "url": f"https://bestauto.ge{lang_prefix}blog/{slug}",
         "path": f"{lang_prefix}blog/{slug}",
         "title": meta_title_by_lang[lang],
@@ -445,7 +465,7 @@ for lang, lang_prefix in [('ru', '/ru/'), ('ka', '/'), ('en', '/en/')]:
         "slug": f"blog/{slug}"
     }
 
-json.dump(pm, open('page-map.json','w'), ensure_ascii=False, indent=2)
+json.dump(pm, open('astro/src/lib/page-map.json','w'), ensure_ascii=False, indent=2)
 ```
 
 ### Step 6 — AGENT: page-map.json update
@@ -881,6 +901,20 @@ python scripts/request_indexing.py --status
 - Плюсы: hreflang полные сразу, SEO-связка работает с первого дня
 - Time cost за слот: ~30 мин агент + ~33 мин user (параллельно → 25 мин wallclock)
 - Альтернатива (если user захочет позже переключиться): 1-lang-first для всех статей, потом остальные языки — просто меняется порядок в queue.
+
+---
+
+## Известные баги (исправлены в коде, важно знать)
+
+### blog-grid.ts: extractOgMeta — порядок атрибутов BS4
+
+**Симптом**: карточка статьи в блог-индексе показывает пустое изображение (`data-original="/images/"`).
+
+**Причина**: BeautifulSoup сортирует атрибуты алфавитно: `content=` оказывается ДО `property=`. Старый regex `property="og:image"\s+content=` не матчил.
+
+**Исправлено** в `astro/src/lib/blog-grid.ts` (commit `7ebe63f`): двухшаговая экстракция — сначала находим весь `<meta>` тег, потом из него извлекаем `content=`. 
+
+**Для патч-скриптов**: несмотря на исправление в коде, в шаблоне `og:image content=` всегда писать как `content` ДО `property` невозможно при использовании BS4 — BS4 всё равно переставит. Это нормально, код уже учитывает это.
 
 ---
 
