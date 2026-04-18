@@ -13,13 +13,14 @@
 Для каждой статьи:
 
 1. **Открыть** `drafts/blog/{slug}.md` в текстовом редакторе
-2. **Скопировать секцию нужного языка** (например всё между `## RU` и следующим `---`):
-   - `**Hero title:**` и `**Hero subtitle:**` → в Tilda hero block (Title + Subtitle поля)
-   - `**Meta title:**` и `**Meta description:**` → Tilda Settings → SEO
-   - Тело (H1, intro, H2 секции, FAQ, Заключение, CTA) → в TextPlus / Zero block article body
-3. **Создать страницу** в Tilda admin → получить numeric ID (~658xxxxx)
-4. **Export HTML**: `Tilda admin → Export → Save to disk` → переместить в `/tilda-export/project6825691/page{ID}.html`
-5. **Обновить** `page-map.json` — добавить запись:
+2. **Подобрать/сгенерировать фото для hero** (см. раздел «Фото для статьи» ниже) — обычно 1 hero + 2-4 inline шота
+3. **Скопировать секцию нужного языка** (например всё между `## RU` и следующим `---`):
+   - `**Hero title:**` и `**Hero subtitle:**` → в Tilda hero block (Title + Subtitle поля) + загрузить hero-фото
+   - `**Meta title:**` и `**Meta description:**` → Tilda Settings → SEO (+ meta og:image = hero-фото)
+   - Тело (H1, intro, H2 секции, FAQ, Заключение, CTA) → в TextPlus / Zero block article body; inline фото между H2 секциями где логично
+4. **Создать страницу** в Tilda admin → получить numeric ID (~658xxxxx)
+5. **Export HTML**: `Tilda admin → Export → Save to disk` → переместить в `/tilda-export/project6825691/page{ID}.html`
+6. **Обновить** `page-map.json` — добавить запись:
    ```json
    {
      "pageId": "658xxxxx",
@@ -30,9 +31,9 @@
      "slug": "blog/{slug}"
    }
    ```
-6. **Astro build** → `cd astro && bun run build` → проверить что `astro/dist/ru/blog/{slug}.html` создан
-7. **Commit + push** → Cloudflare Pages автоматом деплоит на prod
-8. **Request Indexing в GSC** (первые дни публикации)
+7. **Astro build** → `cd astro && bun run build` → проверить что `astro/dist/ru/blog/{slug}.html` создан
+8. **Commit + push** → Cloudflare Pages автоматом деплоит на prod
+9. **Request Indexing в GSC** (первые дни публикации)
 
 ## Структура одного файла
 
@@ -243,6 +244,182 @@ Intro (100-150 слов)...
 
 **P3 (19 статей) — long-tail, seasonal, niche**
 — Последние. Добавят корпус и покрытие редких запросов.
+
+## Фото для статьи
+
+Каждая статья нуждается минимум в **одном hero-фото** (open graph + верх статьи) и **2-4 inline фото** между H2-секциями. Ниже — где искать, как генерировать, какие должны быть.
+
+### Иерархия источников (по убывающему приоритету)
+
+**1. Архив BESTAUTO (идеал)** — собственные фото работ в студии.
+- Плюсы: уникальность, аутентичность, полная совместимость с бренд-эстетикой (тёмный бокс, золотой акцент).
+- Минусы: надо вручную отбирать из архива, не всегда есть шот под конкретный угол.
+- **Когда использовать**: всегда, если есть подходящий шот на конкретную тему (полировка фар, оклейка PPF на капот, химчистка салона и т.д.).
+
+**2. AI-генерация через fal.ai / Flux / SDXL** — fallback, когда в архиве нет подходящего кадра.
+- Плюсы: безлимит, кастом под статью, быстро.
+- Минусы: риск generic-AI-look если промпт плохой; не всегда физически корректно (отражения, детали).
+- **Когда использовать**: для декоративных inline-шотов, абстрактных концепт-визуалов (физика SiO₂, схема слоёв PPF), когда в архиве пусто.
+- **Skill**: `fal-ai-media` — text-to-image через MCP, поддерживает Flux / Nano Banana / SDXL.
+- **Модель**: Flux 1.1 Pro Ultra или Flux Dev для детализированных реалистичных кадров.
+
+**3. Stock НЕ использовать** — категорически (per §5 guidelines). Unsplash/Pexels/Shutterstock одинаковые фото всплывают на сотнях сайтов, убивают доверие.
+
+### Эстетика (бренд-правила BESTAUTO)
+
+Все фото должны соответствовать визуальному языку сайта (см. `.claude/rules/ui-ux-guide.md` §12):
+
+- **Тёмный студийный фон** — чёрный или тёмно-серый бокс с точечной LED-подсветкой. НЕ дневной свет на улице, НЕ белый фон.
+- **Близкие крупные планы** процесса или детали — не общие виды машины целиком.
+- **Драматичное освещение** — контровый свет, рефлексы, мокрые поверхности после мойки.
+- **Золотой/тёплый акцент** где возможно (блики, отражения в лаке).
+- **Премиум-бренды машин без логотипа**: BMW M-силуэт, Porsche 911, Mercedes AMG, Audi RS, Range Rover. Для AI-генерации — избегать видимых лого и эмблем.
+- **Избегать**: яркая дневная съёмка, белый фон, stock-постановка, логотипы конкурентов (студий), зеркалки в отражении, фото китайских тюнинг-плёнок «с перепечатанным брендом».
+
+### Шот-guidance по кластерам
+
+Для каждого кластера — типичные удачные ракурсы:
+
+**POL — полировка**
+- Hero: полировочная машинка в действии на тёмном лаке, золотые блики, микрофибра рядом
+- Inline: 50/50 до-после половины капота, толщиномер лака на детали, этапы пасты разных зёрен
+- Специфика #4 (headlights): макро фары с голограммами до → прозрачными после
+
+**CER — керамика**
+- Hero: вода каплями скатывается с чёрного капота после дождя (гидрофобный эффект)
+- Inline: нанесение керамики аппликатором, блик от свежего слоя, контейнер Gyeon
+- Специфика #17 (hydrophobic windshield): капли на стекле с scraping-эффектом
+
+**PPF — защитная плёнка**
+- Hero: мастер натягивает прозрачную плёнку на капот, рука в перчатке, 45° угол
+- Inline: сравнение сколов на обычной детали vs защищённой, срез слоёв плёнки (схема), ролл плёнки на столе
+- Специфика #35 (brand comparison): 3 флакона/листа Llumar+LuxArmor+Quantum на тёмном фоне
+
+**VIN — виниловая оклейка**
+- Hero: машина наполовину в чёрном глянце, наполовину в исходном цвете
+- Inline: нож подрезает плёнку на кромке, сатин/мат/глянец рядом для сравнения
+- Специфика #45 (chrome delete): до/после оконной рамки
+
+**TIN — тонировка**
+- Hero: процесс наклейки плёнки на заднее стекло изнутри, тёмный бокс
+- Inline: тонометр показывает VLT%, 3 уровня плёнки 20/35/70 на стекле
+- Специфика #49/52 (legal): градиент затемнения с метками % и пометкой законной зоны
+
+**WIN — ремонт стекла**
+- Hero: инжектор на лобовом, УФ-лампа 365нм, капля смолы
+- Inline: bullseye/star/combination 3 типа сколов макро, до-после ремонта свежего скола
+- Специфика #66 (ADAS): крепление камеры за зеркалом крупным планом
+
+**WSH — мойка**
+- Hero: активная пена на капоте Range Rover, радужные блики
+- Inline: микрофибра в двухведёрной системе, pH-нейтральный шампунь крупно
+- Специфика #75 (ceramic/PPF wash): капли воды на покрытии vs обычном лаке
+
+**INT — химчистка**
+- Hero: экстрактор вытягивает грязную воду из чёрного кожаного сиденья
+- Inline: до-после обивки, парогенератор на торпедо, озонатор в закрытом салоне
+- Специфика #84 (leather): ланолиновый кондиционер на макро-текстуре кожи
+
+**GEN — umbrella**
+- Hero: общий вид бокса BESTAUTO с инструментами и оборудованием
+- Inline: разные процессы кратко, финальный блик на детейлинг-готовом авто
+- Специфика #98 (brands-we-use): лого Llumar, LuxArmor, Quantum, Gyeon, Koch Chemie на полке (только whitelist)
+
+### AI-генерация: базовый prompt template
+
+Для Flux / SDXL через fal.ai. Базовый шаблон, который адаптируется под шот:
+
+```
+Premium automotive detailing studio photo, dark industrial workshop,
+dramatic LED key light from left, warm amber rim light, macro close-up of
+[SPECIFIC SHOT — e.g. "hand in black nitrile glove applying ceramic coating
+applicator on black car paint, water beading effect"], shallow depth of
+field, f/1.8 aperture, 85mm lens, Nikon Z8 quality, photorealistic, no
+brand logos visible, moody automotive photography style, commercial-grade,
+cinematic lighting, 8K detail
+```
+
+Негативные промпты:
+```
+white background, bright daylight, stock photo, logo, watermark, text,
+cartoon, anime, 3d render, plastic look, oversaturated, low quality
+```
+
+**Per-cluster примеры промптов**:
+
+- POL hero: `rotary polisher on glossy black car hood, golden reflection, micro-scratches becoming mirror-smooth, macro detail of pad and paste`
+- CER hero: `hydrophobic water beads rolling off ceramic-coated black carbon hood, raindrops spherical and glossy, dark garage background`
+- PPF hero: `technician's gloved hand installing transparent paint protection film on white supercar fender, film edge clearly visible, studio lighting`
+- TIN hero: `film being applied to rear window interior, squeegee removing bubbles, transparent dark tint layer, technician silhouette backlit`
+- WIN hero: `resin injector bridge on windshield, UV lamp 365nm purple glow, chip being sealed, macro close-up`
+- WSH hero: `foam cannon spraying pH-neutral snow foam on black luxury sedan hood, rainbow reflections, detailed water droplets`
+- INT hero: `wet-dry extractor pulling dirty water from black leather car seat, steam rising, detailed fabric texture`
+- GEN hero: `cinematic wide shot of premium detailing bay at night, rolling tool chest, polisher on stand, ambient blue and amber LED strips`
+
+### Технические спецификации
+
+Все фото перед загрузкой в Tilda:
+
+| Параметр | Hero | Inline |
+|---|---|---|
+| Формат | WebP (primary) + JPG fallback | WebP |
+| Разрешение | 1920×1080 (16:9) | 1200×800 (3:2) |
+| Размер файла | < 300 KB (Squoosh 75% quality) | < 150 KB |
+| Цветовой профиль | sRGB | sRGB |
+| Сжатие | Squoosh / Squoosh CLI / cwebp | то же |
+
+### Alt-текст (обязательно)
+
+Каждое фото в Tilda получает описательный alt-атрибут с primary HF:
+
+**Формат**: `{действие/объект} — {контекст bestauto}`
+
+Примеры:
+- `Полировка лака BMW на ротационной машинке — детейлинг-студия BESTAUTO`
+- `Нанесение керамики Gyeon на капот Porsche — студия BESTAUTO в Тбилиси`
+- `Ремонт скола на лобовом стекле инжектором — BESTAUTO windshield repair`
+
+**Per-lang**: alt должен быть на языке страницы (RU для /ru/, KA для /, EN для /en/).
+
+### Именование файлов
+
+`{slug}-{shot-type}-{lang}.webp`
+
+Примеры:
+- `polish-cream-diy-vs-studio-hero-ru.webp`
+- `ppf-full-body-wrapping-guide-step-application-en.webp`
+- `chem-cleaning-tbilisi-prices-before-after-ka.webp`
+
+Если фото одинаковое на всех 3 языках (hero обычно) — можно без lang-суффикса: `{slug}-hero.webp`.
+
+### Куда складывать файлы
+
+**До публикации в Tilda**:
+- Локальная папка `drafts/blog-images/{slug}/` (создавать по мере написания)
+- В Tilda **НЕ** загружать заранее — только при создании страницы, чтобы не плодить orphan файлы
+
+**После публикации**:
+- Tilda автоматически хостит картинки на своём CDN
+- В Astro-export HTML картинки указывают на `https://static.tildacdn.com/...` — это нормально
+
+### Когда какой источник использовать (decision tree)
+
+1. **Техническая близкая деталь процесса** (макро инжектор, паста на поролоне, слой керамики) → AI-генерация Flux (реалистично при хорошем промпте)
+2. **Машина конкретной модели в studio setting** (BMW, Porsche, Range Rover на тёмном фоне) → AI-генерация Flux; избегать видимых эмблем
+3. **Реальные «до/после» работы BESTAUTO** → архив студии (100% приоритет, даже если качество среднее)
+4. **Концепт/схема** (3D слои плёнки, физика self-healing, шкала VLT) → AI-генерация или minimal vector иллюстрация
+5. **Бренд-материалы (Gyeon, Koch Chemie упаковки)** → фото с сайта производителя (permission) ИЛИ из архива студии
+6. **Люди**: избегать лиц (privacy, model-release). Показывать руки в перчатках, силуэты против света.
+
+### Minimum viable photos per article (МVP)
+
+Если бюджет на фото ограничен — приоритеты:
+1. **Hero** (обязательно) — 1 шт, без него статья выглядит стоком в Tilda blog-карточке
+2. **Inline #1** (обязательно) — между H2 #2 и #3, разбивает текст
+3. **Inline #2** (желательно) — перед FAQ или перед Заключением
+4. **Inline #3-4** (опционально) — для длинных статей >2000w
+
+Если совсем нет времени — **1 только hero** допустим для P2/P3 статей, но для P1 (top GSC ROI) — минимум hero + 2 inline.
 
 ## Общие правила содержания (см. `docs/blog-article-guidelines.md`)
 
