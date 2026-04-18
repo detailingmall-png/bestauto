@@ -108,6 +108,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Offset fragment navigation below fixed header (t228: 80px desktop, tmenu-mobile: 73px). */
+  scroll-padding-top: 90px;
 }
 
 /* C2: Prevent H1/H2 text clipping on narrow mobile viewports (375px) */
