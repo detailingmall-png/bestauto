@@ -169,7 +169,7 @@ BODY:
 
 Сформировать как text file или прямо в stdout агента → user копирует в Tilda.
 
-### Step 4 — HUMAN: Create Tilda page
+### Step 4 — HUMAN: Create Tilda article page
 
 User (или junior + agent assist):
 1. Tilda admin → Pages → **Create page**
@@ -182,13 +182,59 @@ User (или junior + agent assist):
 8. Save → **получить numeric page ID** из URL admin страницы
 9. Сообщить ID агенту: «page ID: 658XXXXX»
 
-### Step 5 — HUMAN: Export HTML
+### Step 4b — HUMAN: Update blog index page (КАРТОЧКА ПРЕВЬЮ)
 
-User:
-1. В Tilda admin: Settings → Export → Static HTML
-2. Download zip → unzip → найти `page{ID}.html`
-3. Move to `/Users/fedorzubrickij/bestauto-site/tilda-export/project6825691/page{ID}.html`
-4. Сообщить агенту: «exported»
+**Критически важный шаг, часто забывают.** Без него статья существует по прямому URL, но не появляется на странице `/blog`, `/ru/blog`, `/en/blog` — читатели её не увидят в списке.
+
+Blog index pages (по одной на язык):
+
+| Язык | URL | Tilda page ID |
+|---|---|---|
+| RU | https://bestauto.ge/ru/blog | **37357691** |
+| EN | https://bestauto.ge/en/blog | **37416946** |
+| KA | https://bestauto.ge/blog | **37602384** |
+
+Для каждого языка:
+
+1. Tilda admin → открыть соответствующую blog index page (по ID)
+2. Найти блок **T404** (список карточек статей)
+3. **Добавить новую карточку** в начало списка (свежие сверху):
+   - **Preview image**: hero-фото статьи (drag & drop)
+   - **Date**: текущая дата в формате `DD-MM-YYYY` (например `20-04-2026`)
+   - **Title** (~60-80 chars): обычно = Hero title или короче. Это то, что видно в карточке.
+   - **Description** (~120-150 chars): preview-описание. Можно взять Meta description или адаптировать.
+   - **Link**: `/ru/blog/{slug}` (или соответствующий language path)
+4. Save страницу
+5. Сообщить агенту: «blog index updated for RU» (повторить для KA и EN после создания тех language-страниц)
+
+**Agent помогает**: перед этим шагом готовит готовый блок для копирования в Tilda админку:
+
+```
+=== PREVIEW CARD для RU blog index (ID 37357691) ===
+Image: drafts/blog-images/{slug}/hero-ru.webp
+Date: 20-04-2026
+Title: {preview_title — 60-80 chars}
+Description: {preview_description — 120-150 chars}
+Link: /ru/blog/{slug}
+Position: top (свежие первыми)
+```
+
+### Step 5 — HUMAN: Export HTML (статья + blog index)
+
+User экспортирует **ДВЕ** страницы после обновления:
+
+1. **Новая статья** (page ID = 658XXXXX):
+   - Settings → Export → Static HTML
+   - Download zip → unzip → найти `page{ID}.html`
+   - Move to `/Users/fedorzubrickij/bestauto-site/tilda-export/project6825691/page{ID}.html`
+
+2. **Blog index** для соответствующего языка (например 37357691 для RU):
+   - То же самое: export → `page37357691.html`
+   - Move to `/Users/fedorzubrickij/bestauto-site/tilda-export/project6825691/page37357691.html` (перезапишет старый)
+
+Сообщить агенту: «exported: article 658XXXXX + index 37357691»
+
+**При Variant A (3 языка подряд)**: в конце слота надо экспортировать статью × 3 + index × 3 = 6 HTML файлов.
 
 ### Step 6 — AGENT: page-map.json update
 
@@ -286,6 +332,7 @@ curl -s "https://bestauto.ge/ru/blog/{slug}" | grep -i "{hero_title_fragment}"
 ✅ Published: {slug} ({lang})
 URL: https://bestauto.ge/{lang_prefix}blog/{slug}
 Page ID: 658XXXXX
+Blog index updated: ✓ (card visible on https://bestauto.ge/{lang_prefix}blog)
 Commit: abc1234
 GSC: requested indexing (or: «нужен ручной click в GSC»)
 Next scheduled: [next slug + when]
@@ -321,7 +368,8 @@ Default: **Вариант A** — 1 слот расписания = 1 стать
 ### Post-publish (agent after Step 11)
 - [ ] `bun run build` в astro/ прошёл без ошибок
 - [ ] `blog-links` warnings = 0
-- [ ] URL живой (curl HEAD 200)
+- [ ] URL статьи живой (curl HEAD 200)
+- [ ] **URL blog index содержит новую карточку** — `curl https://bestauto.ge/ru/blog | grep "{slug}"` должно найти
 - [ ] Hero рендерится
 - [ ] hreflang теги есть
 - [ ] Meta title/description в HTML source
@@ -436,13 +484,14 @@ Weekly digest (week of YYYY-MM-DD):
 | Этап | Agent time | User time |
 |---|---|---|
 | Photo gen + prep | 5 мин | 0 |
-| Tilda page create | 0 | 10 мин |
-| Tilda export | 0 | 1 мин |
+| Tilda **article** page create | 0 | 10 мин |
+| Tilda **blog index** card add | 0 | 3 мин |
+| Tilda export (article + index) | 0 | 2 мин |
 | page-map + build + push + GSC | 5 мин | 0 |
-| **Total per language** | **~10 мин** | **~11 мин** |
-| **Total per article × 3 lang** | **~30 мин** | **~33 мин** |
+| **Total per language** | **~10 мин** | **~15 мин** |
+| **Total per article × 3 lang** | **~30 мин** | **~45 мин** |
 
-Реально оба в параллели (agent генерит фото пока user создаёт page) — wallclock ~20-25 мин.
+Реально оба в параллели (agent генерит фото пока user создаёт page) — wallclock ~30-35 мин per article на все 3 языка.
 
 ---
 
@@ -547,18 +596,21 @@ Workflow + photo guidance: /Users/fedorzubrickij/bestauto-site/drafts/blog/READM
 Ключевые настройки:
 1. Photo archive: /Users/fedorzubrickij/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pollinations.ai — free, no key)
 2. Tilda страницы user создаёт вручную; ты готовишь copy-paste блок и продолжаешь после экспорта HTML
-3. GSC indexing готов: `cd /Users/fedorzubrickij/bestauto-content && python scripts/request_indexing.py`
-4. Ошибки пиши прямо в сессии (без Telegram/Slack)
-5. AI фото через Pollinations.ai (curl на https://image.pollinations.ai/prompt/... — бесплатно)
-6. Languages: все 3 (RU/KA/EN) в один слот расписания (Вариант A)
+3. **Для каждой статьи две Tilda правки**: (а) новая article page, (б) добавить preview card в blog index (IDs: 37357691 RU / 37416946 EN / 37602384 KA)
+4. GSC indexing готов: `cd /Users/fedorzubrickij/bestauto-content && python scripts/request_indexing.py`
+5. Ошибки пиши прямо в сессии с префиксом «⚠ ERROR:» (без Telegram/Slack)
+6. AI фото через Pollinations.ai (curl на https://image.pollinations.ai/prompt/... — бесплатно)
+7. Languages: все 3 (RU/KA/EN) в один слот расписания (Вариант A)
 
 Прочитай brief + README + guidelines §8a, потом:
 1. Настрой расписание через /schedule: `0 10 * * MON,WED,FRI` Asia/Tbilisi
 2. Сделай dry-run первой статьи (пропусти #1 chem-cleaning — это pilot, уже в продукте; начни с #2 what-is-ppf-explainer):
-   - Сгенерируй hero-фото через Pollinations.ai
-   - Подготовь RU секцию для копирования в Tilda (hero title/subtitle/meta + body)
+   - Сгенерируй hero-фото через Pollinations.ai → сохрани в drafts/blog-images/what-is-ppf-explainer/
+   - Подготовь RU секцию для копирования в Tilda:
+     • Article page: hero title/subtitle/meta/body
+     • Preview card для blog index: preview title (60-80c) + description (120-150c) + date + link
    - Покажи мне результат
-3. После моего ОК — я создаю страницу в Tilda, сообщаю page ID, ты продолжаешь (page-map/build/push/GSC)
+3. После моего ОК — я создаю обе страницы (article + add card в RU blog index), сообщаю page ID, ты продолжаешь (page-map для обеих / build / push / GSC для обоих URL)
 
 Ответь коротко: "готов, прочитал брифы" — и начинай с dry-run.
 ```
