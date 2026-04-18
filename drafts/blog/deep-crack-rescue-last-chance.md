@@ -137,7 +137,7 @@ sources:
 
 ### Сколько стоит ремонт трещины 25 см и сколько — замена стекла?
 
-Ремонт трещины 15–30 см — от 140 ₾, конкретная цена обсуждается после очного осмотра. Замена стекла — 600–3500 ₾ в зависимости от наличия датчиков, обогрева, ADAS-камеры. На стандартной машине без датчиков замена обычно стоит 600–1500 ₾, на машине с камерой — 2500 ₾ и выше с учётом калибровки. Разница в стоимости ремонта и замены — обычно от 5 до 25 раз. Актуальный прайс — на странице [ремонт стекол авто](/ru/windshield-repair).
+Ремонт трещины 15–30 см — от 140 ₾, конкретная цена обсуждается после очного осмотра. Замена стекла выполняется в профильных стекольных сервисах Тбилиси; прайс у каждой студии свой и зависит от наличия датчиков, обогрева, ADAS-камеры — уточняйте напрямую. Мы стёкла не меняем. Разница между ремонтом и заменой легко выходит в десятки раз. Актуальный прайс по ремонту — на странице [ремонт стекол авто](/ru/windshield-repair).
 
 ### Если трещина уже месяц, ремонт что-то даст?
 
@@ -149,7 +149,7 @@ sources:
 
 ## Заключение
 
-Глубокая трещина — повреждение, которое требует решения в ближайшие часы, а не дни. У студии есть окно 24–48 часов, в котором инжекция смолы и сверление точки-ловушки могут зафиксировать трещину и спасти стекло от замены. После этого окна косметика и структурная надёжность падают каждый день, и через неделю обычно остаётся только замена за 600–3500 ₾ против 95–140 ₾ за «остановку».
+Глубокая трещина — повреждение, которое требует решения в ближайшие часы, а не дни. У студии есть окно 24–48 часов, в котором инжекция смолы и сверление точки-ловушки могут зафиксировать трещину и спасти стекло от замены. После этого окна косметика и структурная надёжность падают каждый день, и через неделю обычно остаётся только замена в профильном сервисе против 95–140 ₾ за «остановку» у нас.
 
 Метод не безграничный. Трещина в зоне водителя, трещина до края стекла, трещина с разветвлениями или с повреждением через триплекс — это уже не для ремонта. Честный мастер скажет это сразу на осмотре, не возьмётся за работу ради денег и не оставит вас потом со стеклом, которое всё равно придётся менять. Этот критерий — готовность сразу сказать «только замена» — отличает рабочую студию от точки, где берут любые деньги за любую процедуру.
 
@@ -160,7 +160,7 @@ sources:
 - Метод: точка-ловушка на конце трещины + инжекция смолы вдоль всей линии + УФ-полимеризация.
 - «Остановка» не возвращает прозрачность стекла — линия остаётся видимой, но не растёт.
 - Замена обязательна: трещина в зоне водителя, до края стекла, через триплекс.
-- Ремонт 15–30 см — от 140 ₾, замена стекла — 600–3500 ₾. Разница 5–25 раз.
+- Ремонт 15–30 см — от 140 ₾, замена стекла — у профильных сервисов (мы не меняем). Разница в деньгах измеряется десятками раз.
 
 ## CTA
 
@@ -264,13 +264,9 @@ sources:
 
 30 სმ-ზე გრძელი ბზარისთვის საბოლოო ფასი განიხილება პირდაპირი დათვალიერებისას — როლს თამაშობს ბზარის ფორმა, განთავსება, ტექნიკისთვის ხელმისაწვდომობა. ხანდახან გრძელი, მაგრამ სწორი და ხელმისაწვდომი ბზარი იაფი ჯდება, ვიდრე საშუალო, მაგრამ რთული ფორმის.
 
-საქარე მინის შეცვლა:
+საქარე მინის შეცვლა ხორციელდება თბილისის პროფილურ სტუდიებში, პრაისი თითოეულ სერვისში ინდივიდუალურია და დამოკიდებულია სენსორებზე, გათბობაზე და ADAS-კამერაზე — ფასს დააზუსტებთ პირდაპირ. BESTAUTO-ში მინას არ ვცვლით.
 
-- საბაზო მანქანა სენსორების გარეშე — 600–1500 ₾ მინაზე პლუს სამუშაო.
-- მანქანა მინის გათბობით, წვიმის/სინათლის სენსორებით — 1500–2500 ₾.
-- მანქანა ADAS-კამერით პლუს კალიბრაციით — 2500–3500 ₾ და ზემოთ.
-
-გადაწყვეტის ლოგიკა მარტივია. თუ ბზარი ახალია (48 საათამდე) და ხვდება „გაჩერების" პირობებში — ცადეთ შეკეთება. ღირებულება 5–25-ჯერ ნაკლებია შეცვლაზე, რისკი გასაგებია (თუ შეკეთება არ გამოვა — ფული სამუშაოზე რჩება სტუდიასთან, მაგრამ ისედაც მიდის შეცვლა). თუ ბზარი ძველია, ან მძღოლის ზონაშია, ან კიდემდე მიაღწია — მაშინვე შეცვლა. ცუდი შეკეთებისთვის ფულის გადახდის აზრი არ არის, განსაკუთრებით თუ შემდეგ ისედაც იცვლება მინა.
+გადაწყვეტის ლოგიკა მარტივია. თუ ბზარი ახალია (48 საათამდე) და ხვდება „გაჩერების" პირობებში — ცადეთ შეკეთება. ღირებულება შეცვლასთან შედარებით ათობით-ჯერ ნაკლებია, რისკი გასაგებია (თუ შეკეთება არ გამოვა — ფული სამუშაოზე რჩება სტუდიასთან, მაგრამ ისედაც მიდის შეცვლა). თუ ბზარი ძველია, ან მძღოლის ზონაშია, ან კიდემდე მიაღწია — მაშინვე შეცვლა. ცუდი შეკეთებისთვის ფულის გადახდის აზრი არ არის, განსაკუთრებით თუ შემდეგ ისედაც იცვლება მინა.
 
 ჩაიწეროთ დათვალიერებაზე [მინის შეკეთების სტუდიაში](/windshield-repair) მიზანშეწონილია ბზარის გაჩენიდან პირველ საათებში. საბოლოო გადაწყვეტა — პირდაპირი დათვალიერების შემდეგ ლამპის ქვეშ, იჭერს 5–10 წუთს.
 
@@ -300,7 +296,7 @@ sources:
 
 ### რა ღირს 25 სმ ბზარის შეკეთება და რა — მინის შეცვლა?
 
-15–30 სმ ბზარის შეკეთება — 140 ₾-დან, კონკრეტული ფასი განიხილება პირდაპირი დათვალიერების შემდეგ. მინის შეცვლა — 600–3500 ₾ სენსორების, გათბობის, ADAS-კამერის ხელმისაწვდომობის მიხედვით. სტანდარტული მანქანა სენსორების გარეშე ჩვეულებრივ ღირს 600–1500 ₾, კამერიანი — 2500 ₾ და ზემოთ კალიბრაციის ჩათვლით. შეკეთებისა და შეცვლის ფასებს შორის სხვაობა — ჩვეულებრივ 5–25-ჯერ. აქტუალური ფასები — გვერდზე [საქარე მინის აღდგენა](/windshield-repair).
+15–30 სმ ბზარის შეკეთება — 140 ₾-დან, კონკრეტული ფასი განიხილება პირდაპირი დათვალიერების შემდეგ. მინის შეცვლა — თბილისის პროფილურ სტუდიებში, პრაისი თითოეულ სერვისს აქვს ინდივიდუალური და სენსორებზე, გათბობაზე, ADAS-კამერაზეა დამოკიდებული — ფასს დააზუსტეთ პირდაპირ. BESTAUTO-ში მინას არ ვცვლით. შეკეთებასა და შეცვლას შორის ფულადი სხვაობა ადვილად ათობით-ჯერ აღწევს. ჩვენი შეკეთების აქტუალური ფასები — გვერდზე [საქარე მინის აღდგენა](/windshield-repair).
 
 ### თუ ბზარი უკვე ერთი თვისაა, შეკეთება რამეს მოიტანს?
 
@@ -312,7 +308,7 @@ sources:
 
 ## დასკვნა
 
-ღრმა ბზარი — დაზიანებაა, რომელიც მოითხოვს გადაწყვეტას უახლოეს საათებში, და არა დღეებში. სტუდიას აქვს 24–48 საათიანი ფანჯარა, რომელშიც ფისის ინექცია და ხაფანგის წერტილის გაბურღვა შეძლებს ბზარის ფიქსაციას და მინის შეცვლისგან გადარჩენას. ამ ფანჯრის შემდეგ კოსმეტიკა და სტრუქტურული საიმედოობა ეცემა ყოველდღე, და კვირაში ჩვეულებრივ რჩება მხოლოდ შეცვლა 600–3500 ₾-ად 95–140 ₾-იანი „გაჩერების" საპირისპიროდ.
+ღრმა ბზარი — დაზიანებაა, რომელიც მოითხოვს გადაწყვეტას უახლოეს საათებში, და არა დღეებში. სტუდიას აქვს 24–48 საათიანი ფანჯარა, რომელშიც ფისის ინექცია და ხაფანგის წერტილის გაბურღვა შეძლებს ბზარის ფიქსაციას და მინის შეცვლისგან გადარჩენას. ამ ფანჯრის შემდეგ კოსმეტიკა და სტრუქტურული საიმედოობა ეცემა ყოველდღე, და კვირაში ჩვეულებრივ რჩება მხოლოდ შეცვლა პროფილურ სერვისებში 95–140 ₾-იანი „გაჩერების" საპირისპიროდ.
 
 მეთოდი არ არის უსაზღვრო. ბზარი მძღოლის ზონაში, ბზარი მინის კიდემდე, ბზარი განშტოებებით ან ტრიპლექსში დაზიანებით — ეს უკვე არ არის შესაკეთებელი. გულახდილი ოსტატი ამას იტყვის მაშინვე დათვალიერებაზე, არ აიღებს სამუშაოს ფულისთვის და არ დატოვებთ შემდეგ მინასთან, რომელიც ისედაც მოგიწევთ შეცვალოთ. ეს კრიტერიუმი — მზადყოფნა მაშინვე თქვას „მხოლოდ შეცვლა" — განასხვავებს მუშა სტუდიას წერტილისგან, სადაც იღებენ ნებისმიერ ფულს ნებისმიერ პროცედურაზე.
 
@@ -323,7 +319,7 @@ sources:
 - მეთოდი: ხაფანგის წერტილი ბზარის ბოლოზე + ფისის ინექცია მთელი ხაზის გასწვრივ + UV-პოლიმერიზაცია.
 - „გაჩერება" არ აბრუნებს მინის გამჭვირვალობას — ხაზი რჩება ხილული, მაგრამ არ იზრდება.
 - შეცვლა აუცილებელია: ბზარი მძღოლის ზონაში, მინის კიდემდე, ტრიპლექსში.
-- 15–30 სმ ბზარის შეკეთება — 140 ₾-დან, მინის შეცვლა — 600–3500 ₾. სხვაობა 5–25-ჯერ.
+- 15–30 სმ ბზარის შეკეთება — 140 ₾-დან, მინის შეცვლა — პროფილურ სერვისებში (ჩვენ არ ვცვლით). ფულადი სხვაობა ათობით-ჯერ აღწევს.
 
 ## CTA
 
@@ -429,11 +425,9 @@ For cracks longer than 30 cm, the final price is set at the in-person inspection
 
 Glass replacement:
 
-- Base car without sensors — 600–1500 ₾ for the glass plus labour.
-- Car with heated glass, rain/light sensors — 1500–2500 ₾.
-- Car with ADAS camera plus calibration — 2500–3500 ₾ and up.
+Replacement is carried out at dedicated glass specialists in Tbilisi; each studio prices differently based on sensor, heating and ADAS configuration — check with them directly. BESTAUTO does not replace glass and does not publish competitor numbers.
 
-Decision logic is simple. If the crack is fresh (under 48 hours) and meets "stopping" conditions — try repair. Cost is 5–25x lower than replacement, the risk is clear (if the repair fails — the labour money stays with the studio, and replacement happens anyway). If the crack is old, in the driver's zone, or has reached the edge — replacement immediately. There is no point paying for a knowingly bad repair, especially if replacement is coming anyway.
+Decision logic is simple. If the crack is fresh (under 48 hours) and meets "stopping" conditions — try repair. Cost is many times lower than replacement, the risk is clear (if the repair fails — the labour money stays with the studio, and replacement happens anyway). If the crack is old, in the driver's zone, or has reached the edge — replacement immediately. There is no point paying for a knowingly bad repair, especially if replacement is coming anyway.
 
 Booking [glass repair](/en/windshield-repair) in the first hours after the crack appears makes sense. Final decision — after an in-person look under the lamp, takes 5–10 minutes.
 
@@ -463,7 +457,7 @@ Technically — yes, if the crack is not in the driver's direct line of sight an
 
 ### How much does a 25 cm crack repair cost vs a glass replacement?
 
-15–30 cm crack repair from 140 ₾, exact figure set at in-person inspection. Replacement: 600–3500 ₾ depending on sensors, heating, ADAS camera. A standard car without sensors is usually 600–1500 ₾, a car with a camera is 2500 ₾ and up including calibration. Repair-to-replacement gap is usually 5–25x. Live pricing on [windshield repair](/en/windshield-repair).
+15–30 cm crack repair from 140 ₾, exact figure set at in-person inspection. Replacement is done at dedicated glass specialists in Tbilisi; each studio prices individually based on sensors, heating and ADAS camera — check with them directly. BESTAUTO does not replace glass. The money gap between repair and replacement easily reaches tens of times. Live repair pricing on [windshield repair](/en/windshield-repair).
 
 ### If the crack is already a month old, will repair help?
 
@@ -475,7 +469,7 @@ Main thing — do not run the morning warm-up at full power. Before driving in: 
 
 ## Conclusion
 
-A deep crack is damage that needs a decision in hours, not days. The studio has a 24–48 hour window in which resin injection plus a drilled trap point can lock the crack and save the glass from replacement. Beyond that window, both cosmetics and structural reliability drop every day, and a week later the only option is usually a 600–3500 ₾ replacement instead of a 95–140 ₾ "stop".
+A deep crack is damage that needs a decision in hours, not days. The studio has a 24–48 hour window in which resin injection plus a drilled trap point can lock the crack and save the glass from replacement. Beyond that window, both cosmetics and structural reliability drop every day, and a week later the only option is usually a full replacement at a glass specialist instead of a 95–140 ₾ "stop" at our studio.
 
 The method has limits. A crack in the driver's zone, a crack to the glass edge, a branched crack, a crack through the laminate — none of those are repair candidates. An honest technician says so right at inspection, refuses the work for the money's sake, and does not leave you with glass that will need replacing anyway. That criterion — willingness to say "replacement only" right away — separates a working studio from a place that takes any money for any procedure.
 
@@ -486,7 +480,7 @@ The method has limits. A crack in the driver's zone, a crack to the glass edge, 
 - Method: trap point at the crack tip + resin injection along the full line + UV curing.
 - "Stopping" does not restore glass clarity — line stays visible but does not grow.
 - Replacement is mandatory: crack in driver's zone, crack to edge, crack through laminate.
-- 15–30 cm repair from 140 ₾, replacement 600–3500 ₾. A 5–25x gap.
+- 15–30 cm repair from 140 ₾, replacement at glass specialists (we do not replace). The money gap reaches tens of times.
 
 ## CTA
 

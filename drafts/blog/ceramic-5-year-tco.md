@@ -101,7 +101,7 @@ sources:
 
 **Итого:** 2 премиум-пакета керамики + boost-сервисы за период, минимум 6-10 часов времени владельца.
 
-Преимущество против базовой керамики — состав держит блеск дольше между обновлениями, меньше «провисаний» в середине периода, работает лучше на тёмных цветах. Разница против базовой — 500-800 ₾ за 5 лет, но более стабильный вид кузова всё это время.
+Преимущество против базовой керамики — состав держит блеск дольше между обновлениями, меньше «провисаний» в середине периода, работает лучше на тёмных цветах. Разница против базовой за весь 5-летний цикл небольшая, но более стабильный вид кузова всё это время.
 
 ## Таблица сравнения за 5 лет
 
@@ -120,7 +120,7 @@ sources:
 
 [PPF](/ru/ppf-shield-wrapping) — это физическая защита от гравия, оклейка на 10 лет в один заход, без обновления.
 
-Поэтому расчёт PPF делается отдельно: оклейка передней группы с 10-летней гарантией — это фиксированная одноразовая трата на полный срок владения + последующие 5 лет. За 5-летний цикл PPF окупается, только если без него были бы регулярные локальные ремонты сколов на 400-800 ₾ каждый. Если машина стоит в гараже и за город ездит редко — PPF по 5-летней экономике не окупается. Если ездит по гравийным дорогам — окупается с запасом.
+Поэтому расчёт PPF делается отдельно: оклейка передней группы с 10-летней гарантией — это фиксированная одноразовая трата на полный срок владения + последующие 5 лет. За 5-летний цикл PPF окупается, только если без него были бы регулярные локальные ремонты сколов. Если машина стоит в гараже и за город ездит редко — PPF по 5-летней экономике не окупается. Если ездит по гравийным дорогам — окупается с запасом.
 
 ## Что влияет на фактический TCO
 
@@ -157,7 +157,7 @@ sources:
 
 ### Что делать, если машина продаётся через 2-3 года?
 
-На коротком горизонте экономия от керамики минимальная. Если машина уйдёт через 2 года, 12-18-месячная базовая керамика перекрывает цикл без переплаты за длинные сроки. Главная выгода — машина на продажу выглядит свежее, что может дать +200-500 ₾ к цене на вторичном рынке. Часто этого достаточно для окупаемости самой керамики.
+На коротком горизонте экономия от керамики минимальная. Если машина уйдёт через 2 года, 12-18-месячная базовая керамика перекрывает цикл без переплаты за длинные сроки. Главная выгода — машина на продажу выглядит свежее, что ощутимо работает на переговорах по цене на вторичном рынке. Часто этого достаточно для окупаемости самой керамики.
 
 ### Можно ли делать часть подходов (воск + керамика)?
 
@@ -279,7 +279,7 @@ sources:
 
 **ჯამი:** 2 პრემიუმ კერამიკის პაკეტი + boost-სერვისები პერიოდზე, მინიმუმ 6-10 საათი მფლობელის დრო.
 
-უპირატესობა საბაზო კერამიკასთან — შემადგენლობა უფრო დიდხანს ინახავს ბზინვარებას განახლებებს შორის, ნაკლები „ჩამოცვენა" პერიოდის შუაში, უფრო კარგად მუშაობს მუქ ფერებზე. განსხვავება საბაზოზე — 500-800 ₾ 5 წელზე, მაგრამ უფრო სტაბილური კუზოვის სახე მთელი ამ დროის განმავლობაში.
+უპირატესობა საბაზო კერამიკასთან — შემადგენლობა უფრო დიდხანს ინახავს ბზინვარებას განახლებებს შორის, ნაკლები „ჩამოცვენა" პერიოდის შუაში, უფრო კარგად მუშაობს მუქ ფერებზე. განსხვავება საბაზოსთან 5-წლიანი ციკლზე მცირეა, მაგრამ უფრო სტაბილური კუზოვის სახე მთელი ამ დროის განმავლობაში.
 
 ## შედარების ცხრილი 5 წელზე
 
@@ -298,7 +298,7 @@ sources:
 
 [PPF](/ppf-shield-wrapping) — ფიზიკური დაცვა ხრეშისგან, 10-წლიანი დაფარვა ერთ ჯერზე, განახლების გარეშე.
 
-ამიტომ PPF-ის გათვლა კეთდება ცალკე: წინა ჯგუფის დაფარვა 10-წლიანი გარანტიით — ფიქსირებული ერთჯერადი ხარჯია მთელი ფლობის ვადაზე + მომდევნო 5 წელი. 5-წლიანი ციკლისთვის PPF იხდის მხოლოდ მაშინ, თუ მის გარეშე იქნებოდა რეგულარული ლოკალური ჩიპების რემონტები 400-800 ₾-ზე. თუ მანქანა ფარდულშია და ქალაქგარე იშვიათად გადის — PPF 5-წლიანი ეკონომიკით არ იხდის. თუ გრუნტებზე გადის — იხდის მარაგით.
+ამიტომ PPF-ის გათვლა კეთდება ცალკე: წინა ჯგუფის დაფარვა 10-წლიანი გარანტიით — ფიქსირებული ერთჯერადი ხარჯია მთელი ფლობის ვადაზე + მომდევნო 5 წელი. 5-წლიანი ციკლისთვის PPF იხდის მხოლოდ მაშინ, თუ მის გარეშე იქნებოდა რეგულარული ლოკალური ჩიპების რემონტები. თუ მანქანა ფარდულშია და ქალაქგარე იშვიათად გადის — PPF 5-წლიანი ეკონომიკით არ იხდის. თუ გრუნტებზე გადის — იხდის მარაგით.
 
 ## რა მოქმედებს ფაქტობრივ TCO-ზე
 
@@ -335,7 +335,7 @@ sources:
 
 ### რა ვქნათ, თუ მანქანა იყიდება 2-3 წელში?
 
-მოკლე ჰორიზონტზე კერამიკიდან ეკონომია მინიმალურია. თუ მანქანა გავა 2 წელში, 12-18-თვიანი საბაზო კერამიკა ფარავს ციკლს გრძელ ვადებზე გადახდის გარეშე. მთავარი მოგება — მანქანა გასაყიდად უფრო ახალი გამოიყურება, რამაც შეიძლება მისცეს +200-500 ₾ ფასზე მეორად ბაზარზე. ხშირად ეს თავად კერამიკის გადახდისთვის საკმარისია.
+მოკლე ჰორიზონტზე კერამიკიდან ეკონომია მინიმალურია. თუ მანქანა გავა 2 წელში, 12-18-თვიანი საბაზო კერამიკა ფარავს ციკლს გრძელ ვადებზე გადახდის გარეშე. მთავარი მოგება — მანქანა გასაყიდად უფრო ახალი გამოიყურება, რაც მეორად ბაზარზე ფასის მოლაპარაკებას საგრძნობლად ეხმარება. ხშირად ეს თავად კერამიკის გადახდისთვის საკმარისია.
 
 ### შეიძლება მიდგომების ნაწილის გაკეთება (ცვილი + კერამიკა)?
 
@@ -457,7 +457,7 @@ Pricier — one premium ceramic with extended lifespan + service.
 
 **Total:** 2 premium ceramic packages + boost services across the period, minimum 6-10 hours of owner time.
 
-Edge over base ceramic — longer shine between refreshes, less "sagging" mid-period, better on dark colours. Gap vs base — 500-800 ₾ over 5 years, but more stable appearance throughout.
+Edge over base ceramic — longer shine between refreshes, less "sagging" mid-period, better on dark colours. Gap vs base over the 5-year cycle is small, but appearance stays more stable throughout.
 
 ## 5-year comparison table
 
@@ -476,7 +476,7 @@ Ceramic is chemistry and UV protection — a long-life service on a refresh cycl
 
 [PPF](/en/ppf-shield-wrapping) is physical gravel protection — a one-shot 10-year wrap, no refresh.
 
-So PPF is calculated separately: wrapping the front group with a 10-year warranty is a fixed one-time spend across the whole ownership period + the next 5 years. Over a 5-year cycle PPF only pays off if without it you'd face regular 400-800 ₾ local chip repairs. A garaged car that rarely goes out of town doesn't pay back PPF on a 5-year basis. A car on gravel roads — pays back with a margin.
+So PPF is calculated separately: wrapping the front group with a 10-year warranty is a fixed one-time spend across the whole ownership period + the next 5 years. Over a 5-year cycle PPF only pays off if without it you'd face regular local chip repairs. A garaged car that rarely goes out of town doesn't pay back PPF on a 5-year basis. A car on gravel roads — pays back with a margin.
 
 ## What moves actual TCO
 
@@ -513,7 +513,7 @@ Not always pricier. On a 5-year cycle a single 36-month ceramic + boosts is usua
 
 ### What if the car sells in 2-3 years?
 
-On a short horizon, ceramic savings are minimal. If the car leaves in 2 years, a 12-18-month base ceramic covers the cycle without overpaying for long-life formulas. The main upside — the car looks fresher at sale, which can add +200-500 ₾ on the used market. Often that alone pays back the ceramic.
+On a short horizon, ceramic savings are minimal. If the car leaves in 2 years, a 12-18-month base ceramic covers the cycle without overpaying for long-life formulas. The main upside — the car looks fresher at sale, which noticeably helps on resale negotiations. Often that alone pays back the ceramic.
 
 ### Can I mix approaches (wax + ceramic)?
 

@@ -120,7 +120,7 @@ sources:
 
 ### Можно ли полировать фары дома своими руками?
 
-Техниically да, наборы для DIY существуют (зубная паста, шкурки разных grit, финишная паста). Практически — рискованно: без тренировки легко сделать «голограммный» поликарбонат, оставить царапины от грубого абразива или просто не нанести финишную защиту и получить мутную фару через год. DIY-набор за 50-80 ₾ имеет смысл, только если планируете менять фары в ближайший год и просто хотите получше видеть ближний свет до замены.
+Техниically да, наборы для DIY существуют (зубная паста, шкурки разных grit, финишная паста). Практически — рискованно: без тренировки легко сделать «голограммный» поликарбонат, оставить царапины от грубого абразива или просто не нанести финишную защиту и получить мутную фару через год. Недорогой DIY-набор имеет смысл, только если планируете менять фары в ближайший год и просто хотите получше видеть ближний свет до замены.
 
 ### Если фара запотела изнутри, можно полировкой снаружи это убрать?
 
@@ -261,7 +261,7 @@ sources:
 
 ### შეიძლება ფარების პოლირება სახლში საკუთარი ხელით?
 
-ტექნიკურად კი, DIY-კომპლექტები არსებობს (კბილის პასტა, სხვადასხვა grit-ის ქაღალდი, ფინიშური პასტა). პრაქტიკაში — რისკიანია: ვარჯიშის გარეშე ადვილია „ჰოლოგრამული" პოლიკარბონატის გაკეთება, უხეში აბრაზივიდან ნაკაწრების დატოვება ან უბრალოდ ფინიშური დაცვის არდადება და დაბინდული ფარის მიღება წელიწადში. 50-80 ₾-იანი DIY-კომპლექტი აზრიანია მხოლოდ მაშინ, როცა ფარების ცვლა მომავალ წელიწადშია და გინდა უკეთ ხედო ახლო სინათლე ცვლამდე.
+ტექნიკურად კი, DIY-კომპლექტები არსებობს (კბილის პასტა, სხვადასხვა grit-ის ქაღალდი, ფინიშური პასტა). პრაქტიკაში — რისკიანია: ვარჯიშის გარეშე ადვილია „ჰოლოგრამული" პოლიკარბონატის გაკეთება, უხეში აბრაზივიდან ნაკაწრების დატოვება ან უბრალოდ ფინიშური დაცვის არდადება და დაბინდული ფარის მიღება წელიწადში. იაფი DIY-კომპლექტი აზრიანია მხოლოდ მაშინ, როცა ფარების ცვლა მომავალ წელიწადშია და გინდა უკეთ ხედო ახლო სინათლე ცვლამდე.
 
 ### თუ ფარა ორთქლით არის შიგნიდან, შესაძლებელია გარე პოლირებით ამის აცილება?
 
@@ -402,7 +402,7 @@ Clarity returns for a few weeks, then hazing comes back — faster than before. 
 
 ### Can I polish headlights DIY at home?
 
-Technically yes, DIY kits exist (toothpaste, sandpaper of different grits, finishing compound). Practically — risky: without practice it's easy to end up with "hologram" polycarbonate, to leave scratches from coarse abrasive, or simply to skip final protection and get a hazed lens in a year. A 50-80 ₾ DIY kit makes sense only if you plan to replace the headlights within a year and just want better low-beam vision in the meantime.
+Technically yes, DIY kits exist (toothpaste, sandpaper of different grits, finishing compound). Practically — risky: without practice it's easy to end up with "hologram" polycarbonate, to leave scratches from coarse abrasive, or simply to skip final protection and get a hazed lens in a year. A cheap DIY kit makes sense only if you plan to replace the headlights within a year and just want better low-beam vision in the meantime.
 
 ### If the headlight is fogging from the inside, can external polishing fix that?
 

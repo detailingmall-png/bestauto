@@ -111,7 +111,7 @@ sources:
 
 Реставрация — реакция на уже случившееся. Чтобы не приходить к ней раньше 7-10 лет, достаточно несложных привычек.
 
-Первое — раз в 3-4 месяца протирать кожу мягким кондиционером на основе ланолина. Это покупается в магазине профессиональной автохимии за 30-50 ₾ и тратится на все сиденья по одной-две минуты каждое. Главное — не использовать «полироли для кожи» из супермаркета: большинство из них с глицерином, который делает поверхность жирной и притягивает пыль.
+Первое — раз в 3-4 месяца протирать кожу мягким кондиционером на основе ланолина. Его можно купить в магазине профессиональной автохимии по доступной цене, хватает на все сиденья по одной-две минуты каждое. Главное — не использовать «полироли для кожи» из супермаркета: большинство из них с глицерином, который делает поверхность жирной и притягивает пыль.
 
 Второе — летом ставить машину в тень или использовать светоотражающий экран на лобовое. Ультрафиолет — главный враг кожи, он разрушает полимеры в пигменте, и материал теряет эластичность. В Тбилиси это особенно актуально с мая по сентябрь.
 
@@ -264,7 +264,7 @@ sources:
 
 რესტავრაცია — რეაქციაა უკვე მომხდარზე. რომ მას არ მიაღწიოთ 7-10 წლამდე, საკმარისია მარტივი ჩვევები.
 
-პირველი — 3-4 თვეში ერთხელ ტყავის მსუბუქი ლანოლინის საფუძვლიანი კონდიციონერით წმენდა. ეს პროფესიონალური ავტოქიმიის მაღაზიაში იყიდება 30-50 ₾-ად და იხარჯება ყველა სავარძელზე ერთ-ორი წუთში. მთავარია — არ გამოიყენოთ სუპერმარკეტის „ტყავის პოლიროლები": მათი უმრავლესობა გლიცერინითაა, რომელიც ზედაპირს ცხიმიან ხდის და მტვერს იწევს.
+პირველი — 3-4 თვეში ერთხელ ტყავის მსუბუქი ლანოლინის საფუძვლიანი კონდიციონერით წმენდა. ის პროფესიონალური ავტოქიმიის მაღაზიაში ხელმისაწვდომ ფასად იყიდება და ყველა სავარძელზე მხოლოდ ერთ-ორ წუთს მოითხოვს. მთავარია — არ გამოიყენოთ სუპერმარკეტის „ტყავის პოლიროლები": მათი უმრავლესობა გლიცერინითაა, რომელიც ზედაპირს ცხიმიან ხდის და მტვერს იწევს.
 
 მეორე — ზაფხულში მანქანა დადგით ჩრდილში ან გამოიყენეთ ამრეკლი ეკრანი საქარეზე. ულტრაიისფერი — ტყავის მთავარი მტერი, ის ანადგურებს პოლიმერებს პიგმენტში, და მასალა კარგავს ელასტიურობას. თბილისში ეს განსაკუთრებით აქტუალურია მაისიდან სექტემბრამდე.
 
@@ -427,7 +427,7 @@ Complex cases — in coordination with an upholstery workshop. Frame and seam at
 
 Restoration is a reaction to something already happened. To avoid it before 7-10 years, a few simple habits are enough.
 
-First — every 3-4 months, wipe leather with a gentle lanolin-based conditioner. Bought at a professional detailing shop for 30-50 ₾, it lasts all seats in a minute or two each. Do not use "leather polish" from a supermarket — most of it is glycerine-based, makes the surface greasy and attracts dust.
+First — every 3-4 months, wipe leather with a gentle lanolin-based conditioner. It is available at a professional detailing shop at an accessible price and covers all seats in a minute or two each. Do not use "leather polish" from a supermarket — most of it is glycerine-based, makes the surface greasy and attracts dust.
 
 Second — in summer, park in shade or use a reflective windshield shade. UV is leather's main enemy; it breaks polymers in the pigment and the material loses elasticity. In Tbilisi this is especially relevant May through September.
 

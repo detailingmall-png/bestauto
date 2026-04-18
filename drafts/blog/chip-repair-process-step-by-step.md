@@ -29,7 +29,7 @@ sources:
 
 # Ремонт скола на лобовом стекле: пошаговая разборка процесса
 
-Камешек из-под колеса впереди идущей машины ударяет в лобовое на скорости — и через секунду в стекле точка размером с горошину. Она может выглядеть невинно, но это уже начало процесса: в неё попадёт влага, следующая зима с перепадом температур даст трещину, и через месяц-два вместо 80 ₾ ремонта вы считаете 800-2000 ₾ замены стекла. Ранний ремонт скола на лобовом стекле — это не косметика, а структурная операция, которая физически возвращает стеклу прочность. Ниже — как устроен процесс по этапам, какие типы сколов ремонтируют, какой инструментарий реально используется в студии и когда скол уже нельзя починить.
+Камешек из-под колеса впереди идущей машины ударяет в лобовое на скорости — и через секунду в стекле точка размером с горошину. Она может выглядеть невинно, но это уже начало процесса: в неё попадёт влага, следующая зима с перепадом температур даст трещину, и через месяц-два вместо 80 ₾ ремонта вы считаете полноценную замену стекла у профильного сервиса. Ранний ремонт скола на лобовом стекле — это не косметика, а структурная операция, которая физически возвращает стеклу прочность. Ниже — как устроен процесс по этапам, какие типы сколов ремонтируют, какой инструментарий реально используется в студии и когда скол уже нельзя починить.
 
 ## Три типа сколов — bullseye, star break и combination
 
@@ -103,7 +103,7 @@ sources:
 - Скол с откольнутым куском стекла глубже триплекса. Инжекция помогает когда наружный слой цел; при откольнутом куске смоле некуда заходить.
 - Скол на машине с ADAS-камерой над зеркалом, если повреждение в зоне обзора камеры. Даже корректный ремонт нарушает калибровку системы, а перекалибровку многие марки делают только после замены стекла.
 
-В остальных случаях ремонт — предпочтительный вариант. Замена лобового стекла даже для недорогой машины стоит 600-1500 ₾, для машины с датчиками и подогревом — 1500-3500 ₾. Ремонт скола за 60-80 ₾, сделанный вовремя, закрывает эту проблему на весь срок жизни стекла.
+В остальных случаях ремонт — предпочтительный вариант. Замена лобового стекла в профильных сервисах Тбилиси обходится заметно дороже своевременного ремонта скола; конкретный прайс у каждой студии свой и зависит от марки и наличия датчиков. Ремонт скола за 60-80 ₾, сделанный вовремя, закрывает эту проблему на весь срок жизни стекла.
 
 ## Что будет, если не ремонтировать
 
@@ -137,7 +137,7 @@ sources:
 
 ### Почему нельзя сделать ремонт самому набором из автомагазина?
 
-Гаражные наборы за 20-40 ₾ содержат смолу без контроля коэффициента преломления, простейший инжектор без вакуумизации и без УФ-лампы (полимеризация на солнце, непредсказуемо). Результат — оптически видимое пятно, часто с пузырьками воздуха внутри, без нормальной структурной связки с краями скола. Через 3-6 месяцев от такого «ремонта» обычно идёт трещина, и финальная стоимость становится заменой стекла вместо 60 ₾ студийного ремонта. Индустриальное оборудование и профессиональная смола не сводятся к бытовому набору.
+Гаражные наборы за несколько лари содержат смолу без контроля коэффициента преломления, простейший инжектор без вакуумизации и без УФ-лампы (полимеризация на солнце, непредсказуемо). Результат — оптически видимое пятно, часто с пузырьками воздуха внутри, без нормальной структурной связки с краями скола. Через 3-6 месяцев от такого «ремонта» обычно идёт трещина, и финальная стоимость становится заменой стекла вместо 60 ₾ студийного ремонта. Индустриальное оборудование и профессиональная смола не сводятся к бытовому набору.
 
 ## Заключение
 
@@ -178,7 +178,7 @@ sources:
 
 # საქარე მინის ნაკენჭარის აღდგენის პროცესი ეტაპებზე
 
-წინ მიმავალი მანქანის ბორბლის ქვეშიდან გახვრეტილი ქვა ურტყამს თქვენი მანქანის საქარე მინას სიჩქარეზე — და წამში მინაში ბარდის ოდენა წერტილი ჩნდება. შესაძლოა უბრალოდ გამოიყურებოდეს, მაგრამ ეს უკვე პროცესის დასაწყისია: შიგ ჩაერთვება ტენიანობა, შემდგომი ზამთრის ტემპერატურული ცვლილება ბზარად გადააქცევს, და თვე-ორ თვეში 80 ₾-იანი შეკეთების ნაცვლად 800-2000 ₾-იან შეცვლას დაითვლით. საქარე მინის ნაკენჭარის აღდგენა ადრეულ ეტაპზე არა კოსმეტიკური საკითხია, არამედ სტრუქტურული ოპერაცია, რომელიც ფიზიკურად აბრუნებს მინის სიმტკიცეს. ქვემოთ — როგორაა აწყობილი პროცესი ეტაპებზე, რა ტიპის ნაკენჭარებს ასწორებენ, რა აღჭურვილობა გამოიყენება სტუდიაში და როდის უკვე შეუძლებელია შეკეთება.
+წინ მიმავალი მანქანის ბორბლის ქვეშიდან გახვრეტილი ქვა ურტყამს თქვენი მანქანის საქარე მინას სიჩქარეზე — და წამში მინაში ბარდის ოდენა წერტილი ჩნდება. შესაძლოა უბრალოდ გამოიყურებოდეს, მაგრამ ეს უკვე პროცესის დასაწყისია: შიგ ჩაერთვება ტენიანობა, შემდგომი ზამთრის ტემპერატურული ცვლილება ბზარად გადააქცევს, და თვე-ორ თვეში 80 ₾-იანი შეკეთების ნაცვლად პროფილურ სერვისებში მინის სრულფასოვან შეცვლას დაითვლით. საქარე მინის ნაკენჭარის აღდგენა ადრეულ ეტაპზე არა კოსმეტიკური საკითხია, არამედ სტრუქტურული ოპერაცია, რომელიც ფიზიკურად აბრუნებს მინის სიმტკიცეს. ქვემოთ — როგორაა აწყობილი პროცესი ეტაპებზე, რა ტიპის ნაკენჭარებს ასწორებენ, რა აღჭურვილობა გამოიყენება სტუდიაში და როდის უკვე შეუძლებელია შეკეთება.
 
 ## სამი ტიპი ნაკენჭარისა — bullseye, star break და combination
 
@@ -254,7 +254,7 @@ sources:
 - ნაკენჭარი მინის მოხლეჩილი ნაწილით უფრო ღრმად, ვიდრე ტრიპლექსია. ინექცია შველის მაშინ, როცა გარე ფენა მთლიანია; მოხლეჩილი ნაწილის შემთხვევაში ფისს არ აქვს სად შევიდეს.
 - ნაკენჭარი მანქანაზე ADAS-კამერით სარკის ზემოთ, თუ დაზიანება კამერის ხედვის ზონაშია. თუნდაც კორექტული შეკეთება არღვევს სისტემის კალიბრაციას, და ბევრი მარკა რეკალიბრაციას აკეთებს მხოლოდ მინის შეცვლის შემდეგ.
 
-დანარჩენ შემთხვევებში შეკეთება — უპირატესი ვარიანტი. საქარე მინის შეცვლა არც თუ ძვირადღირებულ მანქანაზე ღირს 600-1500 ₾, სენსორიანსა და გათბობიან მანქანაზე — 1500-3500 ₾. 60-80 ₾-იანი ნაკენჭარის შეკეთება დროულად ახორციელებს ამ საკითხის დახურვას მინის მთელი ცხოვრების მანძილზე.
+დანარჩენ შემთხვევებში შეკეთება — უპირატესი ვარიანტი. საქარე მინის შეცვლა თბილისის პროფილურ სერვისებში საგრძნობლად ძვირი ჯდება დროულ ნაკენჭარის შეკეთებაზე; კონკრეტული ფასი ყველა სტუდიაში განსხვავებულია და დამოკიდებულია მარკასა და სენსორების არსებობაზე. 60-80 ₾-იანი ნაკენჭარის შეკეთება დროულად ახორციელებს ამ საკითხის დახურვას მინის მთელი ცხოვრების მანძილზე.
 
 ## რა მოხდება, თუ არ შეკეთდება
 
@@ -290,7 +290,7 @@ sources:
 
 ### რატომ არ შეიძლება შეკეთების გაკეთება ავტომაღაზიის ნაკრებით?
 
-ფარდულის ნაკრებები 20-40 ₾-ად შეიცავენ ფისს გარდატეხის კოეფიციენტის კონტროლის გარეშე, უბრალო ინჟექტორს ვაკუუმირების გარეშე და UV-ლამფის გარეშე (პოლიმერიზაცია მზეზე, გაუთვალისწინებელი). შედეგი — ოპტიკურად ხილული ლაქა, ხშირად ჰაერის ბუშტუკებით შიგნით, ნაკენჭარის კიდეებთან ნორმალური სტრუქტურული კავშირის გარეშე. 3-6 თვის შემდეგ ასეთი „შეკეთებიდან" ჩვეულებრივ ბზარი გადის, და საბოლოო ღირებულება მინის შეცვლად იცვლება 60 ₾-იანი სტუდიური შეკეთების ნაცვლად. ინდუსტრიული აღჭურვილობა და პროფესიული ფისი ყოფით ნაკრებზე არ დაიყვანება.
+ფარდულის ნაკრებები რამდენიმე ლარად შეიცავენ ფისს გარდატეხის კოეფიციენტის კონტროლის გარეშე, უბრალო ინჟექტორს ვაკუუმირების გარეშე და UV-ლამფის გარეშე (პოლიმერიზაცია მზეზე, გაუთვალისწინებელი). შედეგი — ოპტიკურად ხილული ლაქა, ხშირად ჰაერის ბუშტუკებით შიგნით, ნაკენჭარის კიდეებთან ნორმალური სტრუქტურული კავშირის გარეშე. 3-6 თვის შემდეგ ასეთი „შეკეთებიდან" ჩვეულებრივ ბზარი გადის, და საბოლოო ღირებულება მინის შეცვლად იცვლება 60 ₾-იანი სტუდიური შეკეთების ნაცვლად. ინდუსტრიული აღჭურვილობა და პროფესიული ფისი ყოფით ნაკრებზე არ დაიყვანება.
 
 ## დასკვნა
 
@@ -331,7 +331,7 @@ sources:
 
 # Windshield chip repair process — step by step
 
-A pebble kicked up from the wheel of the car ahead hits your windshield at speed, and a second later there is a pea-sized dot in the glass. It can look harmless, but the clock has already started: moisture gets in, the next winter's temperature swing turns it into a crack, and a month or two later instead of an 80 ₾ repair you are looking at 800-2000 ₾ for a full replacement. Windshield chip repair in its early window is not cosmetic — it is a structural operation that physically restores the strength of the glass. Below: how the process runs step by step, which chip types are repairable, what equipment the studio actually uses, and when the chip is past saving.
+A pebble kicked up from the wheel of the car ahead hits your windshield at speed, and a second later there is a pea-sized dot in the glass. It can look harmless, but the clock has already started: moisture gets in, the next winter's temperature swing turns it into a crack, and a month or two later instead of an 80 ₾ repair you are looking at a full replacement at a glass specialist. Windshield chip repair in its early window is not cosmetic — it is a structural operation that physically restores the strength of the glass. Below: how the process runs step by step, which chip types are repairable, what equipment the studio actually uses, and when the chip is past saving.
 
 ## Three chip types — bullseye, star break and combination
 
@@ -405,7 +405,7 @@ There are cases where we do not repair and recommend full replacement:
 - Chip with a fragment of glass broken out deeper than the laminate. Injection works when the outer layer is intact; with a missing fragment there is nowhere for the resin to go.
 - Chip on a car with an ADAS camera above the mirror if the damage is in the camera's field of view. Even a clean repair throws off system calibration, and many marques only recalibrate after glass replacement.
 
-In all other cases, repair is the preferred option. Windshield replacement on a modest car runs 600-1500 ₾; on a car with sensors and heating, 1500-3500 ₾. A 60-80 ₾ chip repair caught in time closes the matter for the remaining life of the glass.
+In all other cases, repair is the preferred option. Windshield replacement at Tbilisi glass specialists runs substantially more than a timely chip repair; exact pricing depends on the marque and presence of sensors. A 60-80 ₾ chip repair caught in time closes the matter for the remaining life of the glass.
 
 ## What happens if you do not repair
 
@@ -439,7 +439,7 @@ Technically yes, but every day is a gamble: rain, temperature swings, rough tarm
 
 ### Why can't I do it myself with a kit from the auto store?
 
-Hardware-store kits at 20-40 ₾ come with resin with no refractive-index control, a basic injector without vacuum, and no UV lamp (cured on sunlight, unpredictable). The result is an optically visible patch, often with air bubbles inside, without a proper structural bond to the chip walls. Three to six months from that "repair" the usual outcome is a crack, and the final cost becomes a replacement instead of a 60 ₾ studio repair. Industrial tooling and professional resin are not a consumer-kit substitute.
+Hardware-store kits priced at a few lari come with resin with no refractive-index control, a basic injector without vacuum, and no UV lamp (cured on sunlight, unpredictable). The result is an optically visible patch, often with air bubbles inside, without a proper structural bond to the chip walls. Three to six months from that "repair" the usual outcome is a crack, and the final cost becomes a replacement instead of a 60 ₾ studio repair. Industrial tooling and professional resin are not a consumer-kit substitute.
 
 ## Conclusion
 

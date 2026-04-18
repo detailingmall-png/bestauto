@@ -59,7 +59,7 @@ sources:
 
 ## 7. «Дорогая химчистка и дешёвая — это одно и то же, только цена разная»
 
-Технически они решают разные задачи, как и разные инструменты. Химчистка за 100-150 ₾ — это пылесос плюс влажная тряпка, 30-40 минут работы. Химчистка за 400-550 ₾ — это роторный экстрактор, пар 150°C, отдельная химия под каждый материал, 2-8 часов работы. Дешёвая убирает видимую пыль и оставляет глубинные загрязнения. Дорогая физически извлекает грязь из волокна и дезинфицирует. Платите за разный объём работы, а не за одинаковую услугу под разными ценами.
+Технически они решают разные задачи, как и разные инструменты. Бюджетная «экспресс-чистка» — это пылесос плюс влажная тряпка, 30-40 минут работы. Химчистка за 400-550 ₾ — это роторный экстрактор, пар 150°C, отдельная химия под каждый материал, 2-8 часов работы. Дешёвая убирает видимую пыль и оставляет глубинные загрязнения. Дорогая физически извлекает грязь из волокна и дезинфицирует. Платите за разный объём работы, а не за одинаковую услугу под разными ценами.
 
 ## 8. «PPF и керамика — это одно и то же»
 
@@ -203,7 +203,7 @@ sources:
 
 ## 7. „ძვირი ქიმწმენდა და იაფი — ესაა ერთი და იგივე, უბრალოდ ფასი განსხვავდება"
 
-ტექნიკურად ისინი წყვეტენ სხვადასხვა ამოცანებს, როგორც სხვადასხვა ინსტრუმენტები. ქიმწმენდა 100-150 ₾-ად — ესაა მტვერსასრუტი პლიუს ნოტიო ჩვარი, 30-40 წუთი. ქიმწმენდა 400-550 ₾-ად — ესაა როტორული ექსტრაქტორი, 150°C ორთქლი, ცალკე ქიმია ყოველ მასალაზე, 2-8 საათი. იაფი შლის ხილულ მტვერს და ტოვებს სიღრმის დაბინძურებას. ძვირი ფიზიკურად ამოიღებს ჭუჭყს ბოჭკოდან და აკეთებს დეზინფექციას. იხდით სხვადასხვა მოცულობის სამუშაოზე, და არა ერთი სერვისის სხვადასხვა ფასად.
+ტექნიკურად ისინი წყვეტენ სხვადასხვა ამოცანებს, როგორც სხვადასხვა ინსტრუმენტები. ბიუჯეტური „ექსპრეს-წმენდა" — ესაა მტვერსასრუტი პლიუს ნოტიო ჩვარი, 30-40 წუთი. ქიმწმენდა 400-550 ₾-ად — ესაა როტორული ექსტრაქტორი, 150°C ორთქლი, ცალკე ქიმია ყოველ მასალაზე, 2-8 საათი. იაფი შლის ხილულ მტვერს და ტოვებს სიღრმის დაბინძურებას. ძვირი ფიზიკურად ამოიღებს ჭუჭყს ბოჭკოდან და აკეთებს დეზინფექციას. იხდით სხვადასხვა მოცულობის სამუშაოზე, და არა ერთი სერვისის სხვადასხვა ფასად.
 
 ## 8. „PPF და კერამიკა — ესაა ერთი და იგივე"
 
@@ -347,7 +347,7 @@ Opposite. Ceramic makes washing easier but does not replace it. The hydrophobic 
 
 ## 7. "Expensive dry cleaning and cheap dry cleaning are the same, just different prices"
 
-Technically different services, like different tools. Dry cleaning for 100-150 ₾ is a vacuum plus a damp cloth, 30-40 minutes. Dry cleaning for 400-550 ₾ is a rotary extractor, 150°C steam, dedicated chemistry per material, 2-8 hours. The cheap one removes visible dust and leaves depth-soiled fibres. The premium one physically pulls dirt from depth and disinfects. You're paying for a different scope of work, not the same service at different prices.
+Technically different services, like different tools. A budget "express clean" is a vacuum plus a damp cloth, 30-40 minutes. Dry cleaning for 400-550 ₾ is a rotary extractor, 150°C steam, dedicated chemistry per material, 2-8 hours. The cheap one removes visible dust and leaves depth-soiled fibres. The premium one physically pulls dirt from depth and disinfects. You're paying for a different scope of work, not the same service at different prices.
 
 ## 8. "PPF and ceramic are the same thing"
 

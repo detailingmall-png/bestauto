@@ -73,7 +73,7 @@ pH-нейтральный шампунь (6.5-7.5) с SiO2 не реагируе
 
 Защитная плёнка PPF — полиуретановый слой толщиной 150-200 микрон с верхним гидрофобным покрытием и клеевым слоем снизу. Срок службы — 5-10 лет у премиум-брендов. По требованиям к мойке плёнка отличается от керамики: там важнее pH, здесь — отсутствие растворителей и контроль напора.
 
-**pH-нейтральный шампунь — стандарт.** Те же 6.5-7.5, что и для керамики. Щелочная химия размягчает клеевой слой под плёнкой, через год-полтора появляются поднятые края на бампере, арках, стойках. Фиксируется только переустановкой — ценой в 800-2500 ₾ в зависимости от зоны.
+**pH-нейтральный шампунь — стандарт.** Те же 6.5-7.5, что и для керамики. Щелочная химия размягчает клеевой слой под плёнкой, через год-полтора появляются поднятые края на бампере, арках, стойках. Фиксируется только переустановкой соответствующей детали — прайс зависит от зоны и берётся по странице услуги [PPF](/ru/ppf-shield-wrapping).
 
 **Без растворителей.** Ацетон, бензин, спиртовые обезжириватели на плёнке запрещены. Растворяют верхний гидрофобный слой, оставляют белые матовые пятна. Восстанавливается только полировкой плёнки (редкая услуга) или переустановкой.
 
@@ -268,7 +268,7 @@ pH-ნეიტრალური შამპუნი (6.5-7.5) SiO2-თან
 
 დამცავი ფირი PPF — პოლიურეთანის ფენაა 150-200 მიკრონი სისქით ზედა ჰიდროფობური საფარით და ქვედა წებოვანი ფენით. მუშაობის ვადა — 5-10 წელი პრემიუმ ბრენდებში. რეცხვის მოთხოვნების მიხედვით ფირი განსხვავდება კერამიკისგან: იქ უფრო მნიშვნელოვანია pH, აქ — გამხსნელების არარსებობა და წნევის კონტროლი.
 
-**pH-ნეიტრალური შამპუნი — სტანდარტი.** იგივე 6.5-7.5, რაც კერამიკისთვის. ტუტე ქიმია არბილებს წებოვან ფენას ფირის ქვეშ, წელი-ნახევრის შემდეგ ჩნდება აწეული კიდეები ბამპერზე, თაღებზე, დგართეებზე. ფიქსირდება მხოლოდ გადაწყობით — ღირებულება 800-2500 ₾ ზონიდან გამომდინარე.
+**pH-ნეიტრალური შამპუნი — სტანდარტი.** იგივე 6.5-7.5, რაც კერამიკისთვის. ტუტე ქიმია არბილებს წებოვან ფენას ფირის ქვეშ, წელი-ნახევრის შემდეგ ჩნდება აწეული კიდეები ბამპერზე, თაღებზე, დგართეებზე. ფიქსირდება მხოლოდ შესაბამისი დეტალის გადაწყობით — ფასი დამოკიდებულია ზონაზე და აიღება [PPF](/ppf-shield-wrapping) სერვისის გვერდიდან.
 
 **გამხსნელების გარეშე.** აცეტონი, ბენზინი, სპირტული ცხიმის მომხსნელები ფირზე აკრძალულია. ხსნიან ზედა ჰიდროფობურ ფენას, ტოვებენ თეთრ მატი ლაქებს. აღდგება მხოლოდ ფირის პოლირებით (იშვიათი სერვისი) ან გადაწყობით.
 
@@ -419,7 +419,7 @@ PPF-იან მანქანაზე რეცხვის ქიმია 
 
 # Washing cars with ceramic or PPF — safe chemistry
 
-Washing a ceramic-coated or PPF-coated car differs from washing an uncoated one not in tool or technique — those are the same — but in chemistry and schedule. The main parameter is wash pH. Alkaline shampoo at pH 10 and above destroys the hydrophobic effect of a ceramic coating over a handful of cycles and softens the PPF adhesive layer. The service life of a coating the owner paid 500-2500 ₾ for shrinks from 2-5 years to 8-12 months. Below: what chemistry is acceptable, what is forbidden, why fresh PPF is not washed at all in the first week, and how to set a wash schedule that lets the coating run out its full term.
+Washing a ceramic-coated or PPF-coated car differs from washing an uncoated one not in tool or technique — those are the same — but in chemistry and schedule. The main parameter is wash pH. Alkaline shampoo at pH 10 and above destroys the hydrophobic effect of a ceramic coating over a handful of cycles and softens the PPF adhesive layer. The service life of the coating the owner paid for shrinks from 2-5 years to 8-12 months. Below: what chemistry is acceptable, what is forbidden, why fresh PPF is not washed at all in the first week, and how to set a wash schedule that lets the coating run out its full term.
 
 ## Why wash pH is the main parameter for ceramic
 
@@ -463,7 +463,7 @@ If a studio will not tell you the specific brand and pH of the chemistry they us
 
 PPF protective film is a polyurethane layer 150-200 microns thick with a hydrophobic top coat and an adhesive layer underneath. Service life — 5-10 years for premium brands. The wash requirements differ from ceramic: pH matters there, here it is the absence of solvents and controlled pressure.
 
-**pH-neutral shampoo — standard.** The same 6.5-7.5 as for ceramic. Alkaline chemistry softens the adhesive layer under the film — after 12-18 months you see lifted edges on the bumper, arches, pillars. Fixed only by reinstalling — priced 800-2500 ₾ depending on the zone.
+**pH-neutral shampoo — standard.** The same 6.5-7.5 as for ceramic. Alkaline chemistry softens the adhesive layer under the film — after 12-18 months you see lifted edges on the bumper, arches, pillars. Fixed only by reinstalling the affected panel — priced per the [PPF](/en/ppf-shield-wrapping) service page depending on the zone.
 
 **No solvents.** Acetone, petrol, alcohol degreasers are forbidden on the film. They dissolve the top hydrophobic layer and leave white matte patches. Recoverable only through film polishing (a rare service) or reinstall.
 

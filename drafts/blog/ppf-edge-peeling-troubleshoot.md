@@ -150,7 +150,7 @@ sources:
 
 ### Что делать если отслоение выявлено после гарантийного срока?
 
-Ремонт по обычной ставке студии. Локальный ремонт одной кромки — обычно от 100-200 ₾, переклейка детали целиком — по прайсу на соответствующую деталь. После гарантийного срока (5-7 лет эксплуатации) отслоения обычно связаны с естественным старением клея, и имеет смысл одновременно с ремонтом планировать полную замену плёнки в ближайшие годы.
+Ремонт по обычной ставке студии. Локальный ремонт одной кромки — отдельной позицией на осмотре, переклейка детали целиком — по прайсу на соответствующую деталь. После гарантийного срока (5-7 лет эксплуатации) отслоения обычно связаны с естественным старением клея, и имеет смысл одновременно с ремонтом планировать полную замену плёнки в ближайшие годы.
 
 ## Заключение
 
@@ -312,7 +312,7 @@ sources:
 
 ### რა ვქნა, თუ აქერცვლა გამოვლინდა გარანტიული ვადის შემდეგ?
 
-რემონტი სტუდიის ჩვეულებრივი ტარიფით. ერთი კიდის ლოკალური რემონტი — ჩვეულებრივ 100-200 ₾-დან, დეტალის გადაწებება მთლიანად — შესაბამის დეტალზე პრაისით. გარანტიული ვადის შემდეგ (5-7 წლის ექსპლუატაცია) აქერცვლა ჩვეულებრივ წებოს ბუნებრივ დაბერებას უკავშირდება, და რემონტთან ერთდროულად აზრი აქვს უახლოეს წლებში ფირის სრული შეცვლის დაგეგმვას.
+რემონტი სტუდიის ჩვეულებრივი ტარიფით. ერთი კიდის ლოკალური რემონტი — ცალკე პოზიციად დათვალიერებაზე, დეტალის გადაწებება მთლიანად — შესაბამის დეტალზე პრაისით. გარანტიული ვადის შემდეგ (5-7 წლის ექსპლუატაცია) აქერცვლა ჩვეულებრივ წებოს ბუნებრივ დაბერებას უკავშირდება, და რემონტთან ერთდროულად აზრი აქვს უახლოეს წლებში ფირის სრული შეცვლის დაგეგმვას.
 
 ## დასკვნა
 
@@ -465,7 +465,7 @@ Not recommended. Household glue is unsuitable for PPF (different composition, in
 
 ### What if peeling is detected after the warranty period?
 
-Repair at the studio's standard rate. Local single-edge repair — usually from 100-200 ₾, full panel re-wrap — per price list for that panel. Past warranty (5-7 years of use), peeling is usually from natural adhesive aging, and it makes sense to plan full film replacement alongside repair in the coming years.
+Repair at the studio's standard rate. Local single-edge repair — quoted as a separate line at inspection, full panel re-wrap — per price list for that panel. Past warranty (5-7 years of use), peeling is usually from natural adhesive aging, and it makes sense to plan full film replacement alongside repair in the coming years.
 
 ## Conclusion
 

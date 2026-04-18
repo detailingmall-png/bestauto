@@ -96,7 +96,7 @@ sources:
 
 Когда выбирать: машины с очень дорогим лобовым стеклом (с подогревом, проекционным дисплеем HUD, камерами ассистентов вождения, датчиками ADAS), машины с активной междугородной эксплуатацией, регулярные поездки по неровным дорогам с гравием.
 
-Когда не нужно: бюджетные машины с обычным лобовым стеклом (замена 200-400 ₾ — дешевле плёнки), машины, которые скоро уйдут в продажу.
+Когда не нужно: бюджетные машины с обычным лобовым стеклом (замена в профильных сервисах обычно дешевле плёнки), машины, которые скоро уйдут в продажу.
 
 ## Уровень 7: элементы салона защитной плёнкой (от 800 ₾)
 
@@ -170,7 +170,7 @@ sources:
 
 ## Заключение
 
-Оклейка защитной пленкой авто — это не выбор одного пакета, а сборка набора позиций под конкретную машину и сценарий. Минимальный уровень — антихром или защита одного капота за 300-800 ₾. Средний — передняя группа за 2500 ₾, закрывающая 90% реальных рисков. Максимальный — полная оклейка плюс крыша, лобовое и фары, дающая защиту на десятилетие.
+Оклейка защитной пленкой авто — это не выбор одного пакета, а сборка набора позиций под конкретную машину и сценарий. Минимальный уровень — антихром или защита одного капота (прайс на странице услуги). Средний — передняя группа за 2500 ₾, закрывающая 90% реальных рисков. Максимальный — полная оклейка плюс крыша, лобовое и фары, дающая защиту на десятилетие.
 
 Складывать позиции в «комбо-пакеты» не нужно. Каждая считается отдельно по своему прайсу и по размеру конкретной машины. Финальная сумма формируется на очном осмотре с учётом материала, размера авто и сложности кузова. Никаких выдуманных скидок «комплект с экономией»: реальная экономия — выбрать те позиции, которые нужны вашей машине, и не платить за то, что не нужно.
 
@@ -275,7 +275,7 @@ sources:
 
 როდის აირჩიოთ: მანქანები ძალიან ძვირადღირებული საქარე მინით (გათბობით, პროექციური დისპლეით HUD, მართვის ასისტენტების კამერებით, ADAS-სენსორებით), მანქანები აქტიური საქალაქთაშორისო ექსპლუატაციით, რეგულარული გადაადგილებები არათანაბარ გზებზე ღორღით.
 
-როდის არ არის საჭირო: ბიუჯეტური მანქანები ჩვეულებრივი საქარე მინით (ცვლილება 200-400 ₾ — ფირზე იაფი), მანქანები, რომლებიც მალე გაიყიდება.
+როდის არ არის საჭირო: ბიუჯეტური მანქანები ჩვეულებრივი საქარე მინით (პროფილურ სერვისებში ცვლილება ფირზე იაფი), მანქანები, რომლებიც მალე გაიყიდება.
 
 ## დონე 7: სალონის ელემენტები დამცავი ფირით (800 ₾-დან)
 
@@ -349,7 +349,7 @@ sources:
 
 ## დასკვნა
 
-დამცავი ფირის გადაკვრა — არ არის ერთი პაკეტის არჩევანი, არამედ პოზიციების ნაკრების შეკრება კონკრეტული მანქანისა და სცენარის ქვეშ. მინიმალური დონე — ანტიქრომი ან ერთი კაპოტის დაცვა 300-800 ₾-ზე. საშუალო — წინა ჯგუფი 2500 ₾-ზე, რომელიც ხურავს რეალური რისკის 90%-ს. მაქსიმალური — სრული გადაკვრა პლუს ჭერი, საქარე და ფარები, რომელიც იძლევა დაცვას ათეული წლისთვის.
+დამცავი ფირის გადაკვრა — არ არის ერთი პაკეტის არჩევანი, არამედ პოზიციების ნაკრების შეკრება კონკრეტული მანქანისა და სცენარის ქვეშ. მინიმალური დონე — ანტიქრომი ან ერთი კაპოტის დაცვა (აქტუალური ფასი სერვისის გვერდზე). საშუალო — წინა ჯგუფი 2500 ₾-ზე, რომელიც ხურავს რეალური რისკის 90%-ს. მაქსიმალური — სრული გადაკვრა პლუს ჭერი, საქარე და ფარები, რომელიც იძლევა დაცვას ათეული წლისთვის.
 
 პოზიციების შეკრება „კომბო-პაკეტებში" არ არის საჭირო. თითოეული ცალკე ითვლება საკუთარი პრაისით და კონკრეტული მანქანის ზომის მიხედვით. საბოლოო თანხა ფორმირდება პირდაპირ დათვალიერებაზე მასალის, ავტოს ზომის და ძარის სირთულის გათვალისწინებით. არანაირი გამოგონილი ფასდაკლებები „კომპლექტი ეკონომიით": რეალური ეკონომია — ის პოზიციების არჩევაა, რომლებიც სჭირდება თქვენს მანქანას, და არ ფასიან ის, რაც არ სჭირდება.
 
@@ -454,7 +454,7 @@ What it does: a special optically clear film for the windshield, 100-150 microns
 
 When to choose: cars with very expensive windshields (heated, with HUD projection, ADAS cameras and sensors), cars with active intercity use, regular trips on uneven gravel-strewn roads.
 
-When not needed: budget cars with standard windshields (200-400 ₾ replacement is cheaper than the film), cars heading to sale soon.
+When not needed: budget cars with standard windshields (a replacement at glass specialists is typically cheaper than the film), cars heading to sale soon.
 
 ## Level 7: interior trim film (from 800 ₾)
 
@@ -528,7 +528,7 @@ Full wrap is the entire body — hood, bumper, fenders, doors, rear quarters, re
 
 ## Conclusion
 
-Paint protection film is not a one-package choice — it is assembling a kit of positions for a specific car and scenario. Minimum level — anti-chrome or single hood at 300-800 ₾. Standard — front group at 2500 ₾, closing 90% of real risk. Maximum — full wrap plus roof, windshield and headlights, giving a decade of coverage.
+Paint protection film is not a one-package choice — it is assembling a kit of positions for a specific car and scenario. Minimum level — anti-chrome or a single hood (current price on the service page). Standard — front group at 2500 ₾, closing 90% of real risk. Maximum — full wrap plus roof, windshield and headlights, giving a decade of coverage.
 
 Stacking positions into "combo packages" is not necessary. Each is calculated separately by its own price and the size of the specific car. The final figure is set at in-person inspection based on material, vehicle size and body complexity. No invented "package discounts" — real savings come from picking only what your car needs and not paying for what it does not.
 

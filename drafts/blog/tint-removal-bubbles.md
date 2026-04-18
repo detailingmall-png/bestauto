@@ -152,7 +152,7 @@ sources:
 - Три признака «пора снимать» — фиолет, микро-пузыри, отслоение по краям
 - Профессиональное снятие — пар 100-150°C + растворитель для клея
 - Заднее стекло с обогревом требует осторожности — повреждение нитей дорого исправить
-- Снятие самому — экономия 100-200 ₾ против риска повредить стекло на сотни
+- Снятие самому — небольшая экономия против риска повредить стекло на сотни
 
 ## CTA
 
@@ -304,7 +304,7 @@ sources:
 - სამი ნიშანი „მოხსნის დროა" — იისფერი, მიკრო-ბუშტუკები, აქერცვლა კიდეებიდან
 - პროფესიული მოხსნა — ორთქლი 100-150°C + გამხსნელი წებოსთვის
 - უკანა მინა გათბობით საჭიროებს ფრთხილობას — ძაფების დაზიანების გამოსწორება ძვირია
-- მოხსნა თვითონ — 100-200 ₾ ეკონომია მინის დაზიანების ასეულობით ლარების რისკის წინააღმდეგ
+- მოხსნა თვითონ — მცირე ეკონომია მინის დაზიანების ასეულობით ლარების რისკის წინააღმდეგ
 
 ## CTA
 
@@ -456,7 +456,7 @@ In Tbilisi old tint removal takes 1-3 hours depending on film condition and wind
 - Three signs to remove — purple cast, micro-bubbles, edge lift
 - Professional removal — steam at 100-150°C plus solvent for adhesive
 - Rear window with heater needs care — fixing trace damage is expensive
-- DIY saves 100-200 ₾ at the risk of hundreds in glass damage
+- DIY saves a small amount at the risk of hundreds in glass damage
 
 ## CTA
 
