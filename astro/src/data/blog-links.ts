@@ -1075,6 +1075,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/what-is-ppf-explainer',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамика',
+        contextQuote: 'Керамика — это химический жидкий состав на основе SiO₂ или SiC.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'виниловая пленка',
+        originalPhrase: 'Винил',
+        contextQuote: 'Винил — это декоративная плёнка для смены цвета или дизайна.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2083,6 +2102,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/what-is-ppf-explainer',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკა მანქანაზე',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'კერამიკა — ეს ქიმიური თხევადი შემადგენლობაა SiO₂-ის ან SiC-ის ფუძეზე.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ფირის გადაკვრა',
+        originalPhrase: 'ვინილი',
+        contextQuote: 'ვინილი — ეს დეკორატიული ფირია ფერის ან დიზაინის გადასაცვლელად.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3084,6 +3122,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car polishing',
         originalPhrase: 'polishing',
         contextQuote: 'Aggressive deep polishing is usually unnecessary',
+      },
+    ],
+  },
+  {
+    article: 'blog/what-is-ppf-explainer',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is a chemical liquid based on SiO₂ or SiC.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'car wrap',
+        originalPhrase: 'Vinyl',
+        contextQuote: 'Vinyl is a decorative film for colour or design changes.',
       },
     ],
   },

@@ -1502,5 +1502,29 @@
     "title": "PPF დამცავი ფირი თბილისში — ფასები | BESTAUTO",
     "lang": "ka",
     "slug": "ppf-shield-wrapping"
+  },
+  "920260420001": {
+    "file": "page920260420001.html",
+    "url": "https://bestauto.ge/ru/blog/what-is-ppf-explainer",
+    "path": "/ru/blog/what-is-ppf-explainer",
+    "title": "Что такое PPF плёнка — слои, физика, отличия от винила",
+    "lang": "ru",
+    "slug": "blog/what-is-ppf-explainer"
+  },
+  "920260420002": {
+    "file": "page920260420002.html",
+    "url": "https://bestauto.ge/blog/what-is-ppf-explainer",
+    "path": "/blog/what-is-ppf-explainer",
+    "title": "რა არის PPF ფირი — შრეები, ფიზიკა, განსხვავება ვინილისგან",
+    "lang": "ka",
+    "slug": "blog/what-is-ppf-explainer"
+  },
+  "920260420003": {
+    "file": "page920260420003.html",
+    "url": "https://bestauto.ge/en/blog/what-is-ppf-explainer",
+    "path": "/en/blog/what-is-ppf-explainer",
+    "title": "What is PPF: layers, physics and how it differs from vinyl",
+    "lang": "en",
+    "slug": "blog/what-is-ppf-explainer"
   }
 }
