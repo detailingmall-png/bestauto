@@ -12,7 +12,7 @@
 - 32 статьи P1 (топ ROI по GSC)
 - 49 статей P2 (средний трафик + commercial intent)
 - 19 статей P3 (long-tail, seasonal, niche)
-- = 100 публикаций ≈ 11 месяцев при 2-3/неделю
+- = 100 публикаций ≈ **5 месяцев** при 5/неделю (~20 статей/мес)
 
 ---
 
@@ -69,16 +69,18 @@
 
 ## Scheduling
 
-**Cadence**: 2-3 статьи/неделю.
-**Рекомендованное расписание**: Пн / Ср / Пт в 10:00 Тбилиси (`0 10 * * MON,WED,FRI`).
+**Cadence**: 5 статей/неделю.
+**Расписание**: **Сб / Вс / Пн / Ср / Чт в 10:00 Тбилиси** (`0 10 * * SAT,SUN,MON,WED,THU`).
 
 Настройка через `/schedule` skill или `CronCreate`:
 
 ```
-/schedule create "Publish next blog article from queue" 0 10 * * MON,WED,FRI Asia/Tbilisi
+/schedule create "Publish next blog article from queue" 0 10 * * SAT,SUN,MON,WED,THU Asia/Tbilisi
 ```
 
 Или просто `/loop` с интервалом если хочешь self-paced.
+
+**Почему эти дни**: Вт и Пт оставлены как buffer-дни для догона пропущенных слотов, правок и отгулов. Выходные включены (weekend traffic на automotive-контенте часто выше — люди ищут решения когда не на работе).
 
 ---
 
@@ -443,7 +445,7 @@ git push origin main
 ```
 Я веду публикацию блога bestauto.ge. Все 100 статей написаны и лежат в /Users/fedorzubrickij/bestauto-site/drafts/blog/ (markdown-драфты на 3 языках каждый).
 
-Твоя задача — публиковать их на продакшен Tilda по 2-3/неделю, начиная с P1 топ-ROI. Полный brief — в файле:
+Твоя задача — публиковать их на продакшен Tilda по 5/неделю, начиная с P1 топ-ROI. Полный brief — в файле:
 /Users/fedorzubrickij/bestauto-site/drafts/blog/PUBLICATION-AGENT-BRIEF.md
 
 Прочитай его, потом прочитай:
@@ -497,12 +499,16 @@ Weekly digest (week of YYYY-MM-DD):
 
 ## Приблизительная timeline
 
-- P1 публикация: 32 статьи × 3 язык × 2-3/неделю = ~**12-15 недель** (3-4 месяца)
-- P2 публикация: 49 статей × 3 язык × 2-3/неделю = ~**18-22 недели** (5-6 месяцев)
-- P3 публикация: 19 статей × 3 язык × 2-3/неделю = ~**7-9 недель** (2 месяца)
-- **Всего ~11 месяцев** до полной публикации всех 100 тем.
+При 5 статей/неделю (по 1 статье × 3 языка за слот, 5 слотов/неделя):
 
-Можно ускорить до 4-6/неделю когда агент и user сработаются — тогда 5-6 месяцев total.
+- P1 публикация: 32 статьи × ~1.5 недели из 5/неделю = ~**6-7 недель** (~1.5 месяца)
+- P2 публикация: 49 статей = ~**10 недель** (~2.5 месяца)
+- P3 публикация: 19 статей = ~**4 недели** (~1 месяц)
+- **Всего ~5 месяцев** до полной публикации всех 100 тем.
+
+User time budget при 5/неделю: ~15 часов/месяц (примерно 45 минут на статью × ~20 публикаций).
+
+Можно ускорить до 7/неделю (daily) когда агент и user сработаются — тогда 3.5 месяца total при ~22 ч/месяц user time.
 
 ---
 
@@ -587,7 +593,7 @@ python scripts/request_indexing.py --status
 ```
 Я веду публикацию блога bestauto.ge. Все 100 статей написаны и лежат в /Users/fedorzubrickij/bestauto-site/drafts/blog/ (markdown-драфты на 3 языках).
 
-Твоя задача — публиковать их на продакшен Tilda по 2-3/неделю, начиная с P1 топ-ROI.
+Твоя задача — публиковать их на продакшен Tilda по 5/неделю, начиная с P1 топ-ROI.
 
 Полный brief с настройками: /Users/fedorzubrickij/bestauto-site/drafts/blog/PUBLICATION-AGENT-BRIEF.md
 Workflow + photo guidance: /Users/fedorzubrickij/bestauto-site/drafts/blog/README.md
@@ -603,7 +609,7 @@ Workflow + photo guidance: /Users/fedorzubrickij/bestauto-site/drafts/blog/READM
 7. Languages: все 3 (RU/KA/EN) в один слот расписания (Вариант A)
 
 Прочитай brief + README + guidelines §8a, потом:
-1. Настрой расписание через /schedule: `0 10 * * MON,WED,FRI` Asia/Tbilisi
+1. Настрой расписание через /schedule: `0 10 * * SAT,SUN,MON,WED,THU` Asia/Tbilisi (5 статей/неделю)
 2. Сделай dry-run первой статьи (пропусти #1 chem-cleaning — это pilot, уже в продукте; начни с #2 what-is-ppf-explainer):
    - Сгенерируй hero-фото через Pollinations.ai → сохрани в drafts/blog-images/what-is-ppf-explainer/
    - Подготовь RU секцию для копирования в Tilda:
