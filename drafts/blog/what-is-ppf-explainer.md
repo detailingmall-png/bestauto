@@ -8,7 +8,7 @@ primary_hf_ru: "ppf это, ppf плёнка, что такое ppf"
 primary_hf_ka: "რა არის PPF, PPF ფირი, PPF-ი"
 primary_hf_en: "what is ppf, paint protection film"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#26"
   - gsc: "Downloads/gsc_16months.csv"
