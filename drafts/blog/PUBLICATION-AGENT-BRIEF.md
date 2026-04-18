@@ -212,13 +212,93 @@ rm drafts/blog-images/{slug}/*-raw.png
 
 Tilda admin УЖЕ НЕ ИСПОЛЬЗУЕТСЯ. Agent сам создаёт HTML файлы на основе существующих экспортов.
 
-**Template pages** (уже есть в `tilda-export/project6825691/`):
+**ВАЖНО — per-language templates** (чтобы футер/nav/hreflang/og:locale не смешивали языки):
 
-| Lang | Template page | URL pattern |
-|---|---|---|
-| RU | `page129335723.html` | `/ru/blog/car-detailing-guide` |
-| KA | `page129335883.html` | `/blog/car-detailing-guide` |
-| EN | `page129335960.html` (проверь в page-map.json если нет — используй любую другую EN blog article) |
+Template page ID выбирается по **(cluster, lang)** паре. Если нужного нет в tilda-export/ — fallback на ближайший кластер в том же языке. Если и этого нет — curl live HTML → save as template → use.
+
+### Primary template map (page IDs в `tilda-export/project6825691/page{ID}.html`)
+
+| Cluster | RU | KA | EN | Source slug |
+|---|---|---|---|---|
+| **POL** | `129649363` | `129683983` | `129692483` | polishing-cost-tbilisi |
+| **CER** | `129649683` | `129684103` | `129692573` | cost-tbilisi RU, tbilisi KA/EN |
+| **GEN** | `129335723` | `129335883` | `129336113` | car-detailing-guide |
+
+### Fallback map (для новых кластеров без existing templates)
+
+Для первой статьи в кластере: **clone из structurally nearest cluster того же языка**. После публикации первой статьи кластера — она становится его template для остальных.
+
+| Target cluster | RU fallback | KA fallback | EN fallback | Why |
+|---|---|---|---|---|
+| **PPF** | 129649683 (CER RU) | 129684103 (CER KA) | 129692573 (CER EN) | protective coating structure |
+| **VIN** | 129649683 (CER RU) | 129684103 (CER KA) | 129692573 (CER EN) | service-focus structure |
+| **TIN** | 129649683 (CER RU) | 129684103 (CER KA) | 129692573 (CER EN) | single-service structure |
+| **WIN** | 129649363 (POL RU) | 129683983 (POL KA) | 129692483 (POL EN) | technical-process structure |
+| **WSH** | 129335723 (GEN RU) | 129335883 (GEN KA) | 129336113 (GEN EN) | umbrella-service structure |
+| **INT** | 129649683 (CER RU) | 129684103 (CER KA) | 129692573 (CER EN) | detail-service structure |
+
+### Lookup logic для обновления map
+
+```python
+import json
+pm = json.load(open('page-map.json'))
+
+def get_template_id(cluster, lang):
+    """Get page ID for (cluster, lang) template.
+    Uses primary map → fallback map → live curl fetch."""
+    
+    PRIMARY = {
+        'POL': {'ru':'129649363','ka':'129683983','en':'129692483'},
+        'CER': {'ru':'129649683','ka':'129684103','en':'129692573'},
+        'GEN': {'ru':'129335723','ka':'129335883','en':'129336113'},
+    }
+    FALLBACK = {
+        'PPF': 'CER', 'VIN': 'CER', 'TIN': 'CER', 'INT': 'CER',
+        'WIN': 'POL', 'WSH': 'GEN',
+    }
+    
+    if cluster in PRIMARY:
+        return PRIMARY[cluster][lang]
+    fallback_cluster = FALLBACK[cluster]
+    return PRIMARY[fallback_cluster][lang]
+
+# Пример для первой PPF статьи на RU:
+template_id = get_template_id('PPF', 'ru')  # → '129649683' (CER RU)
+template_file = f'tilda-export/project6825691/page{template_id}.html'
+```
+
+### После первой публикации в кластере
+
+Как только агент опубликует первую PPF/VIN/TIN/WIN/WSH/INT статью — обнови PRIMARY map в самом скрипте (или в persistent state file `.publication-state.json`), чтобы следующие статьи того же кластера клонировались из неё, а не из fallback:
+
+```python
+# .publication-state.json
+{
+  "cluster_templates": {
+    "PPF": {
+      "ru": "920260420001",  # first PPF article RU page ID
+      "ka": "920260420002",
+      "en": "920260420003"
+    }
+  }
+}
+```
+
+### Альтернатива: curl live HTML если template файла нет
+
+Если `tilda-export/project6825691/page{ID}.html` не существует на диске, но URL есть в live_urls.txt:
+
+```bash
+curl -s "https://bestauto.ge/ru/blog/{slug}" \
+  > tilda-export/project6825691/page{NEW_TEMPLATE_ID}.html
+# Потом использовать как template для patching
+```
+
+Полезно для кластеров где Tilda-hosted статьи существуют но не были ранее экспортированы (всего ~48 live slugs, но только 15 в tilda-export).
+
+### Структурная совместимость
+
+Все Tilda blog articles собраны из одного master-template (classes `t182`, `t004`, `t030`, `t404` и т.д.) — структурно идентичны на 90%. Различаются только content blocks. **Per-language критично** — footer/nav/metadata другой текст; per-cluster желательно для content structure consistency, но не критично.
 
 **Генерация unique page ID**:
 - Существующий max page ID ≈ 130,000,000 (динамическое)
@@ -819,10 +899,17 @@ Workflow + photo guidance: /Users/fedorzubrickij/bestauto-site/drafts/blog/READM
 
 Ключевые настройки:
 1. Photo archive: /Users/fedorzubrickij/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pollinations.ai — free, no key)
-2. **Tilda admin НЕ используется**. Агент сам создаёт HTML файлы на основе существующих templates:
-   - RU template: tilda-export/project6825691/page129335723.html (/ru/blog/car-detailing-guide)
-   - KA template: tilda-export/project6825691/page129335883.html (/blog/car-detailing-guide)
-   - Clone + patch (BeautifulSoup) → save as page{NEW_ID}.html с unique ID по схеме 9YYYYMMDD{idx}
+2. **Tilda admin НЕ используется**. Агент сам создаёт HTML файлы клонируя existing templates.
+   **ВАЖНО: per-language, per-cluster** (иначе футер/hreflang/og:locale смешиваются):
+   - **POL RU**: page129649363 | **POL KA**: 129683983 | **POL EN**: 129692483 (polishing-cost-tbilisi)
+   - **CER RU**: 129649683 | **CER KA**: 129684103 | **CER EN**: 129692573
+   - **GEN RU**: 129335723 | **GEN KA**: 129335883 | **GEN EN**: 129336113 (car-detailing-guide)
+   - **PPF/VIN/TIN/INT** (пока нет templates в tilda-export) → fallback на CER того же языка
+   - **WIN** → fallback на POL того же языка
+   - **WSH** → fallback на GEN того же языка
+   - После первой публикации в новом кластере — обнови `.publication-state.json`, следующие статьи кластера используют её как template
+   - Full cluster→template map в BRIEF разделе Step 3
+   - Unique page ID для новых статей: схема `9{YYYYMMDD}{idx}` (e.g. `920260420001`)
 3. **Blog index patch** (автоматически): агент добавляет t404 card в начало списков на page37357691 (RU) / page37602384 (KA) / page37416946 (EN)
 4. **Photos** хостятся в tilda-export/project6825691/images/ (коммитятся в repo, деплоятся через Cloudflare Pages)
 5. **Conversion PNG → WebP**: `cwebp -q 80 -resize 1920 1080 ... -o hero.webp` (hero <300KB, inline <150KB)
