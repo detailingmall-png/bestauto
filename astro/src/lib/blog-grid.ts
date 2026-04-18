@@ -43,14 +43,17 @@ export const IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
 };
 
 function extractOgMeta(html: string): { description: string; image: string } {
-  const description =
-    html.match(/property="og:description"\s+content="([^"]*)"/)?.[1]
-    ?? html.match(/name="description"\s+content="([^"]*)"/)?.[1]
+  // Use two-step extraction: find the meta tag, then extract content from within it.
+  // This handles any attribute order (BS4 sorts alphabetically: content= before property=).
+  const ogImageTag = html.match(/<meta[^>]*property="og:image"[^>]*/i)?.[0] ?? '';
+  const image = ogImageTag.match(/\bcontent="([^"]*)"/i)?.[1] ?? '';
+
+  const ogDescTag =
+    html.match(/<meta[^>]*property="og:description"[^>]*/i)?.[0]
+    ?? html.match(/<meta[^>]*name="description"[^>]*/i)?.[0]
     ?? '';
-  const image =
-    html.match(/property="og:image"\s+content="([^"]*)"/)?.[1]
-    ?? html.match(/og:image"\s+content="([^"]*)"/)?.[1]
-    ?? '';
+  const description = ogDescTag.match(/\bcontent="([^"]*)"/i)?.[1] ?? '';
+
   return { description, image };
 }
 
