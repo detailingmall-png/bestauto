@@ -599,6 +599,28 @@ cd /Users/fedorzubrickij/bestauto-site/astro && bun run build
 - ❌ Более 3 ссылок в одной статье (выглядит спамно)
 - ❌ Ссылки на ту же услугу 2 раза в одной статье (duplicate-stem)
 
+### Step 8b — AGENT: BLOG_SERVICE_MAP (ОБЯЗАТЕЛЬНО — ссылка "Цены" в шапке)
+
+Добавь запись в `astro/src/lib/related-services.ts` в массив `BLOG_SERVICE_MAP`:
+
+```typescript
+'blog/{slug}': '{parent-service-slug}',
+```
+
+**Маппинг кластеров → parent service slug**:
+| Кластер | parent-service-slug |
+|---------|---------------------|
+| PPF | `ppf-shield-wrapping` |
+| CER | `ceramiccoating` |
+| POL | `polishing` |
+| VIN | `vinyl-wrapping` |
+| TINT | `auto-glass-tinting` |
+| WASH | `carwash` |
+| INT | `interior-cleaning` |
+| WIN | `windshield-repair` |
+
+**Зачем это важно**: этот маппинг управляет ссылкой "Цены" в навигации на странице блог-статьи. Без него ссылка ведёт на `/ru/prices` (общий прайс), а не на страницу конкретного сервиса с якорем `#prices` (`/ru/ppf-shield-wrapping#prices`). Без этого шага nav на статье сломан.
+
 ### Step 9 — AGENT: Status update
 
 **В `drafts/blog/{slug}.md`**:
