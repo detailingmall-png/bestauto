@@ -14,3 +14,7 @@ tilda-export/project6825691/files/
 
 # Logs
 *.log
+
+# Photo archive — too heavy for git, kept locally
+archive/
+drafts/blog-images/

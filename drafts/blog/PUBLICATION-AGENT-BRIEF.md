@@ -457,13 +457,110 @@ Weekly digest (week of YYYY-MM-DD):
 
 ---
 
-## Мои открытые вопросы к user
+## Настройки (ответы user, 2026-04-18)
 
-Перед стартом стоит уточнить:
+Конфиг для агента, все вопросы закрыты:
 
-1. **Доступ к архиву BESTAUTO фото** — есть ли папка с кадрами студии на диске / Google Drive / Dropbox?
-2. **Tilda admin credentials** — если агент использует browser automation, понадобится login (через `Claude_in_Chrome` MCP с persistent session)
-3. **GSC API access** — есть ли key для автоматического request indexing, или каждый раз user кликает вручную?
-4. **Кого уведомлять при ошибках** — Telegram/WhatsApp/email hook?
-5. **Preferred AI модель** — Flux Dev (быстро, дешевле) или Flux Pro Ultra (качество)?
-6. **Ratio публикаций 1-lang vs 3-lang** — RU first for all, then KA/EN? Или all-3-langs параллельно?
+### 1. Архив BESTAUTO фото
+**Папка**: `/Users/fedorzubrickij/bestauto-site/archive/bestauto-photos/` (создана, в .gitignore)
+- Пуста на момент настройки. Фотки будешь добавлять туда сам по мере получения от студии.
+- Агент проверяет эту папку первой при выборе hero/inline фото.
+- Если пусто или нет подходящего — fallback на AI-генерацию (см. п. 5).
+
+### 2. Tilda автоматизация
+**НЕТ**. Агент НЕ автоматизирует Tilda admin UI. Страницы создаёт user вручную.
+- Agent готовит copy-paste блок (hero title + subtitle + meta + body + список inline фото).
+- User копирует в Tilda, создаёт страницу, сообщает page ID + экспортирует HTML.
+- Agent продолжает с page-map.json / build / push / GSC.
+
+### 3. GSC API — ГОТОВО
+Service account credentials + готовый скрипт уже настроены:
+- **Credentials**: `/Users/fedorzubrickij/bestauto-content/data/google_credentials.json`
+- **Скрипт**: `/Users/fedorzubrickij/bestauto-content/scripts/request_indexing.py`
+- **URL list**: `/Users/fedorzubrickij/bestauto-content/data/live_urls.txt` (191 URL на сейчас)
+- **State tracking**: `/Users/fedorzubrickij/bestauto-content/data/indexing_state.json`
+- **Daily limit**: 200 URL (квота Google Indexing API)
+
+**Workflow для агента после публикации**:
+```bash
+# 1. Добавить новые URL в live_urls.txt
+echo "https://bestauto.ge/ru/blog/{slug}" >> /Users/fedorzubrickij/bestauto-content/data/live_urls.txt
+echo "https://bestauto.ge/blog/{slug}" >> /Users/fedorzubrickij/bestauto-content/data/live_urls.txt  # KA
+echo "https://bestauto.ge/en/blog/{slug}" >> /Users/fedorzubrickij/bestauto-content/data/live_urls.txt  # EN
+
+# 2. Запустить indexing request
+cd /Users/fedorzubrickij/bestauto-content && python scripts/request_indexing.py
+
+# 3. Проверить статус
+python scripts/request_indexing.py --status
+```
+
+Скрипт сам читает state, пропускает уже отправленные URL, поддерживает rate limits.
+
+### 4. Уведомления об ошибках
+**В сессии**. Агент пишет errors прямо в conversation, без Telegram/Slack/email hooks.
+- Чтобы ошибка была замечена — писать в начале своего ответа жирным: `⚠ ERROR: ...`
+- Формат weekly digest остаётся прежним (в conversation).
+
+### 5. AI-генерация фото (БЕСПЛАТНО)
+**НЕ используй платные модели** (Flux Pro, Midjourney). Используй в таком порядке:
+
+**Primary: Pollinations.ai** — completely free, no account, no API key.
+- Endpoint: `https://image.pollinations.ai/prompt/{URL-encoded prompt}?width=1920&height=1080&model=flux&nologo=true&enhance=true`
+- Пример: `curl -o hero.png "https://image.pollinations.ai/prompt/premium%20car%20detailing%20studio%20dark%20workshop?width=1920&height=1080&model=flux&nologo=true"`
+- Модели доступные: `flux`, `flux-realism`, `turbo`, `sd3` — все free
+- Quality: на уровне Flux Dev, вполне premium-looking
+- Как использовать: агент сам делает `curl`, сохраняет .png → конвертирует в .webp через `cwebp`
+
+**Fallback #1: Hugging Face Inference API** — free tier + account.
+- Нужен HF token (бесплатно: https://huggingface.co/settings/tokens)
+- Модель: `black-forest-labs/FLUX.1-schnell` (free, быстрая)
+- Если user захочет — скажи ему создать token и экспортировать в `HF_TOKEN` env.
+
+**Fallback #2: Google Imagen через AI Studio** — free quota.
+- Бесплатно через https://aistudio.google.com/ (user account + API key)
+- Generous free tier (обычно 60 req/min и 1500/day)
+
+**Если все 3 недоступны** — публикуй без hero фото, оставь в статье placeholder комментарий и сообщи user чтобы загрузил вручную.
+
+### 6. Multi-language strategy
+**Без разницы user'у — default Вариант A**: публикуй 3 языка одной статьи в один слот расписания (3 Tilda страницы подряд).
+- Плюсы: hreflang полные сразу, SEO-связка работает с первого дня
+- Time cost за слот: ~30 мин агент + ~33 мин user (параллельно → 25 мин wallclock)
+- Альтернатива (если user захочет позже переключиться): 1-lang-first для всех статей, потом остальные языки — просто меняется порядок в queue.
+
+---
+
+## Конкретизированный Copy-paste для нового агента (с учётом ответов)
+
+**Замени прежний «Copy-paste для нового агента» на этот (он короче и с уже заполненными настройками)**:
+
+```
+Я веду публикацию блога bestauto.ge. Все 100 статей написаны и лежат в /Users/fedorzubrickij/bestauto-site/drafts/blog/ (markdown-драфты на 3 языках).
+
+Твоя задача — публиковать их на продакшен Tilda по 2-3/неделю, начиная с P1 топ-ROI.
+
+Полный brief с настройками: /Users/fedorzubrickij/bestauto-site/drafts/blog/PUBLICATION-AGENT-BRIEF.md
+Workflow + photo guidance: /Users/fedorzubrickij/bestauto-site/drafts/blog/README.md
+Бизнес-правила: /Users/fedorzubrickij/bestauto-site/docs/blog-article-guidelines.md
+
+Ключевые настройки:
+1. Photo archive: /Users/fedorzubrickij/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pollinations.ai — free, no key)
+2. Tilda страницы user создаёт вручную; ты готовишь copy-paste блок и продолжаешь после экспорта HTML
+3. GSC indexing готов: `cd /Users/fedorzubrickij/bestauto-content && python scripts/request_indexing.py`
+4. Ошибки пиши прямо в сессии (без Telegram/Slack)
+5. AI фото через Pollinations.ai (curl на https://image.pollinations.ai/prompt/... — бесплатно)
+6. Languages: все 3 (RU/KA/EN) в один слот расписания (Вариант A)
+
+Прочитай brief + README + guidelines §8a, потом:
+1. Настрой расписание через /schedule: `0 10 * * MON,WED,FRI` Asia/Tbilisi
+2. Сделай dry-run первой статьи (пропусти #1 chem-cleaning — это pilot, уже в продукте; начни с #2 what-is-ppf-explainer):
+   - Сгенерируй hero-фото через Pollinations.ai
+   - Подготовь RU секцию для копирования в Tilda (hero title/subtitle/meta + body)
+   - Покажи мне результат
+3. После моего ОК — я создаю страницу в Tilda, сообщаю page ID, ты продолжаешь (page-map/build/push/GSC)
+
+Ответь коротко: "готов, прочитал брифы" — и начинай с dry-run.
+```
+
+Скопируй этот блок в новую Claude Code сессию — агент стартует сразу с правильным контекстом.
