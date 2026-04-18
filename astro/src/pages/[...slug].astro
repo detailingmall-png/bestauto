@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, normalizeLegacyBlogBody, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
@@ -453,6 +453,16 @@ if (isServicePage || baseSlug === 'carwash') {
 
 // Blog articles: strip broken CTA placeholder, CMS metadata, and convert inline FAQ to accordion
 if (isBlogPage && baseSlug !== 'blog') {
+  // If the article has proper Tilda content blocks (t106), the legacy ba-blog-content
+  // raw-HTML import is a duplicate left over by update-*-blog.py — strip it.
+  // Match class="ba-blog-content" (attribute) not .ba-blog-content (CSS selector inside <style>).
+  if (mainContent.includes('data-record-type="106"') && mainContent.includes('class="ba-blog-content"')) {
+    mainContent = removeBlockContaining(mainContent, 'class="ba-blog-content"');
+  } else {
+    // Legacy-only articles (KA): normalize hardcoded light-theme typography so
+    // .is-blog-article .ba-blog-content overrides in bestauto-custom.css apply.
+    mainContent = normalizeLegacyBlogBody(mainContent);
+  }
   mainContent = stripBlogCtaPlaceholder(mainContent);
   mainContent = stripBlogCmsMetadata(mainContent);
   mainContent = convertBlogInlineFaq(mainContent, lang);

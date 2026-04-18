@@ -557,6 +557,80 @@ html {
 }
 
 /* ========================================================================
+   Legacy blog articles (KA): raw-HTML body imported into <div class="ba-blog-content">
+   instead of proper Tilda t106 blocks. Inline <style> is stripped at build time by
+   normalizeLegacyBlogBody(); these rules re-theme the content to match the
+   site-wide blog light-theme (white bg + black text, matching t106/t255 Tilda
+   blocks used on RU/EN articles). Specificity (.is-blog-article .ba-blog-content)
+   wins over any leftover inline .ba-blog-content rules.
+   ======================================================================== */
+.is-blog-article .ba-blog-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: var(--ba-font-family);
+  color: #000;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.is-blog-article .ba-blog-content h1 {
+  font-size: 36px;
+  font-weight: var(--ba-font-weight-bold);
+  line-height: 1.25;
+  margin: 32px 0 20px;
+  color: #000;
+}
+.is-blog-article .ba-blog-content h2 {
+  font-size: 28px;
+  font-weight: var(--ba-font-weight-semibold);
+  line-height: 1.3;
+  margin: 40px 0 16px;
+  color: #000;
+}
+.is-blog-article .ba-blog-content h3 {
+  font-size: 22px;
+  font-weight: var(--ba-font-weight-semibold);
+  line-height: 1.35;
+  margin: 32px 0 12px;
+  color: #000;
+}
+.is-blog-article .ba-blog-content p {
+  margin: 0 0 16px;
+}
+.is-blog-article .ba-blog-content ul,
+.is-blog-article .ba-blog-content ol {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+.is-blog-article .ba-blog-content li {
+  margin: 0 0 8px;
+}
+.is-blog-article .ba-blog-content strong {
+  color: #000;
+  font-weight: var(--ba-font-weight-semibold);
+}
+.is-blog-article .ba-blog-content a {
+  color: var(--ba-color-accent);
+  text-decoration: underline;
+  transition: color var(--ba-duration-fast) var(--ba-ease-default);
+}
+.is-blog-article .ba-blog-content a:hover {
+  color: var(--ba-color-accent-hover);
+}
+@media screen and (max-width: 960px) {
+  .is-blog-article .ba-blog-content { font-size: 16px; }
+  .is-blog-article .ba-blog-content h1 { font-size: 32px; }
+  .is-blog-article .ba-blog-content h2 { font-size: 24px; margin: 32px 0 14px; }
+  .is-blog-article .ba-blog-content h3 { font-size: 20px; margin: 24px 0 10px; }
+}
+@media screen and (max-width: 640px) {
+  .is-blog-article .ba-blog-content { font-size: 15px; padding: 0 16px; }
+  .is-blog-article .ba-blog-content h1 { font-size: 28px; }
+  .is-blog-article .ba-blog-content h2 { font-size: 22px; margin: 28px 0 12px; }
+  .is-blog-article .ba-blog-content h3 { font-size: 18px; margin: 20px 0 10px; }
+}
+
+/* ========================================================================
    Blog article tables: converted from markdown pipe-tables at build time
    ======================================================================== */
 .ba-blog-table {

@@ -1878,6 +1878,24 @@ function removeOrphanFaqHeadings(html: string): string {
 // inline-styled duplicate <h1> elements from editorial templates.
 // ---------------------------------------------------------------------------
 
+/**
+ * Normalize legacy ba-blog-content raw-HTML blog posts (KA articles that were
+ * imported as one big custom-HTML block instead of Tilda t106/t255 blocks).
+ *
+ * Strips the inline <style> that hardcodes light-theme typography (color:#333,
+ * font-family:-apple-system, fixed 17px/28px font sizes). Keeps the markup so
+ * .is-blog-article .ba-blog-content overrides in bestauto-custom.css apply.
+ */
+export function normalizeLegacyBlogBody(content: string): string {
+  if (!content.includes('class="ba-blog-content"')) return content;
+  // The <style> block sits immediately before <div class="ba-blog-content"> inside
+  // the same rec wrapper. Matched by the unique ".ba-blog-content h2{" selector.
+  return content.replace(
+    /<style>[^<]*\.ba-blog-content h2\{[^<]*<\/style>/g,
+    '',
+  );
+}
+
 export function stripBlogCmsMetadata(content: string): string {
   // Remove inline-styled duplicate H1 (CMS template artifact)
   let result = content.replace(

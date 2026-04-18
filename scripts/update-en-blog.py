@@ -399,12 +399,37 @@ def update_html_file(html_path: Path, article: dict, page_id: str) -> bool:
 
     # 7. Replace article body content blocks
     if article["body"]:
+        html = _strip_ba_blog_content(html)
         html = _replace_content_blocks(html, article, page_id)
 
     if html != original:
         html_path.write_text(html, encoding="utf-8")
         return True
     return False
+
+
+def _strip_ba_blog_content(html: str) -> str:
+    """Remove the legacy t131 rec block that contains <div class="ba-blog-content">.
+
+    Earlier KA/RU/EN articles imported the full article body as raw HTML inside a
+    single custom block. When we later insert proper t106/t255 Tilda blocks the old
+    raw-HTML block stays behind and the article renders twice. This helper strips it.
+    """
+    attr_idx = html.find('class="ba-blog-content"')
+    if attr_idx < 0:
+        return html
+
+    # Walk back to the opening <div id="recN" ...> of the enclosing rec block.
+    rec_opens = list(re.finditer(r'<div\s+id="rec(\d+)"', html[:attr_idx]))
+    if not rec_opens:
+        return html
+    start_pos = rec_opens[-1].start()
+
+    # End is at the start of the next rec block (or EOF if none).
+    next_rec = re.search(r'<div\s+id="rec\d+"', html[attr_idx:])
+    end_pos = attr_idx + next_rec.start() if next_rec else len(html)
+
+    return html[:start_pos] + html[end_pos:]
 
 
 def _replace_content_blocks(html: str, article: dict, page_id: str) -> str:
