@@ -204,6 +204,35 @@ into the article text. Mix priorities: 60% long-tail, 30% mid, 10% generic
 to avoid Penguin over-optimization (one anchor per article should be the
 short HF, not all three).
 
+#### Declension rule (Russian / Georgian — CRITICAL)
+
+The injector substitutes `anchor` **verbatim** into the sentence in place of
+`originalPhrase`. If the two differ in grammatical case, the surrounding text
+becomes ungrammatical:
+
+```
+❌ anchor: 'керамическое покрытие'   (nominative)
+   originalPhrase: 'керамическим покрытием'  (instrumental)
+   → "На машине с керамическое покрытие задача…"  ← broken Russian
+
+✓  anchor: 'керамическим покрытием'
+   originalPhrase: 'керамическим покрытием'
+   → "На машине с керамическим покрытием задача…"  ← correct
+```
+
+**Rule:** `anchor` must agree in grammatical case with `originalPhrase`.
+
+- Safe default: `anchor === originalPhrase` — always grammatically consistent.
+- Diverge only when `originalPhrase` is in nominative case (or stands alone
+  after a dash / in parentheses), so substituting a different nominative-form
+  HF keyword doesn't break the sentence.
+- If you want the canonical nominative form as anchor but the only natural
+  occurrence is inflected — find a different `originalPhrase` location
+  (e.g. a sentence where the term appears in nominative), or accept the
+  inflected form as anchor (Google understands Russian morphology).
+- Add inflected-form anchors to `seo-service-keywords.ts` so `unknown-kw=0`
+  stays clean in the build log.
+
 ### 3. Find unique contextQuote + originalPhrase
 
 For each anchor:
@@ -316,7 +345,7 @@ ready in `seo-service-keywords.ts`).
 | `dup-stem` warning | Anchor adds a word whose root already exists in quote | Pick a different anchor variant from dictionary |
 | `unknown-keyword` warning | Anchor not in HF dictionary | Add to `seo-service-keywords.ts` with GSC evidence, or pick known anchor |
 | Link styled wrong | LINK_STYLE constant in `blog-links-inject.ts:11` | Edit the constant; affects all injected links |
-| Anchor text reads awkwardly | Mismatch between original phrase grammar and anchor | Pick a different `originalPhrase` location, or different anchor |
+| Anchor text reads awkwardly / wrong case | `anchor` is nominative but `originalPhrase` is inflected — substitution breaks grammar | Match `anchor` to the same grammatical case as `originalPhrase`. See Declension rule in step 2. |
 
 ---
 
