@@ -1094,6 +1094,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/2-phase-vs-3-phase-wash',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическим покрытием',
+        contextQuote: 'На машине с керамическим покрытием задача мойки иная: не создать новую защиту, а сохранить существующую.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка',
+        originalPhrase: 'полиуретановая плёнка',
+        contextQuote: 'На машине PPF — полиуретановая плёнка имеет свой гидрофобный слой и поддерживается отдельными специализированными спреями',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2121,6 +2140,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/2-phase-vs-3-phase-wash',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკულ საფარიან',
+        contextQuote: 'კერამიკულ საფარიან მანქანაზე რეცხვის ამოცანა განსხვავებულია: არა ახალი დაცვის შექმნა, არამედ არსებულის შენარჩუნება.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'პოლიურეთანის ფირს',
+        contextQuote: 'პოლიურეთანის ფირს თავისი ჰიდროფობური ფენა',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3141,6 +3179,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car wrap',
         originalPhrase: 'Vinyl',
         contextQuote: 'Vinyl is a decorative film for colour or design changes.',
+      },
+    ],
+  },
+  {
+    article: 'blog/2-phase-vs-3-phase-wash',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic-coated car',
+        contextQuote: 'On a ceramic-coated car the wash job is different: not to create new protection but to preserve existing protection.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'polyurethane film',
+        contextQuote: 'PPF-coated car — polyurethane film has its own hydrophobic layer and is maintained with dedicated sprays',
       },
     ],
   },
