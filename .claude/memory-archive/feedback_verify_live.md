@@ -1,0 +1,1 @@
+After every fix: verify on the LIVE site (bestauto.ge), not just locally. Use preview_eval on bestauto.ge URL at mobile viewport (375px) to check computed styles and take screenshot. Only say "готово" after live verification passes.
