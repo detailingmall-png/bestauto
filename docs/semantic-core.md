@@ -266,7 +266,7 @@ pages. Planned uses:
 Re-run quarterly to keep up with seasonal shifts and new search trends:
 
 ```bash
-cd ~/bestauto-content
+cd "$HOME/Documents/Projects CODE/bestauto-content"
 python3 scripts/gsc_export_2y.py
 # Then update SERVICE_KEYWORDS_* in seo-service-keywords.ts
 # and regenerate the narrative tables above from the new export.

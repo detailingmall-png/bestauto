@@ -117,5 +117,5 @@ def main():
                 print(f'      to:   {t_str}')
 
 if __name__ == '__main__':
-    os.chdir('/Users/fedorzubrickij/bestauto-site')
+    os.chdir('/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site')
     main()

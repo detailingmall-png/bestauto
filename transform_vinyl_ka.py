@@ -7,7 +7,7 @@ writes back to the same file.
 
 import sys
 
-FILE = "/Users/fedorzubrickij/bestauto-site/astro/tilda-export/page37334532.html"
+FILE = "/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/astro/tilda-export/page37334532.html"
 
 
 def main():

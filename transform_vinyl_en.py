@@ -5,7 +5,7 @@ Reads page37329658body.html, applies text replacements & structural changes,
 writes back to the same file.
 """
 
-FILE = "/Users/fedorzubrickij/bestauto-site/astro/public/files/page37329658body.html"
+FILE = "/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/astro/public/files/page37329658body.html"
 
 
 def main() -> None:

@@ -7,7 +7,7 @@ These are the files Astro actually reads at build time.
 import sys
 import os
 
-BASE = "/Users/fedorzubrickij/bestauto-site"
+BASE = "/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site"
 
 # Import the transformation functions from existing scripts
 sys.path.insert(0, BASE)

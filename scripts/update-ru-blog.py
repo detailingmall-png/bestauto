@@ -16,7 +16,7 @@ from typing import Optional
 # Paths
 # ──────────────────────────────────────────────
 ARTICLES_DIR = Path("/Users/fedorzubrickij/Downloads/seo blog/Ru/all_articles")
-PROJECT_DIR = Path("/Users/fedorzubrickij/bestauto-site")
+PROJECT_DIR = Path("/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site")
 TILDA_DIR = PROJECT_DIR / "tilda-export" / "project6825691"
 PAGE_MAP_PATH = PROJECT_DIR / "astro" / "src" / "lib" / "page-map.json"
 
