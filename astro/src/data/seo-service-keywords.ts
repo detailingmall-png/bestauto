@@ -62,6 +62,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'керамическое покрытие авто', // GSC: 8 (top)
     'керамика на авто',           // GSC: 4 (colloquial but real)
     'керамическое покрытие',      // GSC: 1, but high impressions
+    'керамическим покрытием',     // inflected form — valid in blog anchor context
     'керамика на машину',
     'керамика для авто',
     'нанесение керамики',

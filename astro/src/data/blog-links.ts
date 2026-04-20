@@ -1100,7 +1100,7 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       {
         role: 'bridge',
         target: '/ceramiccoating',
-        anchor: 'керамическое покрытие',
+        anchor: 'керамическим покрытием',
         originalPhrase: 'керамическим покрытием',
         contextQuote: 'На машине с керамическим покрытием задача мойки иная: не создать новую защиту, а сохранить существующую.',
       },
