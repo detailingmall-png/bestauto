@@ -1098,6 +1098,13 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     article: 'blog/2-phase-vs-3-phase-wash',
     links: [
       {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'мойка машины',
+        originalPhrase: 'мойка машины',
+        contextQuote: '2 фазная мойка машины — это классический базовый цикл профессиональной мойки в детейлинг-студии',
+      },
+      {
         role: 'bridge',
         target: '/ceramiccoating',
         anchor: 'керамическим покрытием',
@@ -2144,6 +2151,13 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     article: 'blog/2-phase-vs-3-phase-wash',
     links: [
       {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'მანქანის რეცხვა',
+        contextQuote: 'PPF-ის დადგმის შემდეგ პირველ 7-10 დღეში მანქანის რეცხვა საერთოდ არ რეკომენდებულია',
+      },
+      {
         role: 'bridge',
         target: '/ceramiccoating',
         anchor: 'კერამიკული საფარი',
@@ -3185,6 +3199,13 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
   {
     article: 'blog/2-phase-vs-3-phase-wash',
     links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'car wash',
+        originalPhrase: 'car wash',
+        contextQuote: 'A 2-phase car wash is the classic base cycle of a professional detailing-studio wash',
+      },
       {
         role: 'bridge',
         target: '/ceramiccoating',

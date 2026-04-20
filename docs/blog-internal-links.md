@@ -291,7 +291,10 @@ Documentation-only field for now (the injector doesn't use it). Convention:
 
 - `pillar` — anchor pointing to the canonical service page that this
   article is "about" (e.g. ceramic-coating article → `/ceramiccoating`).
-  Use the highest-priority HF keyword.
+  Use the highest-priority HF keyword. **MANDATORY: every article must
+  have exactly one `pillar` link to its parent service.** An article about
+  car wash with no link to `/carwash` defeats the entire pillar strategy.
+  Map the parent service via `BLOG_SERVICE_MAP` in `related-services.ts`.
 - `bridge` — anchor to a related/complementary service the user might
   also need (e.g. ceramic article → `/polishing` because polishing is a
   prerequisite step).
