@@ -9,7 +9,7 @@ primary_hf_ka: "ფაზიანი რეცხვა, მანქანი�
 primary_hf_en: "2-phase 3-phase wash, car wash tbilisi"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#72"
   - gsc: "Downloads/gsc_16months.csv"

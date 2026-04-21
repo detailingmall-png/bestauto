@@ -1120,6 +1120,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/car-body-wrap-cost-guide',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'Оклейка виниловой плёнкой, перекраска и PPF решают разные задачи:',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2173,6 +2185,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/car-body-wrap-cost-guide',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის ფირი',
+        originalPhrase: 'PPF',
+        contextQuote: 'თუ გჭირდებათ ფერის დროებითი შეცვლა — ვინილი. დაცვა + ახალი ფერი — PPF. ფერი სამუდამოდ — გადაღებვა.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3219,6 +3243,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'paint protection film',
         originalPhrase: 'polyurethane film',
         contextQuote: 'PPF-coated car — polyurethane film has its own hydrophobic layer and is maintained with dedicated sprays',
+      },
+    ],
+  },
+  {
+    article: 'blog/car-body-wrap-cost-guide',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'car ppf',
+        originalPhrase: 'PPF',
+        contextQuote: 'Temporary colour change with no consequences for the body — vinyl. Protection plus new colour together — PPF. Permanent change with acceptance of VIN complications at resale — repaint.',
       },
     ],
   },
