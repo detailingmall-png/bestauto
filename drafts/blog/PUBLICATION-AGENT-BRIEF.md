@@ -146,16 +146,41 @@
 
 **Варианты** (decision tree):
 
-**2a. AI-генерация (Pollinations.ai)** — default, бесплатно, без ключа:
-```bash
-# Hero ONLY (1920×1080) — inline-изображения в body статьи НЕ нужны
-curl -o drafts/blog-images/{slug}/hero-raw.png \
-  "https://image.pollinations.ai/prompt/$(jq -rn --arg p '{PROMPT}' '$p|@uri')?width=1920&height=1080&model=flux&nologo=true&enhance=true"
+**2a. Pexels** — default. Бесплатная лицензия, реальные фото, выглядят профессионально:
+```python
+# Поиск через Pexels API (бесплатный ключ: https://www.pexels.com/api/)
+# PEXELS_API_KEY хранить в ~/.zshrc: export PEXELS_API_KEY=...
+import urllib.request, json, os
+
+def pexels_search(query, per_page=5):
+    url = f"https://api.pexels.com/v1/search?query={urllib.parse.quote(query)}&per_page={per_page}&orientation=landscape"
+    req = urllib.request.Request(url, headers={"Authorization": os.environ["PEXELS_API_KEY"]})
+    with urllib.request.urlopen(req) as r:
+        data = json.load(r)
+    return [(p["id"], p["src"]["original"], p["url"]) for p in data["photos"]]
+
+# Пример запросов по кластеру:
+# PPF/VIN: "vinyl wrap car", "car wrapping studio"
+# CER/POL: "car detailing", "car polishing", "ceramic coating car"
+# TIN:     "window tinting car", "car tint film"
+# WIN:     "windshield repair", "auto glass"
+# INT:     "car interior cleaning", "auto detailing interior"
+# WSH:     "car wash detailing", "car washing studio"
+
+# Скачать оригинал
+results = pexels_search("vinyl wrap car")
+# Показать user'у список URL (p["url"]) → user выбирает → скачать выбранный
+photo_url = results[0][1]  # original src
+urllib.request.urlretrieve(photo_url, "/tmp/hero-raw.jpg")
 ```
 
 > **⚠ НЕТ inline-изображений в body статьи** — только hero. Подтверждено на what-is-ppf-explainer.
 
-Промпт берётся из cluster-specific шаблонов в `drafts/blog/README.md` раздел «AI-генерация: базовый prompt template».
+**Workflow с Pexels**:
+1. Агент делает поиск по cluster-specific query (см. выше)
+2. Показывает user'у топ-5 результатов (ссылки на pexels.com)
+3. User выбирает одно → агент скачивает → конвертирует в WebP (Step 2.5)
+4. Если API key недоступен — скачать вручную с pexels.com и положить в `/tmp/hero-raw.jpg`
 
 **2b. BESTAUTO архив** (приоритет если есть):
 - Путь: `/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/archive/bestauto-photos/`
@@ -897,26 +922,23 @@ python scripts/request_indexing.py --status
 - Чтобы ошибка была замечена — писать в начале своего ответа жирным: `⚠ ERROR: ...`
 - Формат weekly digest остаётся прежним (в conversation).
 
-### 5. AI-генерация фото (БЕСПЛАТНО)
-**НЕ используй платные модели** (Flux Pro, Midjourney). Используй в таком порядке:
+### 5. Фото для hero (источники по приоритету)
 
-**Primary: Pollinations.ai** — completely free, no account, no API key.
-- Endpoint: `https://image.pollinations.ai/prompt/{URL-encoded prompt}?width=1920&height=1080&model=flux&nologo=true&enhance=true`
-- Пример: `curl -o hero.png "https://image.pollinations.ai/prompt/premium%20car%20detailing%20studio%20dark%20workshop?width=1920&height=1080&model=flux&nologo=true"`
-- Модели доступные: `flux`, `flux-realism`, `turbo`, `sd3` — все free
-- Quality: на уровне Flux Dev, вполне premium-looking
-- Как использовать: агент сам делает `curl`, сохраняет .png → конвертирует в .webp через `cwebp`
+**Primary: Pexels** — реальные фото, бесплатная коммерческая лицензия, выглядят профессионально.
+- API key: бесплатно на https://www.pexels.com/api/ → хранить в `PEXELS_API_KEY` env
+- Поиск через API (см. Step 2a выше)
+- Cluster queries: vinyl→"vinyl wrap car", cer/pol→"car detailing polishing", tin→"window tint car", win→"windshield repair", int→"car interior detailing", wsh→"car wash studio"
+- Workflow: агент ищет топ-5 → показывает user'у ссылки → user выбирает → агент скачивает
 
-**Fallback #1: Hugging Face Inference API** — free tier + account.
-- Нужен HF token (бесплатно: https://huggingface.co/settings/tokens)
-- Модель: `black-forest-labs/FLUX.1-schnell` (free, быстрая)
-- Если user захочет — скажи ему создать token и экспортировать в `HF_TOKEN` env.
+**Fallback: Unsplash** — аналогично Pexels, бесплатная лицензия.
+- https://unsplash.com/s/photos/car-wrap — ручной поиск
+- Скачать максимальный размер → `/tmp/hero-raw.jpg`
 
-**Fallback #2: Google Imagen через AI Studio** — free quota.
-- Бесплатно через https://aistudio.google.com/ (user account + API key)
-- Generous free tier (обычно 60 req/min и 1500/day)
+**Fallback (если нет подходящего стока): AI-генерация**
+- Pollinations.ai: `curl "https://image.pollinations.ai/prompt/{prompt}?width=1920&height=1080&model=flux-realism&nologo=true" -o /tmp/hero-raw.jpg`
+- Качество: CGI-вид, не фотореалистично — использовать только если нет альтернативы
 
-**Если все 3 недоступны** — публикуй без hero фото, оставь в статье placeholder комментарий и сообщи user чтобы загрузил вручную.
+**Если ничего не подходит** — публикуй без hero, сообщи user чтобы загрузил вручную.
 
 ### 6. Multi-language strategy
 **Без разницы user'у — default Вариант A**: публикуй 3 языка одной статьи в один слот расписания (3 Tilda страницы подряд).
@@ -954,7 +976,7 @@ Workflow + photo guidance: /Users/fedorzubrickij/Documents/Projects CODE/bestaut
 Бизнес-правила: /Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/docs/blog-article-guidelines.md
 
 Ключевые настройки:
-1. Photo archive: /Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pollinations.ai — free, no key)
+1. Photo archive: /Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pexels API — PEXELS_API_KEY в env, затем Unsplash ручной поиск, затем Pollinations.ai как последний resort)
 2. **Tilda admin НЕ используется**. Агент сам создаёт HTML файлы клонируя existing templates.
    **ВАЖНО: per-language, per-cluster** (иначе футер/hreflang/og:locale смешиваются):
    - **POL RU**: page129649363 | **POL KA**: 129683983 | **POL EN**: 129692483 (polishing-cost-tbilisi)
@@ -972,13 +994,13 @@ Workflow + photo guidance: /Users/fedorzubrickij/Documents/Projects CODE/bestaut
 6. Editorial links: после создания HTML → добавь 2-3 правила в astro/src/data/blog-links.ts (см. docs/blog-internal-links.md), 4 validation checks, анкоры из seo-service-keywords.ts
 7. GSC indexing: `cd /Users/fedorzubrickij/Documents/Projects CODE/bestauto-content && python scripts/request_indexing.py`
 8. Ошибки пиши в сессии с префиксом «⚠ ERROR:»
-9. AI фото через Pollinations.ai (curl https://image.pollinations.ai/prompt/...)
+9. Фото: Pexels API (PEXELS_API_KEY) → Unsplash (ручной) → Pollinations.ai (последний resort, CGI-качество)
 10. Languages: все 3 (RU/KA/EN) в один слот (Вариант A)
 
 Прочитай brief + README + guidelines §8a + docs/blog-internal-links.md, потом:
 1. Настрой расписание через /schedule: `0 10 * * SAT,SUN,MON,WED,THU` Asia/Tbilisi (5/неделю, Сб-Вс-Пн-Ср-Чт)
 2. Сделай dry-run первой статьи (пропусти #1 chem-cleaning — pilot в продукте; начни с #2 what-is-ppf-explainer):
-   - Сгенерируй 1 hero + 2 inline фото через Pollinations.ai, конвертируй в WebP (cwebp)
+   - Найди hero через Pexels API (PEXELS_API_KEY), покажи топ-5, дождись выбора user'а, скачай, конвертируй в WebP (cwebp)
    - Clone RU template page129335723.html, patch meta/hero/body через BeautifulSoup
    - Clone KA template page129335883.html, patch аналогично
    - Clone EN template (найди в page-map.json), patch
