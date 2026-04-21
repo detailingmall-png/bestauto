@@ -1,0 +1,163 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BESTAUTO Lead API",
+    "version": "1.0.0",
+    "summary": "Booking submission API for BESTAUTO detailing studios in Tbilisi",
+    "description": "Submit a booking request (lead) to one of two BESTAUTO detailing studios in Tbilisi, Georgia. The lead is routed to the studio's Telegram chat and archived in a spreadsheet for follow-up. Requests are rate-limited per IP.",
+    "contact": {
+      "name": "BESTAUTO",
+      "url": "https://bestauto.ge/en/contacts"
+    },
+    "license": {
+      "name": "Proprietary",
+      "identifier": "LicenseRef-Proprietary"
+    }
+  },
+  "servers": [
+    { "url": "https://bestauto.ge", "description": "Production" }
+  ],
+  "tags": [
+    { "name": "lead", "description": "Booking form submissions" },
+    { "name": "status", "description": "Operational status" }
+  ],
+  "paths": {
+    "/api/lead": {
+      "post": {
+        "tags": ["lead"],
+        "summary": "Submit a booking request",
+        "operationId": "submitLead",
+        "description": "Creates a lead for the selected studio. Validates phone format (E.164 +7-15 digits). Rate-limited to 5 submissions per hour per IP. Telegram delivery is best-effort: if it fails, the lead is still archived and a success response is returned.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LeadPayload" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lead accepted",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/OkResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid payload (missing field, bad phone, unknown studio)",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (max 5 per hour per IP)",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "tags": ["lead"],
+        "summary": "CORS preflight",
+        "operationId": "leadPreflight",
+        "responses": {
+          "204": { "description": "CORS preflight accepted" }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "tags": ["status"],
+        "summary": "Health check",
+        "operationId": "getHealth",
+        "description": "Returns service status. Use as the `status` target in api-catalog (RFC 9727).",
+        "responses": {
+          "200": {
+            "description": "Service is operational",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HealthResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LeadPayload": {
+        "type": "object",
+        "required": ["studio", "service", "phone"],
+        "properties": {
+          "studio": {
+            "type": "string",
+            "enum": ["guramishvili", "saburtalo"],
+            "description": "Target studio slug"
+          },
+          "service": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "description": "Requested service (free text or one of the service slugs)"
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+\\d{7,15}$",
+            "description": "E.164 phone number including leading + (spaces, dashes and parentheses are stripped server-side)",
+            "examples": ["+995555123456"]
+          },
+          "car": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Optional free-text description of the vehicle (make, model, year)"
+          },
+          "lang": {
+            "type": "string",
+            "enum": ["ka", "ru", "en"],
+            "description": "Preferred language for callback"
+          },
+          "page": {
+            "type": "string",
+            "description": "Source page path for attribution"
+          },
+          "honeypot": {
+            "type": "string",
+            "description": "Anti-spam honeypot; must remain empty"
+          }
+        }
+      },
+      "OkResponse": {
+        "type": "object",
+        "required": ["ok"],
+        "properties": {
+          "ok": { "type": "boolean", "const": true }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": ["ok", "error"],
+        "properties": {
+          "ok": { "type": "boolean", "const": false },
+          "error": { "type": "string" }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "required": ["status", "time"],
+        "properties": {
+          "status": { "type": "string", "enum": ["ok"] },
+          "time": { "type": "string", "format": "date-time" },
+          "service": { "type": "string" }
+        }
+      }
+    }
+  }
+}

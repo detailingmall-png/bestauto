@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schemas/v0.2.0.json",
+  "version": "0.2.0",
+  "generated": "2026-04-21T15:45:18.780Z",
+  "site": "https://bestauto.ge",
+  "skills": [
+    {
+      "name": "bestauto.browse-services",
+      "type": "reference",
+      "description": "List BESTAUTO detailing services with minimum prices and service pages",
+      "url": "https://bestauto.ge/.well-known/agent-skills/browse-services/SKILL.md",
+      "sha256": "fa23d46a1fbe7476a4653189b9eee2d6551908753d94471e52cc624008df1bb0"
+    },
+    {
+      "name": "bestauto.locate-studio",
+      "type": "reference",
+      "description": "BESTAUTO studio addresses, hours, phones, and map links in Tbilisi",
+      "url": "https://bestauto.ge/.well-known/agent-skills/locate-studio/SKILL.md",
+      "sha256": "8c516a6855c8f13446edc5f33a0ee2fc0c0c19c4fbf3629f9fffb147bd710deb"
+    },
+    {
+      "name": "bestauto.submit-lead",
+      "type": "action",
+      "description": "Submit a booking request to a BESTAUTO detailing studio in Tbilisi",
+      "url": "https://bestauto.ge/.well-known/agent-skills/submit-lead/SKILL.md",
+      "sha256": "ec0522ac6b57fd827bd092ca8547aaedf6f2ed929fa0d3beb85c09d2a292c011"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://bestauto.ge/api/lead",
+      "service-desc": [
+        {
+          "href": "https://bestauto.ge/.well-known/openapi.json",
+          "type": "application/json",
+          "title": "BESTAUTO Lead API — OpenAPI 3.1 specification"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://bestauto.ge/en/contacts",
+          "type": "text/html",
+          "hreflang": "en",
+          "title": "Contact & booking page"
+        },
+        {
+          "href": "https://bestauto.ge/ru/contacts",
+          "type": "text/html",
+          "hreflang": "ru"
+        },
+        {
+          "href": "https://bestauto.ge/contacts",
+          "type": "text/html",
+          "hreflang": "ka"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://bestauto.ge/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

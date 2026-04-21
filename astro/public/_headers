@@ -58,3 +58,35 @@
 
 /robots.txt
   Cache-Control: public, max-age=86400
+
+# ── Agent-readiness: Link headers (RFC 8288) ─────────────────────
+# Advertises API catalog, agent skills, and OpenAPI spec so AI
+# agents can discover how to interact with the site.
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/index", </.well-known/openapi.json>; rel="service-desc"; type="application/json"
+
+/ru/
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/index", </.well-known/openapi.json>; rel="service-desc"; type="application/json"
+
+/en/
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/index", </.well-known/openapi.json>; rel="service-desc"; type="application/json"
+
+# ── Agent-readiness: .well-known content types + cache ───────────
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/.well-known/openapi.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/*
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
