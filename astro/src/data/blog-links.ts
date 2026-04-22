@@ -1132,6 +1132,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-polishing-combo',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамика',
+        contextQuote: 'Без полировки керамика садится на микрорельеф лака, включая все его дефекты.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'полировка',
+        contextQuote: 'Глянец, который дала полировка, держится не две мойки, а два-три года — ровно то, ради чего всё и затевалось.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf пленка',
+        originalPhrase: 'PPF',
+        contextQuote: 'Для физической защиты от сколов поверх керамики работает PPF',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2197,6 +2223,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-polishing-combo',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'პოლირების გარეშე კერამიკა ეფინება ლაქის მიკრორელიეფს, მათ შორის მის ყველა დეფექტს.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება ამზადებს ლაქს — იცილებს რისებს, ჰოლოგრამებს, ოქსიდიზებულ ფენას.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'PPF',
+        contextQuote: 'ჩიპების ფიზიკური დაცვისთვის კერამიკაზე ზემოდან მუშაობს PPF',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3255,6 +3307,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car ppf',
         originalPhrase: 'PPF',
         contextQuote: 'Temporary colour change with no consequences for the body — vinyl. Protection plus new colour together — PPF. Permanent change with acceptance of VIN complications at resale — repaint.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-polishing-combo',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'car ceramic coating',
+        originalPhrase: 'ceramic',
+        contextQuote: 'Without polishing, ceramic sits on the clearcoat\'s micro-relief, defects and all.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polish',
+        contextQuote: 'Gloss from the polish holds for two or three years instead of two washes — the whole point.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'PPF',
+        contextQuote: 'For physical stone-chip defence on top of ceramic, PPF is the tool',
       },
     ],
   },
