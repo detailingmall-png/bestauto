@@ -2,8 +2,8 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 178,
-  "fetchedAt": "2026-04-22T09:08:11.271Z",
+  "totalReviews": 179,
+  "fetchedAt": "2026-04-23T09:15:52.614Z",
   "reviews": [
     {
       "authorName": "jean pierre nehme",
@@ -69,7 +69,7 @@
       "authorName": "Mikhail",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUygXsQGgnzvFfn9HJ_xccXGGiSaxn4tjmmCczVRlhNyCeOTQ2p=s128-c0x00000000-cc-rp-mo-ba2",
       "rating": 5,
-      "relativeTime": "4 months ago",
+      "relativeTime": "5 months ago",
       "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
       "time": 1763710948,
       "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews",
@@ -79,9 +79,9 @@
         "ka": "შესანიშნავი მომსახურება! თავაზიანი და ყურადღებიანი პერსონალი. ბიჭები თავიანთი საქმის ოსტატები არიან. მათ სამუშაო დეტალებისადმი დიდი ყურადღებით და დროულად შეასრულეს. ბონუსის სახით, მათ დამატებითი სამუშაო ფასის გაზრდის გარეშე შეასრულეს. შემიძლია მათი რეკომენდაცია!"
       },
       "relativeTimes": {
-        "en": "4 months ago",
-        "ru": "4 месяца назад",
-        "ka": "4 თვის წინ"
+        "en": "5 months ago",
+        "ru": "5 месяцев назад",
+        "ka": "5 თვის წინ"
       },
       "originalLang": "en"
     },
