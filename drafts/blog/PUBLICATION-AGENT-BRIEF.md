@@ -39,7 +39,7 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│ 1. Photo prep (agent)                    │  Pollinations.ai → cwebp optimization
+│ 1. Photo prep (agent)                    │  Pexels API → cwebp optimization
 │    → tilda-export/.../images/{slug}-*    │
 └─────────────────────────────────────────┘
                   ↓
@@ -180,7 +180,7 @@ urllib.request.urlretrieve(photo_url, "/tmp/hero-raw.jpg")
 1. Агент делает поиск по cluster-specific query (см. выше)
 2. Показывает user'у топ-5 результатов (ссылки на pexels.com)
 3. User выбирает одно → агент скачивает → конвертирует в WebP (Step 2.5)
-4. Если API key недоступен — скачать вручную с pexels.com и положить в `/tmp/hero-raw.jpg`
+4. Если API key недоступен или возвращает 403 — ключ устарел; попросить user обновить на pexels.com/api. Временный fallback: скачать вручную с pexels.com → `/tmp/hero-raw.jpg`
 
 **2b. BESTAUTO архив** (приоритет если есть):
 - Путь: `/Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/archive/bestauto-photos/`
@@ -757,7 +757,7 @@ git push origin main
 | Failure | Action |
 |---|---|
 | Tilda page create не удалось (user не может) | Skip, next slot |
-| Photo gen failure (fal.ai down) | Fallback: AI-gen через DALL-E / SDXL локально. Если всё фейлит — skip фото, публикация без hero (acceptable for P2/P3, NOT для P1) |
+| Фото не найдено в Pexels/Unsplash | Публикуй без hero, сообщи user. Для P1 — обязательно запросить у user фото вручную перед публикацией. |
 | Astro build fail | Stop. Report error. Не пушить. User debug ответственен. |
 | Git push rejected (conflict) | Pull rebase, retry. Если persistent — escalate. |
 | Cloudflare deploy fail | Monitor `gh run list`. Если fail — rollback. |
@@ -791,7 +791,7 @@ git push origin main
 
 | Задача | Инструмент |
 |---|---|
-| Photo generation | `fal-ai-media` skill (Flux/SDXL) |
+| Photo selection | Pexels API (PEXELS_API_KEY) → Unsplash (ручной поиск) |
 | Schedule setup | `schedule` skill (CronCreate) или `loop` |
 | Browser automation (Tilda admin) | `agent-browser` или `Claude_in_Chrome` MCP (если user настроил) |
 | Git operations | Bash (native) |
@@ -934,11 +934,7 @@ python scripts/request_indexing.py --status
 - https://unsplash.com/s/photos/car-wrap — ручной поиск
 - Скачать максимальный размер → `/tmp/hero-raw.jpg`
 
-**Fallback (если нет подходящего стока): AI-генерация**
-- Pollinations.ai: `curl "https://image.pollinations.ai/prompt/{prompt}?width=1920&height=1080&model=flux-realism&nologo=true" -o /tmp/hero-raw.jpg`
-- Качество: CGI-вид, не фотореалистично — использовать только если нет альтернативы
-
-**Если ничего не подходит** — публикуй без hero, сообщи user чтобы загрузил вручную.
+**Если ничего не подходит в Pexels/Unsplash** — публикуй без hero, сообщи user чтобы загрузил вручную. Для P1 статей — обязательно уведомить, не публиковать без hero.
 
 ### 6. Multi-language strategy
 **Без разницы user'у — default Вариант A**: публикуй 3 языка одной статьи в один слот расписания (3 Tilda страницы подряд).
@@ -976,7 +972,7 @@ Workflow + photo guidance: /Users/fedorzubrickij/Documents/Projects CODE/bestaut
 Бизнес-правила: /Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/docs/blog-article-guidelines.md
 
 Ключевые настройки:
-1. Photo archive: /Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pexels API — PEXELS_API_KEY в env, затем Unsplash ручной поиск, затем Pollinations.ai как последний resort)
+1. Photo archive: /Users/fedorzubrickij/Documents/Projects CODE/bestauto-site/archive/bestauto-photos/ (пуста, fallback на Pexels API — PEXELS_API_KEY в env, затем Unsplash ручной поиск, затем публикация без hero с уведомлением user)
 2. **Tilda admin НЕ используется**. Агент сам создаёт HTML файлы клонируя existing templates.
    **ВАЖНО: per-language, per-cluster** (иначе футер/hreflang/og:locale смешиваются):
    - **POL RU**: page129649363 | **POL KA**: 129683983 | **POL EN**: 129692483 (polishing-cost-tbilisi)
@@ -994,7 +990,7 @@ Workflow + photo guidance: /Users/fedorzubrickij/Documents/Projects CODE/bestaut
 6. Editorial links: после создания HTML → добавь 2-3 правила в astro/src/data/blog-links.ts (см. docs/blog-internal-links.md), 4 validation checks, анкоры из seo-service-keywords.ts
 7. GSC indexing: `cd /Users/fedorzubrickij/Documents/Projects CODE/bestauto-content && python scripts/request_indexing.py`
 8. Ошибки пиши в сессии с префиксом «⚠ ERROR:»
-9. Фото: Pexels API (PEXELS_API_KEY) → Unsplash (ручной) → Pollinations.ai (последний resort, CGI-качество)
+9. Фото: Pexels API (PEXELS_API_KEY) → Unsplash (ручной поиск) → без hero (сообщи user, для P1 — обязательно получить фото от user)
 10. Languages: все 3 (RU/KA/EN) в один слот (Вариант A)
 
 Прочитай brief + README + guidelines §8a + docs/blog-internal-links.md, потом:
