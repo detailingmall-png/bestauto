@@ -8,7 +8,7 @@ primary_hf_ru: "ремонт сколов, скол на лобовом стек
 primary_hf_ka: "ნაკენჭარის აღდგენა, საქარე მინის აღდგენა"
 primary_hf_en: "windshield chip repair"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#61"
   - gsc: "Downloads/gsc_16months.csv"

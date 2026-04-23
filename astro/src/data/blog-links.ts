@@ -791,6 +791,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/chip-repair-process-step-by-step',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт лобового стекла',
+        originalPhrase: 'ремонт скола на лобовом стекле',
+        contextQuote: 'Ранний ремонт скола на лобовом стекле — это не косметика, а структурная операция',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт трещин лобового стекла',
+        originalPhrase: 'ремонту сколов и трещин',
+        contextQuote: 'Прайс по ремонту сколов и трещин в Тбилиси у нас устроен по размеру повреждения',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'восстановление лобового стекла',
+        originalPhrase: 'восстанавливает прочность стекла',
+        contextQuote: 'Полимерная смола, загнанная под вакуумом и полимеризованная ультрафиолетом, физически восстанавливает прочность стекла',
+      },
+    ],
+  },
   // --- General detailing cluster ---
   // Note: blog/errors-to-find skipped (topic is OBD diagnostics, not detailing)
   {
@@ -1882,6 +1908,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/chip-repair-process-step-by-step',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის აღდგენა',
+        originalPhrase: 'საქარე მინის ნაკენჭარის აღდგენა ადრეულ ეტაპზე',
+        contextQuote: 'საქარე მინის ნაკენჭარის აღდგენა ადრეულ ეტაპზე არა კოსმეტიკური საკითხია, არამედ სტრუქტურული ოპერაცია',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის შეკეთება',
+        originalPhrase: 'შეკეთება იძლევა შედეგს, რომელიც წლობით ძლებს',
+        contextQuote: 'პირველ 48 საათში შეკეთება იძლევა შედეგს, რომელიც წლობით ძლებს',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'ნაკენჭარის აღდგენა',
+        originalPhrase: 'ფიზიკურად აღადგენს მინის სიმტკიცეს',
+        contextQuote: 'პოლიმერული ფისი, ვაკუუმის ქვეშ ჩარეცხილი და UV-ით პოლიმერიზებული, ფიზიკურად აღადგენს მინის სიმტკიცეს',
+      },
+    ],
+  },
   // --- General detailing cluster ---
   // Note: blog/errors-to-find skipped (topic is OBD diagnostics, not detailing)
   {
@@ -2966,6 +3018,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car tinting',
         originalPhrase: 'heating elements',
         contextQuote: 'on cars where the windshield is integrated with driver-assistance systems, heating elements, or cameras',
+      },
+    ],
+  },
+  {
+    article: 'blog/chip-repair-process-step-by-step',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'Windshield chip repair',
+        contextQuote: 'Windshield chip repair in its early window is not cosmetic — it is a structural operation',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'car glass repair',
+        originalPhrase: 'restores glass strength',
+        contextQuote: 'Polymer resin under vacuum with UV curing restores glass strength in the damaged zone',
       },
     ],
   },
