@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 179,
-  "fetchedAt": "2026-04-23T09:15:52.614Z",
+  "fetchedAt": "2026-04-24T09:58:22.106Z",
   "reviews": [
     {
       "authorName": "jean pierre nehme",
@@ -29,7 +29,7 @@
       "authorName": "Zezva Arabuli",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKE5PU8bKn4Q1oGxM0poeErn6pKbo5TH6MbUdqEcu_kIfs4kw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "2 months ago",
+      "relativeTime": "3 months ago",
       "text": "გავაკეთე პოლირების სერვისი და დავაკარი სტიკერები. შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად. ნამდვილად გირჩევთ 👍",
       "time": 1768994407,
       "profileUrl": "https://www.google.com/maps/contrib/118019043653831607447/reviews",
@@ -39,9 +39,9 @@
         "en": "I had a polishing service and applied stickers. I am very satisfied with the result — the car looks perfect. They work with quality, attention and professionalism. I definitely recommend them 👍"
       },
       "relativeTimes": {
-        "ka": "2 თვის წინ",
-        "en": "2 months ago",
-        "ru": "2 месяца назад"
+        "ka": "3 თვის წინ",
+        "en": "3 months ago",
+        "ru": "3 месяца назад"
       },
       "originalLang": "ka"
     },
