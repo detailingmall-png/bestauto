@@ -1598,5 +1598,29 @@
     "title": "Windshield chip repair process: steps and materials",
     "lang": "en",
     "slug": "blog/chip-repair-process-step-by-step"
+  },
+  "920260424001": {
+    "file": "page920260424001.html",
+    "url": "https://bestauto.ge/ru/blog/contactless-vs-hand-wash",
+    "path": "/ru/blog/contactless-vs-hand-wash",
+    "title": "Бесконтактная vs ручная мойка — что безопаснее для лака",
+    "lang": "ru",
+    "slug": "blog/contactless-vs-hand-wash"
+  },
+  "920260424002": {
+    "file": "page920260424002.html",
+    "url": "https://bestauto.ge/blog/contactless-vs-hand-wash",
+    "path": "/blog/contactless-vs-hand-wash",
+    "title": "უკონტაქტო vs ხელით რეცხვა — რა უფრო უსაფრთხოა ლაქისთვის",
+    "lang": "ka",
+    "slug": "blog/contactless-vs-hand-wash"
+  },
+  "920260424003": {
+    "file": "page920260424003.html",
+    "url": "https://bestauto.ge/en/blog/contactless-vs-hand-wash",
+    "path": "/en/blog/contactless-vs-hand-wash",
+    "title": "Contactless vs hand car wash — paint safety compared",
+    "lang": "en",
+    "slug": "blog/contactless-vs-hand-wash"
   }
 }

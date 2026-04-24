@@ -1147,6 +1147,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/contactless-vs-hand-wash',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'детейлинг мойка',
+        originalPhrase: 'детейлинг мойку',
+        contextQuote: 'Прайс BESTAUTO на детейлинг мойку одинаков независимо от того',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'лечение которой (полировка кузова от 690 ₾) стоит дороже, чем сэкономлено на мойках',
+      },
+    ],
+  },
+  {
     article: 'blog/car-body-wrap-cost-guide',
     links: [
       {
@@ -2264,6 +2283,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/contactless-vs-hand-wash',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'დეტეილინგ რეცხვა',
+        contextQuote: 'სტუდიაში ეწოდება დეტეილინგ რეცხვა: წინარეცხვა ქაფით',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'ძარას პოლირება',
+        contextQuote: 'ძარას პოლირება 690 ₾-დან) უფრო ძვირი ჯდება, ვიდრე რეცხვაზე ეკონომიაა',
+      },
+    ],
+  },
+  {
     article: 'blog/car-body-wrap-cost-guide',
     links: [
       {
@@ -3366,6 +3404,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'paint protection film',
         originalPhrase: 'polyurethane film',
         contextQuote: 'PPF-coated car — polyurethane film has its own hydrophobic layer and is maintained with dedicated sprays',
+      },
+    ],
+  },
+  {
+    article: 'blog/contactless-vs-hand-wash',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'car wash',
+        originalPhrase: 'detailing wash',
+        contextQuote: 'BESTAUTO pricing for a detailing wash is the same regardless',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'body polishing',
+        contextQuote: 'treating that (body polishing from 690 ₾) costs more than was saved on washes',
       },
     ],
   },
