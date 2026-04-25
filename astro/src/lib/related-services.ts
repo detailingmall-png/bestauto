@@ -67,6 +67,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/top-5-car-paint-protection':         'ppf-shield-wrapping',
   'blog/top-11-reasons':                     'ppf-shield-wrapping',
   'blog/what-is-ppf-explainer':              'ppf-shield-wrapping',
+  'blog/detailing-center-tbilisi':           'ppf-shield-wrapping',
   // Vinyl wrapping
   'blog/benefits-of-vinyl-wraps':        'vinyl-wrapping',
   'blog/car-body-color-with-vinyl-wrap': 'vinyl-wrapping',

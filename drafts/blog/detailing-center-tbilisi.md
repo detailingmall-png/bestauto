@@ -12,7 +12,7 @@ secondary_links:
   - "/ceramiccoating"
   - "/ppf-shield-wrapping"
   - "/interior-cleaning"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#93"
   - gsc: "Downloads/gsc_16months.csv"

@@ -1203,6 +1203,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/detailing-center-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'плёнка',
+        contextQuote: 'Только плёнка принимает удар камня на себя и физически закрывает лак',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'керамики Gyeon',
+        contextQuote: 'Для керамики Gyeon — от 2 до 5 лет в зависимости от серии',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка авто',
+        originalPhrase: 'Полировку',
+        contextQuote: 'Полировку нельзя делать при температуре выше 30°C',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2339,6 +2365,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/detailing-center-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'მანქანის ფირი',
+        originalPhrase: 'PPF-ის',
+        contextQuote: 'PPF-ის წებება 18°C-ზე დაბალ ტემპერატურაზე არ შეიძლება',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება 30°C-ზე მაღალ ტემპერატურაზე არ შეიძლება',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'კერამიკა მოითხოვს 20-25°C-ს და კონტროლირებულ ტენიანობას',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3461,6 +3513,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'paint protection film',
         originalPhrase: 'PPF',
         contextQuote: 'For physical stone-chip defence on top of ceramic, PPF is the tool',
+      },
+    ],
+  },
+  {
+    article: 'blog/detailing-center-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'film',
+        contextQuote: 'Only film takes the stone strike and physically covers the clearcoat',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing above 30°C is a no-go',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic',
+        contextQuote: 'Ceramic wants 20-25°C and controlled humidity',
       },
     ],
   },
