@@ -14,24 +14,32 @@ type Lang = (typeof LANGS)[number];
 // Interfaces
 // ──────────────────────────────────────────────
 
-interface GoogleReview {
-  name: string;
-  relativePublishTimeDescription: string;
+// Legacy Places API response (maps.googleapis.com/maps/api/place/details/json)
+// Used because Places API (New) v1 has no reviews_sort param — always returns
+// 5 most-relevant reviews, so newly added reviews never appear.
+interface LegacyReview {
+  author_name: string;
+  author_url: string;
+  language: string;
+  original_language?: string;
+  profile_photo_url: string;
   rating: number;
-  text?: { text: string; languageCode: string };
-  originalText?: { text: string; languageCode: string };
-  authorAttribution: {
-    displayName: string;
-    uri: string;
-    photoUri: string;
-  };
-  publishTime: string;
+  relative_time_description: string;
+  text: string;
+  time: number;
+  translated?: boolean;
 }
 
-interface GooglePlaceResponse {
-  rating: number;
-  userRatingCount: number;
-  reviews?: GoogleReview[];
+interface LegacyPlaceResult {
+  rating?: number;
+  user_ratings_total?: number;
+  reviews?: LegacyReview[];
+}
+
+interface LegacyPlaceResponse {
+  result?: LegacyPlaceResult;
+  status: string;
+  error_message?: string;
 }
 
 interface GoogleSearchResult {
@@ -272,30 +280,39 @@ async function discoverPlaceId(): Promise<string> {
   return place.id;
 }
 
-async function fetchFromGooglePlaces(placeId: string, languageCode?: string): Promise<GooglePlaceResponse> {
+async function fetchFromGooglePlaces(placeId: string, languageCode?: string): Promise<LegacyPlaceResult> {
   if (!API_KEY) {
     throw new Error("GOOGLE_PLACES_API_KEY environment variable is not set");
   }
 
-  const params = languageCode ? `?languageCode=${languageCode}` : "";
-  const url = `https://places.googleapis.com/v1/places/${placeId}${params}`;
-  const fieldMask = "rating,userRatingCount,reviews";
-
-  const response = await fetch(url, {
-    headers: {
-      "X-Goog-Api-Key": API_KEY,
-      "X-Goog-FieldMask": fieldMask,
-    },
+  const params = new URLSearchParams({
+    place_id: placeId,
+    fields: "rating,user_ratings_total,reviews",
+    reviews_sort: "newest",
+    key: API_KEY,
   });
+  if (languageCode) params.set("language", languageCode);
+
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?${params.toString()}`;
+  const response = await fetch(url);
 
   if (!response.ok) {
     const body = await response.text();
     throw new Error(
-      `Google Places API error ${response.status} (lang=${languageCode ?? "default"}): ${body}`
+      `Google Places API HTTP ${response.status} (lang=${languageCode ?? "default"}): ${body}`
     );
   }
 
-  return response.json() as Promise<GooglePlaceResponse>;
+  const data = (await response.json()) as LegacyPlaceResponse;
+  if (data.status !== "OK") {
+    throw new Error(
+      `Google Places API status=${data.status} (lang=${languageCode ?? "default"}): ${data.error_message ?? "no error message"}`
+    );
+  }
+  if (!data.result) {
+    throw new Error(`Google Places API returned no result (lang=${languageCode ?? "default"})`);
+  }
+  return data.result;
 }
 
 interface PartialReview {
@@ -309,10 +326,10 @@ interface PartialReview {
   profileUrl: string;
 }
 
-async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlaceResponse; incomingReviews: Review[] }> {
+async function fetchAllLanguages(placeId: string): Promise<{ apiData: LegacyPlaceResult; incomingReviews: Review[] }> {
   const results = await Promise.allSettled(LANGS.map(l => fetchFromGooglePlaces(placeId, l)));
 
-  let apiData: GooglePlaceResponse | null = null;
+  let apiData: LegacyPlaceResult | null = null;
   const seen = new Map<string, PartialReview>();
 
   for (let i = 0; i < results.length; i++) {
@@ -325,44 +342,44 @@ async function fetchAllLanguages(placeId: string): Promise<{ apiData: GooglePlac
     const data = result.value;
     if (!apiData) apiData = data;
 
-    for (const gr of data.reviews ?? []) {
-      const reviewText = gr.text?.text ?? gr.originalText?.text ?? "";
-      if (!reviewText.trim()) continue;
+    for (const lr of data.reviews ?? []) {
+      if (!lr.text?.trim()) continue;
 
-      const authorName = gr.authorAttribution.displayName;
-      const time = Math.floor(new Date(gr.publishTime).getTime() / 1000);
+      const authorName = lr.author_name;
+      const time = lr.time;
       const key = deduplicationKey(authorName, time);
 
       if (!seen.has(key)) {
         seen.set(key, {
           authorName,
-          authorPhotoUrl: gr.authorAttribution.photoUri,
-          rating: gr.rating,
+          authorPhotoUrl: lr.profile_photo_url,
+          rating: lr.rating,
           texts: {},
           relativeTimes: {},
-          originalLang: gr.originalText?.languageCode ?? lang,
+          originalLang: lr.original_language ?? lang,
           time,
-          profileUrl: gr.authorAttribution.uri,
+          profileUrl: lr.author_url,
         });
       }
 
       const entry = seen.get(key)!;
 
       // Store the text returned for this language request (translated by Google)
-      if (gr.text?.text?.trim()) {
-        entry.texts[lang] = gr.text.text;
-      }
-      // Also store the original text under its original language code
-      if (gr.originalText?.text?.trim() && gr.originalText.languageCode) {
-        const origLang = gr.originalText.languageCode as Lang;
-        if (!entry.texts[origLang]) {
-          entry.texts[origLang] = gr.originalText.text;
+      entry.texts[lang] = lr.text;
+
+      // If this is the original language (translated=false), make sure the
+      // text is also indexed under the original_language code
+      if (!lr.translated && lr.original_language) {
+        const origLang = lr.original_language as Lang;
+        if ((LANGS as readonly string[]).includes(origLang) && !entry.texts[origLang]) {
+          entry.texts[origLang] = lr.text;
         }
       }
-      entry.relativeTimes[lang] = gr.relativePublishTimeDescription;
 
-      if (gr.originalText?.languageCode && !entry.originalLang) {
-        entry.originalLang = gr.originalText.languageCode;
+      entry.relativeTimes[lang] = lr.relative_time_description;
+
+      if (lr.original_language && !entry.originalLang) {
+        entry.originalLang = lr.original_language;
       }
     }
   }
@@ -439,7 +456,7 @@ async function main(): Promise<void> {
     }
   }
 
-  let apiData: GooglePlaceResponse;
+  let apiData: LegacyPlaceResult;
   let incomingReviews: Review[];
   try {
     ({ apiData, incomingReviews } = await fetchAllLanguages(placeId));
@@ -472,8 +489,8 @@ async function main(): Promise<void> {
   const output: ReviewsData = {
     placeId,
     businessName,
-    overallRating: apiData.rating,
-    totalReviews: apiData.userRatingCount,
+    overallRating: apiData.rating ?? existing?.overallRating ?? 0,
+    totalReviews: apiData.user_ratings_total ?? existing?.totalReviews ?? 0,
     fetchedAt: new Date().toISOString(),
     reviews: merged,
   };
@@ -482,7 +499,7 @@ async function main(): Promise<void> {
 
   console.log(
     `Done. ${merged.length} total reviews (${incomingReviews.length} from API). ` +
-      `Overall rating: ${apiData.rating} (${apiData.userRatingCount} total).`
+      `Overall rating: ${apiData.rating} (${apiData.user_ratings_total} total).`
   );
 }
 
