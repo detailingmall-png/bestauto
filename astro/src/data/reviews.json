@@ -3,8 +3,48 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 179,
-  "fetchedAt": "2026-04-25T07:57:16.825Z",
+  "fetchedAt": "2026-04-25T10:19:15.552Z",
   "reviews": [
+    {
+      "authorName": "Crash",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV4ODvCP7cfigJwlYHvbYOwDjOgpARDu_sQ28XhtLP_qmY4Ep9B=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Ребята проделали потрясающую работу! Машина выглядит как новая, словно из автосалона! Большое спасибо!",
+        "ka": "საოცარი სამუშაო გაწიეს ბიჭებმა! მანქანა ახალივით გამოიყურება, თითქოს დილერიდანაა! დიდი მადლობა!",
+        "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
+      },
+      "relativeTimes": {
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
+      },
+      "originalLang": "en",
+      "time": 1776863509,
+      "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
+      "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
+      "relativeTime": "2 days ago"
+    },
+    {
+      "authorName": "კახა სიხარულაშვილი",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIGXJzlTUqQephpSYX3-uztIy_q1Av33zR7Mq0Sh2PXrLrt=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Спасибо, мне понравилось, всё было сделано идеально, 10/10.",
+        "ka": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
+        "en": "Thank you, I liked it, everything was done perfectly 10/10"
+      },
+      "relativeTimes": {
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
+      },
+      "originalLang": "ka",
+      "time": 1776799189,
+      "profileUrl": "https://www.google.com/maps/contrib/113783958904843180274/reviews",
+      "text": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
+      "relativeTime": "3 days ago"
+    },
     {
       "authorName": "jean pierre nehme",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWMrUtkJuMZqqPZJwjTZZuIaQq9EEprG0y5cg-VTNcyYSVlyO-U=s128-c0x00000000-cc-rp-mo",
