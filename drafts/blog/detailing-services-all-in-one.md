@@ -16,7 +16,7 @@ secondary_links:
   - "/windshield-repair"
   - "/carwash"
   - "/vinyl-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#94"
   - gsc: "Downloads/gsc_16months.csv"

@@ -1646,5 +1646,29 @@
     "title": "Detailing center in Tbilisi: how to pick the right studio",
     "lang": "en",
     "slug": "blog/detailing-center-tbilisi"
+  },
+  "920260426001": {
+    "file": "page920260426001.html",
+    "url": "https://bestauto.ge/ru/blog/detailing-services-all-in-one",
+    "path": "/ru/blog/detailing-services-all-in-one",
+    "title": "Детейлинг-услуги: полный каталог и как их сочетать",
+    "lang": "ru",
+    "slug": "blog/detailing-services-all-in-one"
+  },
+  "920260426002": {
+    "file": "page920260426002.html",
+    "url": "https://bestauto.ge/blog/detailing-services-all-in-one",
+    "path": "/blog/detailing-services-all-in-one",
+    "title": "დეტეილინგ მომსახურება: სრული კატალოგი და კომბინირება",
+    "lang": "ka",
+    "slug": "blog/detailing-services-all-in-one"
+  },
+  "920260426003": {
+    "file": "page920260426003.html",
+    "url": "https://bestauto.ge/en/blog/detailing-services-all-in-one",
+    "path": "/en/blog/detailing-services-all-in-one",
+    "title": "Car detailing services: full catalogue and sequencing",
+    "lang": "en",
+    "slug": "blog/detailing-services-all-in-one"
   }
 }

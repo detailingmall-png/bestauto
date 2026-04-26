@@ -11,6 +11,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | ceramic-polishing-combo | — | — | Source unknown, check file |
 | car-body-wrap-cost-guide | — | — | Source unknown, check file |
 | detailing-center-tbilisi | 6969021 | https://www.pexels.com/photo/a-black-car-in-an-indoor-garage-6969021/ | Black luxury car in modern garage, q80 |
+| detailing-services-all-in-one | 14231701 | https://www.pexels.com/photo/a-person-polishing-the-car-s-body-14231701/ | Lamborghini being polished — automotive care process, q80 |
 
 ## Rule
 

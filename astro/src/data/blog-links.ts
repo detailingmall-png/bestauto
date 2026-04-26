@@ -1229,6 +1229,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/detailing-services-all-in-one',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная пленка',
+        originalPhrase: 'плёнка',
+        contextQuote: 'Только плёнка принимает удары камней',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамика на авто',
+        originalPhrase: 'керамика',
+        contextQuote: 'керамика облегчает мойку в 2-3 раза',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'химчистка от 400 ₾, полировка кузова от 690 ₾',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2391,6 +2417,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/detailing-services-all-in-one',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'დამცავი ფირი — მაშინვე',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'კერამიკა სამრეცხაოს 2-3-ჯერ ამარტივებს',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'სანამ პოლირება მიდის, სალონი შრება',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3539,6 +3591,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'Ceramic',
         contextQuote: 'Ceramic wants 20-25°C and controlled humidity',
+      },
+    ],
+  },
+  {
+    article: 'blog/detailing-services-all-in-one',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'ppf wrap',
+        originalPhrase: 'PPF',
+        contextQuote: 'Premium PPF — every 10 years',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic',
+        contextQuote: 'ceramic makes washing 2-3x easier',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'polishing cannot be done above 30°C',
       },
     ],
   },
