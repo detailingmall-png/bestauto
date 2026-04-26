@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 179,
-  "fetchedAt": "2026-04-25T10:19:15.552Z",
+  "fetchedAt": "2026-04-26T08:42:35.004Z",
   "reviews": [
     {
       "authorName": "Crash",
@@ -15,15 +15,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -35,15 +35,15 @@
         "en": "Thank you, I liked it, everything was done perfectly 10/10"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "ka",
       "time": 1776799189,
       "profileUrl": "https://www.google.com/maps/contrib/113783958904843180274/reviews",
       "text": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "jean pierre nehme",
