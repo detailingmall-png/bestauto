@@ -381,7 +381,7 @@ curl -s "https://bestauto.ge/ru/blog/{slug}" \
 
 3. **Body HTML** — agent конвертирует markdown body в HTML. Простая разметка:
    - `# H1` → `<h1 class="t-heading">...</h1>`
-   - `## H2` → `<h2 class="t-heading t-heading_sm">...</h2>`
+   - `## H2` → `<h2 class="t-heading t-heading_sm">...</h2>` (**ИСКЛЮЧЕНИЕ**: `## CTA` — только сам заголовок пропустить, тело CTA-блока — телефоны, адреса, часы — рендерится как обычные `<p>`/`<ul>`. Реализация в `parse_body`: после `h2_content = line[3:].strip()` добавить `if h2_content.upper() != 'CTA': blocks.append(...)`. Reason: H2 "CTA" — служебный маркер для агента, не пользовательский текст.)
    - `### H3` → `<h3 class="t-heading t-heading_xs">...</h3>`
    - абзацы → `<p class="t-text t-text_md">...</p>`
    - bullet list `- ...` → `<ul class="t-list"><li class="t-list__item">...</li></ul>`
