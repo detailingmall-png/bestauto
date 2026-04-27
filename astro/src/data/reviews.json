@@ -2,8 +2,8 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 179,
-  "fetchedAt": "2026-04-26T08:42:35.004Z",
+  "totalReviews": 180,
+  "fetchedAt": "2026-04-27T11:22:11.616Z",
   "reviews": [
     {
       "authorName": "Crash",
@@ -15,15 +15,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -35,15 +35,15 @@
         "en": "Thank you, I liked it, everything was done perfectly 10/10"
       },
       "relativeTimes": {
-        "ru": "4 дня назад",
-        "ka": "4 დღის წინ",
-        "en": "4 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "ka",
       "time": 1776799189,
       "profileUrl": "https://www.google.com/maps/contrib/113783958904843180274/reviews",
       "text": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
-      "relativeTime": "4 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "jean pierre nehme",
@@ -129,7 +129,7 @@
       "authorName": "David Williams",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWEweGubGwFxLnzaYEqwXeMN1GaSqMZhValtX79WVnzfyC5MUyd=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results.",
       "time": 1761404842,
       "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews",
@@ -139,9 +139,9 @@
         "ka": "Bestauto Detailing-მა ჩემს Tesla Model Y-ს ნამდვილი საგამოფენო დასრულება შესთავაზა. საღებავს ახლა ღრმა, სარკისებური პრიალა ელფერი აქვს, დისკები და მინები უნაკლოა, ინტერიერი კი განახლებული შეგრძნებით გამოირჩევა - ყველაფერი უბრალოდ ბრწყინავს. კომუნიკაცია ნათელი იყო, მომსახურება სწრაფი და ყოველ ნაბიჯზე გამოჩენილი ყურადღება აშკარა იყო. განსაკუთრებული მადლობა ალექსანდრეს შესანიშნავი მომსახურებისა და დეტალებისადმი ყურადღებისთვის; მან მანქანა საკუთარივით მოეპყრო. Bestauto Detailing-ს გირჩევთ Tesla-ს ნებისმიერ მფლობელს, ვისაც უმაღლესი დონის შედეგები სურს."
       },
       "relativeTimes": {
-        "en": "5 months ago",
-        "ru": "5 месяцев назад",
-        "ka": "5 თვის წინ"
+        "en": "6 months ago",
+        "ru": "6 месяцев назад",
+        "ka": "6 თვის წინ"
       },
       "originalLang": "en"
     },
