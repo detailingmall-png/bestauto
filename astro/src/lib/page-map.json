@@ -1670,5 +1670,29 @@
     "title": "Car detailing services: full catalogue and sequencing",
     "lang": "en",
     "slug": "blog/detailing-services-all-in-one"
+  },
+  "920260427001": {
+    "file": "page920260427001.html",
+    "url": "https://bestauto.ge/ru/blog/detailing-wash-explained",
+    "path": "/ru/blog/detailing-wash-explained",
+    "title": "Детейлинг-мойка в Тбилиси: чем отличается от обычной",
+    "lang": "ru",
+    "slug": "blog/detailing-wash-explained"
+  },
+  "920260427002": {
+    "file": "page920260427002.html",
+    "url": "https://bestauto.ge/blog/detailing-wash-explained",
+    "path": "/blog/detailing-wash-explained",
+    "title": "დეტეილინგ რეცხვა თბილისში — რით განსხვავდება ჩვეულებრივისგან",
+    "lang": "ka",
+    "slug": "blog/detailing-wash-explained"
+  },
+  "920260427003": {
+    "file": "page920260427003.html",
+    "url": "https://bestauto.ge/en/blog/detailing-wash-explained",
+    "path": "/en/blog/detailing-wash-explained",
+    "title": "Detailing wash in Tbilisi — how it differs from a regular wash",
+    "lang": "en",
+    "slug": "blog/detailing-wash-explained"
   }
 }

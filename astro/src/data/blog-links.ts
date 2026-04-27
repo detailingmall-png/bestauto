@@ -1166,6 +1166,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/detailing-wash-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'детейлинг мойка',
+        originalPhrase: 'детейлинг мойка',
+        contextQuote: 'Чем детейлинг мойка отличается от обычной на одной фразе',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическим покрытием',
+        originalPhrase: 'керамическим покрытием',
+        contextQuote: 'Машина с керамическим покрытием.',
+      },
+    ],
+  },
+  {
     article: 'blog/car-body-wrap-cost-guide',
     links: [
       {
@@ -2354,6 +2373,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/detailing-wash-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'მანქანის რეცხვა',
+        contextQuote: 'პირდაპირ მზის ქვეშ მანქანის რეცხვა არ რეკომენდებულია დეტეილინგშიც',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'ჩვეულებრივ ტუტე ქიმიაზე კერამიკული საფარი ჰიდროფობურ ეფექტს კარგავს',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'პოლიურეთანის ფირი',
+        contextQuote: 'პოლიურეთანის ფირი მგრძნობიარეა ქიმიაზე',
+      },
+    ],
+  },
+  {
     article: 'blog/car-body-wrap-cost-guide',
     links: [
       {
@@ -3527,6 +3572,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car polishing',
         originalPhrase: 'body polishing',
         contextQuote: 'treating that (body polishing from 690 ₾) costs more than was saved on washes',
+      },
+    ],
+  },
+  {
+    article: 'blog/detailing-wash-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'car wash',
+        originalPhrase: 'car wash',
+        contextQuote: 'a neighbourhood car wash in Tbilisi share the name',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'On typical alkaline chemistry a ceramic coating loses hydrophobic behaviour in 3-4 washes',
       },
     ],
   },
