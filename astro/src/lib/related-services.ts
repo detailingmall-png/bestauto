@@ -78,6 +78,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/vehicle-tinting-techniques':          'auto-glass-tinting',
   'blog/legal-aspects-of-tinting-in-georgia': 'auto-glass-tinting',
   'blog/window-tinting-care':                 'auto-glass-tinting',
+  'blog/front-windshield-tint-rules':         'auto-glass-tinting',
   // Windshield repair
   'blog/chip-repair-process-step-by-step': 'windshield-repair',
   'blog/efficiency-of-windshield-repair': 'windshield-repair',

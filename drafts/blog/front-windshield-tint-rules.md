@@ -8,7 +8,7 @@ primary_hf_ru: "разрешенный процент тонировки на п
 primary_hf_ka: "წინა საქარე მინის დაბურვა"
 primary_hf_en: "front windshield tint Georgia, windshield tint rules"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#52"
   - gsc: "Downloads/gsc_16months.csv"

@@ -1274,6 +1274,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/front-windshield-tint-rules',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка лобового стекла',
+        originalPhrase: 'тонировка лобового стекла',
+        contextQuote: 'Сколько стоит тонировка лобового стекла?',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2485,6 +2497,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'მანქანის პოლირება',
         originalPhrase: 'პოლირება',
         contextQuote: 'სანამ პოლირება მიდის, სალონი შრება',
+      },
+    ],
+  },
+  {
+    article: 'blog/front-windshield-tint-rules',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მინის დაბურვა',
+        originalPhrase: 'მინის დაბურვა',
+        contextQuote: 'რა ღირს საქარე მინის დაბურვა?',
       },
     ],
   },

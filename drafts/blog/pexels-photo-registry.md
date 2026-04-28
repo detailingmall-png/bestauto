@@ -13,6 +13,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | detailing-center-tbilisi | 6969021 | https://www.pexels.com/photo/a-black-car-in-an-indoor-garage-6969021/ | Black luxury car in modern garage, q80 |
 | detailing-services-all-in-one | 14231701 | https://www.pexels.com/photo/a-person-polishing-the-car-s-body-14231701/ | Lamborghini being polished — automotive care process, q80 |
 | detailing-wash-explained | 7530997 | https://www.pexels.com/photo/black-car-inside-a-carwash-7530997/ | Black BMW with water spray at night, headlights and reflections — q80, file: detailing-wash-explained-hero-v2.webp |
+| front-windshield-tint-rules | 2622124 | https://www.pexels.com/photo/black-suzuki-steering-wheel-2622124/ | Sunrise through car windshield + steering wheel — q80 |
 
 ## Rule
 
