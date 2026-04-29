@@ -82,18 +82,63 @@
     ymQueue.send([YM_ID, 'reachGoal', goalName]);
   }
 
+  // event_id is generated per call and shared between fbq (eventID) and CAPI
+  // so Meta deduplicates browser-side and server-side delivery of the same event.
+  function generateEventId() {
+    if (window.crypto && typeof crypto.randomUUID === 'function') {
+      return crypto.randomUUID();
+    }
+    return 'e' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+  }
+
+  function getCookie(name) {
+    var m = document.cookie.match('(?:^|; )' + name.replace(/[-.]/g, '\\$&') + '=([^;]*)');
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
   // Single fbq('track', ...) fan-outs to all initialised pixels, so both
   // 2082195352165865 and 1250999350496996 receive the event.
-  function sendFB(eventName, params) {
+  // Pass eventID as 4th arg so Meta dedupes with the CAPI delivery.
+  function sendFB(eventName, params, eventId) {
     var mapped = FB_STANDARD_MAP[eventName];
-    if (!mapped) return;
+    if (!mapped) return null;
     var extra = mapped[1];
     var payload = {};
     var k;
     for (k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
     if (params) for (k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
     payload.source_event = eventName;
-    fbqQueue.send(['track', mapped[0], payload]);
+    fbqQueue.send(['track', mapped[0], payload, { eventID: eventId }]);
+    return mapped[0];
+  }
+
+  // Server-side Conversions API — fires in parallel with browser Pixel.
+  // Survives adblockers, iOS Safari ITP, and the FIRST-click race where
+  // fbq hasn't yet loaded (interaction-gated).
+  // keepalive:true lets the request complete even if the page is unloading
+  // (tel:/wa.me native handler navigates away immediately).
+  function sendCAPI(fbStandardEvent, params, eventId, eventTime) {
+    if (!fbStandardEvent || typeof fetch !== 'function') return;
+    var body = {
+      event_name: fbStandardEvent,
+      event_id: eventId,
+      event_time: eventTime,
+      event_source_url: location.href,
+      custom_data: params || {}
+    };
+    var fbp = getCookie('_fbp');
+    var fbc = getCookie('_fbc');
+    if (fbp) body.fbp = fbp;
+    if (fbc) body.fbc = fbc;
+    try {
+      fetch('/api/capi', {
+        method: 'POST',
+        keepalive: true,
+        credentials: 'omit',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      }).catch(function () {});
+    } catch (e) {}
   }
 
   // Poll every 250ms; clear interval once all three providers have flushed,
@@ -111,7 +156,10 @@
   function send(eventName, params) {
     sendGA(eventName, params);
     sendYM(eventName);
-    sendFB(eventName, params);
+    var eventId = generateEventId();
+    var eventTime = Math.floor(Date.now() / 1000);
+    var fbStandardEvent = sendFB(eventName, params, eventId);
+    sendCAPI(fbStandardEvent, params, eventId, eventTime);
   }
 
   document.addEventListener('click', function (e) {
