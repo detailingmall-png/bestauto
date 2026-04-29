@@ -103,8 +103,10 @@ export async function onRequestPost(context) {
     PIXELS.map((pixel) => sendToPixel(pixel, fbEvent, env))
   );
 
+  // Always return 200 so Cloudflare edge does not replace the body with a
+  // generic 5xx error page — backend status is encoded in `ok` and `results`.
   const allOk = results.every((r) => r.ok);
-  return jsonResponse({ ok: allOk, results }, allOk ? 200 : 502);
+  return jsonResponse({ ok: allOk, results }, 200);
 }
 
 export async function onRequestOptions(context) {
