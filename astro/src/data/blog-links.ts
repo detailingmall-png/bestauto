@@ -1286,6 +1286,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/interior-ceramic-detail',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие салона — это не «та же керамика, только внутри».',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие салона — это не один универсальный состав, а набор узких решений под кожу, пластик, ткань и алькантару.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2512,6 +2531,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/interior-ceramic-detail',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'სალონის კერამიკული საფარი ეს არ არის „იგივე კერამიკა, უბრალოდ შიგნით".',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'სალონის კერამიკული საფარი ეს არა ერთი უნივერსალური შემადგენლობა, არამედ ვიწრო გადაწყვეტილებების ნაკრებია ტყავისთვის, პლასტიკისთვის, ქსოვილისა და ალკანტარისთვის.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3705,6 +3743,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car polishing',
         originalPhrase: 'polishing',
         contextQuote: 'polishing cannot be done above 30°C',
+      },
+    ],
+  },
+  {
+    article: 'blog/interior-ceramic-detail',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'Interior ceramic coating — pricing in Tbilisi',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: "Interior ceramic coating isn't one universal product but a set of narrow solutions for leather, plastic, fabric, and Alcantara.",
       },
     ],
   },
