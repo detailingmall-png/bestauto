@@ -108,51 +108,7 @@ export async function onRequestPost(context) {
   // Always return 200 so Cloudflare edge does not replace the body with a
   // generic 5xx error page — backend status is encoded in `ok` and `results`.
   const allOk = results.every((r) => r.ok);
-  // Debug: expose presence (boolean) of each env binding so we can verify
-  // wiring without leaking secret values. Remove after debugging.
-  const debug = {
-    has_token_primary: !!env.FB_CAPI_TOKEN_PRIMARY,
-    has_token_secondary: !!env.FB_CAPI_TOKEN_SECONDARY,
-    has_test_code_primary: !!env.FB_TEST_EVENT_CODE_PRIMARY,
-    has_test_code_secondary: !!env.FB_TEST_EVENT_CODE_SECONDARY
-  };
-  return jsonResponse({ ok: allOk, results, debug }, 200);
-}
-
-/**
- * GET /api/capi?probe=1 — diagnostic endpoint. Verifies which pixel each
- * configured token actually has access to. Helps catch the case where a
- * token was generated under the wrong pixel's settings.
- *
- * Returns env binding presence + probe result (id+name if token can read
- * the pixel) for each PIXEL entry. No event is sent.
- */
-export async function onRequestGet(context) {
-  const { request, env } = context;
-  const url = new URL(request.url);
-  if (url.searchParams.get('probe') !== '1') {
-    return jsonResponse({ ok: false, error: 'probe_required' }, 400);
-  }
-  const probes = await Promise.all(
-    PIXELS.map(async (pixel) => ({
-      configured_pixel: pixel.id,
-      token_env: pixel.tokenEnv,
-      probe: await probeTokenPixel(pixel.id, env[pixel.tokenEnv])
-    }))
-  );
-  return jsonResponse(
-    {
-      ok: true,
-      env_presence: {
-        FB_CAPI_TOKEN_PRIMARY: !!env.FB_CAPI_TOKEN_PRIMARY,
-        FB_CAPI_TOKEN_SECONDARY: !!env.FB_CAPI_TOKEN_SECONDARY,
-        FB_TEST_EVENT_CODE_PRIMARY: !!env.FB_TEST_EVENT_CODE_PRIMARY,
-        FB_TEST_EVENT_CODE_SECONDARY: !!env.FB_TEST_EVENT_CODE_SECONDARY
-      },
-      probes
-    },
-    200
-  );
+  return jsonResponse({ ok: allOk, results }, 200);
 }
 
 export async function onRequestOptions(context) {
@@ -206,43 +162,11 @@ async function sendToPixel(pixel, fbEvent, env) {
       ok: resp.ok,
       status: resp.status,
       events_received: fbBody && fbBody.events_received,
-      messages: fbBody && fbBody.messages,
       fbtrace_id: fbBody && fbBody.fbtrace_id,
-      test_code_used: testCode || null,
       error: fbBody && fbBody.error ? fbBody.error.message : undefined
     };
   } catch (e) {
     return { pixel: pixel.id, ok: false, status: 0, error: 'fetch_failed' };
-  }
-}
-
-/**
- * Verify which pixel a token actually has access to.
- * Calls GET /{pixel_id}?access_token={token} — returns pixel name if token
- * has manage access, error otherwise. Helps diagnose token/pixel mismatches.
- */
-async function probeTokenPixel(pixelId, token) {
-  if (!token) return { ok: false, error: 'missing_token' };
-  const url =
-    'https://graph.facebook.com/' +
-    FB_API_VERSION +
-    '/' +
-    pixelId +
-    '?fields=id,name&access_token=' +
-    encodeURIComponent(token);
-  try {
-    const resp = await fetch(url);
-    const body = await resp.json().catch(() => null);
-    if (!resp.ok || !body) {
-      return {
-        ok: false,
-        status: resp.status,
-        error: body && body.error ? body.error.message : 'probe_failed'
-      };
-    }
-    return { ok: true, status: resp.status, id: body.id, name: body.name };
-  } catch (e) {
-    return { ok: false, error: 'fetch_failed' };
   }
 }
 
