@@ -257,9 +257,14 @@ async function sendLeadCAPI(
     ph: phoneHash,
     client_ip_address: ip,
     client_user_agent: ua,
+    // Business is Georgia-only — pre-hashed sha256("ge") per Meta AM spec.
+    country: '309d20864f274b097f64106ec08fde76b42486d4e2f7165c7a9a233533dd8fc3',
   };
   if (cookies._fbp) userData.fbp = cookies._fbp;
   if (cookies._fbc) userData.fbc = cookies._fbc;
+  if (cookies.ba_ext_id) {
+    userData.external_id = await sha256Hex(cookies.ba_ext_id.toLowerCase().trim());
+  }
 
   const event = {
     event_name: 'Lead',

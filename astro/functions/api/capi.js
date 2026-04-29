@@ -38,6 +38,19 @@ const ALLOWED_EVENTS = new Set([
 
 const REQUEST_ORIGIN_RE = /^https:\/\/(?:[a-z0-9-]+\.)?bestauto\.ge$/i;
 
+// Business is Georgia-only — every event is attributed to country=ge.
+// Pre-computed SHA-256 of "ge" (lowercase, no whitespace) per Meta AM spec.
+const COUNTRY_GE_HASH =
+  '309d20864f274b097f64106ec08fde76b42486d4e2f7165c7a9a233533dd8fc3';
+
+async function sha256Hex(input) {
+  const data = new TextEncoder().encode(input);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -71,10 +84,14 @@ export async function onRequestPost(context) {
 
   const userData = {
     client_ip_address: clientIp,
-    client_user_agent: userAgent
+    client_user_agent: userAgent,
+    country: COUNTRY_GE_HASH
   };
   if (typeof body.fbp === 'string' && body.fbp) userData.fbp = body.fbp;
   if (typeof body.fbc === 'string' && body.fbc) userData.fbc = body.fbc;
+  if (typeof body.external_id === 'string' && body.external_id) {
+    userData.external_id = await sha256Hex(body.external_id.toLowerCase().trim());
+  }
 
   const eventTime =
     Number.isFinite(body.event_time) && body.event_time > 0

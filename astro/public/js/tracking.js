@@ -96,6 +96,33 @@
     return m ? decodeURIComponent(m[1]) : null;
   }
 
+  function setCookie(name, value, days) {
+    var expires = new Date(Date.now() + days * 86400 * 1000).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) +
+      '; expires=' + expires + '; path=/; samesite=lax';
+  }
+
+  // FB recommends generating _fbc when ?fbclid= is present in the URL, even if
+  // the FB Pixel script hasn't loaded yet. Format: fb.1.<unix_ms>.<fbclid>.
+  // Boosts Match Quality the most among missing AM parameters (~54% lift per Meta).
+  (function ensureFbc() {
+    if (getCookie('_fbc')) return;
+    var m = location.search.match(/[?&]fbclid=([^&]+)/);
+    if (!m) return;
+    var fbclid = decodeURIComponent(m[1]);
+    setCookie('_fbc', 'fb.1.' + Date.now() + '.' + fbclid, 90);
+  })();
+
+  // Persistent first-party identifier — stable across visits for the same browser.
+  // Sent as `external_id` in CAPI payloads and hashed server-side before forwarding.
+  (function ensureExternalId() {
+    if (getCookie('ba_ext_id')) return;
+    var id = (window.crypto && typeof crypto.randomUUID === 'function')
+      ? crypto.randomUUID()
+      : 'ext-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+    setCookie('ba_ext_id', id, 365);
+  })();
+
   // Single fbq('track', ...) fan-outs to all initialised pixels, so both
   // 2082195352165865 and 1250999350496996 receive the event.
   // Pass eventID as 4th arg so Meta dedupes with the CAPI delivery.
@@ -128,8 +155,10 @@
     };
     var fbp = getCookie('_fbp');
     var fbc = getCookie('_fbc');
+    var extId = getCookie('ba_ext_id');
     if (fbp) body.fbp = fbp;
     if (fbc) body.fbc = fbc;
+    if (extId) body.external_id = extId;
     try {
       fetch('/api/capi', {
         method: 'POST',
