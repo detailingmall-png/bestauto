@@ -1,7 +1,7 @@
 /**
- * BESTAUTO — event tracking for GA4 + Yandex Metrika
+ * BESTAUTO — event tracking for GA4 + Yandex Metrika + Meta Pixel
  *
- * Events:
+ * Events fired into all 3 platforms via send():
  *   phone_call_299        — click tel: link containing 299
  *   phone_call_199        — click tel: link containing 199
  *   whatsapp_click_299    — click wa.me link containing 299
@@ -9,13 +9,37 @@
  *   maps_click_politkovskaya — click Google Maps link (Politkovskaya)
  *   maps_click_guramishvili  — click Google Maps link (Guramishvili)
  *   booking_cta_click     — click any CTA button
+ *   form_submit           — generic form submit (GA/YM only — FB skipped to avoid duplicating Lead)
+ *   lead_submitted        — confirmed lead via window.baTrackLead(server OK)
+ *   lead_fallback_whatsapp — lead fell back to WhatsApp (server failed)
  *   view_prices           — page view on /prices (fired by GA custom event)
+ *
+ * Meta Pixel mapping (sent to BOTH initialised pixels: 2082195352165865 + 1250999350496996):
+ *   phone_call_*    -> Contact         {method: 'phone',    studio}
+ *   whatsapp_click_* -> Contact         {method: 'whatsapp', studio}
+ *   maps_click_*    -> FindLocation    {studio}
+ *   booking_cta_click -> InitiateCheckout {source: 'cta'}
+ *   lead_submitted  -> Lead            {studio, service}
+ *   lead_fallback_whatsapp -> Lead     {studio, service, fallback: 'whatsapp'}
  */
 (function () {
   'use strict';
 
   var GA_ID = 'G-C088QPT7KV';
   var YM_ID = 93539783;
+
+  // GA event name -> [FB Standard Event, extra FB params]
+  var FB_STANDARD_MAP = {
+    phone_call_299:           ['Contact',          { method: 'phone',    studio: 'guramishvili' }],
+    phone_call_199:           ['Contact',          { method: 'phone',    studio: 'saburtalo' }],
+    whatsapp_click_299:       ['Contact',          { method: 'whatsapp', studio: 'guramishvili' }],
+    whatsapp_click_199:       ['Contact',          { method: 'whatsapp', studio: 'saburtalo' }],
+    maps_click_politkovskaya: ['FindLocation',     { studio: 'saburtalo' }],
+    maps_click_guramishvili:  ['FindLocation',     { studio: 'guramishvili' }],
+    booking_cta_click:        ['InitiateCheckout', { source: 'cta' }],
+    lead_submitted:           ['Lead',             {}],
+    lead_fallback_whatsapp:   ['Lead',             { fallback: 'whatsapp' }]
+  };
 
   function sendGA(eventName, params) {
     if (typeof gtag === 'function') {
@@ -29,9 +53,30 @@
     }
   }
 
+  // Single fbq('track', ...) fan-outs to all initialised pixels, so both
+  // 2082195352165865 and 1250999350496996 receive the event.
+  // FB Pixel script is interaction-gated (defer 20s) so fbq may be undefined
+  // until first user interaction — silent skip is intentional.
+  function sendFB(eventName, params) {
+    if (typeof fbq !== 'function') return;
+    var mapped = FB_STANDARD_MAP[eventName];
+    try {
+      if (mapped) {
+        var extra = mapped[1];
+        var payload = {};
+        var k;
+        for (k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
+        if (params) for (k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
+        payload.source_event = eventName;
+        fbq('track', mapped[0], payload);
+      }
+    } catch (e) {}
+  }
+
   function send(eventName, params) {
     sendGA(eventName, params);
     sendYM(eventName);
+    sendFB(eventName, params);
   }
 
   document.addEventListener('click', function (e) {
