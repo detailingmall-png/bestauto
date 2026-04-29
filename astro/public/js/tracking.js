@@ -245,10 +245,21 @@
     }
   });
 
-  // --- Form submit via WhatsApp ---
+  // --- Form submit ---
+  // Set GA4 user_data BEFORE the form_submit event so gtag hashes the phone
+  // and propagates it as Enhanced Conversions data into the GA4-imported
+  // conversion in Google Ads. Phone is the only AM signal available at this
+  // boundary; gtag normalises and SHA-256-hashes it client-side.
   document.addEventListener('submit', function (e) {
     var form = e.target;
     if (form && form.tagName === 'FORM') {
+      try {
+        var phoneInput = form.querySelector('input[type="tel"], input[name*="phone" i], input[name*="tel" i]');
+        var phone = phoneInput && typeof phoneInput.value === 'string' ? phoneInput.value.trim() : '';
+        if (phone && typeof gtag === 'function') {
+          gtag('set', 'user_data', { phone_number: phone });
+        }
+      } catch (_) {}
       send('form_submit', { form_action: form.action || 'unknown' });
     }
   });
