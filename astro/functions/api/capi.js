@@ -108,7 +108,15 @@ export async function onRequestPost(context) {
   // Always return 200 so Cloudflare edge does not replace the body with a
   // generic 5xx error page — backend status is encoded in `ok` and `results`.
   const allOk = results.every((r) => r.ok);
-  return jsonResponse({ ok: allOk, results }, 200);
+  // Debug: expose presence (boolean) of each env binding so we can verify
+  // wiring without leaking secret values. Remove after debugging.
+  const debug = {
+    has_token_primary: !!env.FB_CAPI_TOKEN_PRIMARY,
+    has_token_secondary: !!env.FB_CAPI_TOKEN_SECONDARY,
+    has_test_code_primary: !!env.FB_TEST_EVENT_CODE_PRIMARY,
+    has_test_code_secondary: !!env.FB_TEST_EVENT_CODE_SECONDARY
+  };
+  return jsonResponse({ ok: allOk, results, debug }, 200);
 }
 
 export async function onRequestOptions(context) {
