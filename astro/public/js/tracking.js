@@ -41,36 +41,49 @@
     lead_fallback_whatsapp:   ['Lead',             { fallback: 'whatsapp' }]
   };
 
+  // All three analytics scripts are interaction-gated for PageSpeed (gtag/GTM via
+  // head-analytics gate ~15s fallback; fbq + ym via external-analytics gate ~20s
+  // + 3s inner). Until the first scroll/click/touch/keydown they are undefined,
+  // so the FIRST click on tel:/wa.me/CTA would silently drop. Each provider has
+  // its own pending queue; a shared poll flushes whichever became available.
+
+  function makeQueue(isReady, drain) {
+    var pending = [];
+    return {
+      send: function (args) {
+        if (isReady()) {
+          try { drain(args); } catch (e) {}
+        } else {
+          pending.push(args);
+        }
+      },
+      flush: function () {
+        if (!isReady()) return false;
+        while (pending.length) {
+          try { drain(pending.shift()); } catch (e) {}
+        }
+        return true;
+      }
+    };
+  }
+
+  var gaQueue  = makeQueue(function () { return typeof gtag === 'function'; },
+                           function (a) { gtag.apply(null, a); });
+  var ymQueue  = makeQueue(function () { return typeof ym === 'function'; },
+                           function (a) { ym.apply(null, a); });
+  var fbqQueue = makeQueue(function () { return typeof fbq === 'function'; },
+                           function (a) { fbq.apply(null, a); });
+
   function sendGA(eventName, params) {
-    if (typeof gtag === 'function') {
-      gtag('event', eventName, params || {});
-    }
+    gaQueue.send(['event', eventName, params || {}]);
   }
 
   function sendYM(goalName) {
-    if (typeof ym === 'function') {
-      ym(YM_ID, 'reachGoal', goalName);
-    }
+    ymQueue.send([YM_ID, 'reachGoal', goalName]);
   }
 
   // Single fbq('track', ...) fan-outs to all initialised pixels, so both
   // 2082195352165865 and 1250999350496996 receive the event.
-  // FB Pixel script is interaction-gated (defer 20s) so fbq is undefined
-  // until first user interaction. Queue events locally and flush them once
-  // fbq loads — preserves the FIRST click on tel:/wa.me/CTA which often
-  // also IS the interaction that triggers the gate.
-  var fbqPending = [];
-
-  function callFbq(args) {
-    try { fbq.apply(null, args); } catch (e) {}
-  }
-
-  function flushFbqPending() {
-    if (typeof fbq !== 'function') return false;
-    while (fbqPending.length) callFbq(fbqPending.shift());
-    return true;
-  }
-
   function sendFB(eventName, params) {
     var mapped = FB_STANDARD_MAP[eventName];
     if (!mapped) return;
@@ -80,21 +93,18 @@
     for (k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
     if (params) for (k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
     payload.source_event = eventName;
-    var args = ['track', mapped[0], payload];
-    if (typeof fbq === 'function') {
-      callFbq(args);
-    } else {
-      fbqPending.push(args);
-    }
+    fbqQueue.send(['track', mapped[0], payload]);
   }
 
-  // Poll until fbq loads (after interaction gate ~3s post first interaction),
-  // then drain the buffered events and stop polling. Cap at 25s to avoid
-  // perpetual interval if the user never interacts (Lighthouse, bots).
-  var fbqPollStart = Date.now();
-  var fbqPoll = setInterval(function () {
-    if (flushFbqPending() || Date.now() - fbqPollStart > 25000) {
-      clearInterval(fbqPoll);
+  // Poll every 250ms; clear interval once all three providers have flushed,
+  // or after 25s (covers gate fallbacks: head 15s + ym/fbq 20s + 3s inner).
+  var pollStart = Date.now();
+  var pollTimer = setInterval(function () {
+    var gaReady  = gaQueue.flush();
+    var ymReady  = ymQueue.flush();
+    var fbqReady = fbqQueue.flush();
+    if ((gaReady && ymReady && fbqReady) || Date.now() - pollStart > 25000) {
+      clearInterval(pollTimer);
     }
   }, 250);
 
