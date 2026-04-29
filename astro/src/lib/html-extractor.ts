@@ -612,6 +612,30 @@ export function delayHeadAnalytics(head: string): string {
 }
 
 /**
+ * Inject a second Facebook Pixel init alongside the existing one so both
+ * pixels share the same loader script and are deferred together by
+ * delayAnalytics(). Single PageView call fires for both pixels (no duplicate
+ * on the first pixel). Idempotent — skipped if the second ID is already present.
+ */
+const FB_PIXEL_PRIMARY_ID = '2082195352165865';
+const FB_PIXEL_SECONDARY_ID = '1250999350496996';
+
+export function injectSecondFbPixel(block: string): string {
+  if (!block.includes(FB_PIXEL_PRIMARY_ID)) return block;
+  if (block.includes(FB_PIXEL_SECONDARY_ID)) return block;
+
+  const initLine = `fbq('init', '${FB_PIXEL_PRIMARY_ID}');`;
+  const replacement = `${initLine}\nfbq('init', '${FB_PIXEL_SECONDARY_ID}');`;
+  let out = block.replace(initLine, replacement);
+
+  const noscriptImg = `src="https://www.facebook.com/tr?id=${FB_PIXEL_PRIMARY_ID}&ev=PageView&noscript=1"\n/></noscript>`;
+  const noscriptReplacement = `${noscriptImg} <noscript><img height="1" width="1" style="display:none"\nsrc="https://www.facebook.com/tr?id=${FB_PIXEL_SECONDARY_ID}&ev=PageView&noscript=1"\n/></noscript>`;
+  out = out.replace(noscriptImg, noscriptReplacement);
+
+  return out;
+}
+
+/**
  * Delay heavy third-party analytics scripts (GTM, GA4, Yandex Metrika,
  * Facebook Pixel external). Interaction-gated with 3s inner delay:
  * user scrolls → wait 3s (let GTM from head settle) → load external.
@@ -2102,7 +2126,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
-  const headerBlock = fixImgDimensions(delayAnalytics(stripAlienAnalytics(stripOldTracking(rawHeaderBlock))));
+  const headerBlock = fixImgDimensions(delayAnalytics(injectSecondFbPixel(stripAlienAnalytics(stripOldTracking(rawHeaderBlock)))));
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
