@@ -14,6 +14,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | detailing-services-all-in-one | 14231701 | https://www.pexels.com/photo/a-person-polishing-the-car-s-body-14231701/ | Lamborghini being polished — automotive care process, q80 |
 | detailing-wash-explained | 7530997 | https://www.pexels.com/photo/black-car-inside-a-carwash-7530997/ | Black BMW with water spray at night, headlights and reflections — q80, file: detailing-wash-explained-hero-v2.webp |
 | front-windshield-tint-rules | 2622124 | https://www.pexels.com/photo/black-suzuki-steering-wheel-2622124/ | Sunrise through car windshield + steering wheel — q80 |
+| interior-ceramic-detail | 33145485 | https://www.pexels.com/photo/close-up-of-luxury-car-leather-interior-seats-33145485/ | Luxury leather interior seats close-up — fits "ceramic on leather" theme, q80, autonomous pick (no user) |
 
 ## Rule
 

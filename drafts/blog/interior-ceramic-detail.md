@@ -8,7 +8,7 @@ primary_hf_ru: "керамика салона, керамическое покр
 primary_hf_ka: "სალონის კერამიკული დაცვა, სალონის კერამიკა, მანქანის სალონის კერამიკული საფარი"
 primary_hf_en: "interior ceramic coating, interior ceramic protection, car interior ceramic"
 secondary_links: ["/ppf-shield-wrapping"]
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#74"
   - gsc: "Downloads/gsc_16months.csv"
