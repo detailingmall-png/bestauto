@@ -25,13 +25,18 @@ interface Env {
   LEADS_RATE_LIMIT: KVNamespace;
   FB_CAPI_TOKEN_PRIMARY?: string;
   FB_CAPI_TOKEN_SECONDARY?: string;
-  FB_TEST_EVENT_CODE?: string;
+  FB_TEST_EVENT_CODE_PRIMARY?: string;
+  FB_TEST_EVENT_CODE_SECONDARY?: string;
 }
 
 const FB_API_VERSION = 'v21.0';
-const FB_PIXELS: ReadonlyArray<{ id: string; tokenKey: keyof Env }> = [
-  { id: '2082195352165865', tokenKey: 'FB_CAPI_TOKEN_PRIMARY' },
-  { id: '1250999350496996', tokenKey: 'FB_CAPI_TOKEN_SECONDARY' },
+const FB_PIXELS: ReadonlyArray<{
+  id: string;
+  tokenKey: keyof Env;
+  testKey: keyof Env;
+}> = [
+  { id: '2082195352165865', tokenKey: 'FB_CAPI_TOKEN_PRIMARY',   testKey: 'FB_TEST_EVENT_CODE_PRIMARY' },
+  { id: '1250999350496996', tokenKey: 'FB_CAPI_TOKEN_SECONDARY', testKey: 'FB_TEST_EVENT_CODE_SECONDARY' },
 ];
 
 interface LeadPayload {
@@ -279,7 +284,9 @@ async function sendLeadCAPI(
       if (typeof token !== 'string' || !token) {
         return { pixel: p.id, ok: false, status: 0, error: 'missing_token' };
       }
-      return sendOnePixel(p.id, token, event, env.FB_TEST_EVENT_CODE);
+      const testCode = env[p.testKey];
+      const testCodeStr = typeof testCode === 'string' && testCode ? testCode : undefined;
+      return sendOnePixel(p.id, token, event, testCodeStr);
     }),
   );
   return results;

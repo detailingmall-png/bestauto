@@ -9,17 +9,19 @@
  * Dedup with browser-side Pixel: client supplies a UUID `event_id`,
  * also passed to fbq as `eventID`. Meta dedupes by (event_name, event_id).
  *
- * Secrets (Cloudflare Pages -> Settings -> Environment variables, type Secret):
- *   FB_CAPI_TOKEN_PRIMARY    — token for pixel 2082195352165865
- *   FB_CAPI_TOKEN_SECONDARY  — token for pixel 1250999350496996
- *   FB_TEST_EVENT_CODE       — (optional) shows events in Test Events tab
+ * Environment variables (Cloudflare Pages -> Settings -> Environment variables):
+ *   FB_CAPI_TOKEN_PRIMARY        — Secret. Token for pixel 2082195352165865
+ *   FB_CAPI_TOKEN_SECONDARY      — Secret. Token for pixel 1250999350496996
+ *   FB_TEST_EVENT_CODE_PRIMARY   — (optional) Plaintext. Shows events for the
+ *                                  primary pixel in Events Manager Test Events tab
+ *   FB_TEST_EVENT_CODE_SECONDARY — (optional) Plaintext. Same for the secondary pixel
  */
 
 const FB_API_VERSION = 'v21.0';
 
 const PIXELS = [
-  { id: '2082195352165865', tokenEnv: 'FB_CAPI_TOKEN_PRIMARY' },
-  { id: '1250999350496996', tokenEnv: 'FB_CAPI_TOKEN_SECONDARY' }
+  { id: '2082195352165865', tokenEnv: 'FB_CAPI_TOKEN_PRIMARY',   testEnv: 'FB_TEST_EVENT_CODE_PRIMARY' },
+  { id: '1250999350496996', tokenEnv: 'FB_CAPI_TOKEN_SECONDARY', testEnv: 'FB_TEST_EVENT_CODE_SECONDARY' }
 ];
 
 const ALLOWED_EVENTS = new Set([
@@ -130,8 +132,9 @@ async function sendToPixel(pixel, fbEvent, env) {
   }
 
   const payload = { data: [fbEvent] };
-  if (env.FB_TEST_EVENT_CODE) {
-    payload.test_event_code = env.FB_TEST_EVENT_CODE;
+  const testCode = env[pixel.testEnv];
+  if (testCode) {
+    payload.test_event_code = testCode;
   }
 
   const url =
