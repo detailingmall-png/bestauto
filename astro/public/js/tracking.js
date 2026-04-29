@@ -123,6 +123,17 @@
     setCookie('ba_ext_id', id, 365);
   })();
 
+  // Capture Google Ads Click Identifier (?gclid=...) into a first-party cookie
+  // so it survives later same-session navigation. Used downstream by
+  // Google Ads Enhanced Conversions (server-side) for attribution. Cookie
+  // lifetime matches Google's standard click attribution window (90 days).
+  (function ensureGclid() {
+    if (getCookie('_gclid')) return;
+    var m = location.search.match(/[?&]gclid=([^&]+)/);
+    if (!m) return;
+    setCookie('_gclid', decodeURIComponent(m[1]), 90);
+  })();
+
   // Single fbq('track', ...) fan-outs to all initialised pixels, so both
   // 2082195352165865 and 1250999350496996 receive the event.
   // Pass eventID as 4th arg so Meta dedupes with the CAPI delivery.
