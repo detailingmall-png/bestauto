@@ -55,23 +55,48 @@
 
   // Single fbq('track', ...) fan-outs to all initialised pixels, so both
   // 2082195352165865 and 1250999350496996 receive the event.
-  // FB Pixel script is interaction-gated (defer 20s) so fbq may be undefined
-  // until first user interaction — silent skip is intentional.
-  function sendFB(eventName, params) {
-    if (typeof fbq !== 'function') return;
-    var mapped = FB_STANDARD_MAP[eventName];
-    try {
-      if (mapped) {
-        var extra = mapped[1];
-        var payload = {};
-        var k;
-        for (k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
-        if (params) for (k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
-        payload.source_event = eventName;
-        fbq('track', mapped[0], payload);
-      }
-    } catch (e) {}
+  // FB Pixel script is interaction-gated (defer 20s) so fbq is undefined
+  // until first user interaction. Queue events locally and flush them once
+  // fbq loads — preserves the FIRST click on tel:/wa.me/CTA which often
+  // also IS the interaction that triggers the gate.
+  var fbqPending = [];
+
+  function callFbq(args) {
+    try { fbq.apply(null, args); } catch (e) {}
   }
+
+  function flushFbqPending() {
+    if (typeof fbq !== 'function') return false;
+    while (fbqPending.length) callFbq(fbqPending.shift());
+    return true;
+  }
+
+  function sendFB(eventName, params) {
+    var mapped = FB_STANDARD_MAP[eventName];
+    if (!mapped) return;
+    var extra = mapped[1];
+    var payload = {};
+    var k;
+    for (k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
+    if (params) for (k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
+    payload.source_event = eventName;
+    var args = ['track', mapped[0], payload];
+    if (typeof fbq === 'function') {
+      callFbq(args);
+    } else {
+      fbqPending.push(args);
+    }
+  }
+
+  // Poll until fbq loads (after interaction gate ~3s post first interaction),
+  // then drain the buffered events and stop polling. Cap at 25s to avoid
+  // perpetual interval if the user never interacts (Lighthouse, bots).
+  var fbqPollStart = Date.now();
+  var fbqPoll = setInterval(function () {
+    if (flushFbqPending() || Date.now() - fbqPollStart > 25000) {
+      clearInterval(fbqPoll);
+    }
+  }, 250);
 
   function send(eventName, params) {
     sendGA(eventName, params);
