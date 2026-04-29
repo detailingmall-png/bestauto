@@ -214,11 +214,21 @@
   });
 
   // --- Lead form submission tracking ---
+  // serverOk=true:  /api/lead handled the lead and ALREADY fired Meta CAPI Lead
+  //   server-side with Advanced Matching (phone hash + IP/UA + fbp/fbc cookies).
+  //   We only fire GA + YM here — skipping client-side fbq/CAPI Lead avoids a
+  //   duplicate event with lower match quality.
+  // serverOk=false: form fetch failed and the user fell back to WhatsApp manually.
+  //   Server CAPI did NOT fire, so the client must report the outcome via the
+  //   regular fanout (GA + YM + fbq + /api/capi). No Advanced Matching available
+  //   because we don't have the user's phone outside the form payload.
   window.baTrackLead = function (studio, service, serverOk) {
+    var params = { studio: studio, service: service };
     if (serverOk) {
-      send('lead_submitted', { studio: studio, service: service });
+      sendGA('lead_submitted', params);
+      sendYM('lead_submitted');
     } else {
-      send('lead_fallback_whatsapp', { studio: studio, service: service });
+      send('lead_fallback_whatsapp', params);
     }
   };
 })();

@@ -23,7 +23,16 @@ interface Env {
   TG_CHAT_ID_199: string;
   GOOGLE_SHEETS_WEBHOOK_URL: string;
   LEADS_RATE_LIMIT: KVNamespace;
+  FB_CAPI_TOKEN_PRIMARY?: string;
+  FB_CAPI_TOKEN_SECONDARY?: string;
+  FB_TEST_EVENT_CODE?: string;
 }
+
+const FB_API_VERSION = 'v21.0';
+const FB_PIXELS: ReadonlyArray<{ id: string; tokenKey: keyof Env }> = [
+  { id: '2082195352165865', tokenKey: 'FB_CAPI_TOKEN_PRIMARY' },
+  { id: '1250999350496996', tokenKey: 'FB_CAPI_TOKEN_SECONDARY' },
+];
 
 interface LeadPayload {
   studio: 'guramishvili' | 'saburtalo';
@@ -156,6 +165,127 @@ async function writeToSheets(
 }
 
 // ---------------------------------------------------------------------------
+// Meta Conversions API — server-side Lead with Advanced Matching (phone hash)
+// ---------------------------------------------------------------------------
+
+async function sha256Hex(input: string): Promise<string> {
+  const data = new TextEncoder().encode(input);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+function parseCookies(header: string | null): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (!header) return out;
+  for (const part of header.split(';')) {
+    const idx = part.indexOf('=');
+    if (idx === -1) continue;
+    const k = part.slice(0, idx).trim();
+    const v = part.slice(idx + 1).trim();
+    if (k) out[k] = decodeURIComponent(v);
+  }
+  return out;
+}
+
+interface CapiPixelResult {
+  pixel: string;
+  ok: boolean;
+  status: number;
+  events_received?: number;
+  fbtrace_id?: string;
+  error?: string;
+}
+
+async function sendOnePixel(
+  pixelId: string,
+  token: string,
+  event: Record<string, unknown>,
+  testEventCode: string | undefined,
+): Promise<CapiPixelResult> {
+  const payload: Record<string, unknown> = { data: [event] };
+  if (testEventCode) payload.test_event_code = testEventCode;
+  const url = `https://graph.facebook.com/${FB_API_VERSION}/${pixelId}/events?access_token=${encodeURIComponent(token)}`;
+  try {
+    const resp = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    let body: { events_received?: number; fbtrace_id?: string; error?: { message?: string } } | null = null;
+    try {
+      body = await resp.json();
+    } catch {
+      // ignore parse errors
+    }
+    return {
+      pixel: pixelId,
+      ok: resp.ok,
+      status: resp.status,
+      events_received: body?.events_received,
+      fbtrace_id: body?.fbtrace_id,
+      error: body?.error?.message,
+    };
+  } catch {
+    return { pixel: pixelId, ok: false, status: 0, error: 'fetch_failed' };
+  }
+}
+
+async function sendLeadCAPI(
+  env: Env,
+  request: Request,
+  lead: LeadPayload,
+): Promise<CapiPixelResult[]> {
+  // Phone normalised to E.164 digits-only (no '+'), lowercase, then SHA-256.
+  const phoneDigits = lead.phone.replace(/\D/g, '');
+  const phoneHash = await sha256Hex(phoneDigits);
+
+  const ip =
+    request.headers.get('cf-connecting-ip') ||
+    (request.headers.get('x-forwarded-for') || '').split(',')[0].trim() ||
+    '';
+  const ua = request.headers.get('user-agent') || '';
+  const cookies = parseCookies(request.headers.get('cookie'));
+
+  const userData: Record<string, string> = {
+    ph: phoneHash,
+    client_ip_address: ip,
+    client_user_agent: ua,
+  };
+  if (cookies._fbp) userData.fbp = cookies._fbp;
+  if (cookies._fbc) userData.fbc = cookies._fbc;
+
+  const event = {
+    event_name: 'Lead',
+    event_time: Math.floor(Date.now() / 1000),
+    event_id: crypto.randomUUID(),
+    event_source_url:
+      typeof lead.page === 'string' && lead.page.startsWith('https://bestauto.ge')
+        ? lead.page
+        : 'https://bestauto.ge/',
+    action_source: 'website',
+    user_data: userData,
+    custom_data: {
+      studio: lead.studio,
+      service: lead.service,
+      lang: lead.lang || '',
+    },
+  };
+
+  const results = await Promise.all(
+    FB_PIXELS.map(async (p): Promise<CapiPixelResult> => {
+      const token = env[p.tokenKey];
+      if (typeof token !== 'string' || !token) {
+        return { pixel: p.id, ok: false, status: 0, error: 'missing_token' };
+      }
+      return sendOnePixel(p.id, token, event, env.FB_TEST_EVENT_CODE);
+    }),
+  );
+  return results;
+}
+
+// ---------------------------------------------------------------------------
 // Request handler
 // ---------------------------------------------------------------------------
 
@@ -204,6 +334,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   context.waitUntil(
     writeToSheets(env, payload, tgResult.ok ? 'delivered' : tgResult.error || 'failed'),
   );
+  // Fire-and-forget Meta CAPI Lead with Advanced Matching (phone hash + IP/UA + fbp/fbc).
+  // Runs server-side after the response is sent so user latency is not affected.
+  context.waitUntil(sendLeadCAPI(env, request, payload));
 
   // Even if Telegram fails, the lead is captured in Sheets — return ok to the user
   return jsonResponse(200, { ok: true });
