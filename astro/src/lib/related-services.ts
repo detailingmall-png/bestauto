@@ -47,6 +47,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/headlight-polishing':          'polishing',
   'blog/polishing-after-repair':       'polishing',
   'blog/10-paint-mistakes':            'polishing',
+  'blog/interior-plastic-polish':      'polishing',
   // Ceramic coating
   'blog/ceramic-coating-care':         'ceramiccoating',
   'blog/ceramic-coating-cost-tbilisi': 'ceramiccoating',

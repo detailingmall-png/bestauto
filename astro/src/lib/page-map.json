@@ -1766,5 +1766,29 @@
     "title": "Cabin ozone disinfection for cars: how it works and when",
     "lang": "en",
     "slug": "blog/interior-disinfection-ozone"
+  },
+  "920260430004": {
+    "file": "page920260430004.html",
+    "url": "https://bestauto.ge/ru/blog/interior-plastic-polish",
+    "path": "/ru/blog/interior-plastic-polish",
+    "title": "Полировка пластика салона: матовый или глянцевый финиш",
+    "lang": "ru",
+    "slug": "blog/interior-plastic-polish"
+  },
+  "920260430005": {
+    "file": "page920260430005.html",
+    "url": "https://bestauto.ge/blog/interior-plastic-polish",
+    "path": "/blog/interior-plastic-polish",
+    "title": "სალონის პლასტმასის პოლირება: მატი თუ გლოსი ფინიში",
+    "lang": "ka",
+    "slug": "blog/interior-plastic-polish"
+  },
+  "920260430006": {
+    "file": "page920260430006.html",
+    "url": "https://bestauto.ge/en/blog/interior-plastic-polish",
+    "path": "/en/blog/interior-plastic-polish",
+    "title": "Car interior plastic polish: matte or gloss finish",
+    "lang": "en",
+    "slug": "blog/interior-plastic-polish"
   }
 }

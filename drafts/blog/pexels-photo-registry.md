@@ -16,6 +16,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | front-windshield-tint-rules | 2622124 | https://www.pexels.com/photo/black-suzuki-steering-wheel-2622124/ | Sunrise through car windshield + steering wheel — q80 |
 | interior-ceramic-detail | 33145485 | https://www.pexels.com/photo/close-up-of-luxury-car-leather-interior-seats-33145485/ | Luxury leather interior seats close-up — fits "ceramic on leather" theme, q80, autonomous pick (no user) |
 | interior-disinfection-ozone | 6873103 | https://www.pexels.com/photo/a-man-cleaning-the-interior-parts-of-the-car-6873103/ | Tima Miroshnichenko — man meticulously cleaning luxury car interior, dim/dark studio ambiance fits ozone-after-cleaning theme, q80, autonomous pick (no user) |
+| interior-plastic-polish | 4218867 | https://www.pexels.com/photo/crop-person-wiping-modern-car-panel-4218867/ | Ariyo — person polishing car panel with blue fiber cloth, direct match to interior plastic polish topic, q80, autonomous pick (no user) |
 
 ## Rule
 
