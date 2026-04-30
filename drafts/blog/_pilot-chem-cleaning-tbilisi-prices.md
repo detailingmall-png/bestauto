@@ -8,7 +8,12 @@ primary_hf_ru: "химчистка тбилиси, химчистка салон
 primary_hf_ka: "ქიმწმენდა თბილისში, მანქანის ქიმწმენდა, სალონის ქიმწმენდა"
 primary_hf_en: "car dry cleaning tbilisi, car interior cleaning"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-04-30
+published_pageids:
+  ru: "920260430004"
+  ka: "920260430005"
+  en: "920260430006"
 sources:
   - roadmap: "docs/content-roadmap.md#79"
   - gsc: "Downloads/gsc_16months.csv"
