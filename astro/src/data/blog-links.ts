@@ -1324,25 +1324,6 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
-  {
-    article: 'blog/interior-plastic-polish',
-    links: [
-      {
-        role: 'pillar',
-        target: '/polishing',
-        anchor: 'Полировка кузова',
-        originalPhrase: 'Полировка кузова',
-        contextQuote: 'Полировка кузова — от 690 ₾ (отдельно)',
-      },
-      {
-        role: 'bridge',
-        target: '/ceramiccoating',
-        anchor: 'Керамическое покрытие',
-        originalPhrase: 'Керамическое покрытие',
-        contextQuote: 'Керамическое покрытие облегчает уход, но не останавливает камни с дорог.',
-      },
-    ],
-  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2607,25 +2588,6 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
-  {
-    article: 'blog/interior-plastic-polish',
-    links: [
-      {
-        role: 'pillar',
-        target: '/polishing',
-        anchor: 'პოლირება',
-        originalPhrase: 'პოლირება',
-        contextQuote: 'ძარას პოლირება — 690 ₾-დან (ცალკე)',
-      },
-      {
-        role: 'bridge',
-        target: '/ceramiccoating',
-        anchor: 'კერამიკული საფარი',
-        originalPhrase: 'კერამიკული საფარი',
-        contextQuote: 'კერამიკული საფარი ამარტივებს მოვლას, მაგრამ გზებიდან ქვებს არ აჩერებს.',
-      },
-    ],
-  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3857,18 +3819,6 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'Pet owners and smokers — ozone with every dry cleaning, i.e. every 6-12 months.',
-      },
-    ],
-  },
-  {
-    article: 'blog/interior-plastic-polish',
-    links: [
-      {
-        role: 'bridge',
-        target: '/ceramiccoating',
-        anchor: 'Ceramic coating',
-        originalPhrase: 'Ceramic coating',
-        contextQuote: 'Ceramic coating eases maintenance but will not stop gravel off the road.',
       },
     ],
   },

@@ -17,6 +17,14 @@
 /auto-polishing   /polishing  301
 /auto-polishing/  /polishing  301
 
+# ── Withdrawn blog articles ─────────────────────────────────────
+/blog/interior-plastic-polish      /polishing       301
+/blog/interior-plastic-polish/     /polishing       301
+/ru/blog/interior-plastic-polish   /ru/polishing    301
+/ru/blog/interior-plastic-polish/  /ru/polishing    301
+/en/blog/interior-plastic-polish   /en/polishing    301
+/en/blog/interior-plastic-polish/  /en/polishing    301
+
 # ── Discontinued services (April 2026) ──────────────────────
 /paintless-dent-repair     /polishing             301
 /paintless-dent-repair/    /polishing             301

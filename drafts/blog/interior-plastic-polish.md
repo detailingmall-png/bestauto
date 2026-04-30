@@ -9,8 +9,9 @@ primary_hf_ka: "სალონის პლასტმასის პოლ�
 primary_hf_en: "interior plastic polish, car interior polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: published
-published: 2026-04-30
+status: rejected
+rejected: 2026-04-30
+rejected_reason: "withdrawn by user after publication; URL 301-redirected to /polishing"
 sources:
   - roadmap: "docs/content-roadmap.md#2"
   - gsc: "Downloads/gsc_16months.csv"
