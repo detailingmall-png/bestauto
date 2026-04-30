@@ -1324,6 +1324,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/chem-cleaning-tbilisi-prices',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона',
+        originalPhrase: 'химчистка салона',
+        contextQuote: 'химчистка салона не делает:',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'первопричина, и только потом делается химчистка.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2585,6 +2604,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'ქიმწმენდა',
         originalPhrase: 'ქიმწმენდა',
         contextQuote: 'ცხოველების მფლობელებისთვის და მწეველებისთვის — ყოველი ქიმწმენდა ოზონთან ერთად მიდის, ანუ 6-12 თვეში ერთხელ.',
+      },
+    ],
+  },
+  {
+    article: 'blog/chem-cleaning-tbilisi-prices',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'სალონის ქიმწმენდა — ეს მასალებთან ღრმა მუშაობაა',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ჯერ წყარო გამოსწორდება, და მხოლოდ შემდეგ — ქიმწმენდა.',
       },
     ],
   },

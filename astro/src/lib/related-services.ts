@@ -92,6 +92,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/interior-cleaning-for-auto':    'interior-cleaning',
   'blog/engine-room-cleaning':          'interior-cleaning',
   'blog/interior-disinfection-ozone':   'interior-cleaning',
+  'blog/chem-cleaning-tbilisi-prices':  'interior-cleaning',
   // Car wash
   'blog/2-phase-vs-3-phase-wash':      'carwash',
   'blog/contactless-vs-hand-wash':     'carwash',
