@@ -1742,5 +1742,29 @@
     "title": "Interior ceramic coating: how it protects leather and plastic",
     "lang": "en",
     "slug": "blog/interior-ceramic-detail"
+  },
+  "920260430001": {
+    "file": "page920260430001.html",
+    "url": "https://bestauto.ge/ru/blog/interior-disinfection-ozone",
+    "path": "/ru/blog/interior-disinfection-ozone",
+    "title": "Дезинфекция салона автомобиля озоном — как работает",
+    "lang": "ru",
+    "slug": "blog/interior-disinfection-ozone"
+  },
+  "920260430002": {
+    "file": "page920260430002.html",
+    "url": "https://bestauto.ge/blog/interior-disinfection-ozone",
+    "path": "/blog/interior-disinfection-ozone",
+    "title": "სალონის ოზონოთერაპია — როგორ მუშაობს დეზინფექცია",
+    "lang": "ka",
+    "slug": "blog/interior-disinfection-ozone"
+  },
+  "920260430003": {
+    "file": "page920260430003.html",
+    "url": "https://bestauto.ge/en/blog/interior-disinfection-ozone",
+    "path": "/en/blog/interior-disinfection-ozone",
+    "title": "Cabin ozone disinfection for cars: how it works and when",
+    "lang": "en",
+    "slug": "blog/interior-disinfection-ozone"
   }
 }

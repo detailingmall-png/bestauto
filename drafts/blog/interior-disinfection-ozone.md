@@ -8,7 +8,7 @@ primary_hf_ru: "дезинфекция салона автомобиля, озо
 primary_hf_ka: "ოზონოთერაპია, სალონის ოზონოთერაპია, სალონის დეზინფექცია"
 primary_hf_en: "cabin ozone disinfection, car cabin ozone treatment"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#81"
   - gsc: "Downloads/gsc_16months.csv"

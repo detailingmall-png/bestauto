@@ -126,6 +126,8 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'химчистка салона',
     'химчистка автомобиля',
     'детейлинг салона',
+    'химчистка',                  // inflected — valid anchor (standalone nominative)
+    'химчистки',                  // inflected — valid anchor (genitive form)
   ],
 };
 
@@ -202,6 +204,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის სალონის ქიმწმენდა',  // GSC: 8
     'ავტო ქიმწმენდა',              // GSC: 9
     'ხიმჩისტკა მანქანის',          // GSC: Russism variant, 337 imp
+    'ქიმწმენდა',                   // inflected — valid anchor (standalone nominative)
   ],
 };
 
@@ -249,6 +252,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'car interior cleaning',       // GSC: 2
     'car dry cleaning',            // GSC: 3 (top — Soviet-era terminology)
     'car interior detailing',      // GSC: 1
+    'dry cleaning',                // inflected — valid anchor (short form, common in body text)
   ],
 };
 

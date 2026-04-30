@@ -1305,6 +1305,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/interior-disinfection-ozone',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Плановая химчистка «по календарю», а не из-за конкретной проблемы.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Озон без химчистки работает только несколько суток.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2550,6 +2569,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/interior-disinfection-ozone',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'გეგმიური ქიმწმენდა „კალენდრის მიხედვით", და არა კონკრეტული პრობლემით.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ცხოველების მფლობელებისთვის და მწეველებისთვის — ყოველი ქიმწმენდა ოზონთან ერთად მიდის, ანუ 6-12 თვეში ერთხელ.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3762,6 +3800,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: "Interior ceramic coating isn't one universal product but a set of narrow solutions for leather, plastic, fabric, and Alcantara.",
+      },
+    ],
+  },
+  {
+    article: 'blog/interior-disinfection-ozone',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'Scheduled dry cleaning "by calendar" rather than because of a specific issue.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'Pet owners and smokers — ozone with every dry cleaning, i.e. every 6-12 months.',
       },
     ],
   },
