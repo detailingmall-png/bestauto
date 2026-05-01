@@ -612,12 +612,12 @@ html {
   font-weight: var(--ba-font-weight-semibold);
 }
 .is-blog-article .ba-blog-content a {
-  color: var(--ba-color-accent);
+  color: #7a5c10; /* dark gold — 5.65:1 contrast on white bg */
   text-decoration: underline;
   transition: color var(--ba-duration-fast) var(--ba-ease-default);
 }
 .is-blog-article .ba-blog-content a:hover {
-  color: var(--ba-color-accent-hover);
+  color: #4a3608; /* darker amber on hover */
 }
 @media screen and (max-width: 960px) {
   .is-blog-article .ba-blog-content { font-size: 16px; }
