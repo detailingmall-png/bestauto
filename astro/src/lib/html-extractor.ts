@@ -2101,7 +2101,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   // bg-color, so dark text becomes invisible on black html bg. Override to white.
   const isBlogPage = slug === 'blog' || (slug != null && slug.startsWith('blog/'));
   if (isBlogPage) {
-    processedHead += '<style>html{background-color:#fff}#allrecords a{color:inherit}</style>';
+    processedHead += '<style>html{background-color:#fff}#allrecords a{color:inherit}#allrecords .ba-blog-content a{color:#7a5c10;text-decoration:underline}#allrecords .ba-blog-content a:hover{color:#4a3608}</style>';
   }
 
   // Fix og:type: remove Tilda duplicates, set "article" for blog pages
