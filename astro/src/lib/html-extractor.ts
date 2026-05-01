@@ -1204,7 +1204,11 @@ export function removeClientSeoScripts(content: string): string {
     // Remove old Tilda @graph AutoRepair schema — replaced by LocalBusiness +
     // Organization schemas in seo.ts (GSC: "Invalid object type for <parent_node>")
     .replace(/<!-- Schema\.org: AutoRepair -->\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
-    .replace(/<link\s+rel="canonical"[^>]*>/g, '');
+    // Match canonical link with attributes in any order (Tilda exports blog posts
+    // with href first: `<link href="..." rel="canonical"/>`). Without lookahead,
+    // the strict pattern `<link rel="canonical"` missed those, leaving the original
+    // canonical in place plus our generated one — Bing flagged 36 blog pages.
+    .replace(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*\/?>/gi, '');
 }
 
 /**
