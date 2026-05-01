@@ -9,7 +9,12 @@ primary_hf_ka: "მანქანის პოლირების კრე�
 primary_hf_en: "car polish cream, car polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-05-01
+published_pageids:
+  ru: "920260430007"
+  ka: "920260430008"
+  en: "920260430009"
 sources:
   - roadmap: "docs/content-roadmap.md#1"
   - gsc: "Downloads/gsc_16months.csv"
