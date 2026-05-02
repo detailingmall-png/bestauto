@@ -1343,6 +1343,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-full-body-wrapping-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной пленкой',
+        originalPhrase: 'защитной пленкой',
+        contextQuote: 'Цена на полную оклейку защитной пленкой формируется из нескольких факторов',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'необходимость предварительной полировки.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2626,6 +2645,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-full-body-wrapping-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის',
+        originalPhrase: 'დამცავი ფირის',
+        contextQuote: 'სრული დამცავი ფირის გადაკვრის ფასი ფორმირდება რამდენიმე ფაქტორისგან',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'წინასწარი პოლირების საჭიროება',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3857,6 +3895,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'Pet owners and smokers — ozone with every dry cleaning, i.e. every 6-12 months.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-full-body-wrapping-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'PPF wrap',
+        originalPhrase: 'PPF wrap',
+        contextQuote: 'Full PPF wrap pricing is shaped by several factors',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'and need for prior polishing.',
       },
     ],
   },

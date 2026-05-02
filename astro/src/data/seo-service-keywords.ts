@@ -55,6 +55,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'полировка авто',             // GSC: 4
     'полировка автомобиля',       // GSC: 2
     'полировка кузова',           // GSC: 1 (still valid HF)
+    'полировки',                  // inflected — valid in blog anchor context
     'полировка лкп',
     'абразивная полировка',
   ],
@@ -73,6 +74,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'оклейка авто пленкой',       // GSC: 2 (shared w/ vinyl, dominant intent here)
     'оклейка автомобиля защитной пленкой',
     'защитная пленка',
+    'защитной пленкой',           // inflected — valid in blog anchor context
     'ppf пленка',
     'оклейка полиуретановой пленкой',
     'антигравийная пленка',
@@ -135,6 +137,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
   '/polishing': [
     'მანქანის პოლირება',          // GSC: 430 clicks (top)
     'პოლირება',                    // GSC: 408
+    'პოლირების',                   // inflected — valid in blog anchor context
     'ავტომობილის პოლირება',        // GSC: 64
     'მანქანის პოლირება ფასი',      // GSC: 137 (with price)
     'პოლირება ფასი',               // GSC: 119
@@ -152,6 +155,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
   '/ppf-shield-wrapping': [
     'მანქანის დამცავი ფირი',       // GSC: 1 + competitor confirmed
     'დამცავი ფირი',                // standard term (adetailing.ge H2)
+    'დამცავი ფირის',               // inflected — valid in blog anchor context
     'დამცავი ფირის გადაკვრა',      // fixup.ge canonical PPF anchor (protective film wrapping)
     'ფირის გადაკვრა',              // generic film-wrapping intent (also in /vinyl-wrapping; rule decides target)
     'მანქანის ფირი',               // GSC: 3 — claimed for PPF (not vinyl, see header)
@@ -211,6 +215,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
 export const SERVICE_KEYWORDS_EN: KeywordMap = {
   '/polishing': [
     'car polishing',               // GSC: 1 click but high impressions
+    'polishing',                   // short form — valid in blog anchor context
     'car polish service',          // ACCEPT-WITH-CAVEAT (low Tbilisi intent)
   ],
   '/ceramiccoating': [
