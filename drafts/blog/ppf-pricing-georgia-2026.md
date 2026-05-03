@@ -8,7 +8,7 @@ primary_hf_ru: "оклейка плёнкой цена, ppf цена, защит
 primary_hf_ka: "PPF ფასი, დამცავი ფირის ფასი, PPF ფასი თბილისში"
 primary_hf_en: "ppf pricing georgia, paint protection film cost, ppf cost"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#34"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"

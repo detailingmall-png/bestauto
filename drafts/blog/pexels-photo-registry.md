@@ -18,6 +18,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | interior-disinfection-ozone | 6873103 | https://www.pexels.com/photo/a-man-cleaning-the-interior-parts-of-the-car-6873103/ | Tima Miroshnichenko — man meticulously cleaning luxury car interior, dim/dark studio ambiance fits ozone-after-cleaning theme, q80, autonomous pick (no user) |
 | polish-cream-diy-vs-studio | 14615262 | https://www.pexels.com/photo/person-polishing-the-surface-of-a-car-14615262/ | Close-up car detailing process with polishing machine and reflective surface, q80 |
 | ppf-full-body-wrapping-guide | 20051464 | https://www.pexels.com/photo/men-holding-foil-in-garage-20051464/ | Two professionals applying protective film to a luxury car in a modern garage — exact PPF full-wrap match, q80, autonomous pick (scheduled run) |
+| ppf-pricing-georgia-2026 | 10126666 | https://www.pexels.com/photo/a-person-heating-the-wrap-of-a-car-10126666/ | Worker applying car wrap with heat gun — premium PPF install craft, q80, autonomous pick (scheduled run, no user) |
 
 ## Rule
 
