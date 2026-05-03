@@ -557,8 +557,11 @@ if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
   // Remove duplicate Tilda sticky CTA (ba-sticky-cta already provides this)
   mainContent = removeRecordBlock(mainContent, 'rec1859912571');
-  // Remove old contact blocks (unique ID per page — use content-based removal)
-  mainContent = removeBlockContaining(mainContent, '550 000 199');
+  // Remove old contact blocks (unique ID per page — use content-based removal).
+  // Skip blog body recs (ba-blog-content) — drafts may legitimately list the
+  // studio phone in the article CTA section, and we do not want to delete the
+  // whole article body just because the phone number appears in it.
+  mainContent = removeBlockContaining(mainContent, '550 000 199', 'ba-blog-content');
   // Remove "Error get alias" broken Tilda blocks
   mainContent = removeRecordBlock(mainContent, 'rec721622395');
   mainContent = removeRecordBlock(mainContent, 'rec589470557');

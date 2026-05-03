@@ -923,15 +923,37 @@ export function removeRecordBlock(content: string, recId: string): string {
  * Remove all rec blocks whose HTML contains the given search term.
  * Used when old contact block IDs differ per page (e.g. RU subpages).
  */
-export function removeBlockContaining(content: string, searchTerm: string): string {
+export function removeBlockContaining(
+  content: string,
+  searchTerm: string,
+  skipIfBlockContains?: string,
+): string {
   let result = content;
+  let searchFrom = 0;
   for (let i = 0; i < MAX_BLOCK_REMOVAL_ITERATIONS; i++) {
-    const termIdx = result.indexOf(searchTerm);
+    const termIdx = result.indexOf(searchTerm, searchFrom);
     if (termIdx < 0) break;
     const before = result.slice(0, termIdx);
     const recMatches = [...before.matchAll(/id="(rec\d+)"/g)];
     if (recMatches.length === 0) break;
     const recId = recMatches[recMatches.length - 1][1];
+    // Locate the t-rec block boundaries to optionally skip it
+    if (skipIfBlockContains) {
+      const idMarker = `id="${recId}"`;
+      const idIdx = result.indexOf(idMarker);
+      const blockStart = idIdx >= 0 ? result.lastIndexOf('<div', idIdx) : -1;
+      if (blockStart >= 0) {
+        const blockEnd = findRecBlockEnd(result, blockStart);
+        if (blockEnd > blockStart) {
+          const block = result.slice(blockStart, blockEnd);
+          if (block.includes(skipIfBlockContains)) {
+            // Skip this block — advance past the search term and continue
+            searchFrom = termIdx + searchTerm.length;
+            continue;
+          }
+        }
+      }
+    }
     const next = removeRecordBlock(result, recId);
     if (next === result) break;
     result = next;
