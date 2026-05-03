@@ -69,6 +69,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/top-11-reasons':                     'ppf-shield-wrapping',
   'blog/what-is-ppf-explainer':              'ppf-shield-wrapping',
   'blog/ppf-full-body-wrapping-guide':       'ppf-shield-wrapping',
+  'blog/ppf-pricing-georgia-2026':           'ppf-shield-wrapping',
   'blog/detailing-center-tbilisi':           'ppf-shield-wrapping',
   'blog/detailing-services-all-in-one':      'ppf-shield-wrapping',
   // Vinyl wrapping

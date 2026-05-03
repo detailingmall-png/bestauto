@@ -1362,6 +1362,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-pricing-georgia-2026',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'Стартовая позиция «полная смена цвета защитной плёнкой» в прайсе — от 9000 ₾',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'На машинах 0-2 года из салона полировка обычно не нужна',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2664,6 +2683,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-pricing-georgia-2026',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის',
+        originalPhrase: 'დამცავი ფირის',
+        contextQuote: '„დამცავი ფირის ფასი" სხვადასხვა სტუდიებს შორის პირდაპირი შედარება რთულია',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'სალონიდან 0-2 წლის მანქანებზე პოლირება ჩვეულებრივ არ არის საჭირო',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3914,6 +3952,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'and need for prior polishing.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-pricing-georgia-2026',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'Paint protection film',
+        originalPhrase: 'Paint protection film',
+        contextQuote: 'Paint protection film cost in Tbilisi is the most common consultation question',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'New cars from the dealer typically do not need polishing',
       },
     ],
   },

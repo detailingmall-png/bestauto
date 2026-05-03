@@ -55,6 +55,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'полировка авто',             // GSC: 4
     'полировка автомобиля',       // GSC: 2
     'полировка кузова',           // GSC: 1 (still valid HF)
+    'полировка',                  // standalone nominative — valid anchor
     'полировки',                  // inflected — valid in blog anchor context
     'полировка лкп',
     'абразивная полировка',
@@ -75,6 +76,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'оклейка автомобиля защитной пленкой',
     'защитная пленка',
     'защитной пленкой',           // inflected — valid in blog anchor context
+    'защитной плёнкой',           // inflected with ё — valid in blog anchor context
     'ppf пленка',
     'оклейка полиуретановой пленкой',
     'антигравийная пленка',
