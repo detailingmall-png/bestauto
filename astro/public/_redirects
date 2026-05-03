@@ -447,6 +447,8 @@
 /images/tild3739-6236-4334-b035-356631343832__screenshot_at_jun_06.png                 /images/car-soundproofing.webp         301
 /images/tild3966-6231-4039-b030-313865336536__shutterstock_1919208.jpg                 /images/vinyl-wrapping.jpg             301
 /images/tild3966-6231-4039-b030-313865336536__-__resize__20x__shutterstock_1919208.jpg  /images/vinyl-wrapping-thumb.jpg       301
+# car-soundproofing has no .png original (only .webp + thumb.png). HTML ref → webp.
+/images/car-soundproofing.png                                                          /images/car-soundproofing.webp         301
 
 # ── Trailing slash removal (catch-all, MUST be last) ────────────
 # With format:'file', CF Pages serves /slug from slug.html (200)
