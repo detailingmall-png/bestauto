@@ -404,6 +404,50 @@
 # ── Old Tilda CDN assets (if referenced externally) ──────────────
 # These come from static.tildacdn.com so no redirect needed here
 
+# ── Renamed hero images (May 2026) ──────────────────────────────
+# Old Tilda CDN names were tild<hash>__<sourcephoto>.<ext>; renamed to
+# clean <slug>.<ext> + <slug>-thumb.<ext>. 301s preserve external links
+# and Google Image cache references during indexing roll-over.
+/images/tild3330-6461-4635-a235-363331633632__depositphotos_199697.webp                /images/auto-glass-tinting.webp        301
+/images/tild3330-6461-4635-a235-363331633632__depositphotos_199697.jpg                 /images/auto-glass-tinting.jpg         301
+/images/tild3330-6461-4635-a235-363331633632__-__resize__20x__depositphotos_199697.webp  /images/auto-glass-tinting-thumb.webp  301
+/images/tild3330-6461-4635-a235-363331633632__-__resize__20x__depositphotos_199697.jpg   /images/auto-glass-tinting-thumb.jpg   301
+/images/tild3739-6236-4334-b035-356631343832__screenshot_at_jun_06.webp                /images/car-soundproofing.webp         301
+/images/tild3739-6236-4334-b035-356631343832__-__resize__20x__screenshot_at_jun_06.webp  /images/car-soundproofing-thumb.webp   301
+/images/tild3739-6236-4334-b035-356631343832__-__resize__20x__screenshot_at_jun_06.png   /images/car-soundproofing-thumb.png    301
+/images/tild3835-3463-4437-a632-363663316463__pxl_20240229_1012434.webp                /images/carwash.webp                   301
+/images/tild3835-3463-4437-a632-363663316463__pxl_20240229_1012434.jpg                 /images/carwash.jpg                    301
+/images/tild3835-3463-4437-a632-363663316463__-__resize__20x__pxl_20240229_1012434.webp  /images/carwash-thumb.webp             301
+/images/tild3835-3463-4437-a632-363663316463__-__resize__20x__pxl_20240229_1012434.jpg   /images/carwash-thumb.jpg              301
+/images/tild3933-3062-4732-b533-613731653363__shutterstock_1901463.webp                /images/ceramiccoating.webp            301
+/images/tild3933-3062-4732-b533-613731653363__shutterstock_1901463.jpg                 /images/ceramiccoating.jpg             301
+/images/tild3933-3062-4732-b533-613731653363__-__resize__20x__shutterstock_1901463.webp  /images/ceramiccoating-thumb.webp      301
+/images/tild3933-3062-4732-b533-613731653363__-__resize__20x__shutterstock_1901463.jpg   /images/ceramiccoating-thumb.jpg       301
+/images/tild3965-6631-4237-b133-313539363535__shutterstock_2193252.webp                /images/interior-cleaning.webp         301
+/images/tild3965-6631-4237-b133-313539363535__shutterstock_2193252.jpg                 /images/interior-cleaning.jpg          301
+/images/tild3965-6631-4237-b133-313539363535__-__resize__20x__shutterstock_2193252.webp  /images/interior-cleaning-thumb.webp   301
+/images/tild3965-6631-4237-b133-313539363535__-__resize__20x__shutterstock_2193252.jpg   /images/interior-cleaning-thumb.jpg    301
+/images/tild6335-3035-4564-a330-666332306664__shutterstock_1703968.webp                /images/polishing.webp                 301
+/images/tild6335-3035-4564-a330-666332306664__shutterstock_1703968.jpg                 /images/polishing.jpg                  301
+/images/tild6335-3035-4564-a330-666332306664__-__resize__20x__shutterstock_1703968.webp  /images/polishing-thumb.webp           301
+/images/tild6335-3035-4564-a330-666332306664__-__resize__20x__shutterstock_1703968.jpg   /images/polishing-thumb.jpg            301
+/images/tild3230-6231-4637-a264-333662636264__depositphotos_444297.webp                /images/ppf-shield-wrapping.webp       301
+/images/tild3230-6231-4637-a264-333662636264__depositphotos_444297.jpg                 /images/ppf-shield-wrapping.jpg        301
+/images/tild3230-6231-4637-a264-333662636264__-__resize__20x__depositphotos_444297.webp  /images/ppf-shield-wrapping-thumb.webp 301
+/images/tild3230-6231-4637-a264-333662636264__-__resize__20x__depositphotos_444297.jpg   /images/ppf-shield-wrapping-thumb.jpg  301
+/images/tild3966-6231-4039-b030-313865336536__vinyl_hero_v2.webp                       /images/vinyl-wrapping.webp            301
+/images/tild3966-6231-4039-b030-313865336536__vinyl_hero_v2.jpg                        /images/vinyl-wrapping.jpg             301
+/images/tild3966-6231-4039-b030-313865336536__-__resize__20x__vinyl_hero_v2.webp         /images/vinyl-wrapping-thumb.webp      301
+/images/tild3966-6231-4039-b030-313865336536__-__resize__20x__vinyl_hero_v2.jpg          /images/vinyl-wrapping-thumb.jpg       301
+/images/tild3062-3233-4266-b761-333133353336__remont_stekla.webp                       /images/windshield-repair.webp         301
+/images/tild3062-3233-4266-b761-333133353336__remont_stekla.jpeg                       /images/windshield-repair.jpeg         301
+/images/tild3062-3233-4266-b761-333133353336__-__resize__20x__remont_stekla.webp         /images/windshield-repair-thumb.webp   301
+/images/tild3062-3233-4266-b761-333133353336__-__resize__20x__remont_stekla.jpeg         /images/windshield-repair-thumb.jpeg   301
+# Phantom legacy refs (HTML pointed to these but files were already removed pre-rename)
+/images/tild3739-6236-4334-b035-356631343832__screenshot_at_jun_06.png                 /images/car-soundproofing.webp         301
+/images/tild3966-6231-4039-b030-313865336536__shutterstock_1919208.jpg                 /images/vinyl-wrapping.jpg             301
+/images/tild3966-6231-4039-b030-313865336536__-__resize__20x__shutterstock_1919208.jpg  /images/vinyl-wrapping-thumb.jpg       301
+
 # ── Trailing slash removal (catch-all, MUST be last) ────────────
 # With format:'file', CF Pages serves /slug from slug.html (200)
 # but /slug/ returns 404 — this catch-all redirects /slug/ → /slug
