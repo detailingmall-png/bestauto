@@ -19,6 +19,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | polish-cream-diy-vs-studio | 14615262 | https://www.pexels.com/photo/person-polishing-the-surface-of-a-car-14615262/ | Close-up car detailing process with polishing machine and reflective surface, q80 |
 | ppf-full-body-wrapping-guide | 20051464 | https://www.pexels.com/photo/men-holding-foil-in-garage-20051464/ | Two professionals applying protective film to a luxury car in a modern garage — exact PPF full-wrap match, q80, autonomous pick (scheduled run) |
 | ppf-pricing-georgia-2026 | 10126666 | https://www.pexels.com/photo/a-person-heating-the-wrap-of-a-car-10126666/ | Worker applying car wrap with heat gun — premium PPF install craft, q80, autonomous pick (scheduled run, no user) |
+| ppf-protection-levels-partial-full | 6025950 | https://www.pexels.com/photo/men-putting-white-cover-on-modern-car-6025950/ | Two installers applying white wrap on modern car — fits "PPF levels: partial vs full" theme, q80, autonomous pick (scheduled run, no user) |
 
 ## Rule
 
