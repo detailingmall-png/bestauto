@@ -1381,6 +1381,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-protection-levels-partial-full',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной пленкой',
+        originalPhrase: 'защитной пленкой',
+        contextQuote: 'Оклейка защитной пленкой авто — это не одна услуга и не один пакет',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'при необходимости лёгкая полировка',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2702,6 +2721,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-protection-levels-partial-full',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის გადაკვრა',
+        originalPhrase: 'დამცავი ფირის გადაკვრა',
+        contextQuote: 'დამცავი ფირის გადაკვრა — ეს არც ერთი სერვისია და არც ერთი პაკეტი',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'საჭიროების შემთხვევაში მსუბუქი პოლირება',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -3971,6 +4009,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'New cars from the dealer typically do not need polishing',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-protection-levels-partial-full',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'Paint protection film',
+        originalPhrase: 'Paint protection film',
+        contextQuote: 'Paint protection film is not one service or one package',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'matte film that polishing cannot remove',
       },
     ],
   },
