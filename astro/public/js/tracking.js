@@ -214,7 +214,19 @@
       return;
     }
 
-    // --- WhatsApp ---
+    // --- WhatsApp floating widget (div onclick="baWaOpen('995...',...)") ---
+    // Floating widget studios are <div class="ba-wa-studio" onclick="...">, not <a href>.
+    // baWaOpen() opens wa.me via window.open(), so the closest('a[href*="wa.me"]')
+    // selector below misses them. Read the phone number from the onclick attribute.
+    var waStudio = e.target.closest('.ba-wa-studio[onclick*="baWaOpen"]');
+    if (waStudio) {
+      var oc = waStudio.getAttribute('onclick') || '';
+      var waStudioEvt = oc.indexOf('299') !== -1 ? 'whatsapp_click_299' : 'whatsapp_click_199';
+      send(waStudioEvt, { source: 'wa_widget' });
+      return;
+    }
+
+    // --- WhatsApp links (e.g. #ba-contacts <a href="https://wa.me/...">) ---
     var waLink = e.target.closest('a[href*="wa.me"]');
     if (waLink) {
       var waHref = waLink.getAttribute('href');
