@@ -10,7 +10,7 @@ primary_hf_en: "ppf vs ceramic vs vinyl, paint protection comparison"
 secondary_links:
   - "/ceramiccoating"
   - "/vinyl-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#28"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"
