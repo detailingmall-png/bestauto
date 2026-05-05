@@ -1886,5 +1886,29 @@
     "title": "PPF packages — from anti-chrome to full body wrap",
     "lang": "en",
     "slug": "blog/ppf-protection-levels-partial-full"
+  },
+  "920260505001": {
+    "file": "page920260505001.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-vs-ceramic-vs-vinyl",
+    "path": "/ru/blog/ppf-vs-ceramic-vs-vinyl",
+    "title": "PPF, керамика или винил — тройное сравнение по 7 параметрам",
+    "lang": "ru",
+    "slug": "blog/ppf-vs-ceramic-vs-vinyl"
+  },
+  "920260505002": {
+    "file": "page920260505002.html",
+    "url": "https://bestauto.ge/blog/ppf-vs-ceramic-vs-vinyl",
+    "path": "/blog/ppf-vs-ceramic-vs-vinyl",
+    "title": "PPF vs კერამიკა vs ვინილი — სამი ტექნოლოგიის შედარება",
+    "lang": "ka",
+    "slug": "blog/ppf-vs-ceramic-vs-vinyl"
+  },
+  "920260505003": {
+    "file": "page920260505003.html",
+    "url": "https://bestauto.ge/en/blog/ppf-vs-ceramic-vs-vinyl",
+    "path": "/en/blog/ppf-vs-ceramic-vs-vinyl",
+    "title": "PPF vs ceramic vs vinyl — three-way comparison",
+    "lang": "en",
+    "slug": "blog/ppf-vs-ceramic-vs-vinyl"
   }
 }

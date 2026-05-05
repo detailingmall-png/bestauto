@@ -75,6 +75,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'оклейка авто пленкой',       // GSC: 2 (shared w/ vinyl, dominant intent here)
     'оклейка автомобиля защитной пленкой',
     'защитная пленка',
+    'защитная плёнка',            // ё-variant nominative — valid in blog anchor context
     'защитной пленкой',           // inflected — valid in blog anchor context
     'защитной плёнкой',           // inflected with ё — valid in blog anchor context
     'ppf пленка',

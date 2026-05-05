@@ -1400,6 +1400,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-vs-ceramic-vs-vinyl',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'полировка кузова — от 690 ₾, керамическое покрытие всего авто — от 500 ₾',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная плёнка',
+        originalPhrase: 'защитная плёнка',
+        contextQuote: 'PPF (защитная плёнка)',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2740,6 +2759,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ppf-vs-ceramic-vs-vinyl',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'ძარის პოლირება — 690 ₾-დან, მთელი ავტოს კერამიკული საფარი — 500 ₾-დან',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირი',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'სუსტად. ვინილის ფირი 2-3-ჯერ უფრო თხელია PPF-ზე',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4028,6 +4066,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'matte film that polishing cannot remove',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-vs-ceramic-vs-vinyl',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'Budget-friendly (body polishing from 690 ₾, full-car ceramic coating from 500 ₾)',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl wrap',
+        originalPhrase: 'vinyl wrap',
+        contextQuote: 'The same applies to vinyl wrap — it gets compared to PPF on a regular basis',
       },
     ],
   },
