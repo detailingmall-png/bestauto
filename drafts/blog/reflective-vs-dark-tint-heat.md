@@ -8,7 +8,7 @@ primary_hf_ru: "атермальная тонировка, атермалка, �
 primary_hf_ka: "ამრეკლი ფირი, ატერმალური ფირი"
 primary_hf_en: "reflective tint athermal, heat rejection film"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#51"
   - gsc: "Downloads/gsc_16months.csv"

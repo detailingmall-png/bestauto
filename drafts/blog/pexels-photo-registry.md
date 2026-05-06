@@ -21,6 +21,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | ppf-pricing-georgia-2026 | 10126666 | https://www.pexels.com/photo/a-person-heating-the-wrap-of-a-car-10126666/ | Worker applying car wrap with heat gun — premium PPF install craft, q80, autonomous pick (scheduled run, no user) |
 | ppf-protection-levels-partial-full | 6025950 | https://www.pexels.com/photo/men-putting-white-cover-on-modern-car-6025950/ | Two installers applying white wrap on modern car — fits "PPF levels: partial vs full" theme, q80, autonomous pick (scheduled run, no user) |
 | ppf-vs-ceramic-vs-vinyl | 20051463 | https://www.pexels.com/photo/men-holding-and-spraying-foil-near-cars-20051463/ | Two professionals applying protective film to luxury car in modern garage — sibling shot to 20051464, fits PPF/ceramic/vinyl three-way comparison theme, q80, autonomous pick (scheduled run, no user) |
+| reflective-vs-dark-tint-heat | 20522462 | https://www.pexels.com/photo/man-with-dreadlocks-working-by-car-window-20522462/ | Tint installer applying film to a vehicle window — exact craft match for reflective-vs-dark tint article, q80, autonomous pick (scheduled run, no user) |
 
 ## Rule
 
