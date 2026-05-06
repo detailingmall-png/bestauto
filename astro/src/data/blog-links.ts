@@ -1287,6 +1287,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/reflective-vs-dark-tint-heat',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'Классическая бюджетная тонировка — это цветной полиэфирный полимер с растворённым в нём тёмным красителем.',
+      },
+    ],
+  },
+  {
     article: 'blog/interior-ceramic-detail',
     links: [
       {
