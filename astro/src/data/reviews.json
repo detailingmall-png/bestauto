@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 179,
-  "fetchedAt": "2026-05-05T06:20:14.613Z",
+  "fetchedAt": "2026-05-06T06:33:03.168Z",
   "reviews": [
     {
       "authorName": "Crash",
@@ -35,15 +35,15 @@
         "en": "Thank you, I liked it, everything was done perfectly 10/10"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1776799189,
       "profileUrl": "https://www.google.com/maps/contrib/113783958904843180274/reviews",
       "text": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "jean pierre nehme",
