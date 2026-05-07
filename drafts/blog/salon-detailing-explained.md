@@ -8,7 +8,7 @@ primary_hf_ru: "детейлинг салона авто, детейлинг с�
 primary_hf_ka: "სალონის დეტეილინგი, მანქანის სალონის დეტეილინგი"
 primary_hf_en: "interior detailing, car interior detailing"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#80"
   - gsc: "Downloads/gsc_16months.csv"

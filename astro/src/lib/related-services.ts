@@ -98,6 +98,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/engine-room-cleaning':          'interior-cleaning',
   'blog/interior-disinfection-ozone':   'interior-cleaning',
   'blog/chem-cleaning-tbilisi-prices':  'interior-cleaning',
+  'blog/salon-detailing-explained':     'interior-cleaning',
   // Polishing
   'blog/polish-cream-diy-vs-studio':   'polishing',
   // Car wash

@@ -1337,6 +1337,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/salon-detailing-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Глубокая химчистка тканевых поверхностей.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Чем детейлинг салона отличается от химчистки?',
+      },
+    ],
+  },
+  {
     article: 'blog/chem-cleaning-tbilisi-prices',
     links: [
       {
@@ -2696,6 +2715,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/salon-detailing-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ქსოვილიანი ზედაპირების ღრმა ქიმწმენდა.',
+      },
+    ],
+  },
+  {
     article: 'blog/chem-cleaning-tbilisi-prices',
     links: [
       {
@@ -4021,6 +4052,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'Pet owners and smokers — ozone with every dry cleaning, i.e. every 6-12 months.',
+      },
+    ],
+  },
+  {
+    article: 'blog/salon-detailing-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'car interior detailing',
+        originalPhrase: 'car interior detailing',
+        contextQuote: 'Below — the stages that make up full car interior detailing, how it differs from a standard dry cleaning, and who actually needs this service.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'A full detail runs 1-2 hours longer than dry cleaning; the products used are formulations that would not hold up at a regular wash.',
       },
     ],
   },
