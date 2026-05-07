@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 179,
-  "fetchedAt": "2026-05-06T06:33:03.168Z",
+  "fetchedAt": "2026-05-07T06:39:48.611Z",
   "reviews": [
     {
       "authorName": "Crash",
@@ -15,15 +15,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -169,7 +169,7 @@
       "authorName": "vako gurashvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWb0dfXeNtYQJ237o4Y8UxWldmJ2LCmOHx4AYCYXKnRHPAIqd4Q=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "8 months ago",
+      "relativeTime": "9 months ago",
       "text": "ძალიან კარგი გარემოა, ნებისმიერ კითხვაზე აქვთ ამომწურავი  პასუხები, ასევე მაღალი ხარისხის მომსახურება, 100% რეკომენდაცია ჩემგან",
       "time": 1754381049,
       "profileUrl": "https://www.google.com/maps/contrib/110315020163169452249/reviews",
@@ -179,9 +179,9 @@
         "en": "It's a very good environment, they have comprehensive answers to any questions, as well as high-quality service, 100% recommendation from me"
       },
       "relativeTimes": {
-        "ka": "8 თვის წინ",
-        "en": "8 months ago",
-        "ru": "8 месяцев назад"
+        "ka": "9 თვის წინ",
+        "en": "9 months ago",
+        "ru": "9 месяцев назад"
       },
       "originalLang": "ka"
     },
