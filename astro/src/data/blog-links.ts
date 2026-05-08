@@ -1356,6 +1356,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/salon-polish-interior-detail',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'то же самое, что и полировка кузова, только внутри',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'после химчистки салон «пахнет как новый»',
+      },
+    ],
+  },
+  {
     article: 'blog/chem-cleaning-tbilisi-prices',
     links: [
       {
@@ -2727,6 +2746,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/salon-polish-interior-detail',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'სალონის ქიმწმენდა მუშაობს დაბინძურებასთან',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'გაპრიალება',
+        originalPhrase: 'გაპრიალება',
+        contextQuote: 'ამ სტადიაზე გაპრიალება მუშაობს',
+      },
+    ],
+  },
+  {
     article: 'blog/chem-cleaning-tbilisi-prices',
     links: [
       {
@@ -4071,6 +4109,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'A full detail runs 1-2 hours longer than dry cleaning; the products used are formulations that would not hold up at a regular wash.',
+      },
+    ],
+  },
+  {
+    article: 'blog/salon-polish-interior-detail',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'is the same as body polishing, only inside',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'after dry cleaning the interior',
       },
     ],
   },

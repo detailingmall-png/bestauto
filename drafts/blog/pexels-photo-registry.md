@@ -23,6 +23,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | ppf-vs-ceramic-vs-vinyl | 20051463 | https://www.pexels.com/photo/men-holding-and-spraying-foil-near-cars-20051463/ | Two professionals applying protective film to luxury car in modern garage — sibling shot to 20051464, fits PPF/ceramic/vinyl three-way comparison theme, q80, autonomous pick (scheduled run, no user) |
 | reflective-vs-dark-tint-heat | 20522462 | https://www.pexels.com/photo/man-with-dreadlocks-working-by-car-window-20522462/ | Tint installer applying film to a vehicle window — exact craft match for reflective-vs-dark tint article, q80, autonomous pick (scheduled run, no user) |
 | salon-detailing-explained | 5213023 | https://www.pexels.com/photo/a-car-interior-with-white-leather-seats-5213023/ | Crisp white leather interior of luxury car with modern dashboard — premium aesthetic for "interior detailing — full service" theme, q80, user-picked (option 9 of 10 candidates), file: salon-detailing-explained-hero-v2.webp |
+| salon-polish-interior-detail | 4218867 | https://www.pexels.com/photo/crop-person-wiping-modern-car-panel-4218867/ | Person polishing right-hand-drive car panel with blue fiber cloth — exact craft match for interior polishing article (focus on plastic panel restoration), q80, autonomous pick (scheduled run, no user) |
 
 ## Rule
 
