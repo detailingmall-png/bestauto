@@ -1469,6 +1469,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/smoker-cabin-nicotine-removal',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'обычная химчистка снимает только поверхность',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'в сильную категорию химчистки (от 550 ₾)',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2859,6 +2878,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/smoker-cabin-nicotine-removal',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'მწეველის სალონის ქიმწმენდა — ცალკე კატეგორია სამუშაოა',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ჩვეულებრივი ქიმწმენდა მხოლოდ ზედაპირს მოცდის',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4204,6 +4242,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'vinyl wrap',
         originalPhrase: 'vinyl wrap',
         contextQuote: 'The same applies to vinyl wrap — it gets compared to PPF on a regular basis',
+      },
+    ],
+  },
+  {
+    article: 'blog/smoker-cabin-nicotine-removal',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'regular dry cleaning only reaches the surface',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'not reachable by dry cleaning alone',
       },
     ],
   },

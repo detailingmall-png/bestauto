@@ -1982,5 +1982,29 @@
     "title": "Car interior polishing — what's covered and how it runs",
     "lang": "en",
     "slug": "blog/salon-polish-interior-detail"
+  },
+  "920260509001": {
+    "file": "page920260509001.html",
+    "url": "https://bestauto.ge/ru/blog/smoker-cabin-nicotine-removal",
+    "path": "/ru/blog/smoker-cabin-nicotine-removal",
+    "title": "Химчистка машины курильщика — никотин и запах табака",
+    "lang": "ru",
+    "slug": "blog/smoker-cabin-nicotine-removal"
+  },
+  "920260509002": {
+    "file": "page920260509002.html",
+    "url": "https://bestauto.ge/blog/smoker-cabin-nicotine-removal",
+    "path": "/blog/smoker-cabin-nicotine-removal",
+    "title": "მწეველის მანქანის ქიმწმენდა — ნიკოტინი და თამბაქოს სუნი",
+    "lang": "ka",
+    "slug": "blog/smoker-cabin-nicotine-removal"
+  },
+  "920260509003": {
+    "file": "page920260509003.html",
+    "url": "https://bestauto.ge/en/blog/smoker-cabin-nicotine-removal",
+    "path": "/en/blog/smoker-cabin-nicotine-removal",
+    "title": "Smoker car cabin cleaning — nicotine and tobacco smell",
+    "lang": "en",
+    "slug": "blog/smoker-cabin-nicotine-removal"
   }
 }
