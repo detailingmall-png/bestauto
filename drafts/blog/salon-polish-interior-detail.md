@@ -9,7 +9,7 @@ primary_hf_ka: "სალონის გაპრიალება, სალ�
 primary_hf_en: "car interior polishing, interior detail polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: published
+status: rejected
 sources:
   - roadmap: "docs/content-roadmap.md#3"
   - gsc: "Downloads/gsc_16months.csv"

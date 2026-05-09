@@ -102,7 +102,6 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/smoker-cabin-nicotine-removal': 'interior-cleaning',
   // Polishing
   'blog/polish-cream-diy-vs-studio':   'polishing',
-  'blog/salon-polish-interior-detail': 'polishing',
   // Car wash
   'blog/2-phase-vs-3-phase-wash':      'carwash',
   'blog/contactless-vs-hand-wash':     'carwash',
