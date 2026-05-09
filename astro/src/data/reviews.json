@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 179,
-  "fetchedAt": "2026-05-08T06:00:49.727Z",
+  "totalReviews": 180,
+  "fetchedAt": "2026-05-09T06:20:04.779Z",
   "reviews": [
+    {
+      "authorName": "Nita Marsagishvili",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUZ-z-WCe0QWtQgFVJpudjkFlq9akX-u_qTa7YpEcAOkO3eHgf9=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "У них очень хорошее обслуживание и внимательный персонал. Цена определенно соответствует качеству. Рекомендую ❤️✌️",
+        "ka": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
+        "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ka",
+      "time": 1778245426,
+      "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
+      "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Crash",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV4ODvCP7cfigJwlYHvbYOwDjOgpARDu_sQ28XhtLP_qmY4Ep9B=s128-c0x00000000-cc-rp-mo",
