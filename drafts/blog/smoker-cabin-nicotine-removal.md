@@ -8,7 +8,7 @@ primary_hf_ru: "химчистка салона курильщика, запах
 primary_hf_ka: "მწეველის მანქანის ქიმწმენდა, სიგარეტის სუნი სალონში"
 primary_hf_en: "smoker car cabin cleaning, cigarette smell in car"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#82"
   - gsc: "Downloads/gsc_16months.csv"

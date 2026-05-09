@@ -24,6 +24,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | reflective-vs-dark-tint-heat | 20522462 | https://www.pexels.com/photo/man-with-dreadlocks-working-by-car-window-20522462/ | Tint installer applying film to a vehicle window — exact craft match for reflective-vs-dark tint article, q80, autonomous pick (scheduled run, no user) |
 | salon-detailing-explained | 5213023 | https://www.pexels.com/photo/a-car-interior-with-white-leather-seats-5213023/ | Crisp white leather interior of luxury car with modern dashboard — premium aesthetic for "interior detailing — full service" theme, q80, user-picked (option 9 of 10 candidates), file: salon-detailing-explained-hero-v2.webp |
 | salon-polish-interior-detail | 4218867 | https://www.pexels.com/photo/crop-person-wiping-modern-car-panel-4218867/ | Person polishing right-hand-drive car panel with blue fiber cloth — exact craft match for interior polishing article (focus on plastic panel restoration), q80, autonomous pick (scheduled run, no user) |
+| smoker-cabin-nicotine-removal | 5233285 | https://www.pexels.com/photo/a-person-deep-cleaning-a-car-seat-5233285/ | Hands using vacuum nozzle to deeply clean fabric car seat — direct visualisation of upholstery deep extraction (the central technique referenced throughout the smoker-cabin chem-cleaning article), q80, autonomous pick (scheduled run, no user) |
 
 ## Rule
 
