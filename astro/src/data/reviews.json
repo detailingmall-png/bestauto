@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 180,
-  "fetchedAt": "2026-05-09T06:20:04.779Z",
+  "totalReviews": 181,
+  "fetchedAt": "2026-05-10T06:36:17.419Z",
   "reviews": [
+    {
+      "authorName": "Ani Jibladze",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIU16ASQEqhPjLODClBC6Jis-8658AeARnzzXoen8xhvoVUNQ=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Отличное обслуживание, они приехали раньше, чем я ожидал, и, что самое важное, выполнили работу очень качественно.",
+        "ka": "ძალიან კარგი მომსხაურებ, იმაზე ადრე მორჩნენ ვიდრე მითხრეს და რაც მთავარია ძალიან მაღალი ხარისხით შეასრულეს სამუშაო",
+        "en": "Very good service, they arrived earlier than I expected and most importantly they did a very high quality job."
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ka",
+      "time": 1778327090,
+      "profileUrl": "https://www.google.com/maps/contrib/101838248298657605851/reviews",
+      "text": "ძალიან კარგი მომსხაურებ, იმაზე ადრე მორჩნენ ვიდრე მითხრეს და რაც მთავარია ძალიან მაღალი ხარისხით შეასრულეს სამუშაო",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Nita Marsagishvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUZ-z-WCe0QWtQgFVJpudjkFlq9akX-u_qTa7YpEcAOkO3eHgf9=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Crash",
@@ -109,7 +129,7 @@
       "authorName": "Николай жидков",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWh3rs9B1iQpr5_O9pZ3HgnNzVlAeAJc7788W7qM5YdXmkq5ln5zw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "3 months ago",
+      "relativeTime": "4 months ago",
       "text": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин. Ребята — настоящие профессионалы и просто классные люди! Делают всё на высшем уровне, результат всегда «супер». Что особенно радует — это индивидуальный подход к каждому клиенту и внимание к деталям. Однозначно рекомендую!\n\nI’ve been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and just great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail. Highly recommended!",
       "time": 1767770321,
       "profileUrl": "https://www.google.com/maps/contrib/115733878456850340696/reviews",
@@ -119,9 +139,9 @@
         "en": "I've been using Best Auto for a long time and have trusted them with dozens of my cars. These guys are true professionals and simply great people! They do everything at the highest level, and the results are always superb. What's especially pleasing is their individual approach to each client and attention to detail. I definitely recommend them!\n\nI've been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and simply great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to each client and attention to detail. Highly recommended!"
       },
       "relativeTimes": {
-        "ru": "3 месяца назад",
-        "en": "3 months ago",
-        "ka": "3 თვის წინ"
+        "ru": "4 месяца назад",
+        "en": "4 months ago",
+        "ka": "4 თვის წინ"
       },
       "originalLang": "ru"
     },
