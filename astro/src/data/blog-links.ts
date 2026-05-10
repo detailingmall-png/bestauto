@@ -1469,6 +1469,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/steam-headlight-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'абразивная полировка',
+        contextQuote: 'Паровая обработка и абразивная полировка фар решают одну задачу — возвращают прозрачность — но работают с разными степенями повреждения',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'Работает она так же, как полировка кузова, только материал не лак, а пластик',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная плёнка',
+        originalPhrase: 'защитная плёнка',
+        contextQuote: 'ручная мойка раз в 2-3 недели, защитная плёнка на фары (от 350 ₾ в прайсе)',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2859,6 +2885,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/steam-headlight-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'გამჭვირვალობა ბრუნდება ფინიშური პოლირების ეტაპზე',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'რა აგრძელებს ეფექტს: ხელით რეცხვა ყოველ 2-3 კვირაში, დამცავი ფირი ფარებზე (350 ₾-დან პრაისში)',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4204,6 +4249,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'not reachable by dry cleaning alone',
+      },
+    ],
+  },
+  {
+    article: 'blog/steam-headlight-polishing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Steam polishing heats the polycarbonate to the softening point of its top micrometre with vapour from a specific solvent (usually dichloromethane).',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'studio headlight polishing from 150 ₾ costs less than one new lens after a failed DIY',
       },
     ],
   },

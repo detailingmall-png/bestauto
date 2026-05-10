@@ -9,7 +9,7 @@ primary_hf_ka: "ფარების პოლირება"
 primary_hf_en: "headlight polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#4"
   - gsc: "Downloads/gsc_16months.csv"
