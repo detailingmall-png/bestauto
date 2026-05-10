@@ -25,7 +25,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | salon-detailing-explained | 5213023 | https://www.pexels.com/photo/a-car-interior-with-white-leather-seats-5213023/ | Crisp white leather interior of luxury car with modern dashboard — premium aesthetic for "interior detailing — full service" theme, q80, user-picked (option 9 of 10 candidates), file: salon-detailing-explained-hero-v2.webp |
 | salon-polish-interior-detail | 4218867 | https://www.pexels.com/photo/crop-person-wiping-modern-car-panel-4218867/ | WITHDRAWN 2026-05-08 — article retracted, 301 redirect to /polishing. Pexels ID kept reserved to avoid re-pick. |
 | smoker-cabin-nicotine-removal | 5233285 | https://www.pexels.com/photo/a-person-deep-cleaning-a-car-seat-5233285/ | Hands using vacuum nozzle to deeply clean fabric car seat — direct visualisation of upholstery deep extraction (the central technique referenced throughout the smoker-cabin chem-cleaning article), q80, autonomous pick (scheduled run, no user) |
-| steam-headlight-polishing | — | — | Hero pre-prepared by earlier session (1920x1080 WebP, q80, 190KB). Pexels source ID not recorded in artifacts available at publish time; do not re-pick this slug. |
+| steam-headlight-polishing | 6873190 | https://www.pexels.com/photo/front-headlight-of-a-black-car-6873190/ | Tima Miroshnichenko — luxury car polished black headlights close-up, q80, user-picked (option 2 of 5 candidates) replacing earlier hero. |
 
 ## Rule
 
