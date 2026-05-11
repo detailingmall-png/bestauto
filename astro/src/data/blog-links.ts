@@ -1299,6 +1299,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/tint-60-percent-legal-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'тонировка задних боковых и заднего стекла не требует светопропускания',
+      },
+    ],
+  },
+  {
     article: 'blog/interior-ceramic-detail',
     links: [
       {
@@ -2718,6 +2730,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'მინის დაბურვა',
         originalPhrase: 'მინის დაბურვა',
         contextQuote: 'რა ღირს საქარე მინის დაბურვა?',
+      },
+    ],
+  },
+  {
+    article: 'blog/tint-60-percent-legal-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მინების დაბურვა',
+        originalPhrase: 'მინების დაბურვა',
+        contextQuote: 'შეიძლება მხოლოდ უკანა მინების დაბურვა?',
       },
     ],
   },
@@ -4268,6 +4292,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'studio headlight polishing from 150 ₾ costs less than one new lens after a failed DIY',
+      },
+    ],
+  },
+  {
+    article: 'blog/tint-60-percent-legal-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'window tint',
+        contextQuote: 'Is 60% window tint legal in Georgia?',
       },
     ],
   },
