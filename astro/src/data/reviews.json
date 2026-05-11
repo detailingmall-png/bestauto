@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 181,
-  "fetchedAt": "2026-05-10T06:36:17.419Z",
+  "totalReviews": 182,
+  "fetchedAt": "2026-05-11T07:48:18.816Z",
   "reviews": [
+    {
+      "authorName": "Dmitry Teshev",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjU-LKzCsYWJgoLsIsZ74NJJu7-3pE4lcM66enlp2A2QpsXAKhBY=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "⭐⭐⭐⭐⭐ Отличная детейлинг-услуга!\nЯ в полном восторге от полного детейлинга моей машины. Команда проделала выдающуюся работу.\nСалон безупречно чистый и обновленный, каждая деталь тщательно очищена и защищена. Профессиональная, кропотливая работа от начала до конца.\nНастоятельно рекомендую это место — моя машина выглядит лучше, чем новая! Обязательно вернусь.\nСпасибо! 🚀",
+        "ka": "⭐⭐⭐⭐⭐ შესანიშნავი დეტალიზაცია!\nძალიან მოხიბლული ვარ ჩემი მანქანის სრული დეტალებით. გუნდმა შესანიშნავი სამუშაო შეასრულა.\nინტერიერი უნაკლო და განახლებულია, ყველა დეტალი საგულდაგულოდ გაწმენდილი და დაცულია. პროფესიონალური, ზედმიწევნითი სამუშაო თავიდან ბოლომდე.\nგირჩევთ ამ ადგილს - ჩემი მანქანა ახალზე უკეთ გამოიყურება! აუცილებლად დავბრუნდები.\nგმადლობთ! 🚀",
+        "en": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "en",
+      "time": 1778445441,
+      "profileUrl": "https://www.google.com/maps/contrib/113531890558736511832/reviews",
+      "text": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Ani Jibladze",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIU16ASQEqhPjLODClBC6Jis-8658AeARnzzXoen8xhvoVUNQ=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "Very good service, they arrived earlier than I expected and most importantly they did a very high quality job."
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "ka",
       "time": 1778327090,
       "profileUrl": "https://www.google.com/maps/contrib/101838248298657605851/reviews",
       "text": "ძალიან კარგი მომსხაურებ, იმაზე ადრე მორჩნენ ვიდრე მითხრეს და რაც მთავარია ძალიან მაღალი ხარისხით შეასრულეს სამუშაო",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Nita Marsagishvili",
@@ -35,15 +55,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "a day ago"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "Crash",
