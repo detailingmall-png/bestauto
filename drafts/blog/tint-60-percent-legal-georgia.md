@@ -8,7 +8,7 @@ primary_hf_ru: "тонировка 60 процентов, разрешенный
 primary_hf_ka: "მინების დამუქება კანონი, მინების დაბურვა, შუშების დაბურვა"
 primary_hf_en: "60% window tint legal Georgia, car window tint"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#49"
   - gsc: "Downloads/gsc_16months.csv"
