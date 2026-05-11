@@ -28,7 +28,7 @@ sources:
 
 # Тонировка 60% в Грузии: что разрешено законом в 2026 году
 
-Правила тонировки в Грузии построены вокруг одного показателя — VLT, пропускаемости видимого света. От этой цифры зависит, разрешена ли плёнка на конкретном стекле или нет, и именно её проверяют на техосмотре тонометром. В 2026 году норма на передние боковые и лобовое стекло — не менее 70% светопропускания, на задние — без ограничений. То есть «60% тонировка» в обиходе (когда имеют в виду 60% затемнения) означает плёнку, пропускающую 40% света — и она для передних стёкол вне закона. Ниже — как реально работает измерение, почему большинство споров про «60%» возникает из-за путаницы между двумя способами записи процента, и что делать, если инспектор не согласен с вашим показанием.
+Правила тонировки в Грузии построены вокруг одного показателя — VLT, пропускаемости видимого света. От этой цифры зависит, разрешена ли плёнка на конкретном стекле или нет, и именно её проверяют на техосмотре тонометром. В 2026 году норма на передние боковые и лобовое стекло — не менее 70% светопропускания, на задние боковые и заднее стекло — не менее 25% VLT (то есть до 75% затемнения по обиходной шкале). То есть «60% тонировка» в обиходе (когда имеют в виду 60% затемнения) означает плёнку, пропускающую 40% света — на передних стёклах она вне закона, на задних — в пределах нормы. Ниже — как реально работает измерение, почему большинство споров про «60%» возникает из-за путаницы между двумя способами записи процента, и что делать, если инспектор не согласен с вашим показанием.
 
 ## Как в Грузии считают процент тонировки
 
@@ -44,11 +44,11 @@ sources:
 
 - **Переднее лобовое** — минимум 70% VLT. Любая плёнка, снижающая видимость ниже этого порога — нарушение. Исключение — солнцезащитная полоса по верхней кромке (anti-sun strip), о ней отдельно.
 - **Передние боковые** (водителя и переднего пассажира) — минимум 70% VLT. Те же правила, что для лобового: инспектор обязан видеть водителя с улицы.
-- **Задние боковые** — без ограничений. Можно ставить любое затемнение, хоть 5% VLT.
-- **Заднее стекло** — без ограничений, аналогично задним боковым.
+- **Задние боковые** — минимум 25% VLT (до 75% затемнения по обиходной шкале). Стандартные плёнки 35-50% VLT в норму укладываются, «privacy glass» 5% VLT — нарушение.
+- **Заднее стекло** — те же 25% VLT минимум, что и для задних боковых.
 - **Панорамная крыша** — без ограничений.
 
-Практическое следствие: легально тонировать переднюю группу (лобовое + две боковые) можно только очень светлой плёнкой 70% и выше. На рынке такие варианты существуют — обычно это атермальные плёнки без выраженного затемнения, которые работают не за счёт цвета, а за счёт отражения инфракрасного излучения. Задние боковые и заднее стекло можно тонировать как угодно, включая 5% «privacy glass» стиль.
+Практическое следствие: легально тонировать переднюю группу (лобовое + две боковые) можно только очень светлой плёнкой 70% и выше. На рынке такие варианты существуют — обычно это атермальные плёнки без выраженного затемнения, которые работают не за счёт цвета, а за счёт отражения инфракрасного излучения. Задние боковые и заднее стекло можно тонировать значительно темнее — вплоть до 25% VLT (75% затемнения), но полный «privacy glass» 5% VLT уже за границей нормы.
 
 ## Как измеряют на техосмотре
 
@@ -64,7 +64,7 @@ sources:
 6. Лобовое стекло меряется через опущенное пассажирское с внутренней стороны, либо через козырёк
 7. При показании ниже 70% VLT — нарушение фиксируется в акте
 
-Задние стёкла на техосмотре в Грузии не меряют — для них нет ограничений. Это единственная возможность легально ездить с затемнённым задом: тонировка задних боковых и заднего стекла не требует светопропускания.
+На практике основное внимание инспектора — передняя группа, и многие техосмотры задние стёкла не трогают вовсе. Но формально норма 25% VLT действует и на них: если инспектор всё же приложит тонометр и плёнка покажет ниже 25% (например, полный «privacy glass» 5%), это нарушение наравне с превышением порога на передних.
 
 ## Штрафы и что происходит при нарушении
 
@@ -98,11 +98,11 @@ sources:
 
 ### Разрешена ли тонировка 60% в Грузии?
 
-Если имеется в виду VLT 60% (пропускание света) — нет, для передних стёкол запрещена. Закон требует минимум 70% VLT на лобовом и передних боковых. Если имеется в виду «60% затемнения» (VLT 40%) — тем более запрещена. На задние боковые и заднее стекло ограничений нет: там можно ставить любое затемнение.
+Если имеется в виду VLT 60% (пропускание света) — на передних лобовом и боковых нет, закон требует минимум 70% VLT. На задних можно: норма там 25% VLT и выше, плёнка 60% VLT в неё укладывается с большим запасом. Если имеется в виду «60% затемнения» (VLT 40%) — на передних запрещена, на задних разрешена (40% VLT > порога 25%). «Privacy glass» 5% VLT — нарушение и на передних, и на задних.
 
 ### Можно ли тонировать только задние стёкла?
 
-Да, это самая распространённая легальная конфигурация. Задние боковые и заднее стекло — без ограничений VLT. Можно ставить хоть «privacy glass» (VLT 5%). Базовая цена тонировки задних боковых — от 130 ₾, заднего стекла — от 160 ₾; финальная сумма на осмотре в зависимости от типа плёнки и количества стёкол. Подробнее — на странице [тонировки стёкол](/ru/auto-glass-tinting).
+Да, это самая распространённая легальная конфигурация. На задние боковые и заднее стекло норма мягче — минимум 25% VLT (до 75% затемнения). Стандартные плёнки 35-50% VLT проходят без проблем, но полный «privacy glass» 5% — уже вне закона. Базовая цена тонировки задних боковых — от 130 ₾, заднего стекла — от 160 ₾; финальная сумма на осмотре в зависимости от типа плёнки и количества стёкол. Подробнее — на странице [тонировки стёкол](/ru/auto-glass-tinting).
 
 ### Как проверяют VLT на техосмотре?
 
@@ -118,17 +118,17 @@ sources:
 
 ## Заключение
 
-Грузинский закон про тонировку в 2026 году остаётся одним из самых мягких в регионе: задние стёкла без ограничений, передние — минимум 70% VLT. Главная ошибка — путать VLT (пропускание) с процентом затемнения; «60% тонировка» в каталоге плёнок обычно означает VLT 40% и на передней группе незаконна.
+Грузинский закон про тонировку в 2026 году остаётся одним из самых мягких в регионе: на задние стёкла минимум 25% VLT (то есть до 75% затемнения), на передние — минимум 70% VLT. Главная ошибка — путать VLT (пропускание) с процентом затемнения; «60% тонировка» в каталоге плёнок обычно означает VLT 40% и на передней группе незаконна, на задней — в норме.
 
-Чтобы не иметь проблем на техосмотре, перед установкой просите у студии протокол замера тонометром — цифра на бумажке должна быть 70% или выше для каждого из трёх передних стёкол. На задние можно ставить любое затемнение, включая атермалку с инфракрасной защитой или тёмную декоративную плёнку для приватности салона.
+Чтобы не иметь проблем на техосмотре, перед установкой просите у студии протокол замера тонометром — цифра на бумажке должна быть 70% или выше для каждого из трёх передних стёкол. На задних достаточно остаться выше порога 25% VLT — это покрывает практически все стандартные плёнки и атермалки, исключая разве что самые тёмные «privacy glass»-варианты.
 
 **Ключевые выводы:**
 
-- На передних лобовом и боковых стёклах в Грузии минимум 70% VLT; задние — без ограничений
+- На передних лобовом и боковых стёклах в Грузии минимум 70% VLT; на задних — минимум 25% VLT (до 75% затемнения)
 - Разница между «тонировкой 60%» в каталоге и VLT 60% на приборе — не одно и то же
 - Штраф за нарушение небольшой, но проваленный техосмотр и отказ страховой — ощутимые издержки
 - Профессиональные студии дают протокол замеров после установки — его стоит хранить
-- Для законной тонировки передней группы подходят только очень светлые плёнки (70%+) или атермалка
+- Для законной тонировки передней группы подходят только очень светлые плёнки (70%+) или атермалка; на задних стандартные плёнки 35-50% VLT работают, но «privacy glass» 5% — вне закона
 
 ## CTA
 
@@ -155,7 +155,7 @@ sources:
 
 # 60% დაბურვა საქართველოში: რა ნებადართულია კანონით 2026 წელს
 
-მინების დამუქება კანონი საქართველოში ერთი მაჩვენებლის გარშემოა აწყობილი — VLT, ხილული სინათლის გამტარობისა. ამ ციფრით წყდება, დაშვებულია კონკრეტულ მინაზე ფირი თუ არა, და ზუსტად მას ზომავენ ტექდათვალიერებაზე ტონომეტრით. 2026 წელს ნორმა წინა გვერდითა და საქარე მინაზე არანაკლებ 70% სინათლის გამტარობისაა, უკანა მინებზე — შეზღუდვის გარეშე. ანუ „60% დაბურვა" სასაუბრო ენაში (როცა 60% მუქობს ამბობენ) გულისხმობს ფირს, რომელიც სინათლის 40%-ს ატარებს — და ის წინა მხრიდან უკანონოა. ქვემოთ — როგორ მუშაობს ზომვა რეალურად, რატომ ჩნდება 60%-ზე დავის უმრავლესობა ორი ჩაწერის მეთოდის ერთმანეთში არევიდან, და რა გააკეთო, თუ ინსპექტორი შენი ჩვენებით არ დარჩა კმაყოფილი.
+მინების დამუქება კანონი საქართველოში ერთი მაჩვენებლის გარშემოა აწყობილი — VLT, ხილული სინათლის გამტარობისა. ამ ციფრით წყდება, დაშვებულია კონკრეტულ მინაზე ფირი თუ არა, და ზუსტად მას ზომავენ ტექდათვალიერებაზე ტონომეტრით. 2026 წელს ნორმა წინა გვერდითა და საქარე მინაზე არანაკლებ 70% სინათლის გამტარობისაა, უკანა გვერდითა და უკანა მინაზე — არანაკლებ 25% VLT (ანუ მუქობა 75%-მდე საყოფაცხოვრებო შკალით). ანუ „60% დაბურვა" სასაუბრო ენაში (როცა 60% მუქობას ამბობენ) გულისხმობს ფირს, რომელიც სინათლის 40%-ს ატარებს — წინა მინებზე ის უკანონოა, უკანაზე კი ნორმის ფარგლებშია. ქვემოთ — როგორ მუშაობს ზომვა რეალურად, რატომ ჩნდება 60%-ზე დავის უმრავლესობა ორი ჩაწერის მეთოდის ერთმანეთში არევიდან, და რა გააკეთო, თუ ინსპექტორი შენი ჩვენებით არ დარჩა კმაყოფილი.
 
 ## როგორ ითვლიან საქართველოში დაბურვის პროცენტს
 
@@ -171,11 +171,11 @@ sources:
 
 - **წინა საქარე მინა** — მინიმუმ 70% VLT. ნებისმიერი ფირი, რომელიც ხედვას ამ ზღვარზე დაბლა აშცდრცონებს — დარღვევაა. გამონაკლისი — მზის საწინააღმდეგო ზოლი ზედა კიდეზე, მასზე ცალკე.
 - **წინა გვერდითა** (მძღოლისა და წინა მგზავრის) — მინიმუმ 70% VLT. ზუსტად იგივე წესები რაც საქარესთვის: ინსპექტორი ვალდებულია ქუჩიდან მძღოლის ხილვა.
-- **უკანა გვერდითა** — შეზღუდვის გარეშე. შეიძლება ნებისმიერი მუქობა, თუნდაც 5% VLT.
-- **უკანა მინა** — შეზღუდვის გარეშე, იგივე როგორც უკანა გვერდითები.
+- **უკანა გვერდითა** — მინიმუმ 25% VLT (მუქობა 75%-მდე საყოფაცხოვრებო შკალით). სტანდარტული ფირები 35-50% VLT ნორმაში ჯდება, ხოლო „privacy glass" 5% VLT — დარღვევაა.
+- **უკანა მინა** — იგივე 25% VLT მინიმუმი, როგორც უკანა გვერდითებზე.
 - **პანორამული სახურავი** — შეზღუდვის გარეშე.
 
-პრაქტიკული შედეგი: წინა ჯგუფის (საქარე + ორი გვერდითი) ლეგალურად დაბურვა შესაძლებელია მხოლოდ ძალიან ღია 70%+ ფირით. ბაზარზე ასეთი ვარიანტი არსებობს — ჩვეულებრივ ესაა ატერმალური ფირი გამოხატული მუქობის გარეშე, რომელიც არ მუშაობს ფერით, არამედ ინფრაწითელი გამოსხივების ასახვით. უკანა გვერდითები და უკანა მინა შეიძლება ნებისმიერად დაიბუროს, 5%-იანი „privacy glass" სტილიც.
+პრაქტიკული შედეგი: წინა ჯგუფის (საქარე + ორი გვერდითი) ლეგალურად დაბურვა შესაძლებელია მხოლოდ ძალიან ღია 70%+ ფირით. ბაზარზე ასეთი ვარიანტი არსებობს — ჩვეულებრივ ესაა ატერმალური ფირი გამოხატული მუქობის გარეშე, რომელიც არ მუშაობს ფერით, არამედ ინფრაწითელი გამოსხივების ასახვით. უკანა გვერდითები და უკანა მინა შეიძლება გაცილებით უფრო მუქად დაიბუროს — 25% VLT-მდე (75% მუქობამდე), მაგრამ სრული „privacy glass" 5% VLT უკვე ნორმის გარეთაა.
 
 ## როგორ იზომება ტექდათვალიერებაზე
 
@@ -191,7 +191,7 @@ sources:
 6. საქარე მინა იზომება ჩამოშვებული მგზავრის მინიდან შიდა მხრიდან, ან ვიზორის გავლით
 7. 70% VLT-ზე დაბალი ჩვენებისას — დარღვევა ფიქსირდება აქტში
 
-უკანა მინებს საქართველოში ტექდათვალიერებაზე არ ზომავენ — მათზე შეზღუდვა არ არის. ესაა ერთადერთი გზა, რომ დამუქებული უკნიანი მანქანით ლეგალურად იმოძრაო: უკანა გვერდითებისა და უკანა მინის დაბურვა არ მოითხოვს სინათლის გამტარობას.
+პრაქტიკაში ინსპექტორის ძირითადი ყურადღება წინა ჯგუფზეა, და ბევრი ტექდათვალიერება უკანა მინებს საერთოდ არ ეხება. მაგრამ ფორმალურად ნორმა 25% VLT მათზეც მოქმედებს: თუ ინსპექტორი მაინც მიადო ტონომეტრი და ფირი 25%-ზე ნაკლებს უჩვენებს (მაგალითად, სრული „privacy glass" 5%) — ეს დარღვევაა წინა მინებზე ბარიერის გადახედვის ანალოგიურად.
 
 ## ჯარიმები და რა ხდება დარღვევისას
 
@@ -225,11 +225,11 @@ sources:
 
 ### ნებადართულია 60% დაბურვა საქართველოში?
 
-თუ იგულისხმება VLT 60% (სინათლის გამტარობა) — არა, წინა მინებზე აკრძალულია. კანონი მოითხოვს მინიმუმ 70% VLT საქარესა და წინა გვერდითებზე. თუ იგულისხმება „60% მუქობა" (VLT 40%) — მით უმეტეს აკრძალულია. უკანა გვერდითებსა და უკანა მინაზე VLT შეზღუდვა არ არის: იქ შეიძლება ნებისმიერი მუქობა.
+თუ იგულისხმება VLT 60% (სინათლის გამტარობა) — წინა საქარესა და გვერდითა მინებზე არა, კანონი მოითხოვს მინიმუმ 70% VLT-ს. უკანაზე კი შეიძლება: იქ ნორმა 25% VLT-დან იწყება, ფირი 60% VLT დიდი მარაგით ჯდება. თუ იგულისხმება „60% მუქობა" (VLT 40%) — წინაზე აკრძალულია, უკანაზე ნებადართულია (40% VLT > 25% ბარიერი). „Privacy glass" 5% VLT — დარღვევაა როგორც წინა, ასევე უკანა მინებზე.
 
 ### შეიძლება მხოლოდ უკანა მინების დაბურვა?
 
-დიახ, ესაა ყველაზე გავრცელებული ლეგალური კონფიგურაცია. უკანა გვერდითები და უკანა მინა — VLT შეზღუდვის გარეშე. შეიძლება თუნდაც „privacy glass" (VLT 5%). საბაზო ფასი უკანა გვერდითების დაბურვაზე — 130 ₾-დან, უკანა მინაზე — 160 ₾-დან; საბოლოო თანხა დათვალიერებაზე ფირის ტიპისა და მინების რაოდენობის მიხედვით. უფრო დაწვრილებით — [მინების დაბურვის](/auto-glass-tinting) გვერდზე.
+დიახ, ესაა ყველაზე გავრცელებული ლეგალური კონფიგურაცია. უკანა გვერდითა და უკანა მინაზე ნორმა უფრო რბილია — მინიმუმ 25% VLT (75%-მდე მუქობა). სტანდარტული ფირები 35-50% VLT უპრობლემოდ გადის, მაგრამ სრული „privacy glass" 5% — უკვე ნორმის გარეთაა. საბაზო ფასი უკანა გვერდითების დაბურვაზე — 130 ₾-დან, უკანა მინაზე — 160 ₾-დან; საბოლოო თანხა დათვალიერებაზე ფირის ტიპისა და მინების რაოდენობის მიხედვით. უფრო დაწვრილებით — [მინების დაბურვის](/auto-glass-tinting) გვერდზე.
 
 ### როგორ მოწმდება VLT ტექდათვალიერებაზე?
 
@@ -245,17 +245,17 @@ sources:
 
 ## დასკვნა
 
-საქართველოს კანონი ფირის დაბურვაზე 2026 წელს რჩება რეგიონში ერთ-ერთ ყველაზე მსუბუქად: უკანა მინები შეზღუდვის გარეშე, წინა — მინიმუმ 70% VLT. მთავარი შეცდომაა VLT-ის (გამტარობა) და დამუქების პროცენტის აღრევა; „60% დაბურვა" ფირების კატალოგში ჩვეულებრივ ნიშნავს VLT 40%-ს და წინა ჯგუფზე არაა ლეგალური.
+საქართველოს კანონი ფირის დაბურვაზე 2026 წელს რჩება რეგიონში ერთ-ერთ ყველაზე მსუბუქად: უკანა მინებზე მინიმუმ 25% VLT (ანუ 75%-მდე მუქობა), წინა — მინიმუმ 70% VLT. მთავარი შეცდომაა VLT-ის (გამტარობა) და დამუქების პროცენტის აღრევა; „60% დაბურვა" ფირების კატალოგში ჩვეულებრივ ნიშნავს VLT 40%-ს — წინა ჯგუფზე ლეგალური არ არის, უკანაზე კი ნორმის ფარგლებშია.
 
-ტექდათვალიერებაზე პრობლემების არიდებისთვის, დაყენებამდე სთხოვეთ სტუდიას ტონომეტრით ზომვის პროტოკოლი — ფურცელზე ციფრი უნდა იყოს 70% ან მეტი სამიდან თითო წინა მინაზე. უკანაზე შეიძლება ნებისმიერი დაბურვა, ინფრაწითლისგან დამცავი ატერმალური ფირიდან მუქი დეკორატიული ფირამდე სალონის კონფიდენციალურობისთვის.
+ტექდათვალიერებაზე პრობლემების არიდებისთვის, დაყენებამდე სთხოვეთ სტუდიას ტონომეტრით ზომვის პროტოკოლი — ფურცელზე ციფრი უნდა იყოს 70% ან მეტი სამიდან თითო წინა მინაზე. უკანაზე საკმარისია ბარიერის — 25% VLT — გადახედვის თავიდან არიდება: პრაქტიკულად ყველა სტანდარტული ფირი და ატერმალური ფირი ამ ბარიერს უპრობლემოდ აკმაყოფილებს, გარდა ყველაზე მუქი „privacy glass"-ვარიანტებისა.
 
 **ძირითადი დასკვნები:**
 
-- წინა საქარესა და გვერდითა მინებზე საქართველოში მინიმუმ 70% VLT; უკანა — შეზღუდვის გარეშე
+- წინა საქარესა და გვერდითა მინებზე საქართველოში მინიმუმ 70% VLT; უკანაზე — მინიმუმ 25% VLT (75%-მდე მუქობა)
 - განსხვავება „დაბურვა 60%"-სა კატალოგში და VLT 60%-ს შორის ხელსაწყოზე — არ არის იგივე
 - ჯარიმა მცირეა, მაგრამ ჩაგდებული ტექდათვალიერება და დაზღვევის უარი — შესამჩნევი ხარჯები
 - პროფესიული სტუდიები იძლევიან ზომვის პროტოკოლს დაყენების შემდეგ — ღირს მისი შენახვა
-- ლეგალური დაბურვისთვის წინა ჯგუფზე გამოდგება მხოლოდ ძალიან ღია ფირი (70%+) ან ატერმალური
+- ლეგალური დაბურვისთვის წინა ჯგუფზე გამოდგება მხოლოდ ძალიან ღია ფირი (70%+) ან ატერმალური; უკანაზე სტანდარტული 35-50% VLT ფირები მუშაობს, მაგრამ „privacy glass" 5% — ნორმის გარეთაა
 
 ## CTA
 
@@ -282,7 +282,7 @@ sources:
 
 # 60% Window Tint in Georgia: What 2026 Law Actually Allows
 
-Window tint rules in Georgia, the country, are built around one number — VLT, visible light transmission. That figure decides whether a film is legal on a specific window, and it is exactly what inspectors measure at technical inspection with a tint meter. In 2026 the requirement on front side windows and the windshield is at least 70% VLT; on rear windows there are no limits. So "60% tint" in everyday speech (meaning 60% of darkening) describes a film that transmits 40% of light — and that is illegal on the front group. Below: how measurement actually works in Tbilisi, Georgia, why most arguments about "60%" come from confusing two ways of writing the percentage, and what to do if the inspector disputes your reading.
+Window tint rules in Georgia, the country, are built around one number — VLT, visible light transmission. That figure decides whether a film is legal on a specific window, and it is exactly what inspectors measure at technical inspection with a tint meter. In 2026 the requirement on front side windows and the windshield is at least 70% VLT; on rear side and rear windows it is at least 25% VLT (i.e. up to 75% darkening on the everyday scale). So "60% tint" in everyday speech (meaning 60% of darkening) describes a film that transmits 40% of light — illegal on the front group, but within the limit on the rear. Below: how measurement actually works in Tbilisi, Georgia, why most arguments about "60%" come from confusing two ways of writing the percentage, and what to do if the inspector disputes your reading.
 
 ## How tint percentage is counted in Georgia
 
@@ -298,11 +298,11 @@ Georgian legislation separates windows by their role in the driver's field of vi
 
 - **Windshield** — minimum 70% VLT. Any film that drops visibility below this threshold is a violation. Exception: an anti-sun strip along the top edge, covered separately.
 - **Front side windows** (driver and front passenger) — minimum 70% VLT. Same rules as the windshield: the inspector must be able to see the driver from the street.
-- **Rear side windows** — no limit. Any darkness is fine, even 5% VLT.
-- **Rear window** — no limit, same as rear sides.
+- **Rear side windows** — minimum 25% VLT (up to 75% darkening on the everyday scale). Standard 35-50% VLT films fit comfortably inside the limit; "privacy glass" at 5% VLT is a violation.
+- **Rear window** — same 25% VLT floor as the rear sides.
 - **Panoramic roof** — no limit.
 
-Practical consequence: legally tinting the front group (windshield plus two sides) only works with very light 70%+ film. The market has those — typically athermal films without visible darkening that operate on infrared reflection rather than colour. Rear sides and the rear window can be tinted any way, including 5% "privacy glass".
+Practical consequence: legally tinting the front group (windshield plus two sides) only works with very light 70%+ film. The market has those — typically athermal films without visible darkening that operate on infrared reflection rather than colour. Rear sides and the rear window can be tinted significantly darker — down to 25% VLT (75% darkening) — but full "privacy glass" at 5% VLT is already past the legal floor.
 
 ## How the tint meter works at inspection
 
@@ -318,7 +318,7 @@ Standard procedure at Georgian technical inspection:
 6. The windshield is measured from the passenger's lowered window on the inside, or through the visor area
 7. Reading below 70% VLT on either — violation recorded
 
-Rear windows are not measured at inspection in Georgia — there are no limits to enforce. That is the only way to legally drive with dark rear glass: rear side and rear window tinting has no transmission requirement.
+In practice the inspector's main focus is the front group, and many Georgian inspections never touch the rear windows. But formally the 25% VLT floor still applies to them: if an inspector does clip on the meter and the film reads below 25% (e.g. full "privacy glass" at 5%), that is a violation on par with crossing the 70% threshold on the front.
 
 ## Fines and what happens on violation
 
@@ -352,11 +352,11 @@ Professional tinting studios in Tbilisi, Georgia measure the glass with a tint m
 
 ### Is 60% window tint legal in Georgia?
 
-If 60% refers to VLT (light transmission) — no, it is not legal on front windows. The law requires at least 70% VLT on the windshield and front sides. If 60% refers to "60% darkening" (VLT 40%) — even more so illegal. On rear side and rear windows there are no VLT limits: any darkness is allowed.
+If 60% refers to VLT (light transmission) — not on the front windshield and front sides, where the law requires at least 70% VLT. On the rear it is fine: the floor there is 25% VLT, and a 60% VLT film clears it with plenty of margin. If 60% refers to "60% darkening" (VLT 40%) — illegal on the front, legal on the rear (40% VLT > the 25% floor). "Privacy glass" at 5% VLT is a violation on both groups.
 
 ### Can you tint only the rear windows?
 
-Yes, this is the most common legal configuration. Rear sides and the rear window — no VLT limits. Anything, including "privacy glass" (VLT 5%), is fine. Rear side tinting starts from 130 ₾, the rear window from 160 ₾; the final figure is set at inspection depending on film type and number of panels. Details on the [window tinting](/en/auto-glass-tinting) service page.
+Yes, this is the most common legal configuration. The rear side and rear windows have a softer rule — minimum 25% VLT (up to 75% darkening). Standard 35-50% VLT films pass without issue, but full "privacy glass" at 5% is already outside the limit. Rear side tinting starts from 130 ₾, the rear window from 160 ₾; the final figure is set at inspection depending on film type and number of panels. Details on the [window tinting](/en/auto-glass-tinting) service page.
 
 ### How is VLT verified at inspection?
 
@@ -372,17 +372,17 @@ As of writing, the 70% VLT rule on the front group has been in force for several
 
 ## Conclusion
 
-Georgian tinting law in 2026 remains among the lighter ones in the region: rear windows with no limit, front group with at least 70% VLT. The main mistake is mixing up VLT (transmission) with darkening percent; "60% tint" on a catalogue label usually means VLT 40% and is illegal on the front group.
+Georgian tinting law in 2026 remains among the lighter ones in the region: rear windows have a minimum of 25% VLT (i.e. up to 75% darkening), the front group requires at least 70% VLT. The main mistake is mixing up VLT (transmission) with darkening percent; "60% tint" on a catalogue label usually means VLT 40% and is illegal on the front group but legal on the rear.
 
-To avoid inspection trouble, ask the studio for a tint-meter protocol after install — the number on paper should be 70% or higher on each of the three front windows. On the rear, any darkness works, from infrared-blocking athermal to dark decorative film for privacy.
+To avoid inspection trouble, ask the studio for a tint-meter protocol after install — the number on paper should be 70% or higher on each of the three front windows. On the rear, anything above the 25% VLT floor works — which covers virtually every standard film and athermal except the darkest "privacy glass" variants.
 
 **Key takeaways:**
 
-- Windshield and front side windows in Georgia require a minimum of 70% VLT; rear windows have no limit
+- Windshield and front side windows in Georgia require a minimum of 70% VLT; rear windows have a minimum of 25% VLT (up to 75% darkening)
 - "60% tint" in a catalogue is not the same as VLT 60% on the meter
 - The fine itself is small, but a failed inspection plus insurance refusal are meaningful costs
 - A professional studio issues a measurement protocol after install — worth keeping
-- Legal front-group tinting is only possible with very light film (70%+) or clear athermal
+- Legal front-group tinting is only possible with very light film (70%+) or clear athermal; on the rear standard 35-50% VLT films work, but "privacy glass" at 5% is outside the law
 
 ## CTA
 

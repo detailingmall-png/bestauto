@@ -1306,7 +1306,7 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
         target: '/auto-glass-tinting',
         anchor: 'тонировка',
         originalPhrase: 'тонировка',
-        contextQuote: 'тонировка задних боковых и заднего стекла не требует светопропускания',
+        contextQuote: 'у меня 60% тонировка, это же почти 70%, ничего страшного',
       },
     ],
   },
