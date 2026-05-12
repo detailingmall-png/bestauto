@@ -86,6 +86,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/front-windshield-tint-rules':         'auto-glass-tinting',
   'blog/reflective-vs-dark-tint-heat':        'auto-glass-tinting',
   'blog/tint-60-percent-legal-georgia':       'auto-glass-tinting',
+  'blog/tint-ceramic-vs-atermal-vs-dyed':     'auto-glass-tinting',
   // Windshield repair
   'blog/chip-repair-process-step-by-step': 'windshield-repair',
   'blog/efficiency-of-windshield-repair': 'windshield-repair',
