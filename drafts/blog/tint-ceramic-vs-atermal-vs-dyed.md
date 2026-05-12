@@ -8,7 +8,8 @@ primary_hf_ru: "типы тонировочных плёнок, керамиче
 primary_hf_ka: "ფირის ტიპები, მინების დაბურვა"
 primary_hf_en: "ceramic athermal dyed tint, tint film types"
 secondary_links: []
-status: drafted
+status: published
+published: 2026-05-12
 sources:
   - roadmap: "docs/content-roadmap.md#53"
   - gsc: "Downloads/gsc_16months.csv"
