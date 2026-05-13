@@ -1519,6 +1519,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/tint-percentage-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'Плюсы: законная тонировка передней группы, блокировка УФ и части ИК-спектра',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'атермальная тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'Внешне — классическая «немецкая» тонировка, законно и стильно.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4316,6 +4335,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'window tint',
         originalPhrase: 'window tint',
         contextQuote: 'Is 60% window tint legal in Georgia?',
+      },
+    ],
+  },
+  {
+    article: 'blog/tint-percentage-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'car window tint',
+        originalPhrase: 'window tint',
+        contextQuote: 'Choosing a window tint percentage is not about aesthetics or fashion, but about the trade-off between visibility, cabin heat and privacy.',
       },
     ],
   },
