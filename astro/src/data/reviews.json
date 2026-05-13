@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 182,
-  "fetchedAt": "2026-05-12T06:40:24.674Z",
+  "fetchedAt": "2026-05-13T06:51:24.670Z",
   "reviews": [
     {
       "authorName": "Dmitry Teshev",
@@ -15,15 +15,15 @@
         "en": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀"
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
       },
       "originalLang": "en",
       "time": 1778445441,
       "profileUrl": "https://www.google.com/maps/contrib/113531890558736511832/reviews",
       "text": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀",
-      "relativeTime": "a day ago"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "Ani Jibladze",
@@ -35,15 +35,15 @@
         "en": "Very good service, they arrived earlier than I expected and most importantly they did a very high quality job."
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ka",
       "time": 1778327090,
       "profileUrl": "https://www.google.com/maps/contrib/101838248298657605851/reviews",
       "text": "ძალიან კარგი მომსხაურებ, იმაზე ადრე მორჩნენ ვიდრე მითხრეს და რაც მთავარია ძალიან მაღალი ხარისხით შეასრულეს სამუშაო",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Nita Marsagishvili",
@@ -55,15 +55,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "Crash",
@@ -95,15 +95,15 @@
         "en": "Thank you, I liked it, everything was done perfectly 10/10"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "ka",
       "time": 1776799189,
       "profileUrl": "https://www.google.com/maps/contrib/113783958904843180274/reviews",
       "text": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "jean pierre nehme",
