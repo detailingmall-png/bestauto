@@ -8,7 +8,7 @@ primary_hf_ru: "тонировка стекол, процент тонировк
 primary_hf_ka: "დაბურვის პროცენტი, მინების დაბურვა"
 primary_hf_en: "tint percentage, car window tint"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#50"
   - gsc: "Downloads/gsc_16months.csv"

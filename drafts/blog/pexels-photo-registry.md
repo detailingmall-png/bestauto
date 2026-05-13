@@ -28,6 +28,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 | steam-headlight-polishing | 6873190 | https://www.pexels.com/photo/front-headlight-of-a-black-car-6873190/ | Tima Miroshnichenko — luxury car polished black headlights close-up, q80, user-picked (option 2 of 5 candidates) replacing earlier hero, file: steam-headlight-polishing-hero-v2.webp (renamed for CDN cache-bust). |
 | tint-60-percent-legal-georgia | 20036216 | https://www.pexels.com/photo/windows-of-black-mercedes-car-20036216/ | Rahib Hamidov — close-up of tinted windows on black Mercedes by a calm riverbank, direct visualisation of car window tint (the article's central VLT-law topic), q80, autonomous pick (scheduled run, no user). |
 | tint-ceramic-vs-atermal-vs-dyed | 5229535 | https://www.pexels.com/photo/stylish-total-black-sport-car-near-modern-building-5229535/ | Shiny black coupe with tinted windows near modern building — premium dark glass aesthetic, distinct from prior TIN picks (20036216 Mercedes-by-river, 20522462 installer shot), q80, autonomous pick (scheduled run, no user). |
+| tint-percentage-explained | 26691322 | https://www.pexels.com/photo/photo-of-a-black-mercedes-benz-s-class-26691322/ | Mike Bird — elegant black Mercedes-Benz S-Class with dark tinted windows in modern urban setting, distinct from prior TIN picks (20036216 Mercedes-by-river, 5229535 coupe-by-building, 20522462 installer, 2622124 windshield interior), q80, autonomous pick (scheduled run, no user). |
 
 ## Rule
 
