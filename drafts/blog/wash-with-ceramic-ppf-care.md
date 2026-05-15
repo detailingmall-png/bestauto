@@ -9,7 +9,7 @@ primary_hf_ka: "მანქანის რეცხვა კერამი�
 primary_hf_en: "washing ceramic coated car PPF, car wash tbilisi"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#75"
   - gsc: "Downloads/gsc_16months.csv"

@@ -1538,6 +1538,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wash-with-ceramic-ppf-care',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'Мойка авто с керамикой и с защитной плёнкой PPF отличается от мойки обычной машины',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'бесконтактная мойка',
+        originalPhrase: 'бесконтактная мойка',
+        contextQuote: 'Между детейлинг-мойками допустима быстрая бесконтактная мойка (только пена и ополаскивание)',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -2956,6 +2975,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'დამცავი ფირი',
         originalPhrase: 'დამცავი ფირი',
         contextQuote: 'რა აგრძელებს ეფექტს: ხელით რეცხვა ყოველ 2-3 კვირაში, დამცავი ფირი ფარებზე (350 ₾-დან პრაისში)',
+      },
+    ],
+  },
+  {
+    article: 'blog/wash-with-ceramic-ppf-care',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'დამცავი ფირი PPF — პოლიურეთანის ფენაა 150-200 მიკრონი სისქით ზედა ჰიდროფობური საფარით',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'მანქანის რეცხვა',
+        contextQuote: 'PPF-ის დადგმის შემდეგ პირველი 7-10 დღე მანქანის რეცხვა კატეგორიულად არ შეიძლება',
       },
     ],
   },

@@ -110,6 +110,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/2-phase-vs-3-phase-wash':      'carwash',
   'blog/contactless-vs-hand-wash':     'carwash',
   'blog/detailing-wash-explained':     'carwash',
+  'blog/wash-with-ceramic-ppf-care':   'carwash',
   // Soundproofing
   'blog/soundproofing-process':    'car-soundproofing',
   'blog/noisemakers-and-wayouts':  'car-soundproofing',
