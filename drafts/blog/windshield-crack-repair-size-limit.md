@@ -8,7 +8,8 @@ primary_hf_ru: "ремонт трещин лобового стекла, тре�
 primary_hf_ka: "საქარე მინის ბზარის შეკეთება"
 primary_hf_en: "windshield crack repair"
 secondary_links: []
-status: drafted
+status: published
+published: 2026-05-16
 sources:
   - roadmap: "docs/content-roadmap.md#62"
   - gsc: "Downloads/gsc_16months.csv"
