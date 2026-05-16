@@ -92,6 +92,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/chip-repair-process-step-by-step': 'windshield-repair',
   'blog/efficiency-of-windshield-repair': 'windshield-repair',
   'blog/replace-or-repair':              'windshield-repair',
+  'blog/windshield-crack-repair-size-limit': 'windshield-repair',
   'blog/windshield-repair-benefits':     'windshield-repair',
   // Interior cleaning
   'blog/car-interior-detailing-basics': 'interior-cleaning',

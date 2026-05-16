@@ -792,6 +792,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/windshield-crack-repair-size-limit',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт стекол авто',
+        originalPhrase: 'ремонт стёкол авто',
+        contextQuote: 'записаться на ремонт стёкол авто можно через сайт',
+      },
+    ],
+  },
+  {
     article: 'blog/chip-repair-process-step-by-step',
     links: [
       {
@@ -2282,6 +2294,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/windshield-crack-repair-size-limit',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ბზარის შეკეთება',
+        originalPhrase: 'ბზარის შეკეთება',
+        contextQuote: 'ბზარის შეკეთებას აქვს მკაფიო ლიმიტები',
+      },
+    ],
+  },
+  {
     article: 'blog/chip-repair-process-step-by-step',
     links: [
       {
@@ -3733,6 +3757,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car glass repair',
         originalPhrase: 'restores glass strength',
         contextQuote: 'Polymer resin under vacuum with UV curing restores glass strength in the damaged zone',
+      },
+    ],
+  },
+  {
+    article: 'blog/windshield-crack-repair-size-limit',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'windshield repair',
+        contextQuote: 'The line between windshield repair and replacement isn',
       },
     ],
   },

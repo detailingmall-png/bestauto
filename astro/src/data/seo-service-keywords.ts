@@ -191,6 +191,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'საქარე მინების აღდგენა',      // GSC: 21 (plural variant)
     'მანქანის მინის აღდგენა',      // GSC: 9
     'საქარე მინის შეკეთება',       // GSC: 6
+    'ბზარის შეკეთება',             // inflected — valid anchor (crack-repair phrasing in body text)
     // შუშის აღდგენა — REJECTED: too generic per competitor scan
   ],
   '/carwash': [
