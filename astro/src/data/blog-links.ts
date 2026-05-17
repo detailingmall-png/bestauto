@@ -1209,6 +1209,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/wrap-vs-paint-cost-lifetime',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'оклейка винилом',
+        originalPhrase: 'оклейка винилом',
+        contextQuote: 'Что дешевле — оклейка винилом или перекраска?',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -2718,6 +2730,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/wrap-vs-paint-cost-lifetime',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირი',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'რომლითაც ვინილის ფირი და გადაღებვა პრინციპულად',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'პოლიურეთანის ფირი',
+        contextQuote: 'ესაა პოლიურეთანის ფირი დაახლოებით 200 მიკრონის',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4148,6 +4179,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car ppf',
         originalPhrase: 'PPF',
         contextQuote: 'Temporary colour change with no consequences for the body — vinyl. Protection plus new colour together — PPF. Permanent change with acceptance of VIN complications at resale — repaint.',
+      },
+    ],
+  },
+  {
+    article: 'blog/wrap-vs-paint-cost-lifetime',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl wrap',
+        originalPhrase: 'vinyl wrap',
+        contextQuote: 'where vinyl wrap and repainting differ fundamentally',
       },
     ],
   },
