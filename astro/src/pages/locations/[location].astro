@@ -36,7 +36,7 @@ const seoHead = [
   generateBreadcrumbSchema(baseSlug, lang, pageTitle),
   generateLocationSchema(locationSlug, lang),
   generateLocationFaqSchema(locationSlug, lang),
-  generateOrganizationSchema(),
+  generateOrganizationSchema(lang),
 ].join('');
 
 const nav = getNavBlock(lang);
