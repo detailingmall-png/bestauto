@@ -9,7 +9,7 @@ primary_hf_ka: "ფირის გადაკვრა, ფერადი ფ
 primary_hf_en: "wrap vs paint, vinyl wrap, car wrap"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#43"
   - gsc: "Downloads/gsc_16months.csv"
