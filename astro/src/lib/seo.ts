@@ -16,6 +16,10 @@ const BASE_URL = 'https://bestauto.ge';
 const LOGO_URL = `${BASE_URL}/images/tild6165-3264-4934-b662-663336336636__noroot.webp`;
 const BRAND_IMAGE_URL = `${BASE_URL}/images/tild6366-6231-4164-b161-326530383331__img_2535_1jpg_1.webp`;
 
+// Postal codes per studio location
+const POSTAL_SABURTALO = '0179'; // Anna Politkovskaya St. 51, Saburtalo district
+const POSTAL_GLDANI = '0167';    // Guramishvili Ave. 78, Gldani district
+
 const ORG_DESCRIPTION: Readonly<Record<string, string>> = {
   ka: 'BESTAUTO — პრემიუმ დეტეილინგ სტუდია თბილისში. PPF ფირი, კერამიკული საფარი, პოლირება, ვინილი, ტონირება, ქიმწმენდა. ორი ლოკაცია, 4.9★ Google რეიტინგი.',
   ru: 'BESTAUTO — премиум детейлинг-студия в Тбилиси. PPF, керамика, полировка, винил, тонировка, химчистка. Две локации, 4.9★ на Google.',
@@ -358,6 +362,7 @@ export function generateReviewSchema(lang: string = 'en'): string {
       '@type': 'PostalAddress',
       streetAddress: 'Anna Politkovskaya St. 51',
       addressLocality: 'Tbilisi',
+      postalCode: POSTAL_SABURTALO,
       addressCountry: 'GE',
     },
     geo: {
@@ -388,6 +393,7 @@ export function generateReviewSchema(lang: string = 'en'): string {
           '@type': 'PostalAddress',
           streetAddress: 'Guramishvili Ave. 78',
           addressLocality: 'Tbilisi',
+          postalCode: POSTAL_GLDANI,
           addressCountry: 'GE',
         },
         telephone: '+995550000299',
@@ -400,6 +406,7 @@ export function generateReviewSchema(lang: string = 'en'): string {
           '@type': 'PostalAddress',
           streetAddress: 'Anna Politkovskaya St. 51',
           addressLocality: 'Tbilisi',
+          postalCode: POSTAL_SABURTALO,
           addressCountry: 'GE',
         },
         telephone: '+995550000199',
@@ -574,12 +581,14 @@ export function generateOrganizationSchema(lang: string = 'en'): string {
         '@type': 'PostalAddress',
         streetAddress: 'Guramishvili Ave. 78',
         addressLocality: 'Tbilisi',
+        postalCode: POSTAL_GLDANI,
         addressCountry: 'GE',
       },
       {
         '@type': 'PostalAddress',
         streetAddress: 'Anna Politkovskaya St. 51',
         addressLocality: 'Tbilisi',
+        postalCode: POSTAL_SABURTALO,
         addressCountry: 'GE',
       },
     ],
@@ -631,6 +640,7 @@ export function generateLocationSchema(locationSlug: string, lang: string): stri
       '@type': 'PostalAddress',
       streetAddress: loc.address.en.replace(', Tbilisi', ''),
       addressLocality: 'Tbilisi',
+      postalCode: loc.slug === 'guramishvili' ? POSTAL_GLDANI : POSTAL_SABURTALO,
       addressCountry: 'GE',
     },
     openingHoursSpecification: {
@@ -720,7 +730,8 @@ const HERO_VIDEO_DESCRIPTIONS: Readonly<Record<string, string>> = {
 };
 
 export function generateHomepageVideoSchema(lang: string): string {
-  const uploadDate = '2024-01-15';
+  // ISO 8601 with timezone (Tbilisi = GMT+4) — Google Rich Results requires timezone
+  const uploadDate = '2024-01-15T10:00:00+04:00';
 
   const schema = {
     '@context': 'https://schema.org',
