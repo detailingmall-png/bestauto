@@ -12,6 +12,16 @@ import type { PricingPage } from './sanity';
 
 const BASE_URL = 'https://bestauto.ge';
 
+// Brand assets — verified live URLs (200 OK)
+const LOGO_URL = `${BASE_URL}/images/tild6165-3264-4934-b662-663336336636__noroot.webp`;
+const BRAND_IMAGE_URL = `${BASE_URL}/images/tild6366-6231-4164-b161-326530383331__img_2535_1jpg_1.webp`;
+
+const ORG_DESCRIPTION: Readonly<Record<string, string>> = {
+  ka: 'BESTAUTO — პრემიუმ დეტეილინგ სტუდია თბილისში. PPF ფირი, კერამიკული საფარი, პოლირება, ვინილი, ტონირება, ქიმწმენდა. ორი ლოკაცია, 4.9★ Google რეიტინგი.',
+  ru: 'BESTAUTO — премиум детейлинг-студия в Тбилиси. PPF, керамика, полировка, винил, тонировка, химчистка. Две локации, 4.9★ на Google.',
+  en: 'BESTAUTO — premium detailing studio in Tbilisi. PPF, ceramic coating, paint correction, vinyl wrap, window tinting, interior cleaning. Two locations, 4.9★ Google rating.',
+};
+
 // ──────────────────────────────────────────────
 // Language availability lookup from page-map.json
 // ──────────────────────────────────────────────
@@ -338,7 +348,9 @@ export function generateReviewSchema(lang: string = 'en'): string {
     '@type': 'AutoRepair',
     '@id': `${BASE_URL}/#business`,
     name: 'BESTAUTO',
-    image: `${BASE_URL}/img/logo.png`,
+    image: BRAND_IMAGE_URL,
+    logo: LOGO_URL,
+    description: ORG_DESCRIPTION[lang] ?? ORG_DESCRIPTION.en,
     url: BASE_URL,
     telephone: '+995550000199',
     priceRange: '$$',
@@ -371,6 +383,7 @@ export function generateReviewSchema(lang: string = 'en'): string {
       {
         '@type': 'Place',
         name: 'BESTAUTO Guramishvili',
+        image: BRAND_IMAGE_URL,
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Guramishvili Ave. 78',
@@ -382,6 +395,7 @@ export function generateReviewSchema(lang: string = 'en'): string {
       {
         '@type': 'Place',
         name: 'BESTAUTO Saburtalo',
+        image: BRAND_IMAGE_URL,
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Anna Politkovskaya St. 51',
@@ -432,7 +446,7 @@ export function generateWebSiteSchema(): string {
       name: 'BESTAUTO',
       logo: {
         '@type': 'ImageObject',
-        url: `${BASE_URL}/img/logo.png`,
+        url: LOGO_URL,
       },
     },
     potentialAction: {
@@ -520,7 +534,7 @@ export function generateArticleSchema(
       name: 'BESTAUTO',
       logo: {
         '@type': 'ImageObject',
-        url: `${BASE_URL}/img/logo.png`,
+        url: LOGO_URL,
       },
     },
     inLanguage: lang,
@@ -541,7 +555,7 @@ export function generateArticleSchema(
 // 7. Organization Schema
 // ──────────────────────────────────────────────
 
-export function generateOrganizationSchema(): string {
+export function generateOrganizationSchema(lang: string = 'en'): string {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -550,8 +564,10 @@ export function generateOrganizationSchema(): string {
     url: BASE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: `${BASE_URL}/img/logo.png`,
+      url: LOGO_URL,
     },
+    image: BRAND_IMAGE_URL,
+    description: ORG_DESCRIPTION[lang] ?? ORG_DESCRIPTION.en,
     telephone: '+995550000299',
     address: [
       {
@@ -607,7 +623,8 @@ export function generateLocationSchema(locationSlug: string, lang: string): stri
     '@type': 'AutomotiveBusiness',
     '@id': `${BASE_URL}/locations/${loc.slug}/#business`,
     name: loc.name[lang] ?? loc.name.en,
-    image: `${BASE_URL}/img/logo.png`,
+    image: BRAND_IMAGE_URL,
+    logo: LOGO_URL,
     url: buildUrl(lang, `locations/${loc.slug}`),
     telephone: loc.phone,
     address: {
@@ -715,11 +732,17 @@ export function generateHomepageVideoSchema(lang: string): string {
       `${BASE_URL}/images/hero-poster-mobile.webp`,
     ],
     contentUrl: `${BASE_URL}/hero-desktop.mp4`,
+    embedUrl: buildUrl(lang, ''),
+    duration: 'PT21S',
     uploadDate,
     publisher: {
       '@type': 'Organization',
       '@id': `${BASE_URL}/#organization`,
       name: 'BESTAUTO',
+      logo: {
+        '@type': 'ImageObject',
+        url: LOGO_URL,
+      },
     },
     inLanguage: lang,
   };

@@ -548,7 +548,7 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + generateServiceSchema(baseSlug, lang, pricingPage)
   + generateReviewSchema(lang)
   + generateWebSiteSchema()
-  + generateOrganizationSchema()
+  + generateOrganizationSchema(lang)
   + generateServiceFaqSchema(baseSlug, lang)
   + generateArticleSchema(baseSlug, lang, pageTitle)
   + (baseSlug === '' ? generateFaqSchema(lang) + generateHowToSchema(lang) + generateHomepageVideoSchema(lang) : '');
