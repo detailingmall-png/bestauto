@@ -7,6 +7,7 @@ import pageMap from './page-map.json';
 import reviewsData from '../data/reviews.json';
 import { SERVICE_FAQS } from '../data/service-faqs';
 import { LOCATIONS } from '../data/location-data';
+import { STEPS as PROCESS_STEPS, SECTION_TITLE as PROCESS_SECTION_TITLE } from './process-steps';
 import type { PricingPage } from './sanity';
 
 const BASE_URL = 'https://bestauto.ge';
@@ -472,22 +473,47 @@ export function generateServiceFaqSchema(baseSlug: string, lang: string): string
 // 6. Article Schema (blog posts)
 // ──────────────────────────────────────────────
 
+export interface ArticleMeta {
+  readonly authorName?: string;
+  readonly authorRole?: string;
+  readonly authorUrl?: string;
+  readonly datePublished?: string;
+  readonly dateModified?: string;
+  readonly image?: string;
+}
+
 export function generateArticleSchema(
   baseSlug: string,
   lang: string,
   pageTitle: string,
+  meta: ArticleMeta = {},
 ): string {
   if (!baseSlug.startsWith('blog/') || baseSlug === 'blog') return '';
 
-  const schema = {
+  const author = meta.authorName
+    ? {
+        '@type': 'Person',
+        name: meta.authorName,
+        ...(meta.authorRole ? { jobTitle: meta.authorRole } : {}),
+        ...(meta.authorUrl ? { url: meta.authorUrl } : {}),
+        worksFor: {
+          '@type': 'Organization',
+          '@id': `${BASE_URL}/#organization`,
+          name: 'BESTAUTO',
+        },
+      }
+    : {
+        '@type': 'Organization',
+        '@id': `${BASE_URL}/#organization`,
+        name: 'BESTAUTO',
+        url: BASE_URL,
+      };
+
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: pageTitle.replace(/\s*[—|]\s*BESTAUTO.*$/, '').trim() || pageTitle,
-    author: {
-      '@type': 'Organization',
-      name: 'BESTAUTO',
-      url: BASE_URL,
-    },
+    author,
     publisher: {
       '@type': 'Organization',
       '@id': `${BASE_URL}/#organization`,
@@ -503,6 +529,10 @@ export function generateArticleSchema(
       '@id': buildUrl(lang, baseSlug),
     },
   };
+
+  if (meta.datePublished) schema.datePublished = meta.datePublished;
+  if (meta.dateModified) schema.dateModified = meta.dateModified;
+  if (meta.image) schema.image = meta.image;
 
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
@@ -621,6 +651,77 @@ export function generateLocationFaqSchema(locationSlug: string, lang: string): s
         text: item.answer[lang] ?? item.answer.en,
       },
     })),
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 10. HowTo Schema (homepage process steps)
+// ──────────────────────────────────────────────
+
+export function generateHowToSchema(lang: string): string {
+  const name = PROCESS_SECTION_TITLE[lang] ?? PROCESS_SECTION_TITLE.en;
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description:
+      lang === 'ka'
+        ? 'როგორ ვმუშაობთ BESTAUTO დეტეილინგ სტუდიაში — განაცხადიდან ჩაბარებამდე.'
+        : lang === 'ru'
+          ? 'Как мы работаем в детейлинг-студии BESTAUTO — от заявки до сдачи автомобиля.'
+          : 'How we work at BESTAUTO detailing studio — from request to handover.',
+    totalTime: 'PT1D',
+    step: PROCESS_STEPS.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.title[lang] ?? s.title.en,
+      text: s.description[lang] ?? s.description.en,
+      url: `${buildUrl(lang, '')}#process-step-${i + 1}`,
+    })),
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ──────────────────────────────────────────────
+// 11. VideoObject Schema (homepage hero reel)
+// ──────────────────────────────────────────────
+
+const HERO_VIDEO_NAMES: Readonly<Record<string, string>> = {
+  ka: 'BESTAUTO დეტეილინგ სტუდია — სამუშაო პროცესი',
+  ru: 'BESTAUTO детейлинг-студия — рабочий процесс',
+  en: 'BESTAUTO detailing studio — work process',
+};
+
+const HERO_VIDEO_DESCRIPTIONS: Readonly<Record<string, string>> = {
+  ka: 'BESTAUTO დეტეილინგ სტუდიის სამუშაო პროცესი თბილისში — PPF, კერამიკული საფარი, პოლირება.',
+  ru: 'Рабочий процесс детейлинг-студии BESTAUTO в Тбилиси — PPF, керамика, полировка кузова.',
+  en: 'BESTAUTO detailing studio work process in Tbilisi — PPF, ceramic coating, paint polishing.',
+};
+
+export function generateHomepageVideoSchema(lang: string): string {
+  const uploadDate = '2024-01-15';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: HERO_VIDEO_NAMES[lang] ?? HERO_VIDEO_NAMES.en,
+    description: HERO_VIDEO_DESCRIPTIONS[lang] ?? HERO_VIDEO_DESCRIPTIONS.en,
+    thumbnailUrl: [
+      `${BASE_URL}/hero-desktop-poster.webp`,
+      `${BASE_URL}/images/hero-poster-mobile.webp`,
+    ],
+    contentUrl: `${BASE_URL}/hero-desktop.mp4`,
+    uploadDate,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'BESTAUTO',
+    },
+    inLanguage: lang,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;

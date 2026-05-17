@@ -16,7 +16,7 @@ import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
 import { injectServicePrices, addPricesAnchor, extractPriceSection, extractPricesCta } from '../lib/service-prices-inject';
 import { replaceGalleries, removeDuplicateGalleries } from '../lib/gallery-inject';
-import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema } from '../lib/seo';
+import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema, generateHowToSchema, generateHomepageVideoSchema } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
@@ -551,7 +551,7 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + generateOrganizationSchema()
   + generateServiceFaqSchema(baseSlug, lang)
   + generateArticleSchema(baseSlug, lang, pageTitle)
-  + (baseSlug === '' ? generateFaqSchema(lang) : '');
+  + (baseSlug === '' ? generateFaqSchema(lang) + generateHowToSchema(lang) + generateHomepageVideoSchema(lang) : '');
 
 if (lang === 'ru') {
   mainContent = removeRecordBlock(mainContent, 'rec1829048981');
