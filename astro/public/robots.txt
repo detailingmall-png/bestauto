@@ -1,3 +1,105 @@
+# Maximum openness for AI search/indexing crawlers.
+# Per https://www.rfc-editor.org/rfc/rfc9309 — when Allow and Disallow have
+# equal path length, Allow wins for standards-compliant parsers (Googlebot,
+# OpenAI, Anthropic). These explicit blocks override Cloudflare Managed
+# Content if Cloudflare AI Audit is also disabled in the dashboard.
+
+# ── OpenAI ───────────────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ── Anthropic ────────────────────────────────────────────────────
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ── Perplexity ───────────────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ── Google AI (Gemini, AI Overviews training corpus) ─────────────
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# ── Apple Intelligence ───────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Meta AI ──────────────────────────────────────────────────────
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+# ── Microsoft / Bing AI ──────────────────────────────────────────
+User-agent: bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# ── Other AI search / RAG bots ───────────────────────────────────
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: NeevaBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+# ── Fallback ─────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 

@@ -4,13 +4,13 @@
  * Returns complete HTML with inline styles (Tilda-compatible).
  */
 
-interface ProcessStep {
+export interface ProcessStep {
   readonly icon: string;
   readonly title: Readonly<Record<string, string>>;
   readonly description: Readonly<Record<string, string>>;
 }
 
-const STEPS: ReadonlyArray<ProcessStep> = [
+export const STEPS: ReadonlyArray<ProcessStep> = [
   {
     icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2H10C8.9 2 8 2.9 8 4v24c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 26c-.83 0-1.5-.67-1.5-1.5S15.17 25 16 25s1.5.67 1.5 1.5S16.83 28 16 28zm7-4H9V6h14v18z" style="fill:var(--ba-color-accent)"/></svg>`,
     title: {
@@ -65,7 +65,7 @@ const STEPS: ReadonlyArray<ProcessStep> = [
   },
 ];
 
-const SECTION_TITLE: Readonly<Record<string, string>> = {
+export const SECTION_TITLE: Readonly<Record<string, string>> = {
   ka: 'როგორ მუშაობს',
   ru: 'Как это работает',
   en: 'How It Works',
