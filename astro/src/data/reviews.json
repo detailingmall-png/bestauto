@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 183,
-  "fetchedAt": "2026-05-17T06:47:58.627Z",
+  "fetchedAt": "2026-05-18T08:08:58.909Z",
   "reviews": [
     {
       "authorName": "lasha pavliashvili",
@@ -15,15 +15,15 @@
         "en": "Professionalism and a comfortable environment together are rare today👌 My recommendation to the entire team..Thank you ✊"
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ka",
       "time": 1778746852,
       "profileUrl": "https://www.google.com/maps/contrib/103659643102670168677/reviews",
       "text": "პროფესიონალიზმი და კომფორტული გარემო ერთად იშვიათია დღეს👌 ჩემი რეკომენდაცია მთლიან გუნდს ..მადლობა ✊",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Dmitry Teshev",
@@ -35,15 +35,15 @@
         "en": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀"
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "en",
       "time": 1778445441,
       "profileUrl": "https://www.google.com/maps/contrib/113531890558736511832/reviews",
       "text": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Ani Jibladze",
