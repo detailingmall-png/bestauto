@@ -2150,5 +2150,29 @@
     "title": "Wrap vs repaint in Tbilisi — cost, lifetime, reversibility",
     "lang": "en",
     "slug": "blog/wrap-vs-paint-cost-lifetime"
+  },
+  "920260518001": {
+    "file": "page920260518001.html",
+    "url": "https://bestauto.ge/ru/blog/5-year-ownership-detailing-plan",
+    "path": "/ru/blog/5-year-ownership-detailing-plan",
+    "title": "План детейлинга на 5 лет владения машиной",
+    "lang": "ru",
+    "slug": "blog/5-year-ownership-detailing-plan"
+  },
+  "920260518002": {
+    "file": "page920260518002.html",
+    "url": "https://bestauto.ge/blog/5-year-ownership-detailing-plan",
+    "path": "/blog/5-year-ownership-detailing-plan",
+    "title": "5-წლიანი მფლობელობის გეგმა — წლიური მოვლა",
+    "lang": "ka",
+    "slug": "blog/5-year-ownership-detailing-plan"
+  },
+  "920260518003": {
+    "file": "page920260518003.html",
+    "url": "https://bestauto.ge/en/blog/5-year-ownership-detailing-plan",
+    "path": "/en/blog/5-year-ownership-detailing-plan",
+    "title": "5-year ownership detailing plan for your car",
+    "lang": "en",
+    "slug": "blog/5-year-ownership-detailing-plan"
   }
 }

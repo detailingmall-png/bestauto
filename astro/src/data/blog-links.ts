@@ -1581,6 +1581,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/5-year-ownership-detailing-plan',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие всего кузова.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'иначе открытый после полировки лак собирает загрязнения',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона',
+        originalPhrase: 'химчистка салона',
+        contextQuote: 'Плановая химчистка салона.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -3052,6 +3078,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/5-year-ownership-detailing-plan',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი მთელ კუზოვზე',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'კერამიკა პოლირების შემდეგ',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'გეგმიური სალონის ქიმწმენდა',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4464,6 +4516,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car window tint',
         originalPhrase: 'window tint',
         contextQuote: 'Choosing a window tint percentage is not about aesthetics or fashion, but about the trade-off between visibility, cabin heat and privacy.',
+      },
+    ],
+  },
+  {
+    article: 'blog/5-year-ownership-detailing-plan',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating on the whole body',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Body polishing before ceramic and PPF',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'Scheduled interior dry cleaning',
       },
     ],
   },
