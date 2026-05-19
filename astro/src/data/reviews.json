@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 183,
-  "fetchedAt": "2026-05-18T08:08:58.909Z",
+  "fetchedAt": "2026-05-19T07:51:50.470Z",
   "reviews": [
     {
       "authorName": "lasha pavliashvili",
@@ -15,15 +15,15 @@
         "en": "Professionalism and a comfortable environment together are rare today👌 My recommendation to the entire team..Thank you ✊"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "ka",
       "time": 1778746852,
       "profileUrl": "https://www.google.com/maps/contrib/103659643102670168677/reviews",
       "text": "პროფესიონალიზმი და კომფორტული გარემო ერთად იშვიათია დღეს👌 ჩემი რეკომენდაცია მთლიან გუნდს ..მადლობა ✊",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "Dmitry Teshev",
