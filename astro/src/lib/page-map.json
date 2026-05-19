@@ -2174,5 +2174,29 @@
     "title": "5-year ownership detailing plan for your car",
     "lang": "en",
     "slug": "blog/5-year-ownership-detailing-plan"
+  },
+  "920260519001": {
+    "file": "page920260519001.html",
+    "url": "https://bestauto.ge/ru/blog/abrasive-polishing-deep-dive",
+    "path": "/ru/blog/abrasive-polishing-deep-dive",
+    "title": "Абразивная полировка — что это и когда действительно нужна",
+    "lang": "ru",
+    "slug": "blog/abrasive-polishing-deep-dive"
+  },
+  "920260519002": {
+    "file": "page920260519002.html",
+    "url": "https://bestauto.ge/blog/abrasive-polishing-deep-dive",
+    "path": "/blog/abrasive-polishing-deep-dive",
+    "title": "აბრაზიული პოლირება — რა არის და როდის არის საჭირო",
+    "lang": "ka",
+    "slug": "blog/abrasive-polishing-deep-dive"
+  },
+  "920260519003": {
+    "file": "page920260519003.html",
+    "url": "https://bestauto.ge/en/blog/abrasive-polishing-deep-dive",
+    "path": "/en/blog/abrasive-polishing-deep-dive",
+    "title": "Abrasive polishing — what it is and when it's actually needed",
+    "lang": "en",
+    "slug": "blog/abrasive-polishing-deep-dive"
   }
 }

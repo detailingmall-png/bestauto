@@ -9,7 +9,7 @@ primary_hf_ka: "აბრაზიული პოლირება"
 primary_hf_en: "abrasive polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#8"
   - reference: "drafts/blog/polish-cream-diy-vs-studio.md"

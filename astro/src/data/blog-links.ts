@@ -1607,6 +1607,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/abrasive-polishing-deep-dive',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'абразивная полировка',
+        contextQuote: 'Важно понимать: абразивная полировка не восстанавливает лак.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'Голограммы от предыдущей неправильной полировки.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -3104,6 +3123,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/abrasive-polishing-deep-dive',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'ამ დეტალებისთვის პოლირების პროგრამა განსხვავებულია.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'სამსაფეხურიანი პოლირება დამატებითი შუალედური პასტით — მეტი დრო, უფრო ახლოს ტარიფის ზედა ზღვართან.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4542,6 +4580,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'Scheduled interior dry cleaning',
+      },
+    ],
+  },
+  {
+    article: 'blog/abrasive-polishing-deep-dive',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: "Abrasive polishing doesn't restore clearcoat.",
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'abrasive polishing',
+        contextQuote: 'How is abrasive polishing different from "regular" polishing?',
       },
     ],
   },
