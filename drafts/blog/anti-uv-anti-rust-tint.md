@@ -8,7 +8,7 @@ primary_hf_ru: "UV защита тонировкой, защита от ульт
 primary_hf_ka: "ანტი-UV ფირი"
 primary_hf_en: "UV protection tint"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#55"
   - competitor: "autoqimwmenda.ge (tinting category)"

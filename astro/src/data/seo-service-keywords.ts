@@ -182,6 +182,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის მინების დაბურვა',    // GSC: 120
     'მინის დაბურვა',               // GSC: 85
     'შუშების დამუქება',            // GSC: 159
+    'დაბურვაზე',                   // inflected — dative form, valid anchor
   ],
   '/windshield-repair': [
     'საქარე მინის აღდგენა',        // GSC: 429 (canonical)

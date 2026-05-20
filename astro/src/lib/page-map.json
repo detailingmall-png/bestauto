@@ -2198,5 +2198,29 @@
     "title": "Abrasive polishing — what it is and when it's actually needed",
     "lang": "en",
     "slug": "blog/abrasive-polishing-deep-dive"
+  },
+  "920260520001": {
+    "file": "page920260520001.html",
+    "url": "https://bestauto.ge/ru/blog/anti-uv-anti-rust-tint",
+    "path": "/ru/blog/anti-uv-anti-rust-tint",
+    "title": "УФ-защитная тонировка — защита салона и здоровья водителя",
+    "lang": "ru",
+    "slug": "blog/anti-uv-anti-rust-tint"
+  },
+  "920260520002": {
+    "file": "page920260520002.html",
+    "url": "https://bestauto.ge/blog/anti-uv-anti-rust-tint",
+    "path": "/blog/anti-uv-anti-rust-tint",
+    "title": "ანტი-UV ფირი — სალონისა და მძღოლის დაცვა",
+    "lang": "ka",
+    "slug": "blog/anti-uv-anti-rust-tint"
+  },
+  "920260520003": {
+    "file": "page920260520003.html",
+    "url": "https://bestauto.ge/en/blog/anti-uv-anti-rust-tint",
+    "path": "/en/blog/anti-uv-anti-rust-tint",
+    "title": "UV Protection Tint — Cabin and Driver Health Defence",
+    "lang": "en",
+    "slug": "blog/anti-uv-anti-rust-tint"
   }
 }

@@ -1626,6 +1626,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/anti-uv-anti-rust-tint',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'УФ-защитная тонировка — это не приватность и не косметика, а защита материалов салона и здоровья водителя.',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'Защищает ли тонировка от рака кожи?',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -3142,6 +3161,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/anti-uv-anti-rust-tint',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვაზე',
+        originalPhrase: 'დაბურვაზე',
+        contextQuote: 'ფასები იგივე, რაც ჩვეულებრივ დაბურვაზე — UV-დაცვა არ არის დამატებითი თანხა, არამედ შტატური ფუნქცია პრემიუმ ბრენდების ფირებში.',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვაზე',
+        originalPhrase: 'დაბურვაზე',
+        contextQuote: 'თბილისში მძღოლების უმრავლესობა დაბურვაზე ფიქრობს როგორც კონფიდენციალურობაზე ან სილამაზეზე: „რომ სალონი მუქი იყოს".',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4599,6 +4637,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car polishing',
         originalPhrase: 'abrasive polishing',
         contextQuote: 'How is abrasive polishing different from "regular" polishing?',
+      },
+    ],
+  },
+  {
+    article: 'blog/anti-uv-anti-rust-tint',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'window tint',
+        contextQuote: 'Most drivers in Tbilisi, Georgia think of window tint as privacy or looks: "to make the cabin dark".',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'window tint',
+        contextQuote: 'A proper window tint film has three to five functional layers, and one of them is the UV filter.',
       },
     ],
   },
