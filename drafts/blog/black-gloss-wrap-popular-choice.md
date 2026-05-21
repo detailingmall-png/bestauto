@@ -8,7 +8,7 @@ primary_hf_ru: "оклейка авто чёрной глянцевой плён
 primary_hf_ka: "შავი გლოსი ფირი, შავი ფირით გადაკვრა, გლოსი გადაკვრა"
 primary_hf_en: "black gloss vinyl wrap, gloss black wrap, black wrap"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#40"
   - gsc: "Downloads/gsc_16months.csv"

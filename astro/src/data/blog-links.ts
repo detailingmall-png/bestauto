@@ -1221,6 +1221,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/black-gloss-wrap-popular-choice',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'полную оклейку',
+        originalPhrase: 'полную оклейку',
+        contextQuote: 'говорит «хочу полную оклейку», в 40% случаев речь идёт',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -2813,6 +2825,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/black-gloss-wrap-popular-choice',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'სრული გადაკვრის',
+        originalPhrase: 'სრული გადაკვრის',
+        contextQuote: 'მათგან შავ გლოსზე მოდის სრული გადაკვრის ყველა შეკვეთის დაახლოებით მესამედი',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4319,6 +4343,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'vinyl wrap',
         originalPhrase: 'vinyl wrap',
         contextQuote: 'where vinyl wrap and repainting differ fundamentally',
+      },
+    ],
+  },
+  {
+    article: 'blog/black-gloss-wrap-popular-choice',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'full wrap',
+        originalPhrase: 'full wrap',
+        contextQuote: 'says "I want a full wrap", about 40% of the time',
       },
     ],
   },
