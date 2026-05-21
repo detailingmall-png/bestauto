@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 183,
-  "fetchedAt": "2026-05-20T07:50:25.925Z",
+  "totalReviews": 184,
+  "fetchedAt": "2026-05-21T07:57:35.120Z",
   "reviews": [
+    {
+      "authorName": "Nikita Taboo",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVd5XTYKdIKif_WThlUXZudG6h7xjat1zYwAA_I5fb2xn1V-g=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Отличный детейлинг!\nОбращался в BestAutoDetailing — сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе. Отдельно хочется отметить сервис: всё чисто, организованно и очень приятно по общению. Остался полностью доволен результатом, смело рекомендую!",
+        "ka": "შესანიშნავი დეტალიზაცია!\nმე BestAutoDetailing-ის მომსახურებით ვისარგებლე - მათ ყველაფერი ძალიან სწრაფად და ძალიან კარგად გააკეთეს, სამუშაო სულ რაღაც სამ დღეში დაასრულეს. მანქანა იდეალურ მდგომარეობაში იყო მოწოდებული და მათი დეტალებზე ორიენტირებულობა და ზედმიწევნითი მიდგომა აშკარაა. განსაკუთრებით მინდა აღვნიშნო მომსახურება: ყველაფერი სუფთა, ორგანიზებული და ძალიან სასიამოვნო იყო. შედეგით სრულიად კმაყოფილი ვარ და გირჩევთ მათ!",
+        "en": "Excellent detailing!\nI used BestAutoDetailing – they did everything very quickly and very well, completing the job in just three days. The car was delivered in perfect condition, and their attention to detail and meticulous approach are evident. I'd like to especially mention the service: everything was clean, organized, and very pleasant to deal with. I was completely satisfied with the results and highly recommend them!"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ru",
+      "time": 1779347254,
+      "profileUrl": "https://www.google.com/maps/contrib/102529843160962098876/reviews",
+      "text": "Отличный детейлинг!\nОбращался в BestAutoDetailing — сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе. Отдельно хочется отметить сервис: всё чисто, организованно и очень приятно по общению. Остался полностью доволен результатом, смело рекомендую!",
+      "relativeTime": "today"
+    },
     {
       "authorName": "lasha pavliashvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKG2IiiZxcoxlGvvwjMaKLvCVm7Ievzjc1EGHki7wI_XY4xHQ=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "Professionalism and a comfortable environment together are rare today👌 My recommendation to the entire team..Thank you ✊"
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "6 дней назад",
+        "ka": "6 დღის წინ",
+        "en": "6 days ago"
       },
       "originalLang": "ka",
       "time": 1778746852,
       "profileUrl": "https://www.google.com/maps/contrib/103659643102670168677/reviews",
       "text": "პროფესიონალიზმი და კომფორტული გარემო ერთად იშვიათია დღეს👌 ჩემი რეკომენდაცია მთლიან გუნდს ..მადლობა ✊",
-      "relativeTime": "5 days ago"
+      "relativeTime": "6 days ago"
     },
     {
       "authorName": "Dmitry Teshev",
@@ -95,15 +115,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
