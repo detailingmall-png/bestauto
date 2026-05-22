@@ -1657,6 +1657,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/bolt-yandex-driver-detailing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Сколько стоит химчистка для такси-водителя в месяц?',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Можно ли обойтись только озоном без полной химчистки?',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -3204,6 +3223,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/bolt-yandex-driver-detailing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'რა ღირს ქიმწმენდა ტაქსი-მძღოლისთვის თვეში?',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'რამდენად ჩქარა იხდის თავს რეგულარული ქიმწმენდა მძღოლისთვის?',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4692,6 +4730,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'window tint',
         originalPhrase: 'window tint',
         contextQuote: 'A proper window tint film has three to five functional layers, and one of them is the UV filter.',
+      },
+    ],
+  },
+  {
+    article: 'blog/bolt-yandex-driver-detailing',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'How much does dry cleaning cost per month for a taxi driver?',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'Can I do only ozone, without full dry cleaning?',
       },
     ],
   },
