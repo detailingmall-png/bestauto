@@ -8,7 +8,8 @@ primary_hf_ru: "химчистка для такси, химчистка для 
 primary_hf_ka: "Bolt მძღოლის ქიმწმენდა"
 primary_hf_en: "Bolt Yandex driver cleaning"
 secondary_links: []
-status: drafted
+status: published
+published: 2026-05-22
 sources:
   - roadmap: "docs/content-roadmap.md#91"
 ---
