@@ -83,6 +83,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/car-body-wrap-cost-guide':       'vinyl-wrapping',
   'blog/wrap-vs-paint-cost-lifetime':    'vinyl-wrapping',
   'blog/black-gloss-wrap-popular-choice':'vinyl-wrapping',
+  'blog/carbon-fiber-vinyl-wrap':        'vinyl-wrapping',
   // Window tinting
   'blog/vehicle-tinting-techniques':          'auto-glass-tinting',
   'blog/legal-aspects-of-tinting-in-georgia': 'auto-glass-tinting',

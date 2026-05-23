@@ -8,7 +8,7 @@ primary_hf_ru: "карбоновая плёнка, карбон плёнка н�
 primary_hf_ka: "კარბონის ფირი, ფირი კარბონი, კარბონ ვინილი"
 primary_hf_en: "carbon fiber vinyl, carbon fiber wrap, carbon vinyl film"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#42"
   - gsc: "Downloads/gsc_16months.csv"

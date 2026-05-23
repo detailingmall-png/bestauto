@@ -2270,5 +2270,29 @@
     "title": "Bolt/Yandex drivers — cabin detail schedule Tbilisi",
     "lang": "en",
     "slug": "blog/bolt-yandex-driver-detailing"
+  },
+  "920260523001": {
+    "file": "page920260523001.html",
+    "url": "https://bestauto.ge/ru/blog/carbon-fiber-vinyl-wrap",
+    "path": "/ru/blog/carbon-fiber-vinyl-wrap",
+    "title": "Карбоновая плёнка для авто — что это и куда наносить",
+    "lang": "ru",
+    "slug": "blog/carbon-fiber-vinyl-wrap"
+  },
+  "920260523002": {
+    "file": "page920260523002.html",
+    "url": "https://bestauto.ge/blog/carbon-fiber-vinyl-wrap",
+    "path": "/blog/carbon-fiber-vinyl-wrap",
+    "title": "კარბონის ფირი მანქანაზე — რა არის და სად გამოყენება",
+    "lang": "ka",
+    "slug": "blog/carbon-fiber-vinyl-wrap"
+  },
+  "920260523003": {
+    "file": "page920260523003.html",
+    "url": "https://bestauto.ge/en/blog/carbon-fiber-vinyl-wrap",
+    "path": "/en/blog/carbon-fiber-vinyl-wrap",
+    "title": "Carbon fiber vinyl wrap — what it is and where to use it",
+    "lang": "en",
+    "slug": "blog/carbon-fiber-vinyl-wrap"
   }
 }

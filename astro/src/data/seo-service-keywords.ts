@@ -90,6 +90,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'оклейка пленкой авто',         // GSC: 5
     'виниловая пленка для авто',    // GSC: 3
     'виниловая пленка',
+    'виниловая плёнка',             // ё-variant nominative — valid in blog anchor context
     'оклейка винилом',
     'смена цвета пленкой',
     'полную оклейку',               // inflected — valid anchor (accusative form, common in body text)
@@ -175,6 +176,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის ფირები',             // GSC: 83 (plural, ambiguous)
     'ფირის დაკვრა',                // GSC: colloquial variant, 220 imp
     'სრული გადაკვრის',             // inflected — valid anchor (genitive form, common in body text)
+    'სრული გადაკვრა',              // inflected — valid anchor (nominative form, common in body text)
   ],
   '/auto-glass-tinting': [
     'მინების დაბურვა',             // GSC: 801 (largest single-keyword traffic on site)
@@ -243,6 +245,8 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'vinyl wrap',
     'car wrap tbilisi',            // GSC: 2 (geo-qualified, strong intent)
     'full wrap',                   // valid anchor (common nominal phrase for full-body wrap)
+    'carbon vinyl',                // article-derived HF for carbon-fiber-vinyl-wrap
+    'carbon fiber vinyl',          // article-derived HF for carbon-fiber-vinyl-wrap
   ],
   '/auto-glass-tinting': [
     'car window tint',             // GSC: 3 clicks (top)

@@ -1233,6 +1233,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/carbon-fiber-vinyl-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'виниловая плёнка',
+        originalPhrase: 'виниловая плёнка',
+        contextQuote: 'Это виниловая плёнка с имитацией текстуры карбонового плетения',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная плёнка',
+        originalPhrase: 'защитная плёнка',
+        contextQuote: 'Для сравнения: защитная плёнка PPF — 200 микрон полиуретана с самовосстанавливающимся слоем',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -2856,6 +2875,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/carbon-fiber-vinyl-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'სრული გადაკვრა',
+        originalPhrase: 'სრული გადაკვრა',
+        contextQuote: 'მთელი ძარის სრული გადაკვრა კარბონით',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'კარბონ-ფირი — ტექსტურის დეკორატიული იმიტაცია, არა დამცავი ფირი',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4393,6 +4431,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'full wrap',
         originalPhrase: 'full wrap',
         contextQuote: 'says "I want a full wrap", about 40% of the time',
+      },
+    ],
+  },
+  {
+    article: 'blog/carbon-fiber-vinyl-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'carbon vinyl',
+        originalPhrase: 'carbon vinyl',
+        contextQuote: 'Three main categories of carbon vinyl differ in depth of visual effect',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'carbon fiber vinyl',
+        originalPhrase: 'Carbon fiber vinyl',
+        contextQuote: 'Carbon fiber vinyl is one of the most recognisable items in the vinyl catalogue',
       },
     ],
   },
