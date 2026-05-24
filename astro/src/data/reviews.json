@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 184,
-  "fetchedAt": "2026-05-23T06:37:03.602Z",
+  "fetchedAt": "2026-05-24T07:24:03.852Z",
   "reviews": [
     {
       "authorName": "Nikita Taboo",
@@ -15,15 +15,15 @@
         "en": "Excellent detailing!\nI used BestAutoDetailing – they did everything very quickly and very well, completing the job in just three days. The car was delivered in perfect condition, and their attention to detail and meticulous approach are evident. I'd like to especially mention the service: everything was clean, organized, and very pleasant to deal with. I was completely satisfied with the results and highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ru",
       "time": 1779347254,
       "profileUrl": "https://www.google.com/maps/contrib/102529843160962098876/reviews",
       "text": "Отличный детейлинг!\nОбращался в BestAutoDetailing — сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе. Отдельно хочется отметить сервис: всё чисто, организованно и очень приятно по общению. Остался полностью доволен результатом, смело рекомендую!",
-      "relativeTime": "a day ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "lasha pavliashvili",
@@ -75,15 +75,15 @@
         "en": "Very good service, they arrived earlier than I expected and most importantly they did a very high quality job."
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1778327090,
       "profileUrl": "https://www.google.com/maps/contrib/101838248298657605851/reviews",
       "text": "ძალიან კარგი მომსხაურებ, იმაზე ადრე მორჩნენ ვიდრე მითხრეს და რაც მთავარია ძალიან მაღალი ხარისხით შეასრულეს სამუშაო",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Nita Marsagishvili",
@@ -115,15 +115,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -169,7 +169,7 @@
       "authorName": "Zezva Arabuli",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKE5PU8bKn4Q1oGxM0poeErn6pKbo5TH6MbUdqEcu_kIfs4kw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "3 months ago",
+      "relativeTime": "4 months ago",
       "text": "გავაკეთე პოლირების სერვისი და დავაკარი სტიკერები. შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად. ნამდვილად გირჩევთ 👍",
       "time": 1768994407,
       "profileUrl": "https://www.google.com/maps/contrib/118019043653831607447/reviews",
@@ -179,9 +179,9 @@
         "en": "I had a polishing service and applied stickers. I am very satisfied with the result — the car looks perfect. They work with quality, attention and professionalism. I definitely recommend them 👍"
       },
       "relativeTimes": {
-        "ka": "3 თვის წინ",
-        "en": "3 months ago",
-        "ru": "3 месяца назад"
+        "ka": "4 თვის წინ",
+        "en": "4 months ago",
+        "ru": "4 месяца назад"
       },
       "originalLang": "ka"
     },
@@ -209,7 +209,7 @@
       "authorName": "Mikhail",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUygXsQGgnzvFfn9HJ_xccXGGiSaxn4tjmmCczVRlhNyCeOTQ2p=s128-c0x00000000-cc-rp-mo-ba2",
       "rating": 5,
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
       "time": 1763710948,
       "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews",
@@ -219,9 +219,9 @@
         "ka": "შესანიშნავი მომსახურება! თავაზიანი და ყურადღებიანი პერსონალი. ბიჭები თავიანთი საქმის ოსტატები არიან. მათ სამუშაო დეტალებისადმი დიდი ყურადღებით და დროულად შეასრულეს. ბონუსის სახით, მათ დამატებითი სამუშაო ფასის გაზრდის გარეშე შეასრულეს. შემიძლია მათი რეკომენდაცია!"
       },
       "relativeTimes": {
-        "en": "5 months ago",
-        "ru": "5 месяцев назад",
-        "ka": "5 თვის წინ"
+        "en": "6 months ago",
+        "ru": "6 месяцев назад",
+        "ka": "6 თვის წინ"
       },
       "originalLang": "en"
     },
