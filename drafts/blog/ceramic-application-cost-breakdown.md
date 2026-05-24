@@ -8,7 +8,7 @@ primary_hf_ru: "нанесение керамики, керамическое п
 primary_hf_ka: "კერამიკული საფარის ფასი"
 primary_hf_en: "ceramic coating cost"
 secondary_links: ["/ppf-shield-wrapping"]
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#76"
 ---

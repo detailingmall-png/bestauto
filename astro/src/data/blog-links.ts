@@ -1252,6 +1252,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-application-cost-breakdown',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'первое, что он видит — «керамическое покрытие всего авто от 500 ₾»',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'Отдельно полировка кузова — от 690 ₾',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -2894,6 +2913,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-application-cost-breakdown',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'მთელი ავტოს კერამიკული საფარი 500 ₾-დან',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ცალკე ძარის პოლირება — 690 ₾-დან',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4450,6 +4488,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'carbon fiber vinyl',
         originalPhrase: 'Carbon fiber vinyl',
         contextQuote: 'Carbon fiber vinyl is one of the most recognisable items in the vinyl catalogue',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-application-cost-breakdown',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'The first thing a customer sees on the pricing page is "full-body ceramic coating from 500 ₾."',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: "So polishing first isn't an optional luxury — it's a technical must.",
       },
     ],
   },
