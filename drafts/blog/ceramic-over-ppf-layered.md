@@ -8,7 +8,7 @@ primary_hf_ru: "керамика поверх ppf, двойная защита �
 primary_hf_ka: "კერამიკა PPF-ზე"
 primary_hf_en: "ceramic over ppf"
 secondary_links: ["/ppf-shield-wrapping"]
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#78"
 ---

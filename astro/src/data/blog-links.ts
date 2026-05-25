@@ -1271,6 +1271,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-over-ppf-layered',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'нанесение керамики',
+        contextQuote: 'обезжиривание всей поверхности (и PPF, и оставшегося лака), нанесение керамики на весь кузов — и на PPF, и на лак одним составом',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'нанесение керамики',
+        contextQuote: 'Обезжиривание всей машины, нанесение керамики Gyeon и на плёнку, и на лак одним составом',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -2932,6 +2951,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-over-ppf-layered',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: '<strong>კერამიკული საფარი</strong> — ეს არის თხევადი შემადგენლობა კაჟის დიოქსიდის (SiO₂) საფუძველზე',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'პოლიურეთანის ფირი',
+        contextQuote: 'PPF (პოლიურეთანის ფირი 150–200 მიკრონი) იღებს ფიზიკურ დარტყმებს',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4507,6 +4545,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: "So polishing first isn't an optional luxury — it's a technical must.",
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-over-ppf-layered',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'PPF and ceramic coating are different technologies solving different problems',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'car ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: '<strong>Ceramic coating</strong> is a liquid silicon-dioxide (SiO₂) compound that polymerises on the prepped surface',
       },
     ],
   },
