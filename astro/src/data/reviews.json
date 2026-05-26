@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 184,
-  "fetchedAt": "2026-05-25T08:24:20.602Z",
+  "totalReviews": 185,
+  "fetchedAt": "2026-05-26T07:54:42.385Z",
   "reviews": [
+    {
+      "authorName": "Acer_1993",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWdYS4lF03uwK5BEACEozxazJnGpUDomSBo3szd5PJkosFWYmrH=s128-c0x00000000-cc-rp-mo-ba3",
+      "rating": 5,
+      "texts": {
+        "ru": "Это идеальная обстановка и ситуация!",
+        "ka": "იდეალური გარემო და სიტუაციაა!",
+        "en": "It's an ideal environment and situation!"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ka",
+      "time": 1779775429,
+      "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
+      "text": "იდეალური გარემო და სიტუაციაა!",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Nikita Taboo",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVd5XTYKdIKif_WThlUXZudG6h7xjat1zYwAA_I5fb2xn1V-g=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "Excellent detailing!\nI used BestAutoDetailing – they did everything very quickly and very well, completing the job in just three days. The car was delivered in perfect condition, and their attention to detail and meticulous approach are evident. I'd like to especially mention the service: everything was clean, organized, and very pleasant to deal with. I was completely satisfied with the results and highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "4 дня назад",
-        "ka": "4 დღის წინ",
-        "en": "4 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "ru",
       "time": 1779347254,
       "profileUrl": "https://www.google.com/maps/contrib/102529843160962098876/reviews",
       "text": "Отличный детейлинг!\nОбращался в BestAutoDetailing — сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе. Отдельно хочется отметить сервис: всё чисто, организованно и очень приятно по общению. Остался полностью доволен результатом, смело рекомендую!",
-      "relativeTime": "4 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "lasha pavliashvili",
