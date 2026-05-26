@@ -8,8 +8,10 @@
  * Environment variables (set in Cloudflare Pages dashboard):
  *   TG_BOT_TOKEN_299    — Telegram bot token for Guramishvili group
  *   TG_CHAT_ID_299      — Telegram group chat ID for Guramishvili
+ *   TG_THREAD_ID_299    — (optional) message_thread_id when Guramishvili group is a forum (topics enabled)
  *   TG_BOT_TOKEN_199    — Telegram bot token for Saburtalo group
  *   TG_CHAT_ID_199      — Telegram group chat ID for Saburtalo
+ *   TG_THREAD_ID_199    — (optional) message_thread_id when Saburtalo group is a forum
  *   GOOGLE_SHEETS_WEBHOOK_URL — Google Apps Script doPost URL
  *
  * KV namespace binding (set in Pages > Settings > Functions):
@@ -19,8 +21,10 @@
 interface Env {
   TG_BOT_TOKEN_299: string;
   TG_CHAT_ID_299: string;
+  TG_THREAD_ID_299?: string;
   TG_BOT_TOKEN_199: string;
   TG_CHAT_ID_199: string;
+  TG_THREAD_ID_199?: string;
   GOOGLE_SHEETS_WEBHOOK_URL: string;
   LEADS_RATE_LIMIT: KVNamespace;
   FB_CAPI_TOKEN_PRIMARY?: string;
@@ -97,10 +101,19 @@ async function sendTelegram(
     lead.studio === 'guramishvili'
       ? env.TG_CHAT_ID_299
       : env.TG_CHAT_ID_199;
+  const threadIdRaw =
+    lead.studio === 'guramishvili'
+      ? env.TG_THREAD_ID_299
+      : env.TG_THREAD_ID_199;
 
   if (!botToken || !chatId) {
     return { ok: false, error: 'Telegram not configured' };
   }
+
+  const threadId =
+    typeof threadIdRaw === 'string' && /^\d+$/.test(threadIdRaw.trim())
+      ? parseInt(threadIdRaw.trim(), 10)
+      : undefined;
 
   const studioName = STUDIO_LABELS[lead.studio] || lead.studio;
   const lines = [
@@ -116,14 +129,17 @@ async function sendTelegram(
   const message = lines.join('\n');
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
+  const body: Record<string, unknown> = {
+    chat_id: chatId,
+    text: message,
+    parse_mode: 'MarkdownV2',
+  };
+  if (threadId !== undefined) body.message_thread_id = threadId;
+
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message,
-      parse_mode: 'MarkdownV2',
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!res.ok) {
