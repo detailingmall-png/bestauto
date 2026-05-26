@@ -8,7 +8,7 @@ primary_hf_ru: "подготовка кузова под керамику"
 primary_hf_ka: "კერამიკისთვის მომზადება"
 primary_hf_en: "ceramic prep paint correction"
 secondary_links: ["/ppf-shield-wrapping"]
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#77"
 ---

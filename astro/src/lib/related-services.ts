@@ -61,6 +61,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/ceramic-polishing-combo':      'ceramiccoating',
   'blog/ceramic-application-cost-breakdown': 'ceramiccoating',
   'blog/ceramic-over-ppf-layered':     'ceramiccoating',
+  'blog/ceramic-prep-paint-correction': 'ceramiccoating',
   'blog/interior-ceramic-detail':      'ceramiccoating',
   // PPF
   'blog/ppf-benefits':                       'ppf-shield-wrapping',

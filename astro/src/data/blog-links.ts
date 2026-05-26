@@ -1290,6 +1290,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-prep-paint-correction',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'Базовая полировка кузова в BESTAUTO — от 690 ₾. Эта цифра — для стандартного случая level 2 на среднем седане.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'После всех этих работ делается level 2–3 полировка по всему кузову, чтобы финиш был однородным, и только потом — керамика.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -2970,6 +2989,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-prep-paint-correction',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'საბაზო ძარის პოლირება BESTAUTO-ში — 690 ₾-დან. ეს ციფრი — სტანდარტული level 2 შემთხვევისთვის საშუალო სედანზე.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ყველა ამ სამუშაოს შემდეგ კეთდება level 2–3 პოლირება მთელ ძარაზე, რომ ფინიში იყოს ერთგვაროვანი, და მხოლოდ შემდეგ — კერამიკა.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4564,6 +4602,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car ceramic coating',
         originalPhrase: 'Ceramic coating',
         contextQuote: '<strong>Ceramic coating</strong> is a liquid silicon-dioxide (SiO₂) compound that polymerises on the prepped surface',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-prep-paint-correction',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'The technique is the same across tiers — abrasive compounds of varying aggression + a polishing machine with the right pads — but the depth of work differs sharply.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Can I save by polishing only the horizontal panels (bonnet, roof, boot)?',
       },
     ],
   },
