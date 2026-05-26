@@ -136,6 +136,8 @@ async function sendTelegram(
   };
   if (threadId !== undefined) body.message_thread_id = threadId;
 
+  console.log(`[lead] tg send studio=${lead.studio} chat=${chatId} thread=${threadId ?? 'none'}`);
+
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -144,9 +146,11 @@ async function sendTelegram(
 
   if (!res.ok) {
     const text = await res.text();
+    console.error(`[lead] tg fail studio=${lead.studio} status=${res.status} body=${text}`);
     return { ok: false, error: `Telegram ${res.status}: ${text}` };
   }
 
+  console.log(`[lead] tg ok studio=${lead.studio}`);
   return { ok: true };
 }
 
