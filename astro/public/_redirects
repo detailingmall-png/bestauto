@@ -30,6 +30,12 @@
 /ru/blog/salon-polish-interior-detail/  /ru/polishing    301
 /en/blog/salon-polish-interior-detail   /en/polishing    301
 /en/blog/salon-polish-interior-detail/  /en/polishing    301
+/blog/bolt-yandex-driver-detailing       /interior-cleaning     301
+/blog/bolt-yandex-driver-detailing/      /interior-cleaning     301
+/ru/blog/bolt-yandex-driver-detailing    /ru/interior-cleaning  301
+/ru/blog/bolt-yandex-driver-detailing/   /ru/interior-cleaning  301
+/en/blog/bolt-yandex-driver-detailing    /en/interior-cleaning  301
+/en/blog/bolt-yandex-driver-detailing/   /en/interior-cleaning  301
 
 # ── Discontinued services (April 2026) ──────────────────────
 /paintless-dent-repair     /polishing             301

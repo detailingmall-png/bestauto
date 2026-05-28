@@ -218,7 +218,6 @@ Intro (100-150 слов)...
 | 88 | [mold-mildew-cabin-flood](./mold-mildew-cabin-flood.md) | P2 | urgent intent |
 | 89 | [interior-ceramic-after-cleaning](./interior-ceramic-after-cleaning.md) | P2 | cross-link |
 | 90 | [salon-vacuum-vs-dry-clean](./salon-vacuum-vs-dry-clean.md) | P3 | educational |
-| 91 | [bolt-yandex-driver-detailing](./bolt-yandex-driver-detailing.md) | P2 | market-specific |
 | 92 | [post-interior-cleaning-mistakes](./post-interior-cleaning-mistakes.md) | P2 | competitor |
 
 ### GEN — umbrella / general (8 статей)
