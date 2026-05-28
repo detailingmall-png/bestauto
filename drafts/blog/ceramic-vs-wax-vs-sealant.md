@@ -9,7 +9,8 @@ primary_hf_ka: "კერამიკა vs ცვილი, კუზოვი�
 primary_hf_en: "ceramic vs wax sealant, body protection"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published: 2026-05-28
 sources:
   - roadmap: "docs/content-roadmap.md#25"
 ---

@@ -1309,6 +1309,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-vs-wax-vs-sealant',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'Цена: керамическое покрытие всего авто — от 500 ₾ в BESTAUTO.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'Реальное сравнение стоит делать не «воск vs керамика», а «воск + плановые полировки vs керамика без полировок».',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -3008,6 +3027,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ceramic-vs-wax-vs-sealant',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'ფასი: მთელი ავტოს კერამიკული საფარი — 500 ₾-დან BESTAUTO-ში.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პლუს მოსამზადებელი პოლირება (690 ₾-დან), თუ მანქანა არ არის ახალი და დეფექტები აქვს.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4621,6 +4659,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'Can I save by polishing only the horizontal panels (bonnet, roof, boot)?',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-vs-wax-vs-sealant',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'Price: full-body ceramic coating — from 500 ₾ at BESTAUTO.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Plus prep polishing (from 690 ₾) if the car isn\'t new and has defects.',
       },
     ],
   },
