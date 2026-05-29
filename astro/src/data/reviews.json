@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 186,
-  "fetchedAt": "2026-05-28T08:04:48.580Z",
+  "totalReviews": 187,
+  "fetchedAt": "2026-05-29T08:01:52.534Z",
   "reviews": [
+    {
+      "authorName": "曾艾琳",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXDBM0ifV0rAwN28ziNZFBZH65IKyTigRX19bdv9xjnEGN2esg=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Они очень быстро починили нашу машину. Бека отлично говорила по-английски и была очень готова обсудить и помочь нам найти оптимальное решение — она нисколько не давила на нас, заставляя делать то, что нам не нужно.\n\nМестоположение может быть немного трудно найти, парковочных мест в этом районе мало. Припаркуйтесь на главной дороге вместе с другими машинами и найдите вход по флажку рядом с пандусом, ведущим в закрытый подвал прямо рядом с продуктовым магазином.",
+        "ka": "მათ ძალიან სწრაფად შევაკეთეთ ჩვენი მანქანა. ბექა შესანიშნავად საუბრობდა ინგლისურად და მზად იყო, გვესაუბრა და დაგვეხმარა საუკეთესო საჭიროებების დადგენაში - საერთოდ არ გვაიძულებდა, გაგვეკეთებინა ის, რაც არ გვჭირდებოდა.\n\nადგილმდებარეობის პოვნა შეიძლება ცოტა რთული იყოს, რადგან ტერიტორიაზე პარკირების ადგილები შეზღუდულია. გააჩერეთ მანქანა მთავარ გზაზე სხვა მანქანებთან ერთად და იპოვეთ შესასვლელი დროშით, რომელიც პანდუსის მახლობლად მდებარეობს და სასურსათო მაღაზიის გვერდით მდებარე დახურულ სარდაფში მიდის.",
+        "en": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store."
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "en",
+      "time": 1779997754,
+      "profileUrl": "https://www.google.com/maps/contrib/118361112651939581584/reviews",
+      "text": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store.",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Acer_1993",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWdYS4lF03uwK5BEACEozxazJnGpUDomSBo3szd5PJkosFWYmrH=s128-c0x00000000-cc-rp-mo-ba3",
@@ -15,15 +35,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -35,15 +55,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Nikita Taboo",
@@ -75,15 +95,15 @@
         "en": "Professionalism and a comfortable environment together are rare today👌 My recommendation to the entire team..Thank you ✊"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1778746852,
       "profileUrl": "https://www.google.com/maps/contrib/103659643102670168677/reviews",
       "text": "პროფესიონალიზმი და კომფორტული გარემო ერთად იშვიათია დღეს👌 ჩემი რეკომენდაცია მთლიან გუნდს ..მადლობა ✊",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Dmitry Teshev",
