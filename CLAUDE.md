@@ -220,7 +220,7 @@ Tilda-экспорт отгружает ~16 JS + ~10 CSS. Всё агресси�
 
 **Live services (10):** polishing, ceramiccoating, ppf-shield-wrapping, vinyl-wrapping, interior-cleaning, carwash, auto-glass-tinting, windshield-repair, car-soundproofing, computer-diagnostics.
 
-Orphan blog articles (фильтруются из grid + sitemap через `DISCONTINUED_BLOG_SLUGS` в `blog-grid.ts`):
+Orphan blog articles — **полностью удалены из `page-map.json`** (отдельного фильтра-списка нет — это устаревшее упоминание `DISCONTINUED_BLOG_SLUGS`, такой константы в коде не существует). `page-map.json` — единственный источник: `blog-grid.ts::loadArticles()` читает только его записи, поэтому удаление оттуда убирает статью из blog-grid, routes, hreflang и sitemap разом. Вместе с записью удаляются исходные `tilda-export/*.html` и dead-config (`related-services.ts`, `blog-links.ts`). Список уже снятых статей (НЕ воссоздавать):
 
 - Restoration: `blog/plastic-elements-restoration`, `blog/restoring-car-seats`, `blog/steering-wheel-restoration`, `blog/why-restore-interior-elements`
 - PDR: `blog/pdr-method`, `blog/pdr-after-hail`, `blog/pdr-guidelines-and-techniques`
