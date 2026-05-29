@@ -8,7 +8,7 @@ primary_hf_ru: "антихром, chrome delete, удаление хрома п�
 primary_hf_ka: "ქრომის მოცილება, ანტიქრომი, ქრომი ფირით"
 primary_hf_en: "chrome delete, chrome delete vinyl, antichrome wrap"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#45"
   - gsc: "Downloads/gsc_16months.csv"

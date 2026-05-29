@@ -1328,6 +1328,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/chrome-delete-vinyl',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'оклейка кузова',
+        originalPhrase: 'оклейка кузова',
+        contextQuote: 'быстрее, чем полная оклейка кузова, результат заметен сразу.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'винил',
+        originalPhrase: 'винил',
+        contextQuote: 'Антихром-плёнка живёт примерно столько же, сколько винил на кузове — 5-7 лет у премиум-сегмента.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -3027,6 +3046,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/chrome-delete-vinyl',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'სრული გადაკვრა',
+        originalPhrase: 'სრული გადაკვრა',
+        contextQuote: 'სწრაფი, ვიდრე ძარის სრული გადაკვრა, შედეგი მაშინვე თვალშისაცემია.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილი',
+        originalPhrase: 'ვინილი',
+        contextQuote: 'ანტიქრომი-ფირი დაახლოებით იმდენ ხანს ცოცხლობს, რამდენსაც ვინილი ძარაზე — 5-7 წელი პრემიუმ-სეგმენტში.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-polishing-combo',
     links: [
       {
@@ -4640,6 +4678,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'Plus prep polishing (from 690 ₾) if the car isn\'t new and has defects.',
+      },
+    ],
+  },
+  {
+    article: 'blog/chrome-delete-vinyl',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'full body wrap',
+        originalPhrase: 'full body wrap',
+        contextQuote: 'faster than a full body wrap, result immediately visible.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl',
+        originalPhrase: 'vinyl',
+        contextQuote: 'Antichrome film lives roughly as long as any vinyl on a car — 5-7 years in the premium segment.',
       },
     ],
   },
