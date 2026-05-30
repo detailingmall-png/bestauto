@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 187,
-  "fetchedAt": "2026-05-29T08:01:52.534Z",
+  "fetchedAt": "2026-05-30T06:49:41.395Z",
   "reviews": [
     {
       "authorName": "曾艾琳",
@@ -15,15 +15,15 @@
         "en": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store."
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "en",
       "time": 1779997754,
       "profileUrl": "https://www.google.com/maps/contrib/118361112651939581584/reviews",
       "text": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store.",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Acer_1993",
@@ -35,15 +35,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -55,15 +55,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "Nikita Taboo",
@@ -155,15 +155,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Crash",
