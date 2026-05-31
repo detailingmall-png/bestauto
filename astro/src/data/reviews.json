@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 187,
-  "fetchedAt": "2026-05-30T06:49:41.395Z",
+  "totalReviews": 188,
+  "fetchedAt": "2026-05-31T07:48:48.613Z",
   "reviews": [
+    {
+      "authorName": "Дмитрий Павлов",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUvStfsFFw4Bf8a8RzOyNrXugJnjRYfccM98QZBJUFP-VGxauqn=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Обращался на полировку и химчистку BMW X5. Результатом очень доволен — кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим, убрали все загрязнения и неприятные запахи.\n\nРабота выполнена качественно, аккуратно и в оговоренные сроки. Видно, что ребята знают своё дело и внимательно относятся к деталям. Смело рекомендую!",
+        "ka": "ჩემი BMW X5 გავაპრიალე და ქიმწმენდა ჩავატარე. შედეგით ძალიან კმაყოფილი ვარ - გაპრიალების შემდეგ კორპუსი ახალივით გამოიყურება, ღრმა ბზინვარებით და მცირე ნაკაწრებით. გაწმენდის შემდეგ სალონი სუფთა და მოვლილია, მოშორებულია ყველა ჭუჭყი და უსიამოვნო სუნი.\n\nსამუშაო შესრულდა ეფექტურად, ზედმიწევნით და შეთანხმებულ ვადებში. აშკარაა, რომ ისინი თავის საქმეს კარგად იცნობენ და დეტალებს დიდ ყურადღებას აქცევენ. გირჩევთ მათ!",
+        "en": "I had my BMW X5 polished and dry-cleaned. I'm very pleased with the results – the bodywork looks like new after polishing, with a deep shine and minor scratches gone. The interior is clean and fresh after the cleaning, removing all dirt and unpleasant odors.\n\nThe work was done efficiently, meticulously, and within the agreed-upon timeframe. It's clear they know their stuff and pay close attention to detail. I highly recommend them!"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ru",
+      "time": 1780161332,
+      "profileUrl": "https://www.google.com/maps/contrib/116131506968891871214/reviews",
+      "text": "Обращался на полировку и химчистку BMW X5. Результатом очень доволен — кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим, убрали все загрязнения и неприятные запахи.\n\nРабота выполнена качественно, аккуратно и в оговоренные сроки. Видно, что ребята знают своё дело и внимательно относятся к деталям. Смело рекомендую!",
+      "relativeTime": "today"
+    },
     {
       "authorName": "曾艾琳",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXDBM0ifV0rAwN28ziNZFBZH65IKyTigRX19bdv9xjnEGN2esg=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store."
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
       },
       "originalLang": "en",
       "time": 1779997754,
       "profileUrl": "https://www.google.com/maps/contrib/118361112651939581584/reviews",
       "text": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store.",
-      "relativeTime": "a day ago"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "Acer_1993",
@@ -35,15 +55,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "4 дня назад",
-        "ka": "4 დღის წინ",
-        "en": "4 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "4 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -55,15 +75,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "4 дня назад",
-        "ka": "4 დღის წინ",
-        "en": "4 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "4 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "Nikita Taboo",
@@ -135,15 +155,15 @@
         "en": "Very good service, they arrived earlier than I expected and most importantly they did a very high quality job."
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "ka",
       "time": 1778327090,
       "profileUrl": "https://www.google.com/maps/contrib/101838248298657605851/reviews",
       "text": "ძალიან კარგი მომსხაურებ, იმაზე ადრე მორჩნენ ვიდრე მითხრეს და რაც მთავარია ძალიან მაღალი ხარისხით შეასრულეს სამუშაო",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Nita Marsagishvili",
