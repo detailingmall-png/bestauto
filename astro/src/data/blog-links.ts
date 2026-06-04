@@ -38,6 +38,32 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/detailing-brands-we-use',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная плёнка',
+        originalPhrase: 'Защитная плёнка',
+        contextQuote: 'Защитная плёнка PPF — самая требовательная к бренду услуга в детейлинге.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'Щёлочь моет машину за один проход, но одновременно разрушает керамическое покрытие и ускоряет износ PPF.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка — аналогично.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-coating-for-car',
     links: [
       {
@@ -1775,6 +1801,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/detailing-brands-we-use',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'დამცავი ფირი PPF — დეტეილინგში ბრენდის მიმართ ყველაზე მომთხოვნი სერვისია.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ქიმწმენდა — ესაა არა ერთი შემადგენლობა, არამედ 8-12 სხვადასხვა ქიმია სხვადასხვა ამოცანაზე: ტუტოვანი ტყავისთვის, ნეიტრალური ქსოვილისთვის, ფერმენტული ორგანული ლაქებისთვის, ორთქლი ქიმიის გარეშე პლასტმასისთვის, ლანოლინის კონდიციონერი ტყავისთვის, ანტისტატიკი ფინიშისთვის.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება — ანალოგიურად.',
+      },
+    ],
+  },
+  {
     article: 'blog/ceramic-coating-tbilisi',
     links: [
       {
@@ -3435,6 +3487,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/detailing-brands-we-use',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'Paint protection film',
+        contextQuote: 'Paint protection film is the most brand-sensitive service in detailing.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'On dry cleaning and polishing, professional chemistry is used without single-brand attachment — a deliberate choice in favour of picking the optimal formula per task.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing — similar.',
+      },
+    ],
+  },
   {
     article: 'blog/ceramic-coating-tbilisi',
     links: [

@@ -2390,5 +2390,29 @@
     "title": "Chrome delete Tbilisi — vinyl chrome removal from 300 ₾",
     "lang": "en",
     "slug": "blog/chrome-delete-vinyl"
+  },
+  "920260604001": {
+    "file": "page920260604001.html",
+    "url": "https://bestauto.ge/ru/blog/detailing-brands-we-use",
+    "path": "/ru/blog/detailing-brands-we-use",
+    "title": "Какие бренды материалов использует BESTAUTO — и почему",
+    "lang": "ru",
+    "slug": "blog/detailing-brands-we-use"
+  },
+  "920260604002": {
+    "file": "page920260604002.html",
+    "url": "https://bestauto.ge/blog/detailing-brands-we-use",
+    "path": "/blog/detailing-brands-we-use",
+    "title": "რომელ ბრენდის მასალებს იყენებს BESTAUTO — და რატომ",
+    "lang": "ka",
+    "slug": "blog/detailing-brands-we-use"
+  },
+  "920260604003": {
+    "file": "page920260604003.html",
+    "url": "https://bestauto.ge/en/blog/detailing-brands-we-use",
+    "path": "/en/blog/detailing-brands-we-use",
+    "title": "Which material brands BESTAUTO uses — and why",
+    "lang": "en",
+    "slug": "blog/detailing-brands-we-use"
   }
 }
