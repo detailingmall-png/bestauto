@@ -12,7 +12,7 @@ secondary_links:
   - "/ceramiccoating"
   - "/auto-glass-tinting"
   - "/carwash"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#98"
 ---
