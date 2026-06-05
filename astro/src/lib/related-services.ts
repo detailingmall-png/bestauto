@@ -81,6 +81,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/detailing-services-all-in-one':      'ppf-shield-wrapping',
   'blog/5-year-ownership-detailing-plan':    'ppf-shield-wrapping',
   'blog/detailing-brands-we-use':            'ppf-shield-wrapping',
+  'blog/detailing-faq-common-myths':         'ppf-shield-wrapping',
   // Vinyl wrapping
   'blog/benefits-of-vinyl-wraps':        'vinyl-wrapping',
   'blog/car-body-color-with-vinyl-wrap': 'vinyl-wrapping',

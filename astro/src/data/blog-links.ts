@@ -38,6 +38,32 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/detailing-faq-common-myths',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'Цель разная: полировка восстанавливает внешний вид, керамика защищает от дальнейших загрязнений.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'Виниловая плёнка',
+        originalPhrase: 'Виниловая плёнка',
+        contextQuote: 'Виниловая плёнка держится на заводском лаке адгезивным слоем, рассчитанным на снятие через 3-5 лет без повреждений ЛКП.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'Химчистка',
+        originalPhrase: 'Химчистка',
+        contextQuote: 'Химчистка за 400-550 ₾ — это роторный экстрактор, пар 150°C, отдельная химия под каждый материал, 2-8 часов работы.',
+      },
+    ],
+  },
+  {
     article: 'blog/detailing-brands-we-use',
     links: [
       {
@@ -1801,6 +1827,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/detailing-faq-common-myths',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მიზანი განსხვავებულია: პოლირება აღადგენს გარეგნობას, კერამიკა იცავს შემდგომი დაბინძურებისგან.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირი',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'ვინილის ფირი ლაქზე დევს ადჰეზიური ფენით, რომელიც გათვლილია 3-5 წელიწადში მოხსნაზე ზიანის გარეშე.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ქიმწმენდა 400-550 ₾-ად — ესაა როტორული ექსტრაქტორი, 150°C ორთქლი, ცალკე ქიმია ყოველ მასალაზე, 2-8 საათი.',
+      },
+    ],
+  },
+  {
     article: 'blog/detailing-brands-we-use',
     links: [
       {
@@ -3487,6 +3539,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/detailing-faq-common-myths',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Different purposes: polishing restores appearance, ceramic protects against further soiling.',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'Vinyl',
+        originalPhrase: 'Vinyl',
+        contextQuote: 'Vinyl film sits on factory clearcoat via an adhesive layer designed to peel in 3-5 years without damage.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'Dry cleaning',
+        originalPhrase: 'Dry cleaning',
+        contextQuote: 'Dry cleaning for 400-550 ₾ is a rotary extractor, 150°C steam, dedicated chemistry per material, 2-8 hours.',
+      },
+    ],
+  },
   {
     article: 'blog/detailing-brands-we-use',
     links: [

@@ -2414,5 +2414,29 @@
     "title": "Which material brands BESTAUTO uses — and why",
     "lang": "en",
     "slug": "blog/detailing-brands-we-use"
+  },
+  "920260605001": {
+    "file": "page920260605001.html",
+    "url": "https://bestauto.ge/ru/blog/detailing-faq-common-myths",
+    "path": "/ru/blog/detailing-faq-common-myths",
+    "title": "Детейлинг — 15 мифов, которые ломают выбор клиентов",
+    "lang": "ru",
+    "slug": "blog/detailing-faq-common-myths"
+  },
+  "920260605002": {
+    "file": "page920260605002.html",
+    "url": "https://bestauto.ge/blog/detailing-faq-common-myths",
+    "path": "/blog/detailing-faq-common-myths",
+    "title": "დეტეილინგის 15 მითი — რა ანგრევს კლიენტის არჩევანს",
+    "lang": "ka",
+    "slug": "blog/detailing-faq-common-myths"
+  },
+  "920260605003": {
+    "file": "page920260605003.html",
+    "url": "https://bestauto.ge/en/blog/detailing-faq-common-myths",
+    "path": "/en/blog/detailing-faq-common-myths",
+    "title": "Detailing — 15 myths that break client choices",
+    "lang": "en",
+    "slug": "blog/detailing-faq-common-myths"
   }
 }

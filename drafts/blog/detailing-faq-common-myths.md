@@ -12,7 +12,7 @@ secondary_links:
   - "/ceramiccoating"
   - "/polishing"
   - "/auto-glass-tinting"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#100"
 ---
