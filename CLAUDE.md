@@ -211,21 +211,18 @@ Tilda-экспорт отгружает ~16 JS + ~10 CSS. Всё агресси�
 
 ---
 
-## Discontinued services
+## Services
 
-НЕ линковать и НЕ воссоздавать:
+**Live services (12):** polishing, ceramiccoating, ppf-shield-wrapping, vinyl-wrapping, interior-cleaning, carwash, auto-glass-tinting, windshield-repair, car-soundproofing, computer-diagnostics, `interior-restoration`, `paintless-dent-repair`.
 
-- `interior-restoration` (removed 2026-04-17, branch `chore/remove-interior-restoration`)
-- `paintless-dent-repair` (PDR, removed earlier)
+> **История `interior-restoration` + `paintless-dent-repair` (PDR):** сняты в апреле 2026 как discontinued (ветка `chore/remove-interior-restoration` + коммит `7ecc791`), затем **восстановлены 2026-06-05** — бизнес снова оказывает услуги. Возвращены: 6 страниц услуг (×3 языка) + 7 blog-подстатей кластеров (×3 языка) из git; записи в `page-map.json`, `seo.ts` (SERVICES, sectionKey s3/s4), `service-faqs.ts`, `meta-overrides.ts`, `service-prices-inject.ts`, `studio/seed.mjs`; снят sitemap-filter в `astro.config.mjs`; снят фильтр `discontinuedServiceSlugs` в `[...slug].astro`; снят фильтр s3/s4 в `prices-inject.ts`. 301-редиректы корней услуг и blog-статей удалены; legacy под-URL `/<service>/<article>` теперь 301'ятся на восстановленные `/blog/<article>`.
 
-**Live services (10):** polishing, ceramiccoating, ppf-shield-wrapping, vinyl-wrapping, interior-cleaning, carwash, auto-glass-tinting, windshield-repair, car-soundproofing, computer-diagnostics.
-
-Orphan blog articles — **полностью удалены из `page-map.json`** (отдельного фильтра-списка нет — это устаревшее упоминание `DISCONTINUED_BLOG_SLUGS`, такой константы в коде не существует). `page-map.json` — единственный источник: `blog-grid.ts::loadArticles()` читает только его записи, поэтому удаление оттуда убирает статью из blog-grid, routes, hreflang и sitemap разом. Вместе с записью удаляются исходные `tilda-export/*.html` и dead-config (`related-services.ts`, `blog-links.ts`). Список уже снятых статей (НЕ воссоздавать):
+Blog-кластеры этих услуг (live, **НЕ удалять**):
 
 - Restoration: `blog/plastic-elements-restoration`, `blog/restoring-car-seats`, `blog/steering-wheel-restoration`, `blog/why-restore-interior-elements`
 - PDR: `blog/pdr-method`, `blog/pdr-after-hail`, `blog/pdr-guidelines-and-techniques`
 
-Cloudflare `_redirects` делает 301 со старых URL на `/interior-cleaning`. **НЕ удалять 301-правила.** 23 Tilda HTML страницы всё ещё содержат `/interior-restoration` в меню — 301'ится, cleanup source links — optional future work.
+`page-map.json` — единственный источник blog-статей: `blog-grid.ts::loadArticles()` читает только его записи (отдельного фильтра-списка нет; `DISCONTINUED_BLOG_SLUGS` в коде не существует), поэтому добавление/удаление записи там меняет blog-grid, routes, hreflang и sitemap разом.
 
 ---
 

@@ -116,11 +116,8 @@ export function injectPricesData(
   if (!nextRecMatch) return rawHtml;
   const priceEnd = last681Index + nextRecMatch.index + nextRecMatch[1].length;
 
-  // Discontinued service section keys (no longer rendered on prices page)
-  const DISCONTINUED_KEYS = new Set(['s3', 's4']);
-
-  // Filter active sections
-  const activeSections = pricingPage.sections.filter(s => !DISCONTINUED_KEYS.has(s._key));
+  // All price sections (PPF reorder applied below)
+  const activeSections = pricingPage.sections;
 
   // Reorder: PPF first, then color change, then the rest
   const isPPF = (s: PriceSection) => (s.titleRu ?? '').includes('PPF');

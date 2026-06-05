@@ -13,7 +13,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/paintless-dent-repair'),
+      // Generate sitemap for all 3 locales
       i18n: {
         defaultLocale: 'ka',
         locales: {

@@ -112,6 +112,26 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
     },
     sectionKey: 's2',
   },
+  'interior-restoration': {
+    name: { ka: 'ინტერიერის რესტავრაცია', ru: 'Восстановление салона', en: 'Interior Restoration' },
+    min: '190',
+    description: {
+      ka: 'ავტომობილის სალონის ელემენტების რესტავრაცია თბილისში — საჭე, სავარძლები, პლასტმასი, ტყავი.',
+      ru: 'Реставрация элементов салона автомобиля в Тбилиси — руль, сиденья, пластик, кожа.',
+      en: 'Car interior element restoration in Tbilisi — steering wheel, seats, plastic, leather.',
+    },
+    sectionKey: 's3',
+  },
+  'paintless-dent-repair': {
+    name: { ka: 'ძარას ცივად გასწორება', ru: 'Удаление вмятин без покраски', en: 'Paintless Dent Repair' },
+    min: '250',
+    description: {
+      ka: 'მანქანის ძარას ცივად გასწორება (PDR) თბილისში — ჩაზნექილობების მოცილება შეღებვის გარეშე.',
+      ru: 'Беспокрасочное удаление вмятин (PDR) в Тбилиси — устранение вмятин без перекраски.',
+      en: 'Paintless dent repair (PDR) in Tbilisi — dent removal without repainting.',
+    },
+    sectionKey: 's4',
+  },
   'carwash': {
     name: { ka: 'მანქანის სარეცხი', ru: 'Детейлинг мойка автомобиля', en: 'Premium Car Wash' },
     min: '40',

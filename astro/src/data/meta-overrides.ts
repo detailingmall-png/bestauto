@@ -46,6 +46,15 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Body, headlight and glass polishing in Tbilisi. Body polishing from 690 GEL, headlights from 150 GEL. Book online.',
   },
 
+  'en/paintless-dent-repair': {
+    // 54 chars → 152 chars
+    description: 'Paintless dent removal (PDR) in Tbilisi. Fix dents without repainting — preserve original factory finish. Fast repair, affordable prices. Book at BESTAUTO.',
+  },
+  'ka/paintless-dent-repair': {
+    // 95 chars → 148 chars
+    description: 'მანქანის ძარას ცივად გასწორება (PDR) თბილისში შეღებვის გარეშე. ვინარჩუნებთ ორიგინალ ლაქს. სწრაფი შეკეთება, ხელმისაწვდომი ფასები. ჩაწერა — BESTAUTO.',
+  },
+
   // ── Ceramic Coating ─────────────────────────────────────────
   'ka/ceramiccoating': {
     title: 'კერამიკული საფარი მანქანაზე თბილისში — 500 ₾-დან | BESTAUTO',

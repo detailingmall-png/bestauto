@@ -13,7 +13,8 @@ const SLUG_TO_SECTION: Record<string, string> = {
   polishing: 's0',
   ceramiccoating: 's1',
   'interior-cleaning': 's2',
-
+  'interior-restoration': 's3',
+  'paintless-dent-repair': 's4',
   'windshield-repair': 's5',
   'ppf-shield-wrapping': 's6',
   'vinyl-wrapping': 's7',
