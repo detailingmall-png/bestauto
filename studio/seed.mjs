@@ -112,6 +112,7 @@ const SERVICE_SLUGS = [
   'auto-glass-tinting',
   'windshield-repair',
   'car-soundproofing',
+  'interior-restoration',
   'computer-diagnostics',
   'paintless-dent-repair',
   'carwash',
