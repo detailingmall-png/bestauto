@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 190,
-  "fetchedAt": "2026-06-05T08:10:36.037Z",
+  "fetchedAt": "2026-06-06T06:56:05.224Z",
   "reviews": [
     {
       "authorName": "Pak Volchek",
@@ -15,15 +15,15 @@
         "ka": "შედეგით გაოგნებული დავრჩი. ჩემი ძველი ფორდი ახალივით გამოიყურება და არაფრის სუნი არ ასდის! გირჩევთ!"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "en",
       "time": 1780318426,
       "profileUrl": "https://www.google.com/maps/contrib/106314736770662063356/reviews",
       "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing! Highly recommended!",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "Nika Khatiashvili",
@@ -35,15 +35,15 @@
         "en": "great staff"
       },
       "relativeTimes": {
-        "ru": "4 дня назад",
-        "ka": "4 დღის წინ",
-        "en": "4 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "en",
       "time": 1780229929,
       "profileUrl": "https://www.google.com/maps/contrib/108958595932398788808/reviews",
       "text": "great staff",
-      "relativeTime": "4 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "Дмитрий Павлов",
@@ -55,15 +55,15 @@
         "en": "I had my BMW X5 polished and dry-cleaned. I'm very pleased with the results – the bodywork looks like new after polishing, with a deep shine and minor scratches gone. The interior is clean and fresh after the cleaning, removing all dirt and unpleasant odors.\n\nThe work was done efficiently, meticulously, and within the agreed-upon timeframe. It's clear they know their stuff and pay close attention to detail. I highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "6 дней назад",
+        "ka": "6 დღის წინ",
+        "en": "6 days ago"
       },
       "originalLang": "ru",
       "time": 1780161332,
       "profileUrl": "https://www.google.com/maps/contrib/116131506968891871214/reviews",
       "text": "Обращался на полировку и химчистку BMW X5. Результатом очень доволен — кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим, убрали все загрязнения и неприятные запахи.\n\nРабота выполнена качественно, аккуратно и в оговоренные сроки. Видно, что ребята знают своё дело и внимательно относятся к деталям. Смело рекомендую!",
-      "relativeTime": "5 days ago"
+      "relativeTime": "6 days ago"
     },
     {
       "authorName": "曾艾琳",
@@ -215,15 +215,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Crash",
