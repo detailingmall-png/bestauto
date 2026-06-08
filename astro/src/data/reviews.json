@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 190,
-  "fetchedAt": "2026-06-07T07:57:16.317Z",
+  "fetchedAt": "2026-06-08T08:57:41.161Z",
   "reviews": [
     {
       "authorName": "Pak Volchek",
@@ -15,15 +15,15 @@
         "ka": "შედეგით გაოგნებული დავრჩი. ჩემი ძველი ფორდი ახალივით გამოიყურება და არაფრის სუნი არ ასდის! გირჩევთ!"
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "6 дней назад",
+        "ka": "6 დღის წინ",
+        "en": "6 days ago"
       },
       "originalLang": "en",
       "time": 1780318426,
       "profileUrl": "https://www.google.com/maps/contrib/106314736770662063356/reviews",
       "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing! Highly recommended!",
-      "relativeTime": "5 days ago"
+      "relativeTime": "6 days ago"
     },
     {
       "authorName": "Nika Khatiashvili",
@@ -35,15 +35,15 @@
         "en": "great staff"
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "en",
       "time": 1780229929,
       "profileUrl": "https://www.google.com/maps/contrib/108958595932398788808/reviews",
       "text": "great staff",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Дмитрий Павлов",
@@ -175,15 +175,15 @@
         "en": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "en",
       "time": 1778445441,
       "profileUrl": "https://www.google.com/maps/contrib/113531890558736511832/reviews",
       "text": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Ani Jibladze",
