@@ -8,7 +8,12 @@ primary_hf_ru: "восстановление кожи салона, рестав
 primary_hf_ka: "ტყავის აღდგენა, ტყავის სავარძლების აღდგენა"
 primary_hf_en: "leather seat restoration, leather seat repair"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-06-08
+published_pageids:
+  ru: "920260608001"
+  ka: "920260608002"
+  en: "920260608003"
 sources:
   - roadmap: "docs/content-roadmap.md#84"
   - competitor: "priala.ge leather category"

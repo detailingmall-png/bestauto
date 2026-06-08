@@ -1684,6 +1684,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/leather-seat-restoration',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'В этих случаях химчистка ничего не решит.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Чем реставрация кожи отличается от химчистки?',
+      },
+    ],
+  },
+  {
     article: 'blog/steam-headlight-polishing',
     links: [
       {
@@ -3435,6 +3454,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/leather-seat-restoration',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'სტუდიის პრაისში სალონის ქიმწმენდას აქვს სამი ფიქსირებული კატეგორია',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ამ შემთხვევებში ქიმწმენდა არაფერს აღარ გადაწყვეტს.',
+      },
+    ],
+  },
+  {
     article: 'blog/steam-headlight-polishing',
     links: [
       {
@@ -5083,6 +5121,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'not reachable by dry cleaning alone',
+      },
+    ],
+  },
+  {
+    article: 'blog/leather-seat-restoration',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'None of that is solved by dry cleaning.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'How is leather restoration different from dry cleaning?',
       },
     ],
   },
