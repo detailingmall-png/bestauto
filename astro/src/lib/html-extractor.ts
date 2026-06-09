@@ -1747,6 +1747,41 @@ export function completeTwitterCards(head: string): string {
  * Apply build-time meta tag overrides from meta-overrides.ts.
  * Replaces title, description, og:title, og:description when an override exists.
  */
+/**
+ * og:image JPG/PNG -> WebP twin map (basename -> basename, same /images/ dir).
+ * Audited 2026-06-10: every pair verified to have IDENTICAL (or larger, for
+ * interior-cleaning) pixel dimensions, so share previews do not degrade.
+ * Tilda exports reference the JPG variant in og:image while the same frame
+ * already exists as WebP (30-45% smaller). carwash + 2 unreadable PNGs were
+ * skipped (smaller/unverifiable twins). Extend manually for new services.
+ */
+const OG_IMAGE_WEBP_MAP: Readonly<Record<string, string>> = {
+  'tild6439-3766-4633-a663-643961323332__shutterstock_1703968.jpg': 'tild6439-3766-4633-a663-643961323332__shutterstock_1703968.webp', // polishing
+  'tild6362-3832-4634-b335-393333313666__shutterstock_1901463.jpg': 'tild3239-3062-4433-a630-656235613434__shutterstock_1901463.webp', // ceramiccoating
+  'tild6437-3762-4563-a430-663034316636__depositphotos_444297.jpg': 'tild6461-6361-4036-b035-323338613634__depositphotos_444297.webp', // ppf-shield-wrapping
+  'tild6434-3430-4635-b366-623038643362__shutterstock_2193252.jpg': 'tild6264-6462-4063-a435-316136313162__shutterstock_2193252.webp', // interior-cleaning (twin 700x466 > jpg 650x433)
+  'tild3035-3062-4333-a436-663732333338__depositphotos_199697.jpg': 'tild6535-3436-4139-a562-333837646364__depositphotos_199697.webp', // auto-glass-tinting
+  'tild6362-3966-4238-b964-633732663461__shutterstock_2039932.jpg': 'tild3666-3736-4734-a338-396432353935__shutterstock_2039932.webp', // windshield-repair (en)
+  'tild6364-3239-4437-b239-633038366536__imgonline-com-ua-rep.jpg': 'tild3662-6561-4666-b363-643132396139__imgonline-com-ua-rep.webp', // computer-diagnostics (ru)
+  'tild3835-3462-4033-b030-646366333865__imgonline-com-ua-rep.jpg': 'tild3662-6561-4666-b363-643132396139__imgonline-com-ua-rep.webp', // computer-diagnostics (en)
+  'tild6132-3137-4534-a533-333463383762__imgonline-com-ua-rep.jpg': 'tild3662-6561-4666-b363-643132396139__imgonline-com-ua-rep.webp', // computer-diagnostics (ka)
+  'tild3266-6363-4464-b439-623834373964__depositphotos_441649.jpg': 'tild3266-6363-4464-b439-623834373964__depositphotos_441649.webp', // interior-restoration
+  'tild6435-6537-4464-a232-633132306661__depositphotos_310938.jpg': 'tild3635-3236-4637-b634-373063316634__depositphotos_310938.webp', // paintless-dent-repair
+};
+
+/** Replace og:image / twitter:image JPGs with their verified WebP twins. */
+export function upgradeOgImageToWebp(head: string): string {
+  return head.replace(
+    /((?:property="og:image"|name="twitter:image")\s+content=")([^"]+)(")/gi,
+    (match, pre: string, url: string, post: string) => {
+      const slashIdx = url.lastIndexOf('/');
+      const base = url.slice(slashIdx + 1);
+      const twin = OG_IMAGE_WEBP_MAP[base];
+      return twin ? `${pre}${url.slice(0, slashIdx + 1)}${twin}${post}` : match;
+    },
+  );
+}
+
 export function applyMetaOverrides(head: string, lang: string, slug: string): string {
   const key = `${lang}/${slug}`;
   const overrides = META_OVERRIDES[key];
@@ -2143,6 +2178,10 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
 
   // Fix og:type: remove Tilda duplicates, set "article" for blog pages
   processedHead = fixOgType(processedHead, slug);
+
+  // Swap JPG/PNG og:image (and the twitter:image copied from it) to the
+  // verified same-size WebP twin where one exists in public/images
+  processedHead = upgradeOgImageToWebp(processedHead);
 
   const headContent = (lang && slug !== undefined) ? applyMetaOverrides(processedHead, lang, slug) : processedHead;
 

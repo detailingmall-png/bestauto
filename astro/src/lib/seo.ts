@@ -6,6 +6,7 @@
 import pageMap from './page-map.json';
 import reviewsData from '../data/reviews.json';
 import { SERVICE_FAQS } from '../data/service-faqs';
+import { getTopServiceKeywords } from '../data/seo-service-keywords';
 import { LOCATIONS } from '../data/location-data';
 import { STEPS as PROCESS_STEPS, SECTION_TITLE as PROCESS_SECTION_TITLE } from './process-steps';
 import type { PricingPage } from './sanity';
@@ -341,6 +342,13 @@ export function generateServiceSchema(
       name: 'Tbilisi',
     },
   };
+
+  // alternateName: top HF search synonyms (GSC-ordered) minus the main name
+  const alternates = getTopServiceKeywords(`/${baseSlug}`, lang, 2)
+    .filter((kw) => kw.toLowerCase() !== serviceName.toLowerCase());
+  if (alternates.length > 0) {
+    schema.alternateName = alternates.length === 1 ? alternates[0] : alternates;
+  }
 
   if (offers.length > 0) {
     schema.hasOfferCatalog = {
