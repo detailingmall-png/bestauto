@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 190,
-  "fetchedAt": "2026-06-08T08:57:41.161Z",
+  "totalReviews": 191,
+  "fetchedAt": "2026-06-09T07:53:32.577Z",
   "reviews": [
+    {
+      "authorName": "Andro Todua",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLXgksdhhDKnVhCE6NzBkNxbtyEvM8gWr1mN_WYbv-kEDbLTA=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Я заказал полную химчистку кузова и нанесение керамического покрытия. Видимые следы износа на кузове впечатляюще обновились.\n\nЯ оценил, что в стоимость услуг была включена дополнительная шлифовка и полировка одной панели за счет компании.\n\nПерсонал внимательный, заботится о своих клиентах и ​​предоставляет исчерпывающие объяснения во время консультации перед началом работ.\nОни также отлично почистили салон. Все было идеально чисто, и они даже отремонтировали накладку на центральной стойке, даже не дожидаясь моего уведомления.\n\nЯ настоятельно рекомендую обслуживать свой автомобиль именно здесь, в Bestauto Detailing!",
+        "ka": "მანქანას დეტალური დავამუშავე და ზედაპირზე კერამიკა დავაფინე. კორპუსზე არსებული ხილული ცვეთა შთამბეჭდავად განახლდა.\n\nმადლობელი ვარ, რომ მომსახურებაში მათ სახლის კიდევ ერთი პანელის გაპრიალება და გაპრიალებაც შეიტანეს.\n\nპერსონალი ყურადღებიანია, ზრუნავს თავის კლიენტებზე და სამუშაოების დაწყებამდე კონსულტაციის დროს ყოვლისმომცველ განმარტებებს იძლევა.\nმათ ასევე შესანიშნავი სამუშაო გაწიეს ინტერიერის ღრმა გაწმენდის კუთხით. ყველაფერი ძალიან სუფთა იყო და მათ ჩემი B საყრდენის მორთვაც კი შეაკეთეს ისე, რომ არაფერი მითქვამს.\n\nგირჩევთ, თქვენი მანქანა Bestauto Detailing-ში შეაკეთოთ!",
+        "en": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "en",
+      "time": 1780927987,
+      "profileUrl": "https://www.google.com/maps/contrib/117454642337023272704/reviews",
+      "text": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Pak Volchek",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXO2TMEr6BMVwZMHha4TG-G19mxiJGSIcipMxnfCr225WOWC2Kp=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "ka": "შედეგით გაოგნებული დავრჩი. ჩემი ძველი ფორდი ახალივით გამოიყურება და არაფრის სუნი არ ასდის! გირჩევთ!"
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "en",
       "time": 1780318426,
       "profileUrl": "https://www.google.com/maps/contrib/106314736770662063356/reviews",
       "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing! Highly recommended!",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Nika Khatiashvili",
@@ -95,15 +115,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -115,15 +135,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Nikita Taboo",
@@ -215,15 +235,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "Crash",
@@ -309,7 +329,7 @@
       "authorName": "Николай жидков",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWh3rs9B1iQpr5_O9pZ3HgnNzVlAeAJc7788W7qM5YdXmkq5ln5zw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "4 months ago",
+      "relativeTime": "5 months ago",
       "text": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин. Ребята — настоящие профессионалы и просто классные люди! Делают всё на высшем уровне, результат всегда «супер». Что особенно радует — это индивидуальный подход к каждому клиенту и внимание к деталям. Однозначно рекомендую!\n\nI’ve been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and just great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail. Highly recommended!",
       "time": 1767770321,
       "profileUrl": "https://www.google.com/maps/contrib/115733878456850340696/reviews",
@@ -319,9 +339,9 @@
         "en": "I've been using Best Auto for a long time and have trusted them with dozens of my cars. These guys are true professionals and simply great people! They do everything at the highest level, and the results are always superb. What's especially pleasing is their individual approach to each client and attention to detail. I definitely recommend them!\n\nI've been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and simply great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to each client and attention to detail. Highly recommended!"
       },
       "relativeTimes": {
-        "ru": "4 месяца назад",
-        "en": "4 months ago",
-        "ka": "4 თვის წინ"
+        "ru": "5 месяцев назад",
+        "en": "5 months ago",
+        "ka": "5 თვის წინ"
       },
       "originalLang": "ru"
     },
