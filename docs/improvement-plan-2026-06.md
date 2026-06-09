@@ -102,9 +102,8 @@ Live: код гейта на всех страницах, TBT 14-31ms. Функ�
 
 **Branch:** `feat/sitemap-lastmod`. Commit: `feat: add lastmod to sitemap from git history`.
 
-**Статус:** [~] implemented + verified locally (commit eebfca7 on feat/sitemap-lastmod).
-331/337 URL получили lastmod, даты реалистичные (волна 2026-04-13, PDR-restore 2026-06-05),
-главная с датой. fetch-depth: 0 добавлен в deploy.yml. ЖДЁТ: approve → merge → live curl.
+**Статус:** [x] DONE 2026-06-10. Merge 59db2a7, deploy run 27235063736 success.
+Live: 331 lastmod в sitemap-0.xml, даты реальные из git (fetch-depth:0 в CI отработал).
 
 ---
 
@@ -140,7 +139,7 @@ Live: код гейта на всех страницах, TBT 14-31ms. Функ�
 Блок на 12 услугах × 3 языка, отсутствует на главной/prices/blog; PDR и diagnostics — по 3
 статьи (кластеры из 3), остальные — 4. Скриншоты 375px/desktop ОК, overflow нет, touch ≥48px.
 Бонус: добавлен cross-sell (related-services) для interior-restoration + paintless-dent-repair —
-после восстановления 2026-06-05 он на этих страницах молча отсутствовал. ЖДЁТ: approve → merge.
+после восстановления 2026-06-05 он на этих страницах молча отсутствовал. DONE: deploy run 27235194010 (merge c7eca27). Live-проверка пройдена.
 
 ---
 
@@ -165,7 +164,7 @@ Google Rich Results Test на 1-2 live URL после деплоя.
 
 **Статус:** [~] implemented + verified locally (commit 342c443 on feat/article-dates).
 98 статей в article-dates.ts (даты из git), JSON-LD проверен в dist на KA/RU/EN: datePublished
-есть везде, dateModified только где правки были позже публикации. ЖДЁТ: approve → merge.
+есть везде, dateModified только где правки были позже публикации. DONE: deploy run 27235194010 (merge c7eca27). Live-проверка пройдена.
 
 ---
 
@@ -190,7 +189,7 @@ Google Rich Results Test на 1-2 live URL после деплоя.
 **Статус:** [~] implemented + verified locally (commit 8baf926 on feat/seo-polish).
 og:image/twitter:image → webp на услугах (11 проверенных по размерам пар; carwash и 2 PNG
 пропущены сознательно), Service.alternateName из топ-2 GSC-ключей, Article.image в blog JSON-LD.
-priceRange оставлен "$$" — нет надёжного источника диапазона. ЖДЁТ: approve → merge.
+priceRange оставлен "$$" — нет надёжного источника диапазона. DONE: deploy run 27235194010.
 Follow-up найден: на carwash-страницах задублирован Tilda-овский Service schema (см. бэклог).
 
 ---
