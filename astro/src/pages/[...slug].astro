@@ -10,6 +10,7 @@ import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, normalizeLegacyBlogBody, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
+import { generateRelatedArticlesHtml } from '../lib/related-articles';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
@@ -753,6 +754,13 @@ if (blogCtaHtml) {
 const relatedHtml = generateRelatedServicesHtml(lang, baseSlug);
 if (relatedHtml) {
   mainContent = insertBeforeFooter(mainContent, relatedHtml, FOOTER_IDS[lang] ?? []);
+}
+
+// Service pages: "related articles" block (service -> blog back-links),
+// inserted after the cross-sell block so it sits right before the footer.
+const relatedArticlesHtml = generateRelatedArticlesHtml(lang, baseSlug);
+if (relatedArticlesHtml) {
+  mainContent = insertBeforeFooter(mainContent, relatedArticlesHtml, FOOTER_IDS[lang] ?? []);
 }
 
 // Replace first Elfsight reviews widget with self-hosted widget, remove duplicates.
