@@ -11,6 +11,10 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: astro.config.mjs derives sitemap <lastmod> from
+          # git commit dates of tilda-export page files.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
