@@ -135,7 +135,7 @@ Live: 331 lastmod в sitemap-0.xml, даты реальные из git (fetch-de
 
 **Branch:** `feat/related-articles-block`. Commit: `feat: add related blog articles block to service pages`.
 
-**Статус:** [~] implemented + verified locally (commit 5db5e8c on feat/related-articles-block).
+**Статус:** [x] DONE 2026-06-10 (commit 5db5e8c, deploy 27235194010).
 Блок на 12 услугах × 3 языка, отсутствует на главной/prices/blog; PDR и diagnostics — по 3
 статьи (кластеры из 3), остальные — 4. Скриншоты 375px/desktop ОК, overflow нет, touch ≥48px.
 Бонус: добавлен cross-sell (related-services) для interior-restoration + paintless-dent-repair —
@@ -162,7 +162,7 @@ Google Rich Results Test на 1-2 live URL после деплоя.
 
 **Branch:** `feat/article-dates`. Commit: `feat: add datePublished/dateModified to blog article schema`.
 
-**Статус:** [~] implemented + verified locally (commit 342c443 on feat/article-dates).
+**Статус:** [x] DONE 2026-06-10 (commit 342c443, deploy 27235194010).
 98 статей в article-dates.ts (даты из git), JSON-LD проверен в dist на KA/RU/EN: datePublished
 есть везде, dateModified только где правки были позже публикации. DONE: deploy run 27235194010 (merge c7eca27). Live-проверка пройдена.
 
@@ -186,7 +186,7 @@ Google Rich Results Test на 1-2 live URL после деплоя.
 **Верификация:** dist grep по каждому пункту; Facebook Sharing Debugger / Twitter validator
 на 1 URL (og:image); Rich Results Test (schema).
 
-**Статус:** [~] implemented + verified locally (commit 8baf926 on feat/seo-polish).
+**Статус:** [x] DONE 2026-06-10 (commit 8baf926, deploy 27235194010).
 og:image/twitter:image → webp на услугах (11 проверенных по размерам пар; carwash и 2 PNG
 пропущены сознательно), Service.alternateName из топ-2 GSC-ключей, Article.image в blog JSON-LD.
 priceRange оставлен "$$" — нет надёжного источника диапазона. DONE: deploy run 27235194010.
