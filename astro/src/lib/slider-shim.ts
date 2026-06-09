@@ -39,7 +39,7 @@ var tx=0;
 wrap.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
 wrap.addEventListener('touchend',function(e){
 var dx=e.changedTouches[0].clientX-tx;
-if(Math.abs(dx)>40)go(cur+(dx<0?1:-1))},{passive:true});
+if(Math.abs(dx)>40)requestAnimationFrame(function(){go(cur+(dx<0?1:-1))})},{passive:true});
 go(0)}
 function t_slds__autoInit(){
 document.querySelectorAll('.t-slds__items-wrapper').forEach(function(w){

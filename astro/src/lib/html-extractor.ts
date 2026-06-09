@@ -34,11 +34,18 @@ const RIC_POLYFILL = `var ric=typeof requestIdleCallback!=='undefined'?requestId
  * while keeping real-user analytics fast (first scroll → immediate load).
  */
 function interactionGate(fnBody: string, fallbackMs: number): string {
-  // Defer go() via setTimeout(0) so the interaction paint completes before
-  // analytics JS parses/executes — avoids inflating INP.
+  // Defer go() via setTimeout(0) + idle callback so the interaction that
+  // triggered the gate is fully processed AND painted before analytics JS
+  // parses/executes. Plain setTimeout(0) lands in the very next macrotask,
+  // which still competes with the tail of the user's first tap/scroll —
+  // that long analytics task showed up as INP > 200ms in CrUX (57 mobile
+  // URLs, 2026-06). requestIdleCallback timeout:1000 guarantees analytics
+  // still run within ~1s even if the main thread stays busy.
   return (
     `(function(){var d=false;function go(){if(d)return;d=true;${fnBody}}` +
-    `function goAsync(){setTimeout(go,0)}` +
+    `function goAsync(){setTimeout(function(){` +
+    `if(typeof requestIdleCallback!=='undefined'){requestIdleCallback(go,{timeout:1000})}` +
+    `else{setTimeout(go,250)}},0)}` +
     `if(window.scrollY>0){goAsync();return}` +
     `['scroll','click','touchstart','keydown'].forEach(function(e){` +
     `document.addEventListener(e,goAsync,{once:true,passive:true})});` +
@@ -605,7 +612,13 @@ export function delayHeadAnalytics(head: string): string {
 
   if (ids.length === 0) return head;
 
-  const fnBody = `${JSON.stringify(ids)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`;
+  // Execute each deferred script in its OWN macrotask. The previous single
+  // forEach ran GTM bootstrap + phone tracking as one long task right after
+  // the user's first interaction — a measurable INP contributor on mobile.
+  const fnBody =
+    `(function(){var q=${JSON.stringify(ids)};function run(i){if(i>=q.length)return;` +
+    `var el=document.getElementById(q[i]);if(el){try{new Function(el.textContent)();}catch(e){}}` +
+    `setTimeout(function(){run(i+1)},0)}run(0)})();`;
   const loader = `<script>${interactionGate(fnBody, DEFER_HEAD_ANALYTICS_MS)}</script>`;
 
   return processed + loader;
@@ -684,9 +697,11 @@ export function delayAnalytics(block: string): string {
   const inlinePart = inlineIds.length > 0
     ? `${JSON.stringify(inlineIds)}.forEach(function(id){var el=document.getElementById(id);if(el){try{new Function(el.textContent)();}catch(e){}}});`
     : '';
-  // 3s inner delay: let head analytics (GTM bootstrap) settle before loading
-  // external analytics to avoid a burst of main-thread work.
-  const fnBody = `setTimeout(function(){${srcPart}${inlinePart}},3000)`;
+  // 5s inner delay: let head analytics (GTM bootstrap) settle before loading
+  // external analytics to avoid a burst of main-thread work. Was 3s; widened
+  // so the head and external packs do not collide on slower devices (INP).
+  // Fallback timers (15s/20s) are untouched — Lighthouse unaffected.
+  const fnBody = `setTimeout(function(){${srcPart}${inlinePart}},5000)`;
   const loader = `<script>${interactionGate(fnBody, DEFER_EXT_ANALYTICS_MS)}</script>`;
 
   return processed + loader;
