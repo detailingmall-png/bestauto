@@ -10,6 +10,7 @@ import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
 import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, normalizeLegacyBlogBody, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
+import { getArticleDates } from '../data/article-dates';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
@@ -541,6 +542,14 @@ if (isBlogPage && baseSlug !== 'blog') {
 }
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
+// Blog articles: datePublished/dateModified from article-dates.ts (git-derived)
+const articleDates = getArticleDates(baseSlug);
+const articleMeta = articleDates
+  ? {
+      datePublished: articleDates.published,
+      ...(articleDates.modified ? { dateModified: articleDates.modified } : {}),
+    }
+  : {};
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang, pricingPage)
@@ -548,7 +557,7 @@ const seoHead = generateHreflangTags(baseSlug, lang)
   + generateWebSiteSchema()
   + generateOrganizationSchema(lang)
   + generateServiceFaqSchema(baseSlug, lang)
-  + generateArticleSchema(baseSlug, lang, pageTitle)
+  + generateArticleSchema(baseSlug, lang, pageTitle, articleMeta)
   + (baseSlug === '' ? generateFaqSchema(lang) + generateHowToSchema(lang) + generateHomepageVideoSchema(lang) : '');
 
 if (lang === 'ru') {
