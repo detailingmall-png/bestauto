@@ -25,6 +25,9 @@ const CROSS_SELL_MAP: Readonly<Record<string, readonly string[]>> = {
   'car-soundproofing':    ['ppf-shield-wrapping', 'auto-glass-tinting', 'polishing', 'ceramiccoating'],
   'computer-diagnostics': ['polishing', 'ceramiccoating', 'windshield-repair', 'auto-glass-tinting'],
   'carwash':              ['polishing', 'interior-cleaning', 'ceramiccoating', 'ppf-shield-wrapping'],
+  // Restored 2026-06-05 (were missing after restoration - no cross-sell showed)
+  'interior-restoration':  ['interior-cleaning', 'carwash', 'polishing', 'ceramiccoating'],
+  'paintless-dent-repair': ['polishing', 'ppf-shield-wrapping', 'ceramiccoating', 'windshield-repair'],
 };
 
 // Default 4 services for generic (unmapped) blog articles
@@ -135,6 +138,15 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/car-diagnostic-test-stages-and-methods': 'computer-diagnostics',
   'blog/errors-to-find':                         'computer-diagnostics',
   'blog/why-use-car-diagnostic-test':            'computer-diagnostics',
+  // Interior restoration (cluster restored 2026-06-05)
+  'blog/why-restore-interior-elements':    'interior-restoration',
+  'blog/restoring-car-seats':              'interior-restoration',
+  'blog/steering-wheel-restoration':       'interior-restoration',
+  'blog/plastic-elements-restoration':     'interior-restoration',
+  // Paintless dent repair (cluster restored 2026-06-05)
+  'blog/pdr-method':                       'paintless-dent-repair',
+  'blog/pdr-after-hail':                   'paintless-dent-repair',
+  'blog/pdr-guidelines-and-techniques':    'paintless-dent-repair',
   // Generic articles have no mapping — handled by fallback
 };
 
@@ -192,6 +204,16 @@ const CROSS_SELL_TITLES: Readonly<Record<string, Readonly<Record<string, string>
     ru: 'Вместе с детейлинг мойкой заказывают',
     ka: 'დეტეილინგ რეცხვასთან ერთად შეუკვეთავენ',
     en: 'Also ordered with detailing wash',
+  },
+  'interior-restoration': {
+    ru: 'Вместе с восстановлением салона заказывают',
+    ka: 'ინტერიერის რესტავრაციასთან ერთად შეუკვეთავენ',
+    en: 'Also ordered with interior restoration',
+  },
+  'paintless-dent-repair': {
+    ru: 'Вместе с удалением вмятин заказывают',
+    ka: 'ძარას ცივად გასწორებასთან ერთად შეუკვეთავენ',
+    en: 'Also ordered with paintless dent repair',
   },
 };
 

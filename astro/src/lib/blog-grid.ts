@@ -9,7 +9,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import pageMap from './page-map.json';
 
-interface ArticleMeta {
+export interface ArticleMeta {
   readonly slug: string;
   readonly title: string;
   readonly description: string;
@@ -84,6 +84,11 @@ function loadArticles(): readonly ArticleMeta[] {
 
   articlesCache = articles;
   return articles;
+}
+
+/** Look up a single article's metadata by slug + language (build-time, cached). */
+export function findArticle(slug: string, lang: string): ArticleMeta | undefined {
+  return loadArticles().find((a) => a.slug === slug && a.lang === lang);
 }
 
 function escapeHtml(str: string): string {
