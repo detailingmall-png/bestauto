@@ -1249,6 +1249,42 @@ export function removeClientSeoScripts(content: string): string {
 }
 
 /**
+ * Removes Tilda-embedded Service JSON-LD script tags from HTML.
+ * Service pages get the canonical Service schema from generateServiceSchema()
+ * in seoHead; the Tilda export ships its own incomplete copy (no name/url) on
+ * carwash pages, producing two Service schemas per page (GSC duplicate risk,
+ * same precedent as "Duplicate field FAQPage").
+ * Unlike removeClientSeoScripts(), this block has no comment marker — it is
+ * matched by ld+json script content. Anchoring on the ld+json open tag is
+ * required: the header template also contains "@type":"Service" inside a
+ * plain JS script (var schema = ...) that must not be touched here.
+ */
+export function removeTildaServiceSchema(html: string): string {
+  const openTag = '<script type="application/ld+json">';
+  const serviceMarker = /"@type"\s*:\s*"Service"/;
+  let result = html;
+  let searchFrom = 0;
+  for (;;) {
+    const scriptOpen = result.indexOf(openTag, searchFrom);
+    if (scriptOpen < 0) break;
+    const contentStart = scriptOpen + openTag.length;
+    const scriptClose = result.indexOf('</script>', contentStart);
+    if (scriptClose < 0) break;
+    if (!serviceMarker.test(result.slice(contentStart, scriptClose))) {
+      searchFrom = scriptClose + 9;
+      continue;
+    }
+    let removeEnd = scriptClose + 9;
+    // Tilda export leaves a stray orphan </script> right after this block
+    const orphan = /^\s*<\/script>/.exec(result.slice(removeEnd));
+    if (orphan) removeEnd += orphan[0].length;
+    result = result.slice(0, scriptOpen) + result.slice(removeEnd);
+    searchFrom = scriptOpen;
+  }
+  return result;
+}
+
+/**
  * Fix og:type meta tags:
  * 1) Remove duplicate og:type tags (Tilda exports two)
  * 2) Set og:type to "article" for blog pages (Tilda defaults to "website")

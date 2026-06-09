@@ -7,7 +7,7 @@
  */
 import TildaPageLayout from '../layouts/TildaPageLayout.astro';
 import { getAllPages, getPageHtml, getRouteSlug } from '../lib/pages';
-import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, normalizeLegacyBlogBody, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
+import { extractSections, removeRecordBlock, removeBlockContaining, removeBlockByRecordType, removeBlocksByScreenClass, removeTildaServiceSchema, translateAltTexts, extractAndRemoveBlockRange, findRecIdContaining, findNthRecIdAfter, stripBlogCtaPlaceholder, stripBlogCmsMetadata, normalizeLegacyBlogBody, convertBlogInlineFaq, convertBlogMarkdownTables, transformT681ToPriceList, extractSectionById, extractDivById, insertAfterBlockByAliasType, insertAfterSectionById, insertAfterDivById, replaceBlogHeroCover, extractTRecBlock, insertAfterRecId, extractContentBetweenBlocks } from '../lib/html-extractor';
 import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { getArticleDates } from '../data/article-dates';
@@ -219,6 +219,9 @@ if (SERVICE_SLUGS.has(baseSlug)) {
   // Always remove Tilda-embedded FAQPage JSON-LD to prevent duplicates with
   // generateServiceFaqSchema() in seoHead (GSC: "Duplicate field FAQPage")
   injectedHtml = removeTildaFaqSchema(injectedHtml);
+  // Same for Tilda-embedded Service JSON-LD (incomplete: no name/url) —
+  // the canonical Service schema comes from generateServiceSchema() in seoHead
+  injectedHtml = removeTildaServiceSchema(injectedHtml);
   if (serviceFaqs && injectedHtml.includes('data-record-type="585"')) {
     const faqItems = resolveFaqItems(serviceFaqs, lang);
     const faqTitle = FAQ_SECTION_TITLE[lang] ?? FAQ_SECTION_TITLE['en'];
