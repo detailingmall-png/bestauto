@@ -12,6 +12,7 @@ import { injectHeroVideo } from '../lib/hero-block';
 import { generateRelatedServicesHtml, BLOG_SERVICE_MAP } from '../lib/related-services';
 import { getArticleDates } from '../data/article-dates';
 import { generateRelatedArticlesHtml } from '../lib/related-articles';
+import { findArticle } from '../lib/blog-grid';
 import { generateBlogCtaHtml } from '../lib/blog-cta';
 import { getSiteSettings, getPricingPage } from '../lib/sanity';
 import { injectSanityData } from '../lib/sanity-inject';
@@ -544,13 +545,24 @@ if (isBlogPage && baseSlug !== 'blog') {
 
 // SEO: static hreflang, BreadcrumbList, Service, WebSite, FAQ schemas
 // Blog articles: datePublished/dateModified from article-dates.ts (git-derived)
+// + image from the article's og:image (page-map metadata via blog-grid cache)
 const articleDates = getArticleDates(baseSlug);
-const articleMeta = articleDates
-  ? {
-      datePublished: articleDates.published,
-      ...(articleDates.modified ? { dateModified: articleDates.modified } : {}),
-    }
-  : {};
+const articleImagePath = baseSlug.startsWith('blog/')
+  ? findArticle(baseSlug, lang)?.image
+  : undefined;
+const articleImage =
+  articleImagePath && !articleImagePath.endsWith('/')
+    ? new URL(articleImagePath, 'https://bestauto.ge').href
+    : undefined;
+const articleMeta = {
+  ...(articleDates
+    ? {
+        datePublished: articleDates.published,
+        ...(articleDates.modified ? { dateModified: articleDates.modified } : {}),
+      }
+    : {}),
+  ...(articleImage ? { image: articleImage } : {}),
+};
 const seoHead = generateHreflangTags(baseSlug, lang)
   + generateBreadcrumbSchema(baseSlug, lang, pageTitle)
   + generateServiceSchema(baseSlug, lang, pricingPage)

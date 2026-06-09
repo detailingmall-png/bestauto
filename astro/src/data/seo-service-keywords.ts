@@ -296,3 +296,14 @@ export function isKnownServiceKeyword(target: string, anchor: string, lang: stri
   const normalized = anchor.trim().toLowerCase();
   return keywords.some(kw => kw.toLowerCase() === normalized);
 }
+
+/**
+ * Top-N HF keywords for a service x language, for schema.org
+ * Service.alternateName. Lists are priority-ordered (GSC click data), so the
+ * head entries are clean nominative queries; entries marked "inflected" in
+ * comments sit further down and are excluded by the small N.
+ */
+export function getTopServiceKeywords(target: string, lang: string, n = 2): readonly string[] {
+  const keywords = KEYWORDS_BY_LANG[lang]?.[target as ServiceTarget];
+  return keywords ? keywords.slice(0, n) : [];
+}

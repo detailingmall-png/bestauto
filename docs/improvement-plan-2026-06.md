@@ -71,11 +71,11 @@ Metrika + Pixel через `new Function()`, ~30KB+ JS) одним таском 
 **Rollback:** revert commit.
 **Branch:** `feat/inp-yield-analytics`. Commit: `perf: yield analytics execution off interaction tasks to improve INP`.
 
-**Статус:** [~] implemented + verified locally (commit 3bafb39, 2026-06-10).
+**Статус:** [x] DONE 2026-06-10. Commit 3bafb39, merge 54a34a6, deploy run 27233878885 success.
 Lighthouse mobile (медиана 3 прогонов, local preview): home 93/93 (до/после), PDR 96/96.
-Функционально: analytics выполняется после первого взаимодействия (dataLayer 5 событий,
-gtag/ym/fbq определены, GTM+Metrika+FB скрипты загружены), console errors: 0.
-ЖДЁТ: approve юзера на merge в main → deploy → live-проверка → CrUX мониторинг.
+Live: код гейта на всех страницах, TBT 14-31ms. Функционально: analytics стартует после
+первого взаимодействия (dataLayer/gtag/ym/fbq + GTM/Metrika/FB скрипты), console errors: 0.
+ОСТАЛОСЬ: проверить CrUX mobile INP в Search Console после ~2026-06-24 (ожидание 57 → <12).
 
 ---
 
