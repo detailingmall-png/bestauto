@@ -9,7 +9,7 @@ primary_hf_ka: "ძრავის რეცხვა, ძრავის გა
 primary_hf_en: "engine bay wash, engine compartment cleaning"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#77"
 ---
