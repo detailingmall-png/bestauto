@@ -8,7 +8,7 @@ primary_hf_ru: "пятна на сиденьях, выведение пятен 
 primary_hf_ka: "ქსოვილის ლაქების მოცილება, სავარძლების ლაქები"
 primary_hf_en: "fabric seat stain removal, car seat stains"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#85"
 ---

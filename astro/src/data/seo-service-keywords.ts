@@ -275,6 +275,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'car dry cleaning',            // GSC: 3 (top — Soviet-era terminology)
     'car interior detailing',      // GSC: 1
     'dry cleaning',                // inflected — valid anchor (short form, common in body text)
+    'interior cleaning',           // inflected — valid anchor (short form, common in body text)
   ],
 };
 

@@ -1703,6 +1703,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/fabric-seat-stain-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'куда входит полная химчистка салона',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'в рамках общей процедуры химчистки',
+      },
+    ],
+  },
+  {
     article: 'blog/steam-headlight-polishing',
     links: [
       {
@@ -3473,6 +3492,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/fabric-seat-stain-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'სადაც შედის სალონის სრული ქიმწმენდა',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'BESTAUTO-ში ქიმწმენდა 400',
+      },
+    ],
+  },
+  {
     article: 'blog/steam-headlight-polishing',
     links: [
       {
@@ -5140,6 +5178,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'How is leather restoration different from dry cleaning?',
+      },
+    ],
+  },
+  {
+    article: 'blog/fabric-seat-stain-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'this is part of interior cleaning',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'At BESTAUTO interior cleaning starts at 400',
       },
     ],
   },
