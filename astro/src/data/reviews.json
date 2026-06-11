@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 190,
-  "fetchedAt": "2026-06-10T08:10:55.706Z",
+  "totalReviews": 191,
+  "fetchedAt": "2026-06-11T08:49:05.563Z",
   "reviews": [
+    {
+      "authorName": "Irakli Aslanishvili",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXy0B7vQvG4mcb8QbkzDS5gnUWcEoh4xHe0wDmp6A9majyPLRpn=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Лучший сервис! Работа выполнена в оговоренные сроки! Лучшие профессионалы! Удачи!",
+        "ka": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
+        "en": "The best service! The work was done within the agreed time frame! The best professionals! Good luck!"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ka",
+      "time": 1781085763,
+      "profileUrl": "https://www.google.com/maps/contrib/117872751637693533048/reviews",
+      "text": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Andro Todua",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLXgksdhhDKnVhCE6NzBkNxbtyEvM8gWr1mN_WYbv-kEDbLTA=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!"
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
       },
       "originalLang": "en",
       "time": 1780927987,
       "profileUrl": "https://www.google.com/maps/contrib/117454642337023272704/reviews",
       "text": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!",
-      "relativeTime": "a day ago"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "Pak Volchek",
@@ -155,15 +175,15 @@
         "en": "Excellent detailing!\nI used BestAutoDetailing – they did everything very quickly and very well, completing the job in just three days. The car was delivered in perfect condition, and their attention to detail and meticulous approach are evident. I'd like to especially mention the service: everything was clean, organized, and very pleasant to deal with. I was completely satisfied with the results and highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "ru",
       "time": 1779347254,
       "profileUrl": "https://www.google.com/maps/contrib/102529843160962098876/reviews",
       "text": "Отличный детейлинг!\nОбращался в BestAutoDetailing — сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе. Отдельно хочется отметить сервис: всё чисто, организованно и очень приятно по общению. Остался полностью доволен результатом, смело рекомендую!",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "lasha pavliashvili",
@@ -175,15 +195,15 @@
         "en": "Professionalism and a comfortable environment together are rare today👌 My recommendation to the entire team..Thank you ✊"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1778746852,
       "profileUrl": "https://www.google.com/maps/contrib/103659643102670168677/reviews",
       "text": "პროფესიონალიზმი და კომფორტული გარემო ერთად იშვიათია დღეს👌 ჩემი რეკომენდაცია მთლიან გუნდს ..მადლობა ✊",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Dmitry Teshev",
@@ -195,15 +215,15 @@
         "en": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀"
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "en",
       "time": 1778445441,
       "profileUrl": "https://www.google.com/maps/contrib/113531890558736511832/reviews",
       "text": "⭐⭐⭐⭐⭐ Excellent Detailing!\nI’m extremely impressed with the full detailing on my car. The team did an outstanding job.\nThe interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish.\nHighly recommend this place — my car looks better than new! Will definitely return.\nThank you! 🚀",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "Ani Jibladze",
