@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 191,
-  "fetchedAt": "2026-06-11T08:49:05.563Z",
+  "fetchedAt": "2026-06-12T08:27:59.724Z",
   "reviews": [
     {
       "authorName": "Irakli Aslanishvili",
@@ -15,15 +15,15 @@
         "en": "The best service! The work was done within the agreed time frame! The best professionals! Good luck!"
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "ka",
       "time": 1781085763,
       "profileUrl": "https://www.google.com/maps/contrib/117872751637693533048/reviews",
       "text": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Andro Todua",
@@ -35,15 +35,15 @@
         "en": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!"
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "en",
       "time": 1780927987,
       "profileUrl": "https://www.google.com/maps/contrib/117454642337023272704/reviews",
       "text": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Pak Volchek",
@@ -115,15 +115,15 @@
         "en": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store."
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "en",
       "time": 1779997754,
       "profileUrl": "https://www.google.com/maps/contrib/118361112651939581584/reviews",
       "text": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store.",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Acer_1993",
