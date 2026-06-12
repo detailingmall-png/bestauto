@@ -9,7 +9,13 @@ primary_hf_ka: "ფარების პოლირება, ფარებ�
 primary_hf_en: "headlight polishing, headlight replacement"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-06-12
+published_pageids:
+  ru: "920260612001"
+  ka: "920260612002"
+  en: "920260612003"
+hero_pexels_id: "16352272"
 sources:
   - roadmap: "docs/content-roadmap.md#13"
 ---

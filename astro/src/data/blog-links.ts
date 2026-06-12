@@ -1861,6 +1861,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/headlight-polish-vs-replace',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'Есть четыре ситуации, в которых полировка бесполезна или даже вредна.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'дешевле нового оригинала, но дороже полировки в несколько раз',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -3612,6 +3631,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/headlight-polish-vs-replace',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მე-3 სტადიასთან პოლირება უსარგებლოა: დაბინდვა მასალის შიგნითაა',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: '3 პოლირების შემდეგ ფარა თხელდება, კარგავს ნაწილ სიმკვრივეს',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -5304,6 +5342,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'window tint',
         originalPhrase: 'window tint',
         contextQuote: 'A proper window tint film has three to five functional layers, and one of them is the UV filter.',
+      },
+    ],
+  },
+  {
+    article: 'blog/headlight-polish-vs-replace',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'On stage 3 polishing is useless: haze lives inside the material',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'car polishing',
+        originalPhrase: 'headlight polishing',
+        contextQuote: 'When booking headlight polishing, confirm UV coating is included.',
       },
     ],
   },
