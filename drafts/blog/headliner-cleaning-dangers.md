@@ -8,7 +8,7 @@ primary_hf_ru: "химчистка потолка салона, потолок �
 primary_hf_ka: "ჭერის ქიმწმენდა, მანქანის ჭერის წმენდა"
 primary_hf_en: "headliner cleaning, car ceiling cleaning"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#87"
 ---

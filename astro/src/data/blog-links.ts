@@ -1722,6 +1722,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/headliner-cleaning-dangers',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Полная профилактическая химчистка салона раз в 12-18 месяцев',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'В рамках полной химчистки салона потолок обрабатывается',
+      },
+    ],
+  },
+  {
     article: 'blog/steam-headlight-polishing',
     links: [
       {
@@ -3530,6 +3549,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/headliner-cleaning-dangers',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'პროფილაქტიკური სალონის ქიმწმენდა 12-18 თვეში ერთხელ',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'საერთო ქიმწმენდის ნაწილი, 400',
+      },
+    ],
+  },
+  {
     article: 'blog/steam-headlight-polishing',
     links: [
       {
@@ -5235,6 +5273,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'interior cleaning',
         originalPhrase: 'interior cleaning',
         contextQuote: 'At BESTAUTO interior cleaning starts at 400',
+      },
+    ],
+  },
+  {
+    article: 'blog/headliner-cleaning-dangers',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'headliner cleaning is part of interior cleaning, but work on it is done separately',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'A full preventive interior cleaning every 12-18 months is the optimal',
       },
     ],
   },

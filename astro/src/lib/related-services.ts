@@ -123,6 +123,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/smoker-cabin-nicotine-removal': 'interior-cleaning',
   'blog/leather-seat-restoration':      'interior-cleaning',
   'blog/fabric-seat-stain-guide':       'interior-cleaning',
+  'blog/headliner-cleaning-dangers':    'interior-cleaning',
   // Polishing
   'blog/polish-cream-diy-vs-studio':   'polishing',
   'blog/steam-headlight-polishing':    'polishing',

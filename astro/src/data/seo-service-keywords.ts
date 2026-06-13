@@ -221,6 +221,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'ავტო ქიმწმენდა',              // GSC: 9
     'ხიმჩისტკა მანქანის',          // GSC: Russism variant, 337 imp
     'ქიმწმენდა',                   // inflected — valid anchor (standalone nominative)
+    'ქიმწმენდის',                  // inflected — valid anchor (genitive form)
   ],
 };
 
