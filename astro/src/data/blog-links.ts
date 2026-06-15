@@ -1881,6 +1881,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/how-to-choose-tint-film',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'Сколько стоит полная тонировка машины керамикой?',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Какой процент тонировки безопаснее всего поставить по закону?',
+      },
+    ],
+  },
+  {
     article: 'blog/headlight-polish-vs-replace',
     links: [
       {
@@ -3670,6 +3689,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/how-to-choose-tint-film',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'ყველა დაბურვის ფირი იყოფა ოთხ ტექნოლოგიურ კლასად',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'რომელი დაბურვის პროცენტია ყველაზე უსაფრთხო კანონის მიხედვით?',
+      },
+    ],
+  },
+  {
     article: 'blog/headlight-polish-vs-replace',
     links: [
       {
@@ -5399,6 +5437,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'window tint',
         originalPhrase: 'window tint',
         contextQuote: 'A proper window tint film has three to five functional layers, and one of them is the UV filter.',
+      },
+    ],
+  },
+  {
+    article: 'blog/how-to-choose-tint-film',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'tint film',
+        originalPhrase: 'tint film',
+        contextQuote: 'Choosing tint film combines four parameters',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'tint film',
+        originalPhrase: 'tint film',
+        contextQuote: 'Choosing tint film is not about',
       },
     ],
   },

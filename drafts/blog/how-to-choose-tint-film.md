@@ -8,7 +8,7 @@ primary_hf_ru: "выбор тонировочной плёнки"
 primary_hf_ka: "ფირის არჩევა"
 primary_hf_en: "choose tint film"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#59"
 ---

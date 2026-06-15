@@ -105,6 +105,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/tint-ceramic-vs-atermal-vs-dyed':     'auto-glass-tinting',
   'blog/tint-percentage-explained':           'auto-glass-tinting',
   'blog/anti-uv-anti-rust-tint':              'auto-glass-tinting',
+  'blog/how-to-choose-tint-film':             'auto-glass-tinting',
   // Windshield repair
   'blog/chip-repair-process-step-by-step': 'windshield-repair',
   'blog/efficiency-of-windshield-repair': 'windshield-repair',

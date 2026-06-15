@@ -106,6 +106,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'тонировка автомобиля',
     'атермальная тонировка',
     'тонировка лобового стекла',
+    'тонировки',                  // inflected — genitive, valid anchor
   ],
   '/windshield-repair': [
     'ремонт трещин лобового стекла', // GSC: 6 (top)
@@ -190,6 +191,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მინის დაბურვა',               // GSC: 85
     'შუშების დამუქება',            // GSC: 159
     'დაბურვაზე',                   // inflected — dative form, valid anchor
+    'დაბურვის',                    // inflected — genitive form, valid anchor
   ],
   '/windshield-repair': [
     'საქარე მინის აღდგენა',        // GSC: 429 (canonical)
@@ -259,6 +261,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'car tinting',                 // GSC: 1
     'window tinting',              // ACCEPT-WITH-CAVEAT (US Georgia noise)
     'window tint',
+    'tint film',                   // variant — article primary HF (choose tint film)
   ],
   '/windshield-repair': [
     'windshield repair',           // GSC: 3 clicks (US noise but still relevant)
