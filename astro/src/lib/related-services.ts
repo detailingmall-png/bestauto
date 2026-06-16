@@ -68,6 +68,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/ceramic-prep-paint-correction': 'ceramiccoating',
   'blog/ceramic-vs-wax-vs-sealant':    'ceramiccoating',
   'blog/interior-ceramic-detail':      'ceramiccoating',
+  'blog/hydrophobic-windshield-coating': 'ceramiccoating',
   // PPF
   'blog/ppf-benefits':                       'ppf-shield-wrapping',
   'blog/ppf-film-for-cars-protection':       'ppf-shield-wrapping',

@@ -8,7 +8,8 @@ primary_hf_ru: "керамика на лобовое стекло, антидо�
 primary_hf_ka: "ანტი-წვიმის საფარი"
 primary_hf_en: "hydrophobic windshield coating"
 secondary_links: ["/ppf-shield-wrapping"]
-status: drafted
+status: published
+published: 2026-06-16
 sources:
   - roadmap: "docs/content-roadmap.md#75"
 ---

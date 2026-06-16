@@ -38,6 +38,18 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/hydrophobic-windshield-coating',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'сверху на плёнку часто наносят то же самое керамическое покрытие для отталкивания воды',
+      },
+    ],
+  },
+  {
     article: 'blog/detailing-faq-common-myths',
     links: [
       {
@@ -1922,6 +1934,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/hydrophobic-windshield-coating',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'პოლიურეთანის ფირი',
+        originalPhrase: 'პოლიურეთანის ფირი',
+        contextQuote: 'ეს არის პოლიურეთანის ფირი 150–200 მიკრონი სისქით, რომელიც ეწებება მინის გარე მხარეს',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'ხშირად ფირზე ზემოდან იდება იგივე კერამიკული საფარი წყლის მოსაცილებლად',
+      },
+    ],
+  },
+  {
     article: 'blog/detailing-faq-common-myths',
     links: [
       {
@@ -3729,6 +3760,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/hydrophobic-windshield-coating',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic',
+        contextQuote: 'the same ceramic is often laid over the film to keep water shedding',
+      },
+    ],
+  },
   {
     article: 'blog/detailing-faq-common-myths',
     links: [
