@@ -500,8 +500,9 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== HOMEPAGE ====== */
   '': {
     meta: {
-      // GSC top: 'დითეილინგ ცენტრი' 40 clicks/257 impr (completely uncovered before); 'ფასი' price-intent
-      title: 'დითეილინგ ცენტრი თბილისში — ავტო მოვლა, ფასი | BESTAUTO',
+      // GSC top: 'დითეილინგ ცენტრი' 40 clicks/257 impr (keep exact-match keyword);
+      // USP now leads with concrete services (PPF/polishing/tinting) for relevance + RU/EN parity
+      title: 'დითეილინგ ცენტრი თბილისში — დამცავი ფირის გადაკვრა, პოლირება, ტონირება | BESTAUTO',
       // Different angle than title: leads with 'ავტო მოვლა და დაცვა' (maintenance+protection umbrella)
       description: 'პროფესიონალური ავტო მოვლა და დაცვა — PPF ფირი, პოლირება, კერამიკა, ქიმწმენდა, მინების დაბურვა. 4.9★ Google რეიტინგი, 2 ლოკაცია თბილისში.',
     },
