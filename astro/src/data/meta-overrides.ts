@@ -41,13 +41,36 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Body, headlight and glass polishing in Tbilisi. Body polishing from 690 GEL, headlights from 150 GEL. Book online.',
   },
 
+  // ── Restored services (PDR + interior-restoration) ─────────
+  // No *-seo-changes.ts entry for these slugs → applyMetaOverrides is the live
+  // title source. Restored 2026-06-05; titles brought up to formula 2026-06-17.
   'en/paintless-dent-repair': {
+    title: 'Paintless Dent Repair in Tbilisi — from 250 ₾ | BESTAUTO',
     // 54 chars → 152 chars
     description: 'Paintless dent removal (PDR) in Tbilisi. Fix dents without repainting — preserve original factory finish. Fast repair, affordable prices. Book at BESTAUTO.',
   },
   'ka/paintless-dent-repair': {
+    title: 'ძარას ცივად გასწორება (PDR) თბილისში — 250 ₾-დან | BESTAUTO',
     // 95 chars → 148 chars
     description: 'მანქანის ძარას ცივად გასწორება (PDR) თბილისში შეღებვის გარეშე. ვინარჩუნებთ ორიგინალ ლაქს. სწრაფი შეკეთება, ხელმისაწვდომი ფასები. ჩაწერა — BESTAUTO.',
+  },
+  'ru/paintless-dent-repair': {
+    title: 'Удаление вмятин (PDR) в Тбилиси — от 250 ₾ | BESTAUTO',
+  },
+  'en/interior-restoration': {
+    title: 'Interior Restoration in Tbilisi — from 190 ₾ | BESTAUTO',
+  },
+  'ka/interior-restoration': {
+    title: 'ინტერიერის რესტავრაცია თბილისში — 190 ₾-დან | BESTAUTO',
+  },
+  'ru/interior-restoration': {
+    title: 'Восстановление салона авто в Тбилиси — от 190 ₾ | BESTAUTO',
+  },
+
+  // ── Utility pages ──────────────────────────────────────────
+  // /qr — KA QR-landing (language gateway). Tilda left a "Blank page" title.
+  'ka/qr': {
+    title: 'BESTAUTO — ავტო დითეილინგ ცენტრი თბილისში',
   },
 
   // ── Ceramic Coating ─────────────────────────────────────────

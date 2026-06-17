@@ -385,7 +385,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== VINYL WRAPPING (COLOR CHANGE) ====== */
   'vinyl-wrapping': {
     meta: {
-      title: 'ფირის გადაკვრა მანქანაზე თბილისში — ფასები | BESTAUTO',
+      title: 'ფერადი ფირის გადაკვრა თბილისში — მანქანის ფერის შეცვლა | BESTAUTO',
       description: 'მანქანის გადასაკრავი ფირი — ფირის გადაკვრა ფერადი PPF-ით ან ვინილით, სრული ან ნაწილობრივი, ფირის გადაკვრა ფასები იაფად, ანტიქრომი და უფასო დათვალიერება BESTAUTO-ში.',
     },
     textReplacements: [
