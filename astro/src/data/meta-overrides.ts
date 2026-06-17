@@ -17,19 +17,14 @@ interface MetaOverride {
 
 export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
   // ── Homepage ──────────────────────────────────────────────
-  'ka/': {
-    title: 'ავტო დითეილინგი თბილისში — PPF, პოლირება, კერამიკა | BESTAUTO',
-    description: 'პრემიუმ ავტო დითეილინგ სტუდია თბილისში. PPF ფირის გადაკვრა, ფერის შეცვლა ფირით, პოლირება, კერამიკული საფარი, მინების დაბურვა, ქიმწმენდა და 2 ლოკაცია თბილისში.',
-  },
+  // NOTE: homepage <title> and <meta description> come from *-seo-changes.ts
+  // (the '' key), which [...slug].astro applies AFTER applyMetaOverrides — so
+  // any title/description set here for 'ka/' | 'ru/' | 'en/' would be dead.
+  // Only og:title / og:description are still applied from here (seo-changes
+  // does not touch the OG tags). 'ka/' and 'en/' had no live fields → removed.
   'ru/': {
-    title: 'Детейлинг в Тбилиси — оклейка защитной пленкой, полировка, тонировка | BESTAUTO',
-    description: 'Премиальный детейлинг в Тбилиси: оклейка защитной пленкой, полировка, керамика, тонировка и химчистка. 2 студии, запись онлайн.',
     ogTitle: 'Детейлинг в Тбилиси — оклейка защитной пленкой, полировка, тонировка',
     ogDescription: 'Премиальный детейлинг в Тбилиси: оклейка защитной пленкой, полировка, керамика, тонировка и химчистка. 2 студии, запись онлайн.',
-  },
-  'en/': {
-    title: 'Car Detailing in Tbilisi — PPF, Polishing, Tinting | BESTAUTO',
-    description: 'Premium car detailing in Tbilisi: PPF, polishing, ceramic coating, tinting and interior cleaning. Two studios, book online.',
   },
 
   // ── Polishing ─────────────────────────────────────────────
