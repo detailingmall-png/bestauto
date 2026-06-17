@@ -9,7 +9,7 @@ primary_hf_ka: "კერამიკული დაცვა სალონ�
 primary_hf_en: "interior ceramic protection"
 secondary_links:
   - "/ceramiccoating"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#89"
 ---

@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/interior-ceramic-after-cleaning',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'нанесение керамики',
+        contextQuote: 'во второй (через 3-5 дней) — нанесение керамики',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'логическое продолжение химчистки, а не альтернатива ей',
+      },
+    ],
+  },
+  {
     article: 'blog/hydrophobic-windshield-coating',
     links: [
       {
@@ -1934,6 +1953,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/interior-ceramic-after-cleaning',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი — ესაა წვრილი ფენა კვარცის ბაზაზე',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'ღრმა ქიმწმენდის შემდეგ სალონის მასალები ბრუნდება',
+      },
+    ],
+  },
+  {
     article: 'blog/hydrophobic-windshield-coating',
     links: [
       {
@@ -3760,6 +3798,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/interior-ceramic-after-cleaning',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'then ceramic coating (from 300 ₾)',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'deep dry cleaning (from 400 ₾ for a light category)',
+      },
+    ],
+  },
   {
     article: 'blog/hydrophobic-windshield-coating',
     links: [
