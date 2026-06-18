@@ -9,7 +9,7 @@ primary_hf_ka: "კერამიკული ავტოს რეცხვ�
 primary_hf_en: "wash ceramic coated car, ceramic maintenance"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#24"
 ---

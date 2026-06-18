@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/maintenance-wash-ceramic',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'Керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие — это тончайшая плёнка SiO2',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'мойка машины',
+        originalPhrase: 'мойка машины',
+        contextQuote: 'должна выглядеть мойка машины с керамикой',
+      },
+    ],
+  },
+  {
     article: 'blog/interior-ceramic-after-cleaning',
     links: [
       {
@@ -1953,6 +1972,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/maintenance-wash-ceramic',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'მანქანის კერამიკული საფარი პირდება 2-3 წლიან დაცვას',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'მანქანის რეცხვა',
+        originalPhrase: 'მანქანის რეცხვა',
+        contextQuote: 'კერამიკული მანქანის რეცხვა — 40 ₾-დან',
+      },
+    ],
+  },
+  {
     article: 'blog/interior-ceramic-after-cleaning',
     links: [
       {
@@ -3798,6 +3836,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/maintenance-wash-ceramic',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'Ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating promises 2-3 years of protection',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'car wash',
+        originalPhrase: 'car wash',
+        contextQuote: 'Brush car wash — fully banned',
+      },
+    ],
+  },
   {
     article: 'blog/interior-ceramic-after-cleaning',
     links: [
