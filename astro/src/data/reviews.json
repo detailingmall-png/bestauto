@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 191,
-  "fetchedAt": "2026-06-17T09:04:47.049Z",
+  "fetchedAt": "2026-06-18T08:49:41.437Z",
   "reviews": [
     {
       "authorName": "Irakli Aslanishvili",
@@ -15,15 +15,15 @@
         "en": "The best service! The work was done within the agreed time frame! The best professionals! Good luck!"
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "ka",
       "time": 1781085763,
       "profileUrl": "https://www.google.com/maps/contrib/117872751637693533048/reviews",
       "text": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Andro Todua",
@@ -175,15 +175,15 @@
         "en": "Excellent detailing!\nI used BestAutoDetailing – they did everything very quickly and very well, completing the job in just three days. The car was delivered in perfect condition, and their attention to detail and meticulous approach are evident. I'd like to especially mention the service: everything was clean, organized, and very pleasant to deal with. I was completely satisfied with the results and highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ru",
       "time": 1779347254,
       "profileUrl": "https://www.google.com/maps/contrib/102529843160962098876/reviews",
       "text": "Отличный детейлинг!\nОбращался в BestAutoDetailing — сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе. Отдельно хочется отметить сервис: всё чисто, организованно и очень приятно по общению. Остался полностью доволен результатом, смело рекомендую!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "lasha pavliashvili",
