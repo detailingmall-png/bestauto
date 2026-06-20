@@ -2846,5 +2846,29 @@
     "title": "How to wash a ceramic-coated car — rules and chemistry",
     "lang": "en",
     "slug": "blog/maintenance-wash-ceramic"
+  },
+  "920260620001": {
+    "file": "page920260620001.html",
+    "url": "https://bestauto.ge/ru/blog/mobile-tinting-on-location",
+    "path": "/ru/blog/mobile-tinting-on-location",
+    "title": "Тонировка с выездом — плюсы и минусы, почему BESTAUTO не делает",
+    "lang": "ru",
+    "slug": "blog/mobile-tinting-on-location"
+  },
+  "920260620002": {
+    "file": "page920260620002.html",
+    "url": "https://bestauto.ge/blog/mobile-tinting-on-location",
+    "path": "/blog/mobile-tinting-on-location",
+    "title": "ადგილზე მისვლით დაბურვა — პლიუსები, მინუსები, რატომ არ ვაკეთებთ",
+    "lang": "ka",
+    "slug": "blog/mobile-tinting-on-location"
+  },
+  "920260620003": {
+    "file": "page920260620003.html",
+    "url": "https://bestauto.ge/en/blog/mobile-tinting-on-location",
+    "path": "/en/blog/mobile-tinting-on-location",
+    "title": "Mobile Window Tinting — Pros, Cons, and Why We Don't Offer It",
+    "lang": "en",
+    "slug": "blog/mobile-tinting-on-location"
   }
 }

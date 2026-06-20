@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/mobile-tinting-on-location',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'мобильная тонировка — это компромисс, в котором удобство покупается ценой качества',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Главный враг мобильной тонировки — пыль в воздухе, которую в гаражных или дворовых условиях не отфильтровать',
+      },
+    ],
+  },
+  {
     article: 'blog/maintenance-wash-ceramic',
     links: [
       {
@@ -1972,6 +1991,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/mobile-tinting-on-location',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'დაბურვის ფირი ჯდება მინაზე მიკრონამდე სიზუსტით',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'მინის დაბურვა',
+        originalPhrase: 'მინის დაბურვა',
+        contextQuote: 'ერთი გვერდითი მინის დაბურვა მცირე DTP-ის შემდეგ',
+      },
+    ],
+  },
+  {
     article: 'blog/maintenance-wash-ceramic',
     links: [
       {
@@ -3836,6 +3874,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/mobile-tinting-on-location',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tinting',
+        originalPhrase: 'window tinting',
+        contextQuote: 'In practice mobile window tinting is a compromise that trades quality for convenience',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'window tinting',
+        originalPhrase: 'window tinting',
+        contextQuote: 'Mobile window tinting sounds convenient, but in most cases it is a false time saving',
+      },
+    ],
+  },
   {
     article: 'blog/maintenance-wash-ceramic',
     links: [
