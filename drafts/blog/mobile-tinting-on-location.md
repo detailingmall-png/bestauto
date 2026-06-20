@@ -8,7 +8,7 @@ primary_hf_ru: "тонировка на дому, тонировка с выез
 primary_hf_ka: "ადგილზე მისვლით დაბურვა"
 primary_hf_en: "mobile window tinting"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#58"
 ---
