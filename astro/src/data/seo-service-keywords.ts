@@ -116,6 +116,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'ремонт сколов на лобовом стекле', // GSC: 3
     'ремонт стекла автомобиля',
     'восстановление лобового стекла',
+    'ремонт скола',                  // inflected — valid anchor (singular chip-repair phrasing in body)
   ],
   '/carwash': [
     'автомойка тбилиси',          // GSC: 16 (top)

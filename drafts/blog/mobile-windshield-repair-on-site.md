@@ -8,7 +8,8 @@ primary_hf_ru: "ремонт с выездом, ремонт лобового н
 primary_hf_ka: "გამოძახებით აღდგენა"
 primary_hf_en: "mobile windshield repair"
 secondary_links: []
-status: drafted
+status: published
+published: 2026-06-21
 sources:
   - roadmap: "docs/content-roadmap.md#64"
   - gsc: "Downloads/gsc_16months.csv"

@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/mobile-windshield-repair-on-site',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт лобового стекла',
+        originalPhrase: 'ремонт лобового стекла',
+        contextQuote: 'Мобильный ремонт лобового стекла в условиях открытой парковки даёт прогнозируемо худший результат',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'ремонт скола',
+        originalPhrase: 'ремонт скола',
+        contextQuote: 'качественный ремонт скола требует контролируемой среды',
+      },
+    ],
+  },
+  {
     article: 'blog/mobile-tinting-on-location',
     links: [
       {
@@ -1991,6 +2010,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/mobile-windshield-repair-on-site',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის აღდგენა',
+        originalPhrase: 'საქარე მინის აღდგენა',
+        contextQuote: 'მობილური საქარე მინის აღდგენა ღია პარკინგის პირობებში პროგნოზირებად უარეს შედეგს იძლევა',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'ნაკენჭარის აღდგენა',
+        originalPhrase: 'ნაკენჭარის აღდგენა',
+        contextQuote: 'შესაძლებელია ნაკენჭარის აღდგენა ჩემს ეზოში ან ოფისთან პარკინგზე',
+      },
+    ],
+  },
+  {
     article: 'blog/mobile-tinting-on-location',
     links: [
       {
@@ -3874,6 +3912,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/mobile-windshield-repair-on-site',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'windshield repair',
+        contextQuote: 'A handful of operators in Tbilisi advertise mobile windshield repair',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'car glass repair',
+        originalPhrase: 'windshield repair',
+        contextQuote: 'BESTAUTO does not do mobile windshield repair, and that is not laziness or greed',
+      },
+    ],
+  },
   {
     article: 'blog/mobile-tinting-on-location',
     links: [
