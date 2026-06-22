@@ -3,27 +3,27 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 192,
-  "fetchedAt": "2026-06-21T08:37:01.478Z",
+  "fetchedAt": "2026-06-22T09:50:11.672Z",
   "reviews": [
     {
       "authorName": "ana tatulashvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocL9o4heilwvZ5yC8hiZcKtDCq0gafuISeTxMQbR-L53x1ACJ0o=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
       "texts": {
-        "ru": "Отличное обслуживание и сильная ориентация на достижение результатов. Команда была профессиональной, внимательной и стремилась к предоставлению высококачественных услуг. Я искренне доволен общим впечатлением и настоятельно рекомендую их другим.\n\nОтличное обслуживание и сильная ориентация на достижение результатов. Команда была профессиональной, внимательной и стремилась к предоставлению высококачественных услуг. Я искренне доволен общим впечатлением и настоятельно рекомендую их другим.",
+        "ru": "Отличное обслуживание и сильная ориентация на достижение результатов. Команда была профессиональной, внимательной и стремилась предоставлять высококачественные услуги. Я искренне доволен общим впечатлением и настоятельно рекомендую их другим.\n\nОтличное обслуживание и сильная ориентация на достижение результатов. Команда была профессиональной, внимательной и стремилась предоставлять высококачественные услуги. Я искренне доволен общим впечатлением и настоятельно рекомендую их другим.",
         "ka": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
         "en": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others."
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
       },
       "originalLang": "ka",
       "time": 1781948399,
       "profileUrl": "https://www.google.com/maps/contrib/103896940660108229331/reviews",
       "text": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
-      "relativeTime": "today"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "Irakli Aslanishvili",
@@ -95,15 +95,15 @@
         "en": "great staff"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "en",
       "time": 1780229929,
       "profileUrl": "https://www.google.com/maps/contrib/108958595932398788808/reviews",
       "text": "great staff",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Дмитрий Павлов",
@@ -315,15 +315,15 @@
         "en": "Thank you, I liked it, everything was done perfectly 10/10"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "ka",
       "time": 1776799189,
       "profileUrl": "https://www.google.com/maps/contrib/113783958904843180274/reviews",
       "text": "მადლობა, მომეწონა ყველაფერი იდიალურად იყო გაკეთებული10/10",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "jean pierre nehme",
