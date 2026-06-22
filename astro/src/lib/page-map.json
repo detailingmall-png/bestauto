@@ -2894,5 +2894,29 @@
     "title": "Mobile windshield repair in Tbilisi — why we work in-studio only",
     "lang": "en",
     "slug": "blog/mobile-windshield-repair-on-site"
+  },
+  "920260622001": {
+    "file": "page920260622001.html",
+    "url": "https://bestauto.ge/ru/blog/modern-windshields-sensors-cameras",
+    "path": "/ru/blog/modern-windshields-sensors-cameras",
+    "title": "Камеры на лобовом стекле — нюансы ремонта в Тбилиси",
+    "lang": "ru",
+    "slug": "blog/modern-windshields-sensors-cameras"
+  },
+  "920260622002": {
+    "file": "page920260622002.html",
+    "url": "https://bestauto.ge/blog/modern-windshields-sensors-cameras",
+    "path": "/blog/modern-windshields-sensors-cameras",
+    "title": "კამერა საქარეზე — აღდგენის ნიუანსები თბილისში",
+    "lang": "ka",
+    "slug": "blog/modern-windshields-sensors-cameras"
+  },
+  "920260622003": {
+    "file": "page920260622003.html",
+    "url": "https://bestauto.ge/en/blog/modern-windshields-sensors-cameras",
+    "path": "/en/blog/modern-windshields-sensors-cameras",
+    "title": "Windshields with cameras & sensors — repair in Tbilisi",
+    "lang": "en",
+    "slug": "blog/modern-windshields-sensors-cameras"
   }
 }

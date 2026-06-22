@@ -116,6 +116,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/windshield-crack-repair-size-limit': 'windshield-repair',
   'blog/windshield-repair-benefits':     'windshield-repair',
   'blog/mobile-windshield-repair-on-site': 'windshield-repair',
+  'blog/modern-windshields-sensors-cameras': 'windshield-repair',
   // Interior cleaning
   'blog/car-interior-detailing-basics': 'interior-cleaning',
   'blog/car-interior-disinfection':     'interior-cleaning',

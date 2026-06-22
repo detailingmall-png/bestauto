@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/modern-windshields-sensors-cameras',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт скола',
+        originalPhrase: 'ремонт скола',
+        contextQuote: 'Главное правило: ремонт скола в зоне обзора ADAS-камеры не делается',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'ремонт стекла автомобиля',
+        originalPhrase: 'стандартный ремонт',
+        contextQuote: 'делаем стандартный ремонт, калибровка не требуется',
+      },
+    ],
+  },
+  {
     article: 'blog/mobile-windshield-repair-on-site',
     links: [
       {
@@ -2010,6 +2029,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/modern-windshields-sensors-cameras',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ნაკენჭარის აღდგენა',
+        originalPhrase: 'ნაკენჭარის აღდგენა',
+        contextQuote: 'მთავარი წესი: ADAS-კამერის ხედვის ზონაში ნაკენჭარის აღდგენა არ კეთდება',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინების აღდგენა',
+        originalPhrase: 'ნაკენჭარის აღდგენა',
+        contextQuote: 'ნაკენჭარის აღდგენა მიდის სტანდარტულად',
+      },
+    ],
+  },
+  {
     article: 'blog/mobile-windshield-repair-on-site',
     links: [
       {
@@ -3912,6 +3950,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/modern-windshields-sensors-cameras',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'chip repair',
+        contextQuote: 'Each category imposes its own rules on chip repair',
+      },
+      {
+        role: 'bridge',
+        target: '/windshield-repair',
+        anchor: 'windscreen repair',
+        originalPhrase: 'chip repair',
+        contextQuote: 'ADAS camera blocks chip repair in its viewing cone',
+      },
+    ],
+  },
   {
     article: 'blog/mobile-windshield-repair-on-site',
     links: [

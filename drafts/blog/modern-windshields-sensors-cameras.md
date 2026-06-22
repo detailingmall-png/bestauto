@@ -8,7 +8,8 @@ primary_hf_ru: "камеры на лобовом, обогрев лобовог�
 primary_hf_ka: "კამერა საქარეზე"
 primary_hf_en: "windshield ADAS sensors"
 secondary_links: []
-status: drafted
+status: published
+published: 2026-06-22
 sources:
   - roadmap: "docs/content-roadmap.md#66"
   - gsc: "Downloads/gsc_16months.csv"
