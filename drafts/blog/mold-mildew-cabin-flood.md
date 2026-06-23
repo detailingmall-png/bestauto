@@ -8,7 +8,12 @@ primary_hf_ru: "плесень в салоне, запах сырости"
 primary_hf_ka: "ობი სალონში"
 primary_hf_en: "mold cabin water damage"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-06-23
+published_pageids:
+  ru: "920260623001"
+  ka: "920260623002"
+  en: "920260623003"
 sources:
   - roadmap: "docs/content-roadmap.md#88"
   - competitor: "autoqimwmenda.ge (mold removal category)"

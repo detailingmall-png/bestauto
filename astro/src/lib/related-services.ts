@@ -130,6 +130,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/leather-seat-restoration':      'interior-cleaning',
   'blog/fabric-seat-stain-guide':       'interior-cleaning',
   'blog/headliner-cleaning-dangers':    'interior-cleaning',
+  'blog/mold-mildew-cabin-flood':       'interior-cleaning',
   'blog/interior-ceramic-after-cleaning': 'interior-cleaning',
   // Polishing
   'blog/polish-cream-diy-vs-studio':   'polishing',

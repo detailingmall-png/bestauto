@@ -1829,6 +1829,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/mold-mildew-cabin-flood',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'химчистка даст эффект на неделю',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'сильная категория химчистки после протечки',
+      },
+    ],
+  },
+  {
     article: 'blog/headliner-cleaning-dangers',
     links: [
       {
@@ -3789,6 +3808,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/mold-mildew-cabin-flood',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ქიმწმენდა ერთ კვირას გაძლევს შედეგს',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'ქიმწმენდის ძლიერი კატეგორია გაჟონვის შემდეგ',
+      },
+    ],
+  },
+  {
     article: 'blog/headliner-cleaning-dangers',
     links: [
       {
@@ -5639,6 +5677,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'interior cleaning',
         originalPhrase: 'interior cleaning',
         contextQuote: 'At BESTAUTO interior cleaning starts at 400',
+      },
+    ],
+  },
+  {
+    article: 'blog/mold-mildew-cabin-flood',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'dry cleaning only works for a week',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'any dry cleaning is temporary',
       },
     ],
   },
