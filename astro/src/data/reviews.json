@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 192,
-  "fetchedAt": "2026-06-22T09:50:11.672Z",
+  "totalReviews": 193,
+  "fetchedAt": "2026-06-23T07:52:50.841Z",
   "reviews": [
+    {
+      "authorName": "Luka Khvibliani",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUY2ZaJ5b9A6QnmrmGWUZuqaMl893eghClSj2sQ9wqRkEVGrMocFQ=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Привезла сюда свою машину на полную химчистку и осталась очень довольна! Спасибо вам за профессионализм и внимание к деталям, буду вас рекомендовать!",
+        "ka": "მანქანა აქ სრული დეტალური დასუფთავებისთვის მოვიყვანე და იმედგაცრუებული არ დავრჩენილვარ! დიდი მადლობა თქვენი პროფესიონალიზმისა და დეტალებისადმი ყურადღებისთვის, გირჩევთ თქვენ!",
+        "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "en",
+      "time": 1782199892,
+      "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
+      "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
+      "relativeTime": "today"
+    },
     {
       "authorName": "ana tatulashvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocL9o4heilwvZ5yC8hiZcKtDCq0gafuISeTxMQbR-L53x1ACJ0o=s128-c0x00000000-cc-rp-mo",
@@ -55,15 +75,15 @@
         "en": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "en",
       "time": 1780927987,
       "profileUrl": "https://www.google.com/maps/contrib/117454642337023272704/reviews",
       "text": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Pak Volchek",
@@ -75,15 +95,15 @@
         "ka": "შედეგით გაოგნებული დავრჩი. ჩემი ძველი ფორდი ახალივით გამოიყურება და არაფრის სუნი არ ასდის! გირჩევთ!"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "en",
       "time": 1780318426,
       "profileUrl": "https://www.google.com/maps/contrib/106314736770662063356/reviews",
       "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing! Highly recommended!",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Nika Khatiashvili",
@@ -155,15 +175,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -175,15 +195,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Nikita Taboo",
@@ -295,15 +315,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -389,7 +409,7 @@
       "authorName": "Mikhail",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUygXsQGgnzvFfn9HJ_xccXGGiSaxn4tjmmCczVRlhNyCeOTQ2p=s128-c0x00000000-cc-rp-mo-ba2",
       "rating": 5,
-      "relativeTime": "6 months ago",
+      "relativeTime": "7 months ago",
       "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
       "time": 1763710948,
       "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews",
@@ -399,9 +419,9 @@
         "ka": "შესანიშნავი მომსახურება! თავაზიანი და ყურადღებიანი პერსონალი. ბიჭები თავიანთი საქმის ოსტატები არიან. მათ სამუშაო დეტალებისადმი დიდი ყურადღებით და დროულად შეასრულეს. ბონუსის სახით, მათ დამატებითი სამუშაო ფასის გაზრდის გარეშე შეასრულეს. შემიძლია მათი რეკომენდაცია!"
       },
       "relativeTimes": {
-        "en": "6 months ago",
-        "ru": "6 месяцев назад",
-        "ka": "6 თვის წინ"
+        "en": "7 months ago",
+        "ru": "7 месяцев назад",
+        "ka": "7 თვის წინ"
       },
       "originalLang": "en"
     },
