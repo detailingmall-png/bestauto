@@ -1848,6 +1848,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/pet-hair-cabin-removal',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Полная химчистка с озоном',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'часть химчистки салона',
+      },
+    ],
+  },
+  {
     article: 'blog/headliner-cleaning-dangers',
     links: [
       {
@@ -3827,6 +3846,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/pet-hair-cabin-removal',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'სრული ქიმწმენდა ოზონით',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'ქიმწმენდის ნაწილია',
+      },
+    ],
+  },
+  {
     article: 'blog/headliner-cleaning-dangers',
     links: [
       {
@@ -5696,6 +5734,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'dry cleaning',
         originalPhrase: 'dry cleaning',
         contextQuote: 'any dry cleaning is temporary',
+      },
+    ],
+  },
+  {
+    article: 'blog/pet-hair-cabin-removal',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'part of interior cleaning',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'base interior cleaning',
       },
     ],
   },

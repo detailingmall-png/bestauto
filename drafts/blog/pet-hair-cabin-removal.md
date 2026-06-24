@@ -8,7 +8,7 @@ primary_hf_ru: "шерсть от животных в салоне, удален
 primary_hf_ka: "ცხოველების ბეწვი სალონში, მანქანიდან ბეწვის მოცილება"
 primary_hf_en: "pet hair car interior, dog hair removal car"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#83"
 ---
