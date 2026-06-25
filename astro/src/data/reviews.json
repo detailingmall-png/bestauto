@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 193,
-  "fetchedAt": "2026-06-24T07:44:34.449Z",
+  "fetchedAt": "2026-06-25T07:49:36.668Z",
   "reviews": [
     {
       "authorName": "Luka Khvibliani",
@@ -15,15 +15,15 @@
         "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
       },
       "originalLang": "en",
       "time": 1782199892,
       "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
       "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
-      "relativeTime": "a day ago"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "ana tatulashvili",
@@ -35,15 +35,15 @@
         "en": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others."
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "4 дня назад",
+        "ka": "4 დღის წინ",
+        "en": "4 days ago"
       },
       "originalLang": "ka",
       "time": 1781948399,
       "profileUrl": "https://www.google.com/maps/contrib/103896940660108229331/reviews",
       "text": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago"
     },
     {
       "authorName": "Irakli Aslanishvili",
@@ -55,15 +55,15 @@
         "en": "The best service! The work was done within the agreed time frame! The best professionals! Good luck!"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1781085763,
       "profileUrl": "https://www.google.com/maps/contrib/117872751637693533048/reviews",
       "text": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Andro Todua",
