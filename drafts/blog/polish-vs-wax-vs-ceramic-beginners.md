@@ -10,7 +10,7 @@ primary_hf_en: "wax vs polish vs ceramic"
 secondary_links:
   - "/ceramiccoating"
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#9"
   - reference: "drafts/blog/polish-cream-diy-vs-studio.md"

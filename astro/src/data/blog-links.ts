@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/polish-vs-wax-vs-ceramic-beginners',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'Воск, полировка авто и керамическое покрытие — три разные процедуры с тремя разными задачами.',
+      },
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'Полировка кузова',
+        originalPhrase: 'Полировка кузова',
+        contextQuote: 'Полировка кузова — от 690 ₾',
+      },
+    ],
+  },
+  {
     article: 'blog/modern-windshields-sensors-cameras',
     links: [
       {
@@ -2067,6 +2086,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/polish-vs-wax-vs-ceramic-beginners',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'ვოსკი, მანქანის პოლირება და კერამიკული საფარი — სამი სხვადასხვა პროცედურა სამი სხვადასხვა ამოცანით.',
+      },
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მეორე ნაბიჯი — პოლირება.',
+      },
+    ],
+  },
+  {
     article: 'blog/modern-windshields-sensors-cameras',
     links: [
       {
@@ -4026,6 +4064,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/polish-vs-wax-vs-ceramic-beginners',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'Wax, polishing, and ceramic coating are three different procedures with three different jobs.',
+      },
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Step two — polishing.',
+      },
+    ],
+  },
   {
     article: 'blog/modern-windshields-sensors-cameras',
     links: [
