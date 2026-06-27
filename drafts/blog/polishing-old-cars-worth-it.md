@@ -9,7 +9,7 @@ primary_hf_ka: "ძველი მანქანის პოლირებ�
 primary_hf_en: "polishing old car"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#6"
   - reference: "drafts/blog/polish-cream-diy-vs-studio.md"
