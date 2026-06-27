@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 193,
-  "fetchedAt": "2026-06-26T07:57:12.360Z",
+  "fetchedAt": "2026-06-27T06:55:33.106Z",
   "reviews": [
     {
       "authorName": "Luka Khvibliani",
@@ -35,15 +35,15 @@
         "en": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others."
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "6 дней назад",
+        "ka": "6 დღის წინ",
+        "en": "6 days ago"
       },
       "originalLang": "ka",
       "time": 1781948399,
       "profileUrl": "https://www.google.com/maps/contrib/103896940660108229331/reviews",
       "text": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
-      "relativeTime": "5 days ago"
+      "relativeTime": "6 days ago"
     },
     {
       "authorName": "Irakli Aslanishvili",
@@ -429,7 +429,7 @@
       "authorName": "David Williams",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWEweGubGwFxLnzaYEqwXeMN1GaSqMZhValtX79WVnzfyC5MUyd=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "7 months ago",
+      "relativeTime": "8 months ago",
       "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results.",
       "time": 1761404842,
       "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews",
@@ -439,9 +439,9 @@
         "ka": "Bestauto Detailing-მა ჩემს Tesla Model Y-ს ნამდვილი საგამოფენო დასრულება შესთავაზა. საღებავს ახლა ღრმა, სარკისებური პრიალა ელფერი აქვს, დისკები და მინები უნაკლოა, ინტერიერი კი განახლებული შეგრძნებით გამოირჩევა - ყველაფერი უბრალოდ ბრწყინავს. კომუნიკაცია ნათელი იყო, მომსახურება სწრაფი და ყოველ ნაბიჯზე გამოჩენილი ყურადღება აშკარა იყო. განსაკუთრებული მადლობა ალექსანდრეს შესანიშნავი მომსახურებისა და დეტალებისადმი ყურადღებისთვის; მან მანქანა საკუთარივით მოეპყრო. Bestauto Detailing-ს გირჩევთ Tesla-ს ნებისმიერ მფლობელს, ვისაც უმაღლესი დონის შედეგები სურს."
       },
       "relativeTimes": {
-        "en": "7 months ago",
-        "ru": "7 месяцев назад",
-        "ka": "7 თვის წინ"
+        "en": "8 months ago",
+        "ru": "8 месяцев назад",
+        "ka": "8 თვის წინ"
       },
       "originalLang": "en"
     },
