@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/polishing-old-cars-worth-it',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'Полировка кузова',
+        originalPhrase: 'Полировка кузова',
+        contextQuote: 'Полировка кузова — от 690 ₾',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'Керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие — базовый вариант.',
+      },
+    ],
+  },
+  {
     article: 'blog/polish-vs-wax-vs-ceramic-beginners',
     links: [
       {
@@ -2086,6 +2105,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/polishing-old-cars-worth-it',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'მანქანის პოლირება',
+        originalPhrase: 'მანქანის პოლირება',
+        contextQuote: 'ძველი მანქანის პოლირება 7-15 წლის ასაკში',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი — საბაზისო ვარიანტი.',
+      },
+    ],
+  },
+  {
     article: 'blog/polish-vs-wax-vs-ceramic-beginners',
     links: [
       {
@@ -4064,6 +4102,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/polishing-old-cars-worth-it',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Body polishing — from 690 ₾',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'Ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is the baseline option.',
+      },
+    ],
+  },
   {
     article: 'blog/polish-vs-wax-vs-ceramic-beginners',
     links: [
