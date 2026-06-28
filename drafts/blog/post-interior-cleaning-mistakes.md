@@ -8,7 +8,7 @@ primary_hf_ru: "ошибки после химчистки"
 primary_hf_ka: "ქიმწმენდის შემდეგ შეცდომები"
 primary_hf_en: "mistakes after interior cleaning"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#92"
   - competitor: "autoqimwmenda.ge (post-cleaning care category)"
