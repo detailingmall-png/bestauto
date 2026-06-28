@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/post-interior-cleaning-mistakes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Хорошая химчистка убирает причины запахов — жир, пот, микрофлору из глубины волокна.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Это минимум, который превращает 500 ₾ за среднюю категорию химчистки в годовой результат, а не в месячный.',
+      },
+    ],
+  },
+  {
     article: 'blog/polishing-old-cars-worth-it',
     links: [
       {
@@ -2105,6 +2124,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/post-interior-cleaning-mistakes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'სალონის ქიმწმენდა — ესაა რამდენიმე საათი პროფესიული სტუდიის მუშაობა, ასობით ლიტრი ქიმია, ექსტრაქცია, ორთქლი, ოზონი.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'კარგი ქიმწმენდა შლის სუნის მიზეზებს — ცხიმს, ოფლს, მიკროფლორას ბოჭკოს სიღრმიდან.',
+      },
+    ],
+  },
+  {
     article: 'blog/polishing-old-cars-worth-it',
     links: [
       {
@@ -4102,6 +4140,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/post-interior-cleaning-mistakes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'Interior dry cleaning is several hours of professional studio work, hundreds of litres of chemistry, extraction, steam, ozone.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'Interior dry cleaning is an investment in eighteen months of use, not a one-off service.',
+      },
+    ],
+  },
   {
     article: 'blog/polishing-old-cars-worth-it',
     links: [

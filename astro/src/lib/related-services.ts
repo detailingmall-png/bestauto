@@ -134,6 +134,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/mold-mildew-cabin-flood':       'interior-cleaning',
   'blog/pet-hair-cabin-removal':        'interior-cleaning',
   'blog/interior-ceramic-after-cleaning': 'interior-cleaning',
+  'blog/post-interior-cleaning-mistakes': 'interior-cleaning',
   // Polishing
   'blog/polish-cream-diy-vs-studio':   'polishing',
   'blog/steam-headlight-polishing':    'polishing',
