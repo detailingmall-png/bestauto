@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 193,
-  "fetchedAt": "2026-06-27T06:55:33.106Z",
+  "totalReviews": 194,
+  "fetchedAt": "2026-06-28T07:53:28.171Z",
   "reviews": [
+    {
+      "authorName": "Zaza Guliashvili",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLDKIlSaZQAr_Sk4Y12mUmoJtUW-MXcxo2dj2oxw-ravqfZqA=s128-c0x00000000-cc-rp-mo",
+      "rating": 1,
+      "texts": {
+        "ru": "Это дорого, они всё так организовали, что даже НДС не берут.\nПолировку они сделали таким образом, что даже не стали «полировать» точки, а просто нанесли их.",
+        "ka": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
+        "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ka",
+      "time": 1782561586,
+      "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
+      "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Luka Khvibliani",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUY2ZaJ5b9A6QnmrmGWUZuqaMl893eghClSj2sQ9wqRkEVGrMocFQ=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
       },
       "relativeTimes": {
-        "ru": "3 дня назад",
-        "ka": "3 დღის წინ",
-        "en": "3 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "en",
       "time": 1782199892,
       "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
       "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
-      "relativeTime": "3 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "ana tatulashvili",
@@ -35,15 +55,15 @@
         "en": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others."
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "ka",
       "time": 1781948399,
       "profileUrl": "https://www.google.com/maps/contrib/103896940660108229331/reviews",
       "text": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Irakli Aslanishvili",
@@ -135,15 +155,15 @@
         "en": "I had my BMW X5 polished and dry-cleaned. I'm very pleased with the results – the bodywork looks like new after polishing, with a deep shine and minor scratches gone. The interior is clean and fresh after the cleaning, removing all dirt and unpleasant odors.\n\nThe work was done efficiently, meticulously, and within the agreed-upon timeframe. It's clear they know their stuff and pay close attention to detail. I highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ru",
       "time": 1780161332,
       "profileUrl": "https://www.google.com/maps/contrib/116131506968891871214/reviews",
       "text": "Обращался на полировку и химчистку BMW X5. Результатом очень доволен — кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим, убрали все загрязнения и неприятные запахи.\n\nРабота выполнена качественно, аккуратно и в оговоренные сроки. Видно, что ребята знают своё дело и внимательно относятся к деталям. Смело рекомендую!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "曾艾琳",
