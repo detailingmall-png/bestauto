@@ -81,6 +81,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'ppf пленка',
     'оклейка полиуретановой пленкой',
     'антигравийная пленка',
+    'антигравийная плёнка',       // ё-variant nominative — valid in blog anchor context
     'бронирование авто пленкой',
   ],
   '/vinyl-wrapping': [

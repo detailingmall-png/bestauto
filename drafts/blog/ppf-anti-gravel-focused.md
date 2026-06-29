@@ -8,7 +8,7 @@ primary_hf_ru: "антигравийная плёнка, защита от ск�
 primary_hf_ka: "ანტიქვა PPF"
 primary_hf_en: "anti-gravel ppf"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#36"
   - reference: "drafts/blog/ppf-self-healing-explained.md"

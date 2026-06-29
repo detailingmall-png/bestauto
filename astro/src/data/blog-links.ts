@@ -38,6 +38,32 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-anti-gravel-focused',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'антигравийная плёнка',
+        originalPhrase: 'антигравийная плёнка',
+        contextQuote: 'Сколько стоит антигравийная плёнка только на капот и бампер?',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'На плёнку можно нанести керамическое покрытие сверху',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'Плёнку имеет смысл клеить на новую машину в первые 2-4 недели, на старую — после полировки',
+      },
+    ],
+  },
+  {
     article: 'blog/post-interior-cleaning-mistakes',
     links: [
       {
@@ -2124,6 +2150,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-anti-gravel-focused',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'BESTAUTO-ს დამცავი ფირის გვერდზე',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'ფირს აქვს აზრი დაკვრას ახალ მანქანაზე პირველ 2-4 კვირაში, ძველზე — პოლირების შემდეგ',
+      },
+    ],
+  },
+  {
     article: 'blog/post-interior-cleaning-mistakes',
     links: [
       {
@@ -4140,6 +4185,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/ppf-anti-gravel-focused',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'paint protection film',
+        contextQuote: 'Current pricing with all combinations — on the BESTAUTO paint protection film page.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'The correct sequence is polishing first (from 690 ₾), then film.',
+      },
+    ],
+  },
   {
     article: 'blog/post-interior-cleaning-mistakes',
     links: [
