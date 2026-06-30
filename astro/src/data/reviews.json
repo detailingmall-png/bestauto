@@ -2,28 +2,48 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 194,
-  "fetchedAt": "2026-06-28T07:53:28.171Z",
+  "totalReviews": 195,
+  "fetchedAt": "2026-06-30T07:56:34.180Z",
   "reviews": [
     {
-      "authorName": "Zaza Guliashvili",
-      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLDKIlSaZQAr_Sk4Y12mUmoJtUW-MXcxo2dj2oxw-ravqfZqA=s128-c0x00000000-cc-rp-mo",
-      "rating": 1,
+      "authorName": "ani sonishvili",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJ0d3e5cOklZfLxclmyYF31HhXQfhcR5Y5ApuobXFN6BIdghw=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
       "texts": {
-        "ru": "Это дорого, они всё так организовали, что даже НДС не берут.\nПолировку они сделали таким образом, что даже не стали «полировать» точки, а просто нанесли их.",
-        "ka": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-        "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
+        "ru": "Очень рекомендую! Профессиональный персонал, безупречная химчистка, и моя машина никогда не выглядела лучше.",
+        "en": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
+        "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
         "ru": "сегодня",
         "ka": "დღეს",
         "en": "today"
       },
+      "originalLang": "en",
+      "time": 1782743178,
+      "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
+      "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
+      "relativeTime": "today"
+    },
+    {
+      "authorName": "Zaza Guliashvili",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLDKIlSaZQAr_Sk4Y12mUmoJtUW-MXcxo2dj2oxw-ravqfZqA=s128-c0x00000000-cc-rp-mo",
+      "rating": 1,
+      "texts": {
+        "ru": "Это дорого, они всё так организовали, что даже НДС не берут.\nПолировку сделали так, что даже не стали \"показывать\" точки, просто нанесли покрытие.",
+        "ka": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
+        "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
+      },
+      "relativeTimes": {
+        "ru": "2 дня назад",
+        "ka": "2 დღის წინ",
+        "en": "2 days ago"
+      },
       "originalLang": "ka",
       "time": 1782561586,
       "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
       "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-      "relativeTime": "today"
+      "relativeTime": "2 days ago"
     },
     {
       "authorName": "Luka Khvibliani",
@@ -35,15 +55,15 @@
         "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "en",
       "time": 1782199892,
       "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
       "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
-      "relativeTime": "5 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "ana tatulashvili",
@@ -95,15 +115,15 @@
         "en": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "en",
       "time": 1780927987,
       "profileUrl": "https://www.google.com/maps/contrib/117454642337023272704/reviews",
       "text": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Pak Volchek",
@@ -115,15 +135,15 @@
         "ka": "შედეგით გაოგნებული დავრჩი. ჩემი ძველი ფორდი ახალივით გამოიყურება და არაფრის სუნი არ ასდის! გირჩევთ!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "en",
       "time": 1780318426,
       "profileUrl": "https://www.google.com/maps/contrib/106314736770662063356/reviews",
       "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing! Highly recommended!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Nika Khatiashvili",
@@ -135,15 +155,15 @@
         "en": "great staff"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "en",
       "time": 1780229929,
       "profileUrl": "https://www.google.com/maps/contrib/108958595932398788808/reviews",
       "text": "great staff",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Дмитрий Павлов",
@@ -175,15 +195,15 @@
         "en": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store."
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "en",
       "time": 1779997754,
       "profileUrl": "https://www.google.com/maps/contrib/118361112651939581584/reviews",
       "text": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need.\n\nLocation may be a little hard to find, parking areas are limited in the area. Park on the main road with the other cars and find the entrance by a flag near a ramp to a shuttered basement right next to the grocery store.",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "Acer_1993",
