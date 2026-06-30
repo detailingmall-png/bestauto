@@ -8,7 +8,12 @@ primary_hf_ru: "бренды ppf, выбор плёнки PPF"
 primary_hf_ka: "PPF ბრენდები, PPF არჩევა"
 primary_hf_en: "ppf brand comparison llumar luxarmor quantum"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-06-30
+published_pageids:
+  ru: "920260630001"
+  ka: "920260630002"
+  en: "920260630003"
 sources:
   - roadmap: "docs/content-roadmap.md#35"
   - reference: "drafts/blog/what-is-ppf-explainer.md, drafts/blog/ppf-vs-ceramic-vs-vinyl.md"

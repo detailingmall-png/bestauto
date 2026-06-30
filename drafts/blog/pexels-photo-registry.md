@@ -70,3 +70,5 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 
 Before downloading a Pexels photo, check this file. Do NOT use a Pexels ID already listed.
 After publishing, add a row here immediately.
+
+| ppf-brand-comparison-llumar-luxarmor-quantum | 8664311 | https://www.pexels.com/photo/futuristic-car-parked-in-garage-8664311/ | Jae Park — sleek luxury cars displayed in a dark, well-lit studio garage (avg #393836), matches the brand's dark-background + gold-lighting aesthetic and conveys the article's "choosing among premium options" theme (3-brand PPF comparison) better than another install-process shot. Distinct from all prior PPF/wrap picks (6044794 glossy black hood, 20051464/20051463 protective-film two-men, 10126666 heat-gun wrap, 6025950 wrapping-in-progress, 10162529 blue-vinyl, 11588673 black gloss, 7662135 carbon spoiler, 16215627 W126 chrome). q80 1920x1080 (132KB). 5 candidates shortlisted (8664311 picked, 10126657 white-vinyl install, 15489298 Urus garage, 27968215 dark sports car, 10126661 hood-wrap close-up); autonomous pick (scheduled run, no user — registry precedent for scheduled runs).
