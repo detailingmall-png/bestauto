@@ -2,8 +2,8 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 195,
-  "fetchedAt": "2026-06-30T07:56:34.180Z",
+  "totalReviews": 194,
+  "fetchedAt": "2026-07-01T08:16:09.843Z",
   "reviews": [
     {
       "authorName": "ani sonishvili",
@@ -15,15 +15,15 @@
         "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "en",
       "time": 1782743178,
       "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
       "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Zaza Guliashvili",
@@ -35,15 +35,15 @@
         "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ka",
       "time": 1782561586,
       "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
       "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Luka Khvibliani",
@@ -175,15 +175,15 @@
         "en": "I had my BMW X5 polished and dry-cleaned. I'm very pleased with the results – the bodywork looks like new after polishing, with a deep shine and minor scratches gone. The interior is clean and fresh after the cleaning, removing all dirt and unpleasant odors.\n\nThe work was done efficiently, meticulously, and within the agreed-upon timeframe. It's clear they know their stuff and pay close attention to detail. I highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "ru",
       "time": 1780161332,
       "profileUrl": "https://www.google.com/maps/contrib/116131506968891871214/reviews",
       "text": "Обращался на полировку и химчистку BMW X5. Результатом очень доволен — кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим, убрали все загрязнения и неприятные запахи.\n\nРабота выполнена качественно, аккуратно и в оговоренные сроки. Видно, что ребята знают своё дело и внимательно относятся к деталям. Смело рекомендую!",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "曾艾琳",
@@ -389,7 +389,7 @@
       "authorName": "jean pierre nehme",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWMrUtkJuMZqqPZJwjTZZuIaQq9EEprG0y5cg-VTNcyYSVlyO-U=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "3 months ago",
+      "relativeTime": "4 months ago",
       "text": "All the way from Romania 🇷🇴 it's my first time writing a review, i don't usually trust people easily but I felt really comfortable dealing with this team since day one, very professional, very satisfied with the results, highly recommended 👌🏻💪🏻\nGlad to meet you guys 🙏🏼",
       "time": 1772316949,
       "profileUrl": "https://www.google.com/maps/contrib/106862328154285265159/reviews",
@@ -399,9 +399,9 @@
         "ka": "რუმინეთიდან 🇷🇴 პირველად ვწერ მიმოხილვას, ჩვეულებრივ, ადამიანებს ადვილად არ ვენდობი, მაგრამ პირველივე დღიდან ამ გუნდთან ურთიერთობისას თავს ძალიან კომფორტულად ვგრძნობდი, ძალიან პროფესიონალები იყვნენ, შედეგით ძალიან კმაყოფილი, გირჩევთ 👌🏻💪🏻\nმიხარია თქვენი გაცნობა 🙏🏼"
       },
       "relativeTimes": {
-        "en": "3 months ago",
-        "ru": "3 месяца назад",
-        "ka": "3 თვის წინ"
+        "en": "4 months ago",
+        "ru": "4 месяца назад",
+        "ka": "4 თვის წინ"
       },
       "originalLang": "en"
     },
@@ -529,7 +529,7 @@
       "authorName": "Alexander Vertyankin",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKRGQ_MePwUvi4vdFImnxyMB4jdOXzNFhFnWDTgt6OpGKeunQ=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "10 months ago",
+      "relativeTime": "11 months ago",
       "text": "Обращался в этот сервис дважды — сначала на химчистку салона, потом на тонировку передних стекол атермальной плёнкой. Оба раза остался очень доволен.\n\nСотрудники вовлечённые, вежливые, всё подробно объяснили: по плёнкам показали все доступные варианты, рассказали про отличия, после установки замерили светопропускание (я приезжал отдельно на следующий день, чтобы не открывать окна сразу после тонировки). Всё в пределах допустимых норм по закону.\n\nПо химчистке — салон отмыли до мельчайших деталей, включая труднодоступные места. Снаружи тоже всё вымыли: кузов, стёкла, даже подкапотное пространство — аккуратно и качественно.\n\nНа тонировку приехал прямо перед закрытием, но без вопросов приняли и всё сделали за час. Работой и отношением остался полностью доволен. Рекомендую!",
       "time": 1753886738,
       "profileUrl": "https://www.google.com/maps/contrib/108773084403365621421/reviews",
@@ -539,9 +539,9 @@
         "en": "I used this service twice – first for interior cleaning, then for windshield tinting with heat-absorbing film. I was very satisfied both times.\n\nThe staff was helpful and polite, and explained everything in detail: they showed me all the available film options, explained the differences, and measured the light transmittance after installation (I came back separately the next day to avoid opening the windows immediately after tinting). Everything was within legal limits.\n\nFor the dry cleaning, they washed the interior down to the smallest detail, including hard-to-reach areas. They also cleaned everything on the outside: the body, the windows, even the engine compartment – meticulously and thoroughly.\n\nI arrived for the tinting just before closing time, but they accepted my request without any questions and completed the job within an hour. I was completely satisfied with the work and their service. I highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "10 месяцев назад",
-        "en": "10 months ago",
-        "ka": "10 თვის წინ"
+        "ru": "11 месяцев назад",
+        "en": "11 months ago",
+        "ka": "11 თვის წინ"
       },
       "originalLang": "ru"
     },
@@ -549,7 +549,7 @@
       "authorName": "Saba Inaishvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXNFAlLc9Bkwz9x5qNV-2Vq5-O6-RyLI2R-DlgGzb5KSmCQpM0=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "10 months ago",
+      "relativeTime": "11 months ago",
       "text": "დითეილინგის სერვისით უაღრესად კმაყოფილი დავრჩი. სამუშაო შესრულებულია უმაღლეს დონეზე – ყოველი დეტალი გალამაზებული და სუფთაა, მანქანა ფაქტობრივად ახალივით გამოიყურება. განსაკუთრებით აღსანიშნავია მენეჯერის პროფესიონალიზმი და ყურადღება – დეტალურად ამიხსნა ყველა პროცესი, დამეხმარა ყველა კითხვაზე და ზუსტად იგრძნობოდა, რომ მისთვის თითოეული კლიენტის კმაყოფილება მნიშვნელოვანია. ასეთი სერვისი იშვიათად შემხვედრია და გულწრფელად ვურჩევ ყველას",
       "time": 1753885026,
       "profileUrl": "https://www.google.com/maps/contrib/106496816367486580373/reviews",
@@ -559,9 +559,9 @@
         "en": "I was extremely satisfied with the detailing service. The work was done at the highest level – every detail is beautiful and clean, the car looks practically new. The manager's professionalism and attention are especially noteworthy – he explained every process in detail, helped me with all my questions, and it was clear that the satisfaction of each client is important to him. I have rarely encountered such service and I sincerely recommend it to everyone."
       },
       "relativeTimes": {
-        "ka": "10 თვის წინ",
-        "en": "10 months ago",
-        "ru": "10 месяцев назад"
+        "ka": "11 თვის წინ",
+        "en": "11 months ago",
+        "ru": "11 месяцев назад"
       },
       "originalLang": "ka"
     },
