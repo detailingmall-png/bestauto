@@ -4,6 +4,7 @@ Track all Pexels photos used as blog hero images to avoid duplicates.
 
 | Article slug | Pexels ID | URL | Notes |
 |---|---|---|---|
+| ppf-edge-peeling-troubleshoot | 6025904 | https://www.pexels.com/photo/man-with-heat-gun-working-near-car-6025904/ | Worker using a heat gun on a car panel in an indoor garage (avg #686A6A, dark studio tone) — direct visualisation of the article's central repair technique (heating the film edge to reactivate adhesive, the "Scenario 1 local edge repair" described throughout the edge-peeling article). Distinct from all prior PPF/wrap picks (20051464/20051463 protective-film two-men, 10126666 heat-gun-wrap, 6025950 white cover, 6044794 glossy hood, 8664311 dark garage lineup, 16215627 W126 chrome, 10162529 blue vinyl). Queries run: "paint protection film car", "car wrapping studio", "car film installation", "car hood detailing". q80 1920x1080 (99KB). 5 candidates shortlisted (6025904 picked, 10126665 hood wrap, 10126663 hood close-up, 10162528 door edge, 10126657 skilled-hand wrap); autonomous pick (scheduled run, no user — registry precedent for scheduled runs). |
 | 2-phase-vs-3-phase-wash | — | — | Generated via Pollinations.ai (pre-Pexels era) |
 | contactless-vs-hand-wash | 6873189 | https://www.pexels.com/photo/a-woman-covering-a-car-with-shampoo-foam-6873189/ | Woman foaming car with shampoo, q78 |
 | what-is-ppf-explainer | — | — | Generated via Pollinations.ai (pre-Pexels era) |

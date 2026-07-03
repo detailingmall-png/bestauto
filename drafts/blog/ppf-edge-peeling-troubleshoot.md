@@ -8,7 +8,12 @@ primary_hf_ru: "PPF гарантия, отслаивается плёнка"
 primary_hf_ka: "PPF კიდეების აქერცვლა"
 primary_hf_en: "ppf edge peeling"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-03
+published_pageids:
+  ru: "920260703001"
+  ka: "920260703002"
+  en: "920260703003"
 sources:
   - roadmap: "docs/content-roadmap.md#33"
   - reference: "drafts/blog/what-is-ppf-explainer.md"
