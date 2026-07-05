@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 194,
-  "fetchedAt": "2026-07-04T06:49:36.624Z",
+  "fetchedAt": "2026-07-05T07:30:26.964Z",
   "reviews": [
     {
       "authorName": "ani sonishvili",
@@ -15,15 +15,15 @@
         "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
-        "ru": "4 дня назад",
-        "ka": "4 დღის წინ",
-        "en": "4 days ago"
+        "ru": "5 дней назад",
+        "ka": "5 დღის წინ",
+        "en": "5 days ago"
       },
       "originalLang": "en",
       "time": 1782743178,
       "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
       "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
-      "relativeTime": "4 days ago"
+      "relativeTime": "5 days ago"
     },
     {
       "authorName": "Zaza Guliashvili",
@@ -35,15 +35,15 @@
         "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "ka",
       "time": 1782561586,
       "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
       "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Luka Khvibliani",
@@ -75,15 +75,15 @@
         "en": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others."
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ka",
       "time": 1781948399,
       "profileUrl": "https://www.google.com/maps/contrib/103896940660108229331/reviews",
       "text": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Irakli Aslanishvili",
