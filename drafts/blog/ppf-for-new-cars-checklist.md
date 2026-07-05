@@ -8,7 +8,7 @@ primary_hf_ru: "ppf для новой машины, оклейка новой м
 primary_hf_ka: "ახალი მანქანისთვის PPF"
 primary_hf_en: "new car ppf"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#31"
   - reference: "drafts/blog/what-is-ppf-explainer.md, drafts/blog/ppf-full-body-wrapping-guide.md"

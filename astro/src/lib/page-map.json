@@ -3110,5 +3110,29 @@
     "title": "PPF edge peeling — causes and how it gets fixed",
     "lang": "en",
     "slug": "blog/ppf-edge-peeling-troubleshoot"
+  },
+  "920260705001": {
+    "file": "page920260705001.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-for-new-cars-checklist",
+    "path": "/ru/blog/ppf-for-new-cars-checklist",
+    "title": "PPF для новой машины — чек-лист когда и как защитить лак",
+    "lang": "ru",
+    "slug": "blog/ppf-for-new-cars-checklist"
+  },
+  "920260705002": {
+    "file": "page920260705002.html",
+    "url": "https://bestauto.ge/blog/ppf-for-new-cars-checklist",
+    "path": "/blog/ppf-for-new-cars-checklist",
+    "title": "PPF ახალი მანქანისთვის — ჩეკ-ლისტი როდის და როგორ დავიცვათ ლაქი",
+    "lang": "ka",
+    "slug": "blog/ppf-for-new-cars-checklist"
+  },
+  "920260705003": {
+    "file": "page920260705003.html",
+    "url": "https://bestauto.ge/en/blog/ppf-for-new-cars-checklist",
+    "path": "/en/blog/ppf-for-new-cars-checklist",
+    "title": "New car PPF — checklist on when and how to protect the paint",
+    "lang": "en",
+    "slug": "blog/ppf-for-new-cars-checklist"
   }
 }
