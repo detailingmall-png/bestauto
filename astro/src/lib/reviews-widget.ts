@@ -40,6 +40,11 @@ function getLocalizedTime(review: Review, lang: string): string {
 
 const DISPLAY_COUNT = 15;
 
+// Only 5-star reviews are shown as cards. The aggregate rating and total count
+// in the summary still come from Google's real totals (reviews.json overallRating
+// / totalReviews) — this filter affects displayed cards only.
+const MIN_DISPLAY_RATING = 5;
+
 const TITLE: Record<string, string> = {
   ka: 'მიმოხილვა',
   ru: 'Отзывы',
@@ -462,8 +467,11 @@ export function getReviewsWidgetHtml(lang: string): string {
   const data = reviewsData as ReviewsData;
   const { overallRating, totalReviews, reviews } = data;
 
+  // Show only top-rated reviews (5 stars) — never surface low-rated ones
+  const topRated = reviews.filter((r) => r.rating >= MIN_DISPLAY_RATING);
+
   // Sort: reviews with text in page language first, then others
-  const sorted = [...reviews].sort((a, b) => {
+  const sorted = [...topRated].sort((a, b) => {
     const aMatch = hasTextInLang(a, lang) ? 0 : 1;
     const bMatch = hasTextInLang(b, lang) ? 0 : 1;
     return aMatch - bMatch;

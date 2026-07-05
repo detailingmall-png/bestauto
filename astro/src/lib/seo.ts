@@ -447,7 +447,10 @@ export function generateReviewSchema(lang: string = 'en'): string {
       ratingCount: reviewsData.totalReviews.toString(),
       reviewCount: reviewsData.totalReviews.toString(),
     },
-    review: reviewsData.reviews.slice(0, 5).map((r: { authorName: string; rating: number; text: string; texts?: Record<string, string>; time: number }) => ({
+    review: reviewsData.reviews
+      .filter((r: { rating: number }) => r.rating >= 5)
+      .slice(0, 5)
+      .map((r: { authorName: string; rating: number; text: string; texts?: Record<string, string>; time: number }) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.authorName },
       datePublished: new Date(r.time * 1000).toISOString().split('T')[0],
