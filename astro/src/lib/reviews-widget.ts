@@ -376,6 +376,7 @@ const CSS = `
 const JS = `
 <script>
 (function() {
+  function init() {
   var track = document.querySelector('.ba-reviews__track');
   if (!track) return;
   var cards = track.querySelectorAll('.ba-reviews__card');
@@ -456,6 +457,12 @@ const JS = `
     p.textContent = btn.dataset.fullText || p.textContent;
     btn.style.display = 'none';
   });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 <\/script>`;
 
