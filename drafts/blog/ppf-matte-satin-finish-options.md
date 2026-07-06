@@ -8,7 +8,7 @@ primary_hf_ru: "матовая плёнка, сатиновая ppf"
 primary_hf_ka: "მატი PPF"
 primary_hf_en: "matte satin ppf"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#32"
   - reference: "drafts/blog/what-is-ppf-explainer.md"
