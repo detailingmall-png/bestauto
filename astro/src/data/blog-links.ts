@@ -38,6 +38,32 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-matte-satin-finish-options',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная плёнка',
+        originalPhrase: 'защитная плёнка',
+        contextQuote: 'Классическая защитная плёнка прозрачна и не меняет внешний вид машины',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'винил',
+        originalPhrase: 'винил',
+        contextQuote: 'если только вид на 3-4 года — винил.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие создаёт глянцевый слой',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-anti-gravel-focused',
     links: [
       {
@@ -2150,6 +2176,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-matte-satin-finish-options',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'კლასიკური დამცავი ფირი გამჭვირვალეა',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილი',
+        originalPhrase: 'ვინილი',
+        contextQuote: 'თუ მხოლოდ სახე 3-4 წელზე — ვინილი.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ქმნის ბრწყინვის შრეს',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-anti-gravel-focused',
     links: [
       {
@@ -4185,6 +4237,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/ppf-matte-satin-finish-options',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'paint protection film',
+        contextQuote: 'Classic paint protection film is transparent and does not change the look of the car',
+      },
+      {
+        role: 'bridge',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl',
+        originalPhrase: 'vinyl',
+        contextQuote: 'if only the look for 3-4 years — vinyl.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'and any polishing smooths it',
+      },
+    ],
+  },
   {
     article: 'blog/ppf-anti-gravel-focused',
     links: [
