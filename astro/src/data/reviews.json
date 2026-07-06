@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 194,
-  "fetchedAt": "2026-07-05T07:30:26.964Z",
+  "fetchedAt": "2026-07-06T08:24:38.128Z",
   "reviews": [
     {
       "authorName": "ani sonishvili",
@@ -15,15 +15,15 @@
         "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "6 дней назад",
+        "ka": "6 დღის წინ",
+        "en": "6 days ago"
       },
       "originalLang": "en",
       "time": 1782743178,
       "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
       "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
-      "relativeTime": "5 days ago"
+      "relativeTime": "6 days ago"
     },
     {
       "authorName": "Zaza Guliashvili",
@@ -509,7 +509,7 @@
       "authorName": "vako gurashvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWb0dfXeNtYQJ237o4Y8UxWldmJ2LCmOHx4AYCYXKnRHPAIqd4Q=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "10 months ago",
+      "relativeTime": "11 months ago",
       "text": "ძალიან კარგი გარემოა, ნებისმიერ კითხვაზე აქვთ ამომწურავი  პასუხები, ასევე მაღალი ხარისხის მომსახურება, 100% რეკომენდაცია ჩემგან",
       "time": 1754381049,
       "profileUrl": "https://www.google.com/maps/contrib/110315020163169452249/reviews",
@@ -519,9 +519,9 @@
         "en": "It's a very good environment, they have comprehensive answers to any questions, as well as high-quality service, 100% recommendation from me"
       },
       "relativeTimes": {
-        "ka": "10 თვის წინ",
-        "en": "10 months ago",
-        "ru": "10 месяцев назад"
+        "ka": "11 თვის წინ",
+        "en": "11 months ago",
+        "ru": "11 месяцев назад"
       },
       "originalLang": "ka"
     },
