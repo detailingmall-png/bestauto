@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 194,
-  "fetchedAt": "2026-07-06T08:24:38.128Z",
+  "fetchedAt": "2026-07-07T07:42:35.593Z",
   "reviews": [
     {
       "authorName": "ani sonishvili",
@@ -15,15 +15,15 @@
         "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "en",
       "time": 1782743178,
       "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
       "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "Zaza Guliashvili",
@@ -55,15 +55,15 @@
         "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "en",
       "time": 1782199892,
       "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
       "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "ana tatulashvili",
@@ -115,15 +115,15 @@
         "en": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "en",
       "time": 1780927987,
       "profileUrl": "https://www.google.com/maps/contrib/117454642337023272704/reviews",
       "text": "I had my car detailed and ceramics applied on the surface. The visible wear and tear that was on the body was impressively refreshed.\n\nI appreciate that in the services, they included one extra panel sanding and polishing, on the house.\n\nThe staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works.\nThey also did a great job on deep cleaning the interior. Everything was super clean and they even fixed my b-pillar trim without me even mentioning it.\n\nI highly recommend to have your car serviced here at Bestauto Detailing!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Pak Volchek",
@@ -489,7 +489,7 @@
       "authorName": "Pavel",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIhsMkV1VxrqLCDTLwN0WDUVB3fZmY6jTdu2De8cVtWTZP-dXk=s128-c0x00000000-cc-rp-mo-ba4",
       "rating": 5,
-      "relativeTime": "8 months ago",
+      "relativeTime": "9 months ago",
       "text": "Отличный сервис. Нужно было сделать полировку машины и химчистку салона. Всё четко проговорили, указали на места, где полировка может не помочь, дали скидку на химчистку. Всё сделали в оговоренные сроки, машина здорово выглядит (и пахнет апельсином внутри :) ). Цены ниже, чем у ближайших конкурентов.\n\nРекомендую!",
       "time": 1759725891,
       "profileUrl": "https://www.google.com/maps/contrib/106496441851471955289/reviews",
@@ -499,9 +499,9 @@
         "en": "Excellent service. I needed my car polished and the interior dry-cleaned. They explained everything clearly, pointed out areas where polishing might not help, and gave me a discount on the dry-cleaning. Everything was done on time, and the car looks great (and smells like orange inside :) ). Prices are lower than their closest competitors.\n\nI recommend them!"
       },
       "relativeTimes": {
-        "ru": "8 месяцев назад",
-        "en": "8 months ago",
-        "ka": "8 თვის წინ"
+        "ru": "9 месяцев назад",
+        "en": "9 months ago",
+        "ka": "9 თვის წინ"
       },
       "originalLang": "ru"
     },
