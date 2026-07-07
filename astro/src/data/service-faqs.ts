@@ -295,12 +295,12 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'შეიძლება თუ არა მატოვი ან სატინის ეფექტის PPF?',
+        ka: 'შეიძლება თუ არა მატი ან სატინის ეფექტის PPF?',
         ru: 'Можно ли PPF с матовым или сатиновым эффектом?',
         en: 'Is matte or satin finish PPF available?',
       },
       answer: {
-        ka: 'დიახ. სურვილის მიხედვით შესაძლებელია არა მხოლოდ გამჭვირვალე გლუვი, არამედ მატოვი ან სატინის ეფექტის დამცავი PPF ვარიანტებიც.',
+        ka: 'დიახ. სურვილის მიხედვით შესაძლებელია არა მხოლოდ გამჭვირვალე გლუვი, არამედ მატი ან სატინის ეფექტის დამცავი PPF ვარიანტებიც.',
         ru: 'Да. По желанию доступен не только прозрачный глянцевый, но и матовый или сатиновый варианты защитного PPF.',
         en: 'Yes. In addition to transparent gloss, matte and satin finish protective PPF options are also available.',
       },
@@ -1143,7 +1143,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Is the wash safe for PPF and ceramic coating?',
       },
       answer: {
-        ka: 'დიახ. ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ქიმიას, რომელიც სრულიად უსაფრთხოა კერამიკული საფარისა და PPF-ფილმისთვის.',
+        ka: 'დიახ. ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ქიმიას, რომელიც სრულიად უსაფრთხოა კერამიკული საფარისა და PPF-ფირისთვის.',
         ru: 'Да. Мы используем профессиональную pH-нейтральную химию, которая полностью безопасна для керамических покрытий и PPF-плёнок.',
         en: 'Yes. We use professional pH-neutral chemicals that are completely safe for ceramic coatings and PPF films.',
       },
@@ -1155,7 +1155,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What chemicals do you use?',
       },
       answer: {
-        ka: 'ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ავტოქიმიას, რომელიც უსაფრთხოა ყველა სახის საფარისთვის, საღებავისა და დამცავი ფილმისთვის.',
+        ka: 'ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ავტოქიმიას, რომელიც უსაფრთხოა ყველა სახის საფარისთვის, საღებავისა და დამცავი ფირისთვის.',
         ru: 'Мы используем профессиональную pH-нейтральную автохимию, безопасную для всех типов покрытий, лакокрасочного покрытия и защитных плёнок.',
         en: 'We use professional pH-neutral car care products that are safe for all types of coatings, paintwork, and protective films.',
       },
