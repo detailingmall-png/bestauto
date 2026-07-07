@@ -177,7 +177,7 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
     name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' },
     min: '50',
     description: {
-      ka: 'ავტომობილის კომპ���უტერული დიაგნოსტიკა თბილისში — შეცდომების წაკითხვა და ანალიზი.',
+      ka: 'ავტომობილის კომპიუტერული დიაგნოსტიკა თბილისში — შეცდომების წაკითხვა და ანალიზი.',
       ru: 'Компьютерная диагностика автомобиля в Тбилиси — считывание и анализ ошибок.',
       en: 'Computer diagnostics of your car in Tbilisi — error code reading and analysis.',
     },

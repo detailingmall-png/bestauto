@@ -18,7 +18,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does car polishing cost?',
       },
       answer: {
-        ka: 'ძარის პოლირება იწყება 690 Gel-დან. ასევე ხელმისაწვდომია პოლირება + კერამიკული საფარი, ფარების პოლირება, მინის პოლირება და სალონის დეტალების პოლირება. ზუსტი ფასი დამოკიდებულია ავტომობილის ზომასა და ლაქის მდგომარეობაზე.',
+        ka: 'ძარის პოლირება იწყება 690 ₾-დან. ასევე ხელმისაწვდომია პოლირება + კერამიკული საფარი, ფარების პოლირება, მინის პოლირება და სალონის დეტალების პოლირება. ზუსტი ფასი დამოკიდებულია ავტომობილის ზომასა და ლაქის მდგომარეობაზე.',
         ru: 'Полировка кузова начинается от 690 Gel. Также доступны полировка + керамическое покрытие, полировка фар, полировка стекла и полировка элементов салона. Точная стоимость зависит от размера автомобиля и состояния лакокрасочного покрытия.',
         en: 'Body polishing starts from 690 Gel. Also available are polishing + ceramic coating, headlight polishing, glass polishing, and interior detail polishing. The exact price depends on the car size and paint condition.',
       },
@@ -105,7 +105,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does ceramic coating cost?',
       },
       answer: {
-        ka: 'მთლიანი ავტომობილის კერამიკული საფარი — 500 Gel-დან. ასევე ვაკეთებთ ანტიწვიმას მინებზე (150 Gel-დან) და სალონის კერამიკულ საფარს (300 Gel-დან). ზუსტი ფასი დამოკიდებულია ავტომობილის კლასსა და ფენების რაოდენობაზე. მოგვწერეთ WhatsApp-ზე ზუსტი გათვლისთვის.',
+        ka: 'მთლიანი ავტომობილის კერამიკული საფარი — 500 ₾-დან. ასევე ვაკეთებთ ანტიწვიმას მინებზე (150 ₾-დან) და სალონის კერამიკულ საფარს (300 ₾-დან). ზუსტი ფასი დამოკიდებულია ავტომობილის კლასსა და ფენების რაოდენობაზე. მოგვწერეთ WhatsApp-ზე ზუსტი გათვლისთვის.',
         ru: 'Керамическое покрытие всего автомобиля — от 500 Gel. Также делаем антидождь на стёкла (от 150 Gel) и керамическое покрытие салона (от 300 Gel). Точная стоимость зависит от класса автомобиля и количества слоёв. Напишите нам в WhatsApp для точного расчёта.',
         en: 'Full car ceramic coating starts from 500 Gel. We also do rain repellent for glass (from 150 Gel) and interior ceramic coating (from 300 Gel). The exact price depends on the vehicle class and number of layers. Message us on WhatsApp for an exact quote.',
       },
@@ -390,7 +390,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does car interior cleaning cost?',
       },
       answer: {
-        ka: 'ფასი დამოკიდებულია დაბინძურების დონეზე, მასალებზე და სამუშაოს სიღრმეზე. მსუბუქი დაბინძურების შემთხვევაში ფასი იწყება 400 Gel-დან. ზუსტი ღირებულებისთვის საკმარისია მოგვწეროთ და გამოგვიგზავნოთ სალონის ფოტოები.',
+        ka: 'ფასი დამოკიდებულია დაბინძურების დონეზე, მასალებზე და სამუშაოს სიღრმეზე. მსუბუქი დაბინძურების შემთხვევაში ფასი იწყება 400 ₾-დან. ზუსტი ღირებულებისთვის საკმარისია მოგვწეროთ და გამოგვიგზავნოთ სალონის ფოტოები.',
         ru: 'Стоимость зависит от уровня загрязнения, материалов и глубины работ. При лёгком загрязнении цена начинается от 400 Gel. Для точной стоимости достаточно написать нам и прислать фото салона.',
         en: 'The price depends on the contamination level, materials, and depth of work. For light contamination, the price starts from 400 Gel. For an exact quote, just message us and send photos of the interior.',
       },
@@ -489,7 +489,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does car window tinting cost?',
       },
       answer: {
-        ka: 'გვერდითა მინები (უკანა ან წინა) — 130 Gel-დან, უკანა მინა — 160 Gel-დან, საქარე მინა — 290 Gel-დან. ათერმული დაბურვა უფრო ძვირია. მოგვწერეთ WhatsApp-ზე — გამოვთვლით ზუსტ ფასს თქვენი ავტომობილისთვის.',
+        ka: 'გვერდითა მინები (უკანა ან წინა) — 130 ₾-დან, უკანა მინა — 160 ₾-დან, საქარე მინა — 290 ₾-დან. ათერმული დაბურვა უფრო ძვირია. მოგვწერეთ WhatsApp-ზე — გამოვთვლით ზუსტ ფასს თქვენი ავტომობილისთვის.',
         ru: 'Боковые стёкла (задние или передние) — от 130 Gel, заднее стекло — от 160 Gel, лобовое стекло — от 290 Gel. Атермальная тонировка стоит дороже. Напишите нам в WhatsApp — рассчитаем точную стоимость для вашего автомобиля.',
         en: 'Side windows (rear or front) — from 130 Gel, rear window — from 160 Gel, windshield — from 290 Gel. Athermal tinting costs more. Message us on WhatsApp — we\'ll calculate the exact price for your car.',
       },
@@ -600,7 +600,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does windshield repair cost?',
       },
       answer: {
-        ka: 'ჩიპი 1 სმ-მდე — 60 Gel-დან, ჩიპი 1–2 სმ — 80 Gel-დან. ბზარი 15 სმ-მდე — 95 Gel-დან, ბზარი 15–30 სმ — 140 Gel-დან. 5–10-ჯერ იაფია ვიდრე მინის შეცვლა. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
+        ka: 'ჩიპი 1 სმ-მდე — 60 ₾-დან, ჩიპი 1–2 სმ — 80 ₾-დან. ბზარი 15 სმ-მდე — 95 ₾-დან, ბზარი 15–30 სმ — 140 ₾-დან. 5–10-ჯერ იაფია ვიდრე მინის შეცვლა. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
         ru: 'Скол до 1 см — от 60 Gel, скол 1–2 см — от 80 Gel. Трещина до 15 см — от 95 Gel, трещина 15–30 см — от 140 Gel. В 5–10 раз дешевле замены стекла. Пришлите фото в WhatsApp — оценим бесплатно.',
         en: 'Chip up to 1 cm — from 60 Gel, chip 1–2 cm — from 80 Gel. Crack up to 15 cm — from 95 Gel, crack 15–30 cm — from 140 Gel. 5–10 times cheaper than windshield replacement. Send a photo on WhatsApp — we\'ll estimate for free.',
       },
@@ -699,7 +699,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does soundproofing cost?',
       },
       answer: {
-        ka: 'კარების ხმაურიზოლაცია — 900 Gel-დან, იატაკის — 1000 Gel-დან, საბარგულის — 600 Gel-დან, თაღების — 600 Gel-დან. ავტომობილის სრული ხმაურიზოლაცია — 2100 Gel-დან. მოგვწერეთ WhatsApp-ზე ფასის გათვლისთვის.',
+        ka: 'კარების ხმაურიზოლაცია — 900 ₾-დან, იატაკის — 1000 ₾-დან, საბარგულის — 600 ₾-დან, თაღების — 600 ₾-დან. ავტომობილის სრული ხმაურიზოლაცია — 2100 ₾-დან. მოგვწერეთ WhatsApp-ზე ფასის გათვლისთვის.',
         ru: 'Шумоизоляция дверей — от 900 Gel, пола — от 1000 Gel, багажника — от 600 Gel, арок — от 600 Gel. Полная шумоизоляция автомобиля — от 2100 Gel. Напишите в WhatsApp для расчёта стоимости.',
         en: 'Door soundproofing — from 900 Gel, floor — from 1000 Gel, trunk — from 600 Gel, wheel arches — from 600 Gel. Full car soundproofing — from 2100 Gel. Message us on WhatsApp for a price quote.',
       },
@@ -798,7 +798,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does computer diagnostics cost?',
       },
       answer: {
-        ka: 'სრული დიაგნოსტიკა — 50 Gel-დან, გასაღების დაპროგრამება — 200 Gel-დან. მოგვწერეთ WhatsApp-ზე ფასის დასაზუსტებლად.',
+        ka: 'სრული დიაგნოსტიკა — 50 ₾-დან, გასაღების დაპროგრამება — 200 ₾-დან. მოგვწერეთ WhatsApp-ზე ფასის დასაზუსტებლად.',
         ru: 'Полная диагностика — от 50 Gel, программирование ключа — от 200 Gel. Напишите в WhatsApp для уточнения стоимости.',
         en: 'Full diagnostics — from 50 Gel, key programming — from 200 Gel. Message us on WhatsApp to clarify pricing.',
       },
@@ -882,7 +882,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Can I run diagnostics on my own?',
       },
       answer: {
-        ka: 'OBD2-სკანერი 30–50 Gel-ად ძრავის ბაზისურ შეცდომებს აჩვენებს. მაგრამ სისტემების 80%-ს ვერ ხედავს: ბალიშები, ABS, ტრანსმისია, კლიმატ-კონტროლი. პროფესიონალური დიაგნოსტიკა ავტომობილის ყველა სისტემას მოიცავს.',
+        ka: 'OBD2-სკანერი 30–50 ₾-ად ძრავის ბაზისურ შეცდომებს აჩვენებს. მაგრამ სისტემების 80%-ს ვერ ხედავს: ბალიშები, ABS, ტრანსმისია, კლიმატ-კონტროლი. პროფესიონალური დიაგნოსტიკა ავტომობილის ყველა სისტემას მოიცავს.',
         ru: 'OBD2-сканер за 30–50 Gel покажет базовые ошибки двигателя. Но он не видит 80% систем: подушки безопасности, ABS, трансмиссию, климат-контроль. Профессиональная диагностика охватывает все системы автомобиля.',
         en: 'An OBD2 scanner for 30–50 Gel will show basic engine errors. But it can\'t see 80% of systems: airbags, ABS, transmission, climate control. Professional diagnostics covers all vehicle systems.',
       },
@@ -897,7 +897,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does interior restoration cost?',
       },
       answer: {
-        ka: 'საჭის რესტავრაცია — 280 Gel-დან, სავარძლის — 230 Gel-დან, სახელურის — 190 Gel-დან. სალონის ელემენტების პოლირება — 200 Gel-დან, პლასტმასის რემონტი — 200 Gel-დან. გამოგვიგზავნეთ დაზიანების ფოტო WhatsApp-ზე — გეტყვით ზუსტ ფასს.',
+        ka: 'საჭის რესტავრაცია — 280 ₾-დან, სავარძლის — 230 ₾-დან, სახელურის — 190 ₾-დან. სალონის ელემენტების პოლირება — 200 ₾-დან, პლასტმასის რემონტი — 200 ₾-დან. გამოგვიგზავნეთ დაზიანების ფოტო WhatsApp-ზე — გეტყვით ზუსტ ფასს.',
         ru: 'Реставрация руля — от 280 Gel, сиденья — от 230 Gel, подлокотника — от 190 Gel. Полировка элементов салона — от 200 Gel, ремонт пластика — от 200 Gel. Пришлите фото повреждения в WhatsApp — назовём точную стоимость.',
         en: 'Steering wheel restoration — from 280 Gel, seat — from 230 Gel, armrest — from 190 Gel. Interior element polishing — from 200 Gel, plastic repair — from 200 Gel. Send us a photo of the damage on WhatsApp — we\'ll give you an exact price.',
       },
@@ -1008,7 +1008,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does dent removal cost?',
       },
       answer: {
-        ka: 'ერთ ელემენტზე ჩაზნექილობის მოცილება — 250 Gel-დან. სეტყვის დაზიანების შეკეთება — 1800 Gel-დან. ზუსტი ფასი დამოკიდებულია ზომაზე, მდებარეობასა და რაოდენობაზე. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
+        ka: 'ერთ ელემენტზე ჩაზნექილობის მოცილება — 250 ₾-დან. სეტყვის დაზიანების შეკეთება — 1800 ₾-დან. ზუსტი ფასი დამოკიდებულია ზომაზე, მდებარეობასა და რაოდენობაზე. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
         ru: 'Удаление вмятины на одном элементе — от 250 Gel. Ремонт повреждений от града — от 1800 Gel. Точная цена зависит от размера, расположения и количества вмятин. Пришлите фото в WhatsApp — оценим бесплатно.',
         en: 'Dent removal on a single panel — from 250 Gel. Hail damage repair — from 1800 Gel. The exact price depends on size, location, and number of dents. Send a photo on WhatsApp — we\'ll estimate for free.',
       },

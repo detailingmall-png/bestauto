@@ -47,7 +47,7 @@ function localizePrice(raw: string, lang: Lang): string {
   const m = raw.match(/^от\s+(.+)/);
   if (!m) return raw;
   if (lang === 'en') return `from ${m[1]}`;
-  return `${m[1]}-დან`;
+  return `${m[1].replace('Gel', '₾')}-დან`;
 }
 
 function buildRow(item: PriceLineItem, lang: Lang): string {

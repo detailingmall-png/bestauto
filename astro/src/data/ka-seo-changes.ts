@@ -73,7 +73,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       heading: 'მანქანის პოლირების ეტაპები',
       steps: [
         { title: 'ძარის დათვალიერება', description: 'ვაფასებთ ლაქ-საფარის მდგომარეობას, ნაკაწრებს, გადახეხილ ადგილებს და რეცხვის კვალს.' },
-        { title: 'სიღრმისეული რეცხვა', description: 'საფუძვლიანად ვწმენ���თ ძარას ჭუჭყისგან, ბიტუმისგან და სხვადასხვა ნადებისგან.' },
+        { title: 'სიღრმისეული რეცხვა', description: 'საფუძვლიანად ვწმენდით ძარას ჭუჭყისგან, ბიტუმისგან და სხვადასხვა ნადებისგან.' },
         { title: 'ზედაპირის მომზადება', description: 'ვაშრობთ ავტომობილს და ვიცავთ პლასტმასის, რეზინისა და დელიკატურ ელემენტებს.' },
         { title: 'პოლირების სისტემის შერჩევა', description: 'ვარჩევთ პასტებსა და ბალიშებს ლაქ-საფარის ტიპისა და ძარის მდგომარეობის მიხედვით.' },
         { title: 'აღდგენითი პოლირება', description: 'ვაშორებთ წვრილ ნაკაწრებს, „ობობის ქსელს", სიმქრქალეს და ექსპლუატაციის კვალს.' },
@@ -110,7 +110,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('ქიმწმენდის სერვისით სარგებლობის გამოცდილება საბურთალოზე და გლდანში — სავარძლების, ჭერის, იატაკის და საბარგულის ღრმა წმენდა, ასევე სხვა სერვისები')}</div>` },
       // Remove "hand detailing wash" from service prices
-      { from: '<div class="ba-price-row"><span class="ba-price-name">ხელით დეტეილინგ მრეცხავი</span><span class="ba-price-value">40 Gel-დან</span></div>', to: '' },
+      { from: '<div class="ba-price-row"><span class="ba-price-name">ხელით დეტეილინგ მრეცხავი</span><span class="ba-price-value">40 ₾-დან</span></div>', to: '' },
     ],
     seoBlock: '',
     contentBlocks: [],
@@ -123,7 +123,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
         { title: 'ზედაპირების ღრმა წმენდა', description: 'ვწმენდთ სავარძლებს, იატაკის საფარს, კარის პანელებს, ჭერსა და საბარგულს.' },
         { title: 'რთული დაბინძურების მოცილება', description: 'გამოგვყავს ლაქები, ექსპლუატაციის კვალი და ღრმად ჩამჯდარი დაბინძურება.' },
         { title: 'პლასტიკისა და დეტალების წმენდა', description: 'წესრიგში მოგვყავს პანელები, ღილაკები, ჰაერსადენები და ძნელად მისადგომი ზონები.' },
-        { title: 'სალონის გაშრობა', description: 'ქიმწმენდის შემდეგ ზე��აპირებს საფუძვლიანად ვაშრობთ.' },
+        { title: 'სალონის გაშრობა', description: 'ქიმწმენდის შემდეგ ზედაპირებს საფუძვლიანად ვაშრობთ.' },
         { title: 'ფინალური შემოწმება', description: 'ქიმწმენდის დასრულების შემდეგ ვამოწმებთ სალონის სისუფთავეს და შესრულების ხარისხს.' },
       ],
     },
@@ -277,7 +277,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
     stepsBlock: {
       heading: 'მინების დაბურვის ეტაპები',
       steps: [
-        { title: 'ავტომობილის დათვალიერება', description: '��უშების დამუქებისთვის ვაფასებთ მინებისა და შუშების მდგომარეობას და თქვენი ავტომობილისთვის შესაფერის გადაწყვეტას ვარჩევთ.' },
+        { title: 'ავტომობილის დათვალიერება', description: 'შუშების დამუქებისთვის ვაფასებთ მინებისა და შუშების მდგომარეობას და თქვენი ავტომობილისთვის შესაფერის გადაწყვეტას ვარჩევთ.' },
         { title: 'ზედაპირის მომზადება', description: 'მინებს საფუძვლიანად ვწმენდთ და ვამზადებთ ფირის დასაყენებლად.' },
         { title: 'ზუსტი გამოჭრა და ფორმირება', description: 'ფირს ვამზადებთ მინის ფორმის მიხედვით, რათა დაჯდეს მაქსიმალურად ზუსტად და სუფთად.' },
         { title: 'პროფესიონალური მონტაჟი', description: 'ვამონტაჟებთ ფირს ბუშტების, ნაოჭებისა და ზედმეტი დაშორებების გარეშე.' },
@@ -320,7 +320,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Price section heading
       { from: '2-ფაზიანი და 3-ფაზიანი რეცხვის ფასები', to: 'ავტოსამრეცხაოს ფასები' },
       // Add engine wash item (after last existing row)
-      { from: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 Gel</span></div>', to: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 Gel</span></div>' },
+      { from: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 ₾</span></div>', to: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div>' },
     ],
     seoBlock: '',
     contentBlocks: [],
@@ -415,7 +415,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('ფირის გადაკვრის სერვისით სარგებლობის გამოცდილება — ფერადი PPF-ით და ვინილით გადაკვრა, ასევე სხვა სერვისები')}</div>` },
       // Add 2 items to vinyl/color change prices (after last existing item)
-      { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div>' },
+      { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 ₾-დან</span></div>' },
     ],
     seoBlock: '',
   },
@@ -453,7 +453,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Reviews subtitle
       { from: 'მომხმარებლების რეალური შეფასებები</h2></span></div>', to: `მომხმარებლების რეალური შეფასებები</h2></span>${reviewsSubtitle('PPF სერვისით სარგებლობის გამოცდილება — დამცავი ფირის გადაკვრა და კაპოტის დაცვა, ასევე სხვა სერვისები')}</div>` },
       // Add 2 items to PPF prices (after last existing item)
-      { from: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div>', to: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სალონის ელემენტების დამცავი ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ფრთის დამცავი ფირით გადაკვრა</span><span class="ba-price-value">600 Gel-დან</span></div>' },
+      { from: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 ₾-დან</span></div>', to: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სალონის ელემენტების დამცავი ფირით გადაკვრა</span><span class="ba-price-value">800 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ფრთის დამცავი ფირით გადაკვრა</span><span class="ba-price-value">600 ₾-დან</span></div>' },
     ],
     seoBlock: '',
     contentBlocks: [
@@ -548,13 +548,13 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'საქარე მინის ნახვრეტებისა და ბზარების შეკეთება', to: 'საქარე მინის აღდგენის ფასები' },
       { from: 'დეტეილინგ ქიმწმენდის და მრეცხავი ფასები', to: 'მანქანის ქიმწმენდის ფასები' },
       // Remove "hand detailing wash" from cleaning prices section
-      { from: '<div class="ba-price-row"><span class="ba-price-name">ხელით დეტეილინგ მრეცხავი</span><span class="ba-price-value">40 Gel-დან</span></div>', to: '' },
+      { from: '<div class="ba-price-row"><span class="ba-price-name">ხელით დეტეილინგ მრეცხავი</span><span class="ba-price-value">40 ₾-დან</span></div>', to: '' },
       // Add 2 items to PPF section (after last existing item)
-      { from: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div>', to: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სალონის ელემენტების დამცავი ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ფრთის დამცავი ფირით გადაკვრა</span><span class="ba-price-value">600 Gel-დან</span></div>' },
+      { from: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 ₾-დან</span></div>', to: '<span class="ba-price-name">საქარე მინის დაფარვა</span><span class="ba-price-value">1100 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სალონის ელემენტების დამცავი ფირით გადაკვრა</span><span class="ba-price-value">800 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ფრთის დამცავი ფირით გადაკვრა</span><span class="ba-price-value">600 ₾-დან</span></div>' },
       // Add 2 items to vinyl/color change section (after last existing item)
-      { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 Gel-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 Gel-დან</span></div>' },
+      { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 ₾-დან</span></div>' },
       // Inject carwash prices section after tinting (before sanity-s7 = sound insulation)
-      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/carwash" class="ba-price-heading-link">ავტოსამრეცხაოს ფასები</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი)</span><span class="ba-price-value">45 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">50 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი)</span><span class="ba-price-value">60 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 Gel</span></div></div></div></div></div>\n<div id="sanity-s7"' },
+      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/carwash" class="ba-price-heading-link">ავტოსამრეცხაოს ფასები</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი)</span><span class="ba-price-value">45 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">50 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი)</span><span class="ba-price-value">60 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div></div></div></div></div>\n<div id="sanity-s7"' },
     ],
     seoBlock: '',
   },
