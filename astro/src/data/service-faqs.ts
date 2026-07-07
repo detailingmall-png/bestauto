@@ -189,7 +189,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How is ceramic coating different from PPF?',
       },
       answer: {
-        ka: 'კერამიკა ეხმარება ზედაპირს შეინარჩუნოს ბზინვარება, ჰიდროფობიურობა და სისუფთავე. PPF კი ფიზიკურად იცავს ლაქს ჩიპებისგან, ნაკაწრებისგან და ქვებისგან. ისინი სხვადასხვა ამოცანას წყვეტენ და ზოგჯერ ერთმანეთის შემავსებლადაც გამოიყენება.',
+        ka: 'კერამიკა ეხმარება ზედაპირს შეინარჩუნოს ბზინვარება, ჰიდროფობიურობა და სისუფთავე. PPF კი ფიზიკურად იცავს ლაქს ქვის ნატეხებისგან, ნაკაწრებისგან და ქვებისგან. ისინი სხვადასხვა ამოცანას წყვეტენ და ზოგჯერ ერთმანეთის შემავსებლადაც გამოიყენება.',
         ru: 'Керамика помогает поверхности сохранять блеск, гидрофобность и чистоту. PPF физически защищает лак от сколов, царапин и камней. Они решают разные задачи и иногда используются в дополнение друг к другу.',
         en: 'Ceramic helps the surface maintain shine, hydrophobicity, and cleanliness. PPF physically protects the paint from chips, scratches, and stones. They solve different tasks and are sometimes used to complement each other.',
       },
@@ -252,7 +252,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What is PPF film?',
       },
       answer: {
-        ka: 'PPF არის გამჭვირვალე პოლიურეთანის დამცავი ფირი, რომელიც აკრავთ ავტომობილის კორპუსზე საღებავის დასაცავად.',
+        ka: 'PPF არის გამჭვირვალე პოლიურეთანის დამცავი ფირი, რომელიც აკრავთ ავტომობილის ძარაზე საღებავის დასაცავად.',
         ru: 'PPF — это прозрачная полиуретановая защитная плёнка, которую наклеивают на кузов автомобиля для защиты краски.',
         en: 'PPF is a transparent polyurethane protective film applied to the car body to protect the paint.',
       },
@@ -600,7 +600,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does windshield repair cost?',
       },
       answer: {
-        ka: 'ჩიპი 1 სმ-მდე — 60 ₾-დან, ჩიპი 1–2 სმ — 80 ₾-დან. ბზარი 15 სმ-მდე — 95 ₾-დან, ბზარი 15–30 სმ — 140 ₾-დან. 5–10-ჯერ იაფია ვიდრე მინის შეცვლა. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
+        ka: 'ქვის ნატეხი 1 სმ-მდე — 60 ₾-დან, ქვის ნატეხი 1–2 სმ — 80 ₾-დან. ბზარი 15 სმ-მდე — 95 ₾-დან, ბზარი 15–30 სმ — 140 ₾-დან. 5–10-ჯერ იაფია ვიდრე მინის შეცვლა. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
         ru: 'Скол до 1 см — от 60 Gel, скол 1–2 см — от 80 Gel. Трещина до 15 см — от 95 Gel, трещина 15–30 см — от 140 Gel. В 5–10 раз дешевле замены стекла. Пришлите фото в WhatsApp — оценим бесплатно.',
         en: 'Chip up to 1 cm — from 60 Gel, chip 1–2 cm — from 80 Gel. Crack up to 15 cm — from 95 Gel, crack 15–30 cm — from 140 Gel. 5–10 times cheaper than windshield replacement. Send a photo on WhatsApp — we\'ll estimate for free.',
       },
@@ -612,7 +612,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Can any crack be repaired?',
       },
       answer: {
-        ka: 'ჩიპები 25 მმ-მდე, ბზარები 15 სმ-მდე. რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი. თუ ჩიპში ჭუჭყი უკვე მოხვდა — შედეგი შეიძლება ცოტა უარესი იყოს, მაგრამ შეკეთება მაინც შეაჩერებს გავრცელებას.',
+        ka: 'ქვის ნატეხები 25 მმ-მდე, ბზარები 15 სმ-მდე. რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი. თუ ქვის ნატეხში ჭუჭყი უკვე მოხვდა — შედეგი შეიძლება ცოტა უარესი იყოს, მაგრამ შეკეთება მაინც შეაჩერებს გავრცელებას.',
         ru: 'Сколы до 25 мм, трещины до 15 см. Чем свежее повреждение, тем лучше результат. Если в скол уже попала грязь — результат может быть немного хуже, но ремонт всё равно остановит распространение.',
         en: 'Chips up to 25 mm, cracks up to 15 cm. The fresher the damage, the better the result. If dirt has already gotten into the chip, the result may be slightly worse, but the repair will still stop it from spreading.',
       },
@@ -624,7 +624,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How long does windshield repair take?',
       },
       answer: {
-        ka: 'ჩიპი — 20–30 წუთი, ბზარი — 30–60 წუთი. შეკეთებისთანავე შეგიძლიათ წახვიდეთ.',
+        ka: 'ქვის ნატეხი — 20–30 წუთი, ბზარი — 30–60 წუთი. შეკეთებისთანავე შეგიძლიათ წახვიდეთ.',
         ru: 'Скол — 20–30 минут, трещина — 30–60 минут. Сразу после ремонта можно уезжать.',
         en: 'Chip — 20–30 minutes, crack — 30–60 minutes. You can drive away immediately after repair.',
       },
@@ -636,7 +636,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What\'s better — repair or replacement?',
       },
       answer: {
-        ka: 'შეკეთება: ჩიპები 25 მმ-მდე, ბზარები 15 სმ-მდე, არა მინის კიდეზე. შეცვლა: ბზარი კიდიდან კიდემდე, დაზიანება კამერების/სენსორების ზონაში, მრავალი ჩიპი. გულახდილად გირჩევთ, რა არის საუკეთესო თქვენს შემთხვევაში.',
+        ka: 'შეკეთება: ქვის ნატეხები 25 მმ-მდე, ბზარები 15 სმ-მდე, არა მინის კიდეზე. შეცვლა: ბზარი კიდიდან კიდემდე, დაზიანება კამერების/სენსორების ზონაში, მრავალი ქვის ნატეხი. გულახდილად გირჩევთ, რა არის საუკეთესო თქვენს შემთხვევაში.',
         ru: 'Ремонт: сколы до 25 мм, трещины до 15 см, не на краю стекла. Замена: трещина от края до края, повреждение в зоне камер/датчиков, множественные сколы. Честно подскажем, что лучше в вашем случае.',
         en: 'Repair: chips up to 25 mm, cracks up to 15 cm, not on the glass edge. Replacement: edge-to-edge crack, damage in the camera/sensor area, multiple chips. We\'ll honestly advise what\'s best in your case.',
       },
@@ -747,7 +747,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What is the difference between sound and vibration insulation?',
       },
       answer: {
-        ka: 'ვიბრო იზოლაცია პირველ რიგში ამცირებს კორპუსის პანელების ვიბრაციას, ხოლო ხმის იზოლაცია სალონში შემოსულ გარე ხმაურს ამცირებს. საუკეთესო შედეგისთვის ხშირად გამოიყენება ორივეს კომბინაცია.',
+        ka: 'ვიბრო იზოლაცია პირველ რიგში ამცირებს ძარის პანელების ვიბრაციას, ხოლო ხმის იზოლაცია სალონში შემოსულ გარე ხმაურს ამცირებს. საუკეთესო შედეგისთვის ხშირად გამოიყენება ორივეს კომბინაცია.',
         ru: 'Виброизоляция в первую очередь снижает вибрацию панелей кузова, а шумоизоляция уменьшает внешний шум, проникающий в салон. Для лучшего результата часто используется комбинация обоих.',
         en: 'Vibration insulation primarily reduces body panel vibration, while sound insulation reduces external noise entering the cabin. For the best result, a combination of both is often used.',
       },

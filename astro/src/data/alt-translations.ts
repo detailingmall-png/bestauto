@@ -72,19 +72,19 @@ export const ALT_TRANSLATIONS: Readonly<Record<string, AltTranslation>> = {
   },
   'Оклейка кузова плёнкой PPF (пулиоретан) в тбилиси': {
     en: 'PPF (polyurethane) body wrap in Tbilisi',
-    ka: 'კორპუსის PPF (პოლიურეთანი) გაკვრა თბილისში',
+    ka: 'ძარის PPF (პოლიურეთანი) გაკვრა თბილისში',
   },
   'Оклейка кузова плёнкой PPF (пулиоретан)': {
     en: 'PPF (polyurethane) body wrap',
-    ka: 'კორპუსის PPF (პოლიურეთანი) გაკვრა',
+    ka: 'ძარის PPF (პოლიურეთანი) გაკვრა',
   },
   'Оклейка кузова виниловой плёнкой в тбилиси': {
     en: 'Vinyl body wrap in Tbilisi',
-    ka: 'კორპუსის ვინილის ფირით გაკვრა თბილისში',
+    ka: 'ძარის ვინილის ფირით გაკვრა თბილისში',
   },
   'Оклейка кузова виниловой плёнкой': {
     en: 'Vinyl body wrap',
-    ka: 'კორპუსის ვინილის ფირით გაკვრა',
+    ka: 'ძარის ვინილის ფირით გაკვრა',
   },
   'Оклейка цветной плёнкой': {
     en: 'Color change wrap',
@@ -120,7 +120,7 @@ export const ALT_TRANSLATIONS: Readonly<Record<string, AltTranslation>> = {
   },
   'Полировка кузова автомобиля в тбилиси': {
     en: 'Car body polishing in Tbilisi',
-    ka: 'ავტომობილის კორპუსის პოლირება თბილისში',
+    ka: 'ავტომობილის ძარის პოლირება თბილისში',
   },
   'Полировка фар автомобиля в тбилиси': {
     en: 'Car headlight polishing in Tbilisi',
@@ -156,7 +156,7 @@ export const ALT_TRANSLATIONS: Readonly<Record<string, AltTranslation>> = {
   },
   'Керамическое покрытие кузова': {
     en: 'Body ceramic coating',
-    ka: 'კორპუსის კერამიკული საფარი',
+    ka: 'ძარის კერამიკული საფარი',
   },
   'Керамическое покрытие стекол автомобиля': {
     en: 'Auto glass ceramic coating',
@@ -212,11 +212,11 @@ export const ALT_TRANSLATIONS: Readonly<Record<string, AltTranslation>> = {
   },
   'Ремонт сколов на лобовом стекле в тбилиси': {
     en: 'Windshield chip repair in Tbilisi',
-    ka: 'საქარე მინის ჩიპების შეკეთება თბილისში',
+    ka: 'საქარე მინის ქვის ნატეხების შეკეთება თბილისში',
   },
   'Ремонт сколов на лобовом стекле': {
     en: 'Windshield chip repair',
-    ka: 'საქარე მინის ჩიპების შეკეთება',
+    ka: 'საქარე მინის ქვის ნატეხების შეკეთება',
   },
   'Компьютерная диагностика — BESTAUTO': {
     en: 'Computer diagnostics — BESTAUTO',

@@ -78,6 +78,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'защитная плёнка',            // ё-variant nominative — valid in blog anchor context
     'защитной пленкой',           // inflected — valid in blog anchor context
     'защитной плёнкой',           // inflected with ё — valid in blog anchor context
+    'защитной плёнки',            // inflected genitive with ё — valid in blog anchor context
     'ppf пленка',
     'оклейка полиуретановой пленкой',
     'антигравийная пленка',
@@ -194,6 +195,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'შუშების დამუქება',            // GSC: 159
     'დაბურვაზე',                   // inflected — dative form, valid anchor
     'დაბურვის',                    // inflected — genitive form, valid anchor
+    'მინების დასამუქებელი ფირი',   // tint-film material term (replaced ტონირების/დაბურვის ფირი)
   ],
   '/windshield-repair': [
     'საქარე მინის აღდგენა',        // GSC: 429 (canonical)

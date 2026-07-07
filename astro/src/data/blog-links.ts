@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-self-healing-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнки',
+        originalPhrase: 'защитной плёнки',
+        contextQuote: 'Среди всех особенностей защитной плёнки самовосстановление царапин смотрится на презентациях эффектнее всего',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировки',
+        originalPhrase: 'полировки',
+        contextQuote: 'Но ежедневные микроцарапины, которые на голом лаке требовали бы полировки раз в 1-2 года, на плёнке закрываются сами под солнцем.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {
@@ -2176,6 +2195,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-self-healing-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის',
+        originalPhrase: 'დამცავი ფირის',
+        contextQuote: 'დამცავი ფირის ყველა თავისებურებას შორის ნაკაწრების თვით-აღდგენა ყველაზე ეფექტურად გამოიყურება პრეზენტაციებზე',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'ჯაგრისების კვალი დაიხურება დამატებითი პოლირების გარეშე.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {
@@ -2321,9 +2359,9 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       {
         role: 'pillar',
         target: '/auto-glass-tinting',
-        anchor: 'დაბურვის',
-        originalPhrase: 'დაბურვის',
-        contextQuote: 'დაბურვის ფირი ჯდება მინაზე მიკრონამდე სიზუსტით',
+        anchor: 'მინების დასამუქებელი ფირი',
+        originalPhrase: 'მინების დასამუქებელი ფირი',
+        contextQuote: 'მინების დასამუქებელი ფირი ჯდება მინაზე მიკრონამდე სიზუსტით',
       },
       {
         role: 'bridge',
@@ -2510,7 +2548,7 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         target: '/windshield-repair',
         anchor: 'მანქანის შუშის აღდგენა',
         originalPhrase: 'დაზიანებულ მინას',
-        contextQuote: 'ჩიპებს, ღრმა ნაკაწრებს ან უკვე დაზიანებულ მინას აღადგენს',
+        contextQuote: 'ქვის ნატეხებს, ღრმა ნაკაწრებს ან უკვე დაზიანებულ მინას აღადგენს',
       },
     ],
   },
@@ -3755,7 +3793,7 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         target: '/ppf-shield-wrapping',
         anchor: 'დამცავი ფირი',
         originalPhrase: 'PPF',
-        contextQuote: 'ჩიპების ფიზიკური დაცვისთვის კერამიკაზე ზემოდან მუშაობს PPF',
+        contextQuote: 'ქვის ნატეხების ფიზიკური დაცვისთვის კერამიკაზე ზემოდან მუშაობს PPF',
       },
     ],
   },
@@ -4202,9 +4240,9 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       {
         role: 'pillar',
         target: '/auto-glass-tinting',
-        anchor: 'დაბურვის',
-        originalPhrase: 'დაბურვის',
-        contextQuote: 'ყველა დაბურვის ფირი იყოფა ოთხ ტექნოლოგიურ კლასად',
+        anchor: 'მინების დასამუქებელი ფირი',
+        originalPhrase: 'მინების დასამუქებელი ფირი',
+        contextQuote: 'ყველა მინების დასამუქებელი ფირი იყოფა ოთხ ტექნოლოგიურ კლასად',
       },
       {
         role: 'bridge',
