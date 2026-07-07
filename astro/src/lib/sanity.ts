@@ -201,9 +201,24 @@ export interface PricingPage {
 }
 
 /** Fetch full pricing page with all sections and line items */
+/** KA terminology normalization for CMS price-line names (build-time).
+ *  Sanity still holds legacy anglicisms (e.g. "სტიკერი"); we correct them at
+ *  read time so both the visible price rows and the Offer/Service JSON-LD stay
+ *  on-terminology. Update the Sanity dataset itself to retire this map. */
+const KA_PRICE_NAME_FIXES: Readonly<Record<string, string>> = {
+  'ფარის სტიკერი': 'ფარის დამცავი ფირი',
+  'სახურავის სტიკერი': 'სახურავის დამცავი ფირი',
+}
+function normalizeKaPriceName(name?: string): string | undefined {
+  if (!name) return name
+  let out = name
+  for (const [from, to] of Object.entries(KA_PRICE_NAME_FIXES)) out = out.split(from).join(to)
+  return out
+}
+
 export async function getPricingPage(): Promise<PricingPage | null> {
   if (!import.meta.env.PUBLIC_SANITY_PROJECT_ID) return null
-  return sanityClient.fetch<PricingPage>(
+  const doc = await sanityClient.fetch<PricingPage>(
     `*[_type == "pricingPage" && _id == "pricingPage"][0]{
       titleRu, titleKa, titleEn,
       sections[]{
@@ -212,6 +227,14 @@ export async function getPricingPage(): Promise<PricingPage | null> {
       }
     }`
   )
+  if (!doc) return doc
+  return {
+    ...doc,
+    sections: (doc.sections ?? []).map(s => ({
+      ...s,
+      items: (s.items ?? []).map(it => ({ ...it, nameKa: normalizeKaPriceName(it.nameKa) })),
+    })),
+  }
 }
 
 /** Fetch all blog posts for the index page */
