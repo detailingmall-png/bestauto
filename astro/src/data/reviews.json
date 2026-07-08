@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 194,
-  "fetchedAt": "2026-07-07T07:42:35.593Z",
+  "fetchedAt": "2026-07-08T06:31:04.697Z",
   "reviews": [
     {
       "authorName": "ani sonishvili",
@@ -569,7 +569,7 @@
       "authorName": "mohamadreza sabzi",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWQaCwVM6Fk5i-ivjG3OdYu0GtMqFqMMxVqWfpi-9tJ1YRMVqDv=s128-c0x00000000-cc-rp-mo-ba5",
       "rating": 5,
-      "relativeTime": "11 months ago",
+      "relativeTime": "a year ago",
       "text": "Absolutely amazing experience with the car detailing and ceramic coating service! The staff were super friendly, professional, and paid attention to every little detail. My car looks brand new now – glossy, clean, and perfectly protected. Everything from start to finish was excellent. Highly recommended!",
       "time": 1751850652,
       "profileUrl": "https://www.google.com/maps/contrib/110154893026610914131/reviews",
@@ -579,9 +579,9 @@
         "ka": "აბსოლუტურად საოცარი გამოცდილება მანქანის დეტალების შეკეთებისა და კერამიკული საფარის სერვისით! პერსონალი ძალიან მეგობრული და პროფესიონალი იყო და ყველა წვრილმანს ყურადღებას აქცევდა. ჩემი მანქანა ახლა სრულიად ახალივით გამოიყურება - მბზინავი, სუფთა და იდეალურად დაცული. ყველაფერი დასაწყისიდან ბოლომდე შესანიშნავი იყო. გირჩევთ!"
       },
       "relativeTimes": {
-        "en": "11 months ago",
-        "ru": "11 месяцев назад",
-        "ka": "11 თვის წინ"
+        "en": "a year ago",
+        "ru": "1 год назад",
+        "ka": "ერთი წლის წინ"
       },
       "originalLang": "en"
     },
@@ -589,7 +589,7 @@
       "authorName": "Tamriko Bakhtadze",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKftAC86E5fa3x73YZdP2o0XoNlOkJA4U2QFNno9ps1dAES3A=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "11 months ago",
+      "relativeTime": "a year ago",
       "text": "Сегодня была в BestAuto Detailing Tbilisi — это не просто уход за машиной, а настоящий экспириенс! ✨\nСделали трёхфазную мойку и обклеили авто полиуретановой плёнкой. Теперь моя машина не только сверкает, как с обложки, но и надёжно защищена от царапин.\nВсё выполнено на высшем уровне -от сервиса до деталей. Рекомендую от души! 🙌🚘",
       "time": 1751835127,
       "profileUrl": "https://www.google.com/maps/contrib/114094927714527313333/reviews",
@@ -599,9 +599,9 @@
         "en": "Today I visited BestAuto Detailing Tbilisi – it's not just car care, it's a true experience! ✨\nThey did a three-phase wash and wrapped the car with polyurethane film. Now my car not only sparkles like a magazine cover, but is also reliably protected from scratches.\nEverything was done to the highest standard – from the service to the details. I highly recommend them! 🙌🚘"
       },
       "relativeTimes": {
-        "ru": "11 месяцев назад",
-        "en": "11 months ago",
-        "ka": "11 თვის წინ"
+        "ru": "1 год назад",
+        "en": "a year ago",
+        "ka": "ერთი წლის წინ"
       },
       "originalLang": "ru"
     },
