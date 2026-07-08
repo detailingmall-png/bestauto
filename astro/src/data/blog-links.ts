@@ -4276,6 +4276,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
   {
+    article: 'blog/ppf-self-healing-explained',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'paint protection film',
+        contextQuote: 'Of all the features of paint protection film, the self-healing trick looks the best on a showroom demo',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Brush marks close without any polishing.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {

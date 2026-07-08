@@ -3158,5 +3158,29 @@
     "title": "Matte and satin PPF — visual change without colour wrap",
     "lang": "en",
     "slug": "blog/ppf-matte-satin-finish-options"
+  },
+  "920260707001": {
+    "file": "page920260707001.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-self-healing-explained",
+    "path": "/ru/blog/ppf-self-healing-explained",
+    "title": "Самовосстанавливающееся PPF — физика эффекта, как работает",
+    "lang": "ru",
+    "slug": "blog/ppf-self-healing-explained"
+  },
+  "920260707002": {
+    "file": "page920260707002.html",
+    "url": "https://bestauto.ge/blog/ppf-self-healing-explained",
+    "path": "/blog/ppf-self-healing-explained",
+    "title": "თვით-აღდგენადი PPF — ეფექტის ფიზიკა, როგორ მუშაობს",
+    "lang": "ka",
+    "slug": "blog/ppf-self-healing-explained"
+  },
+  "920260707003": {
+    "file": "page920260707003.html",
+    "url": "https://bestauto.ge/en/blog/ppf-self-healing-explained",
+    "path": "/en/blog/ppf-self-healing-explained",
+    "title": "PPF self-healing — the physics, how it really works",
+    "lang": "en",
+    "slug": "blog/ppf-self-healing-explained"
   }
 }

@@ -8,7 +8,7 @@ primary_hf_ru: "самовосстановление плёнки, self-healing 
 primary_hf_ka: "თვით-აღდგენადი PPF"
 primary_hf_en: "ppf self-healing"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#30"
   - reference: "drafts/blog/what-is-ppf-explainer.md"
