@@ -9,7 +9,7 @@ primary_hf_ka: "პოლირება გაყიდვისთვის"
 primary_hf_en: "pre-sale polishing car"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#7"
   - reference: "drafts/blog/polish-cream-diy-vs-studio.md"

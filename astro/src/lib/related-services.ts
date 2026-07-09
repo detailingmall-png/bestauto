@@ -145,6 +145,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/polish-cream-diy-vs-studio':   'polishing',
   'blog/steam-headlight-polishing':    'polishing',
   'blog/polishing-old-cars-worth-it':  'polishing',
+  'blog/pre-sale-polishing-resale-value': 'polishing',
   // Car wash
   'blog/2-phase-vs-3-phase-wash':      'carwash',
   'blog/contactless-vs-hand-wash':     'carwash',

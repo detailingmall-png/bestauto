@@ -38,6 +38,32 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/pre-sale-polishing-resale-value',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'Для предпродажной подготовки минимальный набор — полировка кузова (690 ₾).',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'абразивная полировка',
+        contextQuote: 'Двухступенчатая абразивная полировка — грубая паста для выравнивания царапин, финишная для глубины блеска.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамическое покрытие',
+        contextQuote: 'Предпродажная полировка отличается от «полировки для себя» по одной детали: на «себя» добавляют керамическое покрытие для долгосрочной защиты.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-self-healing-explained',
     links: [
       {
@@ -2195,6 +2221,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/pre-sale-polishing-resale-value',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება გაყიდვისთვის, რომლის ფასი 690 ₾-დან იწყება — ყველაზე შეუფასებელი ინვესტიციაა გაყიდვისწინა მომზადებაში.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი გაყიდვამდე — სადავო.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-self-healing-explained',
     links: [
       {
@@ -4275,6 +4320,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/pre-sale-polishing-resale-value',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Pre-sale polishing at 690 ₾ and up is the most under-rated investment in getting a car ready to sell.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'Pre-sale polishing differs from "polishing for yourself" in one detail: "for yourself" adds a ceramic coating for long-term protection.',
+      },
+    ],
+  },
   {
     article: 'blog/ppf-self-healing-explained',
     links: [
