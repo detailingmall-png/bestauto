@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 194,
-  "fetchedAt": "2026-07-08T06:31:04.697Z",
+  "fetchedAt": "2026-07-09T07:39:43.769Z",
   "reviews": [
     {
       "authorName": "ani sonishvili",
@@ -95,15 +95,15 @@
         "en": "The best service! The work was done within the agreed time frame! The best professionals! Good luck!"
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1781085763,
       "profileUrl": "https://www.google.com/maps/contrib/117872751637693533048/reviews",
       "text": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Andro Todua",
@@ -335,15 +335,15 @@
         "en": "They have very good service and attentive staff. The price is definitely appropriate for the quality. My recommendation ❤️✌️"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "ka",
       "time": 1778245426,
       "profileUrl": "https://www.google.com/maps/contrib/114653247870258314438/reviews",
       "text": "ძალიან კარგი მომსახურება აქვთ და ყურადღებიანი სტაფია. ფასი ნამდვილად შესაბამისია ხარისხის. რეკომენდაცია ჩემგან ❤️✌️",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "Crash",
@@ -429,7 +429,7 @@
       "authorName": "Николай жидков",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWh3rs9B1iQpr5_O9pZ3HgnNzVlAeAJc7788W7qM5YdXmkq5ln5zw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "text": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин. Ребята — настоящие профессионалы и просто классные люди! Делают всё на высшем уровне, результат всегда «супер». Что особенно радует — это индивидуальный подход к каждому клиенту и внимание к деталям. Однозначно рекомендую!\n\nI’ve been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and just great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail. Highly recommended!",
       "time": 1767770321,
       "profileUrl": "https://www.google.com/maps/contrib/115733878456850340696/reviews",
@@ -439,9 +439,9 @@
         "en": "I've been using Best Auto for a long time and have trusted them with dozens of my cars. These guys are true professionals and simply great people! They do everything at the highest level, and the results are always superb. What's especially pleasing is their individual approach to each client and attention to detail. I definitely recommend them!\n\nI've been a regular at Best Auto for a long time and have brought many of my cars here. These guys are true professionals and simply great people to work with! The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to each client and attention to detail. Highly recommended!"
       },
       "relativeTimes": {
-        "ru": "5 месяцев назад",
-        "en": "5 months ago",
-        "ka": "5 თვის წინ"
+        "ru": "6 месяцев назад",
+        "en": "6 months ago",
+        "ka": "6 თვის წინ"
       },
       "originalLang": "ru"
     },
