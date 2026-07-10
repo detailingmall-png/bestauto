@@ -214,7 +214,6 @@ async function sendGa4FormSubmit(
 async function sendTelegram(
   env: Env,
   lead: LeadPayload,
-  debugLine?: string,
 ): Promise<{ ok: boolean; error?: string }> {
   const botToken =
     lead.studio === 'guramishvili'
@@ -248,8 +247,6 @@ async function sendTelegram(
   ];
   if (lead.car) lines.push(`*\u0410\u0432\u0442\u043E:* ${escapeMarkdown(lead.car)}`);
   if (lead.lang) lines.push(`*\u042F\u0437\u044B\u043A:* ${escapeMarkdown(lead.lang)}`);
-  // Temporary diagnostic \u2014 only present for test submissions (see handler).
-  if (debugLine) lines.push('', escapeMarkdown(debugLine));
 
   const message = lines.join('\n');
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -485,22 +482,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return jsonResponse(429, { ok: false, error: 'Too many requests' });
   }
 
-  // --- Attribution diagnostic (temporary) ---
-  // Surfaces whether GA4 client_id / session_id / gclid actually reach this
-  // endpoint (and from where) so we can wire server-side GA4 form_submit with
-  // correct attribution. Only appended to Telegram for test leads (car="test").
+  // --- Attribution for the server-side GA4 form_submit event ---
   const attribution = extractAttribution(request, payload);
-  const isTestLead =
-    /test/i.test(payload.car || '') || /^\+?0{6,}$/.test(payload.phone);
-  const debugLine = isTestLead
-    ? `[dbg] src:${attribution.source} cid:${attribution.clientId ? 'y' : 'n'} sid:${attribution.sessionId ? 'y' : 'n'} gclid:${attribution.gclid ? 'y' : 'n'}`
-    : undefined;
   console.log(
     `[lead] attribution src=${attribution.source} cid=${attribution.clientId ? 'yes' : 'no'} sid=${attribution.sessionId ? 'yes' : 'no'} gclid=${attribution.gclid ? 'yes' : 'no'}`,
   );
 
   // --- Send Telegram + write Sheets in parallel ---
-  const tgResult = await sendTelegram(env, payload, debugLine);
+  const tgResult = await sendTelegram(env, payload);
   // Fire-and-forget Sheets write (don't block the response)
   context.waitUntil(
     writeToSheets(env, payload, tgResult.ok ? 'delivered' : tgResult.error || 'failed'),
