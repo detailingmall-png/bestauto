@@ -86,7 +86,11 @@ const EN_TRANSLATIONS: TranslationMap = [
   ['Реставрация автостекла', 'Auto glass restoration'],
   ['Введите номер в международном формате: +995 5XX XXX XXX', 'Enter phone in international format: +995 5XX XXX XXX'],
   ['Записаться — ответим за 15 минут', 'Book now — reply in 15 min'],
-  ["Здравствуйте! Хочу записаться в студию", "Hello! I'd like to book at studio"],
+  // NB: this string is injected into a single-quoted JS string literal
+  // (var msg = '...'), so it MUST NOT contain a raw apostrophe — it would
+  // close the string and break the whole inline script (baToggleForm etc.
+  // then stay undefined → the "Book now" button does nothing on /en).
+  ["Здравствуйте! Хочу записаться в студию", "Hello! I would like to book at studio"],
   ['Услуга: ', 'Service: '],
   ['Мой телефон: ', 'My phone: '],
   ['Автомобиль: ', 'Car: '],
