@@ -257,24 +257,117 @@
     }
   });
 
-  // --- Form submit ---
-  // Set GA4 user_data BEFORE the form_submit event so gtag hashes the phone
-  // and propagates it as Enhanced Conversions data into the GA4-imported
-  // conversion in Google Ads. Phone is the only AM signal available at this
-  // boundary; gtag normalises and SHA-256-hashes it client-side.
+  // --- Form submit (Tilda-aware) ---
+  // Tilda intercepts the submit-button CLICK, calls preventDefault() and posts
+  // the form via XHR. No native `submit` event is ever dispatched, so a plain
+  // document.addEventListener('submit', ...) NEVER fires for Tilda forms — which
+  // is why the GA4-imported `form_submit` conversion recorded 0 and Google Ads
+  // flagged it "misconfigured". Instead we detect Tilda's confirmed-success
+  // signal: the per-form success box (.js-successbox / .t-form__successbox) gets
+  // shown, or a success popup (#tildaformsuccesspopup*) is appended to <body>.
+  // That fires only on a real lead and cannot misfire on a validation error.
+  //
+  // We still set GA4 user_data (phone) BEFORE `form_submit` so gtag normalises +
+  // SHA-256-hashes it client-side into Enhanced Conversions data.
+
+  // Dedupe per form: at most one form_submit per ~5s (guards double observers /
+  // native-submit fallback firing for the same lead).
+  var formFireAt = (typeof WeakMap === 'function') ? new WeakMap() : null;
+
+  function fireFormSubmit(form) {
+    if (form && formFireAt) {
+      var now = Date.now();
+      if (now - (formFireAt.get(form) || 0) < 5000) return;
+      formFireAt.set(form, now);
+    }
+    try {
+      var phoneInput = form && form.querySelector(
+        'input[type="tel"], input[name*="phone" i], input[name*="tel" i]');
+      var phone = phoneInput && typeof phoneInput.value === 'string'
+        ? phoneInput.value.trim() : '';
+      if (phone && typeof gtag === 'function') {
+        gtag('set', 'user_data', { phone_number: phone });
+      }
+    } catch (_) {}
+    var action = 'tilda';
+    try { action = (form && (form.getAttribute('action') || form.action)) || 'tilda'; } catch (_) {}
+    send('form_submit', { form_action: action });
+  }
+
+  function baIsVisible(el) {
+    if (!el) return false;
+    if (el.offsetParent !== null) return true;
+    var cs = window.getComputedStyle ? getComputedStyle(el) : null;
+    return !!cs && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0';
+  }
+
+  function formOf(box) {
+    return (box.closest && box.closest('form, .t-form, .js-form-proccess')) || box;
+  }
+
+  // Inline success boxes live inside each form, hidden until Tilda populates +
+  // shows them on success. Observe style/class/childList and fire once visible.
+  function watchSuccessBoxes() {
+    if (typeof MutationObserver !== 'function') return;
+    var boxes = document.querySelectorAll('.js-successbox, .t-form__successbox');
+    Array.prototype.forEach.call(boxes, function (box) {
+      if (box.__baWatched) return;
+      box.__baWatched = true;
+      if (baIsVisible(box)) fireFormSubmit(formOf(box)); // redirect-back success
+      var obs = new MutationObserver(function () {
+        // Let Tilda finish toggling display before checking visibility.
+        setTimeout(function () {
+          if (baIsVisible(box)) fireFormSubmit(formOf(box));
+        }, 60);
+      });
+      obs.observe(box, {
+        attributes: true, attributeFilter: ['style', 'class'],
+        childList: true, subtree: true
+      });
+    });
+  }
+
+  // t396 / popup forms show a success popup appended to <body> instead.
+  function watchSuccessPopups() {
+    if (typeof MutationObserver !== 'function' || !document.body) return;
+    var obs = new MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        var added = mutations[i].addedNodes;
+        for (var j = 0; j < added.length; j++) {
+          var n = added[j];
+          if (n.nodeType === 1 && n.id && n.id.indexOf('tildaformsuccesspopup') === 0) {
+            var form = null;
+            try {
+              form = window.tildaForm && window.tildaForm.currentFormProccessing &&
+                     window.tildaForm.currentFormProccessing.form;
+            } catch (_) {}
+            fireFormSubmit(form);
+          }
+        }
+      }
+    });
+    obs.observe(document.body, { childList: true });
+  }
+
+  // Fallback: catch a genuine native submit from any non-Tilda <form>.
   document.addEventListener('submit', function (e) {
     var form = e.target;
-    if (form && form.tagName === 'FORM') {
-      try {
-        var phoneInput = form.querySelector('input[type="tel"], input[name*="phone" i], input[name*="tel" i]');
-        var phone = phoneInput && typeof phoneInput.value === 'string' ? phoneInput.value.trim() : '';
-        if (phone && typeof gtag === 'function') {
-          gtag('set', 'user_data', { phone_number: phone });
-        }
-      } catch (_) {}
-      send('form_submit', { form_action: form.action || 'unknown' });
-    }
+    if (form && form.tagName === 'FORM') fireFormSubmit(form);
   });
+
+  function initFormTracking() {
+    try { watchSuccessBoxes(); } catch (_) {}
+    try { watchSuccessPopups(); } catch (_) {}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFormTracking);
+  } else {
+    initFormTracking();
+  }
+  // Deferred Tilda blocks / popups inject forms late — re-scan for new boxes.
+  setTimeout(watchSuccessBoxes, 3000);
+  setTimeout(watchSuccessBoxes, 8000);
 
   // --- Lead form submission tracking ---
   // serverOk=true:  /api/lead handled the lead and ALREADY fired Meta CAPI Lead
