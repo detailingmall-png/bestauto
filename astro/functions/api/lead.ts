@@ -31,7 +31,10 @@ interface Env {
   FB_CAPI_TOKEN_SECONDARY?: string;
   FB_TEST_EVENT_CODE_PRIMARY?: string;
   FB_TEST_EVENT_CODE_SECONDARY?: string;
+  GA4_MP_API_SECRET?: string;
 }
+
+const GA4_MEASUREMENT_ID = 'G-C088QPT7KV';
 
 const FB_API_VERSION = 'v21.0';
 const FB_PIXELS: ReadonlyArray<{
@@ -145,6 +148,63 @@ function extractAttribution(request: Request, payload: LeadPayload): Attribution
   }
 
   return { clientId, sessionId, gclid: kv['_gclid'], source };
+}
+
+// ---------------------------------------------------------------------------
+// GA4 Measurement Protocol — server-side `form_submit` conversion event.
+// Fires for every valid lead, from the server, so it does not depend on the
+// browser keeping the page open, ad-blockers, or deferred gtag loading. Reuses
+// the visitor's GA4 client_id + session_id (from the _ga / _ga_<stream> cookies
+// sent on the browser's same-origin fetch) so GA4 attributes it to the live
+// session — and therefore to the Google Ads click (gclid) captured at session
+// start. This is the event the Google Ads conversion imports.
+// ---------------------------------------------------------------------------
+
+async function sendGa4FormSubmit(
+  env: Env,
+  attribution: Attribution,
+  lead: LeadPayload,
+): Promise<void> {
+  if (!env.GA4_MP_API_SECRET) {
+    console.error('[lead] ga4 mp skipped: GA4_MP_API_SECRET not set');
+    return;
+  }
+
+  // client_id is required by MP. Fall back to a synthetic id so the event still
+  // lands (unattributed) if the _ga cookie somehow did not reach us.
+  const clientId =
+    attribution.clientId ||
+    `${Math.floor(Math.random() * 1e10)}.${Math.floor(Date.now() / 1000)}`;
+
+  const params: Record<string, unknown> = {
+    engagement_time_msec: 1,
+    studio: lead.studio,
+    service: lead.service,
+    lang: lead.lang || '',
+    form_action: 'server',
+  };
+  if (attribution.sessionId) params.session_id = attribution.sessionId;
+  if (attribution.gclid) params.gclid = attribution.gclid;
+
+  const url =
+    `https://www.google-analytics.com/mp/collect?measurement_id=${GA4_MEASUREMENT_ID}` +
+    `&api_secret=${encodeURIComponent(env.GA4_MP_API_SECRET)}`;
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        client_id: clientId,
+        events: [{ name: 'form_submit', params }],
+      }),
+    });
+    console.log(
+      `[lead] ga4 mp status=${res.status} cid=${attribution.clientId ? 'real' : 'fallback'} sid=${attribution.sessionId ? 'y' : 'n'} gclid=${attribution.gclid ? 'y' : 'n'}`,
+    );
+  } catch (e) {
+    console.error(`[lead] ga4 mp fetch failed: ${String(e)}`);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -448,6 +508,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Fire-and-forget Meta CAPI Lead with Advanced Matching (phone hash + IP/UA + fbp/fbc).
   // Runs server-side after the response is sent so user latency is not affected.
   context.waitUntil(sendLeadCAPI(env, request, payload));
+  // Fire-and-forget GA4 form_submit conversion (server-side, attributed via the
+  // visitor's GA4 client_id/session_id + gclid). This is what the Google Ads
+  // conversion imports — so it fires reliably for every real lead.
+  context.waitUntil(sendGa4FormSubmit(env, attribution, payload));
 
   // Even if Telegram fails, the lead is captured in Sheets — return ok to the user
   return jsonResponse(200, { ok: true });
