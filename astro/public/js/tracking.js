@@ -349,13 +349,54 @@
     obs.observe(document.body, { childList: true });
   }
 
+  // Most reliable Tilda hook: on confirmed success Tilda's t_forms__handleSuccess
+  // calls window[data-success-callback] (e.g. `t702_onSuccess`) — this happens
+  // regardless of whether success is shown inline, as a popup, or via redirect.
+  // We wrap that global to fire form_submit exactly when Tilda confirms the lead.
+  // The callback is defined by the deferred blocks JS, so we poll until it exists.
+  function hookSuccessCallbacks() {
+    var forms = document.querySelectorAll('[data-success-callback]');
+    Array.prototype.forEach.call(forms, function (form) {
+      var name = (form.getAttribute('data-success-callback') || '').replace('window.', '');
+      if (!name || form.__baCb) return;
+      form.__baCb = true;
+      var tries = 0;
+      (function poll() {
+        var fn = window[name];
+        if (typeof fn === 'function') {
+          if (!fn.__baWrapped) {
+            var orig = fn;
+            var wrapped = function () {
+              try {
+                var f = (window.tildaForm && window.tildaForm.currentFormProccessing &&
+                         window.tildaForm.currentFormProccessing.form) || form;
+                fireFormSubmit(f);
+              } catch (_) {}
+              return orig.apply(this, arguments);
+            };
+            wrapped.__baWrapped = true;
+            window[name] = wrapped;
+          }
+          return;
+        }
+        if (tries++ < 160) setTimeout(poll, 250); // ~40s window for deferred blocks JS
+      })();
+    });
+  }
+
   // Fallback: catch a genuine native submit from any non-Tilda <form>.
   document.addEventListener('submit', function (e) {
     var form = e.target;
     if (form && form.tagName === 'FORM') fireFormSubmit(form);
   });
 
+  function rescan() {
+    try { hookSuccessCallbacks(); } catch (_) {}
+    try { watchSuccessBoxes(); } catch (_) {}
+  }
+
   function initFormTracking() {
+    try { hookSuccessCallbacks(); } catch (_) {}
     try { watchSuccessBoxes(); } catch (_) {}
     try { watchSuccessPopups(); } catch (_) {}
   }
@@ -365,9 +406,9 @@
   } else {
     initFormTracking();
   }
-  // Deferred Tilda blocks / popups inject forms late — re-scan for new boxes.
-  setTimeout(watchSuccessBoxes, 3000);
-  setTimeout(watchSuccessBoxes, 8000);
+  // Deferred Tilda blocks / popups inject forms late — re-scan for callbacks/boxes.
+  setTimeout(rescan, 3000);
+  setTimeout(rescan, 8000);
 
   // --- Lead form submission tracking ---
   // serverOk=true:  /api/lead handled the lead and ALREADY fired Meta CAPI Lead
