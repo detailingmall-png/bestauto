@@ -86,12 +86,75 @@ async function isRateLimited(
 }
 
 // ---------------------------------------------------------------------------
+// Attribution — extract GA4 client_id / session_id / gclid for server-side
+// form_submit (GA4 Measurement Protocol). Cookies may arrive either in the
+// request `Cookie` header (browser-side call) or forwarded in the webhook body
+// (Tilda "send cookies" option), so we look in both. Values are read-only.
+// ---------------------------------------------------------------------------
+
+const GA_STREAM_ID = 'C088QPT7KV'; // GA4 measurement id G-C088QPT7KV
+
+interface Attribution {
+  clientId?: string;
+  sessionId?: string;
+  gclid?: string;
+  source: 'header' | 'body' | 'none';
+}
+
+function parseCookieBlob(blob: string): Record<string, string> {
+  // Handles both "a=b; c=d" (header) and "a: b\n c: d" (Tilda email/webhook) forms.
+  const out: Record<string, string> = {};
+  for (const part of blob.split(/[;\n]/)) {
+    const m = part.match(/^\s*([\w.-]+)\s*[:=]\s*(.+?)\s*$/);
+    if (m && m[2] !== 'deleted') out[m[1]] = m[2];
+  }
+  return out;
+}
+
+function extractAttribution(request: Request, payload: LeadPayload): Attribution {
+  const header = request.headers.get('cookie') || '';
+  const bodyBlob =
+    typeof (payload as unknown as Record<string, unknown>).cookies === 'string'
+      ? ((payload as unknown as Record<string, unknown>).cookies as string)
+      : '';
+
+  let source: Attribution['source'] = 'none';
+  let blob = '';
+  if (header.includes('_ga') || header.includes('_gclid')) {
+    blob = header;
+    source = 'header';
+  } else if (bodyBlob.includes('_ga') || bodyBlob.includes('_gclid')) {
+    blob = bodyBlob;
+    source = 'body';
+  }
+
+  const kv = parseCookieBlob(blob);
+
+  let clientId: string | undefined;
+  const ga = kv['_ga']; // GA1.1.<a>.<b>
+  if (ga) {
+    const p = ga.split('.');
+    if (p.length >= 4) clientId = `${p[2]}.${p[3]}`;
+  }
+
+  let sessionId: string | undefined;
+  const gaStream = kv[`_ga_${GA_STREAM_ID}`]; // GS2.1.s<sid>$...
+  if (gaStream) {
+    const m = gaStream.match(/(?:^|\.)s(\d+)/);
+    if (m) sessionId = m[1];
+  }
+
+  return { clientId, sessionId, gclid: kv['_gclid'], source };
+}
+
+// ---------------------------------------------------------------------------
 // Telegram Bot API — send message to group
 // ---------------------------------------------------------------------------
 
 async function sendTelegram(
   env: Env,
   lead: LeadPayload,
+  debugLine?: string,
 ): Promise<{ ok: boolean; error?: string }> {
   const botToken =
     lead.studio === 'guramishvili'
@@ -125,6 +188,8 @@ async function sendTelegram(
   ];
   if (lead.car) lines.push(`*\u0410\u0432\u0442\u043E:* ${escapeMarkdown(lead.car)}`);
   if (lead.lang) lines.push(`*\u042F\u0437\u044B\u043A:* ${escapeMarkdown(lead.lang)}`);
+  // Temporary diagnostic \u2014 only present for test submissions (see handler).
+  if (debugLine) lines.push('', escapeMarkdown(debugLine));
 
   const message = lines.join('\n');
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -360,8 +425,22 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return jsonResponse(429, { ok: false, error: 'Too many requests' });
   }
 
+  // --- Attribution diagnostic (temporary) ---
+  // Surfaces whether GA4 client_id / session_id / gclid actually reach this
+  // endpoint (and from where) so we can wire server-side GA4 form_submit with
+  // correct attribution. Only appended to Telegram for test leads (car="test").
+  const attribution = extractAttribution(request, payload);
+  const isTestLead =
+    /test/i.test(payload.car || '') || /^\+?0{6,}$/.test(payload.phone);
+  const debugLine = isTestLead
+    ? `[dbg] src:${attribution.source} cid:${attribution.clientId ? 'y' : 'n'} sid:${attribution.sessionId ? 'y' : 'n'} gclid:${attribution.gclid ? 'y' : 'n'}`
+    : undefined;
+  console.log(
+    `[lead] attribution src=${attribution.source} cid=${attribution.clientId ? 'yes' : 'no'} sid=${attribution.sessionId ? 'yes' : 'no'} gclid=${attribution.gclid ? 'yes' : 'no'}`,
+  );
+
   // --- Send Telegram + write Sheets in parallel ---
-  const tgResult = await sendTelegram(env, payload);
+  const tgResult = await sendTelegram(env, payload, debugLine);
   // Fire-and-forget Sheets write (don't block the response)
   context.waitUntil(
     writeToSheets(env, payload, tgResult.ok ? 'delivered' : tgResult.error || 'failed'),
