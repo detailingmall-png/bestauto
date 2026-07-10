@@ -9,7 +9,12 @@ primary_hf_ka: "მაღალი წნევის რეცხვა, კე
 primary_hf_en: "pressure washer danger, DIY car wash safety"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-07-10
+published_pageids:
+  ru: "920260710001"
+  ka: "920260710002"
+  en: "920260710003"
 sources:
   - roadmap: "docs/content-roadmap.md#76"
 ---

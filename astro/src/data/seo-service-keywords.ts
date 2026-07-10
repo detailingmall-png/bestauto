@@ -149,6 +149,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის პოლირება',          // GSC: 430 clicks (top)
     'პოლირება',                    // GSC: 408
     'პოლირების',                   // inflected — valid in blog anchor context
+    'პოლირებას',                   // inflected (dative) — valid in blog anchor context
     'ავტომობილის პოლირება',        // GSC: 64
     'მანქანის პოლირება ფასი',      // GSC: 137 (with price)
     'პოლირება ფასი',               // GSC: 119

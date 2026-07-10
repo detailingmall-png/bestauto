@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/pressure-washer-diy-danger',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'Полировка авто',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка может освежить внешний вид, но не защищает кузов от новых сколов и не восстанавливает плёнку, если она уже поднялась.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'керамика',
+        contextQuote: 'На машине есть PPF или керамика',
+      },
+    ],
+  },
+  {
     article: 'blog/pre-sale-polishing-resale-value',
     links: [
       {
@@ -2221,6 +2240,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/pressure-washer-diy-danger',
+    links: [
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'მანქანაზე აქვს PPF ან კერამიკა',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირებას',
+        originalPhrase: 'პოლირებას',
+        contextQuote: 'პოლირებას შეუძლია გარე იერის განახლება, მაგრამ არ იცავს კუზოვს ახალი ნაკაწრებისგან და არ ადგენს ფირს, თუ ის უკვე აიწია.',
+      },
+    ],
+  },
+  {
     article: 'blog/pre-sale-polishing-resale-value',
     links: [
       {
@@ -4320,6 +4358,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/pressure-washer-diy-danger',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'Polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing can refresh the look but does not protect against new chips and does not restore a film that has already lifted.',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic',
+        contextQuote: 'The car has PPF or ceramic',
+      },
+    ],
+  },
   {
     article: 'blog/pre-sale-polishing-resale-value',
     links: [
