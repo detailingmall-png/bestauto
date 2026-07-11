@@ -83,6 +83,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/scratch-polish-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'плюс полировка кузова (от 690 ₾)',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'абразивной полировки',
+        originalPhrase: 'абразивной полировки',
+        contextQuote: 'требует многоступенчатой абразивной полировки',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'закрыть зоны защитной плёнкой PPF',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-self-healing-explained',
     links: [
       {
@@ -2278,6 +2304,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/scratch-polish-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირებას',
+        originalPhrase: 'პოლირებას',
+        contextQuote: 'საჭიროებს მრავალსაფეხურიან აბრაზიულ პოლირებას',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'ზონების დახურვას დამცავი ფირით PPF',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-self-healing-explained',
     links: [
       {
@@ -4393,6 +4438,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: 'Pre-sale polishing differs from "polishing for yourself" in one detail: "for yourself" adds a ceramic coating for long-term protection.',
+      },
+    ],
+  },
+  {
+    article: 'blog/scratch-polish-guide',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'needs multi-stage abrasive polishing',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'PPF film',
+        originalPhrase: 'PPF film',
+        contextQuote: 'covering those zones with PPF film makes sense',
       },
     ],
   },

@@ -59,6 +59,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'полировки',                  // inflected — valid in blog anchor context
     'полировка лкп',
     'абразивная полировка',
+    'абразивной полировки',       // inflected form — valid in blog anchor context
   ],
   '/ceramiccoating': [
     'керамическое покрытие авто', // GSC: 8 (top)
@@ -248,6 +249,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'paint protection film',       // ACCEPT-WITH-CAVEAT (qualify with Tbilisi)
     'car ppf',
     'ppf for car',                 // GSC: 1
+    'ppf film',                    // variant — valid in blog anchor context
   ],
   '/vinyl-wrapping': [
     'car wrap',                    // GSC: 22 clicks (top)
