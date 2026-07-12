@@ -8,7 +8,12 @@ primary_hf_ru: "уход за тонировкой"
 primary_hf_ka: "ფირის მოვლა"
 primary_hf_en: "fresh tint aftercare"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-12
+published_pageids:
+  ru: "920260712001"
+  ka: "920260712002"
+  en: "920260712003"
 sources:
   - roadmap: "docs/content-roadmap.md#57"
 ---

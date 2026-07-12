@@ -3254,5 +3254,29 @@
     "title": "Scratch removal with polishing — by depth",
     "lang": "en",
     "slug": "blog/scratch-polish-guide"
+  },
+  "920260712001": {
+    "file": "page920260712001.html",
+    "url": "https://bestauto.ge/ru/blog/tint-care-fresh-install",
+    "path": "/ru/blog/tint-care-fresh-install",
+    "title": "Уход за свежей тонировкой — первые 5 дней после установки",
+    "lang": "ru",
+    "slug": "blog/tint-care-fresh-install"
+  },
+  "920260712002": {
+    "file": "page920260712002.html",
+    "url": "https://bestauto.ge/blog/tint-care-fresh-install",
+    "path": "/blog/tint-care-fresh-install",
+    "title": "ფირის მოვლა — პირველი 5 დღე დაყენების შემდეგ",
+    "lang": "ka",
+    "slug": "blog/tint-care-fresh-install"
+  },
+  "920260712003": {
+    "file": "page920260712003.html",
+    "url": "https://bestauto.ge/en/blog/tint-care-fresh-install",
+    "path": "/en/blog/tint-care-fresh-install",
+    "title": "Fresh Tint Aftercare — First 5 Days After Installation",
+    "lang": "en",
+    "slug": "blog/tint-care-fresh-install"
   }
 }

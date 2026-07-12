@@ -2262,6 +2262,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/tint-care-fresh-install',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Первая мойка после тонировки — через 5-7 дней минимум',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Самая частая паника после тонировки',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4397,6 +4416,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
         anchor: 'პოლირების',
         originalPhrase: 'პოლირების',
         contextQuote: '3 პოლირების შემდეგ ფარა თხელდება, კარგავს ნაწილ სიმკვრივეს',
+      },
+    ],
+  },
+  {
+    article: 'blog/tint-care-fresh-install',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'პირველი რეცხვა დაბურვის შემდეგ',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'რატომ არ შეიძლება მანქანის რეცხვა მაშინვე დაბურვის შემდეგ?',
       },
     ],
   },
