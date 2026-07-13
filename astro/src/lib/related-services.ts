@@ -117,6 +117,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/how-to-choose-tint-film':             'auto-glass-tinting',
   'blog/mobile-tinting-on-location':          'auto-glass-tinting',
   'blog/tint-care-fresh-install':             'auto-glass-tinting',
+  'blog/tint-removal-bubbles':                'auto-glass-tinting',
   // Windshield repair
   'blog/chip-repair-process-step-by-step': 'windshield-repair',
   'blog/efficiency-of-windshield-repair': 'windshield-repair',

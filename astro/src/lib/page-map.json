@@ -3278,5 +3278,29 @@
     "title": "Fresh Tint Aftercare — First 5 Days After Installation",
     "lang": "en",
     "slug": "blog/tint-care-fresh-install"
+  },
+  "920260713001": {
+    "file": "page920260713001.html",
+    "url": "https://bestauto.ge/ru/blog/tint-removal-bubbles",
+    "path": "/ru/blog/tint-removal-bubbles",
+    "title": "Снятие старой тонировки — пузыри, отслоение, как делается",
+    "lang": "ru",
+    "slug": "blog/tint-removal-bubbles"
+  },
+  "920260713002": {
+    "file": "page920260713002.html",
+    "url": "https://bestauto.ge/blog/tint-removal-bubbles",
+    "path": "/blog/tint-removal-bubbles",
+    "title": "ძველი დაბურვის მოხსნა — ბუშტუკები, აქერცვლა, პროცესი",
+    "lang": "ka",
+    "slug": "blog/tint-removal-bubbles"
+  },
+  "920260713003": {
+    "file": "page920260713003.html",
+    "url": "https://bestauto.ge/en/blog/tint-removal-bubbles",
+    "path": "/en/blog/tint-removal-bubbles",
+    "title": "Old Tint Removal — Bubbles, Peeling, the Real Process",
+    "lang": "en",
+    "slug": "blog/tint-removal-bubbles"
   }
 }

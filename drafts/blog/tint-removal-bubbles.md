@@ -8,7 +8,7 @@ primary_hf_ru: "снятие тонировки, отслаивается тон
 primary_hf_ka: "ძველი დაბურვის მოხსნა"
 primary_hf_en: "old tint removal"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#56"
 ---

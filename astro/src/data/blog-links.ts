@@ -2281,6 +2281,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/tint-removal-bubbles',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'почему отслаивается тонировка, как её снимают',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Профессиональное снятие тонировки делается в три этапа',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4438,6 +4457,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/tint-removal-bubbles',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: '10-12 წელი. ძველი დაბურვის მოხსნა',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვაზე',
+        originalPhrase: 'დაბურვაზე',
+        contextQuote: 'გადაწყვიტეთ უარის თქმა დაბურვაზე',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6510,6 +6548,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car polishing',
         originalPhrase: 'headlight polishing',
         contextQuote: 'When booking headlight polishing, confirm UV coating is included.',
+      },
+    ],
+  },
+  {
+    article: 'blog/tint-removal-bubbles',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'tint',
+        contextQuote: 'that means the tint is failing and it is',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'car window tint',
+        originalPhrase: 'tint',
+        contextQuote: 'Below — why tint peels, how it is',
       },
     ],
   },
