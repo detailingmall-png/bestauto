@@ -8,7 +8,12 @@ primary_hf_ru: "уход за плёнкой, мойка винила, уход 
 primary_hf_ka: "ვინილის ფირის მოვლა, ფირის რეცხვა, ვინილის რეცხვა"
 primary_hf_en: "vinyl wrap care, vinyl wrap wash, vinyl film maintenance"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-14
+published_pageids:
+  ru: "920260714001"
+  ka: "920260714002"
+  en: "920260714003"
 sources:
   - roadmap: "docs/content-roadmap.md#46"
   - gsc: "Downloads/gsc_16months.csv"

@@ -2300,6 +2300,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/vinyl-wrap-care-maintenance',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'винил',
+        originalPhrase: 'винил',
+        contextQuote: 'что у вас винил, и попросите только пену',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'нанесение керамики',
+        originalPhrase: 'нанесение керамики',
+        contextQuote: 'нанесение керамики (тонкого стекловидного слоя) поверх винила',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4476,6 +4495,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/vinyl-wrap-care-maintenance',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილი',
+        originalPhrase: 'ვინილი',
+        contextQuote: 'დააზუსტეთ, რომ ვინილი გაქვთ',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი ფირზე (500 ₾-დან)',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6567,6 +6605,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car window tint',
         originalPhrase: 'tint',
         contextQuote: 'Below — why tint peels, how it is',
+      },
+    ],
+  },
+  {
+    article: 'blog/vinyl-wrap-care-maintenance',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl',
+        originalPhrase: 'vinyl',
+        contextQuote: 'on top of vinyl. Extends film life',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'ceramic coating over film (from 500 ₾)',
       },
     ],
   },
