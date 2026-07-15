@@ -38,6 +38,25 @@ export interface BlogLinkRule {
 
 export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
   {
+    article: 'blog/wash-schedule-tbilisi-weather',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'Полировка авто',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Полировка раз в 2-3 года возвращает блеск, но не защищает кузов от новых сколов',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'керамическим покрытием',
+        originalPhrase: 'керамикой',
+        contextQuote: 'на мойках, которые моют машины с керамикой и PPF тем же щелочным шампунем',
+      },
+    ],
+  },
+  {
     article: 'blog/pressure-washer-diy-danger',
     links: [
       {
@@ -2323,6 +2342,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
   {
+    article: 'blog/wash-schedule-tbilisi-weather',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება 2-3 წელიწადში ერთხელ უბრუნებს ბზინვარებას',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'მანქანის კერამიკა',
+        originalPhrase: 'კერამიკა',
+        contextQuote: 'რატომ დადეთ კერამიკა ან PPF',
+      },
+    ],
+  },
+  {
     article: 'blog/pressure-washer-diy-danger',
     links: [
       {
@@ -4517,6 +4555,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
+  {
+    article: 'blog/wash-schedule-tbilisi-weather',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'comes off only with polishing',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic',
+        contextQuote: 'than to save on each wash and redo the ceramic within a year',
+      },
+    ],
+  },
   {
     article: 'blog/pressure-washer-diy-danger',
     links: [

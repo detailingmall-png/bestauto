@@ -9,7 +9,12 @@ primary_hf_ka: "რეცხვის გრაფიკი, რამდენ�
 primary_hf_en: "car wash schedule Tbilisi, how often wash car"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-07-15
+published_pageids:
+  ru: "920260715001"
+  ka: "920260715002"
+  en: "920260715003"
 sources:
   - roadmap: "docs/content-roadmap.md#74"
 ---

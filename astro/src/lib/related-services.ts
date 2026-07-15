@@ -157,6 +157,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/wash-with-ceramic-ppf-care':   'carwash',
   'blog/engine-bay-wash-safety':       'carwash',
   'blog/pressure-washer-diy-danger':   'carwash',
+  'blog/wash-schedule-tbilisi-weather': 'carwash',
   // Soundproofing
   'blog/soundproofing-process':    'car-soundproofing',
   'blog/noisemakers-and-wayouts':  'car-soundproofing',
