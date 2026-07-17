@@ -3350,5 +3350,29 @@
     "title": "Car wash schedule by Tbilisi season — how often to wash",
     "lang": "en",
     "slug": "blog/wash-schedule-tbilisi-weather"
+  },
+  "920260717001": {
+    "file": "page920260717001.html",
+    "url": "https://bestauto.ge/ru/blog/window-tint-process-detailed",
+    "path": "/ru/blog/window-tint-process-detailed",
+    "title": "Процесс тонировки стёкол — этапы от приёмки до сушки",
+    "lang": "ru",
+    "slug": "blog/window-tint-process-detailed"
+  },
+  "920260717002": {
+    "file": "page920260717002.html",
+    "url": "https://bestauto.ge/blog/window-tint-process-detailed",
+    "path": "/blog/window-tint-process-detailed",
+    "title": "დაბურვის პროცესი — ეტაპები მიღებიდან შრობამდე",
+    "lang": "ka",
+    "slug": "blog/window-tint-process-detailed"
+  },
+  "920260717003": {
+    "file": "page920260717003.html",
+    "url": "https://bestauto.ge/en/blog/window-tint-process-detailed",
+    "path": "/en/blog/window-tint-process-detailed",
+    "title": "Window Tinting Process Step-by-Step — Tbilisi Studio Guide",
+    "lang": "en",
+    "slug": "blog/window-tint-process-detailed"
   }
 }

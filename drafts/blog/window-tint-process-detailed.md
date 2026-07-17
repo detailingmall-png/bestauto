@@ -8,7 +8,12 @@ primary_hf_ru: "как делается тонировка, процесс то�
 primary_hf_ka: "დაბურვის პროცესი"
 primary_hf_en: "window tinting process"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-17
+published_pageids:
+  ru: "920260717001"
+  ka: "920260717002"
+  en: "920260717003"
 sources:
   - roadmap: "docs/content-roadmap.md#54"
   - competitor: "autoqimwmenda.ge (tinting category)"

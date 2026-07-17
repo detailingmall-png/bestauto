@@ -2320,6 +2320,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/window-tint-process-detailed',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировка',
+        originalPhrase: 'тонировка',
+        contextQuote: 'С виду тонировка стёкол выглядит просто: положить плёнку, разгладить ракелем, уехать.',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Процесс тонировки — это десяток технических шагов, и пропуск любого из них стоит клиенту переделки через месяц.',
+      },
+    ],
+  },
+  {
     article: 'blog/vinyl-wrap-care-maintenance',
     links: [
       {
@@ -4534,6 +4553,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/window-tint-process-detailed',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'მინების დაბურვა',
+        originalPhrase: 'მინების დაბურვა',
+        contextQuote: 'გარედან მინების დაბურვა მარტივი ჩანს: ფირი დადე, რაკელით გაასწორე, გადი.',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'დაბურვის პროცესი — ესაა ათობით ტექნიკური ნაბიჯი, და ნებისმიერი მათგანის გამოტოვება კლიენტს თვის შემდეგ გადაკეთებად უჯდება.',
+      },
+    ],
+  },
+  {
     article: 'blog/vinyl-wrap-care-maintenance',
     links: [
       {
@@ -6662,6 +6700,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'car window tint',
         originalPhrase: 'tint',
         contextQuote: 'Below — why tint peels, how it is',
+      },
+    ],
+  },
+  {
+    article: 'blog/window-tint-process-detailed',
+    links: [
+      {
+        role: 'pillar',
+        target: '/auto-glass-tinting',
+        anchor: 'window tinting',
+        originalPhrase: 'window tinting',
+        contextQuote: 'From the outside, window tinting looks simple: lay the film, squeegee it flat, drive away.',
+      },
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'window tint',
+        originalPhrase: 'tint',
+        contextQuote: 'after that work the glass needs time to settle, and tint will sit crooked.',
       },
     ],
   },
