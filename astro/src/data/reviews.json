@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 195,
-  "fetchedAt": "2026-07-17T06:19:46.993Z",
+  "totalReviews": 196,
+  "fetchedAt": "2026-07-18T06:07:38.726Z",
   "reviews": [
+    {
+      "authorName": "Alex Rex",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIyLKzcMBPNsbqieuKivNixYR5nsnvh5qGsqnAcQtKiffCTQl4=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Лучший сервис, настоящие профессионалы.",
+        "en": "Best service, Real professionals.",
+        "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "en",
+      "time": 1784296300,
+      "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
+      "text": "Best service, Real professionals.",
+      "relativeTime": "today"
+    },
     {
       "authorName": "ani sonishvili",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJ0d3e5cOklZfLxclmyYF31HhXQfhcR5Y5ApuobXFN6BIdghw=s128-c0x00000000-cc-rp-mo",
