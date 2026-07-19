@@ -8,7 +8,7 @@ primary_hf_ru: "потеря видимости лобового, плохо в�
 primary_hf_ka: "ღამის ხილვადობა"
 primary_hf_en: "poor night visibility windshield"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#67"
   - gsc: "Downloads/gsc_16months.csv"
