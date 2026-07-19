@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 196,
-  "fetchedAt": "2026-07-18T06:07:38.726Z",
+  "fetchedAt": "2026-07-19T06:33:02.974Z",
   "reviews": [
     {
       "authorName": "Alex Rex",
@@ -15,15 +15,15 @@
         "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "en",
       "time": 1784296300,
       "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
       "text": "Best service, Real professionals.",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "ani sonishvili",
@@ -55,15 +55,15 @@
         "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "ka",
       "time": 1782561586,
       "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
       "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Luka Khvibliani",
@@ -95,15 +95,15 @@
         "en": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others."
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1781948399,
       "profileUrl": "https://www.google.com/maps/contrib/103896940660108229331/reviews",
       "text": "საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ. ნამდვილად კმაყოფილი ვარ მიღებული მომსახურებით და აუცილებლად გავუწევ რეკომენდაციას სხვებსაც.\n\nExcellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service. I am genuinely satisfied with the overall experience and would highly recommend them to others.",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Irakli Aslanishvili",
