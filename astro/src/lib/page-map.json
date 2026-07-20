@@ -3398,5 +3398,29 @@
     "title": "Poor night visibility through windshield — causes & fixes",
     "lang": "en",
     "slug": "blog/windshield-night-visibility-issues"
+  },
+  "920260720001": {
+    "file": "page920260720001.html",
+    "url": "https://bestauto.ge/ru/blog/windshield-polishing-micro-scratch",
+    "path": "/ru/blog/windshield-polishing-micro-scratch",
+    "title": "Полировка лобового стекла: микроцарапины, блики от встречных фар и решение",
+    "lang": "ru",
+    "slug": "blog/windshield-polishing-micro-scratch"
+  },
+  "920260720002": {
+    "file": "page920260720002.html",
+    "url": "https://bestauto.ge/blog/windshield-polishing-micro-scratch",
+    "path": "/blog/windshield-polishing-micro-scratch",
+    "title": "საქარე მინის პოლირება: მიკროხაზები, ორეოლები შემხვედრი ფარებიდან და გადაწყვეტა",
+    "lang": "ka",
+    "slug": "blog/windshield-polishing-micro-scratch"
+  },
+  "920260720003": {
+    "file": "page920260720003.html",
+    "url": "https://bestauto.ge/en/blog/windshield-polishing-micro-scratch",
+    "path": "/en/blog/windshield-polishing-micro-scratch",
+    "title": "Windshield glass polishing: micro-scratches, oncoming headlight halos and the fix",
+    "lang": "en",
+    "slug": "blog/windshield-polishing-micro-scratch"
   }
 }

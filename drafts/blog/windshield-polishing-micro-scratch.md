@@ -8,7 +8,7 @@ primary_hf_ru: "полировка лобового стекла, микроца
 primary_hf_ka: "საქარე მინის პოლირება"
 primary_hf_en: "windshield glass polishing"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#65"
   - gsc: "Downloads/gsc_16months.csv"
