@@ -118,13 +118,12 @@ export function generateVinylVideoGalleryHtml(lang: string): string {
 export function generateVideoGalleryHtml(lang: string, opts: VideoGalleryOptions = {}): string {
   const videos = opts.videos ?? VIDEOS;
   const title = opts.title ?? SECTION_TITLE[lang] ?? SECTION_TITLE['en'];
-  const cols = Math.min(videos.length, 4);
   const cards = videos.map((v) => renderVideoCard(v, lang)).join('\n    ');
 
   return `<div id="ba-video-gallery" style="background:var(--ba-color-bg);padding:80px 0;border-top:1px solid var(--ba-color-border-subtle);">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <h2 class="ba-video__heading" style="color:var(--ba-color-text);font-weight:var(--ba-font-weight-bold);text-align:center;margin:0 0 48px;font-family:var(--ba-font-family);">${title}</h2>
-    <div class="ba-video__grid" style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:16px;">
+    <div class="ba-video__grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;">
       ${cards}
     </div>
   </div>
@@ -136,16 +135,17 @@ export function generateVideoGalleryHtml(lang: string, opts: VideoGalleryOptions
   </div>
   <style>
     .ba-video__heading { font-size: 36px; }
-    .ba-video__card { cursor: pointer; }
+    .ba-video__card { cursor: pointer; flex: 0 0 calc((100% - 48px) / 4); max-width: calc((100% - 48px) / 4); }
     .ba-video__card.is-playing .ba-video__overlay { opacity: 0; }
     @media screen and (max-width: 960px) {
       .ba-video__heading { font-size: 32px; }
-      .ba-video__grid { grid-template-columns: repeat(2,1fr) !important; }
+      .ba-video__card { flex-basis: calc((100% - 16px) / 2); max-width: calc((100% - 16px) / 2); }
     }
     @media screen and (max-width: 640px) {
       #ba-video-gallery { padding: 48px 0 !important; }
       .ba-video__heading { font-size: 28px; margin-bottom: 32px !important; }
-      .ba-video__grid { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; }
+      .ba-video__grid { gap: 12px !important; }
+      .ba-video__card { flex-basis: calc((100% - 12px) / 2); max-width: calc((100% - 12px) / 2); }
     }
   </style>
   <script>
