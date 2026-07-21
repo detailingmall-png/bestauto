@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 196,
-  "fetchedAt": "2026-07-20T06:50:22.255Z",
+  "fetchedAt": "2026-07-21T06:31:50.891Z",
   "reviews": [
     {
       "authorName": "Alex Rex",
@@ -15,15 +15,15 @@
         "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "en",
       "time": 1784296300,
       "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
       "text": "Best service, Real professionals.",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "ani sonishvili",
@@ -35,15 +35,15 @@
         "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "en",
       "time": 1782743178,
       "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
       "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Zaza Guliashvili",
