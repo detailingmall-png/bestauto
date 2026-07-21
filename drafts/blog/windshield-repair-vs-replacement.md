@@ -8,7 +8,12 @@ primary_hf_ru: "ремонт стекол авто, ремонт vs замена
 primary_hf_ka: "შეკეთება თუ შეცვლა"
 primary_hf_en: "windshield repair vs replacement"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-21
+published_pageids:
+  ru: "920260721001"
+  ka: "920260721002"
+  en: "920260721003"
 sources:
   - roadmap: "docs/content-roadmap.md#63"
   - gsc: "Downloads/gsc_16months.csv"
