@@ -82,6 +82,11 @@ export default defineConfig({
           en: 'en',
         },
       },
+      // The review-gating funnel (/review) must never be indexed or listed.
+      filter: (page) => {
+        try { return new URL(page).pathname !== '/review'; }
+        catch { return true; }
+      },
       serialize(item) {
         try {
           // trailingSlash: 'never' -> page-map paths have no trailing slash;

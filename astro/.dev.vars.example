@@ -1,0 +1,17 @@
+# Local secrets for `wrangler pages dev` (Cloudflare Pages Functions).
+# Copy to `.dev.vars` (gitignored) and fill in for local testing. In PRODUCTION
+# these are ALREADY set in the Cloudflare Pages dashboard (used by the lead form) —
+# the /review complaint funnel reuses them, so no new production vars are needed.
+
+# --- Telegram (SHARED with the lead form; per studio) ---
+# 299 = Guramishvili studio, 199 = Saburtalo studio.
+TG_BOT_TOKEN_299=
+TG_CHAT_ID_299=
+TG_THREAD_ID_299=
+TG_BOT_TOKEN_199=
+TG_CHAT_ID_199=
+TG_THREAD_ID_199=
+
+# Optional: shared GA4 Measurement Protocol secret — enables the server-side
+# `director_complaint` event. Leave blank to skip GA4.
+GA4_MP_API_SECRET=

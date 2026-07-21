@@ -1,0 +1,499 @@
+---
+// Standalone review-gating funnel — bestauto.ge/review
+// Not indexed, excluded from sitemap (see astro.config.mjs filter).
+// Language is chosen in-page (client-side i18n); studio comes from ?s=.
+// A complaint POSTs to /api/complaint -> director's Telegram.
+// Self-contained: own <html>, inline TildaSans @font-face, no TildaPageLayout.
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#000000" />
+  <title>BESTAUTO</title>
+
+  <style is:global>
+    /* Self-hosted TildaSans (same variable font the main site uses). */
+    @font-face {
+      font-family: 'TildaSans';
+      font-style: normal;
+      font-weight: 250 1000;
+      font-display: swap;
+      src: url('/fonts/TildaSans-VF.woff2') format('woff2-variations');
+    }
+
+    :root {
+      --gold: #e4c97e;
+      --gold-hover: #d4b96e;
+      --gold-active: #c4a95e;
+      --ink: #000000;
+      --screen-2: #141416;
+      --on: #ffffff;
+      --on-70: rgba(255,255,255,.72);
+      --on-55: rgba(255,255,255,.55);
+      --on-35: rgba(255,255,255,.35);
+      --line: rgba(255,255,255,.12);
+      --err: #ff5a5a;
+      --radius-btn: 16px;
+      --radius-field: 12px;
+      --font: 'TildaSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --dur: .28s;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: #000; color: var(--on); font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rf-app {
+      min-height: 100dvh; display: flex; justify-content: center;
+      background:
+        radial-gradient(1100px 520px at 50% -8%, rgba(228,201,126,.14), transparent 60%),
+        #000;
+    }
+    .rf-shell {
+      width: 100%; max-width: 460px; display: flex; flex-direction: column;
+      padding:
+        calc(env(safe-area-inset-top) + 16px)
+        24px
+        calc(env(safe-area-inset-bottom) + 22px);
+    }
+
+    /* header */
+    .rf-top { display: flex; align-items: center; gap: 10px; min-height: 30px; }
+    .rf-logo { color: var(--gold); font-weight: 800; letter-spacing: .16em; font-size: 15px; }
+    .rf-top .spacer { flex: 1; }
+    .rf-studio {
+      font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--on-55);
+      border: 1px solid var(--line); border-radius: 20px; padding: 4px 11px; white-space: nowrap;
+    }
+    .rf-langbtn {
+      display: inline-grid; place-items: center; width: 38px; height: 38px;
+      background: transparent; border: 1px solid var(--line); border-radius: 50%;
+      color: var(--gold); cursor: pointer; transition: border-color var(--dur) var(--ease);
+    }
+    .rf-langbtn:hover { border-color: var(--gold); }
+
+    /* breadcrumb progress */
+    .rf-crumbs {
+      display: flex; align-items: center; gap: 6px; margin-top: 12px; min-height: 16px;
+      font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--on-35); flex-wrap: wrap;
+    }
+    .rf-crumbs .c.on { color: var(--gold); }
+
+    /* screen body */
+    .rf-view { flex: 1; display: flex; flex-direction: column; padding-top: 8px; animation: rf-in var(--dur) var(--ease); }
+    @keyframes rf-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .rf-spacer { flex: 1; min-height: 16px; }
+
+    .rf-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px; color: var(--gold);
+      font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .rf-eyebrow--center { align-self: center; }
+    .rf-h { color: var(--on); font-weight: 800; font-size: 27px; line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; margin: 0 0 12px; }
+    .rf-h.sm { font-size: 23px; }
+    .rf-p { color: var(--on-70); font-size: 15px; line-height: 1.55; margin: 0 0 20px; max-width: 34ch; }
+    .rf-vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* buttons */
+    .rf-btns { display: flex; flex-direction: column; gap: 12px; }
+    .rf-btn {
+      font-family: inherit; cursor: pointer; border: 0; width: 100%;
+      min-height: 56px; border-radius: var(--radius-btn); padding: 14px 20px;
+      font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 11px;
+      transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+      text-decoration: none;
+    }
+    .rf-btn:active { transform: scale(.985); }
+    .rf-btn--gold { background: var(--gold); color: #1a1400; box-shadow: 0 14px 30px -14px rgba(228,201,126,.6); }
+    .rf-btn--gold:hover { background: var(--gold-hover); }
+    .rf-btn--gold:disabled { opacity: .6; cursor: default; box-shadow: none; }
+    .rf-btn--ghost { background: transparent; color: var(--on); border: 1.5px solid var(--line); }
+    .rf-btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .rf-btn--lang { background: var(--screen-2); color: var(--on); border: 1px solid var(--line); justify-content: space-between; font-weight: 600; }
+    .rf-btn--lang:hover { border-color: var(--gold); }
+    .rf-btn--lang .native { font-size: 17px; font-weight: 700; }
+    .rf-btn--lang .en { font-size: 12.5px; color: var(--on-55); }
+    .rf-btn--plat { background: var(--screen-2); color: var(--on); border: 1px solid var(--line); justify-content: flex-start; }
+    .rf-btn--plat:hover { border-color: var(--gold); transform: translateY(-1px); }
+    .rf-btn--plat .lg { width: 26px; height: 26px; flex: 0 0 26px; display: grid; place-items: center; }
+    .rf-btn--plat .arw { margin-left: auto; color: var(--on-35); }
+    .rf-choice .rf-btn { min-height: 66px; font-size: 17px; }
+    .rf-choice .ic { width: 26px; height: 26px; flex: 0 0 26px; }
+    .rf-iconbtn { background: transparent; border: 0; cursor: pointer; color: var(--on-55); display: inline-flex; align-items: center; gap: 6px; font-family: inherit; font-size: 13px; font-weight: 600; padding: 6px 2px; border-radius: 8px; transition: color var(--dur) var(--ease); }
+    .rf-iconbtn:hover { color: var(--gold); }
+
+    /* form */
+    .rf-field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+    .rf-field label { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--on-70); }
+    .rf-field input, .rf-field textarea {
+      font-family: inherit; font-size: 15px; color: var(--on);
+      background: var(--screen-2); border: 1.5px solid var(--line); border-radius: var(--radius-field);
+      padding: 14px; min-height: 54px; width: 100%; resize: vertical; transition: border-color var(--dur) var(--ease);
+    }
+    .rf-field textarea { min-height: 130px; line-height: 1.5; }
+    .rf-field input::placeholder, .rf-field textarea::placeholder { color: var(--on-35); }
+    .rf-field input:focus, .rf-field textarea:focus { outline: none; border-color: var(--gold); }
+    .rf-field.err input, .rf-field.err textarea { border-color: var(--err); }
+    .rf-err { color: var(--err); font-size: 12.5px; font-weight: 600; display: none; }
+    .rf-field.err .rf-err { display: block; }
+    .rf-formerr {
+      display: none; color: var(--err); font-size: 13px; font-weight: 600; line-height: 1.45;
+      background: rgba(255,90,90,.1); border-left: 3px solid var(--err); border-radius: 8px;
+      padding: 10px 12px; margin-bottom: 14px;
+    }
+    .rf-formerr.show { display: block; }
+    .rf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+    /* success check */
+    .rf-check { width: 84px; height: 84px; border-radius: 50%; margin: 8px auto 22px; display: grid; place-items: center; background: rgba(228,201,126,.12); border: 1.5px solid var(--gold); }
+
+    .rf-app :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rf-app *, .rf-app *::before, .rf-app *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rf-app"><div class="rf-shell" id="app"></div></div>
+  <noscript>
+    <div style="min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;color:#fff;font-family:sans-serif;background:#000">
+      Для отзыва включите JavaScript или свяжитесь с нами: <a href="https://bestauto.ge" style="color:#e4c97e">bestauto.ge</a>
+    </div>
+  </noscript>
+
+  <script is:inline>
+  (function () {
+    "use strict";
+
+    var I18N = {
+      ka: {
+        langLabel: "ენა · Язык · Language",
+        s0: "აირჩიეთ ენა",
+        q: "კმაყოფილი დარჩით მომსახურებით?",
+        qsub: "თქვენი აზრი გვეხმარება უკეთესები გავხდეთ.",
+        pos: "ყველაფერი მომეწონა",
+        neg: "მაქვს შენიშვნა",
+        rvEyebrow: "მადლობა",
+        rvTitle: "დატოვეთ შეფასება",
+        rvText: "მოხარული ვართ, რომ მოგეწონათ. მადლობელი ვიქნებით, თუ გაგვიზიარებთ შთაბეჭდილებას — აირჩიეთ პლატფორმა.",
+        cEyebrow: "კონფიდენციალურად",
+        cTitle: "მისწერეთ დირექტორს",
+        cText: "მოგვიყევით, რა არ მოგეწონათ და რა შეგვიძლია გავაუმჯობესოთ. დირექტორი დაგიკავშირდებათ და შემოგთავაზებთ გადაწყვეტას.",
+        contactL: "საკონტაქტო ინფორმაცია",
+        contactP: "ტელეფონი / Telegram / WhatsApp",
+        msgL: "რა არ მოგეწონათ?",
+        msgP: "აღწერეთ სიტუაცია…",
+        send: "გაგზავნა",
+        sending: "იგზავნება…",
+        tTitle: "გმადლობთ!",
+        tText: "მივიღეთ თქვენი წერილი. დირექტორი მალე დაგიკავშირდებათ.",
+        back: "უკან",
+        backSite: "საიტზე დაბრუნება",
+        changeLang: "ენის შეცვლა",
+        errReq: "შეავსეთ ველი",
+        errShort: "ძალიან მოკლეა",
+        errNet: "ვერ გაიგზავნა. სცადეთ ხელახლა.",
+        cr: ["ენა", "შეფასება", "შედეგი"]
+      },
+      ru: {
+        langLabel: "ენა · Язык · Language",
+        s0: "Выберите язык",
+        q: "Вы остались довольны услугами и обслуживанием?",
+        qsub: "Ваше мнение помогает нам становиться лучше.",
+        pos: "Всё понравилось",
+        neg: "Есть претензии",
+        rvEyebrow: "Спасибо",
+        rvTitle: "Оставить отзыв",
+        rvText: "Рады, что вам всё понравилось. Будем благодарны, если поделитесь впечатлением — выберите площадку.",
+        cEyebrow: "Конфиденциально",
+        cTitle: "Написать директору",
+        cText: "Расскажите, что вам не понравилось и что мы можем сделать лучше. Директор свяжется с вами и предложит решение.",
+        contactL: "Ваш контакт для связи",
+        contactP: "Телефон / Telegram / WhatsApp",
+        msgL: "Что вам не понравилось?",
+        msgP: "Опишите ситуацию…",
+        send: "Отправить",
+        sending: "Отправляем…",
+        tTitle: "Спасибо!",
+        tText: "Мы получили ваше сообщение. Директор свяжется с вами в ближайшее время.",
+        back: "Назад",
+        backSite: "Вернуться на сайт",
+        changeLang: "Сменить язык",
+        errReq: "Заполните поле",
+        errShort: "Слишком коротко",
+        errNet: "Не удалось отправить. Попробуйте ещё раз.",
+        cr: ["Язык", "Оценка", "Итог"]
+      },
+      en: {
+        langLabel: "ენა · Язык · Language",
+        s0: "Choose your language",
+        q: "Were you happy with our service?",
+        qsub: "Your feedback helps us get better.",
+        pos: "Everything was great",
+        neg: "I have a complaint",
+        rvEyebrow: "Thank you",
+        rvTitle: "Leave a review",
+        rvText: "We're glad you enjoyed it. We'd really appreciate a review — pick a platform below.",
+        cEyebrow: "Private",
+        cTitle: "Write to the director",
+        cText: "Tell us what went wrong and how we can do better. The director will reach out and offer a solution.",
+        contactL: "Your contact",
+        contactP: "Phone / Telegram / WhatsApp",
+        msgL: "What went wrong?",
+        msgP: "Describe what happened…",
+        send: "Send",
+        sending: "Sending…",
+        tTitle: "Thank you!",
+        tText: "We've received your message. The director will contact you shortly.",
+        back: "Back",
+        backSite: "Back to website",
+        changeLang: "Change language",
+        errReq: "Please fill this in",
+        errShort: "Too short",
+        errNet: "Couldn't send. Please try again.",
+        cr: ["Language", "Rating", "Result"]
+      }
+    };
+
+    var LANGS = [
+      { code: "ka", native: "ქართული", en: "Georgian" },
+      { code: "ru", native: "Русский", en: "Russian" },
+      { code: "en", native: "English", en: "English" }
+    ];
+
+    // Studio review links. Guramishvili is live; Saburtalo pending (awaiting URLs).
+    var STUDIOS = {
+      guramishvili: {
+        label: { ka: "გურამიშვილი", ru: "Гурамишвили", en: "Guramishvili" },
+        google: "https://g.page/r/Ce4BkY9rhX6nEBE/review",
+        yandex: "https://yandex.com.ge/maps/org/bestauto_detailing/171074114160/reviews/",
+        facebook: "https://www.facebook.com/bstdtlngtbls/reviews/"
+      },
+      saburtalo: {
+        label: { ka: "საბურთალო", ru: "Сабуртало", en: "Saburtalo" },
+        google: "", yandex: "", facebook: "" // TODO: awaiting Saburtalo review links
+      }
+    };
+
+    var PLATFORMS = [
+      { key: "google", name: "Google Maps", icon: gIcon },
+      { key: "yandex", name: "Яндекс Карты", icon: yIcon },
+      { key: "facebook", name: "Facebook", icon: fIcon }
+    ];
+
+    // ---- icons ----
+    function svg(inner, s) { return '<svg viewBox="0 0 24 24" width="' + (s || 22) + '" height="' + (s || 22) + '" fill="none" aria-hidden="true">' + inner + '</svg>'; }
+    function globeIcon() { return svg('<circle cx="12" cy="12" r="9" stroke="#e4c97e" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.4 2.5 15.6 0 18M12 3c-2.5 2.4-2.5 15.6 0 18" stroke="#e4c97e" stroke-width="1.6"/>'); }
+    function globeSm() { return svg('<circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 12h16.4M12 3.8c2.3 2.2 2.3 14 0 16.4M12 3.8c-2.3 2.2-2.3 14 0 16.4" stroke="currentColor" stroke-width="1.6"/>', 20); }
+    function smileIcon() { return svg('<circle cx="12" cy="12" r="9" stroke="#1a1400" stroke-width="1.7"/><path d="M8.5 14.2c.9 1.1 2.1 1.7 3.5 1.7s2.6-.6 3.5-1.7" stroke="#1a1400" stroke-width="1.7" stroke-linecap="round"/><circle cx="9" cy="10" r="1.1" fill="#1a1400"/><circle cx="15" cy="10" r="1.1" fill="#1a1400"/>', 26); }
+    function frownIcon() { return svg('<circle cx="12" cy="12" r="9" stroke="#e4c97e" stroke-width="1.7"/><path d="M8.5 15.4c.9-1.1 2.1-1.7 3.5-1.7s2.6.6 3.5 1.7" stroke="#e4c97e" stroke-width="1.7" stroke-linecap="round"/><circle cx="9" cy="10" r="1.1" fill="#e4c97e"/><circle cx="15" cy="10" r="1.1" fill="#e4c97e"/>', 26); }
+    function checkIcon() { return svg('<path d="M5 12.5l4.2 4.2L19 7" stroke="#e4c97e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>', 38); }
+    function backIcon() { return svg('<path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>', 16); }
+    function chevSmall() { return svg('<path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>', 11); }
+    function chevIcon() { return svg('<path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>', 16); }
+    function gIcon() { return svg('<path d="M21 12.2c0-.7-.06-1.2-.18-1.8H12v3.4h5.1c-.1.9-.66 2.2-1.9 3.1l-.02.1 2.76 2.1.19.02c1.76-1.6 2.77-4 2.77-6.9z" fill="#4285F4"/><path d="M12 21c2.5 0 4.6-.8 6.13-2.2l-2.92-2.26c-.78.54-1.83.92-3.2.92-2.45 0-4.53-1.6-5.27-3.83l-.11.01-2.87 2.2-.04.1C5.27 18.9 8.4 21 12 21z" fill="#34A853"/><path d="M6.73 13.63c-.2-.58-.31-1.2-.31-1.83 0-.64.11-1.26.3-1.83l-.01-.12L3.8 7.6l-.1.05A8.9 8.9 0 0 0 3 12c0 1.44.35 2.8.96 4l2.77-2.37z" fill="#FBBC05"/><path d="M12 6.34c1.74 0 2.9.75 3.57 1.37l2.6-2.54C16.6 3.7 14.5 3 12 3 8.4 3 5.27 5.1 3.96 8l2.77 2.37C7.47 8.14 9.55 6.34 12 6.34z" fill="#EA4335"/>'); }
+    function yIcon() { return svg('<circle cx="12" cy="12" r="10" fill="#FC3F1D"/><path d="M13 6.4h-1.6c-1.7 0-3 1.2-3 3.1 0 1.5.7 2.4 1.9 3.2L8 17.6h1.8l2-4.7h.8v4.7H14V6.4h-1zm-.4 5.1h-.6c-.9 0-1.6-.5-1.6-2 0-1.5.8-2 1.6-2h.6v4z" fill="#fff"/>'); }
+    function fIcon() { return svg('<path d="M22 12a10 10 0 1 0-11.56 9.88v-7H7.9V12h2.54V9.8c0-2.5 1.5-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.9h-2.34v7A10 10 0 0 0 22 12z" fill="#1877F2"/>'); }
+
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+
+    // ---- state ----
+    var params = new URLSearchParams(location.search);
+    var studio = params.get("s");
+    if (!studio || !STUDIOS[studio] || !STUDIOS[studio].google) studio = "guramishvili";
+
+    var qLang = params.get("lang");
+    var startLang = (qLang && I18N[qLang]) ? qLang : null;
+
+    var state = { lang: startLang, studio: studio, screen: startLang ? "q" : "lang", sending: false };
+    var app = document.getElementById("app");
+
+    function chromeLang() { return state.lang || "en"; }
+
+    // ---- views ----
+    function view(screen) {
+      var cl = chromeLang();
+      var t = I18N[state.lang || "en"];
+      var s = STUDIOS[state.studio];
+
+      if (screen === "lang") {
+        var btns = LANGS.map(function (l) {
+          return '<button class="rf-btn rf-btn--lang" data-action="pick-lang" data-lang="' + l.code + '">' +
+            '<span class="native">' + l.native + '</span><span class="en">' + l.en + '</span></button>';
+        }).join("");
+        return '<div class="rf-view">' +
+          '<h1 class="rf-vh">' + esc(t.s0) + '</h1>' +
+          '<div class="rf-spacer"></div>' +
+          '<div class="rf-eyebrow rf-eyebrow--center">' + globeIcon() + '<span>' + esc(I18N[cl].langLabel) + '</span></div>' +
+          '<div class="rf-btns">' + btns + '</div>' +
+          '<div class="rf-spacer"></div></div>';
+      }
+
+      if (screen === "q") {
+        return '<div class="rf-view">' +
+          '<div class="rf-spacer"></div>' +
+          '<h1 class="rf-h">' + esc(t.q) + '</h1>' +
+          '<p class="rf-p">' + esc(t.qsub) + '</p>' +
+          '<div class="rf-spacer"></div>' +
+          '<div class="rf-choice rf-btns">' +
+            '<button class="rf-btn rf-btn--gold" data-action="pos"><span class="ic">' + smileIcon() + '</span>' + esc(t.pos) + '</button>' +
+            '<button class="rf-btn rf-btn--ghost" data-action="neg"><span class="ic">' + frownIcon() + '</span>' + esc(t.neg) + '</button>' +
+          '</div></div>';
+      }
+
+      if (screen === "reviews") {
+        var plats = PLATFORMS.filter(function (p) { return s[p.key]; }).map(function (p) {
+          return '<a class="rf-btn rf-btn--plat" href="' + esc(s[p.key]) + '" target="_blank" rel="noopener nofollow">' +
+            '<span class="lg">' + p.icon() + '</span>' + esc(p.name) + '<span class="arw">' + chevIcon() + '</span></a>';
+        }).join("");
+        return '<div class="rf-view">' +
+          '<button class="rf-iconbtn" data-action="back">' + backIcon() + esc(t.back) + '</button>' +
+          '<div class="rf-eyebrow" style="margin-top:12px">' + esc(t.rvEyebrow) + '</div>' +
+          '<h1 class="rf-h sm">' + esc(t.rvTitle) + '</h1>' +
+          '<p class="rf-p">' + esc(t.rvText) + '</p>' +
+          '<div class="rf-btns">' + plats + '</div>' +
+          '<div class="rf-spacer"></div></div>';
+      }
+
+      if (screen === "complaint") {
+        return '<div class="rf-view">' +
+          '<button class="rf-iconbtn" data-action="back">' + backIcon() + esc(t.back) + '</button>' +
+          '<div class="rf-eyebrow" style="margin-top:12px">' + esc(t.cEyebrow) + '</div>' +
+          '<h1 class="rf-h sm">' + esc(t.cTitle) + '</h1>' +
+          '<p class="rf-p">' + esc(t.cText) + '</p>' +
+          '<form id="rf-form" novalidate>' +
+            '<div class="rf-formerr" id="rf-formerr" role="alert"></div>' +
+            '<div class="rf-field" data-f="contact">' +
+              '<label for="rf-contact">' + esc(t.contactL) + '</label>' +
+              '<input id="rf-contact" name="contact" type="text" autocomplete="tel" inputmode="text" placeholder="' + esc(t.contactP) + '">' +
+              '<div class="rf-err" role="alert"></div>' +
+            '</div>' +
+            '<div class="rf-field" data-f="message">' +
+              '<label for="rf-msg">' + esc(t.msgL) + '</label>' +
+              '<textarea id="rf-msg" name="message" placeholder="' + esc(t.msgP) + '"></textarea>' +
+              '<div class="rf-err" role="alert"></div>' +
+            '</div>' +
+            '<input class="rf-hp" tabindex="-1" aria-hidden="true" autocomplete="off" name="company" placeholder="Company">' +
+            '<button type="submit" class="rf-btn rf-btn--gold">' + esc(t.send) + '</button>' +
+          '</form></div>';
+      }
+
+      if (screen === "thanks") {
+        return '<div class="rf-view">' +
+          '<div class="rf-spacer"></div>' +
+          '<div class="rf-check">' + checkIcon() + '</div>' +
+          '<h1 class="rf-h" style="text-align:center">' + esc(t.tTitle) + '</h1>' +
+          '<p class="rf-p" style="text-align:center;margin-left:auto;margin-right:auto">' + esc(t.tText) + '</p>' +
+          '<div class="rf-spacer"></div>' +
+          '<a class="rf-btn rf-btn--ghost" href="https://bestauto.ge">' + esc(t.backSite) + '</a></div>';
+      }
+      return "";
+    }
+
+    function crumbs() {
+      var t = I18N[chromeLang()];
+      var map = { lang: 0, q: 1, reviews: 2, complaint: 2, thanks: 2 };
+      var on = map[state.screen];
+      return t.cr.map(function (c, i) {
+        return '<span class="c' + (i <= on ? " on" : "") + '">' + esc(c) + '</span>';
+      }).join('<span class="sep">' + chevSmall() + '</span>');
+    }
+
+    function header() {
+      var s = STUDIOS[state.studio];
+      var studioName = s.label[chromeLang()];
+      var langSwitch = state.screen === "lang" ? "" :
+        '<button class="rf-langbtn" data-action="change-lang" aria-label="' + esc(I18N[chromeLang()].changeLang) + '" title="' + esc(I18N[chromeLang()].changeLang) + '">' + globeSm() + '</button>';
+      return '<div class="rf-top">' +
+        '<span class="rf-logo">BESTAUTO</span>' +
+        '<span class="spacer"></span>' +
+        langSwitch +
+        '<span class="rf-studio">' + esc(studioName) + '</span>' +
+      '</div>';
+    }
+
+    function render() {
+      document.documentElement.lang = chromeLang();
+      app.innerHTML = header() + '<div class="rf-crumbs">' + crumbs() + '</div>' + view(state.screen);
+      var f = document.getElementById("rf-form");
+      if (f) f.addEventListener("submit", onSubmit);
+    }
+
+    // ---- form ----
+    function setErr(form, name, msg) {
+      var field = form.querySelector('[data-f="' + name + '"]');
+      if (!field) return;
+      field.classList.toggle("err", !!msg);
+      field.querySelector(".rf-err").textContent = msg || "";
+    }
+    function showFormErr(msg) {
+      var el = document.getElementById("rf-formerr");
+      if (el) { el.textContent = msg; el.classList.add("show"); }
+    }
+
+    async function onSubmit(e) {
+      e.preventDefault();
+      if (state.sending) return;
+      var t = I18N[state.lang || "en"];
+      var form = e.currentTarget;
+      if (form.company.value) return; // honeypot
+      var contact = form.contact.value.trim();
+      var message = form.message.value.trim();
+      setErr(form, "contact", !contact ? t.errReq : (contact.length < 5 ? t.errShort : ""));
+      setErr(form, "message", !message ? t.errReq : (message.length < 5 ? t.errShort : ""));
+      if (contact.length < 5 || message.length < 5) return;
+
+      state.sending = true;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = t.sending;
+
+      try {
+        var res = await fetch("/api/complaint", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            studio: state.studio,
+            lang: state.lang,
+            contact: contact,
+            message: message,
+            page: location.href.split("#")[0],
+            company: ""
+          })
+        });
+        if (!res.ok) throw new Error("http " + res.status);
+        state.sending = false;
+        state.screen = "thanks";
+        render();
+      } catch (err) {
+        state.sending = false;
+        btn.disabled = false; btn.textContent = t.send;
+        showFormErr(t.errNet);
+      }
+    }
+
+    // ---- events ----
+    app.addEventListener("click", function (e) {
+      var el = e.target.closest("[data-action]");
+      if (!el) return;
+      var a = el.getAttribute("data-action");
+      if (a === "pick-lang") { state.lang = el.getAttribute("data-lang"); state.screen = "q"; render(); }
+      else if (a === "pos") { state.screen = "reviews"; render(); }
+      else if (a === "neg") { state.screen = "complaint"; render(); }
+      else if (a === "back") { state.screen = "q"; render(); }
+      else if (a === "change-lang") { state.screen = "lang"; render(); }
+    });
+
+    render();
+  })();
+  </script>
+</body>
+</html>
