@@ -55,41 +55,55 @@ const SECTION_TITLE: Readonly<Record<string, string>> = {
   en: 'Our Work Process',
 };
 
-/** Color-change (vinyl-wrapping) page: its own 3 reels + heading. */
-const VINYL_VIDEOS: ReadonlyArray<VideoEntry> = [
+/** Shared reels used by BOTH the polishing and ceramic-coating pages. */
+const GLOSS_VIDEOS: ReadonlyArray<VideoEntry> = [
   {
-    src: '/videos/vinyl-reel1.mp4',
-    poster: '/videos/vinyl-reel1-poster.webp',
-    label: {
-      ka: 'ფერის შეცვლა',
-      ru: 'Смена цвета',
-      en: 'Color Change',
-    },
+    src: '/videos/gloss-reel1.mp4',
+    poster: '/videos/gloss-reel1-poster.webp',
+    label: { ka: 'პოლირება', ru: 'Полировка', en: 'Polishing' },
   },
   {
-    src: '/videos/vinyl-reel2.mp4',
-    poster: '/videos/vinyl-reel2-poster.webp',
-    label: {
-      ka: 'ძარის სრული გადაკვრა',
-      ru: 'Полная оклейка кузова',
-      en: 'Full Body Wrap',
-    },
-  },
-  {
-    src: '/videos/vinyl-reel3.mp4',
-    poster: '/videos/vinyl-reel3-poster.webp',
-    label: {
-      ka: 'მქრქალი ფირი',
-      ru: 'Матовая плёнка',
-      en: 'Matte Film',
-    },
+    src: '/videos/gloss-reel2.mp4',
+    poster: '/videos/gloss-reel2-poster.webp',
+    label: { ka: 'მომზადება', ru: 'Подготовка', en: 'Preparation' },
   },
 ];
 
-const VINYL_SECTION_TITLE: Readonly<Record<string, string>> = {
-  ka: 'ავტომობილის ფერის შეცვლის პროცესი',
-  ru: 'Процесс смены цвета плёнкой',
-  en: 'Car Color Change Process',
+/** Per-service work-process reels + section heading, keyed by base slug.
+ *  Homepage and ppf-shield-wrapping keep using the default VIDEOS/SECTION_TITLE. */
+interface ServiceVideoSet {
+  readonly videos: ReadonlyArray<VideoEntry>;
+  readonly title: Readonly<Record<string, string>>;
+}
+const SERVICE_VIDEO_SETS: Readonly<Record<string, ServiceVideoSet>> = {
+  'vinyl-wrapping': {
+    videos: [
+      { src: '/videos/vinyl-reel1.mp4', poster: '/videos/vinyl-reel1-poster.webp', label: { ka: 'ფერის შეცვლა', ru: 'Смена цвета', en: 'Color Change' } },
+      { src: '/videos/vinyl-reel2.mp4', poster: '/videos/vinyl-reel2-poster.webp', label: { ka: 'ძარის სრული გადაკვრა', ru: 'Полная оклейка кузова', en: 'Full Body Wrap' } },
+      { src: '/videos/vinyl-reel3.mp4', poster: '/videos/vinyl-reel3-poster.webp', label: { ka: 'მქრქალი ფირი', ru: 'Матовая плёнка', en: 'Matte Film' } },
+    ],
+    title: { ka: 'ავტომობილის ფერის შეცვლის პროცესი', ru: 'Процесс смены цвета плёнкой', en: 'Car Color Change Process' },
+  },
+  polishing: {
+    videos: GLOSS_VIDEOS,
+    title: { ka: 'მანქანის პოლირების პროცესი', ru: 'Процесс полировки автомобиля', en: 'Car Polishing Process' },
+  },
+  ceramiccoating: {
+    videos: GLOSS_VIDEOS,
+    title: { ka: 'კერამიკული დაფარვის პროცესი', ru: 'Процесс керамического покрытия', en: 'Ceramic Coating Process' },
+  },
+  'auto-glass-tinting': {
+    videos: [
+      { src: '/videos/tinting-reel1.mp4', poster: '/videos/tinting-reel1-poster.webp', label: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' } },
+    ],
+    title: { ka: 'მინების დაბურვის პროცესი', ru: 'Процесс тонировки стёкол', en: 'Window Tinting Process' },
+  },
+  carwash: {
+    videos: [
+      { src: '/videos/carwash-reel1.mp4', poster: '/videos/carwash-reel1-poster.webp', label: { ka: 'რეცხვა', ru: 'Мойка', en: 'Car Wash' } },
+    ],
+    title: { ka: 'მანქანის რეცხვის პროცესი', ru: 'Процесс мойки автомобиля', en: 'Car Wash Process' },
+  },
 };
 
 function renderVideoCard(video: VideoEntry, _lang: string): string {
@@ -107,11 +121,13 @@ interface VideoGalleryOptions {
   readonly title?: string;
 }
 
-/** Color-change (vinyl-wrapping) variant: 3 dedicated reels + heading. */
-export function generateVinylVideoGalleryHtml(lang: string): string {
+/** Work-process video gallery for a service page; '' when the slug has no set. */
+export function generateServiceVideoGalleryHtml(baseSlug: string, lang: string): string {
+  const set = SERVICE_VIDEO_SETS[baseSlug];
+  if (!set) return '';
   return generateVideoGalleryHtml(lang, {
-    videos: VINYL_VIDEOS,
-    title: VINYL_SECTION_TITLE[lang] ?? VINYL_SECTION_TITLE['en'],
+    videos: set.videos,
+    title: set.title[lang] ?? set.title['en'],
   });
 }
 
