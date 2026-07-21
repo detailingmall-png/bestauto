@@ -27,7 +27,7 @@ import { generateBlogGridHtml, IMAGE_OVERRIDES } from '../lib/blog-grid';
 import { generateBrandLogosHtml } from '../lib/brand-logos';
 import { generateProcessStepsHtml } from '../lib/process-steps';
 import { generateFaqHtml, generateFaqSchema } from '../lib/faq-section';
-import { generateVideoGalleryHtml } from '../lib/video-gallery';
+import { generateVideoGalleryHtml, generateVinylVideoGalleryHtml } from '../lib/video-gallery';
 import { replaceTildaFaqSection, removeTildaFaqSchema, renderFaqAccordion, resolveFaqItems } from '../lib/faq-accordion';
 import { SERVICE_FAQS } from '../data/service-faqs';
 import { injectBlogInternalLinks } from '../lib/blog-internal-links';
@@ -1028,6 +1028,25 @@ if (baseSlug === 'ppf-shield-wrapping') {
   };
   const vh = videoHeadingMap[lang];
   if (vh) mainContent = mainContent.replace(vh.from, vh.to);
+}
+
+// Vinyl (color change) page: inject work-process video gallery before the studio photo gallery
+if (baseSlug === 'vinyl-wrapping') {
+  const vinylGalleryHeaderId: Readonly<Record<string, string>> = {
+    en: 'rec1862088871',  // "Photos of our two studios in Tbilisi"
+    ru: 'rec713423972',   // "Фото двух наших студий в Тбилиси"
+    ka: 'rec713418578',   // "ჩვენი ორი სტუდიის ფოტოები"
+  };
+  const anchorId = vinylGalleryHeaderId[lang];
+  const markerIdx = anchorId ? mainContent.indexOf(`id="${anchorId}"`) : -1;
+  if (markerIdx >= 0) {
+    const divStart = mainContent.lastIndexOf('<div', markerIdx);
+    if (divStart >= 0) {
+      mainContent = mainContent.slice(0, divStart)
+        + generateVinylVideoGalleryHtml(lang)
+        + mainContent.slice(divStart);
+    }
+  }
 }
 
 // Homepage: update reviews section heading + add subheading (all languages)

@@ -55,6 +55,43 @@ const SECTION_TITLE: Readonly<Record<string, string>> = {
   en: 'Our Work Process',
 };
 
+/** Color-change (vinyl-wrapping) page: its own 3 reels + heading. */
+const VINYL_VIDEOS: ReadonlyArray<VideoEntry> = [
+  {
+    src: '/videos/vinyl-reel1.mp4',
+    poster: '/videos/vinyl-reel1-poster.webp',
+    label: {
+      ka: 'ფერის შეცვლა',
+      ru: 'Смена цвета',
+      en: 'Color Change',
+    },
+  },
+  {
+    src: '/videos/vinyl-reel2.mp4',
+    poster: '/videos/vinyl-reel2-poster.webp',
+    label: {
+      ka: 'ძარის სრული გადაკვრა',
+      ru: 'Полная оклейка кузова',
+      en: 'Full Body Wrap',
+    },
+  },
+  {
+    src: '/videos/vinyl-reel3.mp4',
+    poster: '/videos/vinyl-reel3-poster.webp',
+    label: {
+      ka: 'მქრქალი ფირი',
+      ru: 'Матовая плёнка',
+      en: 'Matte Film',
+    },
+  },
+];
+
+const VINYL_SECTION_TITLE: Readonly<Record<string, string>> = {
+  ka: 'ავტომობილის ფერის შეცვლის პროცესი',
+  ru: 'Процесс смены цвета плёнкой',
+  en: 'Car Color Change Process',
+};
+
 function renderVideoCard(video: VideoEntry, _lang: string): string {
   return `<div class="ba-video__card" style="position:relative;border-radius:var(--ba-radius-lg);overflow:hidden;background:var(--ba-color-surface);aspect-ratio:9/16;">
       <video class="ba-video__player" muted loop playsinline preload="none" poster="${video.poster}" style="width:100%;height:100%;object-fit:cover;display:block;" data-src="${video.src}">
@@ -65,14 +102,29 @@ function renderVideoCard(video: VideoEntry, _lang: string): string {
     </div>`;
 }
 
-export function generateVideoGalleryHtml(lang: string): string {
-  const title = SECTION_TITLE[lang] ?? SECTION_TITLE['en'];
-  const cards = VIDEOS.map((v) => renderVideoCard(v, lang)).join('\n    ');
+interface VideoGalleryOptions {
+  readonly videos?: ReadonlyArray<VideoEntry>;
+  readonly title?: string;
+}
+
+/** Color-change (vinyl-wrapping) variant: 3 dedicated reels + heading. */
+export function generateVinylVideoGalleryHtml(lang: string): string {
+  return generateVideoGalleryHtml(lang, {
+    videos: VINYL_VIDEOS,
+    title: VINYL_SECTION_TITLE[lang] ?? VINYL_SECTION_TITLE['en'],
+  });
+}
+
+export function generateVideoGalleryHtml(lang: string, opts: VideoGalleryOptions = {}): string {
+  const videos = opts.videos ?? VIDEOS;
+  const title = opts.title ?? SECTION_TITLE[lang] ?? SECTION_TITLE['en'];
+  const cols = Math.min(videos.length, 4);
+  const cards = videos.map((v) => renderVideoCard(v, lang)).join('\n    ');
 
   return `<div id="ba-video-gallery" style="background:var(--ba-color-bg);padding:80px 0;border-top:1px solid var(--ba-color-border-subtle);">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <h2 class="ba-video__heading" style="color:var(--ba-color-text);font-weight:var(--ba-font-weight-bold);text-align:center;margin:0 0 48px;font-family:var(--ba-font-family);">${title}</h2>
-    <div class="ba-video__grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+    <div class="ba-video__grid" style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:16px;">
       ${cards}
     </div>
   </div>
