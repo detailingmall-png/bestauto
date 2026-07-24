@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
   "totalReviews": 196,
-  "fetchedAt": "2026-07-23T06:32:57.062Z",
+  "fetchedAt": "2026-07-24T06:28:47.614Z",
   "reviews": [
     {
       "authorName": "Alex Rex",
@@ -15,15 +15,15 @@
         "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
       },
       "relativeTimes": {
-        "ru": "5 дней назад",
-        "ka": "5 დღის წინ",
-        "en": "5 days ago"
+        "ru": "6 дней назад",
+        "ka": "6 დღის წინ",
+        "en": "6 days ago"
       },
       "originalLang": "en",
       "time": 1784296300,
       "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
       "text": "Best service, Real professionals.",
-      "relativeTime": "5 days ago"
+      "relativeTime": "6 days ago"
     },
     {
       "authorName": "ani sonishvili",
@@ -375,15 +375,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "ka": "2 თვის წინ",
-        "en": "2 months ago"
+        "ru": "3 месяца назад",
+        "ka": "3 თვის წინ",
+        "en": "3 months ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "2 months ago"
+      "relativeTime": "3 months ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -429,7 +429,7 @@
       "authorName": "Zezva Arabuli",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKE5PU8bKn4Q1oGxM0poeErn6pKbo5TH6MbUdqEcu_kIfs4kw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "text": "გავაკეთე პოლირების სერვისი და დავაკარი სტიკერები. შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად. ნამდვილად გირჩევთ 👍",
       "time": 1768994407,
       "profileUrl": "https://www.google.com/maps/contrib/118019043653831607447/reviews",
@@ -439,9 +439,9 @@
         "en": "I had a polishing service and applied stickers. I am very satisfied with the result — the car looks perfect. They work with quality, attention and professionalism. I definitely recommend them 👍"
       },
       "relativeTimes": {
-        "ka": "5 თვის წინ",
-        "en": "5 months ago",
-        "ru": "5 месяцев назад"
+        "ka": "6 თვის წინ",
+        "en": "6 months ago",
+        "ru": "6 месяцев назад"
       },
       "originalLang": "ka"
     },
@@ -469,7 +469,7 @@
       "authorName": "Mikhail",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUygXsQGgnzvFfn9HJ_xccXGGiSaxn4tjmmCczVRlhNyCeOTQ2p=s128-c0x00000000-cc-rp-mo-ba2",
       "rating": 5,
-      "relativeTime": "7 months ago",
+      "relativeTime": "8 months ago",
       "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
       "time": 1763710948,
       "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews",
@@ -479,9 +479,9 @@
         "ka": "შესანიშნავი მომსახურება! თავაზიანი და ყურადღებიანი პერსონალი. ბიჭები თავიანთი საქმის ოსტატები არიან. მათ სამუშაო დეტალებისადმი დიდი ყურადღებით და დროულად შეასრულეს. ბონუსის სახით, მათ დამატებითი სამუშაო ფასის გაზრდის გარეშე შეასრულეს. შემიძლია მათი რეკომენდაცია!"
       },
       "relativeTimes": {
-        "en": "7 months ago",
-        "ru": "7 месяцев назад",
-        "ka": "7 თვის წინ"
+        "en": "8 months ago",
+        "ru": "8 месяцев назад",
+        "ka": "8 თვის წინ"
       },
       "originalLang": "en"
     },
