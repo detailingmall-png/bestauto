@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.8,
-  "totalReviews": 196,
-  "fetchedAt": "2026-07-24T06:28:47.614Z",
+  "totalReviews": 197,
+  "fetchedAt": "2026-07-25T06:20:48.971Z",
   "reviews": [
+    {
+      "authorName": "Ketino Garozashvili",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXXuifASsP7H2aC852FTDmFwh-GeL11HYRxng5XV81kCAcG2ZU=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
+        "ka": "ბიჭებმა ფანტასტიკური სამუშაო გაწიეს, შეაკეთეს ნაკაწრები და მოაშორეს ყველა ხილული დეფექტი. ბონუსის სახით, გააპრიალეს ფარები და ასევე დაასუფთავეს სალონი. მანქანა ახალივით გამოიყურება 🙂\n\nმე მათ გირჩევთ 💪🤝",
+        "en": "The guys did a fantastic polishing job, touched up the chips and removed all visible imperfections. As a bonus, they polished the headlights and also cleaned up the interior. The car looks like new. 🙂\n\nI highly recommend them 💪🤝"
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "ru",
+      "time": 1784877606,
+      "profileUrl": "https://www.google.com/maps/contrib/114698061180804723826/reviews",
+      "text": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Alex Rex",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIyLKzcMBPNsbqieuKivNixYR5nsnvh5qGsqnAcQtKiffCTQl4=s128-c0x00000000-cc-rp-mo",
@@ -15,15 +35,15 @@
         "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
       },
       "relativeTimes": {
-        "ru": "6 дней назад",
-        "ka": "6 დღის წინ",
-        "en": "6 days ago"
+        "ru": "1 неделю назад",
+        "ka": "ერთი კვირის წინ",
+        "en": "a week ago"
       },
       "originalLang": "en",
       "time": 1784296300,
       "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
       "text": "Best service, Real professionals.",
-      "relativeTime": "6 days ago"
+      "relativeTime": "a week ago"
     },
     {
       "authorName": "ani sonishvili",
@@ -75,15 +95,15 @@
         "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "en",
       "time": 1782199892,
       "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
       "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "ana tatulashvili",
