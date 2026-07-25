@@ -2724,6 +2724,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/winter-detailing-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'სალონის ქიმწმენდა გაზაფხულზე (400-550 ₾-დან პლიუს ოზონი 50 ₾-დან) შლის ზამთრის ლაფის შედეგებს',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ლოკალური პოლირება დამცავი ფენის დადებით — გაზაფხულამდე.',
+      },
+    ],
+  },
+  {
     article: 'blog/detailing-brands-we-use',
     links: [
       {
@@ -4616,25 +4635,6 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
-  {
-    article: 'blog/winter-detailing-tbilisi',
-    links: [
-      {
-        role: 'pillar',
-        target: '/interior-cleaning',
-        anchor: 'ქიმწმენდა',
-        originalPhrase: 'ქიმწმენდა',
-        contextQuote: 'ქიმწმენდა გაზაფხულზე იშლის ზამთრის შედეგებს სალონიდან.',
-      },
-      {
-        role: 'bridge',
-        target: '/polishing',
-        anchor: 'პოლირება',
-        originalPhrase: 'პოლირება',
-        contextQuote: 'ლოკალური პოლირება დამცავი ფენის დადებით — გაზაფხულამდე.',
-      },
-    ],
-  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -4965,6 +4965,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'Dry cleaning',
         originalPhrase: 'Dry cleaning',
         contextQuote: 'Dry cleaning for 400-550 ₾ is a rotary extractor, 150°C steam, dedicated chemistry per material, 2-8 hours.',
+      },
+    ],
+  },
+  {
+    article: 'blog/winter-detailing-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: "If the winter had a seal leak (symptom — smell or a puddle under a mat), dry cleaning comes after the water source is resolved.",
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: "Ceramic coating is often positioned as a \"PPF alternative\". It isn't — it solves a different problem.",
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'On clearcoat with micro-damage (gravel chips, old polishing scars) reagents work as a rust catalyst.',
       },
     ],
   },
@@ -6783,32 +6809,6 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: 'ceramic coating over film (from 500 ₾)',
-      },
-    ],
-  },
-  {
-    article: 'blog/winter-detailing-tbilisi',
-    links: [
-      {
-        role: 'pillar',
-        target: '/interior-cleaning',
-        anchor: 'interior cleaning',
-        originalPhrase: 'interior cleaning',
-        contextQuote: 'Spring interior cleaning (400-550 ₾ plus ozone from 50 ₾) clears winter slush effects',
-      },
-      {
-        role: 'bridge',
-        target: '/ceramiccoating',
-        anchor: 'Ceramic coating',
-        originalPhrase: 'Ceramic coating',
-        contextQuote: 'Ceramic coating is often positioned as a "PPF alternative"',
-      },
-      {
-        role: 'bridge',
-        target: '/polishing',
-        anchor: 'polishing',
-        originalPhrase: 'polishing',
-        contextQuote: 'gravel chips, old polishing scars) reagents work as a rust catalyst',
       },
     ],
   },
