@@ -389,6 +389,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/winter-detailing-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'Химчистка салона',
+        originalPhrase: 'Химчистка салона',
+        contextQuote: 'Химчистка салона весной (от 400-550 ₾ плюс озон от 50 ₾) убирает последствия зимней слякоти',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'Керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие часто позиционируют как «альтернативу PPF».',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'Локальная полировка с нанесением защитного слоя — до весны.',
+      },
+    ],
+  },
+  {
     article: 'blog/detailing-brands-we-use',
     links: [
       {
@@ -4590,6 +4616,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/winter-detailing-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ქიმწმენდა გაზაფხულზე იშლის ზამთრის შედეგებს სალონიდან.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ლოკალური პოლირება დამცავი ფენის დადებით — გაზაფხულამდე.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6738,6 +6783,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: 'ceramic coating over film (from 500 ₾)',
+      },
+    ],
+  },
+  {
+    article: 'blog/winter-detailing-tbilisi',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'Spring interior cleaning (400-550 ₾ plus ozone from 50 ₾) clears winter slush effects',
+      },
+      {
+        role: 'bridge',
+        target: '/ceramiccoating',
+        anchor: 'Ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating is often positioned as a "PPF alternative"',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'gravel chips, old polishing scars) reagents work as a rust catalyst',
       },
     ],
   },

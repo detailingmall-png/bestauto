@@ -12,7 +12,12 @@ secondary_links:
   - "/ceramiccoating"
   - "/interior-cleaning"
   - "/polishing"
-status: drafted
+status: published
+published_at: 2026-07-25
+published_pageids:
+  ru: "920260724001"
+  ka: "920260724002"
+  en: "920260724003"
 sources:
   - roadmap: "docs/content-roadmap.md#95"
 ---
