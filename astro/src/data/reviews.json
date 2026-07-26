@@ -1,9 +1,9 @@
 {
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
-  "overallRating": 4.8,
-  "totalReviews": 197,
-  "fetchedAt": "2026-07-25T06:20:48.971Z",
+  "overallRating": 4.9,
+  "totalReviews": 196,
+  "fetchedAt": "2026-07-26T06:39:16.965Z",
   "reviews": [
     {
       "authorName": "Ketino Garozashvili",
@@ -12,18 +12,18 @@
       "texts": {
         "ru": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
         "ka": "ბიჭებმა ფანტასტიკური სამუშაო გაწიეს, შეაკეთეს ნაკაწრები და მოაშორეს ყველა ხილული დეფექტი. ბონუსის სახით, გააპრიალეს ფარები და ასევე დაასუფთავეს სალონი. მანქანა ახალივით გამოიყურება 🙂\n\nმე მათ გირჩევთ 💪🤝",
-        "en": "The guys did a fantastic polishing job, touched up the chips and removed all visible imperfections. As a bonus, they polished the headlights and also cleaned up the interior. The car looks like new. 🙂\n\nI highly recommend them 💪🤝"
+        "en": "The guys did a fantastic polishing job, touched up the chips and removed all visible imperfections. As a bonus, they polished the headlights and also cleaned up the interior. The car looks like new 🙂\n\nI highly recommend them 💪🤝"
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "ru",
       "time": 1784877606,
       "profileUrl": "https://www.google.com/maps/contrib/114698061180804723826/reviews",
       "text": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Alex Rex",
@@ -75,15 +75,15 @@
         "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
       },
       "relativeTimes": {
-        "ru": "3 недели назад",
-        "ka": "3 კვირის წინ",
-        "en": "3 weeks ago"
+        "ru": "4 недели назад",
+        "ka": "4 კვირის წინ",
+        "en": "4 weeks ago"
       },
       "originalLang": "ka",
       "time": 1782561586,
       "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
       "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-      "relativeTime": "3 weeks ago"
+      "relativeTime": "4 weeks ago"
     },
     {
       "authorName": "Luka Khvibliani",
@@ -255,15 +255,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -275,15 +275,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "Nikita Taboo",
