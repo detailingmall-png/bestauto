@@ -2383,6 +2383,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wrap-color-options-finishes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'винил',
+        originalPhrase: 'винил',
+        contextQuote: 'Премиум-винил держит цвет 5-7 лет без изменений.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4635,6 +4647,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wrap-color-options-finishes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილი',
+        originalPhrase: 'ვინილი',
+        contextQuote: 'პრემიუმ-ვინილი ფერს 5-7 წელს ცვლილების გარეშე ინარჩუნებს.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6809,6 +6833,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: 'ceramic coating over film (from 500 ₾)',
+      },
+    ],
+  },
+  {
+    article: 'blog/wrap-color-options-finishes',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl',
+        originalPhrase: 'vinyl',
+        contextQuote: 'Premium vinyl holds colour 5-7 years without change.',
       },
     ],
   },

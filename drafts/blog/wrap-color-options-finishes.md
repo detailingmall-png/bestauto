@@ -8,7 +8,12 @@ primary_hf_ru: "цвета виниловой плёнки, выбор цвет�
 primary_hf_ka: "ფერადი ფირი, ფირის ფერები, ვინილის ფერები"
 primary_hf_en: "vinyl wrap colors, vinyl wrap colours, car wrap finishes"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-26
+published_pageids:
+  ru: "920260726001"
+  ka: "920260726002"
+  en: "920260726003"
 sources:
   - roadmap: "docs/content-roadmap.md#41"
   - gsc: "Downloads/gsc_16months.csv"
