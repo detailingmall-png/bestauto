@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-07-26T06:39:16.965Z",
+  "fetchedAt": "2026-07-27T07:36:08.610Z",
   "reviews": [
     {
       "authorName": "Ketino Garozashvili",
@@ -15,15 +15,15 @@
         "en": "The guys did a fantastic polishing job, touched up the chips and removed all visible imperfections. As a bonus, they polished the headlights and also cleaned up the interior. The car looks like new 🙂\n\nI highly recommend them 💪🤝"
       },
       "relativeTimes": {
-        "ru": "1 день назад",
-        "ka": "ერთი დღის წინ",
-        "en": "a day ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "ru",
       "time": 1784877606,
       "profileUrl": "https://www.google.com/maps/contrib/114698061180804723826/reviews",
       "text": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
-      "relativeTime": "a day ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Alex Rex",
@@ -509,7 +509,7 @@
       "authorName": "David Williams",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWEweGubGwFxLnzaYEqwXeMN1GaSqMZhValtX79WVnzfyC5MUyd=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "8 months ago",
+      "relativeTime": "9 months ago",
       "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results.",
       "time": 1761404842,
       "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews",
@@ -519,9 +519,9 @@
         "ka": "Bestauto Detailing-მა ჩემს Tesla Model Y-ს ნამდვილი საგამოფენო დასრულება შესთავაზა. საღებავს ახლა ღრმა, სარკისებური პრიალა ელფერი აქვს, დისკები და მინები უნაკლოა, ინტერიერი კი განახლებული შეგრძნებით გამოირჩევა - ყველაფერი უბრალოდ ბრწყინავს. კომუნიკაცია ნათელი იყო, მომსახურება სწრაფი და ყოველ ნაბიჯზე გამოჩენილი ყურადღება აშკარა იყო. განსაკუთრებული მადლობა ალექსანდრეს შესანიშნავი მომსახურებისა და დეტალებისადმი ყურადღებისთვის; მან მანქანა საკუთარივით მოეპყრო. Bestauto Detailing-ს გირჩევთ Tesla-ს ნებისმიერ მფლობელს, ვისაც უმაღლესი დონის შედეგები სურს."
       },
       "relativeTimes": {
-        "en": "8 months ago",
-        "ru": "8 месяцев назад",
-        "ka": "8 თვის წინ"
+        "en": "9 months ago",
+        "ru": "9 месяцев назад",
+        "ka": "9 თვის წინ"
       },
       "originalLang": "en"
     },
