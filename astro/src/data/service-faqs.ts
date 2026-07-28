@@ -166,8 +166,8 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
       },
       answer: {
         ka: 'არა. კერამიკული საფარი არ იცავს ღრმა ნაკაწრებისგან, ქვის დარტყმისა და სკოლისგან. მისი მთავარი ფუნქციაა ბზინვარება, ჰიდროფობურობა და ყოველდღიური დაბინძურებისგან დამატებითი დაცვა. ფიზიკური დაცვისთვის გამოიყენება PPF.',
-        ru: 'Технически это возможно, но результат будет в 3–5 раз слабее. Без профессиональной подготовки поверхности, контроля температуры и влажности, а также инфракрасной сушки покрытие не наберёт нужную прочность и продержится несколько месяцев вместо лет.',
-        en: 'Technically it\'s possible, but the result will be 3–5 times weaker. Without professional surface preparation, temperature and humidity control, and infrared curing, the coating won\'t reach the necessary hardness and will last a few months instead of years.',
+        ru: 'Нет. Керамическое покрытие не защищает от глубоких царапин и сколов от камней. Его задача — блеск, гидрофобность и дополнительная защита от повседневных загрязнений. Для физической защиты применяется PPF.',
+        en: 'No. A ceramic coating does not protect against deep scratches or stone chips. Its job is gloss, hydrophobicity and extra protection from everyday dirt. For physical protection, PPF is used.',
       },
     },
     {

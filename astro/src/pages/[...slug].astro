@@ -214,14 +214,17 @@ const FAQ_SECTION_TITLE: Readonly<Record<string, string>> = {
   ru: 'Часто задаваемые вопросы',
   en: 'Frequently Asked Questions',
 };
+// Remove Tilda-embedded FAQPage / Service JSON-LD wherever seoHead emits its
+// own, otherwise the page ships two of each (GSC: "Duplicate field FAQPage").
+// Gated on SERVICE_FAQS rather than SERVICE_SLUGS so interior-restoration and
+// paintless-dent-repair — which have FAQs but keep their Tilda accordion — are
+// covered too; all three languages were shipping FAQPage twice.
+if (SERVICE_SLUGS.has(baseSlug) || SERVICE_FAQS[baseSlug]) {
+  injectedHtml = removeTildaFaqSchema(injectedHtml);
+  injectedHtml = removeTildaServiceSchema(injectedHtml);
+}
 if (SERVICE_SLUGS.has(baseSlug)) {
   const serviceFaqs = SERVICE_FAQS[baseSlug];
-  // Always remove Tilda-embedded FAQPage JSON-LD to prevent duplicates with
-  // generateServiceFaqSchema() in seoHead (GSC: "Duplicate field FAQPage")
-  injectedHtml = removeTildaFaqSchema(injectedHtml);
-  // Same for Tilda-embedded Service JSON-LD (incomplete: no name/url) —
-  // the canonical Service schema comes from generateServiceSchema() in seoHead
-  injectedHtml = removeTildaServiceSchema(injectedHtml);
   if (serviceFaqs && injectedHtml.includes('data-record-type="585"')) {
     const faqItems = resolveFaqItems(serviceFaqs, lang);
     const faqTitle = FAQ_SECTION_TITLE[lang] ?? FAQ_SECTION_TITLE['en'];
