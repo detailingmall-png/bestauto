@@ -8,7 +8,12 @@ primary_hf_ru: "уход за пластиком салона, химия для
 primary_hf_ka: "არასწორი ქიმია პლასტიკზე, სალონის პლასტიკი"
 primary_hf_en: "wrong interior chemicals, car plastic care"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-07-28
+published_pageids:
+  ru: "920260728001"
+  ka: "920260728002"
+  en: "920260728003"
 sources:
   - roadmap: "docs/content-roadmap.md#86"
 ---

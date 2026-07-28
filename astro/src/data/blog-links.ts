@@ -2395,6 +2395,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wrong-chemicals-damage-plastic',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Настоящие проблемы в салоне (шерсть, еда, протечки) требуют химчистки и озонирования.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'Химчистка салона',
+        originalPhrase: 'Химчистка салона',
+        contextQuote: 'Химчистка салона с правильной химией для пластика — от 400 ₾ за лёгкое загрязнение до 550 ₾ за сильное.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4659,6 +4678,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wrong-chemicals-damage-plastic',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდას',
+        originalPhrase: 'ქიმწმენდას',
+        contextQuote: 'რეალური პრობლემები სალონში (ბეწვი, საკვები, გაჟონვები) ითხოვს ქიმწმენდას და ოზონირებას.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'BESTAUTO-ში ასეთი ქიმია შედის სტანდარტული სალონის ქიმწმენდის 400 ₾-დან, სწორი შემადგენლობის დამატების გარეშე.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6845,6 +6883,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'vinyl',
         originalPhrase: 'vinyl',
         contextQuote: 'Premium vinyl holds colour 5-7 years without change.',
+      },
+    ],
+  },
+  {
+    article: 'blog/wrong-chemicals-damage-plastic',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'Real cabin problems (hair, food, leaks) need interior cleaning and ozone.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'At BESTAUTO this chemistry is included in standard interior cleaning from 400 ₾, no extra charge for the right composition.',
       },
     ],
   },
