@@ -30,7 +30,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How long does car polishing take?',
       },
       answer: {
-        ka: 'ვადა დამოკიდებულია სამუშაოს ტიპზე — მსუბუქ პოლირებას ნაკლები დრო სჭირდება, აღმდგენ და მრავალეტაპიან პოლირებას მეტი. ზუსტ დროს გეუბნებით ავტომობილის დათვალიერების შემდეგ.',
+        ka: 'ვადა დამოკიდებულია სამუშაოს ტიპზე — მსუბუქ პოლირებას ნაკლები დრო სჭირდება, აღდგენით და მრავალეტაპიან პოლირებას მეტი. ზუსტ დროს გეუბნებით ავტომობილის დათვალიერების შემდეგ.',
         ru: 'Сроки зависят от типа работ — лёгкая полировка занимает меньше времени, восстановительная и многоэтапная — больше. Точное время назовём после осмотра автомобиля.',
         en: 'The duration depends on the type of work — light polishing takes less time, while restorative and multi-stage polishing takes longer. We\'ll give you the exact time after inspecting the vehicle.',
       },
@@ -54,7 +54,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What scratches does polishing remove?',
       },
       answer: {
-        ka: 'პოლირება არის წვრილი ნაკაწრების, გახეხილობისა და სხვა დეფექტების მოცილების პროცესი კუზოვის, ფარების ან მინის საფარიდან. იგი აღადგენს ბზინვარებას და ფერის სიღრმეს, ავტომობილი ისევ ახალივით გამოიყურება.',
+        ka: 'პოლირება არის წვრილი ნაკაწრების, გახეხილობისა და სხვა დეფექტების მოცილების პროცესი ძარის ლაქ-საღებავის საფარიდან, ფარებიდან ან მინიდან. იგი აღადგენს ბზინვარებას და ფერის სიღრმეს, ავტომობილი ისევ ახალივით გამოიყურება.',
         ru: 'Полировка — это процесс удаления мелких царапин, потёртостей и других дефектов с поверхности кузова, фар или стекла. Она восстанавливает блеск и глубину цвета, и автомобиль снова выглядит как новый.',
         en: 'Polishing is the process of removing fine scratches, scuffs, and other defects from the body, headlights, or glass surface. It restores shine and color depth, making the car look like new again.',
       },
@@ -129,7 +129,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Why do people apply ceramic coating to their car?',
       },
       answer: {
-        ka: 'კერამიკას აკეთებენ ისინი, ვისაც სურს ავტომობილის გარეგნობის შენარჩუნება ხანგრძლივად — ნაკლები რეცხვა, ადვილი მოვლა, UV-სგან და ქიმიური ზემოქმედებისგან დაცვა. განსაკუთრებით რეკომენდებულია ახალი ავტომობილებისთვის და პოლირების შემდეგ.',
+        ka: 'კერამიკულ საფარს ირჩევენ მომხმარებლები, რომლებსაც სურთ ავტომობილის გარეგნობის შენარჩუნება ხანგრძლივად — ნაკლები რეცხვა, ადვილი მოვლა, UV-სგან და ქიმიური ზემოქმედებისგან დაცვა. განსაკუთრებით რეკომენდებულია ახალი ავტომობილებისთვის და პოლირების შემდეგ.',
         ru: 'Керамику наносят те, кто хочет сохранить внешний вид автомобиля надолго — реже мыть, проще ухаживать, защита от ультрафиолета и химического воздействия. Особенно рекомендуется для новых автомобилей и после полировки.',
         en: 'Ceramic coating is applied by those who want to preserve their car\'s appearance long-term — less frequent washing, easier maintenance, protection from UV and chemical exposure. Especially recommended for new cars and after polishing.',
       },
@@ -141,7 +141,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Is polishing necessary before ceramic coating?',
       },
       answer: {
-        ka: 'მოიყვანეთ ისე, როგორც არის — ჩვენ თვითონ მოვამზადებთ ყველაფერს. მომზადება (რეცხვა, დეკონტამინაცია, პოლირება) შედეგის 80%-ია, და ჩვენ მაქსიმალურ ყურადღებას ვუთმობთ. სწორედ ამიტომ გვძლებს შედეგი ასე დიდხანს.',
+        ka: 'მოიყვანეთ ისე, როგორც არის — ჩვენ თვითონ მოვამზადებთ ყველაფერს. მომზადება (რეცხვა, დეკონტამინაცია, პოლირება) შედეგის 80%-ია, და ჩვენ მაქსიმალურ ყურადღებას ვუთმობთ. სწორი მომზადება ხელს უწყობს საფარის გამძლეობასა და ხანგრძლივ ეფექტს.',
         ru: 'Привозите как есть — мы сами всё подготовим. Подготовка (мойка, деконтаминация, полировка) — это 80% результата, и мы уделяем ей максимум внимания. Именно поэтому наш результат держится так долго.',
         en: 'Bring it as is — we\'ll prepare everything ourselves. Preparation (washing, decontamination, polishing) accounts for 80% of the result, and we give it maximum attention. That\'s why our results last so long.',
       },
@@ -165,7 +165,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Does ceramic coating protect against deep scratches?',
       },
       answer: {
-        ka: 'ტექნიკურად შესაძლებელია, მაგრამ შედეგი 3–5-ჯერ სუსტი იქნება. პროფესიონალური ზედაპირის მომზადების, ტემპერატურისა და ტენიანობის კონტროლის და ინფრაწითელი გამოშრობის გარეშე საფარი საჭირო სიმტკიცეს ვერ მიაღწევს და წლების ნაცვლად რამდენიმე თვე გაძლებს.',
+        ka: 'არა. კერამიკული საფარი არ იცავს ღრმა ნაკაწრებისგან, ქვის დარტყმისა და სკოლისგან. მისი მთავარი ფუნქციაა ბზინვარება, ჰიდროფობურობა და ყოველდღიური დაბინძურებისგან დამატებითი დაცვა. ფიზიკური დაცვისთვის გამოიყენება PPF.',
         ru: 'Технически это возможно, но результат будет в 3–5 раз слабее. Без профессиональной подготовки поверхности, контроля температуры и влажности, а также инфракрасной сушки покрытие не наберёт нужную прочность и продержится несколько месяцев вместо лет.',
         en: 'Technically it\'s possible, but the result will be 3–5 times weaker. Without professional surface preparation, temperature and humidity control, and infrared curing, the coating won\'t reach the necessary hardness and will last a few months instead of years.',
       },
@@ -177,7 +177,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What does ceramic coating do?',
       },
       answer: {
-        ka: 'კერამიკული საფარი არის სილიციუმის დიოქსიდზე (SiO2) დაფუძნებული თხევადი შემადგენლობა, რომელიც წასმის შემდეგ გამჭვირვალე დამცავ ფენას ქმნის ზედაპირზე. იგი იცავს UV-სგან, წვრილი ნაკაწრებისგან და ქიმიური ნივთიერებებისგან, ძლებს 3 წლამდე.',
+        ka: 'კერამიკული საფარი არის სილიციუმის დიოქსიდზე (SiO2) დაფუძნებული თხევადი ნაერთი, რომელიც წასმის შემდეგ გამჭვირვალე დამცავ ფენას ქმნის ზედაპირზე. იგი იცავს UV-სგან, წვრილი ნაკაწრებისგან და ქიმიური ნივთიერებებისგან, ძლებს 3 წლამდე.',
         ru: 'Керамическое покрытие — это жидкий состав на основе диоксида кремния (SiO2), который после нанесения образует прозрачный защитный слой на поверхности. Оно защищает от ультрафиолета, мелких царапин и химических веществ, служит до 3 лет.',
         en: 'Ceramic coating is a liquid compound based on silicon dioxide (SiO2) that forms a transparent protective layer on the surface after application. It protects against UV, minor scratches, and chemicals, lasting up to 3 years.',
       },
@@ -339,7 +339,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Is there a big budget difference between colored PPF and vinyl?',
       },
       answer: {
-        ka: 'სხვაობა დამოკიდებულია ავტომობილზე, მასალასა და სამუშაოს მოცულობაზე. ბევრ შემთხვევაში ფერადი PPF უფრო ძვირია, მაგრამ კლიენტისთვის უფრო ღირებული გადაწყვეტაა, რადგან ვიზუალთან ერთად დაცვასაც იღებს.',
+        ka: 'სხვაობა დამოკიდებულია ავტომობილზე, მასალასა და სამუშაოს მოცულობაზე. ბევრ შემთხვევაში ფერადი PPF უფრო ძვირია, მაგრამ კლიენტისთვის უფრო ფუნქციური არჩევანია, რადგან ვიზუალურ ცვლილებასთან ერთად დამატებით დაცვასაც უზრუნველყოფს., რადგან ვიზუალთან ერთად დაცვასაც იღებს.',
         ru: 'Разница зависит от автомобиля, материала и объёма работ. Во многих случаях цветной PPF дороже, но для клиента это более ценное решение, так как помимо визуала он получает и защиту.',
         en: 'The difference depends on the car, material, and scope of work. In many cases, colored PPF is more expensive, but it\'s a more valuable solution for the client since you get both the visual effect and protection.',
       },
@@ -402,7 +402,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Can you remove unpleasant odors?',
       },
       answer: {
-        ka: 'დიახ, საჭიროების შემთხვევაში ვიყენებთ ოზონირებას და პროფესიონალურ საშუალებებს, რომლებიც სუნს უბრალოდ არ ფარავს, არამედ რეალურად ამცირებს მის მიზეზს.',
+        ka: 'დიახ, საჭიროების შემთხვევაში ვიყენებთ ოზონირებას და პროფესიონალურ საშუალებებს, რომლებიც ოზონირება და პროფესიონალური წმენდა სუნის ინტენსივობას ამცირებს, თუმცა შედეგი დამოკიდებულია სუნის წყაროს აღმოჩენასა და მოცილებაზე.',
         ru: 'Да, при необходимости используем озонирование и профессиональные средства, которые не просто маскируют запах, а реально устраняют его причину.',
         en: 'Yes, when needed we use ozone treatment and professional products that don\'t just mask the odor but actually eliminate its source.',
       },
@@ -438,7 +438,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What is included in full interior cleaning?',
       },
       answer: {
-        ka: 'სრული ქიმწმენდა მოიცავს სავარძლების, ჭერის, იატაკის, კარის ბარათების, საბარგულის და პლასტმასის ელემენტების ღრმა წმენდას. ზუსტი შემადგენლობა დამოკიდებულია ავტომობილის მდგომარეობაზე.',
+        ka: 'სრული ქიმწმენდა მოიცავს სავარძლების, ჭერის, იატაკის, კარის პანელების, საბარგულის და პლასტმასის ელემენტების ღრმა წმენდას. ზუსტი შემადგენლობა დამოკიდებულია ავტომობილის მდგომარეობაზე.',
         ru: 'Полная химчистка включает глубокую очистку сидений, потолка, пола, дверных карт, багажника и пластиковых элементов. Точный состав зависит от состояния автомобиля.',
         en: 'Full cleaning includes deep cleaning of seats, headliner, floor, door panels, trunk, and plastic elements. The exact scope depends on the car\'s condition.',
       },
@@ -711,7 +711,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Is there a warranty?',
       },
       answer: {
-        ka: 'დიახ, 2-წლიანი გარანტია სამუშაოზე. მასალები ავტომობილის მთელი ვადის განმავლობაში ძლებს. მუშაობის მთელი პერიოდის განმავლობაში არცერთი საგარანტიო შემთხვევა.',
+        ka: 'დიახ, 2-წლიანი გარანტია სამუშაოზე. მასალების ექსპლუატაციის ვადა დამოკიდებულია პროდუქტზე, მონტაჟსა და ავტომობილის გამოყენების პირობებზე. ამ დრომდე საგარანტიო შემთხვევა არ დაფიქსირებულა. გამოიყენეთ მხოლოდ იმ შემთხვევაში, თუ ეს მტკიცება დოკუმენტურად სწორია.',
         ru: 'Да, 2 года гарантии на работу. Материалы служат весь срок эксплуатации автомобиля. За всё время работы ни одного гарантийного случая.',
         en: 'Yes, 2-year warranty on workmanship. Materials last the entire lifespan of the car. In all our years of work, not a single warranty claim.',
       },
@@ -723,7 +723,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What does soundproofing improve?',
       },
       answer: {
-        ka: 'ეს არის სპეციალური მასალების (ვიბრო- და ხმაურშთამნთქმელი) დაყენება ავტომობილის კუზოვის პანელებზე. ამცირებს გზის ხმაურს, ვიბრაციას, აუმჯობესებს კომფორტს და აუდიოსისტემის ხმის ხარისხს.',
+        ka: 'ეს არის სპეციალური მასალების (ვიბრო- და ხმაურშთამნთქმელი) დაყენება ავტომობილის ძარის პანელებზე. ამცირებს გზის ხმაურს, ვიბრაციას, აუმჯობესებს კომფორტს და აუდიოსისტემის ხმის ხარისხს.',
         ru: 'Это установка специальных материалов (вибро- и шумопоглощающих) на кузовные панели автомобиля. Снижает дорожный шум и вибрацию, улучшает комфорт и качество звучания аудиосистемы.',
         en: 'It involves installing special materials (vibration-dampening and sound-absorbing) on the car\'s body panels. It reduces road noise and vibration, improves comfort and audio system sound quality.',
       },
@@ -735,7 +735,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Which zones provide the greatest effect when soundproofed?',
       },
       answer: {
-        ka: 'კარები, იატაკი, ჭერი, თაღები, ძრავის ფარი, საბარგული. კარები + იატაკი ეფექტის 70%-ს იძლევა სრული ხმაურიზოლაციის ღირებულების 40%-ად — ეს ოპტიმალური ვარიანტია უმეტესი ავტომობილებისთვის.',
+        ka: 'კარები, იატაკი, ჭერი, თაღები, ძრავის ფარი, საბარგული. ხშირ შემთხვევაში კარებისა და იატაკის დამუშავება მნიშვნელოვნად ამცირებს გზისა და ვიბრაციის ხმაურს. შედეგი კონკრეტულ ავტომობილზეა დამოკიდებული.',
         ru: 'Двери, пол, потолок, арки, моторный щит, багажник. Двери + пол дают 70% эффекта за 40% стоимости полной шумоизоляции — это оптимальный вариант для большинства автомобилей.',
         en: 'Doors, floor, roof, wheel arches, firewall, trunk. Doors + floor provide 70% of the effect for 40% of the full soundproofing cost — the optimal choice for most cars.',
       },

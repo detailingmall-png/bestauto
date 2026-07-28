@@ -34,7 +34,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== POLISHING ====== */
   'polishing': {
     meta: {
-      title: 'მანქანის პოლირება (პალიროვკა) თბილისში — ფასი 690 ₾-დან | BESTAUTO',
+      title: 'მანქანის პოლირება თბილისში — ფასი 690 ₾-დან | BESTAUTO',
       description: 'მანქანის პოლირება თბილისში — ძარის, ფარების, საქარე მინისა და სალონის დეტალების პოლირება (პალიროვკა). ბზინვარების აღდგენა, ნაკაწრების შემცირება და მოვლილი ვიზუალი BESTAUTO-ში.',
     },
     textReplacements: [
@@ -96,7 +96,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Hero subtitle
       { from: 'გთავაზობთ სალონის ღრმა ქიმწმენდას — ვასუფთავებთ ყველა ზედაპირს, სავარძლებს, ჭერს და იატაკს.<br />ვიყენებთ უსაფრთხო პროფესიონალურ ქიმიკატებს, რომლებიც ეფექტურად აშორებენ ლაქებს, ჭუჭყს და უსიამოვნო სუნს.', to: 'ავტომობილის ქიმწმენდა — სავარძლების, ჭერის, იატაკის, პლასტმასის და საბარგულის პროფესიონალური ღრმა წმენდა, ლაქებისა და უსიამოვნო სუნის მოცილებით.<br />2 ლოკაცია — საბურთალოზე და გლდანში.' },
       // Benefits heading
-      { from: 'ქიმწმენდის უპირატესობები', to: 'სალონის ქიმწმენდის მთავარი უპირატესობები' },
+      { from: 'სალონის ქიმწმენდის უპირატესობები', to: 'სალონის ქიმწმენდის მთავარი უპირატესობები' },
       // Benefits items
       { from: 'ინტერიერის გაწმენდა და რესტავრაცია', to: 'მანქანის სალონის ქიმწმენდა და ვიზუალური განახლება' },
       { from: 'მანქანის დაცვა და შენარჩუნება', to: 'სალონის მასალების შენარჩუნება ქიმწმენდით თბილისში' },
@@ -117,9 +117,9 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
     stepsBlock: {
       heading: 'მანქანის ქიმწმენდის ეტაპები',
       steps: [
-        { title: 'სალონის დათვალიერება', description: 'ავტო ქიმწმენდისთვის ვაფასებთ აბივკის, პლასტიკის, ჭერისა და დაბინძურების ხარისხს.' },
+        { title: 'სალონის დათვალიერება', description: 'ვაფასებთ სალონის მოპირკეთების, პლასტმასის, ჭერისა და სხვა მასალების მდგომარეობას.' },
         { title: 'სალონის მშრალი წმენდა', description: 'ვაშორებთ მტვერს, ქვიშას და წვრილ ნარჩენებს ავტომობილის ყველა ზონიდან.' },
-        { title: 'უსაფრთხო ქიმიის შერჩევა', description: 'ვარჩევთ შემადგენლობებს ქსოვილისთვის, ტყავისთვის, პლასტიკისთვის და დელიკატური ელემენტებისთვის.' },
+        { title: 'მასალასთან თავსებადი საწმენდი საშუალებების შერჩევა', description: 'ვარჩევთ შემადგენლობებს ქსოვილისთვის, ტყავისთვის, პლასტიკისთვის და დელიკატური ელემენტებისთვის.' },
         { title: 'ზედაპირების ღრმა წმენდა', description: 'ვწმენდთ სავარძლებს, იატაკის საფარს, კარის პანელებს, ჭერსა და საბარგულს.' },
         { title: 'რთული დაბინძურების მოცილება', description: 'გამოგვყავს ლაქები, ექსპლუატაციის კვალი და ღრმად ჩამჯდარი დაბინძურება.' },
         { title: 'პლასტიკისა და დეტალების წმენდა', description: 'წესრიგში მოგვყავს პანელები, ღილაკები, ჰაერსადენები და ძნელად მისადგომი ზონები.' },
@@ -215,7 +215,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Price heading
       { from: 'ხმის საიზოლაციო ფასები', to: 'მანქანის ხმის იზოლაციის ფასები' },
       // Reviews subtitle
-      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('ხმის იზოლაციის სერვისით სარგებლობის გამოცდილება — მანქანის კარების, იატაკის და საბარგულის დამუშავება, ასევე სხვა სერვისები')}</div>` },
+      { from: 'მომხმარებლების რეალური მიმოხილვა</span></div></div>', to: `მომხმარებლების რეალური მიმოხილვა</span></div>${reviewsSubtitle('BESTAUTO-ს მომხმარებლების შეფასებები ხმის იზოლაციისა და სხვა მომსახურებების შესახებ')}</div>` },
     ],
     seoBlock: '',
     contentBlocks: [],
@@ -227,8 +227,8 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
         { title: 'ზედაპირის მომზადება', description: 'მასალების დადებამდე სამუშაო ზონებს ვწმენდთ და ვაცხიმოვნებთ.' },
         { title: 'ვიბროიზოლაციის დადება', description: 'ვადებთ პირველ ფენას, რათა შემცირდეს ვიბრაცია და გზის გუგუნი.' },
         { title: 'ხმის იზოლაციის დადება', description: 'ვამატებთ მასალებს, რომლებიც ამცირებს ქუჩის ხმაურსა და ბორბლების თაღებიდან შემოსულ ხმას.' },
-        { title: 'ძირითადი ზონების დამუშავება', description: 'ვიზოლირებთ კარებს, იატაკს, საბარგულს, თაღებს და სხვა ხმაურიან მონაკვეთებს.' },
-        { title: 'სალონის აწყობა', description: 'ყველა ელემენტს უკან ვაბრუნებთ ფრთხილად და დაზიანების გარეშე.' },
+        { title: 'ძირითადი ზონების დამუშავება', description: 'ვამუშავებთ კარებს, იატაკს, საბარგულს, ბორბლების თაღებსა და სხვა საჭირო ზონებს.' },
+        { title: 'სალონის აწყობა', description: 'ყველა ელემენტს პირვანდელ ადგილას ფრთხილად ვამონტაჟებთ. ფრთხილად და დაზიანების გარეშე.' },
         { title: 'ფინალური შემოწმება', description: 'ვამოწმებთ აწყობის ხარისხს და შესრულებული სამუშაოს საერთო შედეგს.' },
       ],
     },
@@ -320,7 +320,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Price section heading
       { from: '2-ფაზიანი და 3-ფაზიანი რეცხვის ფასები', to: 'ავტოსამრეცხაოს ფასები' },
       // Add engine wash item (after last existing row)
-      { from: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div>', to: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div>' },
+      { from: '<span class="ba-price-name">ავტომობილის სამფაზიანი ხელით დეტეილინგ-რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div>', to: '<span class="ba-price-name">ავტომობილის სამფაზიანი ხელით დეტეილინგ-რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div>' },
     ],
     seoBlock: '',
     contentBlocks: [],
@@ -343,7 +343,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'კერამიკული საფარის უპირატესობები', to: 'კერამიკული საფარის მთავარი უპირატესობები' },
       // Benefits items
       { from: 'დაცვა გარე გავლენისგან', to: 'გარეგანი ზემოქმედებისგან დამატებითი დაცვა' },
-      { from: 'ნაკაწრების წინააღმდეგობა', to: 'ზედაპირული დეფექტების ხილვადობის შემცირება' },
+      { from: 'ნაკაწრების წინააღმდეგობა', to: 'ზედაპირის დაცვა ყოველდღიური დაბინძურებისა და ქიმიური ზემოქმედებისგან' },
       { from: 'ბზინვარების გაუმჯობესება', to: 'ღრმა ბზინვარება და უფრო მოვლილი ვიზუალი' },
       { from: 'ნაკლებად ბინძური', to: 'ჰიდროფობიური ეფექტი და უფრო მარტივი მოვლა' },
       { from: 'ხანგრძლივი ვადა', to: 'ხანგრძლივი ეფექტი სწორი მოვლის შემთხვევაში' },
@@ -374,7 +374,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
         { title: 'დათვალიერება და დიაგნოსტიკა', description: 'ვაფასებთ ძარის მდგომარეობას და ვადგენთ, რა მოცულობის მომზადებაა საჭირო.' },
         { title: 'ძარის სიღრმისეული გაწმენდა', description: 'ვაშორებთ ყველა იმ დაბინძურებას, რომელმაც შეიძლება გავლენა მოახდინოს საფარის ხარისხზე.' },
         { title: 'ლაქ-საფარის მომზადება', description: 'ვწმენდთ, ვაცხიმოვნებთ და საჭიროების შემთხვევაში ვაპოლირებთ ძარას კერამიკული საფარის დატანამდე.' },
-        { title: 'კერამიკული შემადგენლობის დატანა', description: 'მომზადებულ ზედაპირზე თანაბრად ვანაწილებთ კერამიკულ საფარს.' },
+        { title: 'კერამიკული ნაერთის დატანა', description: 'მომზადებულ ზედაპირზე თანაბრად ვანაწილებთ კერამიკულ საფარს.' },
         { title: 'საფარის ფიქსაცია', description: 'ვუზრუნველყოფთ შემადგენლობის სწორ დაყოვნებას, რათა ის საიმედოდ დაფიქსირდეს.' },
         { title: 'შედეგის კონტროლი', description: 'ვამოწმებთ საფარის თანაბრობას, ბზინვარების სიღრმეს და საბოლოო ვიზუალურ ეფექტს.' },
         { title: 'რეკომენდაციები პროცედურის შემდეგ', description: 'გაწვდით გასაგებ ინსტრუქციებს, რომ შედეგი რაც შეიძლება დიდხანს შენარჩუნდეს.' },
@@ -392,7 +392,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Hero H1
       { from: 'ავტომობილის გადაკვრა ფერადი ვინილის და პოლიურეთანის (PPF) დამცავი ფირით თბილისში', to: 'ფირის გადაკვრა მანქანაზე თბილისში — ფერადი PPF და ვინილი' },
       // Hero subtitle
-      { from: 'ფერადი ვინილის და პოლიურეთანის (PPF) ფირის პროფესიონალური გადაკვრა თბილისში. 10-წლიანი გარანტია · Quantum და LuxArmor ფირები · 2000+ დაცული ავტომობილი.', to: 'მანქანის გადასაკრავი ფირი — ფირის გადაკვრა ფერადი PPF-ით ან ვინილით. PPF ჩვენი მთავარი რეკომენდაცია მაქსიმალური დაცვისა და ვიზუალური ეფექტისთვის.' },
+      { from: 'ფერადი ვინილის და პოლიურეთანის (PPF) ფირის პროფესიონალური გადაკვრა თბილისში. 10-წლიანი გარანტია · Quantum და LuxArmor ფირები · 2000+ დაცული ავტომობილი.', to: 'ავტომობილის ფერის შეცვლა შესაძლებელია ფერადი PPF-ით ან ვინილის ფირით. PPF ჩვენი მთავარი რეკომენდაცია მაქსიმალური დაცვისა და ვიზუალური ეფექტისთვის.' },
       // Compare block heading
       { from: 'ფერადი დამცავი ფირი vs ვინილის ფირი', to: 'მანქანაზე ფირის გადაკვრა — ფერადი PPF თუ ვინილი' },
       // Benefits heading
@@ -554,7 +554,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Add 2 items to vinyl/color change section (after last existing item)
       { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 ₾-დან</span></div>' },
       // Inject carwash prices section after tinting (before sanity-s7 = sound insulation)
-      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/carwash" class="ba-price-heading-link">ავტოსამრეცხაოს ფასები</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი) + სალონი</span><span class="ba-price-value">50 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">55 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი) + სალონი</span><span class="ba-price-value">60 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div></div></div></div></div>\n<div id="sanity-s7"' },
+      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/carwash" class="ba-price-heading-link">ავტოსამრეცხაოს ფასები</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ორფაზიანი ხელით დეტეილინგ-რეცხვა (სედანი) + სალონი</span><span class="ba-price-value">50 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ორფაზიანი ხელით დეტეილინგ-რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">55 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სამფაზიანი ხელით დეტეილინგ-რეცხვა (სედანი) + სალონი</span><span class="ba-price-value">60 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სამფაზიანი ხელით დეტეილინგ-რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div></div></div></div></div>\n<div id="sanity-s7"' },
     ],
     seoBlock: '',
   },
