@@ -100,6 +100,7 @@ const SERVICE_VIDEO_SETS: Readonly<Record<string, ServiceVideoSet>> = {
   },
   carwash: {
     videos: [
+      { src: '/videos/carwash-cyber.mp4', poster: '/videos/carwash-cyber-poster.webp', label: { ka: 'რეცხვა', ru: 'Мойка', en: 'Car Wash' } },
       { src: '/videos/carwash-reel1.mp4', poster: '/videos/carwash-reel1-poster.webp', label: { ka: 'რეცხვა', ru: 'Мойка', en: 'Car Wash' } },
     ],
     title: { ka: 'მანქანის რეცხვის პროცესი', ru: 'Процесс мойки автомобиля', en: 'Car Wash Process' },
