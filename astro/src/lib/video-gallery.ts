@@ -101,7 +101,8 @@ const SERVICE_VIDEO_SETS: Readonly<Record<string, ServiceVideoSet>> = {
   'windshield-repair': {
     // Studio showreel (all services), so it keeps the neutral section heading.
     videos: [
-      { src: '/videos/windshield-reel1.mp4', poster: '/videos/windshield-reel1-poster.webp', label: { ka: 'სამუშაო პროცესი', ru: 'Процесс работы', en: 'Our Work Process' } },
+      // Poster is the opening logo frame; -v2 filename busts the 30-day asset cache.
+      { src: '/videos/windshield-reel1.mp4', poster: '/videos/windshield-reel1-poster-v2.webp', label: { ka: 'სამუშაო პროცესი', ru: 'Процесс работы', en: 'Our Work Process' } },
     ],
     title: SECTION_TITLE,
   },
