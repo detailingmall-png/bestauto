@@ -98,6 +98,13 @@ const SERVICE_VIDEO_SETS: Readonly<Record<string, ServiceVideoSet>> = {
     ],
     title: { ka: 'მინების დაბურვის პროცესი', ru: 'Процесс тонировки стёкол', en: 'Window Tinting Process' },
   },
+  'windshield-repair': {
+    // Studio showreel (all services), so it keeps the neutral section heading.
+    videos: [
+      { src: '/videos/windshield-reel1.mp4', poster: '/videos/windshield-reel1-poster.webp', label: { ka: 'სამუშაო პროცესი', ru: 'Процесс работы', en: 'Our Work Process' } },
+    ],
+    title: SECTION_TITLE,
+  },
   carwash: {
     videos: [
       { src: '/videos/carwash-cyber.mp4', poster: '/videos/carwash-cyber-poster.webp', label: { ka: 'რეცხვა', ru: 'Мойка', en: 'Car Wash' } },
