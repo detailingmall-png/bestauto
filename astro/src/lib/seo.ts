@@ -124,10 +124,10 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
     sectionKey: 's3',
   },
   'paintless-dent-repair': {
-    name: { ka: 'ძარას ცივად გასწორება', ru: 'Удаление вмятин без покраски', en: 'Paintless Dent Repair' },
+    name: { ka: 'ჩაღრმავებების უსაღებავოდ გასწორება (PDR)', ru: 'Удаление вмятин без покраски', en: 'Paintless Dent Repair' },
     min: '250',
     description: {
-      ka: 'მანქანის ძარას ცივად გასწორება (PDR) თბილისში — ჩაზნექილობების მოცილება შეღებვის გარეშე.',
+      ka: 'მანქანის ჩაღრმავებების უსაღებავოდ გასწორება (PDR) თბილისში — ჩაზნექილობების მოცილება შეღებვის გარეშე.',
       ru: 'Беспокрасочное удаление вмятин (PDR) в Тбилиси — устранение вмятин без перекраски.',
       en: 'Paintless dent repair (PDR) in Tbilisi — dent removal without repainting.',
     },

@@ -248,7 +248,7 @@ const CROSS_SELL_TITLES: Readonly<Record<string, Readonly<Record<string, string>
   },
   'paintless-dent-repair': {
     ru: 'Вместе с удалением вмятин заказывают',
-    ka: 'ძარას ცივად გასწორებასთან ერთად შეუკვეთავენ',
+    ka: 'ჩაღრმავებების უსაღებავოდ გასწორებასთან ერთად შეუკვეთავენ',
     en: 'Also ordered with paintless dent repair',
   },
 };

@@ -50,9 +50,9 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
     description: 'Paintless dent removal (PDR) in Tbilisi. Fix dents without repainting — preserve original factory finish. Fast repair, affordable prices. Book at BESTAUTO.',
   },
   'ka/paintless-dent-repair': {
-    title: 'ძარას ცივად გასწორება (PDR) თბილისში — 250 ₾-დან | BESTAUTO',
+    title: 'PDR — ჩაღრმავებების უსაღებავოდ გასწორება თბილისში | BESTAUTO',
     // 95 chars → 148 chars
-    description: 'მანქანის ძარას ცივად გასწორება (PDR) თბილისში შეღებვის გარეშე. ვინარჩუნებთ ორიგინალ ლაქს. სწრაფი შეკეთება, ხელმისაწვდომი ფასები. ჩაწერა — BESTAUTO.',
+    description: 'მანქანის ჩაღრმავებების უსაღებავოდ გასწორება (PDR) თბილისში შეღებვის გარეშე. ვინარჩუნებთ ორიგინალ ლაქს. სწრაფი შეკეთება, ხელმისაწვდომი ფასები. ჩაწერა — BESTAUTO.',
   },
   'ru/paintless-dent-repair': {
     title: 'Удаление вмятин (PDR) в Тбилиси — от 250 ₾ | BESTAUTO',

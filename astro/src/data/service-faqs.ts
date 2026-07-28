@@ -834,7 +834,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What cars do you diagnose?',
       },
       answer: {
-        ka: 'ყველა მარკასა და მოდელს. მულტიმარკიანი სკანერები + დილერის პროგრამული უზრუნველყოფა პოპულარული ბრენდებისთვის. ელექტრომობილები და ჰიბრიდები — ასევე.',
+        ka: 'ვამოწმებთ მრავალი მარკისა და მოდელის ავტომობილს; კონკრეტული სისტემების ხელმისაწვდომობა დამოკიდებულია ავტომობილსა და დიაგნოსტიკურ მოწყობილობაზე. მულტიმარკიანი სკანერები + დილერის პროგრამული უზრუნველყოფა პოპულარული ბრენდებისთვის. ელექტრომობილები და ჰიბრიდები — ასევე.',
         ru: 'Все марки и модели. Мультимарочные сканеры + дилерское программное обеспечение для популярных брендов. Электромобили и гибриды — тоже.',
         en: 'All makes and models. Multi-brand scanners plus dealer software for popular brands. Electric vehicles and hybrids — as well.',
       },
@@ -846,7 +846,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'When is computer diagnostics necessary?',
       },
       answer: {
-        ka: 'Check Engine ანთია, მეორადი ავტო ყიდვამდე, ავარიის შემდეგ, სიმძლავრის დაკარგვა, საწვავის გაზრდილი ხარჯი. პროფილაქტიკისთვის გირჩევთ წელიწადში ერთხელ.',
+        ka: 'როდესაც Check Engine-ის ინდიკატორი აინთება, მეორადი ავტო ყიდვამდე, ავარიის შემდეგ, სიმძლავრის დაკარგვა, საწვავის გაზრდილი ხარჯი. პროფილაქტიკისთვის გირჩევთ წელიწადში ერთხელ.',
         ru: 'Горит Check Engine, перед покупкой подержанного авто, после аварии, потеря мощности, повышенный расход топлива. Для профилактики рекомендуем раз в год.',
         en: 'Check Engine light is on, before buying a used car, after an accident, power loss, increased fuel consumption. For prevention, we recommend once a year.',
       },
@@ -870,7 +870,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Do you offer pre-purchase inspections?',
       },
       answer: {
-        ka: 'დიახ, ეს ერთ-ერთი ჩვენი მთავარი მომსახურებაა. ვამოწმებთ ყველა სისტემას, გარბენს (დატრიალებულია თუ არა), შეცდომების ისტორიას, აკუმულატორის მდგომარეობას, ძრავისა და ტრანსმისიის მუშაობას. სრული ანგარიში — ავტომობილის მდგომარეობის გულახდილი სურათი.',
+        ka: 'დიახ, ეს ერთ-ერთი ჩვენი მთავარი მომსახურებაა. შესაძლებლობის ფარგლებში ვამოწმებთ ელექტრონულ სისტემებს და სხვადასხვა ბლოკში შენახულ გარბენის მონაცემებს., შეცდომების ისტორიას, აკუმულატორის მდგომარეობას, ძრავისა და ტრანსმისიის მუშაობას. სრული ანგარიში — ავტომობილის მდგომარეობის ობიექტური შეფასება ხელმისაწვდომი მონაცემების ფარგლებში.',
         ru: 'Да, это одна из наших ключевых услуг. Проверяем все системы, пробег (скручен или нет), историю ошибок, состояние аккумулятора, работу двигателя и трансмиссии. Полный отчёт — честная картина состояния автомобиля.',
         en: 'Yes, this is one of our key services. We check all systems, mileage (rolled back or not), error history, battery condition, engine and transmission performance. A full report — an honest picture of the car\'s condition.',
       },
@@ -897,7 +897,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does interior restoration cost?',
       },
       answer: {
-        ka: 'საჭის რესტავრაცია — 280 ₾-დან, სავარძლის — 230 ₾-დან, სახელურის — 190 ₾-დან. სალონის ელემენტების პოლირება — 200 ₾-დან, პლასტმასის რემონტი — 200 ₾-დან. გამოგვიგზავნეთ დაზიანების ფოტო WhatsApp-ზე — გეტყვით ზუსტ ფასს.',
+        ka: 'საჭის რესტავრაცია — 280 ₾-დან, სავარძლის — 230 ₾-დან, ხელის საყრდენის რესტავრაცია — 190 ₾-დან. სალონის ელემენტების პოლირება — 200 ₾-დან, პლასტმასის რემონტი — 200 ₾-დან. გამოგვიგზავნეთ დაზიანების ფოტო WhatsApp-ზე — გეტყვით ზუსტ ფასს.',
         ru: 'Реставрация руля — от 280 Gel, сиденья — от 230 Gel, подлокотника — от 190 Gel. Полировка элементов салона — от 200 Gel, ремонт пластика — от 200 Gel. Пришлите фото повреждения в WhatsApp — назовём точную стоимость.',
         en: 'Steering wheel restoration — from 280 Gel, seat — from 230 Gel, armrest — from 190 Gel. Interior element polishing — from 200 Gel, plastic repair — from 200 Gel. Send us a photo of the damage on WhatsApp — we\'ll give you an exact price.',
       },
@@ -993,7 +993,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Which plastic elements can be restored?',
       },
       answer: {
-        ka: 'ტორპედო, კარის პანელები, ცენტრალური კონსოლი, სახელურები, საჭის სვეტი. ვაშორებთ ნაკაწრებს, ვაღვდგენთ ტექსტურასა და ფერს. სერიოზული დაზიანებების დროს შეგვიძლია შეღებვა ან გადაკვრა.',
+        ka: 'ტორპედო, კარის პანელები, ცენტრალური კონსოლი, სახელურები, საჭის სვეტი. ვაშორებთ ნაკაწრებს, ვაღდგენთ ტექსტურასა და ფერს. სერიოზული დაზიანებების დროს შეგვიძლია შეღებვა ან გადაკვრა.',
         ru: 'Торпедо, дверные панели, центральная консоль, подлокотники, рулевая колонка. Убираем царапины, восстанавливаем текстуру и цвет. При серьёзных повреждениях можем покрасить или обтянуть.',
         en: 'Dashboard, door panels, center console, armrests, steering column. We remove scratches, restore texture and color. For severe damage, we can paint or wrap the elements.',
       },
