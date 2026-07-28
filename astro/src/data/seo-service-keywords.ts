@@ -213,7 +213,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
   '/carwash': [
     'მანქანის რეცხვა',             // GSC: 62 + competitor canonical
     'ავტოსამრეცხაო',               // GSC: 42 + canonical one-word form
-    'ავტო სამრეცხაო',              // GSC: 24 (two-word variant)
+    'ავტოსამრეცხაო',              // GSC: 24 (two-word variant)
     'მანქანის რეცხვა ფასები',      // GSC: 43 (with price)
     'მანქანის გარეცხვა',           // GSC: 18 (verb form)
     'მანქანის სამრეცხაო',          // GSC: 10

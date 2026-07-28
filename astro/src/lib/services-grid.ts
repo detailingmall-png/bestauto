@@ -114,7 +114,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
   {
     slug: 'windshield-repair',
     tier: 2,
-    name: { ka: 'ავტომინების შეკეთება და შლიფოვკა', ru: 'Ремонт и шлифовка автостекол', en: 'Glass Repair & Grinding' },
+    name: { ka: 'ავტომინის შეკეთება, პოლირება და დამუშავება', ru: 'Ремонт и шлифовка автостекол', en: 'Glass Repair & Grinding' },
     tagline: {
       ka: 'ნაკენჭარის შეკეთება, პოლირება და შლიფოვკა — საქარე და გვერდითი',
       ru: 'Ремонт сколов, полировка и шлифовка — лобовое и боковые',

@@ -46,7 +46,7 @@ const DISPLAY_COUNT = 15;
 const MIN_DISPLAY_RATING = 5;
 
 const TITLE: Record<string, string> = {
-  ka: 'მიმოხილვა',
+  ka: 'მიმოხილვები',
   ru: 'Отзывы',
   en: 'Reviews',
 };

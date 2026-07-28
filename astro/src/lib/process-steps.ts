@@ -58,7 +58,7 @@ export const STEPS: ReadonlyArray<ProcessStep> = [
       en: 'Guarantee',
     },
     description: {
-      ka: 'ავტომობილს გაბარებთ საბოლოო შემოწმების შემდეგ და გაწვდით რეკომენდაციებს შემდგომი მოვლისთვის',
+      ka: 'ავტომობილს საბოლოო შემოწმების შემდეგ გადმოგცემთ და შემდგომი მოვლის რეკომენდაციებს მოგაწვდით',
       ru: 'Приёмка вместе с вами — гарантийный сертификат',
       en: 'Final check together — warranty certificate included',
     },

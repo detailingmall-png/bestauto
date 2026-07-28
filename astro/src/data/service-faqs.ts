@@ -228,7 +228,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does PPF wrapping cost?',
       },
       answer: {
-        ka: 'ფასი დამოკიდებულია დაფარვის ზონაზე, ავტომობილის ზომაზე და არჩეულ ფირზე. შესაძლებელია როგორც რისკ-ზონების, ისე სრული ავტომობილის შეთავაზება.',
+        ka: 'ფასი დამოკიდებულია დაფარვის ზონაზე, ავტომობილის ზომაზე და არჩეულ ფირზე. შეგიძლიათ აირჩიოთ როგორც ყველაზე დაუცველი ზონების, ისე მთელი ავტომობილის დაფარვა.',
         ru: 'Стоимость зависит от зоны покрытия, размера автомобиля и выбранной плёнки. Возможна как оклейка рисковых зон, так и полная оклейка всего автомобиля.',
         en: 'The price depends on the coverage area, car size, and chosen film. Both risk zone coverage and full car wrapping are available.',
       },
@@ -252,7 +252,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What is PPF film?',
       },
       answer: {
-        ka: 'PPF არის გამჭვირვალე პოლიურეთანის დამცავი ფირი, რომელიც აკრავთ ავტომობილის ძარაზე საღებავის დასაცავად.',
+        ka: 'PPF არის გამჭვირვალე პოლიურეთანის დამცავი ფირი, რომელიც ავტომობილის ძარაზე იკვრება ლაქ-საღებავის საფარის დასაცავად.',
         ru: 'PPF — это прозрачная полиуретановая защитная плёнка, которую наклеивают на кузов автомобиля для защиты краски.',
         en: 'PPF is a transparent polyurethane protective film applied to the car body to protect the paint.',
       },
@@ -537,7 +537,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How long does window tinting take?',
       },
       answer: {
-        ka: '2–4 საათი მინების რაოდენობის მიხედვით. მნიშვნელოვანი: დაყენებიდან 3 დღე არ ჩამოუშვათ მინები, რათა ფირი სრულად მოეწყოს.',
+        ka: '2–4 საათი მინების რაოდენობის მიხედვით. მნიშვნელოვანი: დაყენებიდან 3 დღე არ ჩამოუშვათ მინები, რათა ფირი საბოლოოდ დაფიქსირდეს და გაშრეს.',
         ru: '2–4 часа в зависимости от количества стёкол. Важно: не опускайте стёкла 3 дня после установки, чтобы плёнка полностью приклеилась.',
         en: '2–4 hours depending on the number of windows. Important: don\'t lower the windows for 3 days after installation so the film fully adheres.',
       },
@@ -549,7 +549,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What does athermal film do?',
       },
       answer: {
-        ka: 'ათერმული ფირი სითბოს 60%-მდე ასხივებს და თითქმის გამჭვირვალე რჩება. იდეალურია საქარე და წინა მინებისთვის — კონდიციონერი ეფექტურად მუშაობს, საწვავის ხარჯი მცირდება.',
+        ka: 'ათერმული ფირი ამცირებს სალონში სითბოს შეღწევას და მაღალი სინათლეგამტარობის შენარჩუნება შეუძლია. და თითქმის გამჭვირვალე რჩება. იდეალურია საქარე და წინა მინებისთვის — კონდიციონერი ეფექტურად მუშაობს, საწვავის ხარჯი მცირდება.',
         ru: 'Атермальная плёнка отражает до 60% тепла и остаётся практически прозрачной. Идеальна для лобового и передних стёкол — кондиционер работает эффективнее, расход топлива снижается.',
         en: 'Athermal film reflects up to 60% of heat while remaining nearly transparent. Ideal for the windshield and front windows — the air conditioning works more efficiently and fuel consumption decreases.',
       },
@@ -568,7 +568,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'ხდებით თუ არა ადგილზე მისვლით?',
+        ka: 'ასრულებთ თუ არა მომსახურებას ადგილზე მისვლით?',
         ru: 'Выезжаете ли вы на место?',
         en: 'Do you come to the client\'s location?',
       },
@@ -600,7 +600,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How much does windshield repair cost?',
       },
       answer: {
-        ka: 'ქვის ნატეხი 1 სმ-მდე — 60 ₾-დან, ქვის ნატეხი 1–2 სმ — 80 ₾-დან. ბზარი 15 სმ-მდე — 95 ₾-დან, ბზარი 15–30 სმ — 140 ₾-დან. 5–10-ჯერ იაფია ვიდრე მინის შეცვლა. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
+        ka: 'ქვის ნატეხი 1 სმ-მდე — 60 ₾-დან, ქვის ნატეხი 1–2 სმ — 80 ₾-დან. ბზარი 15 სმ-მდე — 95 ₾-დან, ბზარი 15–30 სმ — 140 ₾-დან. შეკეთება ხშირად მნიშვნელოვნად იაფია, ვიდრე მინის სრული შეცვლა.. გამოგვიგზავნეთ ფოტო WhatsApp-ზე — უფასოდ შევაფასებთ.',
         ru: 'Скол до 1 см — от 60 Gel, скол 1–2 см — от 80 Gel. Трещина до 15 см — от 95 Gel, трещина 15–30 см — от 140 Gel. В 5–10 раз дешевле замены стекла. Пришлите фото в WhatsApp — оценим бесплатно.',
         en: 'Chip up to 1 cm — from 60 Gel, chip 1–2 cm — from 80 Gel. Crack up to 15 cm — from 95 Gel, crack 15–30 cm — from 140 Gel. 5–10 times cheaper than windshield replacement. Send a photo on WhatsApp — we\'ll estimate for free.',
       },
@@ -612,7 +612,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Can any crack be repaired?',
       },
       answer: {
-        ka: 'ქვის ნატეხები 25 მმ-მდე, ბზარები 15 სმ-მდე. რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი. თუ ქვის ნატეხში ჭუჭყი უკვე მოხვდა — შედეგი შეიძლება ცოტა უარესი იყოს, მაგრამ შეკეთება მაინც შეაჩერებს გავრცელებას.',
+        ka: 'ქვის ნატეხები 25 მმ-მდე, ბზარები 15 სმ-მდე. რაც უფრო ახალია დაზიანება, მით უკეთესი შედეგი. თუ ქვის ნატეხში ჭუჭყი უკვე მოხვდა — შედეგი შეიძლება ცოტა უარესი იყოს, მაგრამ შეკეთება ბზარის შემდგომი გავრცელების რისკს ამცირებს, თუმცა შედეგი დაზიანების მდგომარეობაზეა დამოკიდებული..',
         ru: 'Сколы до 25 мм, трещины до 15 см. Чем свежее повреждение, тем лучше результат. Если в скол уже попала грязь — результат может быть немного хуже, но ремонт всё равно остановит распространение.',
         en: 'Chips up to 25 mm, cracks up to 15 cm. The fresher the damage, the better the result. If dirt has already gotten into the chip, the result may be slightly worse, but the repair will still stop it from spreading.',
       },
@@ -667,7 +667,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
     },
     {
       question: {
-        ka: 'ხდებით თუ არა გამოძახებით?',
+        ka: 'ასრულებთ თუ არა გამოძახებით მომსახურებას?',
         ru: 'Выезжаете ли вы по вызову?',
         en: 'Do you offer mobile service?',
       },
@@ -1143,7 +1143,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Is the wash safe for PPF and ceramic coating?',
       },
       answer: {
-        ka: 'დიახ. ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ქიმიას, რომელიც სრულიად უსაფრთხოა კერამიკული საფარისა და PPF-ფირისთვის.',
+        ka: 'დიახ. ჩვენ ვიყენებთ პროფესიონალურ pH-ნეიტრალურ ქიმიას, რომელიც თავსებადია PPF-თან და კერამიკულ საფართან სწორი გამოყენების შემთხვევაში. კერამიკული საფარისა და PPF-ფირისთვის.',
         ru: 'Да. Мы используем профессиональную pH-нейтральную химию, которая полностью безопасна для керамических покрытий и PPF-плёнок.',
         en: 'Yes. We use professional pH-neutral chemicals that are completely safe for ceramic coatings and PPF films.',
       },

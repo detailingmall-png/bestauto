@@ -34,7 +34,7 @@ export const ALT_TRANSLATIONS: Readonly<Record<string, AltTranslation>> = {
   },
   'Детейлинг шин в BESTAUTO': {
     en: 'Tire detailing at BESTAUTO',
-    ka: 'საბურავის დეთეილინგი BESTAUTO-ში',
+    ka: 'ბორბლების დეტეილინგი BESTAUTO-ში',
   },
   'Детейлинг мойка автомобиля в BESTAUTO': {
     en: 'Car detailing wash at BESTAUTO',
@@ -208,7 +208,7 @@ export const ALT_TRANSLATIONS: Readonly<Record<string, AltTranslation>> = {
   },
   'Ремонт и шлифовка автостекол': {
     en: 'Windshield repair and polishing',
-    ka: 'ავტომინების შეკეთება და შლიფოვკა',
+    ka: 'ავტომინის შეკეთება, პოლირება და დამუშავება',
   },
   'Ремонт сколов на лобовом стекле в тбилиси': {
     en: 'Windshield chip repair in Tbilisi',
