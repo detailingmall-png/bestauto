@@ -450,7 +450,7 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== CARWASH ====== */
   'carwash': {
     meta: {
-      title: 'Автомойка в Тбилиси — детейлинг мойка от 40 ₾ | BESTAUTO',
+      title: 'Автомойка в Тбилиси — детейлинг мойка от 50 ₾ | BESTAUTO',
       description: 'Автомойка в Тбилиси — 2-фазная и 3-фазная детейлинг мойка, безопасный уход для PPF и керамики, профессиональная химия и 2 локации.',
     },
     textReplacements: [
@@ -466,7 +466,7 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'Почему стоит выбрать наш детейлинг центр?', to: 'Почему выбирают BESTAUTO для мойки' },
       { from: 'Вы точно останетесь довольны', to: '' },
       // Add engine wash item (after 3-phase SUV row)
-      { from: '<span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (джип)</span><span class="ba-price-value">59 Gel</span></div>', to: '<span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (джип)</span><span class="ba-price-value">59 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Мойка двигателя</span><span class="ba-price-value">80 Gel</span></div>' },
+      { from: '<span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (джип) + салон</span><span class="ba-price-value">65 Gel</span></div>', to: '<span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (джип) + салон</span><span class="ba-price-value">65 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Мойка двигателя</span><span class="ba-price-value">80 Gel</span></div>' },
 
       // Reviews subtitle
       { from: 'Реальные отзывы наших клиентов</span></div> </div> </div>', to: `Реальные отзывы наших клиентов</span></div> </div> ${reviewsSubtitle('Опыт клиентов с мойкой — безопасная мойка автомобиля на Сабуртало и в Глдани, а также другие сервисы')}</div>` },
@@ -515,7 +515,7 @@ export const RU_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Add 2 items to vinyl/color change section (after last existing row)
       { from: '<span class="ba-price-name">Антихром (оклеивание хром-элементов чёрной плёнкой)</span><span class="ba-price-value">от 300 Gel</span></div>', to: '<span class="ba-price-name">Антихром (оклеивание хром-элементов чёрной плёнкой)</span><span class="ba-price-value">от 300 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Оклейка автомобиля виниловой плёнкой</span><span class="ba-price-value">от 6900 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Оклейка крыши чёрной полиуретановой плёнкой</span><span class="ba-price-value">от 800 Gel</span></div>' },
       // Inject carwash prices section before soundproofing (sanity-s7)
-      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/ru/carwash" class="ba-price-heading-link">Цены на автомойку</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 2 фазы (седан)</span><span class="ba-price-value">40 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 2 фазы (джип)</span><span class="ba-price-value">45 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (седан)</span><span class="ba-price-value">55 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (джип)</span><span class="ba-price-value">59 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Мойка двигателя</span><span class="ba-price-value">80 Gel</span></div></div></div></div></div>\n<div id="sanity-s7"' },
+      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/ru/carwash" class="ba-price-heading-link">Цены на автомойку</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 2 фазы (седан) + салон</span><span class="ba-price-value">50 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 2 фазы (джип) + салон</span><span class="ba-price-value">55 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (седан) + салон</span><span class="ba-price-value">60 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Ручная детейлинг мойка автомобиля в 3 фазы (джип) + салон</span><span class="ba-price-value">65 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Мойка двигателя</span><span class="ba-price-value">80 Gel</span></div></div></div></div></div>\n<div id="sanity-s7"' },
     ],
     seoBlock: '',
   },

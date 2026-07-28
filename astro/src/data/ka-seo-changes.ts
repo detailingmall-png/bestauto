@@ -298,7 +298,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== CARWASH ====== */
   'carwash': {
     meta: {
-      title: 'ავტოსამრეცხაო თბილისში — მანქანის რეცხვა 40 ₾-დან | BESTAUTO',
+      title: 'ავტოსამრეცხაო თბილისში — მანქანის რეცხვა 50 ₾-დან | BESTAUTO',
       description: 'ავტოსამრეცხაო თბილისში — მანქანის 2-ფაზიანი და 3-ფაზიანი დეტეილინგ რეცხვა, უსაფრთხო მოვლა PPF-ისა და კერამიკისთვის, პროფესიონალური ქიმია და 2 ლოკაცია თბილისში.',
     },
     textReplacements: [
@@ -320,7 +320,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Price section heading
       { from: '2-ფაზიანი და 3-ფაზიანი რეცხვის ფასები', to: 'ავტოსამრეცხაოს ფასები' },
       // Add engine wash item (after last existing row)
-      { from: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 ₾</span></div>', to: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div>' },
+      { from: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div>', to: '<span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div>' },
     ],
     seoBlock: '',
     contentBlocks: [],
@@ -554,7 +554,7 @@ export const KA_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Add 2 items to vinyl/color change section (after last existing item)
       { from: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div>', to: '<span class="ba-price-name">ანტიქრომი (ქრომის ელემენტებზე გადაკვრა შავი ფირით)</span><span class="ba-price-value">300 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის ვინილის ფირით გადაკვრა</span><span class="ba-price-value">6900 ₾-დან</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის სახურავის შავი პოლიურეთანის ფირით გადაკვრა</span><span class="ba-price-value">800 ₾-დან</span></div>' },
       // Inject carwash prices section after tinting (before sanity-s7 = sound insulation)
-      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/carwash" class="ba-price-heading-link">ავტოსამრეცხაოს ფასები</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი)</span><span class="ba-price-value">45 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">50 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი)</span><span class="ba-price-value">60 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი)</span><span class="ba-price-value">70 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div></div></div></div></div>\n<div id="sanity-s7"' },
+      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/carwash" class="ba-price-heading-link">ავტოსამრეცხაოს ფასები</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი) + სალონი</span><span class="ba-price-value">50 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 2 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">55 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (სედანი) + სალონი</span><span class="ba-price-value">60 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ავტომობილის 3 ფაზიანი დითეილინგ ხელით რეცხვა (ჯიპი) + სალონი</span><span class="ba-price-value">65 ₾</span></div><div class="ba-price-row"><span class="ba-price-name">ძრავის რეცხვა</span><span class="ba-price-value">80 ₾</span></div></div></div></div></div>\n<div id="sanity-s7"' },
     ],
     seoBlock: '',
   },

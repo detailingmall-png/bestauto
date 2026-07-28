@@ -439,7 +439,7 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
   /* ====== CARWASH ====== */
   'carwash': {
     meta: {
-      title: 'Car Wash in Tbilisi — Detailing Wash from 40 ₾ | BESTAUTO',
+      title: 'Car Wash in Tbilisi — Detailing Wash from 50 ₾ | BESTAUTO',
       description: 'Car wash in Tbilisi — 2-phase and 3-phase detailing wash, safe care for PPF and ceramic, professional chemicals and 2 locations.',
     },
     textReplacements: [
@@ -455,7 +455,7 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       { from: 'Why Choose Our Detailing Center?', to: 'Why Clients Choose BESTAUTO for Car Wash' },
       { from: "You'll love the result", to: '' },
       // Add engine wash item (after 3-phase SUV row)
-      { from: '<span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (SUV)</span><span class="ba-price-value">59 Gel</span></div>', to: '<span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (SUV)</span><span class="ba-price-value">59 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Engine wash</span><span class="ba-price-value">80 Gel</span></div>' },
+      { from: '<span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (SUV) + Interior</span><span class="ba-price-value">65 Gel</span></div>', to: '<span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (SUV) + Interior</span><span class="ba-price-value">65 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Engine wash</span><span class="ba-price-value">80 Gel</span></div>' },
 
       // Reviews subtitle
       { from: 'Real Reviews from Our Clients</span></div> </div> </div>', to: `Real Reviews from Our Clients</span></div> </div> ${reviewsSubtitle('Client experiences with car wash — safe car wash in Saburtalo and Gldani, as well as other services')}</div>` },
@@ -503,7 +503,7 @@ export const EN_SEO_PAGES: Readonly<Record<string, PageSeoConfig>> = {
       // Add 2 items to vinyl/color change section (after last existing row)
       { from: '<span class="ba-price-name">Anti-chrome (wrapping chrome elements with black film)</span><span class="ba-price-value">from 300 Gel</span></div>', to: '<span class="ba-price-name">Anti-chrome (wrapping chrome elements with black film)</span><span class="ba-price-value">from 300 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Full car vinyl wrapping</span><span class="ba-price-value">from 6900 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Black polyurethane roof wrapping</span><span class="ba-price-value">from 800 Gel</span></div>' },
       // Inject carwash prices section before soundproofing (sanity-s7)
-      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/en/carwash" class="ba-price-heading-link">Car Wash Prices</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 2-Phase (Sedan)</span><span class="ba-price-value">40 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 2-Phase (SUV)</span><span class="ba-price-value">45 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (Sedan)</span><span class="ba-price-value">55 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (SUV)</span><span class="ba-price-value">59 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Engine wash</span><span class="ba-price-value">80 Gel</span></div></div></div></div></div>\n<div id="sanity-s7"' },
+      { from: '<div id="sanity-s7"', to: '<div id="sanity-carwash" class="r t-rec" style="padding-top:48px;padding-bottom:0;background-color:#000000;" data-record-type="681" data-bg-color="#000000"><div class="t-container"><div class="ba-price-section"><h2 class="ba-price-heading"><a href="/en/carwash" class="ba-price-heading-link">Car Wash Prices</a></h2><div class="ba-price-list"><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 2-Phase (Sedan) + Interior</span><span class="ba-price-value">50 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 2-Phase (SUV) + Interior</span><span class="ba-price-value">55 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (Sedan) + Interior</span><span class="ba-price-value">60 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Hand Detailing Car Wash, 3-Phase (SUV) + Interior</span><span class="ba-price-value">65 Gel</span></div><div class="ba-price-row"><span class="ba-price-name">Engine wash</span><span class="ba-price-value">80 Gel</span></div></div></div></div></div>\n<div id="sanity-s7"' },
     ],
     seoBlock: '',
   },

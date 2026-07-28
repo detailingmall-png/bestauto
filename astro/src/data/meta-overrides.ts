@@ -189,15 +189,15 @@ export const META_OVERRIDES: Readonly<Record<string, MetaOverride>> = {
 
   // ── Car Wash ────────────────────────────────────────────────
   'ka/carwash': {
-    title: 'ავტოსამრეცხაო თბილისში — მანქანის რეცხვა 40 ₾-დან | BESTAUTO',
-    description: 'ავტოსამრეცხაო საბურთალოზე და გლდანში. მანქანის 2-ფაზიანი და 3-ფაზიანი დეტეილინგ რეცხვა 40 ₾-დან. ხელით, pH-ნეიტრალური ქიმია.',
+    title: 'ავტოსამრეცხაო თბილისში — მანქანის რეცხვა 50 ₾-დან | BESTAUTO',
+    description: 'ავტოსამრეცხაო საბურთალოზე და გლდანში. მანქანის 2-ფაზიანი და 3-ფაზიანი დეტეილინგ რეცხვა 50 ₾-დან. ხელით, pH-ნეიტრალური ქიმია.',
   },
   'ru/carwash': {
-    title: 'Детейлинг мойка в Тбилиси — от 40 GEL | BESTAUTO',
+    title: 'Детейлинг мойка в Тбилиси — от 50 GEL | BESTAUTO',
     description: 'Премиальная ручная мойка авто в Тбилиси: 2-3 фазы, обработка салона и защитное покрытие. 2 студии, запись онлайн.',
   },
   'en/carwash': {
-    title: 'Hand Car Wash in Tbilisi — from 40 GEL | BESTAUTO',
+    title: 'Hand Car Wash in Tbilisi — from 50 GEL | BESTAUTO',
     description: 'Premium hand car wash in Tbilisi: 2-3 phase detailing wash, interior treatment and protective coating. Two studios.',
   },
 
