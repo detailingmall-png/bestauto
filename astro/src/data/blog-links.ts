@@ -2414,6 +2414,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-5-year-tco',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'Плановая полировка раз в 2-3 года всё равно нужна — полировка кузова в BESTAUTO от 690 ₾ каждая.',
+      },
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'абразивная полировка',
+        contextQuote: 'к концу 5-летнего цикла дальнейшая абразивная полировка становится рискованной.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4697,6 +4716,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-5-year-tco',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ძარის პოლირება BESTAUTO-ში 690 ₾-დან ყოველი',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'მთელი ავტოს კერამიკული საფარი — 500 ₾-დან',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6902,6 +6940,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'interior cleaning',
         originalPhrase: 'interior cleaning',
         contextQuote: 'At BESTAUTO this chemistry is included in standard interior cleaning from 400 ₾, no extra charge for the right composition.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-5-year-tco',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'still needed — body polishing at BESTAUTO from 690 ₾ per visit.',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'Full-body ceramic coating — from 500 ₾',
       },
     ],
   },

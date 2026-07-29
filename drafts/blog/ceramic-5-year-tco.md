@@ -9,7 +9,7 @@ primary_hf_ka: "კერამიკის ხარჯები, მანქ�
 primary_hf_en: "ceramic 5 year TCO, ceramic coating cost"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#23"
 ---
