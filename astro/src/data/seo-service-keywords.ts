@@ -60,12 +60,14 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'полировка лкп',
     'абразивная полировка',
     'абразивной полировки',       // inflected form — valid in blog anchor context
+    'полировку',                  // inflected — valid anchor (accusative, ceramic-product-lines-compared body)
   ],
   '/ceramiccoating': [
     'керамическое покрытие авто', // GSC: 8 (top)
     'керамика на авто',           // GSC: 4 (colloquial but real)
     'керамическое покрытие',      // GSC: 1, but high impressions
     'керамическим покрытием',     // inflected form — valid in blog anchor context
+    'керамическом покрытии',      // inflected — valid anchor (prepositional, ceramic-product-lines-compared body)
     'керамика на машину',
     'керамика для авто',
     'нанесение керамики',
@@ -164,6 +166,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'ავტომობილის კერამიკა',        // GSC: 16
     'კერამიკული დაფარვა',          // ALT: competitor standard term
     'კერამიკული საფარი',           // formal term (low GSC but valid)
+    'კერამიკულ საფარში',           // inflected — valid anchor (locative, ceramic-product-lines-compared body)
   ],
   '/ppf-shield-wrapping': [
     'მანქანის დამცავი ფირი',       // GSC: 1 + competitor confirmed

@@ -2433,6 +2433,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-product-lines-compared',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировку',
+        originalPhrase: 'полировку',
+        contextQuote: 'Базовая цифра включает подготовительную полировку, обезжиривание, нанесение состава и финальную сушку в контролируемом боксе.',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамическом покрытии',
+        originalPhrase: 'керамическом покрытии',
+        contextQuote: 'В природе SiO2 — это кварц (песок, горный хрусталь), в керамическом покрытии — жидкий раствор наночастиц, которые после испарения растворителя полимеризуются на лаке в тонкую твёрдую плёнку.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4735,6 +4754,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-product-lines-compared',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირებას',
+        originalPhrase: 'პოლირებას',
+        contextQuote: 'საბაზო ციფრი მოიცავს მოსამზადებელ პოლირებას, ცხიმის მოცილებას, შემადგენლობის დატანას და საბოლოო გაშრობას კონტროლირებად ბოქსში.',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკულ საფარში',
+        originalPhrase: 'კერამიკულ საფარში',
+        contextQuote: 'ბუნებაში SiO2 — ეს კვარცია (ქვიშა, მთის კრისტალი), კერამიკულ საფარში — ნანონაწილაკების თხევადი ხსნარი, რომელიც გამხსნელის აორთქლების შემდეგ ლაქზე პოლიმერიზდება თხელ მყარ ფირად.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -6959,6 +6997,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: 'Full-body ceramic coating — from 500 ₾',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-product-lines-compared',
+    links: [
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'The base figure includes prep polishing, degrease, application, and final cure in a controlled bay.',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: 'In nature SiO2 is quartz (sand, rock crystal); in a ceramic coating it\'s a liquid solution of nanoparticles that, after solvent evaporation, polymerise on the clearcoat as a thin hard film.',
       },
     ],
   },

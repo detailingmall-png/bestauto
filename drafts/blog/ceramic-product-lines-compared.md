@@ -9,7 +9,12 @@ primary_hf_ka: "კერამიკის ხაზები, 9H კერა�
 primary_hf_en: "ceramic 9H SiO2 SiC, ceramic coating comparison"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-07-30
+published_pageids:
+  ru: "920260730001"
+  ka: "920260730002"
+  en: "920260730003"
 sources:
   - roadmap: "docs/content-roadmap.md#21"
 ---

@@ -72,6 +72,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/hydrophobic-windshield-coating': 'ceramiccoating',
   'blog/maintenance-wash-ceramic':     'ceramiccoating',
   'blog/ceramic-5-year-tco':           'ceramiccoating',
+  'blog/ceramic-product-lines-compared': 'ceramiccoating',
   // PPF
   'blog/ppf-benefits':                       'ppf-shield-wrapping',
   'blog/ppf-film-for-cars-protection':       'ppf-shield-wrapping',

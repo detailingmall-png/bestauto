@@ -3542,5 +3542,29 @@
     "title": "Ceramic coating 5-year TCO — the numbers",
     "lang": "en",
     "slug": "blog/ceramic-5-year-tco"
+  },
+  "920260730001": {
+    "file": "page920260730001.html",
+    "url": "https://bestauto.ge/ru/blog/ceramic-product-lines-compared",
+    "path": "/ru/blog/ceramic-product-lines-compared",
+    "title": "9H, SiO2, SiC — техническое сравнение керамики",
+    "lang": "ru",
+    "slug": "blog/ceramic-product-lines-compared"
+  },
+  "920260730002": {
+    "file": "page920260730002.html",
+    "url": "https://bestauto.ge/blog/ceramic-product-lines-compared",
+    "path": "/blog/ceramic-product-lines-compared",
+    "title": "9H, SiO2, SiC — კერამიკის ტექნიკური შედარება",
+    "lang": "ka",
+    "slug": "blog/ceramic-product-lines-compared"
+  },
+  "920260730003": {
+    "file": "page920260730003.html",
+    "url": "https://bestauto.ge/en/blog/ceramic-product-lines-compared",
+    "path": "/en/blog/ceramic-product-lines-compared",
+    "title": "9H, SiO2, SiC — ceramic technical comparison",
+    "lang": "en",
+    "slug": "blog/ceramic-product-lines-compared"
   }
 }
