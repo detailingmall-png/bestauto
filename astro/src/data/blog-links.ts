@@ -2452,6 +2452,44 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-tbilisi-climate',
+    links: [
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'тонировки',
+        originalPhrase: 'тонировки',
+        contextQuote: 'Внутри салона в чёрной машине без тонировки температура в середине августа может доходить до 55°C — это по замерам владельцев, не гипотеза.',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'керамического покрытия',
+        originalPhrase: 'керамического покрытия',
+        contextQuote: 'Тбилисский климат — это четыре разных сезонных стресса для керамического покрытия.',
+      },
+    ],
+  },
+  {
+    article: 'blog/deep-crack-rescue-last-chance',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт скола',
+        originalPhrase: 'ремонт скола',
+        contextQuote: 'Это в 2–3 раза дольше, чем стандартный ремонт скола.',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт скола',
+        originalPhrase: 'ремонт скола',
+        contextQuote: 'Это не косметический ремонт скола, это структурная остановка повреждения.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4773,6 +4811,44 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/ceramic-tbilisi-climate',
+    links: [
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'დაბურვის',
+        originalPhrase: 'დაბურვის',
+        contextQuote: 'შავი მანქანის სალონში დაბურვის გარეშე აგვისტოს შუაში ტემპერატურამ შეიძლება 55°C-ს მიაღწიოს — ეს მფლობელების გაზომვების შედეგი, და არა ჰიპოთეზა.',
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარის',
+        originalPhrase: 'კერამიკული საფარის',
+        contextQuote: 'თბილისის კლიმატი — ესაა კერამიკული საფარის ოთხი განსხვავებული სეზონური სტრესი.',
+      },
+    ],
+  },
+  {
+    article: 'blog/deep-crack-rescue-last-chance',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ბზარის შეკეთება',
+        originalPhrase: 'ბზარის შეკეთება',
+        contextQuote: 'რა ღირს 25 სმ ბზარის შეკეთება და რა — მინის შეცვლა?',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ბზარის შეკეთება',
+        originalPhrase: 'ბზარის შეკეთება',
+        contextQuote: '15–30 სმ ბზარის შეკეთება — 140 ₾-დან, კონკრეტული ფასი განიხილება პირდაპირი დათვალიერების შემდეგ.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7016,6 +7092,44 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'ceramic coating',
         contextQuote: 'In nature SiO2 is quartz (sand, rock crystal); in a ceramic coating it\'s a liquid solution of nanoparticles that, after solvent evaporation, polymerise on the clearcoat as a thin hard film.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ceramic-tbilisi-climate',
+    links: [
+      {
+        role: 'bridge',
+        target: '/auto-glass-tinting',
+        anchor: 'tint',
+        originalPhrase: 'tint',
+        contextQuote: "Inside a black car with no tint the cabin in mid-August reaches 55°C — that's owners' measurements, not a guess.",
+      },
+      {
+        role: 'pillar',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'ceramic coating',
+        contextQuote: "Tbilisi's climate delivers four different seasonal stresses on ceramic coating.",
+      },
+    ],
+  },
+  {
+    article: 'blog/deep-crack-rescue-last-chance',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'auto glass repair',
+        originalPhrase: 'glass repair',
+        contextQuote: 'In glass repair industry terms, damage is sorted by several parameters.',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'windshield',
+        contextQuote: 'Modern cars with assistant systems (lane assist, autopilot, automatic braking) have a camera behind the mirror looking through the windshield.',
       },
     ],
   },

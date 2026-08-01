@@ -9,7 +9,12 @@ primary_hf_ka: "კერამიკა თბილისში, მანქ�
 primary_hf_en: "ceramic Tbilisi climate, ceramic coating"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-07-31
+published_pageids:
+  ru: "920260731001"
+  ka: "920260731002"
+  en: "920260731003"
 sources:
   - roadmap: "docs/content-roadmap.md#22"
 ---

@@ -68,6 +68,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'керамическое покрытие',      // GSC: 1, but high impressions
     'керамическим покрытием',     // inflected form — valid in blog anchor context
     'керамическом покрытии',      // inflected — valid anchor (prepositional, ceramic-product-lines-compared body)
+    'керамического покрытия',     // inflected — valid anchor (genitive, ceramic-tbilisi-climate body)
     'керамика на машину',
     'керамика для авто',
     'нанесение керамики',
@@ -167,6 +168,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'კერამიკული დაფარვა',          // ALT: competitor standard term
     'კერამიკული საფარი',           // formal term (low GSC but valid)
     'კერამიკულ საფარში',           // inflected — valid anchor (locative, ceramic-product-lines-compared body)
+    'კერამიკული საფარის',          // inflected — valid anchor (genitive, ceramic-tbilisi-climate body)
   ],
   '/ppf-shield-wrapping': [
     'მანქანის დამცავი ფირი',       // GSC: 1 + competitor confirmed
@@ -273,6 +275,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'window tinting',              // ACCEPT-WITH-CAVEAT (US Georgia noise)
     'window tint',
     'tint film',                   // variant — article primary HF (choose tint film)
+    'tint',                        // short form — valid in blog anchor context (ceramic-tbilisi-climate body)
   ],
   '/windshield-repair': [
     'windshield repair',           // GSC: 3 clicks (US noise but still relevant)

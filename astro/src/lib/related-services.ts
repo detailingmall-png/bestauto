@@ -73,6 +73,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/maintenance-wash-ceramic':     'ceramiccoating',
   'blog/ceramic-5-year-tco':           'ceramiccoating',
   'blog/ceramic-product-lines-compared': 'ceramiccoating',
+  'blog/ceramic-tbilisi-climate':      'ceramiccoating',
   // PPF
   'blog/ppf-benefits':                       'ppf-shield-wrapping',
   'blog/ppf-film-for-cars-protection':       'ppf-shield-wrapping',
@@ -135,6 +136,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/windshield-night-visibility-issues': 'windshield-repair',
   'blog/windshield-polishing-micro-scratch': 'windshield-repair',
   'blog/windshield-repair-vs-replacement': 'windshield-repair',
+  'blog/deep-crack-rescue-last-chance': 'windshield-repair',
   // Interior cleaning
   'blog/car-interior-detailing-basics': 'interior-cleaning',
   'blog/car-interior-disinfection':     'interior-cleaning',

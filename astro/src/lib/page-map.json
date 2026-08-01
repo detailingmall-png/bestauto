@@ -3447,6 +3447,30 @@
     "lang": "en",
     "slug": "blog/windshield-repair-vs-replacement"
   },
+  "920260801001": {
+    "file": "page920260801001.html",
+    "url": "https://bestauto.ge/ru/blog/deep-crack-rescue-last-chance",
+    "path": "/ru/blog/deep-crack-rescue-last-chance",
+    "title": "Глубокая трещина на лобовом — последний шанс спасти",
+    "lang": "ru",
+    "slug": "blog/deep-crack-rescue-last-chance"
+  },
+  "920260801002": {
+    "file": "page920260801002.html",
+    "url": "https://bestauto.ge/blog/deep-crack-rescue-last-chance",
+    "path": "/blog/deep-crack-rescue-last-chance",
+    "title": "ღრმა ბზარი საქარეზე — ბოლო შანსი მინის გადასარჩენად",
+    "lang": "ka",
+    "slug": "blog/deep-crack-rescue-last-chance"
+  },
+  "920260801003": {
+    "file": "page920260801003.html",
+    "url": "https://bestauto.ge/en/blog/deep-crack-rescue-last-chance",
+    "path": "/en/blog/deep-crack-rescue-last-chance",
+    "title": "Deep crack on the windshield — last chance to save it",
+    "lang": "en",
+    "slug": "blog/deep-crack-rescue-last-chance"
+  },
   "920260724001": {
     "file": "page920260724001.html",
     "url": "https://bestauto.ge/ru/blog/winter-detailing-tbilisi",
@@ -3566,5 +3590,29 @@
     "title": "9H, SiO2, SiC — ceramic technical comparison",
     "lang": "en",
     "slug": "blog/ceramic-product-lines-compared"
+  },
+  "920260731001": {
+    "file": "page920260731001.html",
+    "url": "https://bestauto.ge/ru/blog/ceramic-tbilisi-climate",
+    "path": "/ru/blog/ceramic-tbilisi-climate",
+    "title": "Керамика в тбилисском климате — лето и зима",
+    "lang": "ru",
+    "slug": "blog/ceramic-tbilisi-climate"
+  },
+  "920260731002": {
+    "file": "page920260731002.html",
+    "url": "https://bestauto.ge/blog/ceramic-tbilisi-climate",
+    "path": "/blog/ceramic-tbilisi-climate",
+    "title": "კერამიკა თბილისის კლიმატში — ზაფხული და ზამთარი",
+    "lang": "ka",
+    "slug": "blog/ceramic-tbilisi-climate"
+  },
+  "920260731003": {
+    "file": "page920260731003.html",
+    "url": "https://bestauto.ge/en/blog/ceramic-tbilisi-climate",
+    "path": "/en/blog/ceramic-tbilisi-climate",
+    "title": "Ceramic coating in Tbilisi climate — seasons",
+    "lang": "en",
+    "slug": "blog/ceramic-tbilisi-climate"
   }
 }
