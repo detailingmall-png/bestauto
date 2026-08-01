@@ -8,7 +8,7 @@ primary_hf_ru: "глубокая трещина лобовое, спасти с�
 primary_hf_ka: "ღრმა ბზარი, ბზარის გაჩერება, საქარე მინის გადარჩენა"
 primary_hf_en: "deep crack windshield, last chance crack repair"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#69"
   - competitor: "autoqimwmenda.ge (glass-repair urgent category)"
