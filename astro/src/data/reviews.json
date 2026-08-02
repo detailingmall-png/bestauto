@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 194,
-  "fetchedAt": "2026-08-01T06:32:18.193Z",
+  "fetchedAt": "2026-08-02T06:36:09.882Z",
   "reviews": [
     {
       "authorName": "Ketino Garozashvili",
@@ -175,15 +175,15 @@
         "ka": "შედეგით გაოგნებული დავრჩი. ჩემი ძველი ფორდი ახალივით გამოიყურება და არაფრის სუნი არ ასდის! გირჩევთ!"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "en",
       "time": 1780318426,
       "profileUrl": "https://www.google.com/maps/contrib/106314736770662063356/reviews",
       "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing! Highly recommended!",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "Nika Khatiashvili",
