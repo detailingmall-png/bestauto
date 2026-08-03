@@ -38,14 +38,45 @@ jobs:
         run: |
           if git diff --quiet astro/src/data/reviews.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add astro/src/data/reviews.json
-            git commit -m "chore: update Google reviews data"
-            git push
-            echo "changed=true" >> $GITHUB_OUTPUT
+            exit 0
           fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add astro/src/data/reviews.json
+
+          # Fetching reviews takes ~1 min (up to 3.5 min when the Places API is
+          # slow), and this job holds its checkout for that whole time. If anyone
+          # pushes to the branch meanwhile, `git push` is rejected and the run
+          # fails with the day's reviews lost (happened 2026-08-03).
+          #
+          # On rejection: take the new tip verbatim and re-apply ONLY the
+          # generated file on top of it. Resetting --soft instead would keep the
+          # stale index and the next commit would revert whatever the other push
+          # added. Hard reset + copy touches nothing but reviews.json.
+          REVIEWS=astro/src/data/reviews.json
+          cp "$REVIEWS" "${RUNNER_TEMP:-/tmp}/reviews.json"
+
+          for attempt in 1 2 3; do
+            git commit -m "chore: update Google reviews data" --quiet || true
+            if git push; then
+              echo "changed=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            echo "push rejected (attempt ${attempt}/3) — replaying onto the new ${GITHUB_REF_NAME} tip"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            cp "${RUNNER_TEMP:-/tmp}/reviews.json" "$REVIEWS"
+            git add "$REVIEWS"
+            if git diff --cached --quiet; then
+              echo "reviews already up to date on the new tip — nothing to push"
+              echo "changed=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          done
+
+          echo "::error::could not push the reviews update after 3 attempts"
+          exit 1
 
       - name: Trigger deploy
         if: steps.commit.outputs.changed == 'true'
