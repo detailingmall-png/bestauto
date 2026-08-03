@@ -2490,6 +2490,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/insurance-windshield-claim-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт скола',
+        originalPhrase: 'ремонт скола',
+        contextQuote: 'Франшиза 200 ₾, ремонт скола стоит 60–80 ₾.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4849,6 +4861,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/insurance-windshield-claim-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ბზარის შეკეთება',
+        originalPhrase: 'ბზარის შეკეთება',
+        contextQuote: 'ფრანშიზა 200 ₾, 15–30 სმ ბზარის შეკეთება ღირს 140 ₾.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7130,6 +7154,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'windshield repair',
         originalPhrase: 'windshield',
         contextQuote: 'Modern cars with assistant systems (lane assist, autopilot, automatic braking) have a camera behind the mirror looking through the windshield.',
+      },
+    ],
+  },
+  {
+    article: 'blog/insurance-windshield-claim-georgia',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'windshield repair',
+        contextQuote: 'over 60 ₾ — our windshield repair pricing:',
       },
     ],
   },
