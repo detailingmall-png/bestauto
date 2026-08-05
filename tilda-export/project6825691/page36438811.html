@@ -842,11 +842,23 @@ window.baToggleForm = function(formId, btn) {
     var studio = baStudios[key];
     if (!studio) return;
     var msg = 'Здравствуйте! Хочу записаться в студию ' + studio.name + '.';
+    /* Same event names the wa.me links fire from tracking.js, so this button
+       feeds the Google Ads conversions that are already enabled
+       (whatsapp_click_299 / _199) instead of a bare whatsapp_click that Ads
+       keeps hidden. Studio is derived from the phone number, as in tracking.js. */
+    var evt = studio.phone.indexOf('299') !== -1 ? 'whatsapp_click_299' : 'whatsapp_click_199';
+    var params = { studio: key, placement: 'contacts' };
     try {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'whatsapp_click', studio: key, placement: 'contacts' });
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'whatsapp_click', { studio: key, placement: 'contacts' });
+      window.dataLayer.push({ event: evt, studio: key, placement: 'contacts' });
+      /* baTrack fans the event out to GA4 + Metrika + Meta Pixel/CAPI and holds
+         it until each interaction-gated provider has loaded. If tracking.js is
+         not parsed yet, queue it there for the drain on load. */
+      if (typeof window.baTrack === 'function') {
+        window.baTrack(evt, params);
+      } else {
+        window.baTrackQueue = window.baTrackQueue || [];
+        window.baTrackQueue.push([evt, params]);
       }
     } catch (e) {}
     window.open('https://wa.me/' + studio.phone + '?text=' + encodeURIComponent(msg), '_blank');

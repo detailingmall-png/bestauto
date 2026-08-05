@@ -264,6 +264,28 @@
   // form_submit hook is needed here; lead_submitted / lead_fallback_whatsapp
   // are still fired by window.baTrackLead below.
 
+  // --- Public event API for inline block scripts ---
+  // The contacts CTA is a <button onclick="baOpenWhatsApp(...)">, not an
+  // <a href="wa.me/...">, so the delegated listener above never sees it and it
+  // used to fire its own bare gtag('event', 'whatsapp_click') — an event Google
+  // Ads keeps hidden, with no Metrika/Meta delivery and no queue. baTrack()
+  // gives such scripts the same GA + YM + fbq + CAPI fanout as every other
+  // tracked interaction, including the per-provider pending queues.
+  // Inline block scripts can run before this file is parsed, so events they
+  // pushed into window.baTrackQueue in the meantime are drained here.
+  window.baTrack = function (eventName, params) {
+    send(eventName, params);
+  };
+
+  (function drainTrackQueue() {
+    var queued = window.baTrackQueue;
+    if (!queued || !queued.length) return;
+    while (queued.length) {
+      var item = queued.shift();
+      try { send(item[0], item[1]); } catch (e) {}
+    }
+  })();
+
   // --- Lead form submission tracking ---
   // serverOk=true:  /api/lead handled the lead and ALREADY fired Meta CAPI Lead
   //   server-side with Advanced Matching (phone hash + IP/UA + fbp/fbc cookies).
