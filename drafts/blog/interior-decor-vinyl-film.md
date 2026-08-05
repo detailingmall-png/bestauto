@@ -8,7 +8,12 @@ primary_hf_ru: "плёнка салона, декор салона плёнко�
 primary_hf_ka: "სალონის დეკორი, სალონის ფირით გადაკვრა"
 primary_hf_en: "interior vinyl decor, interior vinyl wrap"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-08-04
+published_pageids:
+  ru: "920260804001"
+  ka: "920260804002"
+  en: "920260804003"
 sources:
   - roadmap: "docs/content-roadmap.md#44"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"

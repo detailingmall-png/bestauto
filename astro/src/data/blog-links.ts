@@ -2502,6 +2502,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/interior-decor-vinyl-film',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'винил',
+        originalPhrase: 'винил',
+        contextQuote: 'тот же винил, та же толщина',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'В BESTAUTO оклейка элементов салона защитной плёнкой — от 800 ₾. Декоративная плёнка работает',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4873,6 +4892,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/interior-decor-vinyl-film',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილი',
+        originalPhrase: 'ვინილი',
+        contextQuote: 'იგივე ვინილი, იგივე სისქე',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირით',
+        originalPhrase: 'დამცავი ფირით',
+        contextQuote: 'BESTAUTO-ში სალონის ელემენტების გადაფარვა დამცავი ფირით — 800 ₾-დან. დეკორატიული ფირი მუშაობს',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7166,6 +7204,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'windshield repair',
         originalPhrase: 'windshield repair',
         contextQuote: 'over 60 ₾ — our windshield repair pricing:',
+      },
+    ],
+  },
+  {
+    article: 'blog/interior-decor-vinyl-film',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl',
+        originalPhrase: 'vinyl',
+        contextQuote: 'interior decor vinyl is the same material as body vinyl',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'protective film',
+        originalPhrase: 'protective film',
+        contextQuote: 'At BESTAUTO interior protective film starts from 800 ₾. Decor vinyl uses',
       },
     ],
   },

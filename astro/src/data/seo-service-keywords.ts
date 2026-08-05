@@ -174,6 +174,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის დამცავი ფირი',       // GSC: 1 + competitor confirmed
     'დამცავი ფირი',                // standard term (adetailing.ge H2)
     'დამცავი ფირის',               // inflected — valid in blog anchor context
+    'დამცავი ფირით',               // inflected — valid anchor (instrumental, interior-decor-vinyl-film body)
     'დამცავი ფირის გადაკვრა',      // fixup.ge canonical PPF anchor (protective film wrapping)
     'ფირის გადაკვრა',              // generic film-wrapping intent (also in /vinyl-wrapping; rule decides target)
     'მანქანის ფირი',               // GSC: 3 — claimed for PPF (not vinyl, see header)
@@ -256,6 +257,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'car ppf',
     'ppf for car',                 // GSC: 1
     'ppf film',                    // variant — valid in blog anchor context
+    'protective film',             // short alias for "paint protection film" — valid anchor (interior-decor-vinyl-film body)
   ],
   '/vinyl-wrapping': [
     'car wrap',                    // GSC: 22 clicks (top)
