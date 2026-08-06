@@ -2521,6 +2521,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/lease-return-detailing-prep',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона',
+        originalPhrase: 'химчистка салона',
+        contextQuote: 'Самая выгодная позиция в подготовке к сдаче — химчистка салона. Причина простая',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'Когда полировка НЕ нужна. Если на кузове есть глубокие повреждения',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнки',
+        originalPhrase: 'защитной плёнки',
+        contextQuote: 'снятие винила, наклеек, антихромной плёнки, защитной плёнки PPF, виниловых надписей рекламы',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -4911,6 +4937,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/lease-return-detailing-prep',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'სალონის ქიმწმენდა',
+        originalPhrase: 'სალონის ქიმწმენდა',
+        contextQuote: 'მზადების ყველაზე მომგებიანი პოზიციაა სალონის ქიმწმენდა. მიზეზი მარტივია',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'როდის არ სჭირდება პოლირება. თუ კუზოვზე ღრმა დაზიანებებია',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'დამცავი ფირი PPF.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7223,6 +7275,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'protective film',
         originalPhrase: 'protective film',
         contextQuote: 'At BESTAUTO interior protective film starts from 800 ₾. Decor vinyl uses',
+      },
+    ],
+  },
+  {
+    article: 'blog/lease-return-detailing-prep',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'The most cost-effective prep item is interior cleaning. The reason is simple',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'When polishing is NOT needed. If the body has deep damage',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'protective film',
+        originalPhrase: 'protective film',
+        contextQuote: 'PPF protective film.',
       },
     ],
   },

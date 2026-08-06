@@ -3662,5 +3662,29 @@
     "title": "Interior Decor Vinyl — DIY or studio",
     "lang": "en",
     "slug": "blog/interior-decor-vinyl-film"
+  },
+  "920260806001": {
+    "file": "page920260806001.html",
+    "url": "https://bestauto.ge/ru/blog/lease-return-detailing-prep",
+    "path": "/ru/blog/lease-return-detailing-prep",
+    "title": "Возврат машины после лизинга или аренды — детейлинг перед сдачей",
+    "lang": "ru",
+    "slug": "blog/lease-return-detailing-prep"
+  },
+  "920260806002": {
+    "file": "page920260806002.html",
+    "url": "https://bestauto.ge/blog/lease-return-detailing-prep",
+    "path": "/blog/lease-return-detailing-prep",
+    "title": "მანქანის დაბრუნება ლიზინგის ან ქირავნობის შემდეგ — დეტეილინგი ჩაბარებამდე",
+    "lang": "ka",
+    "slug": "blog/lease-return-detailing-prep"
+  },
+  "920260806003": {
+    "file": "page920260806003.html",
+    "url": "https://bestauto.ge/en/blog/lease-return-detailing-prep",
+    "path": "/en/blog/lease-return-detailing-prep",
+    "title": "Lease or rental return — detailing prep before handover",
+    "lang": "en",
+    "slug": "blog/lease-return-detailing-prep"
   }
 }
