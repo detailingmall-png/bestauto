@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 194,
-  "fetchedAt": "2026-08-07T05:42:46.946Z",
+  "fetchedAt": "2026-08-08T05:00:20.790Z",
   "reviews": [
     {
       "authorName": "Ketino Garozashvili",
@@ -15,15 +15,15 @@
         "en": "The guys did a fantastic polishing job, touched up the chips and removed all visible imperfections. As a bonus, they polished the headlights and also cleaned up the interior. The car looks like new 🙂\n\nI highly recommend them 💪🤝"
       },
       "relativeTimes": {
-        "ru": "1 неделю назад",
-        "ka": "ერთი კვირის წინ",
-        "en": "a week ago"
+        "ru": "2 недели назад",
+        "ka": "2 კვირის წინ",
+        "en": "2 weeks ago"
       },
       "originalLang": "ru",
       "time": 1784877606,
       "profileUrl": "https://www.google.com/maps/contrib/114698061180804723826/reviews",
       "text": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
-      "relativeTime": "a week ago"
+      "relativeTime": "2 weeks ago"
     },
     {
       "authorName": "Alex Rex",
@@ -35,15 +35,15 @@
         "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "en",
       "time": 1784296300,
       "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
       "text": "Best service, Real professionals.",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "ani sonishvili",
