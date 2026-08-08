@@ -3686,5 +3686,29 @@
     "title": "Lease or rental return — detailing prep before handover",
     "lang": "en",
     "slug": "blog/lease-return-detailing-prep"
+  },
+  "920260808001": {
+    "file": "page920260808001.html",
+    "url": "https://bestauto.ge/ru/blog/mountain-trip-polish-check",
+    "path": "/ru/blog/mountain-trip-polish-check",
+    "title": "После горной поездки — полировка и осмотр кузова",
+    "lang": "ru",
+    "slug": "blog/mountain-trip-polish-check"
+  },
+  "920260808002": {
+    "file": "page920260808002.html",
+    "url": "https://bestauto.ge/blog/mountain-trip-polish-check",
+    "path": "/blog/mountain-trip-polish-check",
+    "title": "მთის შემდეგ პოლირება — ძარის შემოწმება თბილისში",
+    "lang": "ka",
+    "slug": "blog/mountain-trip-polish-check"
+  },
+  "920260808003": {
+    "file": "page920260808003.html",
+    "url": "https://bestauto.ge/en/blog/mountain-trip-polish-check",
+    "path": "/en/blog/mountain-trip-polish-check",
+    "title": "Mountain trip polishing — body check after Kazbegi/Svaneti",
+    "lang": "en",
+    "slug": "blog/mountain-trip-polish-check"
   }
 }

@@ -9,7 +9,8 @@ primary_hf_ka: "მთის შემდეგ პოლირება, მა
 primary_hf_en: "mountain trip polish, car polishing after scratches"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published: 2026-08-08
 sources:
   - roadmap: "docs/content-roadmap.md#10"
 ---

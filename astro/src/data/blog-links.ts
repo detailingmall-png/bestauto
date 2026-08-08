@@ -128,6 +128,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/mountain-trip-polish-check',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'какие дефекты уберёт полировка кузова автомобиля, а какие останутся в памяти лака навсегда.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитная плёнка',
+        originalPhrase: 'защитная плёнка',
+        contextQuote: 'или — если решение нужно на будущее — защитная плёнка PPF на ударные зоны.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-self-healing-explained',
     links: [
       {
@@ -2627,6 +2646,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/mountain-trip-polish-check',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'ეს მტვრის ნამუშევარია, და მას აცილებს პოლირება.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირი',
+        originalPhrase: 'დამცავი ფირი',
+        contextQuote: 'თუ გამოსავალი სამომავლოდ გვჭირდება — დამცავი ფირი PPF დარტყმის ზონებზე.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-self-healing-explained',
     links: [
       {
@@ -5039,6 +5077,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'PPF film',
         originalPhrase: 'PPF film',
         contextQuote: 'covering those zones with PPF film makes sense',
+      },
+    ],
+  },
+  {
+    article: 'blog/mountain-trip-polish-check',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'that\'s the dust talking, and polishing will take it out.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'PPF film',
+        originalPhrase: 'PPF film',
+        contextQuote: 'Only PPF film protects from gravel — a polyurethane coating 150-200 microns thick that physically shields impact zones.',
       },
     ],
   },
