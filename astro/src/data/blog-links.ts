@@ -2566,6 +2566,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/polish-finish-types-matt-gloss-satin',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'полировка кузова',
+        contextQuote: 'Под словом «полировка кузова» в Тбилиси почти всегда имеют в виду одно — глянец до зеркала.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'абразивная полировка',
+        originalPhrase: 'абразивная полировка',
+        contextQuote: 'Если у вас машина с сатиновым заводским лаком, обычная абразивная полировка её испортит — уберёт тот самый микро-рельеф, который даёт полумат.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5001,6 +5020,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/polish-finish-types-matt-gloss-satin',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მატ ქარხნულ ლაქზე პოლირება კეთდება განსაკუთრებული სიფრთხილით და უხეში აბრაზივების გარეშე.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირების',
+        originalPhrase: 'პოლირების',
+        contextQuote: 'წმინდა აბრაზიული პოლირების მანქანა სატინს არ იძლევა — იძლევა გლოსს.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7358,6 +7396,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'protective film',
         originalPhrase: 'protective film',
         contextQuote: 'PPF protective film.',
+      },
+    ],
+  },
+  {
+    article: 'blog/polish-finish-types-matt-gloss-satin',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'On factory matt paint, polishing is done with extreme care and without coarse abrasives.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'An abrasive polishing machine makes the surface smoother, which heads towards gloss, not matt.',
       },
     ],
   },

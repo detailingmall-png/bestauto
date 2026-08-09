@@ -165,6 +165,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/pre-sale-polishing-resale-value': 'polishing',
   'blog/scratch-polish-guide':         'polishing',
   'blog/mountain-trip-polish-check':   'polishing',
+  'blog/polish-finish-types-matt-gloss-satin': 'polishing',
   // Car wash
   'blog/2-phase-vs-3-phase-wash':      'carwash',
   'blog/contactless-vs-hand-wash':     'carwash',

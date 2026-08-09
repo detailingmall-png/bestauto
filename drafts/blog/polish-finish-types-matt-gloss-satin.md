@@ -9,7 +9,7 @@ primary_hf_ka: "პოლირების ტიპი, მანქანი�
 primary_hf_en: "polish finish types, car polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#11"
 ---
