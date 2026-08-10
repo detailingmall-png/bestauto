@@ -9,7 +9,8 @@ primary_hf_ka: "რამდენად ხშირად პოლირე�
 primary_hf_en: "how often to polish car, car polishing"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published: 2026-08-10
 sources:
   - roadmap: "docs/content-roadmap.md#12"
 ---

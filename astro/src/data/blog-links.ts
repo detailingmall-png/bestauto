@@ -2585,6 +2585,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/polishing-how-often-myth-bust',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'полировка кузова',
+        originalPhrase: 'Полировка кузова',
+        contextQuote: 'Полировка кузова — от 690 ₾',
+      },
+      {
+        role: 'cross-service',
+        target: '/ceramiccoating',
+        anchor: 'керамическое покрытие',
+        originalPhrase: 'Керамическое покрытие',
+        contextQuote: 'Керамическое покрытие</strong> — гидрофобный эффект, легче мойка, меньше схватываются битум и птичий помёт.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5039,6 +5058,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/polishing-how-often-myth-bust',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'პოლირება ყოველ წელიწადს — მითი, ნორმა 2-3 წელიწადში ერთხელ ტიპური მანქანისთვის',
+      },
+      {
+        role: 'cross-service',
+        target: '/ceramiccoating',
+        anchor: 'კერამიკული საფარი',
+        originalPhrase: 'კერამიკული საფარი',
+        contextQuote: 'კერამიკული საფარი</strong> — ჰიდროფობური ეფექტი, უფრო მარტივი რეცხვა, ნაკლებად ეჭიდება ბიტუმი და ფრინველის ნარჩენი.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7415,6 +7453,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'An abrasive polishing machine makes the surface smoother, which heads towards gloss, not matt.',
+      },
+    ],
+  },
+  {
+    article: 'blog/polishing-how-often-myth-bust',
+    links: [
+      {
+        role: 'pillar',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'Polishing every year is a myth; norm is once every 2-3 years for a typical car',
+      },
+      {
+        role: 'cross-service',
+        target: '/ceramiccoating',
+        anchor: 'ceramic coating',
+        originalPhrase: 'Ceramic coating',
+        contextQuote: 'Ceramic coating</strong> — hydrophobic effect, easier washes, tar and bird droppings bond less.',
       },
     ],
   },
