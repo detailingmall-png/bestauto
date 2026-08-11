@@ -93,6 +93,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/ppf-for-new-cars-checklist':      'ppf-shield-wrapping',
   'blog/ppf-matte-satin-finish-options':      'ppf-shield-wrapping',
   'blog/ppf-self-healing-explained':          'ppf-shield-wrapping',
+  'blog/ppf-hood-only-partial-wrap':          'ppf-shield-wrapping',
   'blog/detailing-center-tbilisi':           'ppf-shield-wrapping',
   'blog/detailing-services-all-in-one':      'ppf-shield-wrapping',
   'blog/5-year-ownership-detailing-plan':    'ppf-shield-wrapping',

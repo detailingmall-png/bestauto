@@ -166,6 +166,18 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ppf-hood-only-partial-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'Полная оклейка кузова защитной плёнкой стоит серьёзных денег, и не каждая ситуация требует такого бюджета.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {
@@ -2722,6 +2734,18 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ppf-hood-only-partial-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირით',
+        originalPhrase: 'დამცავი ფირით',
+        contextQuote: 'ძარის სრული გადაკვრა დამცავი ფირით სერიოზულ ხარჯს მოითხოვს, და ყველა სიტუაცია ასეთ ბიუჯეტს არ საჭიროებს.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {
@@ -5191,6 +5215,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'polishing',
         originalPhrase: 'polishing',
         contextQuote: 'Brush marks close without any polishing.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-hood-only-partial-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'paint protection film',
+        contextQuote: 'A full-body paint protection film installation involves real money, and not every situation calls for that budget.',
       },
     ],
   },

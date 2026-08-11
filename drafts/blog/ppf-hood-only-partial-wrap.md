@@ -8,7 +8,12 @@ primary_hf_ru: "защита капота плёнкой, ppf капот, плё
 primary_hf_ka: "კაპოტის PPF, კაპოტის დამცავი ფირი"
 primary_hf_en: "hood-only ppf, ppf hood, paint protection film hood"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-08-11
+published_pageids:
+  ru: "920260811001"
+  ka: "920260811002"
+  en: "920260811003"
 sources:
   - roadmap: "docs/content-roadmap.md#37"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"
