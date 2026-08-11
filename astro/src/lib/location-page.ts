@@ -6,6 +6,7 @@ import type { LocationData } from '../data/location-data';
 import { META_OVERRIDES } from '../data/meta-overrides';
 import { getHomepageHeadCss } from './shared-blocks';
 import { renderFaqAccordion, type FaqAccordionItem } from './faq-accordion';
+import { SERVICE_SLUGS, getServiceName } from './seo';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -218,18 +219,59 @@ export function generateLocationContent(
   return sections.join('\n');
 }
 
-const SERVICES_LIST: ReadonlyArray<{ slug: string; name: Record<string, string> }> = [
-  { slug: 'ppf-shield-wrapping', name: { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' } },
-  { slug: 'ceramiccoating', name: { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' } },
-  { slug: 'polishing', name: { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' } },
-  { slug: 'vinyl-wrapping', name: { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета плёнкой', en: 'Color Change Wrap' } },
-  { slug: 'auto-glass-tinting', name: { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' } },
-  { slug: 'interior-cleaning', name: { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' } },
-  { slug: 'carwash', name: { ka: 'მანქანის რეცხვა', ru: 'Детейлинг мойка', en: 'Premium Car Wash' } },
-  { slug: 'car-soundproofing', name: { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' } },
-  { slug: 'windshield-repair', name: { ka: 'ავტომინების შეკეთება', ru: 'Ремонт автостекол', en: 'Windshield Repair' } },
-  { slug: 'computer-diagnostics', name: { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' } },
+/**
+ * Display order for the location-page service list — editorial, highest-value
+ * services first, so it stays here rather than in the registry.
+ *
+ * The slugs are validated against `SERVICE_SLUGS` at build time: adding or
+ * removing a service without touching this list fails the build instead of
+ * silently dropping the service from every location page (which is exactly what
+ * happened to interior-restoration and paintless-dent-repair).
+ */
+const LOCATION_SERVICE_ORDER: ReadonlyArray<string> = [
+  'ppf-shield-wrapping',
+  'ceramiccoating',
+  'polishing',
+  'vinyl-wrapping',
+  'auto-glass-tinting',
+  'interior-cleaning',
+  'interior-restoration',
+  'paintless-dent-repair',
+  'carwash',
+  'car-soundproofing',
+  'windshield-repair',
+  'computer-diagnostics',
 ];
+
+const missingFromOrder = [...SERVICE_SLUGS].filter((slug) => !LOCATION_SERVICE_ORDER.includes(slug));
+const unknownInOrder = LOCATION_SERVICE_ORDER.filter((slug) => !SERVICE_SLUGS.has(slug));
+if (missingFromOrder.length > 0 || unknownInOrder.length > 0) {
+  throw new Error(
+    `[location-page] LOCATION_SERVICE_ORDER is out of sync with the service registry in seo.ts. ` +
+      `Missing: [${missingFromOrder.join(', ')}]. Unknown: [${unknownInOrder.join(', ')}].`,
+  );
+}
+
+/**
+ * Short link labels for the location-page grid. These are intentionally shorter
+ * than the canonical `SERVICES` names in seo.ts (which carry the full SEO
+ * phrasing used in Service schema); `getServiceName()` is the fallback so a new
+ * service still renders a correct label before a short one is written.
+ */
+const LOCATION_SERVICE_LABELS: Readonly<Record<string, Record<string, string>>> = {
+  'ppf-shield-wrapping': { ka: 'PPF დამცავი ფირი', ru: 'Защитная плёнка PPF', en: 'PPF Paint Protection Film' },
+  'ceramiccoating': { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
+  'polishing': { ka: 'მანქანის პოლირება', ru: 'Полировка автомобиля', en: 'Car Polishing' },
+  'vinyl-wrapping': { ka: 'ფერის შეცვლა დამცავი ფირით', ru: 'Смена цвета плёнкой', en: 'Color Change Wrap' },
+  'auto-glass-tinting': { ka: 'მინების დაბურვა', ru: 'Тонировка стёкол', en: 'Window Tinting' },
+  'interior-cleaning': { ka: 'ქიმწმენდა', ru: 'Химчистка салона', en: 'Interior Cleaning' },
+  'interior-restoration': { ka: 'სალონის რესტავრაცია', ru: 'Реставрация салона', en: 'Interior Restoration' },
+  'paintless-dent-repair': { ka: 'ჩაზნექილობის გამოსწორება', ru: 'Ремонт вмятин без покраски', en: 'Paintless Dent Repair' },
+  'carwash': { ka: 'მანქანის რეცხვა', ru: 'Детейлинг мойка', en: 'Premium Car Wash' },
+  'car-soundproofing': { ka: 'ხმის იზოლაცია', ru: 'Шумоизоляция', en: 'Car Soundproofing' },
+  'windshield-repair': { ka: 'ავტომინების შეკეთება', ru: 'Ремонт автостекол', en: 'Windshield Repair' },
+  'computer-diagnostics': { ka: 'კომპიუტერული დიაგნოსტიკა', ru: 'Компьютерная диагностика', en: 'Computer Diagnostics' },
+};
 
 function generateServicesList(lang: string): string {
   return `<style>
@@ -238,9 +280,10 @@ function generateServicesList(lang: string): string {
 @media(prefers-reduced-motion:reduce){.ba-loc-svc{transition:none}}
 </style>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
-    ${SERVICES_LIST.map((s) => {
-      const href = lang === 'ka' ? `/${s.slug}/` : `/${lang}/${s.slug}/`;
-      const name = s.name[lang] ?? s.name.en;
+    ${LOCATION_SERVICE_ORDER.map((slug) => {
+      const href = lang === 'ka' ? `/${slug}/` : `/${lang}/${slug}/`;
+      const labels = LOCATION_SERVICE_LABELS[slug];
+      const name = labels?.[lang] ?? labels?.en ?? getServiceName(slug, lang) ?? slug;
       return `<a href="${href}" class="ba-loc-svc">${name}</a>`;
     }).join('\n    ')}
   </div>`;

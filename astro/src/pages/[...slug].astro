@@ -19,7 +19,7 @@ import { injectSanityData } from '../lib/sanity-inject';
 import { injectPricesData } from '../lib/prices-inject';
 import { injectServicePrices, addPricesAnchor, extractPriceSection, extractPricesCta } from '../lib/service-prices-inject';
 import { replaceGalleries, removeDuplicateGalleries } from '../lib/gallery-inject';
-import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema, generateHowToSchema, generateHomepageVideoSchema } from '../lib/seo';
+import { generateHreflangTags, generateBreadcrumbSchema, generateServiceSchema, generateReviewSchema, generateWebSiteSchema, generateServiceFaqSchema, generateArticleSchema, generateOrganizationSchema, generateHowToSchema, generateHomepageVideoSchema, SERVICE_SLUGS } from '../lib/seo';
 import { WHATSAPP_BLOCK, CONTACTS_BLOCK, WHATSAPP_BLOCK_KA, WHATSAPP_BLOCK_EN, CONTACTS_BLOCK_KA, CONTACTS_BLOCK_EN } from '../lib/whatsapp-blocks';
 import { generateServicesGridHtml } from '../lib/services-grid';
 import { getReviewsWidgetHtml } from '../lib/reviews-widget';
@@ -39,11 +39,6 @@ import { RU_SEO_PAGES } from '../data/ru-seo-changes';
 import { EN_SEO_PAGES } from '../data/en-seo-changes';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
-const SERVICE_SLUGS = new Set([
-  'polishing', 'ceramiccoating', 'interior-cleaning',
-  'windshield-repair', 'ppf-shield-wrapping', 'vinyl-wrapping',
-  'auto-glass-tinting', 'car-soundproofing', 'computer-diagnostics', 'carwash',
-]);
 
 export async function getStaticPaths() {
   const pages = getAllPages();
@@ -216,10 +211,11 @@ const FAQ_SECTION_TITLE: Readonly<Record<string, string>> = {
 };
 // Remove Tilda-embedded FAQPage / Service JSON-LD wherever seoHead emits its
 // own, otherwise the page ships two of each (GSC: "Duplicate field FAQPage").
-// Gated on SERVICE_FAQS rather than SERVICE_SLUGS so interior-restoration and
-// paintless-dent-repair — which have FAQs but keep their Tilda accordion — are
-// covered too; all three languages were shipping FAQPage twice.
-if (SERVICE_SLUGS.has(baseSlug) || SERVICE_FAQS[baseSlug]) {
+// SERVICE_SLUGS now comes from the registry in seo.ts and covers all 12 live
+// services, so the previous `|| SERVICE_FAQS[baseSlug]` fallback (added while
+// interior-restoration and paintless-dent-repair were missing from the local
+// copy of the list) is redundant — the two sets have identical keys.
+if (SERVICE_SLUGS.has(baseSlug)) {
   injectedHtml = removeTildaFaqSchema(injectedHtml);
   injectedHtml = removeTildaServiceSchema(injectedHtml);
 }

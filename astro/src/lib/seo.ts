@@ -185,6 +185,32 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
   },
 };
 
+// ──────────────────────────────────────────────
+// Service registry — single source of truth
+// ──────────────────────────────────────────────
+
+/**
+ * Every live service slug, derived from SERVICES above so the list cannot drift.
+ *
+ * Consumers: the catch-all route (`[...slug].astro`) gates the service-page
+ * pipeline on it, and `location-page.ts` renders its service links from it.
+ * Those two used to keep their own hand-written copies, which silently fell out
+ * of sync when `interior-restoration` and `paintless-dent-repair` were restored
+ * in June 2026 — both services shipped without Sanity prices and were missing
+ * from every location page for two months.
+ *
+ * Adding a service: add it here (SERVICES) plus `service-faqs.ts`,
+ * `service-prices-inject.ts` and `page-map.json` — see `.claude/rules/seo-guide.md`.
+ */
+export const SERVICE_SLUGS: ReadonlySet<string> = new Set(Object.keys(SERVICES));
+
+/** Localized display name for a service, or undefined if the slug is unknown. */
+export function getServiceName(slug: string, lang: string): string | undefined {
+  const service = SERVICES[slug];
+  if (!service) return undefined;
+  return service.name[lang] ?? service.name.en;
+}
+
 // Breadcrumb home labels per language
 const HOME_LABEL: Readonly<Record<string, string>> = {
   ka: 'მთავარი',
