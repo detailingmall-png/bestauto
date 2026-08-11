@@ -50,6 +50,16 @@ const MAX_CONTACT = 200;
 const MAX_MESSAGE = 4000;
 const RATE_LIMIT_MAX = 6;
 const RATE_LIMIT_WINDOW_SEC = 3600; // 1 hour
+// Cap the blocking Telegram call — the visitor waits on it. Mirrors lead.ts.
+const TELEGRAM_TIMEOUT_MS = 5000;
+// Coarse body cap; see the same constant in lead.ts for what it does and does not
+// guarantee. MAX_MESSAGE (4000 chars) is the real content limit.
+const MAX_BODY_BYTES = 8192;
+// A failed complaint is logged so it can be recovered by hand, but the message is
+// unbounded free text a customer believes is going privately to the director —
+// Workers logs are a wider audience than the Telegram group, so only enough for
+// triage is kept.
+const LOG_MESSAGE_PREVIEW = 200;
 
 const STUDIO_LABELS: Record<Studio, string> = {
   guramishvili: 'Guramishvili',
@@ -63,14 +73,21 @@ const STUDIO_LABELS: Record<Studio, string> = {
 async function isRateLimited(kv: KVNamespace | undefined, ip: string): Promise<boolean> {
   if (!kv) return false; // skip when KV not bound (local dev)
 
-  const key = `rl:complaint:${ip}`;
-  const raw = await kv.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
+  // Fail open on a KV error — an unhandled throw would 500 the handler and drop a
+  // real complaint. Mirrors lead.ts.
+  try {
+    const key = `rl:complaint:${ip}`;
+    const raw = await kv.get(key);
+    const count = raw ? parseInt(raw, 10) : 0;
 
-  if (count >= RATE_LIMIT_MAX) return true;
+    if (count >= RATE_LIMIT_MAX) return true;
 
-  await kv.put(key, String(count + 1), { expirationTtl: RATE_LIMIT_WINDOW_SEC });
-  return false;
+    await kv.put(key, String(count + 1), { expirationTtl: RATE_LIMIT_WINDOW_SEC });
+    return false;
+  } catch (e) {
+    console.error(`[complaint] rate limit check failed, allowing request: ${String(e)}`);
+    return false;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -88,6 +105,12 @@ function tbilisiTime(): string {
   } catch {
     return new Date().toISOString();
   }
+}
+
+/** Truncated message for failure logs — enough to triage, not the whole complaint. */
+function messagePreview(message: string): string {
+  if (message.length <= LOG_MESSAGE_PREVIEW) return message;
+  return `${message.slice(0, LOG_MESSAGE_PREVIEW)}…[+${message.length - LOG_MESSAGE_PREVIEW} chars]`;
 }
 
 async function sendTelegram(env: Env, c: ComplaintPayload): Promise<{ ok: boolean; error?: string }> {
@@ -132,15 +155,29 @@ async function sendTelegram(env: Env, c: ComplaintPayload): Promise<{ ok: boolea
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
   console.log(`[complaint] tg send studio=${c.studio} chat=${chatId} thread=${threadId ?? 'none'}`);
 
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
+  // Never throw: Telegram is the only store for a complaint, so a network error
+  // must be logged with the full payload rather than surfacing as a 500 that
+  // loses both the complaint and the GA4 event. Mirrors lead.ts.
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(TELEGRAM_TIMEOUT_MS),
+    });
+  } catch (e) {
+    console.error(
+      `[complaint] TG UNREACHABLE — COMPLAINT NOT DELIVERED studio=${c.studio} contact=${c.contact} message=${messagePreview(c.message)} error=${String(e)}`,
+    );
+    return { ok: false, error: `Telegram unreachable: ${String(e)}` };
+  }
 
   if (!res.ok) {
-    const text = await res.text();
-    console.error(`[complaint] tg fail status=${res.status} body=${text}`);
+    const text = await res.text().catch(() => '<unreadable body>');
+    console.error(
+      `[complaint] tg fail status=${res.status} body=${text} studio=${c.studio} contact=${c.contact} message=${messagePreview(c.message)}`,
+    );
     return { ok: false, error: `Telegram ${res.status}` };
   }
 
@@ -188,8 +225,19 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   let payload: ComplaintPayload;
   try {
-    payload = await request.json();
+    const declaredLength = Number(request.headers.get('content-length') || '0');
+    if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
+      return jsonResponse(413, { ok: false, error: 'Payload too large' });
+    }
+    const raw = await request.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return jsonResponse(413, { ok: false, error: 'Payload too large' });
+    }
+    payload = JSON.parse(raw);
   } catch {
+    return jsonResponse(400, { ok: false, error: 'Invalid JSON' });
+  }
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
     return jsonResponse(400, { ok: false, error: 'Invalid JSON' });
   }
 

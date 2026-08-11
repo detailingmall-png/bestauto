@@ -60,6 +60,17 @@ const VALID_STUDIOS = ['guramishvili', 'saburtalo'] as const;
 const PHONE_RE = /^\+\d{7,15}$/;
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_SEC = 3600; // 1 hour
+// Cap the blocking Telegram call: the visitor waits on it, and a hung request
+// must not delay the Sheets backup or the thank-you response.
+const TELEGRAM_TIMEOUT_MS = 5000;
+// Sheets runs in waitUntil (off the response path) so it can afford longer.
+const SHEETS_TIMEOUT_MS = 10000;
+// Coarse body cap. Compared against Content-Length (a client hint, so it can be
+// absent or wrong) and then against the decoded text length, which counts UTF-16
+// code units rather than bytes — for Georgian/Cyrillic text the effective byte
+// ceiling is up to ~3x this. That is fine for an anti-abuse cap; it is not a
+// precise byte limit, and the platform limit still applies above it.
+const MAX_BODY_BYTES = 8192;
 
 const STUDIO_LABELS: Record<string, string> = {
   guramishvili: 'Guramishvili',
@@ -76,16 +87,24 @@ async function isRateLimited(
 ): Promise<boolean> {
   if (!kv) return false; // skip when KV not bound (local dev)
 
-  const key = `rl:${ip}`;
-  const raw = await kv.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
+  // Fail open on a KV error. An unhandled throw here would 500 the handler and
+  // lose a real lead — the opposite of what this endpoint is for. Under-throttling
+  // during a KV outage is the cheaper failure.
+  try {
+    const key = `rl:${ip}`;
+    const raw = await kv.get(key);
+    const count = raw ? parseInt(raw, 10) : 0;
 
-  if (count >= RATE_LIMIT_MAX) return true;
+    if (count >= RATE_LIMIT_MAX) return true;
 
-  await kv.put(key, String(count + 1), {
-    expirationTtl: RATE_LIMIT_WINDOW_SEC,
-  });
-  return false;
+    await kv.put(key, String(count + 1), {
+      expirationTtl: RATE_LIMIT_WINDOW_SEC,
+    });
+    return false;
+  } catch (e) {
+    console.error(`[lead] rate limit check failed, allowing request: ${String(e)}`);
+    return false;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -260,14 +279,25 @@ async function sendTelegram(
 
   console.log(`[lead] tg send studio=${lead.studio} chat=${chatId} thread=${threadId ?? 'none'}`);
 
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
+  // Never throw: the caller awaits this before registering the Google Sheets
+  // backup, so an unhandled network error here used to drop the lead entirely
+  // (no Sheets row, no Meta CAPI, no GA4 — the visitor got a 500). A network
+  // failure or timeout must degrade to { ok: false } so the backup still runs.
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(TELEGRAM_TIMEOUT_MS),
+    });
+  } catch (e) {
+    console.error(`[lead] tg fetch failed studio=${lead.studio}: ${String(e)}`);
+    return { ok: false, error: `Telegram unreachable: ${String(e)}` };
+  }
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.text().catch(() => '<unreadable body>');
     console.error(`[lead] tg fail studio=${lead.studio} status=${res.status} body=${text}`);
     return { ok: false, error: `Telegram ${res.status}: ${text}` };
   }
@@ -302,13 +332,28 @@ async function writeToSheets(
     wa_status: tgStatus,
   };
 
-  await fetch(env.GOOGLE_SHEETS_WEBHOOK_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(row),
-  }).catch(() => {
-    // Sheets write is best-effort — do not fail the request
-  });
+  // Best-effort: never fail the request. But this is the lead's backup store, so
+  // a failure here means the lead may exist nowhere — always log it loudly.
+  try {
+    const res = await fetch(env.GOOGLE_SHEETS_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(row),
+      signal: AbortSignal.timeout(SHEETS_TIMEOUT_MS),
+    });
+    if (!res.ok) {
+      const text = await res.text().catch(() => '<unreadable body>');
+      console.error(
+        `[lead] SHEETS BACKUP FAILED studio=${lead.studio} phone=${lead.phone} status=${res.status} body=${text}`,
+      );
+      return;
+    }
+    console.log(`[lead] sheets ok studio=${lead.studio} tg=${tgStatus}`);
+  } catch (e) {
+    console.error(
+      `[lead] SHEETS BACKUP FAILED studio=${lead.studio} phone=${lead.phone} error=${String(e)}`,
+    );
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -388,10 +433,9 @@ async function sendLeadCAPI(
   const phoneDigits = lead.phone.replace(/\D/g, '');
   const phoneHash = await sha256Hex(phoneDigits);
 
-  const ip =
-    request.headers.get('cf-connecting-ip') ||
-    (request.headers.get('x-forwarded-for') || '').split(',')[0].trim() ||
-    '';
+  // Only cf-connecting-ip — X-Forwarded-For is client-controlled and would let a
+  // caller feed Meta's advanced matching a forged address.
+  const ip = request.headers.get('cf-connecting-ip') || '';
   const ua = request.headers.get('user-agent') || '';
   const cookies = parseCookies(request.headers.get('cookie'));
 
@@ -446,11 +490,22 @@ async function sendLeadCAPI(
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
 
-  // --- Parse body ---
+  // --- Parse body (capped: a real lead is a few hundred bytes) ---
   let payload: LeadPayload;
   try {
-    payload = await request.json();
+    const declaredLength = Number(request.headers.get('content-length') || '0');
+    if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
+      return jsonResponse(413, { ok: false, error: 'Payload too large' });
+    }
+    const raw = await request.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return jsonResponse(413, { ok: false, error: 'Payload too large' });
+    }
+    payload = JSON.parse(raw);
   } catch {
+    return jsonResponse(400, { ok: false, error: 'Invalid JSON' });
+  }
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
     return jsonResponse(400, { ok: false, error: 'Invalid JSON' });
   }
 
@@ -488,12 +543,25 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     `[lead] attribution src=${attribution.source} cid=${attribution.clientId ? 'yes' : 'no'} sid=${attribution.sessionId ? 'yes' : 'no'} gclid=${attribution.gclid ? 'yes' : 'no'}`,
   );
 
-  // --- Send Telegram + write Sheets in parallel ---
-  const tgResult = await sendTelegram(env, payload);
-  // Fire-and-forget Sheets write (don't block the response)
+  // --- Notify Telegram, then back up to Sheets ---
+  // Not parallel: the Sheets row records Telegram's outcome in its wa_status
+  // column, so it is chained onto the Telegram promise.
+  // The Sheets backup is handed to the runtime BEFORE we await Telegram, so the
+  // lead is persisted even if anything on the response path fails afterwards.
+  // The extra .catch keeps that guarantee structural rather than relying on
+  // sendTelegram never rejecting.
+  const tgPromise = sendTelegram(env, payload).catch((e) => ({
+    ok: false,
+    error: `Telegram threw: ${String(e)}`,
+  }));
   context.waitUntil(
-    writeToSheets(env, payload, tgResult.ok ? 'delivered' : tgResult.error || 'failed'),
+    tgPromise.then((r) =>
+      writeToSheets(env, payload, r.ok ? 'delivered' : r.error || 'failed'),
+    ),
   );
+  // Still awaited so the notification is attempted before we answer the visitor;
+  // the result itself is already logged inside sendTelegram().
+  await tgPromise;
   // Fire-and-forget Meta CAPI Lead with Advanced Matching (phone hash + IP/UA + fbp/fbc).
   // Runs server-side after the response is sent so user latency is not affected.
   context.waitUntil(sendLeadCAPI(env, request, payload));
@@ -502,7 +570,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // conversion imports — so it fires reliably for every real lead.
   context.waitUntil(sendGa4FormSubmit(env, attribution, payload));
 
-  // Even if Telegram fails, the lead is captured in Sheets — return ok to the user
+  // Even if Telegram fails or is unreachable, the lead is captured in Sheets
+  // (registered above, before this path could fail) — return ok to the user.
   return jsonResponse(200, { ok: true });
 };
 
