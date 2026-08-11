@@ -654,8 +654,16 @@ export function injectSecondFbPixel(block: string): string {
  * user scrolls → wait 3s (let GTM from head settle) → load external.
  * Fallback at 20s. Lighthouse never interacts → zero analytics TBT.
  * Inline dataLayer/gtag/ym/fbq stubs remain so queued calls are preserved.
+ *
+ * `idPrefix` MUST be unique per block. The function is called once for the
+ * header and once for the main content, and each call emits its own loader that
+ * resolves the deferred scripts by `getElementById`. Without a per-block prefix
+ * both calls start at `_lz0`, so the main-content loader picks up the header's
+ * first script instead of its own — which re-ran the Facebook Pixel (a second
+ * `fbq('track','PageView')` on every page load) and left the body's Yandex
+ * Metrika config unapplied.
  */
-export function delayAnalytics(block: string): string {
+export function delayAnalytics(block: string, idPrefix: string): string {
   const DELAY_HOSTS = [
     'googletagmanager.com/gtag/',
     'googletagmanager.com/gtm.js',
@@ -683,7 +691,7 @@ export function delayAnalytics(block: string): string {
   const inlineIds: string[] = [];
   processed = processed.replace(/<script(\b[^>]*)>([\s\S]*?)<\/script>/g, (match, attrs, content) => {
     if (!DELAY_INLINE.some(sig => content.includes(sig))) return match;
-    const id = `_lz${inlineIdx++}`;
+    const id = `_lz${idPrefix}${inlineIdx++}`;
     inlineIds.push(id);
     return `<script type="text/plain" id="${id}"${attrs}>${content}</script>`;
   });
@@ -1718,6 +1726,50 @@ export function insertAfterBlockByAliasType(content: string, aliasType: string, 
  * Strip HTML tags from <title> and <meta name="description"> content.
  * Fixes broken SERP snippets caused by Tilda inline markup (e.g. <s> tags).
  */
+/**
+ * Meta tags whose content is authored in Tilda and therefore may contain a raw
+ * `"`. An unescaped quote terminates the attribute early: the browser reads an
+ * empty description and parses the remaining words as stray attributes, so
+ * Google indexes the page with no description at all. Precedent:
+ * `en/blog/polishing-how-often-myth-bust`, whose description opened with
+ * `"Once a year,"`.
+ */
+const QUOTE_SENSITIVE_META = [
+  { attr: 'name', name: 'description' },
+  { attr: 'property', name: 'og:description' },
+  { attr: 'property', name: 'og:title' },
+] as const;
+
+/**
+ * Escape a value for use inside a double-quoted HTML attribute.
+ *
+ * Only the bare `"` is escaped — `&` is deliberately left alone, because Tilda
+ * exports already contain entities (`&mdash;`, `&nbsp;`, `&quot;`) and escaping
+ * the ampersand would double-encode them into visible garbage.
+ */
+export function escapeMetaContent(value: string): string {
+  return value.replace(/"/g, '&quot;');
+}
+
+/**
+ * The two attribute orders Tilda emits for the same meta tag. The export is
+ * split almost evenly between them — 217 files write
+ * `name="description" content="…"` and 258 write `content="…" name="description"`
+ * — so a pattern that assumes one order silently no-ops on the other half of the
+ * site. That is exactly how five pages kept shipping a truncated description
+ * after the first attempt at this fix.
+ *
+ * Both patterns anchor the closing quote on what follows it (the tag end, or the
+ * identifying attribute) rather than on "the next quote", so raw quotes inside
+ * the value do not end the match early.
+ */
+function metaContentPatterns(attr: string, name: string): readonly RegExp[] {
+  return [
+    new RegExp(`(<meta\\s+${attr}="${name}"\\s+content=")([\\s\\S]*?)("\\s*\\/?>)`, 'i'),
+    new RegExp(`(<meta\\s+content=")([\\s\\S]*?)("\\s+${attr}="${name}"\\s*\\/?>)`, 'i'),
+  ];
+}
+
 export function sanitizeMetaTags(head: string): string {
   // Strip HTML tags inside <title>...</title>
   const sanitized = head.replace(
@@ -1727,16 +1779,18 @@ export function sanitizeMetaTags(head: string): string {
       return `${open}${clean}${close}`;
     }
   );
-  // Strip HTML tags inside meta description content="..."
-  // Use greedy match with " /> anchor to avoid stopping at inner quotes
+  // Strip HTML tags and escape raw quotes inside the quote-sensitive meta tags.
+  // Use the lazy match with a " /> anchor to avoid stopping at inner quotes
   // from malformed Tilda tags like <s style="opacity:0.5"> inside content.
-  return sanitized.replace(
-    /(<meta\s+name="description"\s+content=")([\s\S]*?)("\s*\/>)/i,
-    (_match, open, content, close) => {
-      const clean = content.replace(/<[^>]+>/g, '');
-      return `${open}${clean}${close}`;
+  let result = sanitized;
+  for (const { attr, name } of QUOTE_SENSITIVE_META) {
+    for (const pattern of metaContentPatterns(attr, name)) {
+      result = result.replace(pattern, (_match, open, content, close) =>
+        `${open}${escapeMetaContent(content.replace(/<[^>]+>/g, ''))}${close}`,
+      );
     }
-  );
+  }
+  return result;
 }
 
 /**
@@ -1823,30 +1877,43 @@ export function applyMetaOverrides(head: string, lang: string, slug: string): st
   const overrides = META_OVERRIDES[key];
   if (!overrides) return head;
 
+  // Function replacers, not `$1…$3` strings: an override containing `$&` or `$1`
+  // would otherwise be re-interpreted as a replacement pattern. Values are
+  // escaped for the same reason sanitizeMetaTags() escapes them — a raw `"` in an
+  // override would truncate the tag — and both Tilda attribute orders are tried,
+  // so an override cannot silently fail to apply on half the site.
+  const replaceMetaContent = (
+    head: string,
+    attr: string,
+    name: string,
+    value: string,
+  ): string => {
+    const escaped = escapeMetaContent(value);
+    for (const pattern of metaContentPatterns(attr, name)) {
+      const replaced = head.replace(pattern, (_m, open, _old, close) =>
+        `${open}${escaped}${close}`,
+      );
+      if (replaced !== head) return replaced;
+    }
+    return head;
+  };
+
   let result = head;
   if (overrides.title) {
+    const title = overrides.title;
     result = result.replace(
       /(<title>)([\s\S]*?)(<\/title>)/i,
-      `$1${overrides.title}$3`
+      (_m, open, _old, close) => `${open}${title}${close}`,
     );
   }
   if (overrides.description) {
-    result = result.replace(
-      /(<meta\s+name="description"\s+content=")([\s\S]*?)("\s*\/?>)/i,
-      `$1${overrides.description}$3`
-    );
+    result = replaceMetaContent(result, 'name', 'description', overrides.description);
   }
   if (overrides.ogTitle) {
-    result = result.replace(
-      /(property="og:title"\s+content=")([\s\S]*?)(")/i,
-      `$1${overrides.ogTitle}$3`
-    );
+    result = replaceMetaContent(result, 'property', 'og:title', overrides.ogTitle);
   }
   if (overrides.ogDescription) {
-    result = result.replace(
-      /(property="og:description"\s+content=")([\s\S]*?)(")/i,
-      `$1${overrides.ogDescription}$3`
-    );
+    result = replaceMetaContent(result, 'property', 'og:description', overrides.ogDescription);
   }
   return result;
 }
@@ -2242,7 +2309,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
-  const headerBlock = fixImgDimensions(delayAnalytics(injectSecondFbPixel(stripAlienAnalytics(stripOldTracking(rawHeaderBlock)))));
+  const headerBlock = fixImgDimensions(delayAnalytics(injectSecondFbPixel(stripAlienAnalytics(stripOldTracking(rawHeaderBlock))), 'h'));
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
@@ -2253,7 +2320,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const fixedAnchors = rawMainContent
     .replace(/href="#form"/g, 'href="#contacts"')
     .replace(/href="https:\/\/wa\.me\/\d+"([^>]*id="cardbtn)/g, 'href="#contacts"$1');
-  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanFaqHeadings(removeOrphanCtaBlocks(fixedAnchors)))))))), lang, slug)));
+  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanFaqHeadings(removeOrphanCtaBlocks(fixedAnchors))))))), 'm'), lang, slug)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent, isHomepage),
