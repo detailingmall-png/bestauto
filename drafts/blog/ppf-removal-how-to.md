@@ -8,7 +8,12 @@ primary_hf_ru: "снятие PPF, удаление защитной плёнки
 primary_hf_ka: "PPF-ის მოხსნა, დამცავი ფირის მოცილება"
 primary_hf_en: "ppf removal, remove paint protection film"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-08-12
+published_pageids:
+  ru: "920260812001"
+  ka: "920260812002"
+  en: "920260812003"
 sources:
   - roadmap: "docs/content-roadmap.md#38"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"
