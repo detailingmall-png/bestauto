@@ -1752,21 +1752,37 @@ export function escapeMetaContent(value: string): string {
 }
 
 /**
- * The two attribute orders Tilda emits for the same meta tag. The export is
- * split almost evenly between them — 217 files write
- * `name="description" content="…"` and 258 write `content="…" name="description"`
- * — so a pattern that assumes one order silently no-ops on the other half of the
- * site. That is exactly how five pages kept shipping a truncated description
- * after the first attempt at this fix.
+ * The two attribute orders Tilda emits for the same meta tag. The export is split
+ * almost evenly between them — 217 files write `name="description" content="…"`
+ * and 258 write `content="…" name="description"` — so a pattern that assumes one
+ * order silently no-ops on the other half of the site.
  *
- * Both patterns anchor the closing quote on what follows it (the tag end, or the
- * identifying attribute) rather than on "the next quote", so raw quotes inside
- * the value do not end the match early.
+ * The two branches are deliberately NOT symmetrical:
+ *
+ * - Identifier-first: the opening `<meta name="description" content="` is unique
+ *   on the page, so the value may span anything (`[\s\S]*?`) and still terminate
+ *   at its own tag. It has to: some Tilda descriptions contain markup such as
+ *   `<s style="opacity:0.5">`, which is stripped below.
+ *
+ * - Content-first: the opening `<meta content="` is NOT unique — every
+ *   content-first meta tag starts that way. With an unrestricted value the match
+ *   can begin at the *description* tag and run all the way to the
+ *   `og:description` tag, swallowing everything between them (`<title>` included)
+ *   into one attribute value. That is not theoretical: an earlier revision of
+ *   this function did exactly that and mangled 261 of 484 built pages, 259 of
+ *   them losing `<title>` entirely. `[^<]*?` cannot cross a tag boundary, so a
+ *   match that starts on the wrong tag fails and the engine moves on to the next
+ *   candidate. The cost is that a content-first value containing markup is left
+ *   alone rather than cleaned — a no-op, not corruption.
+ *
+ * Both branches require the literal `" />` / `"/>` tag end. Accepting a bare `>`
+ * would let the match stop at an inner quote that happens to precede one, e.g.
+ * `<s style="opacity:0.5">`, and truncate the value.
  */
 function metaContentPatterns(attr: string, name: string): readonly RegExp[] {
   return [
-    new RegExp(`(<meta\\s+${attr}="${name}"\\s+content=")([\\s\\S]*?)("\\s*\\/?>)`, 'i'),
-    new RegExp(`(<meta\\s+content=")([\\s\\S]*?)("\\s+${attr}="${name}"\\s*\\/?>)`, 'i'),
+    new RegExp(`(<meta\\s+${attr}="${name}"\\s+content=")([\\s\\S]*?)("\\s*\\/>)`, 'i'),
+    new RegExp(`(<meta\\s+content=")([^<]*?)("\\s+${attr}="${name}"\\s*\\/>)`, 'i'),
   ];
 }
 
