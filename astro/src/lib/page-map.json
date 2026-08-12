@@ -3782,5 +3782,29 @@
     "title": "Hood-only PPF — when partial protection is enough",
     "lang": "en",
     "slug": "blog/ppf-hood-only-partial-wrap"
+  },
+  "920260812001": {
+    "file": "page920260812001.html",
+    "url": "https://bestauto.ge/ru/blog/ppf-removal-how-to",
+    "path": "/ru/blog/ppf-removal-how-to",
+    "title": "Снятие PPF: как правильно снять плёнку и не повредить лак",
+    "lang": "ru",
+    "slug": "blog/ppf-removal-how-to"
+  },
+  "920260812002": {
+    "file": "page920260812002.html",
+    "url": "https://bestauto.ge/blog/ppf-removal-how-to",
+    "path": "/blog/ppf-removal-how-to",
+    "title": "PPF-ის მოხსნა: როგორ სწორად მოიხსნას ფირი და არ დაზიანდეს ლაქი",
+    "lang": "ka",
+    "slug": "blog/ppf-removal-how-to"
+  },
+  "920260812003": {
+    "file": "page920260812003.html",
+    "url": "https://bestauto.ge/en/blog/ppf-removal-how-to",
+    "path": "/en/blog/ppf-removal-how-to",
+    "title": "PPF Removal: how to take the film off without damaging the paint",
+    "lang": "en",
+    "slug": "blog/ppf-removal-how-to"
   }
 }

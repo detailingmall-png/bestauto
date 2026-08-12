@@ -178,6 +178,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ppf-removal-how-to',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнки',
+        originalPhrase: 'защитной плёнки',
+        contextQuote: 'Стоимость снятия защитной плёнки в Тбилиси начинается от 20-25% от стоимости установки той же зоны.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'делается лёгкая финишная полировка, чтобы восстановить однородность глянца',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {
@@ -2746,6 +2765,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/ppf-removal-how-to',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის',
+        originalPhrase: 'დამცავი ფირის',
+        contextQuote: 'დამცავი ფირის მოხსნის ღირებულება თბილისში იწყება იმავე ზონის დაყენების ღირებულების 20-25%-დან.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'საჭიროებისამებრ კეთდება მსუბუქი საბოლოო პოლირება ბრწყინვის ერთგვაროვნების აღსადგენად.',
+      },
+    ],
+  },
+  {
     article: 'blog/ppf-matte-satin-finish-options',
     links: [
       {
@@ -5227,6 +5265,18 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'paint protection film',
         originalPhrase: 'paint protection film',
         contextQuote: 'A full-body paint protection film installation involves real money, and not every situation calls for that budget.',
+      },
+    ],
+  },
+  {
+    article: 'blog/ppf-removal-how-to',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'Paint protection film',
+        originalPhrase: 'Paint protection film',
+        contextQuote: 'Paint protection film lasts 5-10 years, and sooner or later it has to come off.',
       },
     ],
   },
