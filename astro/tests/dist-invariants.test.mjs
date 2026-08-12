@@ -55,19 +55,18 @@ const pages = htmlFiles(DIST).map((path) => ({
  * Excluded:
  *  - documents with no `<html>` element: raw Tilda export fragments copied into
  *    public/files/, not pages;
- *  - anything marked `noindex` (404, the /review funnel), which intentionally
- *    ships without full head markup;
- *  - qr.html, a utility landing page that has no meta description. That is a
- *    real pre-existing gap rather than a rule this test should relax — the fix
- *    is to mark it noindex (it is not content), after which it drops out of this
- *    list on its own.
+ *  - anything marked `noindex` (404, the /review funnel, the /qr chooser), which
+ *    intentionally ships without full head markup.
+ *
+ * There is no allowlist of named exceptions on purpose: a page either declares
+ * itself non-indexable or it has to satisfy these assertions. qr.html used to be
+ * listed here because it has no meta description — it is now noindex instead, so
+ * if that tag is ever lost the page re-enters this set and the suite fails.
  */
-const KNOWN_EXCEPTIONS = new Set(['qr.html']);
 const CONTENT_PAGES = pages.filter(
   (p) =>
     /<html[\s>]/i.test(p.html) &&
-    !/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(p.html) &&
-    !KNOWN_EXCEPTIONS.has(p.path),
+    !/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(p.html),
 );
 
 const DESCRIPTION_RE =

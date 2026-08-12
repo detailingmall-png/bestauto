@@ -40,6 +40,23 @@ import { EN_SEO_PAGES } from '../data/en-seo-changes';
 
 const PRICES_SLUGS = new Set(['prices', 'ru/prices', 'en/prices']);
 
+/**
+ * Slugs that must never appear in search results.
+ *
+ * `qr` is the landing page behind the printed QR code — a branch/language chooser
+ * with no heading and no content of its own. It was indexable and sitemap-listed
+ * for months, competing with the real pages for the brand query.
+ *
+ * The meta tag is injected here rather than into the Tilda export so a re-export
+ * cannot silently drop it. `/review` is not listed because it is a standalone
+ * Astro page that carries its own robots tag.
+ *
+ * NOTE: the sitemap `filter` in astro.config.mjs is a separate list — a slug added
+ * here should be excluded there too, otherwise Search Console reports
+ * "Submitted URL marked noindex".
+ */
+const NOINDEX_SLUGS = new Set(['qr']);
+
 export async function getStaticPaths() {
   const pages = getAllPages();
   const validPages = pages
@@ -374,6 +391,12 @@ if (baseSlug === 'blog') {
 
 let { headContent, headerBlock: rawHeader, bodyClass, mainContent: rawMainContent } = extractSections(injectedHtml, lang, baseSlug, baseSlug === '');
 let mainContent = removeBlockContaining(rawMainContent, 't-map-lazyload');
+
+// Keep utility pages out of the index. Guarded so a Tilda export that already
+// carries a robots tag (404.html does) cannot end up with two.
+if (NOINDEX_SLUGS.has(baseSlug) && !/<meta[^>]*name="robots"/i.test(headContent)) {
+  headContent = '<meta name="robots" content="noindex, nofollow" />\n' + headContent;
+}
 
 // Service pages: SEO text changes (meta, hero, benefits, trust, SEO/content blocks)
 {
