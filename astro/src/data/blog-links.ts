@@ -2635,6 +2635,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/salon-vacuum-vs-dry-clean',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка',
+        originalPhrase: 'химчистка',
+        contextQuote: 'Глубокая химчистка салона в детейлинг-студии — это от 400 ₾',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Но совсем без химчистки не обойтись: даже у идеального',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5139,6 +5158,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/salon-vacuum-vs-dry-clean',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდა',
+        originalPhrase: 'ქიმწმენდა',
+        contextQuote: 'ღრმა ქიმწმენდა დეტეილინგ სტუდიაში — ესაა 400 ₾-დან',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'ესაა ქიმწმენდის ამოცანა, შესაძლოა, ოზონთან',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7558,6 +7596,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'Ceramic coating',
         contextQuote: 'Ceramic coating</strong> — hydrophobic effect, easier washes, tar and bird droppings bond less.',
+      },
+    ],
+  },
+  {
+    article: 'blog/salon-vacuum-vs-dry-clean',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'A deep dry cleaning at a detailing studio runs from 400 ₾',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'Both services are called "interior cleaning", but they solve different problems',
       },
     ],
   },
