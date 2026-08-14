@@ -11,7 +11,12 @@ secondary_links:
   - "/ppf-shield-wrapping"
   - "/polishing"
   - "/interior-cleaning"
-status: drafted
+status: published
+published_at: 2026-08-14
+published_pageids:
+  ru: "920260814001"
+  ka: "920260814002"
+  en: "920260814003"
 sources:
   - roadmap: "docs/content-roadmap.md#99"
   - competitor: "general geo angle"

@@ -2654,6 +2654,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/tbilisi-districts-detailing-delivery',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнки',
+        originalPhrase: 'защитной плёнки',
+        contextQuote: 'отдельные зоны под полировку и под нанесение защитной плёнки',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'Полировка',
+        originalPhrase: 'Полировка',
+        contextQuote: 'Нет. Полировка и керамика требуют контролируемой температуры',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: '30–60 минут после химчистки или как самостоятельная процедура',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5177,6 +5203,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/tbilisi-districts-detailing-delivery',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირის',
+        originalPhrase: 'დამცავი ფირის',
+        contextQuote: 'პოლირებისა და დამცავი ფირის წებების ცალკე ზონები',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'არა. პოლირება და კერამიკა მოითხოვს კონტროლირებად ტემპერატურას',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: '30–60 წუთი ქიმწმენდის შემდეგ ან როგორც დამოუკიდებელი პროცედურა',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7615,6 +7667,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'interior cleaning',
         originalPhrase: 'interior cleaning',
         contextQuote: 'Both services are called "interior cleaning", but they solve different problems',
+      },
+    ],
+  },
+  {
+    article: 'blog/tbilisi-districts-detailing-delivery',
+    links: [
+      {
+        role: 'pillar',
+        target: '/ppf-shield-wrapping',
+        anchor: 'PPF film',
+        originalPhrase: 'PPF film',
+        contextQuote: 'PPF film',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'Polishing',
+        originalPhrase: 'Polishing',
+        contextQuote: 'No. Polishing and ceramic need controlled temperature',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'interior cleaning',
+        originalPhrase: 'interior cleaning',
+        contextQuote: 'PPF / interior cleaning',
       },
     ],
   },
