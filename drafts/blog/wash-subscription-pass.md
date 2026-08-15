@@ -9,7 +9,12 @@ primary_hf_ka: "რეცხვის აბონემენტი, რეც�
 primary_hf_en: "wash subscription, monthly car wash pass"
 secondary_links:
   - "/ppf-shield-wrapping"
-status: drafted
+status: published
+published_at: 2026-08-15
+published_pageids:
+  ru: "920260815001"
+  ka: "920260815002"
+  en: "920260815003"
 sources:
   - roadmap: "docs/content-roadmap.md#78"
 ---

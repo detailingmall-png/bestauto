@@ -133,6 +133,8 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'мойка авто',
     'мойка машины',
     'бесконтактная мойка',
+    'детейлинг-мойка',             // hyphenated variant — valid in blog anchor context (wash-subscription-pass body)
+    'детейлинг-мойки',             // hyphenated inflected — valid in blog anchor context (wash-subscription-pass body)
   ],
   '/interior-cleaning': [
     'химчистка авто тбилиси',     // GSC: 41 (top)
@@ -225,6 +227,8 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'მანქანის სამრეცხაო',          // GSC: 10
     'მანქანის სამრეცხაო თბილისში', // GSC: geo-qualified, 387 imp
     'ავტოსამრეცხაო საბურთალოზე',   // GSC: geo (Saburtalo), 396 imp
+    'დეტეილინგ-რეცხვა',            // hyphenated variant — valid in blog anchor context (wash-subscription-pass body)
+    'დეტეილინგ-რეცხვას',           // hyphenated inflected — valid in blog anchor context (wash-subscription-pass body)
   ],
   '/interior-cleaning': [
     'მანქანის ქიმწმენდა',          // GSC: 199 (top)
@@ -289,6 +293,7 @@ export const SERVICE_KEYWORDS_EN: KeywordMap = {
     'car wash tbilisi',            // strong geo-qualified intent
     'premium car wash',
     'car wash',
+    'detailing wash',              // compound variant — valid in blog anchor context (wash-subscription-pass body)
   ],
   '/interior-cleaning': [
     'car interior cleaning',       // GSC: 2

@@ -3854,5 +3854,29 @@
     "title": "How to reach BESTAUTO in Tbilisi — two studios, easy routes",
     "lang": "en",
     "slug": "blog/tbilisi-districts-detailing-delivery"
+  },
+  "920260815001": {
+    "file": "page920260815001.html",
+    "url": "https://bestauto.ge/ru/blog/wash-subscription-pass",
+    "path": "/ru/blog/wash-subscription-pass",
+    "title": "Абонемент мойки в Тбилиси — выгода, математика, для кого",
+    "lang": "ru",
+    "slug": "blog/wash-subscription-pass"
+  },
+  "920260815002": {
+    "file": "page920260815002.html",
+    "url": "https://bestauto.ge/blog/wash-subscription-pass",
+    "path": "/blog/wash-subscription-pass",
+    "title": "რეცხვის აბონემენტი თბილისში — სარგებელი, მათემატიკა",
+    "lang": "ka",
+    "slug": "blog/wash-subscription-pass"
+  },
+  "920260815003": {
+    "file": "page920260815003.html",
+    "url": "https://bestauto.ge/en/blog/wash-subscription-pass",
+    "path": "/en/blog/wash-subscription-pass",
+    "title": "Monthly car wash subscription in Tbilisi — math and fit",
+    "lang": "en",
+    "slug": "blog/wash-subscription-pass"
   }
 }

@@ -2680,6 +2680,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wash-subscription-pass',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'детейлинг-мойки',
+        originalPhrase: 'детейлинг-мойки',
+        contextQuote: 'BESTAUTO не работает с подпиской «сколько хочешь моек за фиксированную сумму» — формат не совпадает с философией детейлинг-мойки',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'детейлинг-мойка',
+        originalPhrase: 'детейлинг-мойка',
+        contextQuote: 'Одна детейлинг-мойка в месяц сохраняет покрытие, но требует между ними аккуратного использования',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5229,6 +5248,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wash-subscription-pass',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'დეტეილინგ-რეცხვას',
+        originalPhrase: 'დეტეილინგ-რეცხვას',
+        contextQuote: 'ფორმატი არ ემთხვევა დეტეილინგ-რეცხვას, სადაც ყოველი პროცედურა — 60-90 წუთი ხელით სამუშაო',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'დეტეილინგ-რეცხვა',
+        originalPhrase: 'დეტეილინგ-რეცხვა',
+        contextQuote: 'ერთი დეტეილინგ-რეცხვა თვეში ინარჩუნებს საფარს, მაგრამ მოითხოვს',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7693,6 +7731,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'interior cleaning',
         originalPhrase: 'interior cleaning',
         contextQuote: 'PPF / interior cleaning',
+      },
+    ],
+  },
+  {
+    article: 'blog/wash-subscription-pass',
+    links: [
+      {
+        role: 'pillar',
+        target: '/carwash',
+        anchor: 'detailing wash',
+        originalPhrase: 'detailing wash',
+        contextQuote: 'the format does not match a detailing wash where each procedure takes 60-90 minutes',
+      },
+      {
+        role: 'bridge',
+        target: '/carwash',
+        anchor: 'detailing wash',
+        originalPhrase: 'detailing wash',
+        contextQuote: 'A single monthly detailing wash preserves the coating, but requires careful use in between',
       },
     ],
   },
