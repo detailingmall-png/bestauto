@@ -158,6 +158,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/pet-hair-cabin-removal':        'interior-cleaning',
   'blog/interior-ceramic-after-cleaning': 'interior-cleaning',
   'blog/post-interior-cleaning-mistakes': 'interior-cleaning',
+  'blog/salon-vacuum-vs-dry-clean':     'interior-cleaning',
   'blog/wrong-chemicals-damage-plastic': 'interior-cleaning',
   'blog/lease-return-detailing-prep':   'interior-cleaning',
   // Polishing

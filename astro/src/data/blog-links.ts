@@ -2635,6 +2635,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/salon-vacuum-vs-dry-clean',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'химчистка салона',
+        originalPhrase: 'химчистка салона',
+        contextQuote: 'Глубокая химчистка салона в детейлинг-студии — это от 400 ₾ и несколько часов работы.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'химчистки',
+        originalPhrase: 'химчистки',
+        contextQuote: 'Но совсем без химчистки не обойтись: даже у идеального водителя за 2 года в ткани накапливается пыль',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5139,6 +5158,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/salon-vacuum-vs-dry-clean',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდის',
+        originalPhrase: 'ქიმწმენდის',
+        contextQuote: 'არამედ მასალის სიღრმეშია. ესაა ქიმწმენდის ამოცანა, შესაძლოა, ოზონთან ერთად.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'ქიმწმენდას',
+        originalPhrase: 'ქიმწმენდას',
+        contextQuote: 'ღრმა ქიმწმენდას საოჯახო მტვერსასრუტი არ ჩაანაცვლებს — მას არ აქვს',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7558,6 +7596,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'ceramic coating',
         originalPhrase: 'Ceramic coating',
         contextQuote: 'Ceramic coating</strong> — hydrophobic effect, easier washes, tar and bird droppings bond less.',
+      },
+    ],
+  },
+  {
+    article: 'blog/salon-vacuum-vs-dry-clean',
+    links: [
+      {
+        role: 'pillar',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: 'A deep dry cleaning at a detailing studio runs from 400 ₾ and several hours of work.',
+      },
+      {
+        role: 'bridge',
+        target: '/interior-cleaning',
+        anchor: 'dry cleaning',
+        originalPhrase: 'dry cleaning',
+        contextQuote: "But no dry cleaning at all won't work: even an ideal driver leaves behind dust, sweat",
       },
     ],
   },

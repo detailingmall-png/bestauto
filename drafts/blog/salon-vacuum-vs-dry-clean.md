@@ -8,7 +8,12 @@ primary_hf_ru: "пылесос против химчистки"
 primary_hf_ka: "მტვერსასრუტი თუ ქიმწმენდა"
 primary_hf_en: "vacuum vs dry cleaning car"
 secondary_links: []
-status: drafted
+status: published
+published_at: 2026-08-15
+published_pageids:
+  ru: "920260815001"
+  ka: "920260815002"
+  en: "920260815003"
 sources:
   - roadmap: "docs/content-roadmap.md#90"
 ---
