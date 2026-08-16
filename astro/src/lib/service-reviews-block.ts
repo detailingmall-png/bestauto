@@ -46,14 +46,14 @@ const HEADING: Record<Lang, string> = {
 
 // Shown only where the page has no reviews heading of its own (blog articles).
 const EYEBROW: Record<string, Record<Lang, string>> = {
-  'ppf-shield-wrapping': { ka: 'შეფასებები დაფარვის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
-  'vinyl-wrapping': { ka: 'შეფასებები დაფარვის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
+  'ppf-shield-wrapping': { ka: 'შეფასებები გადაკვრის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
+  'vinyl-wrapping': { ka: 'შეფასებები გადაკვრის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
   polishing: { ka: 'შეფასებები პოლირების შემდეგ', ru: 'Отзывы после полировки', en: 'Reviews after polishing' },
   ceramiccoating: { ka: 'შეფასებები კერამიკის შემდეგ', ru: 'Отзывы после керамики', en: 'Reviews after ceramic coating' },
   'interior-cleaning': { ka: 'შეფასებები ქიმწმენდის შემდეგ', ru: 'Отзывы после химчистки', en: 'Reviews after interior cleaning' },
   'interior-restoration': { ka: 'შეფასებები სალონის აღდგენის შემდეგ', ru: 'Отзывы после реставрации салона', en: 'Reviews after interior restoration' },
   carwash: { ka: 'შეფასებები რეცხვის შემდეგ', ru: 'Отзывы после мойки', en: 'Reviews after a wash' },
-  'auto-glass-tinting': { ka: 'შეფასებები ტონირების შემდეგ', ru: 'Отзывы после тонировки', en: 'Reviews after tinting' },
+  'auto-glass-tinting': { ka: 'შეფასებები მინების დაბურვის შემდეგ', ru: 'Отзывы после тонировки', en: 'Reviews after tinting' },
   'windshield-repair': { ka: 'შეფასებები მინის შეკეთების შემდეგ', ru: 'Отзывы после ремонта стекла', en: 'Reviews after glass repair' },
   'car-soundproofing': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
   'computer-diagnostics': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
