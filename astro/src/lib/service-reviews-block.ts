@@ -351,6 +351,11 @@ const JS = `
     var next = root.querySelector('.ba-srv-reviews__arrow--next');
     var dotsBox = root.querySelector('.ba-srv-reviews__dots');
 
+    // With "reduce motion" on, Chrome drops smooth programmatic scrolls entirely — the
+    // arrows would do nothing at all. Fall back to an instant jump for those visitors.
+    function behavior() {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    }
     function perView() {
       if (window.matchMedia('(max-width:640px)').matches) return 1;
       if (window.matchMedia('(max-width:960px)').matches) return 2;
@@ -379,7 +384,8 @@ const JS = `
         dot.setAttribute('aria-current', i === current() ? 'true' : 'false');
         (function (index) {
           dot.addEventListener('click', function () {
-            track.scrollTo({ left: index * step(), behavior: 'smooth' });
+            track.scrollTo({ left: index * step(), behavior: behavior() });
+            window.setTimeout(sync, 350);
           });
         })(i);
         dotsBox.appendChild(dot);
@@ -399,15 +405,18 @@ const JS = `
       }
     }
 
-    if (prev) prev.addEventListener('click', function () {
-      track.scrollBy({ left: -step(), behavior: 'smooth' });
-    });
-    if (next) next.addEventListener('click', function () {
-      track.scrollBy({ left: step(), behavior: 'smooth' });
-    });
+    // Some environments never fire 'scroll' for programmatic scrolling, which would leave the
+    // arrows and dots stuck in their initial state — re-sync right after every control click.
+    function scrollByStep(direction) {
+      track.scrollBy({ left: direction * step(), behavior: behavior() });
+      window.setTimeout(sync, 350);
+    }
+
+    if (prev) prev.addEventListener('click', function () { scrollByStep(-1); });
+    if (next) next.addEventListener('click', function () { scrollByStep(1); });
     track.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { track.scrollBy({ left: step(), behavior: 'smooth' }); }
-      if (e.key === 'ArrowLeft') { track.scrollBy({ left: -step(), behavior: 'smooth' }); }
+      if (e.key === 'ArrowRight') { scrollByStep(1); }
+      if (e.key === 'ArrowLeft') { scrollByStep(-1); }
     });
     track.addEventListener('scroll', function () {
       window.clearTimeout(track._baSync);
