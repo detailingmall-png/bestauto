@@ -20,10 +20,20 @@ interface ReviewCard {
 
 type Lang = 'ru' | 'en' | 'ka';
 
+interface StudioMeta {
+  ru: string;
+  en: string;
+  ka: string;
+  url: string;
+  rating: number;
+  count: number;
+}
+
 interface ServiceReviewsData {
   meta: {
     rating: number;
     reviews_total: number;
+    studios: Record<string, StudioMeta>;
   };
   pages: Record<string, { cards: Record<Lang, ReviewCard[]> }>;
 }
@@ -32,21 +42,6 @@ const HEADING: Record<Lang, string> = {
   ka: 'კლიენტები ამჩნევენ იმას, რაც ჩვენთვის მნიშვნელოვანია',
   ru: 'Клиенты замечают то, что для нас важно',
   en: 'Clients notice what matters to us',
-};
-
-const EYEBROW: Record<string, Record<Lang, string>> = {
-  'ppf-shield-wrapping': { ka: 'შეფასებები დაფარვის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
-  'vinyl-wrapping': { ka: 'შეფასებები დაფარვის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
-  polishing: { ka: 'შეფასებები პოლირების შემდეგ', ru: 'Отзывы после полировки', en: 'Reviews after polishing' },
-  ceramiccoating: { ka: 'შეფასებები კერამიკის შემდეგ', ru: 'Отзывы после керамики', en: 'Reviews after ceramic coating' },
-  'interior-cleaning': { ka: 'შეფასებები ქიმწმენდის შემდეგ', ru: 'Отзывы после химчистки', en: 'Reviews after interior cleaning' },
-  'interior-restoration': { ka: 'შეფასებები სალონის აღდგენის შემდეგ', ru: 'Отзывы после реставрации салона', en: 'Reviews after interior restoration' },
-  carwash: { ka: 'შეფასებები რეცხვის შემდეგ', ru: 'Отзывы после мойки', en: 'Reviews after a wash' },
-  'auto-glass-tinting': { ka: 'შეფასებები ტონირების შემდეგ', ru: 'Отзывы после тонировки', en: 'Reviews after tinting' },
-  'windshield-repair': { ka: 'შეფასებები მინის შეკეთების შემდეგ', ru: 'Отзывы после ремонта стекла', en: 'Reviews after glass repair' },
-  'car-soundproofing': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
-  'computer-diagnostics': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
-  'paintless-dent-repair': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
 };
 
 const SUMMARY_SUFFIX: Record<Lang, string> = {
@@ -69,13 +64,20 @@ const READ_ON_GOOGLE: Record<Lang, string> = {
 
 const PREV_LABEL: Record<Lang, string> = { ka: 'წინა', ru: 'Предыдущие', en: 'Previous' };
 const NEXT_LABEL: Record<Lang, string> = { ka: 'შემდეგი', ru: 'Следующие', en: 'Next' };
+
+// The headline figure covers both studios, so the block links to both cards rather than
+// sending everyone to one branch.
 const ALL_REVIEWS: Record<Lang, string> = {
-  ka: 'ყველა შეფასების ნახვა Google-ზე',
-  ru: 'Смотреть все отзывы на Google',
-  en: 'View all reviews on Google',
+  ka: 'შეფასებები Google-ზე:',
+  ru: 'Все отзывы на Google:',
+  en: 'All reviews on Google:',
 };
 
-const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/Sx6wyy2b8xgTVmxdA';
+const SUMMARY_SCOPE: Record<Lang, string> = {
+  ka: 'ორივე სტუდიაზე',
+  ru: 'по двум студиям',
+  en: 'across both studios',
+};
 
 function escapeHtml(str: string): string {
   return str
@@ -114,7 +116,10 @@ const CSS = `
 .ba-srv-reviews {
   background: var(--ba-color-bg);
   color: var(--ba-color-text);
-  padding: 64px 0 48px;
+  /* Tilda sets the face on its own classes; this block sits outside them and would
+     otherwise inherit the browser default from <body>. */
+  font-family: var(--ba-font-family);
+  padding: 40px 0 48px;
   overflow-x: hidden;
 }
 .ba-srv-reviews__container {
@@ -124,46 +129,24 @@ const CSS = `
 }
 .ba-srv-reviews__head {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 32px;
-}
-.ba-srv-reviews__eyebrow {
-  display: block;
-  color: var(--ba-color-accent);
-  font-size: 12px;
-  font-weight: var(--ba-font-weight-semibold);
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.ba-srv-reviews__title {
-  font-size: 36px;
-  font-weight: var(--ba-font-weight-bold);
-  line-height: 1.25;
-  margin: 0;
-  max-width: 20ch;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--ba-color-text-subtle);
+  font-size: 14px;
 }
 .ba-srv-reviews__summary {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  color: var(--ba-color-text-muted);
-  font-size: 15px;
-  text-decoration: none;
-  border-bottom: 1px solid var(--ba-color-border);
-  padding-bottom: 4px;
-  transition: color var(--ba-duration-fast) var(--ba-ease-default), border-color var(--ba-duration-fast) var(--ba-ease-default);
-}
-.ba-srv-reviews__summary:hover {
-  color: var(--ba-color-text);
-  border-bottom-color: var(--ba-color-accent);
+  align-items: baseline;
+  gap: 6px;
 }
 .ba-srv-reviews__summary b {
   color: var(--ba-color-text);
+  font-size: 17px;
   font-weight: var(--ba-font-weight-bold);
+}
+.ba-srv-reviews__summary .ba-srv-reviews__star {
+  color: var(--ba-color-rating);
 }
 .ba-srv-reviews__viewport {
   overflow: hidden;
@@ -179,8 +162,13 @@ const CSS = `
   padding-bottom: 4px;
 }
 .ba-srv-reviews__track::-webkit-scrollbar { display: none; }
+/* Without this, a smooth CSS scroll-behavior cancels every programmatic scroll for
+   visitors who ask for reduced motion, and the arrows stop moving the track. */
+@media (prefers-reduced-motion: reduce) {
+  .ba-srv-reviews__track { scroll-behavior: auto; }
+}
 .ba-srv-review {
-  flex: 0 0 calc(33.333% - 11px);
+  flex: 0 0 calc(28.57% - 14px);
   scroll-snap-align: start;
   box-sizing: border-box;
   display: flex;
@@ -311,29 +299,33 @@ const CSS = `
 }
 .ba-srv-reviews__all {
   margin-left: auto;
-  font-size: 15px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ba-color-text-subtle);
+}
+.ba-srv-reviews__all a {
   color: var(--ba-color-accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color var(--ba-duration-fast) var(--ba-ease-default);
 }
-.ba-srv-reviews__all:hover { border-bottom-color: var(--ba-color-accent); }
+.ba-srv-reviews__all a:hover { border-bottom-color: var(--ba-color-accent); }
 @media (max-width: 960px) {
   .ba-srv-reviews { padding: 48px 0 40px; }
-  .ba-srv-reviews__head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
-  .ba-srv-reviews__title { font-size: 32px; max-width: none; }
-  .ba-srv-review { flex: 0 0 calc(50% - 8px); }
+  .ba-srv-review { flex: 0 0 calc(40% - 13px); }
   .ba-srv-review__quote { font-size: 15px; }
-  .ba-srv-reviews__summary { font-size: 14px; }
   .ba-srv-reviews__all { font-size: 14px; }
 }
 @media (max-width: 640px) {
   .ba-srv-reviews { padding: 40px 0 32px; }
-  .ba-srv-reviews__title { font-size: 28px; }
   .ba-srv-review { flex: 0 0 88%; min-height: 0; padding: 20px; }
   .ba-srv-review__quote { font-size: 14px; }
   .ba-srv-review__label { font-size: 11px; }
-  .ba-srv-reviews__all { display: none; }
+  .ba-srv-reviews__all { margin: 12px 0 0; width: 100%; justify-content: center; font-size: 13px; }
+  .ba-srv-reviews__controls { flex-wrap: wrap; justify-content: center; }
   .ba-srv-reviews__controls { justify-content: center; }
 }
 </style>`;
@@ -398,8 +390,9 @@ const JS = `
       if (prev) prev.disabled = atStart;
       if (next) next.disabled = atEnd;
       if (!dotsBox) return;
-      var active = current();
       var dots = dotsBox.children;
+      // The last page is a partial step, so round-to-step lands short of the final dot.
+      var active = atEnd ? dots.length - 1 : current();
       for (var i = 0; i < dots.length; i++) {
         dots[i].setAttribute('aria-current', i === active ? 'true' : 'false');
       }
@@ -465,21 +458,22 @@ export function getServiceReviewsHtml(lang: string, slug: string): string {
   const cards = page.cards[resolved] ?? [];
   if (cards.length === 0) return '';
 
-  const eyebrow = (EYEBROW[slug] ?? EYEBROW['car-soundproofing'])[resolved];
-  const { rating, reviews_total: total } = data.meta;
+  const { rating, reviews_total: total, studios } = data.meta;
+  const studioLinks = Object.values(studios)
+    .map((studio) => `<a href="${escapeHtml(studio.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(studio[resolved])}</a>`)
+    .join('<span aria-hidden="true">·</span>');
 
+  // The page already carries its own reviews heading above this block, so the block
+  // itself opens straight with the rating line.
   return `${CSS}
 <section id="ba-reviews" class="ba-srv-reviews" aria-label="${escapeHtml(HEADING[resolved])}">
   <div class="ba-srv-reviews__container">
-    <div class="ba-srv-reviews__head">
-      <div>
-        <span class="ba-srv-reviews__eyebrow">${escapeHtml(eyebrow)}</span>
-        <h2 class="ba-srv-reviews__title">${escapeHtml(HEADING[resolved])}</h2>
-      </div>
-      <a class="ba-srv-reviews__summary" href="${GOOGLE_MAPS_URL}" target="_blank" rel="noopener noreferrer">
-        <b>${rating}</b> ★ · ${total} ${escapeHtml(SUMMARY_SUFFIX[resolved])}
-      </a>
-    </div>
+    <p class="ba-srv-reviews__head">
+      <span class="ba-srv-reviews__summary">
+        <b>${rating}</b><span class="ba-srv-reviews__star" aria-hidden="true">★</span>
+      </span>
+      <span>${total} ${escapeHtml(SUMMARY_SUFFIX[resolved])} ${escapeHtml(SUMMARY_SCOPE[resolved])}</span>
+    </p>
 
     <div class="ba-srv-reviews__viewport">
       <div class="ba-srv-reviews__track" tabindex="0" role="group" aria-label="${escapeHtml(HEADING[resolved])}">
@@ -491,7 +485,7 @@ export function getServiceReviewsHtml(lang: string, slug: string): string {
       <button type="button" class="ba-srv-reviews__arrow ba-srv-reviews__arrow--prev" aria-label="${escapeHtml(PREV_LABEL[resolved])}">${ARROW_LEFT}</button>
       <button type="button" class="ba-srv-reviews__arrow ba-srv-reviews__arrow--next" aria-label="${escapeHtml(NEXT_LABEL[resolved])}">${ARROW_RIGHT}</button>
       <div class="ba-srv-reviews__dots"></div>
-      <a class="ba-srv-reviews__all" href="${GOOGLE_MAPS_URL}" target="_blank" rel="noopener noreferrer">${escapeHtml(ALL_REVIEWS[resolved])}</a>
+      <span class="ba-srv-reviews__all">${escapeHtml(ALL_REVIEWS[resolved])} ${studioLinks}</span>
     </div>
   </div>
 </section>
