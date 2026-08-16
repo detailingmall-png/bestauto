@@ -1,0 +1,2738 @@
+{
+  "meta": {
+    "rating": 4.9,
+    "reviews_total": 289,
+    "studios": {
+      "Guramishvili": {
+        "ru": "Гурамишвили",
+        "en": "Guramishvili",
+        "ka": "გურამიშვილი",
+        "url": "https://maps.app.goo.gl/9VfCTRyXAEigrErM6",
+        "rating": 5.0,
+        "count": 92
+      },
+      "Politkovskaia": {
+        "ru": "Сабуртало",
+        "en": "Saburtalo",
+        "ka": "საბურთალო",
+        "url": "https://maps.app.goo.gl/g8eLgcEB9vrVNvsY7",
+        "rating": 4.8,
+        "count": 197
+      }
+    }
+  },
+  "pages": {
+    "windshield-repair": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Zhanna Gamkhitashvili",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-03",
+            "label": "Трещина на стекле",
+            "text": "Улыбчивые сотрудники и внимательное отношение. Трещину на стекле скрыли максимально, объяснили все нюансы и согласовали со мной. Рада, что такая роскошь сервиса существует в Тбилиси.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWU1pHaGpTa2MwVGxvdE9FaHJZV0ZFVnpGcFZrRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Andrey",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-05-07",
+            "label": "Скол на лобовом",
+            "text": "…была задача устранить скол на лобовом стекле и качественно помыть. Все было выполнено профессионально и в лучшем виде. Ребята отзывчивые и готовы помочь с любой проблемой.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wU05uTkRPWE5JYmxORk1EY3pRVkJ5TWxSWWIzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Josef Dallaway",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Скол · честная цена",
+            "text": "Приехал в Bestauto, чтобы отремонтировать скол на лобовом стекле. У них большая и хорошо оснащённая мастерская, команда очень профессиональная, знающая и дружелюбная — скол отремонтировали быстро и взяли очень разумную цену.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUa3ZMTGdBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Регина Бергер",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-17",
+            "label": "Два скола и трещина",
+            "text": "Отличный сервис! Были два скола и трещина пошла уже. Сделали быстро, качественно и за адекватные деньги.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tJM1VWWjJNMGwyWVdVM09WZzFaMlZ6UWpKaU5sRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Arman Babloyan",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-13",
+            "label": "Трещина · 30 минут",
+            "text": "Супер команда, супер работа, сделали мне большую трещину лобового стекла за 30 минут.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21oaVpYaEliVXhFVkRkbExVTTBPV28xTURGNlMyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Иван Баталов",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-09",
+            "label": "Трещина убрана",
+            "text": "Отличный сервис, быстро и качественно убрали трещину на лобовом стекле.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOa04wTjZkRU52V2podFIzbEJjSGQ1WDFjd1FtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "MadCheese",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-05-20",
+            "label": "Мойка + ремонт скола",
+            "text": "Рекомендую, помыли 3 фазы, угостили кофем, по отдельной просьбе закапали скол, спасибо большое.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2sxblNEaEdTakJLYTJ0MmRXeDBabUkxUW1GQ2FsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Niko Karsanidze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Ремонт лобового",
+            "text": "Ремонтировал лобовое стекло, все сделали идеально. Высокий уровень обслуживания, быстро и качественно…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURMc19qVG9RRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Zhanna Gamkhitashvili",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-03",
+            "label": "Crack in the glass",
+            "text": "Smiling staff and a genuinely attentive attitude. They hid the crack in the glass as much as it can be hidden, explained every detail and agreed it with me. I'm glad this level of service exists in Tbilisi.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWU1pHaGpTa2MwVGxvdE9FaHJZV0ZFVnpGcFZrRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Andrey",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-05-07",
+            "label": "Windscreen chip",
+            "text": "The job was to fix a chip in the windscreen and give the car a proper wash. Everything was done professionally and to the highest standard. The guys are responsive and ready to help with any problem.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wU05uTkRPWE5JYmxORk1EY3pRVkJ5TWxSWWIzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Josef Dallaway",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Chip · fair price",
+            "text": "I took my car to Bestauto to get a chip in my windscreen repaired. They have a large and well equipped work shop, the team are very professional, knowledgeable and friendly - they quickly repaired the chip and charged a very reasonable price…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUa3ZMTGdBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Регина Бергер",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-17",
+            "label": "Two chips and a crack",
+            "text": "Great service! I had two chips and a crack had already started to run. They fixed it fast, did it well and charged a fair price.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tJM1VWWjJNMGwyWVdVM09WZzFaMlZ6UWpKaU5sRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Arman Babloyan",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-13",
+            "label": "Crack · 30 minutes",
+            "text": "Super team, super work — they fixed a big crack in my windscreen in 30 minutes!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21oaVpYaEliVXhFVkRkbExVTTBPV28xTURGNlMyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Иван Баталов",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-09",
+            "label": "Crack removed",
+            "text": "Great service — they removed the crack in the windscreen quickly and properly.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOa04wTjZkRU52V2podFIzbEJjSGQ1WDFjd1FtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "MadCheese",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-05-20",
+            "label": "Wash + chip repair",
+            "text": "Recommended: a three-stage wash, coffee on the house, and they sealed a chip at my request. Many thanks!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2sxblNEaEdTakJLYTJ0MmRXeDBabUkxUW1GQ2FsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Niko Karsanidze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Windscreen repair",
+            "text": "I had my windscreen repaired and everything was done perfectly. A high level of service, fast and well done.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURMc19qVG9RRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Zhanna Gamkhitashvili",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-03",
+            "label": "ბზარი შუშაზე",
+            "text": "…ღიმილიანი თანამშრომლები, და ყურადღებიანი დამოკიდებულებაა. შუშაზე ბზარი მაქსიმალურად დამიმალეს და ყველა ნიუანსი ამიხსნეს და შემითანხმეს. მიხარია რომ ასეთი მომსაზურების ფუფუნება არსებობს თბილისში.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWU1pHaGpTa2MwVGxvdE9FaHJZV0ZFVnpGcFZrRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Andrey",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-05-07",
+            "label": "ჩიპი საქარე მინაზე",
+            "text": "…ამოცანა იყო საქარე მინაზე ჩიპის აღდგენა და მანქანის ხარისხიანი გარეცხვა. ყველაფერი პროფესიონალურად და საუკეთესო სახით შესრულდა. ბიჭები გამხმაურებელნი არიან და ნებისმიერ პრობლემაში დაგეხმარებიან.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wU05uTkRPWE5JYmxORk1EY3pRVkJ5TWxSWWIzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Josef Dallaway",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "ჩიპი · სამართლიანი ფასი",
+            "text": "…ბესტავტოში მივედი საქარე მინაზე ჩიპის შესაკეთებლად. მათ დიდი და კარგად აღჭურვილი სახელოსნო აქვთ, გუნდი ძალიან პროფესიონალური, გათვითცნობიერებული და თავაზიანია — ჩიპი სწრაფად შეაკეთეს და ძალიან გონივრული ფასი აიღეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUa3ZMTGdBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Регина Бергер",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-17",
+            "label": "ორი ჩიპი და ბზარი",
+            "text": "…შესანიშნავი სერვისი! ორი ჩიპი მქონდა და ბზარიც უკვე გაჭიმული იყო. სწრაფად და ხარისხიანად გააკეთეს, ადეკვატურ ფასად.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tJM1VWWjJNMGwyWVdVM09WZzFaMlZ6UWpKaU5sRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Arman Babloyan",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-13",
+            "label": "ბზარი · 30 წუთი",
+            "text": "…სუპერ გუნდი, სუპერ სამუშაო — საქარე მინის დიდი ბზარი 30 წუთში გამისწორეს!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21oaVpYaEliVXhFVkRkbExVTTBPV28xTURGNlMyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Иван Баталов",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-09",
+            "label": "ბზარი აღდგენილია",
+            "text": "…შესანიშნავი სერვისი, სწრაფად და ხარისხიანად აღადგინეს ბზარი საქარე მინაზე.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOa04wTjZkRU52V2podFIzbEJjSGQ1WDFjd1FtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "MadCheese",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-05-20",
+            "label": "რეცხვა + ჩიპის შეკეთება",
+            "text": "…გირჩევთ: სამფაზიანი რეცხვა გააკეთეს, ყავა გაგვიმასპინძლდნენ და ცალკე თხოვნით ჩიპიც ამომივსეს. დიდი მადლობა!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2sxblNEaEdTakJLYTJ0MmRXeDBabUkxUW1GQ2FsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Niko Karsanidze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "საქარე მინის შეკეთება",
+            "text": "…საქარე მინა შევაკეთებინე, ყველაფერი იდეალურად გააკეთეს. მომსახურების მაღალი დონე, სწრაფად და ხარისხიანად.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURMc19qVG9RRRAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "auto-glass-tinting": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Sergii",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-05-06",
+            "label": "Плёнка без пузырей",
+            "text": "Тонировал стекло — сделали аккуратно, быстро и качественно. Плёнка легла ровно, без пузырей и дефектов. Остался очень доволен результатом…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGaE5FdFhjV3Q2TjFwVll6VjNaVk56YzFsVlVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Vertyankin",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Замер по закону",
+            "text": "…по плёнкам показали все доступные варианты, рассказали про отличия, после установки замерили светопропускание … Всё в пределах допустимых норм по закону … На тонировку приехал прямо перед закрытием, но без вопросов приняли и всё сделали за час…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT204MFpVbFlTV3RvUzBOVllWOXFiMEZDVHpCRFFWRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "irakli karseladze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Выше ожиданий",
+            "text": "Приехал на тонировку стёкол и был поражён итоговым результатом! Машина выглядит потрясающе, качество исполнения отличное. С первого дня все сотрудники были очень внимательны и готовы помочь.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBMmQ3YjZ3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "D “Og_DanHadar” S",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Тонировка + капот",
+            "text": "Предложили убрать следы от водяного камня и помета птиц(то что въелось в краску) И у них получилось сделать капот как новый Тонировку сделали тоже идеально, без намека на пузыри…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xad05EZEhURFpVUkUxNk5HSnhXREpHYVZoU1ZtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Arez Mustafa",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Честно об авто",
+            "text": "Как автолюбитель, скажу: они превзошли мои ожидания. Очень приятный и дружелюбный сервис. Перед началом работ говорят, если с машиной что-то не так, чего вы сами не заметили. Затонировал у них стёкла и скоро вернусь снова.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wWE4zcGhkR2g1ZUhCSmNrRnpialZ3YTFCMlpGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Вусал Алиев",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "По закону Грузии",
+            "text": "Приехал на тонировку всех стекол. Сориентировали по законодательству грузии насчет тонировки. За тонировку всех стекол, сделали приятный бонус в виде бесплатной 3-х фазовой мойки…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN6djhDT0VnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Popov",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "11 месяцев назад",
+            "label": "Затемнение окон",
+            "text": "…был по совету друга в Bestauto. Сделал затемнение окон. Большое спасибо Ивану за отличное обслуживание ч остался очень доволен от качественного обслуживания. Цены такие же как и в других местах а сервис нммного лучше.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GQlVtWnVXbUkyTVRoU1puSnVTREF4UTNNMlVVRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Tamar Mania",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Тонировка · довольна",
+            "text": "Отличная команда и отличное обслуживание. Мне затонировали машину, и я очень довольна Большое спасибо администратору, Бека – профессионал своего дела…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBdVpxcThBRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Sergii",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-05-06",
+            "label": "No bubbles, no flaws",
+            "text": "I had my windows tinted — the work was neat, fast and well done. The film went on evenly, with no bubbles and no flaws. I'm very happy with the result.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGaE5FdFhjV3Q2TjFwVll6VjNaVk56YzFsVlVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Vertyankin",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Measured, legal",
+            "text": "They showed me every film option available, explained the differences, and measured the light transmission after installation — all within the legal limits. I arrived for the tinting right before closing time, but they took me in without a word and finished within an hour.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT204MFpVbFlTV3RvUzBOVllWOXFiMEZDVHpCRFFWRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "irakli karseladze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Beyond expectations",
+            "text": "From day one all of the employees where very caring and supportive, especially the administrator Beka … I came in for the window tints and was amazed with the final results! My car looks amazing and the quality of the performance is excellent…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBMmQ3YjZ3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "D “Og_DanHadar” S",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Tint + paint",
+            "text": "They offered to remove the water spots and bird droppings that had etched into the paint — and they managed to make the hood look brand new. The tinting came out perfect too, without a hint of bubbles.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xad05EZEhURFpVUkUxNk5HSnhXREpHYVZoU1ZtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Arez Mustafa",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Honest about the car",
+            "text": "As a car enthusiasts, they exceeded my expectations. Very nice and friendly customer service … They tell you if there is anything wrong with your car if you haven’t noticed yourself before starting. Got my Windows Tinted from them and shall be going back again soon…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wWE4zcGhkR2g1ZUhCSmNrRnpialZ3YTFCMlpGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Вусал Алиев",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Within Georgian law",
+            "text": "I came in to have all the windows tinted. They walked me through what Georgian law allows for tinting. For tinting all the windows they threw in a nice bonus — a free three-stage wash.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN6djhDT0VnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Popov",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "11 месяцев назад",
+            "label": "Window tinting",
+            "text": "I came to Bestauto on a friend's recommendation and had my windows tinted. Big thanks to Ivan for the excellent service — I'm very happy with the quality. The prices are the same as elsewhere, but the service is far better.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GQlVtWnVXbUkyTVRoU1puSnVTREF4UTNNMlVVRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Tamar Mania",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Tinted · delighted",
+            "text": "A great team and great service. They tinted my car and I'm very happy with it. Many thanks to the administrator, Beka — a true professional.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBdVpxcThBRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Sergii",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-05-06",
+            "label": "ფირი ბუშტების გარეშე",
+            "text": "…შუშა დავატონირე — ყველაფერი მოწესრიგებულად, სწრაფად და ხარისხიანად გააკეთეს. ფირი თანაბრად დაწვა, ბუშტებისა და დეფექტების გარეშე. შედეგით ძალიან კმაყოფილი დავრჩი.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGaE5FdFhjV3Q2TjFwVll6VjNaVk56YzFsVlVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Vertyankin",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "გაზომვა კანონით",
+            "text": "…ფირებზე ყველა ხელმისაწვდომი ვარიანტი მაჩვენეს, განსხვავებები ამიხსნეს, დაყენების შემდეგ კი შუქგამტარობა გაზომეს — ყველაფერი კანონით დაშვებულ ნორმებშია. ტონირებაზე დახურვამდე ცოტა ხნით ადრე მივედი, მაგრამ უკითხავად მიმიღეს და ერთ საათში ყველაფერი გააკეთეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT204MFpVbFlTV3RvUzBOVllWOXFiMEZDVHpCRFFWRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "irakli karseladze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "მოლოდინზე მეტი",
+            "text": "…შუშების ტონირებაზე მივედი და საბოლოო შედეგმა გამაოცა! მანქანა შესანიშნავად გამოიყურება, შესრულების ხარისხი მაღალია. პირველივე დღიდან ყველა თანამშრომელი ძალიან ყურადღებიანი და დამხმარე იყო.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBMmQ3YjZ3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "D “Og_DanHadar” S",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ტონირება + კაპოტი",
+            "text": "…შემომთავაზეს წყლის ლაქებისა და ფრინველის ნარჩენების მოცილება, რაც უკვე საღებავში იყო შესული — და კაპოტი ახალივით გახადეს. ტონირებაც იდეალურად გააკეთეს, ბუშტების ნიშნის გარეშე.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xad05EZEhURFpVUkUxNk5HSnhXREpHYVZoU1ZtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Arez Mustafa",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "გულწრფელად მანქანაზე",
+            "text": "…როგორც ავტომოყვარულმა გეტყვით: მოლოდინს გადააჭარბეს. ძალიან სასიამოვნო და თავაზიანი მომსახურება. სამუშაოს დაწყებამდე გეუბნებიან, თუ მანქანაში რამე პრობლემაა, რაც შენ ვერ შეამჩნიე. შუშები დავატონირე და მალე ისევ დავბრუნდები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wWE4zcGhkR2g1ZUhCSmNrRnpialZ3YTFCMlpGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Вусал Алиев",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "საქართველოს კანონის ფარგლებში",
+            "text": "…ყველა შუშის ტონირებაზე მივედი. ტონირებასთან დაკავშირებით საქართველოს კანონმდებლობა ამიხსნეს. ყველა შუშის ტონირებაზე სასიამოვნო ბონუსი გამიკეთეს — უფასო სამფაზიანი რეცხვა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN6djhDT0VnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Popov",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "11 месяцев назад",
+            "label": "ფანჯრების დაბნელება",
+            "text": "…მეგობრის რჩევით მივედი Bestauto-ში და ფანჯრები დავაბნელე. დიდი მადლობა ივანს შესანიშნავი მომსახურებისთვის — ხარისხით ძალიან კმაყოფილი დავრჩი. ფასები ისეთივეა, როგორც სხვაგან, სერვისი კი ბევრად უკეთესი.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GQlVtWnVXbUkyTVRoU1puSnVTREF4UTNNMlVVRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Tamar Mania",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ტონირება · კმაყოფილი",
+            "text": "…შესანიშნავი გუნდი და შესანიშნავი მომსახურება. მანქანა დამიტონირეს და ძალიან კმაყოფილი ვარ. დიდი მადლობა ადმინისტრატორ ბექას — თავისი საქმის პროფესიონალი.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBdVpxcThBRRAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "ppf-shield-wrapping": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Nikita Taboo",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-05-21",
+            "label": "Оклейка · 3 дня",
+            "text": "…сделали всё очень быстро и при этом очень качественно, уложились всего за 3 дня. Машину выдали в идеальном состоянии, видно внимание к деталям и аккуратный подход к работе…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT214TVNrY3pNa0ZHUW5WTUxWSnZVR3BMVlVrNVgyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "sally ukleba",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Керамика + PPF",
+            "text": "…керамическое покрытие и защитную пленку, и результат превзошел все мои ожидания! Машина до сих пор блестит и находится в идеальном состоянии … собираюсь купить новую машину и уже знаю, что снова обращусь к ним…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBMllqV0hnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Revaz",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "После другого сервиса",
+            "text": "Обратился в Беставто после одного горе мастера по оклейке пленкой. Ребятам пришлось снимать пленку и клеить заново. Сравнивать результат до и после, просто некорректно. Это небо и земля. Работа была сделана быстро и именно так, как просил…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s1VU9HUXhla042TTFaUU9GRkNSMEpmU1RORGFVRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Iva 6",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Полная оклейка",
+            "text": "Качество их работы исключительное, а цены разумные для такого уровня сервиса. Полировка, керамическое покрытие или полная оклейка автомобиля — результат всегда выдающийся.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBMmFpXzNBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Tamriko Bakhtadze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Полиуретановая плёнка",
+            "text": "Сделали трёхфазную мойку и обклеили авто полиуретановой плёнкой. Теперь моя машина не только сверкает, как с обложки, но и надёжно защищена от царапин…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21adFQxRkVjbXgzYUc1RWFIaHBkSE5tZHpKRmVuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Яна Малышева",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "PPF · сложные зоны",
+            "text": "Приезжала на оклейку PPF, сделали всё чётко и в оговорённые сроки. Отдельно хочу отметить внимание к деталям - даже в сложных местах пленка легла идеально. Консультация была грамотная, подсказали оптимальные решения под мой бюджет…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT20xYWRVODVYelUwWDNrM01rWXlNRkpOZEVGNFJYYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Artem Ozornin",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Полная матовая PPF",
+            "text": "Ребята сделали мне полную оклейку матовой прозрачной плёнкой на одной машине и небольшие доработки на другой. Я в полном восторге от того, как всё получилось! Команда профессиональная, менеджеры очень дружелюбные и полностью ориентированы на клиента.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM3MGVPNEp3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Ойсу Кравченко",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Защита ЛКП",
+            "text": "Долго выбирала, где сделать защитную плёнку, и не прогадала … всё объяснили, показали образцы, сделали качественно и быстро. Машина выглядит шикарно, как с салона. Теперь спокойна за лакокрасочное покрытие…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkRWNtMVlZVmhTV0U0ME0yVmtOVGhKYUc1bGIwRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Nikita Taboo",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-05-21",
+            "label": "Wrapped in 3 days",
+            "text": "They did everything very fast and at the same time to a very high standard — the whole job took just 3 days. The car came back in perfect condition; the attention to detail and the careful approach are obvious.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT214TVNrY3pNa0ZHUW5WTUxWSnZVR3BMVlVrNVgyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "sally ukleba",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Ceramic + PPF",
+            "text": "I ordered ceramic coating and paint protection film, and the result exceeded all my expectations! The car still shines and is in perfect condition… I am about to buy a new car and I already know I will come back to them.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBMllqV0hnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Revaz",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Re-wrap after another shop",
+            "text": "I came to Bestauto after a botched film job by another installer. The guys had to strip the film off and wrap the car again. Comparing the before and after isn't even fair — it is night and day… The work was done fast and exactly the way I asked.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s1VU9HUXhla042TTFaUU9GRkNSMEpmU1RORGFVRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Iva 6",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Full car wrapping",
+            "text": "The quality of their work is exceptional, and the prices are reasonable for the level of service provided. Whether it's polishing, ceramic coating, or complete car wrapping, they deliver outstanding results…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBMmFpXzNBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Tamriko Bakhtadze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Polyurethane film",
+            "text": "They did a three-stage wash and wrapped the car in polyurethane film. Now my car not only shines like a magazine cover, it is also properly protected from scratches.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21adFQxRkVjbXgzYUc1RWFIaHBkSE5tZHpKRmVuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Яна Малышева",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "PPF · tricky areas",
+            "text": "I came in for PPF and everything was done precisely and within the agreed deadline. I especially want to mention the attention to detail — the film sits perfectly even in the tricky areas. The consultation was expert; they suggested the best options for my budget.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT20xYWRVODVYelUwWDNrM01rWXlNRkpOZEVGNFJYYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Artem Ozornin",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Full matte PPF",
+            "text": "I had these guys do a full matte clear film wrap on one of my cars and some minor tweaks on another … I'm super happy with how everything turned out! The team is professional, the managers are super friendly and all about the customers…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM3MGVPNEp3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Ойсу Кравченко",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Paint protection",
+            "text": "I spent a long time choosing where to have paint protection film done, and I made the right call… they explained everything, showed me samples, and did the job well and fast. The car looks stunning, like it just left the showroom. Now I have no worries about the paintwork.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkRWNtMVlZVmhTV0U0ME0yVmtOVGhKYUc1bGIwRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Nikita Taboo",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-05-21",
+            "label": "დაფარვა · 3 დღე",
+            "text": "…ყველაფერი ძალიან სწრაფად და ამავე დროს ძალიან ხარისხიანად გააკეთეს — სულ 3 დღეში. მანქანა იდეალურ მდგომარეობაში დამიბრუნეს, ეტყობა დეტალებზე ყურადღება და ზუსტი მიდგომა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT214TVNrY3pNa0ZHUW5WTUxWSnZVR3BMVlVrNVgyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "sally ukleba",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "კერამიკა + PPF",
+            "text": "…შევუკვეთე კერამიკული დაფარვა და დამცავი ფირი და შედეგმა ყველა მოლოდინს გადააჭარბა! მანქანას დღემდე აქვს ბზინვარება და იდეალურ მდგომარეობაშია… ახალ მანქანას ვყიდულობ და უკვე ვიცი, რომ ისევ მათთან მივალ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBMllqV0hnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Revaz",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "გადაკვრა სხვისი შემდეგ",
+            "text": "…ბესტავტოში მივედი მას შემდეგ, რაც სხვა ხელოსანმა ფირი ცუდად დამაკრა. ბიჭებს ფირის მოხსნა და თავიდან დაკვრა მოუწიათ. შედეგის შედარება „მდე“ და „შემდეგ“ უბრალოდ არაკორექტულია — ეს ცა და მიწაა… სამუშაო სწრაფად და ზუსტად ისე შესრულდა, როგორც ვთხოვე.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s1VU9HUXhla042TTFaUU9GRkNSMEpmU1RORGFVRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Iva 6",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "სრული დაფარვა",
+            "text": "…მათი სამუშაოს ხარისხი გამორჩეულია, ფასები კი ამ დონის სერვისისთვის გონივრული. პოლირება, კერამიკული დაფარვა თუ მანქანის სრული დაფარვა — შედეგი ყოველთვის შესანიშნავია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURBMmFpXzNBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Tamriko Bakhtadze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "პოლიურეთანის ფირი",
+            "text": "…სამფაზიანი რეცხვა გააკეთეს და მანქანა პოლიურეთანის ფირით დაფარეს. ახლა ჩემი მანქანა არა მხოლოდ ბრჭყვიალებს, არამედ საიმედოდ არის დაცული ნაკაწრებისგან.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21adFQxRkVjbXgzYUc1RWFIaHBkSE5tZHpKRmVuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Яна Малышева",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "PPF · რთული ადგილები",
+            "text": "PPF-ზე მივედი და ყველაფერი ზუსტად და შეთანხმებულ ვადაში გაკეთდა. განსაკუთრებით მინდა აღვნიშნო დეტალებზე ყურადღება — ფირი იდეალურად დაწვა რთულ ადგილებშიც კი. კონსულტაცია პროფესიონალური იყო, ჩემს ბიუჯეტზე მორგებული საუკეთესო გადაწყვეტები მირჩიეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT20xYWRVODVYelUwWDNrM01rWXlNRkpOZEVGNFJYYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Artem Ozornin",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "სრული მქრქალი PPF",
+            "text": "…ერთ მანქანაზე სრული მქრქალი გამჭვირვალე ფირით დაფარვა გამიკეთეს, მეორეზე კი მცირე დამატებითი სამუშაოები. აღფრთოვანებული ვარ შედეგით! გუნდი პროფესიონალურია, მენეჯერები ძალიან თავაზიანები და სრულად კლიენტზე ორიენტირებულები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM3MGVPNEp3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Ойсу Кравченко",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ლაქ-საღებავის დაცვა",
+            "text": "…დიდხანს ვირჩევდი, სად გამეკეთებინა დამცავი ფირი და არ შევმცდარვარ… ყველაფერი ამიხსნეს, ნიმუშები მაჩვენეს, ხარისხიანად და სწრაფად გააკეთეს. მანქანა შესანიშნავად გამოიყურება, თითქოს სალონიდან. ახლა მშვიდად ვარ ლაქ-საღებავის გამო.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkRWNtMVlZVmhTV0U0ME0yVmtOVGhKYUc1bGIwRRAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "vinyl-wrapping": {
+      "cards": {
+        "ru": [
+          {
+            "author": "VOVΛ",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Кузов + обвес",
+            "text": "Заезжал в этот детейлинг на двойную оклейку кузова автомобиля и установку обвеса. Все сделали хорошо, все моменты учли. Персонал дружелюбный и терпеливый. Стоимость невысокая, качество хорошее.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0TmFrUXhRMXBLUmpNMU9FMHdRV1ptWVdsWlQzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Виктор Федин",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Комплекс работ",
+            "text": "Делали тонировку, полировку, керамику, оклейку фар. всем остался доволен, все сделали быстро … цены доступнее в сравнении с другими организациями.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURudGIycWpnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Андрей",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-07-10",
+            "label": "Полная · жёлтый",
+            "text": "Хороший сервис, качественно выполненная работа полной оклейки кузова в желтую ppf пленку.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25rekxVTnhTbU5sTVdWcFlsRnRabWhpVDBWTFNsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexey Danilov",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "Изменено год назад",
+            "label": "Новая машина",
+            "text": "Оклеил пленкой новую машину. Ребята сделали все максимально качественно и в срок. Очень доволен. Лучший сервис в Тбилиси.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ1d1otX05BEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pavel Prishchepa",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Плёнка на фары",
+            "text": "Покрыли пленкой фары и почистили салон. Отличный сервис, все чисто, четко и вовремя.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNEblpXY2J3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Elena Matthaus-Rothstein",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-30",
+            "label": "О сервисе",
+            "text": "Отличный опыт с Александром и его командой. Он был очень профессионален и внимателен. Место очень чистое и приятное, расположение удобное.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KNFJHWXhXalJxZG14MmJGTm9TVWsyUmtJNFRXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "jean pierre nehme",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-02-28",
+            "label": "Приехал из Румынии",
+            "text": "Пишу отзыв впервые, и я не из тех, кто легко доверяет людям. Но с этой командой я с первого дня чувствовал себя совершенно спокойно: очень профессионально, результатом очень доволен.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5TGNEWXpjR2xRV1UxSU1XRlZhWGhLYkdoTWQyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Dito Tediashvili",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Машину не узнаете",
+            "text": "Лучший сервис по детейлингу в Грузии. Команда профессионалов приведет ваш автомобиль в такое состояние, что вы его не узнаете … 100% гарантия удовлетворения…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNfbi1xQzhBRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "VOVΛ",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Body wrap + kit",
+            "text": "I came to this detailing studio for a double body wrap and a body kit installation. Everything was done well and every detail was taken into account. The staff are friendly and patient. The price is low, the quality is good.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0TmFrUXhRMXBLUmpNMU9FMHdRV1ptWVdsWlQzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Виктор Федин",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Several jobs at once",
+            "text": "They did the tinting, polishing, ceramic coating and headlight wrapping. I'm happy with all of it, everything was done fast… and the prices are more affordable than at other places.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURudGIycWpnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Андрей",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-07-10",
+            "label": "Full wrap · yellow",
+            "text": "Good service and a properly done job — a full body wrap in yellow PPF film.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25rekxVTnhTbU5sTVdWcFlsRnRabWhpVDBWTFNsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexey Danilov",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "Изменено год назад",
+            "label": "New car wrapped",
+            "text": "I had my new car wrapped in film. The guys did everything to the highest standard and on schedule. Very happy. The best service in Tbilisi!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ1d1otX05BEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pavel Prishchepa",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Headlight film",
+            "text": "They wrapped the headlights in film and cleaned the interior. Great service — clean, precise and on time.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNEblpXY2J3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Elena Matthaus-Rothstein",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-30",
+            "label": "On the service",
+            "text": "I had a great experience with Alexander and his auto team. He was very professional and attentive. The place is very clean and nice. The location is also convenient…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KNFJHWXhXalJxZG14MmJGTm9TVWsyUmtJNFRXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "jean pierre nehme",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-02-28",
+            "label": "All the way from Romania",
+            "text": "All the way from Romania it's my first time writing a review, i don't usually trust people easily but I felt really comfortable dealing with this team since day one, very professional, very satisfied with the results, highly recommended…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5TGNEWXpjR2xRV1UxSU1XRlZhWGhLYkdoTWQyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Dito Tediashvili",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "You won't recognise the car",
+            "text": "The best detailing service in Georgia. This team of professionals will bring your car to a state where you won't recognise it. A 100% satisfaction guarantee.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNfbi1xQzhBRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "VOVΛ",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ძარა + ობვესი",
+            "text": "…ამ დითეილინგში მივედი ძარის ორმაგი დაფარვისა და ობვესის დაყენებისთვის. ყველაფერი კარგად გააკეთეს, ყველა ნიუანსი გაითვალისწინეს. პერსონალი თავაზიანი და მომთმენია. ფასი დაბალია, ხარისხი კარგი.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0TmFrUXhRMXBLUmpNMU9FMHdRV1ptWVdsWlQzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Виктор Федин",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "კომპლექსური სამუშაოები",
+            "text": "…გაუკეთეს ტონირება, პოლირება, კერამიკა და ფარების დაფარვა. ყველაფრით კმაყოფილი დავრჩი, ყველაფერი სწრაფად გაკეთდა… ფასები კი სხვა ორგანიზაციებთან შედარებით უფრო ხელმისაწვდომია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURudGIycWpnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Андрей",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-07-10",
+            "label": "სრული · ყვითელი",
+            "text": "…კარგი სერვისი და ხარისხიანად შესრულებული სამუშაო — ძარის სრული დაფარვა ყვითელი PPF ფირით.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25rekxVTnhTbU5sTVdWcFlsRnRabWhpVDBWTFNsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexey Danilov",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "Изменено год назад",
+            "label": "ახალი მანქანა",
+            "text": "…ახალი მანქანა ფირით დავაფარე. ბიჭებმა ყველაფერი მაქსიმალურად ხარისხიანად და ვადაში გააკეთეს. ძალიან კმაყოფილი ვარ. საუკეთესო სერვისი თბილისში!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ1d1otX05BEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pavel Prishchepa",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "ფირი ფარებზე",
+            "text": "…ფარები ფირით დაფარეს და სალონი გაწმინდეს. შესანიშნავი სერვისი — სუფთად, ზუსტად და დროულად.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNEblpXY2J3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Elena Matthaus-Rothstein",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-30",
+            "label": "სერვისის შესახებ",
+            "text": "…შესანიშნავი გამოცდილება მქონდა ალექსანდრესთან და მის გუნდთან. ის ძალიან პროფესიონალი და ყურადღებიანი იყო. ადგილი ძალიან სუფთა და სასიამოვნოა, მდებარეობაც მოსახერხებელი.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KNFJHWXhXalJxZG14MmJGTm9TVWsyUmtJNFRXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "jean pierre nehme",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-02-28",
+            "label": "რუმინეთიდან ჩამოსული",
+            "text": "…პირველად ვწერ შეფასებას და ადვილად არავის ვენდობი — მაგრამ ამ გუნდთან პირველივე დღიდან სრულიად კომფორტულად ვგრძნობდი თავს. ძალიან პროფესიონალურია, შედეგით ძალიან კმაყოფილი ვარ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5TGNEWXpjR2xRV1UxSU1XRlZhWGhLYkdoTWQyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Dito Tediashvili",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "მანქანას ვერ იცნობთ",
+            "text": "…საუკეთესო დითეილინგ-სერვისი საქართველოში. პროფესიონალების გუნდი თქვენს ავტომობილს ისეთ მდგომარეობაში მოიყვანს, რომ ვერ იცნობთ. 100% კმაყოფილების გარანტია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNfbi1xQzhBRRAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "polishing": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Andro Todua",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-06-08",
+            "label": "Полировка + керамика",
+            "text": "Видимые следы износа на кузове были впечатляюще обновлены. Отдельно ценю, что в услуги включили шлифовку и полировку ещё одной панели — бесплатно. Персонал внимательный и подробно всё объясняет на консультации до начала работ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wVkxYaEVaWHAyZDNaV1EzaERjek5PY0ZaUmNuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Дмитрий Павлов",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-05-30",
+            "label": "BMW X5 · полировка",
+            "text": "…кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим … Работа выполнена качественно, аккуратно и в оговоренные сроки…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KRWNHczRWamt4TFVWSGRHaG1PRTVqU1d4VlEzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Lizi",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-03-24",
+            "label": "Две машины сразу",
+            "text": "Это то место, где качество выполненной работы больше, чем цена. Привёз две машины — одну на полировку, другую на химчистку, и остался очень доволен, что нашёл это место. Они профессионалы своего дела.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25acVpqQnZRMjFwYkRKRVRuYzRlbVZhUjBsc2FGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Zezva Arabuli",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-01-21",
+            "label": "Полировка · идеал",
+            "text": "Сделал полировку — результатом очень доволен, машина выглядит идеально. Работают качественно, внимательно и профессионально.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCaFFXUktWRVJqUmtGSmNGVlFSMjEwZFVOS1kyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pavel",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2025-10-06",
+            "label": "Честно о возможностях",
+            "text": "Всё четко проговорили, указали на места, где полировка может не помочь, дали скидку на химчистку. Всё сделали в оговоренные сроки, машина здорово выглядит … Цены ниже, чем у ближайших конкурентов.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2twRk1sZHFWbkZzYWprM1REZEZjSEIyY2xaMGMwRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vanya Dymovsky",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2025-10-02",
+            "label": "Царапины ушли",
+            "text": "Просил отполировать машину с множеством мелких царапин. Ребята сделали отлично: отполировали даже пластиковые детали, почистили салон и даже сняли рейлинги, чтобы полностью отполировать крышу. И, что важнее всего, уложились в оговорённое время.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5ak4yd3laa1J2WTJobVVrRk1Na2R6WW1Fd1FtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Imran Hayat",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Вернулся со второй",
+            "text": "Сначала привёз первую машину — салон был в ужасном состоянии после перевозки из США: сырость и запах. Результат меня по-настоящему удивил. Сразу после этого привёз вторую машину на детейлинг, полировку и керамику. Цены при этом очень разумные.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNuX3U3TjNnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Larry Dumlao",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Subaru · царапины",
+            "text": "После того как краску на моём Subaru Forester 2023 повредили царапины от собаки, нужно было отполировать и заново нанести керамику. Через неделю машина выглядела почти новой, следов царапин почти не осталось, а повреждённые участки совпали идеально.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNJa3FYaU13EAE!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Andro Todua",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-06-08",
+            "label": "Polish + ceramic",
+            "text": "The visible wear and tear that was on the body was impressively refreshed … I appreciate that in the services, they included one extra panel sanding and polishing, on the house … The staff is attentive, cares about its clients and provides comprehensive explanation during consultation before starting the works…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wVkxYaEVaWHAyZDNaV1EzaERjek5PY0ZaUmNuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Дмитрий Павлов",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-05-30",
+            "label": "BMW X5 · polishing",
+            "text": "After polishing, the body looks like new — a deep gloss appeared and the light scratches are gone. After the interior cleaning the cabin is fresh and spotless. The work was done well, carefully and within the agreed deadline.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KRWNHczRWamt4TFVWSGRHaG1PRTVqU1d4VlEzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Lizi",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-03-24",
+            "label": "Two cars at once",
+            "text": "This is a place where the quality of the work is worth more than the price. I brought two cars — one for polishing, the other for interior cleaning — and I'm very glad I found this place. They are true professionals.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25acVpqQnZRMjFwYkRKRVRuYzRlbVZhUjBsc2FGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Zezva Arabuli",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-01-21",
+            "label": "Polishing · perfect",
+            "text": "I had the polishing service done — I'm very happy with the result, the car looks perfect. They work carefully, attentively and professionally.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCaFFXUktWRVJqUmtGSmNGVlFSMjEwZFVOS1kyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pavel",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2025-10-06",
+            "label": "Honest about the limits",
+            "text": "They talked everything through clearly, pointed out the spots where polishing might not help, and gave me a discount on the interior cleaning. Everything was done within the agreed deadline and the car looks great. Prices are lower than at the nearest competitors.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2twRk1sZHFWbkZzYWprM1REZEZjSEIyY2xaMGMwRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vanya Dymovsky",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2025-10-02",
+            "label": "Scratches gone",
+            "text": "Asked to polish a car with a lot of minor scratches … Guys made it great, even polished plastic details, cleaned my interior and even dismounted roof top handle bars to polish roof completely. Thanks for great result and the most important thing - they did it in discussed time frame…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5ak4yd3laa1J2WTJobVVrRk1Na2R6WW1Fd1FtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Imran Hayat",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Came back again",
+            "text": "At first, I tried with my first car, which was in terrible condition with seats and interior, totally spoiled with dampness extreme moisture & bad odor djrimg tranist from US. I was really surprised after seeing the exceptional results … i brought my second car for detailed cleaning, polishing, and ceramic coating … In terms of pricing, they are also very reasonable.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNuX3U3TjNnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Larry Dumlao",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Subaru · dog scratches",
+            "text": "After the paint on my 2023 Subaru Forester was damaged due to dog scratches, I needed a place to polish and re-apply the ceramic coating … A week later, my car looked almost brand new, with hardly any trace of scratches, and the damaged areas were perfectly matched…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNJa3FYaU13EAE!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Andro Todua",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-06-08",
+            "label": "პოლირება + კერამიკა",
+            "text": "…ძარაზე არსებული ცვეთის კვალი შთამბეჭდავად განახლდა. განსაკუთრებით ვაფასებ, რომ სერვისში კიდევ ერთი პანელის დამუშავება და პოლირება უფასოდ ჩართეს. პერსონალი ყურადღებიანია და სამუშაოს დაწყებამდე კონსულტაციაზე ყველაფერს დაწვრილებით ხსნის.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wVkxYaEVaWHAyZDNaV1EzaERjek5PY0ZaUmNuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Дмитрий Павлов",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-05-30",
+            "label": "BMW X5 · პოლირება",
+            "text": "…პოლირების შემდეგ ძარა ახალივით გამოიყურება — ღრმა ბზინვარება გაჩნდა, წვრილი ნაკაწრები გაქრა. ქიმწმენდის შემდეგ სალონი სუფთა და სუფთა ჰაერიანი გახდა. სამუშაო ხარისხიანად, ზუსტად და შეთანხმებულ ვადაში შესრულდა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KRWNHczRWamt4TFVWSGRHaG1PRTVqU1d4VlEzYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Lizi",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-03-24",
+            "label": "ორი მანქანა ერთდროულად",
+            "text": "…ეს ის ადგილია სადაც შესრულებული სამუშაოს ხარისხი უფრო მეტია ვიდრე ფასი … ორი მანქანა მივიყვანე ერთი პოლირებაზე მეორე ქიმწმენდაზე და ძალიან კმაყოფილი დავრჩი რომ აღმოვაჩინე ეს ადგილი. თავისი საქმის პროფესიონალები არიან.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25acVpqQnZRMjFwYkRKRVRuYzRlbVZhUjBsc2FGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Zezva Arabuli",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-01-21",
+            "label": "პოლირება · იდეალი",
+            "text": "…გავაკეთე პოლირების სერვისი … შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCaFFXUktWRVJqUmtGSmNGVlFSMjEwZFVOS1kyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pavel",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2025-10-06",
+            "label": "გულწრფელად შესაძლებლობებზე",
+            "text": "…ყველაფერი მკაფიოდ განვიხილეთ, მიმითითეს ადგილები, სადაც პოლირება შესაძლოა არ დაეხმაროს, ქიმწმენდაზე ფასდაკლება გამიკეთეს. ყველაფერი შეთანხმებულ ვადაში გაკეთდა, მანქანა შესანიშნავად გამოიყურება. ფასები უახლოეს კონკურენტებზე დაბალია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2twRk1sZHFWbkZzYWprM1REZEZjSEIyY2xaMGMwRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vanya Dymovsky",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2025-10-02",
+            "label": "ნაკაწრები გაქრა",
+            "text": "…ვთხოვე გაეპოლირებინათ მანქანა, რომელსაც ბევრი წვრილი ნაკაწრი ჰქონდა. ბიჭებმა შესანიშნავად გააკეთეს: პლასტმასის დეტალებიც კი გაპოლირეს, სალონი გაწმინდეს და სახურავის რელინგებიც კი მოხსნეს, რომ სახურავი სრულად გაეპოლირებინათ. და რაც მთავარია — შეთანხმებულ დროში ჩაატარეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5ak4yd3laa1J2WTJobVVrRk1Na2R6WW1Fd1FtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Imran Hayat",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "მეორე მანქანითაც",
+            "text": "…ჯერ პირველი მანქანა მივიყვანე — სალონი საშინელ მდგომარეობაში იყო აშშ-დან ტრანსპორტირების შემდეგ: ნესტი და უსიამოვნო სუნი. შედეგმა ნამდვილად გამაოცა. ამის შემდეგ მაშინვე მივიყვანე მეორე მანქანა დითეილინგზე, პოლირებასა და კერამიკაზე. ფასებიც ძალიან გონივრულია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNuX3U3TjNnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Larry Dumlao",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "Subaru · ნაკაწრები",
+            "text": "…მას შემდეგ, რაც ჩემი 2023 წლის Subaru Forester-ის საღებავი ძაღლის ნაკაწრებმა დააზიანა, საჭირო იყო პოლირება და კერამიკის თავიდან დატანა. ერთ კვირაში მანქანა თითქმის ახალივით გამოიყურებოდა, ნაკაწრების კვალი თითქმის აღარ ჩანდა, დაზიანებული უბნები კი იდეალურად დაემთხვა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNJa3FYaU13EAE!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "ceramiccoating": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Osman Değerli",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Керамика · качество",
+            "text": "Работа по моей машине отличная, мне очень понравилось. Всё было тщательно и скрупулёзно вычищено. Качество керамического покрытия очень хорошее. Коммуникация с клиентом на высоте.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURYbTVDZlNREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "mohamadreza sabzi",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Как новая · защита",
+            "text": "Совершенно потрясающий опыт с детейлингом и керамическим покрытием! Персонал очень дружелюбный, профессиональный и внимательный к каждой мелочи. Машина теперь выглядит как новая — блестящая, чистая и надёжно защищённая.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCbGRrTkxaamx1TkhBMFFYcHhOVlZtUVcxM2ExRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Keti Uertashvili",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Блестит как зеркало",
+            "text": "После химчистки, полировки и керамической полировки машина блестит как зеркало Всё было сделано аккуратно и чисто … такого результата! Обязательно приеду снова…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5WVUwUnNiV3RpTldaMWEzVnVSSGt4VGpoMVpuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "mamuka mikadze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Мойка, тонировка, керамика",
+            "text": "Я получил профессиональное и своевременное обслуживание, очень доволен. Мне сделали трехэтапную мойку, затемнение, полировку и керамическое покрытие, высочайшее качество и разумные цены…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUR6bV9iYTZ3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Kuzmidi",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Результат выше ожиданий",
+            "text": "Делал полировку и керамическое покрытие. Результат превзошёл ожидания, всё выполнено профессионально и в срок. Цены приятно удивили.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURMajluaHVBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Евгений Попов",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Керамика на капот",
+            "text": "Делали тонировку стёкол +полировка и покрытие керамикой капота, всё сделано на высшем уровне, рекомендую…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUc095VmxnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ana tatulashvili",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-06-20",
+            "label": "На результат",
+            "text": "Лучший сервис и обслуживание, ориентированное на результат. Профессиональный подход, высокое качество и внимание к деталям.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tadVJqTkpSSGRZYmtwa1VVTnNiSEpCU1dJNFNHYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Николай жидков",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-01-07",
+            "label": "Десятки машин",
+            "text": "Пользуюсь услугами Best Auto уже очень давно и доверил им уже не один десяток своих машин … Делают всё на высшем уровне, результат всегда «супер … индивидуальный подход к каждому клиенту и внимание к деталям…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kVmFtWjZlWGxHWmtndE5VeDVhbGg1V1dWcFYxRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Osman Değerli",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Ceramic · quality",
+            "text": "The workmanship on my car is great, I liked it very much. It was carefully and meticulously cleaned. Ceramic coating quality is very good … Customer communication is great, thank you very much…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURYbTVDZlNREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "mohamadreza sabzi",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Brand new · protected",
+            "text": "Absolutely amazing experience with the car detailing and ceramic coating service! The staff were super friendly, professional, and paid attention to every little detail. My car looks brand new now – glossy, clean, and perfectly protected…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCbGRrTkxaamx1TkhBMFFYcHhOVlZtUVcxM2ExRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Keti Uertashvili",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Shines like a mirror",
+            "text": "After the interior cleaning, polishing and ceramic coating the car shines like a mirror. Everything was done neatly and cleanly. I did not expect such a result! I will definitely come again.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5WVUwUnNiV3RpTldaMWEzVnVSSGt4VGpoMVpuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "mamuka mikadze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Wash, tint, ceramic",
+            "text": "The service was professional and on time, and I'm very happy with it. They did a three-stage wash, tinting, polishing and a ceramic coating — top quality at reasonable prices.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUR6bV9iYTZ3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Kuzmidi",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Beyond expectations",
+            "text": "I had polishing and ceramic coating done. The result exceeded my expectations; everything was done professionally and on time. The prices were a pleasant surprise…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURMajluaHVBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Евгений Попов",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Ceramic on the hood",
+            "text": "They did window tinting, polishing and a ceramic coating on the hood — all done to the highest standard, I recommend them!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUc095VmxnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ana tatulashvili",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-06-20",
+            "label": "Focused on results",
+            "text": "Excellent service and a strong focus on delivering results. The team was professional, attentive, and committed to providing high-quality service.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tadVJqTkpSSGRZYmtwa1VVTnNiSEpCU1dJNFNHYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Николай жидков",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-01-07",
+            "label": "Dozens of cars",
+            "text": "I've been a regular at Best Auto for a long time and have brought many of my cars here. The quality is always top-notch, and the results are consistently amazing. What I appreciate most is their individual approach to every client and attention to detail.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kVmFtWjZlWGxHWmtndE5VeDVhbGg1V1dWcFYxRRAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Osman Değerli",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "კერამიკა · ხარისხი",
+            "text": "…ჩემს მანქანაზე შესრულებული სამუშაო შესანიშნავია, ძალიან მომეწონა. ყველაფერი ზედმიწევნით და საგულდაგულოდ გაიწმინდა. კერამიკული დაფარვის ხარისხი ძალიან კარგია. კლიენტთან კომუნიკაცია მაღალ დონეზეა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURYbTVDZlNREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "mohamadreza sabzi",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ახალივით · დაცული",
+            "text": "…აბსოლუტურად შესანიშნავი გამოცდილება დითეილინგისა და კერამიკული დაფარვის სერვისით! პერსონალი ძალიან თავაზიანი, პროფესიონალი და ყოველ წვრილმანზე ყურადღებიანია. მანქანა ახლა ახალივით გამოიყურება — მბზინავი, სუფთა და საიმედოდ დაცული.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCbGRrTkxaamx1TkhBMFFYcHhOVlZtUVcxM2ExRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Keti Uertashvili",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "სარკესავით ბრჭყვიალებს",
+            "text": "…ქიმწმენდის, პოლირებისა და კერამიკული დაფარვის შემდეგ მანქანა სარკესავით ბრჭყვიალებს. ყველაფერი მოწესრიგებულად და სუფთად გაკეთდა. ასეთ შედეგს არ ველოდი! აუცილებლად ისევ მოვალ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5WVUwUnNiV3RpTldaMWEzVnVSSGt4VGpoMVpuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "mamuka mikadze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "რეცხვა, ტონირება, კერამიკა",
+            "text": "…პროფესიონალური და დროული მომსახურება მივიღე, ძალიან კმაყოფილი ვარ. გამიკეთეს სამეტაპიანი რეცხვა, ტონირება, პოლირება და კერამიკული დაფარვა — უმაღლესი ხარისხი და გონივრული ფასები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUR6bV9iYTZ3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alexander Kuzmidi",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "მოლოდინზე მეტი",
+            "text": "…გავიკეთე პოლირება და კერამიკული დაფარვა. შედეგმა მოლოდინს გადააჭარბა; ყველაფერი პროფესიონალურად და ვადაში შესრულდა. ფასებმა სასიამოვნოდ გამაკვირვა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURMajluaHVBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Евгений Попов",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "კერამიკა კაპოტზე",
+            "text": "…გაუკეთეს შუშების ტონირება, პოლირება და კაპოტის კერამიკული დაფარვა — ყველაფერი უმაღლეს დონეზეა შესრულებული, გირჩევთ!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUc095VmxnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ana tatulashvili",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-06-20",
+            "label": "შედეგზე ორიენტირებული",
+            "text": "…საუკეთესო სერვისი და შედეგზე ორიენტირებული მომსახურება. პროფესიონალური მიდგომა, მაღალი ხარისხი და ყურადღება დეტალების მიმართ…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tadVJqTkpSSGRZYmtwa1VVTnNiSEpCU1dJNFNHYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Николай жидков",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-01-07",
+            "label": "ათეულობით მანქანა",
+            "text": "Best Auto-ს მომსახურებით დიდი ხანია ვსარგებლობ და უკვე ათეულობით ჩემი მანქანა მივანდე. ყველაფერს უმაღლეს დონეზე აკეთებენ, შედეგი ყოველთვის „სუპერია“. განსაკუთრებით მახარებს ინდივიდუალური მიდგომა ყოველ კლიენტთან და ყურადღება დეტალებზე.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kVmFtWjZlWGxHWmtndE5VeDVhbGg1V1dWcFYxRRAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "interior-cleaning": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Андрей Евсиков",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-07-04",
+            "label": "Запах · озон",
+            "text": "Купил машину с прокуренным салоном, времени было в обрез … Сделали химчистку и озонирование за полтора дня, даже меньше. Теперь всё как в салоне новой машины.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21GR05tbFVjblpGYlRSV01XbEJjMHh4TVc1M1NFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Mike Grant",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2025-10-25",
+            "label": "Land Rover · вода",
+            "text": "Нужна была профессиональная химчистка салона Land Rover после попадания воды при морской перевозке. Быстро определили проблему, уверенно объяснили процесс и сделали ровно то, что обещали, и даже больше. Результат потрясающий: машина выглядит и пахнет как новая.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pSdk9FZGFWbTR6Y2sweGRsWkNWakpWUzNCMU5GRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Екатерина Куринская",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Mercedes · сложный",
+            "text": "Привезли на химчистку Mercedes кабриолет в состоянии сарая (буквально), машина стояла на улице несколько месяцев в турции под палящим солнцем и около пыльной дороги … Автомобиль привели в порядок за каких-то пару дней, хотя было много других клиентов и работ … ребята даже отмыли ремни безопастности, что очень сильно порадовало.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNvNEpDV3h3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Konstantin Bykov",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Сильное загрязнение",
+            "text": "Несмотря на сильное загрязнение, они превзошли все мои ожидания … внимание каждой детали: все сиденья и поверхности выглядели после их работы абсолютно новыми … не только салон, но и багажник, подкапотное пространство…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ5aG9lQ1lREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Saravana Shankar",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Лучшие в Тбилиси",
+            "text": "Лучшие специалисты по глубокой чистке и детейлингу, которых я видел в Тбилиси. Очень рекомендую это место всем, кто хочет как следует позаботиться о своей машине.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURuMzczaDBnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Максим Климов",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "5 месяцев назад",
+            "label": "Кожа и пластик",
+            "text": "…для химчистки салона после долгой эксплуатации. Результат превзошёл ожидания! Машину будто с конвейера забрал: сиденья идеально чистые, никаких пятен и запахов, кожа напитанная и матовая, пластик обработан.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkcFJXdzJWMDlSWmxsNVdsazFiVVpxT1Y5cFJGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Daniel Pegado",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Выбрал не по цене",
+            "text": "Я выбрал Bestauto не из-за цены — она была выше, чем у конкурента. Меня привели профессионализм в общении и внимание к клиенту. Машина была такой, какой вышла с завода: чистота, которую видишь и чувствуешь.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUN3bklQSGRREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pak Volchek",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-06-01",
+            "label": "Старый Ford как новый",
+            "text": "Я был поражён результатом. Мой старый Ford выглядит как новый и совсем ничем не пахнет!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pkUFlXNWlSRE4yTlVkNk5XbExXSFExZDE4NU4yYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Андрей Евсиков",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-07-04",
+            "label": "Smoke smell · ozone",
+            "text": "I bought a car with a heavy smoke smell inside and I was short on time. They did the interior cleaning and ozone treatment in a day and a half, even less. Now it feels like the cabin of a brand new car!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21GR05tbFVjblpGYlRSV01XbEJjMHh4TVc1M1NFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Mike Grant",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2025-10-25",
+            "label": "Land Rover · water",
+            "text": "I needed the interior of my Land Rover professionally dry cleaned after water exposure during overseas transport. They quickly diagnosed the problem, explained the process with full confidence, and delivered exactly what they promised and more … The results are amazing: the entire vehicle looks and smells brand new…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pSdk9FZGFWbTR6Y2sweGRsWkNWakpWUzNCMU5GRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Екатерина Куринская",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Mercedes · worst case",
+            "text": "We brought in a Mercedes convertible for interior cleaning in a truly barn-find state: it had stood outside for months under a scorching sun next to a dusty road. They put the car right in a couple of days — it looks five years younger. They even washed the seat belts.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNvNEpDV3h3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Konstantin Bykov",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Heavily soiled interior",
+            "text": "Despite how dirty the interior was, they exceeded all my expectations. They paid attention to every detail: after their work every seat and surface looked absolutely new. It wasn't just the cabin — the trunk and the engine bay were spotless too.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ5aG9lQ1lREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Saravana Shankar",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Best in Tbilisi",
+            "text": "The Best Deep Cleaning and Detailing experts , I saw in Tblisi … Highly recommend this place , for everybody … looking to take good … care of their cars…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURuMzczaDBnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Максим Климов",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "5 месяцев назад",
+            "label": "Leather and plastic",
+            "text": "I came in for an interior cleaning after years of use. The result exceeded my expectations! It was like picking the car up off the assembly line: the seats perfectly clean, no stains and no smells, the leather nourished and matte, the plastic treated.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkcFJXdzJWMDlSWmxsNVdsazFiVVpxT1Y5cFJGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Daniel Pegado",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Chose them, not the price",
+            "text": "…but my choice fell on Bestauto, not because of the price because the price of Bestauto was more expensive than the other offer, what led me to visit them was the professionalism of the contact, the attention paid to the customer … the car was as it had been when it left the factory, a cleanliness that you can see and definitely feel…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUN3bklQSGRREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pak Volchek",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-06-01",
+            "label": "Old Ford like new",
+            "text": "I was stunned by the outcome. My old Ford looks good as new and smells like nothing…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pkUFlXNWlSRE4yTlVkNk5XbExXSFExZDE4NU4yYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Андрей Евсиков",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-07-04",
+            "label": "სუნი · ოზონი",
+            "text": "…ვიყიდე მანქანა თამბაქოს სუნით გაჟღენთილი სალონით და დრო ცოტა მქონდა. ქიმწმენდა და ოზონირება დღენახევარში გააკეთეს, ისიც კი ნაკლებ დროში. ახლა ისეთია, როგორც ახალი მანქანის სალონი!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21GR05tbFVjblpGYlRSV01XbEJjMHh4TVc1M1NFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Mike Grant",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2025-10-25",
+            "label": "Land Rover · წყალი",
+            "text": "…საჭირო იყო Land Rover-ის სალონის პროფესიონალური ქიმწმენდა საზღვაო ტრანსპორტირებისას წყლის მოხვედრის შემდეგ. სწრაფად დაადგინეს პრობლემა, დარწმუნებით ამიხსნეს პროცესი და ზუსტად ის გააკეთეს, რაც დაპირდნენ, და მეტიც. შედეგი შესანიშნავია: მანქანა ახალივით გამოიყურება და ისე სუნავს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pSdk9FZGFWbTR6Y2sweGRsWkNWakpWUzNCMU5GRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Екатерина Куринская",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "Mercedes · რთული",
+            "text": "Mercedes-ის კაბრიოლეტი ქიმწმენდაზე მივიყვანეთ პრაქტიკულად „ბეღლის“ მდგომარეობაში: მანქანა თვეების განმავლობაში იდგა ღია ცის ქვეშ, მცხუნვარე მზეზე, მტვრიან გზასთან. ავტომობილი რამდენიმე დღეში მოაწესრიგეს — თითქოს 5 წლით გაახალგაზრდავდა. ღვედებიც კი გარეცხეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNvNEpDV3h3RRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Konstantin Bykov",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "ძლიერი დაბინძურება",
+            "text": "…ძლიერი დაბინძურების მიუხედავად, ყველა ჩემს მოლოდინს გადააჭარბეს. ყოველ დეტალს მიაქციეს ყურადღება: მათი მუშაობის შემდეგ ყველა სავარძელი და ზედაპირი აბსოლუტურად ახალივით გამოიყურებოდა. სუფთა იყო არა მხოლოდ სალონი, არამედ საბარგულიც და საძრავის განყოფილებაც.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ5aG9lQ1lREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Saravana Shankar",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "საუკეთესოები თბილისში",
+            "text": "…საუკეთესო ღრმა წმენდისა და დითეილინგის სპეციალისტები, რაც თბილისში მინახავს. ძალიან გირჩევთ ამ ადგილს ყველას, ვისაც სურს თავის მანქანაზე სათანადოდ იზრუნოს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURuMzczaDBnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Максим Климов",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "5 месяцев назад",
+            "label": "ტყავი და პლასტიკი",
+            "text": "…ხანგრძლივი ექსპლუატაციის შემდეგ სალონის ქიმწმენდაზე მივედი. შედეგმა მოლოდინს გადააჭარბა! თითქოს ქარხნიდან წამოვიყვანე მანქანა: სავარძლები იდეალურად სუფთა, არანაირი ლაქა და სუნი, ტყავი დატენიანებული და მქრქალი, პლასტიკი დამუშავებული.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkcFJXdzJWMDlSWmxsNVdsazFiVVpxT1Y5cFJGRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Daniel Pegado",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ფასის გამო არ ამირჩევია",
+            "text": "Bestauto ფასის გამო არ ამირჩევია — მათი ფასი კონკურენტზე მაღალი იყო. მე მიმიყვანა კომუნიკაციის პროფესიონალიზმმა და კლიენტისადმი ყურადღებამ. მანქანა ისეთი იყო, როგორიც ქარხნიდან გამოვიდა: სისუფთავე, რომელსაც ხედავ და ნამდვილად გრძნობ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUN3bklQSGRREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Pak Volchek",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-06-01",
+            "label": "ძველი Ford ახალივით",
+            "text": "…შედეგმა გამაოგნა. ჩემი ძველი Ford ახალივით გამოიყურება და საერთოდ არაფრით სუნავს!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pkUFlXNWlSRE4yTlVkNk5XbExXSFExZDE4NU4yYxAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "interior-restoration": {
+      "cards": {
+        "ru": [
+          {
+            "author": "eto kamkhadze",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-12",
+            "label": "С первой минуты",
+            "text": "С первой же минуты почувствовала профессиональное и тёплое отношение. Качество обслуживания превзошло все ожидания, автомобиль встретил меня в идеальном состоянии. Внимание к деталям и забота о клиенте по-настоящему выделяют эту команду.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sRVJtMWpNMnM1ZDNoS1IyczFVVlZZTm5ScWFFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Mikhail",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2025-11-21",
+            "label": "Бонус сверх плана",
+            "text": "Отличный сервис! Вежливый и внимательный персонал, ребята — мастера своего дела. Работу сделали с большим вниманием к деталям и в срок. Бонусом сделали дополнительные работы, не подняв цену.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tweFRUQnRaSEZhZUhSQ1VYVkZUR1Y1VFdSTWJIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Michael Gabaidze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Можно доверять",
+            "text": "Что до цен — качество, без сомнения, выше и лучше. Персонал очень дружелюбный: администратор Бека, Лаша и все остальные — общительные, ориентированы на работу и готовы помочь. Коротко: можно доверять и вы не пожалеете.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURfOHJUNjBBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Bashir Mohammad",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Работа до конца",
+            "text": "Обслуживание действительно оправдало мои ожидания. Работа выполнена полностью и качественно. Высокий профессионализм, хорошая команда и отличные навыки общения. На 100% приеду снова.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR6eTkzeVp3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "LUKA MODU",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Рекомендую на 100%",
+            "text": "Честно говоря, это лучшая служба детейлинга … Я на 100% рекомендую их для любых услуг Персонал и менеджер Бека тоже лучшие, они очень внимательны и помогут вам во всем.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBdWNLRUF3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Levan Davitadze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Даже в плохом виде",
+            "text": "Отличное место, чтобы сделать машину как новую. Дружелюбный и профессиональный персонал сделает для этого всё возможное — даже если краска в очень плохом состоянии.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUM3d1B1ZG1BRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Sekhne Gogrichiani",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-08-10",
+            "label": "Профессионалы",
+            "text": "Лучшее место и лучшее обслуживание. Очень классные люди и, что самое главное, профессионалы своего дела.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkWFVuSndZakZaVjFWNGFrZFFVVWszUjNkMVIyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "lelu shubladze",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-07-22",
+            "label": "Отличный результат",
+            "text": "Отличный сервис и отличный результат. Очень рекомендую!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0bVJrMUJWa2wxV0RGeFduTlRTUzE0WW5GMWQzYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "eto kamkhadze",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-12",
+            "label": "From the first minute",
+            "text": "From the very first minute I felt a professional and warm attitude. The quality of service exceeded every expectation and the car was waiting for me in perfect condition. Attention to detail and genuine care for the customer really set this team apart.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sRVJtMWpNMnM1ZDNoS1IyczFVVlZZTm5ScWFFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Mikhail",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2025-11-21",
+            "label": "Extra, same price",
+            "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tweFRUQnRaSEZhZUhSQ1VYVkZUR1Y1VFdSTWJIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Michael Gabaidze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "You can trust them",
+            "text": "As for prices quality is undoubtedly HIGHER AND THE BEST The personnel are also very friendly the administrator Beka, other employees Lasha and everyone are very communicative, friendly job oriented helpful … In short you can trust and you won't regret.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURfOHJUNjBBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Bashir Mohammad",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Complete work",
+            "text": "The service was indeed upto my expectation. Complete and fine work. Highly professional with good crew and good communication skills, speaking english really well. 100% will visit them once again.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR6eTkzeVp3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "LUKA MODU",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "100% recommended",
+            "text": "Honestly, this is the best detailing service. I recommend them 100% for any service. The staff and the manager Beka are the best too — they are very attentive and will help you with everything.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBdWNLRUF3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Levan Davitadze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Even in bad shape",
+            "text": "Great place to make your car like new. Friendly and professional staff will do everything possible for it, even if car paint is in very bad condition.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUM3d1B1ZG1BRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Sekhne Gogrichiani",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-08-10",
+            "label": "True professionals",
+            "text": "The best space and the best service. Very cool people and, most importantly, true professionals at what they do.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkWFVuSndZakZaVjFWNGFrZFFVVWszUjNkMVIyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "lelu shubladze",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-07-22",
+            "label": "Great results",
+            "text": "Excellent service and great results. Highly recommend.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0bVJrMUJWa2wxV0RGeFduTlRTUzE0WW5GMWQzYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "eto kamkhadze",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-12",
+            "label": "პირველივე წუთიდან",
+            "text": "…პირველივე წუთიდან ვიგრძენი პროფესიონალური და თბილი დამოკიდებულება … მომსახურების ხარისხმა ყოველგვარ მოლოდინს გადააჭარბა … ავტომობილი იდეალურ მდგომარეობაში დამხვდა … და მომხმარებელზე ზრუნვა ამ გუნდს ნამდვილად გამოარჩევს…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sRVJtMWpNMnM1ZDNoS1IyczFVVlZZTm5ScWFFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Mikhail",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2025-11-21",
+            "label": "ბონუსი დამატებით",
+            "text": "…შესანიშნავი სერვისი! თავაზიანი და ყურადღებიანი პერსონალი, ბიჭები თავიანთი საქმის ოსტატები არიან. სამუშაო დეტალებზე დიდი ყურადღებით და ვადაში შეასრულეს. ბონუსად დამატებითი სამუშაოც გააკეთეს ფასის გაზრდის გარეშე.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tweFRUQnRaSEZhZUhSQ1VYVkZUR1Y1VFdSTWJIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Michael Gabaidze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "შეგიძლიათ ენდოთ",
+            "text": "…რაც შეეხება ფასებს — ხარისხი უდავოდ უფრო მაღალი და საუკეთესოა. პერსონალიც ძალიან თავაზიანია: ადმინისტრატორი ბექა, ლაშა და ყველა დანარჩენი კომუნიკაბელური, საქმეზე ორიენტირებული და დამხმარეა. მოკლედ: შეგიძლიათ ენდოთ და არ ინანებთ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURfOHJUNjBBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Bashir Mohammad",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "დასრულებული სამუშაო",
+            "text": "…მომსახურებამ ნამდვილად გაამართლა ჩემი მოლოდინი. სამუშაო სრულად და ხარისხიანად შესრულდა. მაღალი პროფესიონალიზმი, კარგი გუნდი და შესანიშნავი კომუნიკაცია. 100%-ით ისევ მოვალ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR6eTkzeVp3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "LUKA MODU",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "100%-ით გირჩევთ",
+            "text": "…გულწრფელად რომ ვთქვა, ეს საუკეთესო დითეილინგ-სერვისია. 100%-ით გირჩევთ მათ ნებისმიერი მომსახურებისთვის. პერსონალი და მენეჯერი ბექაც საუკეთესოები არიან — ძალიან ყურადღებიანები არიან და ყველაფერში დაგეხმარებიან.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBdWNLRUF3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Levan Davitadze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "მძიმე მდგომარეობაშიც",
+            "text": "…შესანიშნავი ადგილი, რომ მანქანა ახალივით გახდეს. თავაზიანი და პროფესიონალი პერსონალი ამისთვის ყველაფერს გააკეთებს — მაშინაც კი, თუ საღებავი ძალიან ცუდ მდგომარეობაშია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUM3d1B1ZG1BRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Sekhne Gogrichiani",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-08-10",
+            "label": "პროფესიონალები",
+            "text": "…საუკეთესო სივრცე და მომსახურება … ძალიან მაგარი ხალხი და რაც მთავარია თავისი საქმის პროფესიონალები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkWFVuSndZakZaVjFWNGFrZFFVVWszUjNkMVIyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "lelu shubladze",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-07-22",
+            "label": "შესანიშნავი შედეგი",
+            "text": "…შესანიშნავი სერვისი და შესანიშნავი შედეგი. ნამდვილად გირჩევთ!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0bVJrMUJWa2wxV0RGeFduTlRTUzE0WW5GMWQzYxAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "carwash": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Николай жидков",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "6 месяцев назад",
+            "label": "Мойка · быстро",
+            "text": "Отличный сервис, новое оборудование и классное месторасположение. Мыл машину — всё чётко и быстро. Зона ресепшена заслуживает отдельной похвалы: много пространства, вкусный кофе и массажные кресла…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OWVJYbHhUbkppYTBsdmFVbzRUemRZZUZWdlZrRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Тамара Шотавели",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "5 месяцев назад",
+            "label": "Аккуратно",
+            "text": "Отличный детейлинг … Работают аккуратно и внимательно, машину качественно отмыли. Понравилось отношение к клиентам и приятные цены.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5U1FXOUtkMUZLYzBaaVVFdG9XRGx0YURWdFVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Rodion Shkinin",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-08-08",
+            "label": "Подкапотное",
+            "text": "Отличный сервис! Идеально помыли подкапотное пространство.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xjd1NWQXhTalJRUVVSWlduSkpWWHBCVEhFMGRsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Анна Мжаванадзе",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Мойка · довольна",
+            "text": "Мне очень понравился сервис. Машину помыли очень хорошо. Я очень довольна.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VKaTZfcVN2aFlLSGR3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vazha Maysuradze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Химчистка + мойка",
+            "text": "Химчистка салона + мойка. Выше всяких похвал.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNiaU9XYnhBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Stanislav",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "3-фазная мойка",
+            "text": "…фазная мойка. Все понравилось.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR6MkxYOVJBEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Levani Dadesheli",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-06-06",
+            "label": "Премиум по цене",
+            "text": "Премиальное качество обслуживания! Честно говоря, сервиса такого уровня по такой приемлемой цене я в Тбилиси нигде не видел.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21sT09HZFpVM1ZKZG1wQ1QxSkNWV3M1UWpCMWVFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "David Williams",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2025-10-25",
+            "label": "Tesla Model Y",
+            "text": "Bestauto Detailing довели мою Tesla Model Y до состояния шоурума. Краска теперь с глубоким зеркальным блеском, диски и стёкла безупречны, салон освежён — всё просто сияет. Общение было чётким, работу сдали быстро.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCbk0wY3lRMjU2YTFWYVRtNTJkMUJJVDB0VWFtYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Николай жидков",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "6 месяцев назад",
+            "label": "Wash · quick",
+            "text": "Great service, brand-new equipment and a great location. I had my car washed — everything quick and precise. The reception area deserves a separate mention: lots of space, good coffee and massage chairs.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OWVJYbHhUbkppYTBsdmFVbzRUemRZZUZWdlZrRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Тамара Шотавели",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "5 месяцев назад",
+            "label": "Careful and kind",
+            "text": "Great detailing. They work carefully and attentively, and the car was washed properly. I liked the attitude to customers and the pleasant prices.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5U1FXOUtkMUZLYzBaaVVFdG9XRGx0YURWdFVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Rodion Shkinin",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-08-08",
+            "label": "Engine bay",
+            "text": "Great service! They washed the engine bay perfectly.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xjd1NWQXhTalJRUVVSWlduSkpWWHBCVEhFMGRsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Анна Мжаванадзе",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Wash · very pleased",
+            "text": "I really liked the service. They washed the car very nicely. I am very pleased.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VKaTZfcVN2aFlLSGR3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vazha Maysuradze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Interior + wash",
+            "text": "Interior cleaning plus a wash. Beyond praise!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNiaU9XYnhBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Stanislav",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Three-stage wash",
+            "text": "Three-stage wash. Liked everything about it.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR6MkxYOVJBEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Levani Dadesheli",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-06-06",
+            "label": "Premium at a fair price",
+            "text": "Premium-quality service! Honestly, I have not seen this level of service anywhere in Tbilisi at such a reasonable price.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21sT09HZFpVM1ZKZG1wQ1QxSkNWV3M1UWpCMWVFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "David Williams",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2025-10-25",
+            "label": "Tesla Model Y",
+            "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCbk0wY3lRMjU2YTFWYVRtNTJkMUJJVDB0VWFtYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Николай жидков",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "6 месяцев назад",
+            "label": "რეცხვა · სწრაფად",
+            "text": "…შესანიშნავი სერვისი, ახალი აღჭურვილობა და მაგარი მდებარეობა. მანქანა გავრეცხე — ყველაფერი ზუსტად და სწრაფად. მისაღები ზონა ცალკე შექებას იმსახურებს: ბევრი სივრცე, გემრიელი ყავა და მასაჟის სავარძლები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OWVJYbHhUbkppYTBsdmFVbzRUemRZZUZWdlZrRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Тамара Шотавели",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "5 месяцев назад",
+            "label": "ფრთხილად",
+            "text": "…შესანიშნავი დითეილინგი. მუშაობენ ფრთხილად და ყურადღებით, მანქანა ხარისხიანად გარეცხეს. მომეწონა კლიენტებისადმი დამოკიდებულება და სასიამოვნო ფასები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5U1FXOUtkMUZLYzBaaVVFdG9XRGx0YURWdFVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Rodion Shkinin",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-08-08",
+            "label": "საძრავის განყოფილება",
+            "text": "…შესანიშნავი სერვისი! საძრავის განყოფილება იდეალურად გარეცხეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xjd1NWQXhTalJRUVVSWlduSkpWWHBCVEhFMGRsRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Анна Мжаванадзе",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "რეცხვა · კმაყოფილი",
+            "text": "…სერვისი ძალიან მომეწონა. მანქანა ძალიან კარგად გარეცხეს. ძალიან კმაყოფილი ვარ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VKaTZfcVN2aFlLSGR3EAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vazha Maysuradze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "ქიმწმენდა + რეცხვა",
+            "text": "…სალონის ქიმწმენდა + რეცხვა. ყოველგვარ შექებაზე მაღლა!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNiaU9XYnhBRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Stanislav",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "სამფაზიანი რეცხვა",
+            "text": "…სამფაზიანი რეცხვა. ყველაფერი მომეწონა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR6MkxYOVJBEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Levani Dadesheli",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-06-06",
+            "label": "პრემიუმი მისაღებ ფასად",
+            "text": "…პრემიუმ ხარისხის მომსახურება! მართალი გითხრათ, თბილისში ასეთი დონის სერვისი ასეთ მისაღებ ფასად არსად მინახავს…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21sT09HZFpVM1ZKZG1wQ1QxSkNWV3M1UWpCMWVFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "David Williams",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2025-10-25",
+            "label": "Tesla Model Y",
+            "text": "Bestauto Detailing-მა ჩემი Tesla Model Y შოურუმის მდგომარეობამდე მიიყვანა. საღებავს ახლა ღრმა, სარკისებრი ბზინვარება აქვს, დისკები და შუშები უნაკლოა, სალონი განახლებულია — ყველაფერი უბრალოდ ბრწყინავს. კომუნიკაცია მკაფიო იყო, სამუშაო სწრაფად ჩააბარეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCbk0wY3lRMjU2YTFWYVRtNTJkMUJJVDB0VWFtYxAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "car-soundproofing": {
+      "cards": {
+        "ru": [
+          {
+            "author": "曾艾琳",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-05-28",
+            "label": "Без навязывания",
+            "text": "Нам всё сделали очень быстро. Бека прекрасно говорит по-английски, был готов всё обсудить и помочь подобрать именно то, что нам нужно, — совершенно не навязывал лишнего.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OZlUyRjVUekp5VVdsU1dteExkVlZtUVhGWloyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Saba Inaishvili",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Объяснили процесс",
+            "text": "Работа выполнена на высочайшем уровне – каждая деталь безупречна и чиста, машина выглядит практически как новая. Особого внимания заслуживает профессионализм и внимательность руководителя – он подробно объяснил каждый процесс, ответил на все мои вопросы, и было ясно, что для него важна удовлетворенность каждого клиента…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kdlFYUlRZWE5NVW5SS2JtSllRek0yYmpsamMwRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "beka kinkladze",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Как со своей машиной",
+            "text": "Внимательная атмосфера, они подходили к решению проблем с машиной так, как будто это была их собственная, каждый день я знал, что они делают и как. Сегодня машина уже сияет…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNubV9uZXJRRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vacutagin Fox",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Без упущенных мелочей",
+            "text": "Обслуживание на высшем уровне! После детейлинга машина как с салона — всё блестит, ни одной мелочи не упущено. Очень приятный персонал и профессиональный подход…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kYVYyTnZOR1pyV0ZVd2NUZG1SRE5ZTVZkTldIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Nugzari Sukhitashvili",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "5 месяцев назад",
+            "label": "Первый класс",
+            "text": "Первоклассное обслуживание, комфортная обстановка и очень дружелюбный персонал … Рекомендую всем, кто ищет качественный сервис.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5dWFqSkxVR0poUTNsSlJYWktZMjF2VkRoUlduYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Barry Robinson (Coach Barry Robinson)",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Без записи",
+            "text": "Я приехал в Bestauto в воскресенье вечером, без записи — и меня легко могли развернуть. Но нет: приняли спокойно, без лишних слов и по-настоящему профессионально. Провели со мной почти час, осмотрели машину и составили план решения на следующий день.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT20xUmVqbEdhSEJ4U20xeldscFBSVEYwYjJweldWRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Romani Bokhua",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-08-07",
+            "label": "Идеальное обслуживание",
+            "text": "Очень приятная атмосфера, идеальное обслуживание и, конечно же, профессионалы своего дела. Рекомендую всячески.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pRNWEyOWtibHBUTVRCRlJXTXdTWFo2U25WeFJFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alex Rex",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-07-17",
+            "label": "Профессионалы",
+            "text": "Лучший сервис, настоящие профессионалы.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wWVUzZzBRbXhVVG1KZlZXSjZaaTFQUVRoclduYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "曾艾琳",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-05-28",
+            "label": "No upselling",
+            "text": "Got our car patched up super quickly by them. Beka spoke great English and was very ready to discuss and help us find our best needs- did not pressure us at all to do things that we did not need…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OZlUyRjVUekp5VVdsU1dteExkVlZtUVhGWloyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Saba Inaishvili",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Every step explained",
+            "text": "The work was done to the highest standard — every detail is flawless and clean, and the car looks almost new. The manager's professionalism deserves a special mention: he explained every step in detail and answered all my questions.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kdlFYUlRZWE5NVW5SS2JtSllRek0yYmpsamMwRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "beka kinkladze",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Treated it as their own",
+            "text": "An attentive atmosphere: they approached the problems with my car as if it were their own. Every day I knew exactly what they were doing and how. Today the car already shines!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNubV9uZXJRRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vacutagin Fox",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Nothing missed",
+            "text": "Service at the highest level! After the detailing the car looks like it came from the showroom — everything shines and not a single detail was missed. Very pleasant staff and a professional approach.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kYVYyTnZOR1pyV0ZVd2NUZG1SRE5ZTVZkTldIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Nugzari Sukhitashvili",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "5 месяцев назад",
+            "label": "First-class service",
+            "text": "First-class service, a comfortable setting and very friendly staff. I recommend them to anyone looking for quality service.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5dWFqSkxVR0poUTNsSlJYWktZMjF2VkRoUlduYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Barry Robinson (Coach Barry Robinson)",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "No appointment",
+            "text": "I showed up at Bestauto on a Sunday evening — not just with a car problem, but while I was physically sick and in a pretty distressing situation overall … But they didn’t … stayed with me for nearly an hour, checked the car hands-on, and came up with a next-day plan to resolve the issue…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT20xUmVqbEdhSEJ4U20xeldscFBSVEYwYjJweldWRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Romani Bokhua",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-08-07",
+            "label": "Ideal service",
+            "text": "A very pleasant atmosphere, ideal service and, of course, true professionals at what they do. I recommend them wholeheartedly.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pRNWEyOWtibHBUTVRCRlJXTXdTWFo2U25WeFJFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alex Rex",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-07-17",
+            "label": "Real professionals",
+            "text": "Best service, Real professionals.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wWVUzZzBRbXhVVG1KZlZXSjZaaTFQUVRoclduYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "曾艾琳",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-05-28",
+            "label": "თავს არ მოგახვევენ",
+            "text": "…ჩვენი მანქანა ძალიან სწრაფად მოაწესრიგეს. ბექა შესანიშნავად ლაპარაკობს ინგლისურად, მზად იყო ყველაფერი განეხილა და დაგვხმარებოდა ზუსტად იმის შერჩევაში, რაც გვჭირდებოდა — ზედმეტს საერთოდ არ გვახვევდა თავს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OZlUyRjVUekp5VVdsU1dteExkVlZtUVhGWloyYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Saba Inaishvili",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ყოველი ეტაპი ახსნილი",
+            "text": "…სამუშაო უმაღლეს დონეზეა შესრულებული — ყოველი დეტალი უნაკლო და სუფთაა, მანქანა თითქმის ახალივით გამოიყურება. განსაკუთრებულ ყურადღებას იმსახურებს ხელმძღვანელის პროფესიონალიზმი: მან დაწვრილებით ამიხსნა ყოველი პროცესი და ყველა ჩემს კითხვას უპასუხა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kdlFYUlRZWE5NVW5SS2JtSllRek0yYmpsamMwRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "beka kinkladze",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "როგორც საკუთარ მანქანას",
+            "text": "…ყურადღებიანი ატმოსფერო: მანქანის პრობლემებს ისე უდგებოდნენ, თითქოს საკუთარი ყოფილიყო. ყოველდღე ვიცოდი, რას აკეთებდნენ და როგორ. დღეს მანქანა უკვე ბრწყინავს!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNubV9uZXJRRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Vacutagin Fox",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "წვრილმანების გარეშე",
+            "text": "…მომსახურება უმაღლეს დონეზეა! დითეილინგის შემდეგ მანქანა სალონიდან გამოსულს ჰგავს — ყველაფერი ბრწყინავს, არცერთი წვრილმანი არ არის გამორჩენილი. ძალიან სასიამოვნო პერსონალი და პროფესიონალური მიდგომა.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kYVYyTnZOR1pyV0ZVd2NUZG1SRE5ZTVZkTldIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Nugzari Sukhitashvili",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "5 месяцев назад",
+            "label": "პირველი კლასი",
+            "text": "…პირველკლასიანი მომსახურება, კომფორტული გარემო და ძალიან თავაზიანი პერსონალი. გირჩევთ ყველას, ვინც ხარისხიან სერვისს ეძებს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5dWFqSkxVR0poUTNsSlJYWktZMjF2VkRoUlduYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Barry Robinson (Coach Barry Robinson)",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ჩაწერის გარეშე",
+            "text": "Bestauto-ში კვირას საღამოს მივედი, ჩაწერის გარეშე — და მარტივად შეეძლოთ უარი ეთქვათ. მაგრამ არა: მშვიდად, ზედმეტი სიტყვების გარეშე და ნამდვილი პროფესიონალიზმით მიმიღეს. თითქმის ერთი საათი დამითმეს, მანქანა ადგილზე შეამოწმეს და მეორე დღისთვის გადაწყვეტის გეგმა შემიდგინეს.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT20xUmVqbEdhSEJ4U20xeldscFBSVEYwYjJweldWRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Romani Bokhua",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-08-07",
+            "label": "იდეალური მომსახურება",
+            "text": "…ძალიან მაგარი გარემო ზე იდეალური მომსახურეობა და რა თქმა უნდა თავისი საქმის პროფესიონალები რეკომენდაციას ვუწევ ყველანაირად.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pRNWEyOWtibHBUTVRCRlJXTXdTWFo2U25WeFJFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alex Rex",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-07-17",
+            "label": "ნამდვილი პროფესიონალები",
+            "text": "…საუკეთესო სერვისი, ნამდვილი პროფესიონალები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wWVUzZzBRbXhVVG1KZlZXSjZaaTFQUVRoclduYxAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "computer-diagnostics": {
+      "cards": {
+        "ru": [
+          {
+            "author": "Dmitry Teshev",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-05-10",
+            "label": "Полный детейлинг",
+            "text": "Я под сильным впечатлением от полного детейлинга моей машины. Команда сработала выдающеся: салон безупречно чист и освежён, каждая деталь аккуратно вычищена и защищена. Профессиональная, скрупулёзная работа от начала до конца.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWNVVqQnNNRjlyUXpJdGIwOVRTRnBHVUVGdVJuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Giga Tsitsishvili",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "О сервисе",
+            "text": "Хороший, качественный детейлинг-центр в Тбилиси. Высокий уровень обслуживания, дружелюбный персонал … Рекомендую к посещению…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNUd2JlZ0FnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Simon",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Аккуратно и в срок",
+            "text": "Очень доволен работой! Сделали всё аккуратно, качественно и в срок. Машина после детейлинга выглядит как новая — блестит, салон чистейший…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pNeVZWSXdPUzAzUjFaM2JXRlhRVnBaYVVNNFZIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "maks malishev",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "Профессионалы",
+            "text": "Очень доволен обслуживанием … Сделали всё качественно, аккуратно и в срок … всем, кто ценит своё авто…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wc2NWaDBjMmxvU2tab1VsZGlkVlF5YVZKYWVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "tamta mebonia",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "5 месяцев назад",
+            "label": "Как новая",
+            "text": "Недавно пригнала машину в Best Auto на детейлинг и я в полном восторге! Машина выглядит как новая — каждый уголок безупречно чистый и блестящий.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sb1VpMUlVbkl3ZVc1S1NsUlJTbkYyZGxaM2NtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Георгий",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-08-11",
+            "label": "Лучшее в Тбилиси",
+            "text": "Лучшее место с лучшим сервисом в Тбилиси.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT210eWEzVmpPVkZ4TUZaT1oxUk9SMU5GVFY5NFJYYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Dovas Igdir",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-08-07",
+            "label": "Просто супер",
+            "text": "Просто супер слов нет.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21jMVJEWTNhMVJCVUV0SmNpMUpiakV3VldodU1uYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "gaga sakvarelidze",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-07-13",
+            "label": "Качество и цены",
+            "text": "Рекомендую всем — классные ребята! И самое главное, у них высокое качество и приемлемые цены.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toc2VXdDBWRFF4VjBkMFJUbFFXSE4wTWxvMlptYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "Dmitry Teshev",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-05-10",
+            "label": "Full detailing",
+            "text": "I’m extremely impressed with the full detailing on my car. The team did an outstanding job. The interior is spotless and refreshed, with every detail carefully cleaned and protected. Professional, meticulous work from start to finish…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWNVVqQnNNRjlyUXpJdGIwOVRTRnBHVUVGdVJuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Giga Tsitsishvili",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "On the service",
+            "text": "A good, high-quality detailing centre in Tbilisi. A high level of service and friendly staff. I recommend a visit.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNUd2JlZ0FnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Simon",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Careful and on time",
+            "text": "Very happy with the work! Everything was done carefully, properly and on time. After the detailing the car looks like new — it shines and the interior is spotless.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pNeVZWSXdPUzAzUjFaM2JXRlhRVnBaYVVNNFZIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "maks malishev",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "A team of pros",
+            "text": "Very happy with the service! Everything was done well, carefully and on time. A team of professionals — I recommend them to anyone who values their car!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wc2NWaDBjMmxvU2tab1VsZGlkVlF5YVZKYWVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "tamta mebonia",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "5 месяцев назад",
+            "label": "Brand new again",
+            "text": "I recently took my car to Best Auto for detailing, and I'm absolutely thrilled! My car looks brand new — every corner is spotless and shiny.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sb1VpMUlVbkl3ZVc1S1NsUlJTbkYyZGxaM2NtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Георгий",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-08-11",
+            "label": "Best in Tbilisi",
+            "text": "The best place with the best service in Tbilisi.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT210eWEzVmpPVkZ4TUZaT1oxUk9SMU5GVFY5NFJYYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Dovas Igdir",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-08-07",
+            "label": "Simply superb",
+            "text": "Simply superb — I'm lost for words.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21jMVJEWTNhMVJCVUV0SmNpMUpiakV3VldodU1uYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "gaga sakvarelidze",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-07-13",
+            "label": "Quality and prices",
+            "text": "I recommend them to everyone — great guys! And most importantly, they have high quality and fair prices.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toc2VXdDBWRFF4VjBkMFJUbFFXSE4wTWxvMlptYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "Dmitry Teshev",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-05-10",
+            "label": "სრული დითეილინგი",
+            "text": "…ძლიერი შთაბეჭდილება დამრჩა ჩემი მანქანის სრული დითეილინგისგან. გუნდმა გამორჩეულად იმუშავა: სალონი უნაკლოდ სუფთა და განახლებულია, ყოველი დეტალი გულდასმით გაწმენდილი და დაცულია. პროფესიონალური, ზედმიწევნითი სამუშაო თავიდან ბოლომდე.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWNVVqQnNNRjlyUXpJdGIwOVRTRnBHVUVGdVJuYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Giga Tsitsishvili",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "სერვისის შესახებ",
+            "text": "…კარგი, ხარისხიანი დითეილინგ-ცენტრი თბილისში. მომსახურების მაღალი დონე, თავაზიანი პერსონალი. გირჩევთ ეწვიოთ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNUd2JlZ0FnEAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Simon",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "ზუსტად და ვადაში",
+            "text": "…სამუშაოთი ძალიან კმაყოფილი ვარ! ყველაფერი ზუსტად, ხარისხიანად და ვადაში გააკეთეს. დითეილინგის შემდეგ მანქანა ახალივით გამოიყურება — ბრწყინავს, სალონი კი უსუფთავესია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pNeVZWSXdPUzAzUjFaM2JXRlhRVnBaYVVNNFZIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "maks malishev",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "პროფესიონალების გუნდი",
+            "text": "…მომსახურებით ძალიან კმაყოფილი ვარ! ყველაფერი ხარისხიანად, ზუსტად და ვადაში გააკეთეს. პროფესიონალების გუნდი — გირჩევთ ყველას, ვინც თავის ავტომობილს აფასებს!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wc2NWaDBjMmxvU2tab1VsZGlkVlF5YVZKYWVXYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "tamta mebonia",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "5 месяцев назад",
+            "label": "ახალივით",
+            "text": "…ცოტა ხნის წინ მანქანა Best Auto-ში წავიყვანე დითეილინგზე და აღფრთოვანებული ვარ! მანქანა ახალივით გამოიყურება — ყოველი კუთხე უნაკლოდ სუფთა და მბზინავია.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sb1VpMUlVbkl3ZVc1S1NsUlJTbkYyZGxaM2NtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Георгий",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-08-11",
+            "label": "საუკეთესო თბილისში",
+            "text": "…საუკეთესო ადგილი საუკეთესო სერვისით თბილისში.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT210eWEzVmpPVkZ4TUZaT1oxUk9SMU5GVFY5NFJYYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Dovas Igdir",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-08-07",
+            "label": "უბრალოდ სუპერია",
+            "text": "…უბრალოდ სუპერია, სიტყვები არ მყოფნის.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21jMVJEWTNhMVJCVUV0SmNpMUpiakV3VldodU1uYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "gaga sakvarelidze",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-07-13",
+            "label": "ხარისხი და ფასები",
+            "text": "…ყველას ვურჩევ მაგარი ბიჭები არიან! და რაც მთავარია მაღალი ხარისხი აქვთ და მისაღები ფასები.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toc2VXdDBWRFF4VjBkMFJUbFFXSE4wTWxvMlptYxAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    },
+    "paintless-dent-repair": {
+      "cards": {
+        "ru": [
+          {
+            "author": "giorgi rostiashvili",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-04-28",
+            "label": "Профессионалы",
+            "text": "Обстановка супер комфортная, продуманная и очень приятная. Команда состоит из профессионалов, и это чувствуется во всём.",
+            "url": "https://maps.app.goo.gl/9VfCTRyXAEigrErM6"
+          },
+          {
+            "author": "Daniil Aleksashin",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Miata · пакетом",
+            "text": "Очень приятная новая детейлинг-студия в Сабуртало! Качество работы отличное. Сделал для своей Miata всё пакетом — теперь она выглядит потрясающе. Общение через WhatsApp было идеальным.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN6NWRHNTlnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ბექა მებონია",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "6 месяцев назад",
+            "label": "Высший стандарт",
+            "text": "Это не просто детальная проработка — это высочайший стандарт. Профессиональная команда, материалы высшего качества и безупречное исполнение…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GZlRUUlVlVXBLTm1GV05ucHZSemx3WW1SbmRIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Малыш Малышкин",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "год назад",
+            "label": "От приёма до сдачи",
+            "text": "Понравилось абсолютно всё — от приёма до финального результата. Машина преобразилась, чистота и блеск на высшем уровне. Видно, что ребята любят свою работу…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KcUxWQm9OM1JqUlU0NE1USXdkek5xZERnM2JFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Emil Nizaev",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2 года назад",
+            "label": "Лучший за год",
+            "text": "Спасибо большое ребятам за такой сервис. Пожалуй, лучший, что я встречал за последнее время. Все четко, грамотно и профессионально…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM5clpHZ0VREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alex Kalan",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-08-11",
+            "label": "Высшее качество",
+            "text": "Сервис высшего качества.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sellXMUNPRVZOYUdZNVFXMXBUVUp1TkdWRGRFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Simon Ormotsadze",
+            "rating": 5,
+            "studio": "Гурамишвили",
+            "date": "2026-07-29",
+            "label": "Сервис и результат",
+            "text": "Очень хороший сервис и результат! Спасибо!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5U1VDMWhjMlZDWkVsa2JWZHBXV3hFYkVvemJtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ani sonishvili",
+            "rating": 5,
+            "studio": "Сабуртало",
+            "date": "2026-06-29",
+            "label": "Безупречно",
+            "text": "Очень рекомендую! Профессиональный персонал, безупречный детейлинг — моя машина никогда не выглядела лучше.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2poZlduZ3dZMEYxWVc0eVVVRjBiamR0TUdVMU0yYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "en": [
+          {
+            "author": "giorgi rostiashvili",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-04-28",
+            "label": "A team of pros",
+            "text": "The setting is super comfortable, well thought through and very pleasant. The team is made up of professionals, and you feel it in everything.",
+            "url": "https://maps.app.goo.gl/9VfCTRyXAEigrErM6"
+          },
+          {
+            "author": "Daniil Aleksashin",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Miata · full package",
+            "text": "Very nice new detailing studio in Saburtalo … the quality of work is great. Got all the things for my Miata as one package so now it looks amazing! Communication was excellent through WhatsApp…",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN6NWRHNTlnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ბექა მებონია",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "6 месяцев назад",
+            "label": "Highest standard",
+            "text": "This is not just detailing — this is the highest standard. A professional team, top-quality materials and flawless execution.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GZlRUUlVlVXBLTm1GV05ucHZSemx3WW1SbmRIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Малыш Малышкин",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "год назад",
+            "label": "Check-in to result",
+            "text": "I liked absolutely everything — from the check-in to the final result. The car was transformed; the cleanliness and the shine are top level. You can tell these guys love what they do.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KcUxWQm9OM1JqUlU0NE1USXdkek5xZERnM2JFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Emil Nizaev",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2 года назад",
+            "label": "Best in a while",
+            "text": "Many thanks to the guys for this kind of service. Probably the best I've come across in a long while. Everything precise, competent and professional.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM5clpHZ0VREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alex Kalan",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-08-11",
+            "label": "Top quality",
+            "text": "Top quality service.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sellXMUNPRVZOYUdZNVFXMXBUVUp1TkdWRGRFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Simon Ormotsadze",
+            "rating": 5,
+            "studio": "Guramishvili",
+            "date": "2026-07-29",
+            "label": "Service and result",
+            "text": "Very good service and product.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5U1VDMWhjMlZDWkVsa2JWZHBXV3hFYkVvemJtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ani sonishvili",
+            "rating": 5,
+            "studio": "Saburtalo",
+            "date": "2026-06-29",
+            "label": "Flawless detailing",
+            "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2poZlduZ3dZMEYxWVc0eVVVRjBiamR0TUdVMU0yYxAB!2m1!1s0x0:0x0"
+          }
+        ],
+        "ka": [
+          {
+            "author": "giorgi rostiashvili",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-04-28",
+            "label": "პროფესიონალების გუნდი",
+            "text": "…გარემო სუპერ კომფორტული, დახვეწილი და ძალიან სასიამოვნოა … გუნდი პროფესიონალებისგან შედგება და ეს ყველაფერში იგრძნობა…",
+            "url": "https://maps.app.goo.gl/9VfCTRyXAEigrErM6"
+          },
+          {
+            "author": "Daniil Aleksashin",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "Miata · სრული პაკეტი",
+            "text": "…ძალიან სასიამოვნო ახალი დითეილინგ-სტუდია საბურთალოზე! სამუშაოს ხარისხი შესანიშნავია. ჩემი Miata-სთვის ყველაფერი ერთ პაკეტად გავაკეთე — ახლა ის შესანიშნავად გამოიყურება. კომუნიკაცია WhatsApp-ით იდეალური იყო.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN6NWRHNTlnRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ბექა მებონია",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "6 месяцев назад",
+            "label": "უმაღლესი სტანდარტი",
+            "text": "…ეს არ არის უბრალოდ დითეილინგი — ეს უმაღლესი სტანდარტია. პროფესიონალური გუნდი, უმაღლესი ხარისხის მასალები და უნაკლო შესრულება.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GZlRUUlVlVXBLTm1GV05ucHZSemx3WW1SbmRIYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Малыш Малышкин",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "год назад",
+            "label": "მიღებიდან შედეგამდე",
+            "text": "…აბსოლუტურად ყველაფერი მომეწონა — მიღებიდან საბოლოო შედეგამდე. მანქანა გარდაიქმნა, სისუფთავე და ბზინვარება უმაღლეს დონეზეა. ეტყობა, რომ ბიჭებს თავიანთი საქმე უყვართ.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KcUxWQm9OM1JqUlU0NE1USXdkek5xZERnM2JFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Emil Nizaev",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2 года назад",
+            "label": "საუკეთესო ბოლო ხანს",
+            "text": "…დიდი მადლობა ბიჭებს ასეთი სერვისისთვის. ალბათ საუკეთესო, რაც ბოლო დროს შემხვედრია. ყველაფერი ზუსტად, გამართულად და პროფესიონალურად.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM5clpHZ0VREAE!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Alex Kalan",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-08-11",
+            "label": "უმაღლესი ხარისხი",
+            "text": "…უმაღლესი ხარისხის სერვისი.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sellXMUNPRVZOYUdZNVFXMXBUVUp1TkdWRGRFRRAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "Simon Ormotsadze",
+            "rating": 5,
+            "studio": "გურამიშვილი",
+            "date": "2026-07-29",
+            "label": "სერვისი და შედეგი",
+            "text": "…ძალიან კარგი სერვისი და შედეგი! გმადლობთ!",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5U1VDMWhjMlZDWkVsa2JWZHBXV3hFYkVvemJtYxAB!2m1!1s0x0:0x0"
+          },
+          {
+            "author": "ani sonishvili",
+            "rating": 5,
+            "studio": "საბურთალო",
+            "date": "2026-06-29",
+            "label": "უნაკლო დითეილინგი",
+            "text": "…ნამდვილად გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დითეილინგი — ჩემი მანქანა არასდროს გამოიყურებოდა უკეთესად.",
+            "url": "https://www.google.com/maps/reviews/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2poZlduZ3dZMEYxWVc0eVVVRjBiamR0TUdVMU0yYxAB!2m1!1s0x0:0x0"
+          }
+        ]
+      }
+    }
+  }
+}
