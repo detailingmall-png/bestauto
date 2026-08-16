@@ -189,7 +189,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How is ceramic coating different from PPF?',
       },
       answer: {
-        ka: 'კერამიკა ეხმარება ზედაპირს შეინარჩუნოს ბზინვარება, ჰიდროფობიურობა და სისუფთავე. PPF კი ფიზიკურად იცავს ლაქს ქვის ნატეხებისგან, ნაკაწრებისგან და ქვებისგან. ისინი სხვადასხვა ამოცანას წყვეტენ და ზოგჯერ ერთმანეთის შემავსებლადაც გამოიყენება.',
+        ka: 'კერამიკა ეხმარება ზედაპირს შეინარჩუნოს ბზინვარება, ჰიდროფობურობა და სისუფთავე. PPF კი ფიზიკურად იცავს ლაქს ქვის ნატეხებისგან, ნაკაწრებისგან და ქვებისგან. ისინი სხვადასხვა ამოცანას წყვეტენ და ზოგჯერ ერთმანეთის შემავსებლადაც გამოიყენება.',
         ru: 'Керамика помогает поверхности сохранять блеск, гидрофобность и чистоту. PPF физически защищает лак от сколов, царапин и камней. Они решают разные задачи и иногда используются в дополнение друг к другу.',
         en: 'Ceramic helps the surface maintain shine, hydrophobicity, and cleanliness. PPF physically protects the paint from chips, scratches, and stones. They solve different tasks and are sometimes used to complement each other.',
       },
@@ -201,7 +201,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Does the car get dirty less after ceramic coating?',
       },
       answer: {
-        ka: 'კერამიკული საფარი ქმნის ჰიდროფობიურ ეფექტს, რის გამოც წყალი და დაბინძურება ზედაპირზე ნაკლებად ჩერდება. ეს ამარტივებს რეცხვას და ეხმარება ავტომობილს უფრო სუფთად გამოიყურებოდეს ორ რეცხვას შორის.',
+        ka: 'კერამიკული საფარი ქმნის ჰიდროფობურ ეფექტს, რის გამოც წყალი და დაბინძურება ზედაპირზე ნაკლებად ჩერდება. ეს ამარტივებს რეცხვას და ეხმარება ავტომობილს უფრო სუფთად გამოიყურებოდეს ორ რეცხვას შორის.',
         ru: 'Керамическое покрытие создаёт гидрофобный эффект, благодаря чему вода и грязь меньше задерживаются на поверхности. Это упрощает мойку и помогает автомобилю выглядеть чище между мойками.',
         en: 'Ceramic coating creates a hydrophobic effect, which means water and dirt are less likely to stay on the surface. This makes washing easier and helps the car look cleaner between washes.',
       },
@@ -213,7 +213,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What is the difference between ceramic coating and ceramic polishing?',
       },
       answer: {
-        ka: 'კერამიკული საფარი არის დამცავი ფენა, რომელიც ეხმარება ავტომობილს შეინარჩუნოს ბზინვარება, ჰიდროფობიურობა და სისუფთავე ხანგრძლივად. კერამიკული პოლირება კი ნიშნავს პოლირებას კერამიკული საფარის დატანის წინ — ზედაპირის მომზადებას, ნაკაწრების მოცილებას. ერთი — დაცვაა, მეორე — მომზადება.',
+        ka: 'კერამიკული საფარი არის დამცავი ფენა, რომელიც ეხმარება ავტომობილს შეინარჩუნოს ბზინვარება, ჰიდროფობურობა და სისუფთავე ხანგრძლივად. კერამიკული პოლირება კი ნიშნავს პოლირებას კერამიკული საფარის დატანის წინ — ზედაპირის მომზადებას, ნაკაწრების მოცილებას. ერთი — დაცვაა, მეორე — მომზადება.',
         ru: 'Керамическое покрытие — это защитный слой, который помогает автомобилю сохранять блеск, гидрофобность и чистоту долгое время. Керамическая полировка — это полировка перед нанесением керамического покрытия: подготовка поверхности, удаление царапин. Одно — защита, другое — подготовка.',
         en: 'Ceramic coating is a protective layer that helps the car maintain its shine, hydrophobicity, and cleanliness long-term. Ceramic polishing refers to polishing done before applying the ceramic coating — surface preparation and scratch removal. One is protection, the other is preparation.',
       },
@@ -684,7 +684,7 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'How long does chip repair take?',
       },
       answer: {
-        ka: 'ნაკენჭარის აღდგენა 20–30 წუთს გრძელდება. შეკეთებისთანავე შეგიძლიათ ავტომობილით წახვიდეთ.',
+        ka: 'ნაკენჭრის აღდგენა 20–30 წუთს გრძელდება. შეკეთებისთანავე შეგიძლიათ ავტომობილით წახვიდეთ.',
         ru: 'Ремонт скола занимает 20–30 минут. Сразу после ремонта можно уехать на автомобиле.',
         en: 'Chip repair takes 20–30 minutes. You can drive away immediately after the repair.',
       },

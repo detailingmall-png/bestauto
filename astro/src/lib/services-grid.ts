@@ -56,7 +56,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
     tier: 2,
     name: { ka: 'კერამიკული საფარი', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
     tagline: {
-      ka: '9H ნანოსაფარი — ჰიდროფობიური ეფექტი და 1–3 წლიანი დაცვა',
+      ka: '9H ნანოსაფარი — ჰიდროფობური ეფექტი და 1–3 წლიანი დაცვა',
       ru: '9H нано-покрытие — гидрофобный эффект и защита 3-5 лет',
       en: '9H nano-coating — hydrophobic effect & 3-5 year protection',
     },
@@ -116,7 +116,7 @@ export const HOMEPAGE_SERVICES: ReadonlyArray<ServiceEntry> = [
     tier: 2,
     name: { ka: 'ავტომინის შეკეთება, პოლირება და დამუშავება', ru: 'Ремонт и шлифовка автостекол', en: 'Glass Repair & Grinding' },
     tagline: {
-      ka: 'ნაკენჭარის შეკეთება, პოლირება და შლიფოვკა — საქარე და გვერდითი',
+      ka: 'ნაკენჭრის შეკეთება, პოლირება და შლიფოვკა — საქარე და გვერდითი',
       ru: 'Ремонт сколов, полировка и шлифовка — лобовое и боковые',
       en: 'Chip repair, polishing & grinding — windshield and side windows',
     },

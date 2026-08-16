@@ -101,7 +101,6 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/detailing-brands-we-use':            'ppf-shield-wrapping',
   'blog/detailing-faq-common-myths':         'ppf-shield-wrapping',
   'blog/winter-detailing-tbilisi':           'ppf-shield-wrapping',
-  'blog/tbilisi-districts-detailing-delivery': 'ppf-shield-wrapping',
   // Vinyl wrapping
   'blog/benefits-of-vinyl-wraps':        'vinyl-wrapping',
   'blog/car-body-color-with-vinyl-wrap': 'vinyl-wrapping',
@@ -159,9 +158,9 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/pet-hair-cabin-removal':        'interior-cleaning',
   'blog/interior-ceramic-after-cleaning': 'interior-cleaning',
   'blog/post-interior-cleaning-mistakes': 'interior-cleaning',
+  'blog/salon-vacuum-vs-dry-clean':     'interior-cleaning',
   'blog/wrong-chemicals-damage-plastic': 'interior-cleaning',
   'blog/lease-return-detailing-prep':   'interior-cleaning',
-  'blog/salon-vacuum-vs-dry-clean':     'interior-cleaning',
   // Polishing
   'blog/polish-cream-diy-vs-studio':   'polishing',
   'blog/steam-headlight-polishing':    'polishing',
@@ -179,7 +178,6 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/engine-bay-wash-safety':       'carwash',
   'blog/pressure-washer-diy-danger':   'carwash',
   'blog/wash-schedule-tbilisi-weather': 'carwash',
-  'blog/wash-subscription-pass':       'carwash',
   // Soundproofing
   'blog/soundproofing-process':    'car-soundproofing',
   'blog/noisemakers-and-wayouts':  'car-soundproofing',
@@ -233,7 +231,7 @@ const CROSS_SELL_TITLES: Readonly<Record<string, Readonly<Record<string, string>
   },
   'auto-glass-tinting': {
     ru: 'Вместе с тонировкой заказывают',
-    ka: 'ტონირებასთან ერთად შეუკვეთავენ',
+    ka: 'დაბურვასთან ერთად შეუკვეთავენ',
     en: 'Also ordered with window tinting',
   },
   'windshield-repair': {

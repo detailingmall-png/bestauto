@@ -30,12 +30,12 @@ const CTA_HEADINGS: Readonly<Record<string, Readonly<Record<string, string>>>> =
   },
   'vinyl-wrapping': {
     ru: 'Закажите оклейку плёнкой у профессионалов',
-    ka: 'შეუკვეთეთ ფირით დაფარვა პროფესიონალებს',
+    ka: 'შეუკვეთეთ ფირით გადაკვრა პროფესიონალებს',
     en: 'Order professional vinyl wrapping',
   },
   'auto-glass-tinting': {
     ru: 'Закажите тонировку у профессионалов',
-    ka: 'შეუკვეთეთ ტონირება პროფესიონალებს',
+    ka: 'შეუკვეთეთ დაბურვა პროფესიონალებს',
     en: 'Order professional window tinting',
   },
   'windshield-repair': {
