@@ -448,10 +448,16 @@ if (navCta) {
 if (baseSlug === '') {
   mainContent = injectHeroVideo(mainContent, lang);
 }
-// Service pages show curated per-service review excerpts; everything else keeps the
-// site-wide Google feed. Both render as #ba-reviews, so the repositioning logic below
-// (move reviews after the advantages block) works for either one.
-const reviewsWidgetHtml = getServiceReviewsHtml(lang, baseSlug) || getReviewsWidgetHtml(lang);
+// Service pages — and blog articles, through their parent service — show curated review
+// excerpts for that service; everything else keeps the site-wide Google feed. Blog pages
+// have no reviews heading of their own, so there the block brings its own.
+// Both variants render as #ba-reviews, so the repositioning logic below (move reviews
+// after the advantages block) works for either one.
+const reviewsServiceSlug = SERVICE_SLUGS.has(baseSlug) ? baseSlug : BLOG_SERVICE_MAP[baseSlug];
+const reviewsWidgetHtml =
+  (reviewsServiceSlug
+    ? getServiceReviewsHtml(lang, reviewsServiceSlug, { withHeading: !SERVICE_SLUGS.has(baseSlug) })
+    : '') || getReviewsWidgetHtml(lang);
 
 // Blog pages: rewrite bare #anchor links in nav to point to homepage
 // (sections like #about, #photo, #reviews only exist on the homepage)

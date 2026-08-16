@@ -44,6 +44,22 @@ const HEADING: Record<Lang, string> = {
   en: 'Clients notice what matters to us',
 };
 
+// Shown only where the page has no reviews heading of its own (blog articles).
+const EYEBROW: Record<string, Record<Lang, string>> = {
+  'ppf-shield-wrapping': { ka: 'შეფასებები დაფარვის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
+  'vinyl-wrapping': { ka: 'შეფასებები დაფარვის შემდეგ', ru: 'Отзывы после оклейки', en: 'Reviews after wrapping' },
+  polishing: { ka: 'შეფასებები პოლირების შემდეგ', ru: 'Отзывы после полировки', en: 'Reviews after polishing' },
+  ceramiccoating: { ka: 'შეფასებები კერამიკის შემდეგ', ru: 'Отзывы после керамики', en: 'Reviews after ceramic coating' },
+  'interior-cleaning': { ka: 'შეფასებები ქიმწმენდის შემდეგ', ru: 'Отзывы после химчистки', en: 'Reviews after interior cleaning' },
+  'interior-restoration': { ka: 'შეფასებები სალონის აღდგენის შემდეგ', ru: 'Отзывы после реставрации салона', en: 'Reviews after interior restoration' },
+  carwash: { ka: 'შეფასებები რეცხვის შემდეგ', ru: 'Отзывы после мойки', en: 'Reviews after a wash' },
+  'auto-glass-tinting': { ka: 'შეფასებები ტონირების შემდეგ', ru: 'Отзывы после тонировки', en: 'Reviews after tinting' },
+  'windshield-repair': { ka: 'შეფასებები მინის შეკეთების შემდეგ', ru: 'Отзывы после ремонта стекла', en: 'Reviews after glass repair' },
+  'car-soundproofing': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
+  'computer-diagnostics': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
+  'paintless-dent-repair': { ka: 'ჩვენი კლიენტების შეფასებები', ru: 'Отзывы наших клиентов', en: 'Reviews from our clients' },
+};
+
 const SUMMARY_SUFFIX: Record<Lang, string> = {
   ka: 'შეფასება Google-ზე',
   ru: 'отзывов в Google',
@@ -126,6 +142,25 @@ const CSS = `
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.ba-srv-reviews__intro {
+  margin-bottom: 24px;
+}
+.ba-srv-reviews__eyebrow {
+  display: block;
+  color: var(--ba-color-accent);
+  font-size: 12px;
+  font-weight: var(--ba-font-weight-semibold);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.ba-srv-reviews__title {
+  font-size: 36px;
+  font-weight: var(--ba-font-weight-bold);
+  line-height: 1.25;
+  margin: 0;
+  max-width: 22ch;
 }
 .ba-srv-reviews__head {
   display: flex;
@@ -315,12 +350,14 @@ const CSS = `
 .ba-srv-reviews__all a:hover { border-bottom-color: var(--ba-color-accent); }
 @media (max-width: 960px) {
   .ba-srv-reviews { padding: 48px 0 40px; }
+  .ba-srv-reviews__title { font-size: 32px; max-width: none; }
   .ba-srv-review { flex: 0 0 calc(40% - 13px); }
   .ba-srv-review__quote { font-size: 15px; }
   .ba-srv-reviews__all { font-size: 14px; }
 }
 @media (max-width: 640px) {
   .ba-srv-reviews { padding: 40px 0 32px; }
+  .ba-srv-reviews__title { font-size: 28px; }
   .ba-srv-review { flex: 0 0 88%; min-height: 0; padding: 20px; }
   .ba-srv-review__quote { font-size: 14px; }
   .ba-srv-review__label { font-size: 11px; }
@@ -445,11 +482,21 @@ const JS = `
 const ARROW_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
 const ARROW_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>';
 
+interface ServiceReviewsOptions {
+  /** Blog articles have no reviews heading of their own, so the block supplies one. */
+  withHeading?: boolean;
+}
+
 /**
- * Returns the reviews block for a service page, or an empty string when the slug has no
- * curated reviews — the caller then falls back to the site-wide Google widget.
+ * Returns the reviews block for the given service slug, or an empty string when that slug has
+ * no curated reviews — the caller then falls back to the site-wide Google widget.
  */
-export function getServiceReviewsHtml(lang: string, slug: string): string {
+export function getServiceReviewsHtml(
+  lang: string,
+  slug: string,
+  options: ServiceReviewsOptions = {},
+): string {
+  const withHeading = options.withHeading ?? false;
   const data = serviceReviewsData as ServiceReviewsData;
   const page = data.pages[slug];
   if (!page) return '';
@@ -463,11 +510,19 @@ export function getServiceReviewsHtml(lang: string, slug: string): string {
     .map((studio) => `<a href="${escapeHtml(studio.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(studio[resolved])}</a>`)
     .join('<span aria-hidden="true">·</span>');
 
-  // The page already carries its own reviews heading above this block, so the block
-  // itself opens straight with the rating line.
+  // Service pages already carry their own reviews heading right above this block, so
+  // there the block opens straight with the rating line.
+  const headingHtml = withHeading
+    ? `<div class="ba-srv-reviews__intro">
+      <span class="ba-srv-reviews__eyebrow">${escapeHtml((EYEBROW[slug] ?? EYEBROW['car-soundproofing'])[resolved])}</span>
+      <h2 class="ba-srv-reviews__title">${escapeHtml(HEADING[resolved])}</h2>
+    </div>`
+    : '';
+
   return `${CSS}
 <section id="ba-reviews" class="ba-srv-reviews" aria-label="${escapeHtml(HEADING[resolved])}">
   <div class="ba-srv-reviews__container">
+    ${headingHtml}
     <p class="ba-srv-reviews__head">
       <span class="ba-srv-reviews__summary">
         <b>${rating}</b><span class="ba-srv-reviews__star" aria-hidden="true">★</span>
