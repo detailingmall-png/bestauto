@@ -659,6 +659,15 @@ if (lang === 'ru') {
   }
 }
 
+// Helper: insert block right above the contacts section (falls back to the footer).
+// Used for pages whose Tilda export never carried a reviews widget to replace.
+function insertBeforeContacts(content: string, block: string, footerIds: readonly string[]): string {
+  const idx = content.indexOf('id="ba-contacts"');
+  if (idx < 0) return insertBeforeFooter(content, block, footerIds);
+  const divStart = content.lastIndexOf('<div', idx);
+  return content.slice(0, divStart) + block + content.slice(divStart);
+}
+
 // Helper: insert block before the first matching footer
 function insertBeforeFooter(content: string, block: string, footerIds: readonly string[]): string {
   for (const fid of footerIds) {
@@ -830,6 +839,13 @@ mainContent = mainContent.replace(
   /<div\s+class="elfsight-app-[^"]*"[^>]*><\/div>/g,
   ''
 );
+
+// Many Tilda exports (most KA blog articles) never had a reviews widget at all, so the
+// replacement above found nothing to swap. Place the block above the contacts section
+// there, so those articles carry social proof right before the booking form.
+if (reviewsServiceSlug && !mainContent.includes('id="ba-reviews"')) {
+  mainContent = insertBeforeContacts(mainContent, reviewsWidgetHtml, FOOTER_IDS[lang] ?? []);
+}
 
 // On service pages, move reviews heading + widget right after the advantages block (t502).
 // PPF page: skip — reviews stay in natural position (below gallery) for better conversion flow.
