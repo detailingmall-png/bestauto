@@ -3807,28 +3807,76 @@
     "lang": "en",
     "slug": "blog/ppf-removal-how-to"
   },
-  "920260815001": {
-    "file": "page920260815001.html",
+  "920260813001": {
+    "file": "page920260813001.html",
     "url": "https://bestauto.ge/ru/blog/salon-vacuum-vs-dry-clean",
     "path": "/ru/blog/salon-vacuum-vs-dry-clean",
-    "title": "Пылесос vs химчистка салона авто — в чём разница",
+    "title": "Пылесос vs химчистка — что выбрать для своей машины",
     "lang": "ru",
     "slug": "blog/salon-vacuum-vs-dry-clean"
   },
-  "920260815002": {
-    "file": "page920260815002.html",
+  "920260813002": {
+    "file": "page920260813002.html",
     "url": "https://bestauto.ge/blog/salon-vacuum-vs-dry-clean",
     "path": "/blog/salon-vacuum-vs-dry-clean",
-    "title": "მტვერსასრუტი თუ ქიმწმენდა — რა განსხვავებაა",
+    "title": "მტვერსასრუტი თუ ქიმწმენდა — რა ავირჩიოთ მანქანისთვის",
     "lang": "ka",
     "slug": "blog/salon-vacuum-vs-dry-clean"
   },
-  "920260815003": {
-    "file": "page920260815003.html",
+  "920260813003": {
+    "file": "page920260813003.html",
     "url": "https://bestauto.ge/en/blog/salon-vacuum-vs-dry-clean",
     "path": "/en/blog/salon-vacuum-vs-dry-clean",
-    "title": "Vacuum vs dry cleaning — what's the difference",
+    "title": "Vacuum vs dry cleaning — which do you actually need",
     "lang": "en",
     "slug": "blog/salon-vacuum-vs-dry-clean"
+  },
+  "920260814001": {
+    "file": "page920260814001.html",
+    "url": "https://bestauto.ge/ru/blog/tbilisi-districts-detailing-delivery",
+    "path": "/ru/blog/tbilisi-districts-detailing-delivery",
+    "title": "Как доехать до BESTAUTO в Тбилиси — две студии, удобные маршруты",
+    "lang": "ru",
+    "slug": "blog/tbilisi-districts-detailing-delivery"
+  },
+  "920260814002": {
+    "file": "page920260814002.html",
+    "url": "https://bestauto.ge/blog/tbilisi-districts-detailing-delivery",
+    "path": "/blog/tbilisi-districts-detailing-delivery",
+    "title": "როგორ მივიდე BESTAUTO-ში თბილისში — ორი სტუდია, მოსახერხებელი მარშრუტები",
+    "lang": "ka",
+    "slug": "blog/tbilisi-districts-detailing-delivery"
+  },
+  "920260814003": {
+    "file": "page920260814003.html",
+    "url": "https://bestauto.ge/en/blog/tbilisi-districts-detailing-delivery",
+    "path": "/en/blog/tbilisi-districts-detailing-delivery",
+    "title": "How to reach BESTAUTO in Tbilisi — two studios, easy routes",
+    "lang": "en",
+    "slug": "blog/tbilisi-districts-detailing-delivery"
+  },
+  "920260815001": {
+    "file": "page920260815001.html",
+    "url": "https://bestauto.ge/ru/blog/wash-subscription-pass",
+    "path": "/ru/blog/wash-subscription-pass",
+    "title": "Абонемент мойки в Тбилиси — выгода, математика, для кого",
+    "lang": "ru",
+    "slug": "blog/wash-subscription-pass"
+  },
+  "920260815002": {
+    "file": "page920260815002.html",
+    "url": "https://bestauto.ge/blog/wash-subscription-pass",
+    "path": "/blog/wash-subscription-pass",
+    "title": "რეცხვის აბონემენტი თბილისში — სარგებელი, მათემატიკა",
+    "lang": "ka",
+    "slug": "blog/wash-subscription-pass"
+  },
+  "920260815003": {
+    "file": "page920260815003.html",
+    "url": "https://bestauto.ge/en/blog/wash-subscription-pass",
+    "path": "/en/blog/wash-subscription-pass",
+    "title": "Monthly car wash subscription in Tbilisi — math and fit",
+    "lang": "en",
+    "slug": "blog/wash-subscription-pass"
   }
 }

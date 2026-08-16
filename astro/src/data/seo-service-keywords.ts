@@ -212,6 +212,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'ლაბავოის აღდგენა',            // GSC: folk term, 1,023 imp
     'მანქანის შუშის აღდგენა',      // GSC: 55
     'ნაკენჭარის აღდგენა',          // GSC: 327 imp (specific damage type)
+    'ნაკენჭრის აღდგენა',           // syncopated genitive — the form used in site copy
     'საქარე მინების აღდგენა',      // GSC: 21 (plural variant)
     'მანქანის მინის აღდგენა',      // GSC: 9
     'საქარე მინის შეკეთება',       // GSC: 6
