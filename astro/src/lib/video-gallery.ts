@@ -24,7 +24,7 @@ const VIDEOS: ReadonlyArray<VideoEntry> = [
     src: '/videos/ppf-reel1.mp4',
     poster: '/videos/ppf-reel1-poster.webp',
     label: {
-      ka: 'PPF ფირით დაფარვა',
+      ka: 'PPF ფირით გადაკვრა',
       ru: 'Оклейка PPF плёнкой',
       en: 'PPF Film Installation',
     },

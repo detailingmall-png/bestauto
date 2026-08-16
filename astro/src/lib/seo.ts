@@ -22,7 +22,7 @@ const POSTAL_SABURTALO = '0179'; // Anna Politkovskaya St. 51, Saburtalo distric
 const POSTAL_GLDANI = '0167';    // Guramishvili Ave. 78, Gldani district
 
 const ORG_DESCRIPTION: Readonly<Record<string, string>> = {
-  ka: 'BESTAUTO — პრემიუმ დეტეილინგ სტუდია თბილისში. PPF ფირი, კერამიკული საფარი, პოლირება, ვინილი, ტონირება, ქიმწმენდა. ორი ლოკაცია, 4.9★ Google რეიტინგი.',
+  ka: 'BESTAUTO — პრემიუმ დეტეილინგ სტუდია თბილისში. PPF ფირი, კერამიკული საფარი, პოლირება, ვინილი, დაბურვა, ქიმწმენდა. ორი ლოკაცია, 4.9★ Google რეიტინგი.',
   ru: 'BESTAUTO — премиум детейлинг-студия в Тбилиси. PPF, керамика, полировка, винил, тонировка, химчистка. Две локации, 4.9★ на Google.',
   en: 'BESTAUTO — premium detailing studio in Tbilisi. PPF, ceramic coating, paint correction, vinyl wrap, window tinting, interior cleaning. Two locations, 4.9★ Google rating.',
 };
@@ -77,7 +77,7 @@ const SERVICES: Readonly<Record<string, ServiceMeta>> = {
     name: { ka: 'კერამიკული დაფარვა', ru: 'Керамическое покрытие', en: 'Ceramic Coating' },
     min: '500',
     description: {
-      ka: 'კერამიკული საფარის დატანა ავტომობილის ძარაზე, მინებზე და სალონში — ჰიდროფობიური დაცვა და ბზინვარება.',
+      ka: 'კერამიკული საფარის დატანა ავტომობილის ძარაზე, მინებზე და სალონში — ჰიდროფობური დაცვა და ბზინვარება.',
       ru: 'Нанесение керамического покрытия на кузов, стёкла и салон автомобиля — гидрофобная защита и блеск.',
       en: 'Ceramic coating application on car body, glass and interior — hydrophobic protection and gloss.',
     },

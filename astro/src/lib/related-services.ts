@@ -231,7 +231,7 @@ const CROSS_SELL_TITLES: Readonly<Record<string, Readonly<Record<string, string>
   },
   'auto-glass-tinting': {
     ru: 'Вместе с тонировкой заказывают',
-    ka: 'ტონირებასთან ერთად შეუკვეთავენ',
+    ka: 'დაბურვასთან ერთად შეუკვეთავენ',
     en: 'Also ordered with window tinting',
   },
   'windshield-repair': {
