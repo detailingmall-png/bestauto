@@ -99,6 +99,7 @@ export const SERVICE_KEYWORDS_RU: KeywordMap = {
     'виниловая плёнка',             // ё-variant nominative — valid in blog anchor context
     'оклейка винилом',
     'смена цвета пленкой',
+    'смена цвета плёнкой',          // ё-variant nominative — valid anchor (wedding-photoshoot-wrap body)
     'полную оклейку',               // inflected — valid anchor (accusative form, common in body text)
     'оклейка кузова',               // nominative — valid anchor (chrome-delete-vinyl body)
     'винил',                        // nominative noun — valid anchor (chrome-delete-vinyl body)
@@ -188,6 +189,7 @@ export const SERVICE_KEYWORDS_KA: KeywordMap = {
     'ფერადი ფირის გადაკვრა',       // ALT: adetailing.ge H1 (stronger than ვინილის ფირი)
     'მანქანაზე გადასაკრავი ფირი',  // GSC: 34
     'ვინილის ფირი',                // GSC: 46 + bestauto's own H1
+    'ვინილის ფირით',               // inflected — valid anchor (instrumental, wedding-photoshoot-wrap body)
     'ფირის გადაკვრა იაფად',        // GSC: 26 (with "cheap" modifier)
     'მანქანის ფირები',             // GSC: 83 (plural, ambiguous)
     'ფირის დაკვრა',                // GSC: colloquial variant, 220 imp

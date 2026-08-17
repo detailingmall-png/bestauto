@@ -2699,6 +2699,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wedding-photoshoot-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'смена цвета плёнкой',
+        originalPhrase: 'смена цвета плёнкой',
+        contextQuote: 'Полная смена цвета плёнкой — от 6900 ₾ в постоянном формате.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'Постоянная полная смена цвета защитной плёнкой начинается от 9000 ₾',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5267,6 +5286,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/wedding-photoshoot-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირით',
+        originalPhrase: 'ვინილის ფირით',
+        contextQuote: 'ვინილის ფირით სრული მანქანის გადაკვრა — 6900 ₾-დან.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირით',
+        originalPhrase: 'დამცავი ფირით',
+        contextQuote: 'მუდმივი ფერის სრული შეცვლა დამცავი ფირით იწყება 9000 ₾-დან',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7750,6 +7788,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'detailing wash',
         originalPhrase: 'detailing wash',
         contextQuote: 'A single monthly detailing wash preserves the coating, but requires careful use in between',
+      },
+    ],
+  },
+  {
+    article: 'blog/wedding-photoshoot-wrap',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl wrap',
+        originalPhrase: 'vinyl wrap',
+        contextQuote: 'Full-body vinyl wrap — from 6900 ₾. The temporary format is close to permanent in material and labour',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'protection film',
+        contextQuote: 'Permanent full colour change with protection film starts at 9000 ₾',
       },
     ],
   },

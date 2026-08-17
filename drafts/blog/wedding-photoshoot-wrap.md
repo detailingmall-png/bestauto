@@ -8,7 +8,7 @@ primary_hf_ru: "плёнка на свадьбу, временная смена 
 primary_hf_ka: "ქორწინების ფირი, დროებითი ფერის შეცვლა"
 primary_hf_en: "wedding photoshoot wrap, temporary car wrap"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#48"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"
