@@ -513,9 +513,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Is there a warranty?',
       },
       answer: {
-        ka: 'დიახ. სამუშაოზე გარანტია — 1 წელი, LLumar ფირზე — მწარმოებლისგან 5 წლამდე. ნორმალური ექსპლუატაციისას ფირი გაცილებით მეტს ძლებს.',
-        ru: 'Да. Гарантия на работу — 1 год, на плёнку LLumar — до 5 лет от производителя. При нормальной эксплуатации плёнка служит значительно дольше.',
-        en: 'Yes. Warranty on work — 1 year, on LLumar film — up to 5 years from the manufacturer. With normal use, the film lasts significantly longer.',
+        ka: 'დიახ. სამუშაოზე გარანტია — 1 წელი, LLumar-სა და LuxArmor-ის ფირზე — მწარმოებლისგან 10 წელი. ნორმალური ექსპლუატაციისას ფირი გაცილებით მეტს ძლებს.',
+        ru: 'Да. Гарантия на работу — 1 год, на плёнки LLumar и LuxArmor — 10 лет от производителя. При нормальной эксплуатации плёнка служит значительно дольше.',
+        en: 'Yes. Warranty on work — 1 year, on LLumar and LuxArmor film — 10 years from the manufacturer. With normal use, the film lasts significantly longer.',
       },
     },
     {
@@ -525,9 +525,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What level of tinting is allowed in Georgia?',
       },
       answer: {
-        ka: 'წინა გვერდითა მინები — მინიმუმ 60% სინათლის გატარება, უკანა გვერდითა — მინიმუმ 75%, უკანა მინა — შეზღუდვის გარეშე. ფირს ვარჩევთ მკაცრად კანონის ფარგლებში, ჯარიმის რისკი გამორიცხულია.',
-        ru: 'Передние боковые стёкла — минимум 60% светопропускания, задние боковые — минимум 75%, заднее стекло — без ограничений. Плёнку подбираем строго в рамках закона, риск штрафа исключён.',
-        en: 'Front side windows — minimum 60% light transmission, rear side — minimum 75%, rear window — no restrictions. We select the film strictly within the law, eliminating any risk of fines.',
+        ka: 'წინა გვერდითა მინები — მაქსიმუმ 60% დაბურვა, უკანა გვერდითა — მაქსიმუმ 75% დაბურვა, უკანა მინა — შეზღუდვის გარეშე. ფირს ვარჩევთ მკაცრად კანონის ფარგლებში, ჯარიმის რისკი გამორიცხულია.',
+        ru: 'Передние боковые стёкла — максимум 60% затемнения, задние боковые — максимум 75% затемнения, заднее стекло — без ограничений. Плёнку подбираем строго в рамках закона, риск штрафа исключён.',
+        en: 'Front side windows — maximum 60% tint, rear side windows — maximum 75% tint, rear window — no restrictions. We select the film strictly within the law, eliminating any risk of fines.',
       },
     },
     {
@@ -573,9 +573,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Do you come to the client\'s location?',
       },
       answer: {
-        ka: 'მინების დაბურვა ადგილზე მისვლით შესაძლებელია შეთანხმებით. დაგვიკავშირდით WhatsApp-ზე — შევათანხმებთ დროსა და პირობებს.',
-        ru: 'Тонировка с выездом возможна по договорённости. Свяжитесь с нами в WhatsApp — согласуем время и условия.',
-        en: 'Mobile tinting service is available by arrangement. Contact us on WhatsApp — we\'ll agree on time and conditions.',
+        ka: 'არა, დაბურვას მხოლოდ სტუდიაში ვაკეთებთ — ადგილზე მტვრის გარეშე სუფთა მონტაჟი ვერ გამოვა. ჩაწერა WhatsApp-ით, ვმუშაობთ თბილისში ორ ლოკაციაზე.',
+        ru: 'Нет, тонировку делаем только в студии: на выезде не обеспечить чистую оклейку без пыли. Записаться можно в WhatsApp — работаем в двух локациях в Тбилиси.',
+        en: 'No — we tint in the studio only: a clean, dust-free installation is not possible on site. Book via WhatsApp; we work at two locations in Tbilisi.',
       },
     },
     {
@@ -585,9 +585,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What tint percentage should I choose — 60%, 50%, or other?',
       },
       answer: {
-        ka: 'პროცენტი ნიშნავს სინათლეგამტარობას: 60% — მსუბუქი დამუქება, 50% — საშუალო, 35% — ძლიერი (მხოლოდ უკანა მინებზე). წინა მინებზე კანონით მინიმუმ 60% უნდა იყოს. დაბურვისას გეხმარებით ოპტიმალური პროცენტის არჩევაში — კანონის ფარგლებში და თქვენი სურვილის მიხედვით.',
-        ru: 'Процент означает светопропускание: 60% — лёгкое затемнение, 50% — среднее, 35% — сильное (только на задние стёкла). На передних стёклах по закону должно быть минимум 60%. При тонировке поможем выбрать оптимальный процент — в рамках закона и по вашим пожеланиям.',
-        en: 'The percentage refers to light transmission: 60% — light tint, 50% — medium, 35% — dark (rear windows only). Front windows require at least 60% by law. We\'ll help you choose the optimal percentage — within legal limits and your preferences.',
+        ka: 'პროცენტი დაბურვის ხარისხს ნიშნავს: რაც უფრო მაღალია, მით უფრო მუქია მინა. საქართველოს კანონით წინა გვერდითა მინებზე დასაშვებია არაუმეტეს 60% დაბურვა, უკანა გვერდითებზე — არაუმეტეს 75%, უკანა მინაზე შეზღუდვა არ არის. დაბურვისას გეხმარებით ოპტიმალური პროცენტის არჩევაში — კანონის ფარგლებში და თქვენი სურვილის მიხედვით.',
+        ru: 'Процент означает степень затемнения: чем он выше, тем темнее стекло. По закону Грузии на передних боковых допускается не более 60% затемнения, на задних боковых — не более 75%, на заднем стекле ограничений нет. При тонировке поможем выбрать оптимальный процент — в рамках закона и по вашим пожеланиям.',
+        en: 'The percentage is how much the film darkens the glass — the higher it is, the darker the window. Georgian law allows up to 60% tint on front side windows and up to 75% on rear side windows; the rear window has no limit. We\'ll help you choose the optimal percentage — within legal limits and your preferences.',
       },
     },
   ],
