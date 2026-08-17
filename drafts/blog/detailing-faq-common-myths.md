@@ -335,7 +335,7 @@ No, with correct removal. Vinyl film sits on factory clearcoat via an adhesive l
 
 ## 4. "Tinting is dangerous — you can miss a pedestrian at night"
 
-Partial myth. Dangerous is illegal dense tint (under 35% VLT) on front glass — it really does reduce night visibility. Legal tint on rear side glass and rear window does not affect driver visibility at all. In Georgia the law requires minimum 70% VLT on front side glass (Georgia interior ministry requirement for legal use). Premium films [LLumar and LuxArmor](/en/auto-glass-tinting) are calibrated to that standard and don't produce a "dark glass from inside" effect.
+Partial myth. Dangerous is illegal dense tint (under 35% VLT) on front glass — it really does reduce night visibility. Legal tint on rear side glass and rear window does not affect driver visibility at all. In Georgia front side windows may be tinted up to 60% darkening, i.e. no lower than 40% VLT, and the windshield may not be darkened at all. Premium films [LLumar and LuxArmor](/en/auto-glass-tinting) are calibrated to that standard and don't produce a "dark glass from inside" effect.
 
 ## 5. "Ceramic is forever — you do it once"
 

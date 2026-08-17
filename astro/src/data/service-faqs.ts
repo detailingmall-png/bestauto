@@ -561,9 +561,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Can the windshield be tinted?',
       },
       answer: {
-        ka: 'დიახ. საქარე მინაზე შესაძლებელია ატერმალური ფირის დატანა, რომელიც ამცირებს სიცხეს და ულტრაიისფერ ზემოქმედებას, ხილვადობის შენარჩუნებით.',
-        ru: 'Да. На лобовое стекло можно нанести атермальную плёнку, которая снижает нагрев и ультрафиолетовое воздействие при сохранении видимости.',
-        en: 'Yes. An athermal film can be applied to the windshield, reducing heat and UV exposure while maintaining visibility.',
+        ka: 'საქარე მინის დაბურვა კანონით აკრძალულია. შესაძლებელია გამჭვირვალე ატერმალური ფირის დატანა: ის ამცირებს სიცხეს და ულტრაიისფერ სხივებს, მინას არ აბურავს და ხილვადობას არ აუარესებს.',
+        ru: 'Затемнять лобовое стекло по закону нельзя. Можно нанести прозрачную атермальную плёнку: она снижает нагрев и ультрафиолет, не затемняя стекло и не ухудшая обзор.',
+        en: 'Tinting the windshield is not allowed by law. A clear athermal film can be applied instead: it cuts heat and UV without darkening the glass or reducing visibility.',
       },
     },
     {

@@ -71,9 +71,9 @@ sources:
 
 VLT (Visible Light Transmission) — это процент видимого света, пропускаемого плёнкой. Полное объяснение и сравнение цифр — в статье про процент тонировки. Здесь — коротко по закону Грузии.
 
-**Лобовое стекло:** минимум 70% VLT с учётом заводского стекла. На практике это означает атермалку 80-85% по паспорту плёнки, которая в сочетании со стеклом даёт итоговое значение около 65-70% на тонометре.
+**Лобовое стекло:** затемнять нельзя — только прозрачная атермальная плёнка. На практике это означает атермалку 80-85% по паспорту плёнки, которая в сочетании со стеклом даёт итоговое значение около 65-70% на тонометре.
 
-**Передние боковые стёкла:** минимум 70% VLT. Те же цифры, что и лобовое.
+**Передние боковые стёкла:** не темнее 60% затемнения, то есть не ниже 40% VLT. Те же цифры, что и лобовое.
 
 **Задние боковые и заднее стекло:** без ограничений. Можно любой процент от 5% до 80%.
 
@@ -246,9 +246,9 @@ BESTAUTO работает с двумя брендами плёнок — LLumar
 
 VLT (Visible Light Transmission) — ესაა ხილული სინათლის პროცენტი, რომელსაც ფირი ატარებს. სრული ახსნა და ციფრების შედარება — სტატიაში დაბურვის პროცენტზე. აქ — მოკლედ საქართველოს კანონით.
 
-**საქარე მინა:** მინიმუმ 70% VLT ქარხნული მინის გათვალისწინებით. პრაქტიკულად ეს ნიშნავს ატერმალურ 80-85% ფირის პასპორტით, რომელიც მინასთან კომბინაციაში იძლევა საბოლოო მნიშვნელობას დაახლოებით 65-70% ტონომეტრზე.
+**საქარე მინა:** დაბურვა აკრძალულია — მხოლოდ გამჭვირვალე ატერმალური ფირი. პრაქტიკულად ეს ნიშნავს ატერმალურ 80-85% ფირის პასპორტით, რომელიც მინასთან კომბინაციაში იძლევა საბოლოო მნიშვნელობას დაახლოებით 65-70% ტონომეტრზე.
 
-**წინა გვერდითი მინები:** მინიმუმ 70% VLT. იგივე ციფრები, რაც საქარე.
+**წინა გვერდითი მინები:** არაუმეტეს 60% დაბურვა, ანუ არანაკლებ 40% VLT. იგივე ციფრები, რაც საქარე.
 
 **უკანა გვერდითი და უკანა მინა:** შეზღუდვის გარეშე. შეიძლება ნებისმიერი პროცენტი 5%-დან 80%-მდე.
 
@@ -421,9 +421,9 @@ Standard Tbilisi setup: black or graphite on rear windows, clear athermal on the
 
 VLT (Visible Light Transmission) is the share of visible light the film transmits. A full explanation and comparison of the numbers is in the article on tint percentage. Here, briefly, Georgian law.
 
-**Windshield:** minimum 70% VLT including the factory glass. In practice that means an athermal 80-85% film on paper that, combined with the glass, hits around 65-70% on the meter.
+**Windshield:** no darkening allowed — clear athermal film only. In practice that means an athermal 80-85% film on paper that, combined with the glass, hits around 65-70% on the meter.
 
-**Front side windows:** minimum 70% VLT. Same numbers as the windshield.
+**Front side windows:** no darker than 60% tint, i.e. no lower than 40% VLT. Same numbers as the windshield.
 
 **Rear sides and rear window:** no limit. Any percentage from 5% to 80%.
 

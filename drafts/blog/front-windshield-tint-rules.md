@@ -28,13 +28,13 @@ sources:
 
 # Тонировка лобового стекла в Грузии: что разрешено в 2026 году
 
-Лобовое стекло — главный объект внимания инспекторов на техосмотре. Через него смотрит водитель, через него на него смотрят с улицы, и от прозрачности лобового зависит безопасность всех вокруг. Грузинское законодательство 2026 года требует на лобовом не менее 70% VLT — то есть плёнка должна пропускать минимум 70% видимого света. Эта цифра отсекает все тёмные варианты и оставляет всего четыре легальные опции: солнцезащитная полоса сверху, атермальная прозрачная плёнка, антибликовая плёнка и отсутствие плёнки вообще. Ниже — что из этого реально работает в Тбилиси, как инспектор проверяет каждый вариант, и что делать, если хочется защиту от жары без нарушений закона.
+Лобовое стекло — главный объект внимания инспекторов на техосмотре. Через него смотрит водитель, через него на него смотрят с улицы, и от прозрачности лобового зависит безопасность всех вокруг. Грузинское законодательство 2026 года затемнять лобовое стекло запрещает — плёнка не должна снижать светопропускание. Эта цифра отсекает все тёмные варианты и оставляет всего четыре легальные опции: солнцезащитная полоса сверху, атермальная прозрачная плёнка, антибликовая плёнка и отсутствие плёнки вообще. Ниже — что из этого реально работает в Тбилиси, как инспектор проверяет каждый вариант, и что делать, если хочется защиту от жары без нарушений закона.
 
 ## Что требует закон от лобового стекла
 
 В Грузии правила тонировки лобового стекла входят в общий регламент тонирования стёкол автомобилей. Основные положения на 2026 год:
 
-- **Минимум 70% VLT** после установки любой плёнки. Это с учётом заводского затемнения самого стекла, которое у современных машин — 80-85%.
+- **Без затемнения** после установки любой плёнки — прозрачная атермалка допустима, тёмная нет. Это с учётом заводского затемнения самого стекла, которое у современных машин — 80-85%.
 - **Разрешена солнцезащитная полоса** по верхней кромке шириной до 14 см — она вне основной зоны обзора водителя и на неё требования VLT не распространяются.
 - **Запрещены отражающие (зеркальные) плёнки** на лобовом — даже если их VLT выше 70%, отражение ослепляет встречный поток.
 - **Запрещены цветные плёнки** — синие, зелёные, бронзовые в полный лист на лобовом. Лёгкий оттенок от атермалки допустим, но явная «дымка» цвета — нарушение.
@@ -147,7 +147,7 @@ VLT (Visible Light Transmission) — процент видимого света,
 
 **Ключевые выводы:**
 
-- На лобовом в Грузии минимум 70% VLT; тёмные и зеркальные плёнки запрещены
+- Лобовое в Грузии затемнять нельзя; тёмные и зеркальные плёнки запрещены
 - Солнцезащитная полоса до 14 см сверху — всегда легальна, может быть любой темноты
 - Атермальная прозрачная плёнка блокирует жару, не нарушая закона
 - Антибликовая плёнка помогает при ночных поездках, VLT в норме
@@ -178,13 +178,13 @@ VLT (Visible Light Transmission) — процент видимого света,
 
 # წინა საქარე მინის დაბურვა საქართველოში: რა ნებადართულია 2026 წელს
 
-საქარე მინა — ინსპექტორთა მთავარი ყურადღების ობიექტია ტექდათვალიერებაზე. მისი გავლით უყურებს მძღოლი, მისი გავლით უყურებენ მას ქუჩიდან, და საქარე მინის გამჭვირვალობაზე დამოკიდებულია ყველას უსაფრთხოება გარშემო. საქართველოს კანონმდებლობა 2026 წელს მოითხოვს საქარეზე არანაკლებ 70% VLT — ანუ ფირმა უნდა გაატაროს მინიმუმ 70% ხილული სინათლე. ეს ციფრი წყვეტს ყველა მუქ ვარიანტს და ტოვებს მხოლოდ ოთხ ლეგალურ ოფციას: მზის საწინააღმდეგო ზოლი ზემოდან, ატერმალური გამჭვირვალე ფირი, ანტიბლიკური ფირი და საერთოდ ფირის გარეშე. ქვემოთ — რა მათგან რეალურად მუშაობს თბილისში, როგორ ამოწმებს ინსპექტორი თითო ვარიანტს, და რა გააკეთო, თუ გინდათ სიცხის დაცვა კანონის დარღვევის გარეშე.
+საქარე მინა — ინსპექტორთა მთავარი ყურადღების ობიექტია ტექდათვალიერებაზე. მისი გავლით უყურებს მძღოლი, მისი გავლით უყურებენ მას ქუჩიდან, და საქარე მინის გამჭვირვალობაზე დამოკიდებულია ყველას უსაფრთხოება გარშემო. საქართველოს კანონმდებლობა 2026 წელს საქარე მინის დაბურვას კრძალავს — ფირი სინათლის გამტარობას არ უნდა ამცირებდეს. ეს ციფრი წყვეტს ყველა მუქ ვარიანტს და ტოვებს მხოლოდ ოთხ ლეგალურ ოფციას: მზის საწინააღმდეგო ზოლი ზემოდან, ატერმალური გამჭვირვალე ფირი, ანტიბლიკური ფირი და საერთოდ ფირის გარეშე. ქვემოთ — რა მათგან რეალურად მუშაობს თბილისში, როგორ ამოწმებს ინსპექტორი თითო ვარიანტს, და რა გააკეთო, თუ გინდათ სიცხის დაცვა კანონის დარღვევის გარეშე.
 
 ## რას მოითხოვს კანონი საქარე მინისგან
 
 საქართველოში წესები საქარე მინის დაბურვაზე შედის ავტომობილების მინების დაბურვის ზოგად რეგლამენტში. ძირითადი დებულებები 2026 წლისთვის:
 
-- **მინიმუმ 70% VLT** ნებისმიერი ფირის დაყენების შემდეგ. ესაა მინის ქარხნული დამუქების გათვალისწინებით, რომელიც თანამედროვე მანქანებში — 80-85%.
+- **დაბურვის გარეშე** ნებისმიერი ფირის დაყენების შემდეგ — გამჭვირვალე ატერმალური დასაშვებია, მუქი არა. ესაა მინის ქარხნული დამუქების გათვალისწინებით, რომელიც თანამედროვე მანქანებში — 80-85%.
 - **ნებადართულია მზის საწინააღმდეგო ზოლი** ზედა კიდეზე 14 სმ-მდე სიგანისა — ის ძირითადი ხედვის ზონის გარეთაა და მასზე VLT-ის მოთხოვნა არ ვრცელდება.
 - **აკრძალულია ამრეკლი (სარკოვანი) ფირები** საქარეზე — მაშინაც კი, თუ მათი VLT 70%-ზე მეტია, ანასახი აბრმავებს წინა მოძრაობას.
 - **აკრძალულია ფერადი ფირები** — ცისფერი, მწვანე, ბრინჯაო სრულ ფურცელზე საქარეზე. მსუბუქი ტონი ატერმალურიდან დასაშვებია, მაგრამ გამოხატული „ფერის კვამლი" — დარღვევა.
@@ -297,7 +297,7 @@ VLT (Visible Light Transmission) — ხილული სინათლის
 
 **ძირითადი დასკვნები:**
 
-- საქარეზე საქართველოში მინიმუმ 70% VLT; მუქი და სარკოვანი ფირები აკრძალული
+- საქარის დაბურვა საქართველოში აკრძალულია; მუქი და სარკოვანი ფირები დაუშვებელია
 - მზის საწინააღმდეგო ზოლი 14 სმ-მდე ზემოთ — ყოველთვის ლეგალური, შეიძლება ნებისმიერი მუქობისა
 - ატერმალური გამჭვირვალე ფირი ბლოკავს სიცხეს კანონის დარღვევის გარეშე
 - ანტიბლიკური ფირი ეხმარება ღამის მოძრაობისას, VLT ნორმაშია
@@ -328,13 +328,13 @@ VLT (Visible Light Transmission) — ხილული სინათლის
 
 # Front Windshield Tint in Georgia: What Is Legal in 2026
 
-The windshield is the prime subject of an inspector's attention at technical inspection. Through it the driver looks, through it others look at the driver, and the safety of everyone around depends on windshield transparency. Georgian legislation in 2026 requires at least 70% VLT on the windshield — the film must pass at least 70% of visible light. That cut-off removes every dark option and leaves only four legal choices: a sun strip at the top, a clear athermal film, an anti-glare film, or no film at all. Below: what of this actually works in Tbilisi, Georgia, how the inspector checks each variant, and what to do when you want heat protection without breaking the law.
+The windshield is the prime subject of an inspector's attention at technical inspection. Through it the driver looks, through it others look at the driver, and the safety of everyone around depends on windshield transparency. Georgian legislation in 2026 bans darkening the windshield — the film must not reduce light transmission. That cut-off removes every dark option and leaves only four legal choices: a sun strip at the top, a clear athermal film, an anti-glare film, or no film at all. Below: what of this actually works in Tbilisi, Georgia, how the inspector checks each variant, and what to do when you want heat protection without breaking the law.
 
 ## What the law demands from a windshield
 
 In Georgia, windshield tint rules sit inside the general regulation on automotive window tinting. Key 2026 points:
 
-- **Minimum 70% VLT** after any film is installed. That is with factory tint of the glass itself accounted for, which on modern cars is 80-85%.
+- **No darkening** after any film is installed — clear athermal is fine, dark film is not. That is with factory tint of the glass itself accounted for, which on modern cars is 80-85%.
 - **Allowed sun strip** along the top edge, up to 14 cm wide — it sits outside the driver's main field of view and VLT rules do not apply to it.
 - **Reflective (mirrored) films forbidden** on the windshield — even if their VLT is above 70%, the reflection dazzles oncoming traffic.
 - **Coloured films forbidden** — blue, green, bronze in a full sheet on the windshield. A light tint from an athermal is acceptable, but a clear "colour cast" is a violation.
@@ -447,7 +447,7 @@ For Tbilisi, the optimal setup: ceramic athermal film 85-90% on the windshield a
 
 **Key takeaways:**
 
-- Windshield in Georgia requires a minimum of 70% VLT; dark and mirrored films are banned
+- The windshield in Georgia may not be darkened; dark and mirrored films are banned
 - A sun strip up to 14 cm at the top is always legal and may be any darkness
 - Clear athermal film blocks heat without breaking the law
 - Anti-glare film helps night driving, stays inside VLT limits
