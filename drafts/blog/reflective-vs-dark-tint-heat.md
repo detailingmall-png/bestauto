@@ -126,7 +126,7 @@ sources:
 
 ### Законна ли атермалка в Грузии?
 
-Зависит от VLT плёнки. Если VLT 70% и выше — законна на всех стёклах, включая лобовое и передние боковые. Если VLT ниже 70% — как любая другая плёнка, запрещена на передней группе, разрешена на задней. Атермальность не влияет на законность — смотрят только на пропускание видимого света.
+Зависит от VLT плёнки. Прозрачная атермалка законна на всех стёклах, включая лобовое, — она почти не снижает светопропускание. Если плёнка темнее 60% затемнения (ниже 40% VLT) — на передних боковых её ставить нельзя; на задних боковых допустимо до 75%, а на заднем стекле ограничений нет. Атермальность не влияет на законность — смотрят только на пропускание видимого света.
 
 ### Есть ли прозрачная атермалка?
 
@@ -272,7 +272,7 @@ BESTAUTO-ს საბაზო ფასი — 130 ₾-დან უკან�
 
 ### კანონიერია ატერმალური საქართველოში?
 
-დამოკიდებულია ფირის VLT-ზე. თუ VLT 70% და მეტი — კანონიერია ყველა მინაზე, საქარისა და წინა გვერდითას ჩათვლით. თუ VLT 70%-ზე ნაკლებია — როგორც ნებისმიერი ფირი, აკრძალულია წინა ჯგუფზე, ნებადართულია უკანაზე. ატერმალურობა არ გავლენას არ ახდენს კანონიერებაზე — ყურადღებას აქცევენ მხოლოდ ხილული სინათლის გამტარობას.
+დამოკიდებულია ფირის VLT-ზე. გამჭვირვალე ატერმალური ფირი კანონიერია ყველა მინაზე, საქარის ჩათვლით — ის გამტარობას პრაქტიკულად არ ამცირებს. თუ ფირი 60% სიმუქეზე მუქია (40% VLT-ზე ნაკლები) — წინა გვერდითებზე არ შეიძლება; უკანა გვერდითებზე დასაშვებია 75%-მდე, უკანა მინაზე კი შეზღუდვა არ არის. ატერმალურობა არ გავლენას არ ახდენს კანონიერებაზე — ყურადღებას აქცევენ მხოლოდ ხილული სინათლის გამტარობას.
 
 ### არსებობს გამჭვირვალე ატერმალური?
 
@@ -418,7 +418,7 @@ Against an untinted car — 8-12°C lower air temperature and up to 17°C lower 
 
 ### Is athermal legal in Georgia?
 
-Depends on the film's VLT. 70% VLT and above — legal on every window, including the windshield and front sides. Below 70% — like any film, illegal on the front group, legal on the rear. Athermal properties do not affect legality — inspectors only look at visible light transmission.
+Depends on the film's VLT. Clear athermal film is legal on every window, including the windshield — it barely reduces light transmission. Darker than 60% tint (below 40% VLT) — not allowed on the front side windows; rear sides take up to 75%, and the rear window has no limit. Athermal properties do not affect legality — inspectors only look at visible light transmission.
 
 ### Is there a clear athermal?
 
