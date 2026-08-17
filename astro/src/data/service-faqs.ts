@@ -672,9 +672,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'Do you offer mobile service?',
       },
       answer: {
-        ka: 'დიახ, საქარე მინის აღდგენა გამოძახებით შესაძლებელია. დაგვიკავშირდით WhatsApp-ზე — შევათანხმებთ დროსა და ადგილს.',
-        ru: 'Да, ремонт лобового стекла с выездом возможен. Свяжитесь с нами в WhatsApp — согласуем время и место.',
-        en: 'Yes, mobile windshield repair is available. Contact us on WhatsApp — we\'ll agree on time and location.',
+        ka: 'არა, საქარე მინაზე მხოლოდ სტუდიაში ვმუშაობთ — ნაკენჭრის ხარისხიანი აღდგენა სუფთა და კონტროლირებად გარემოს მოითხოვს. ჩაწერა WhatsApp-ით, ვმუშაობთ თბილისში ორ ლოკაციაზე.',
+        ru: 'Нет, лобовое стекло ремонтируем только в студии: качественная полимеризация требует чистоты и контролируемых условий. Записаться можно в WhatsApp — работаем в двух локациях в Тбилиси.',
+        en: 'No — we repair windshields in the studio only: a proper resin cure needs clean, controlled conditions. Book via WhatsApp; we work at two locations in Tbilisi.',
       },
     },
     {
