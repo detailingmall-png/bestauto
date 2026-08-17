@@ -525,9 +525,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What level of tinting is allowed in Georgia?',
       },
       answer: {
-        ka: 'გვერდითა მინები — დაბურვა არაუმეტეს 60%-ისა, უკანა მინა — შეზღუდვის გარეშე. ფირს ვარჩევთ მკაცრად კანონის ფარგლებში, ჯარიმის რისკი გამორიცხულია.',
-        ru: 'Боковые стёкла — затемнение не более 60%, заднее стекло — без ограничений. Плёнку подбираем строго в рамках закона, риск штрафа исключён.',
-        en: 'Side windows — no more than 60% tint, rear window — no restrictions. We select the film strictly within the law, eliminating any risk of fines.',
+        ka: 'წინა გვერდითა მინები — მაქსიმუმ 60% დაბურვა, უკანა გვერდითა — მაქსიმუმ 75% დაბურვა, უკანა მინა — შეზღუდვის გარეშე. ფირს ვარჩევთ მკაცრად კანონის ფარგლებში, ჯარიმის რისკი გამორიცხულია.',
+        ru: 'Передние боковые стёкла — максимум 60% затемнения, задние боковые — максимум 75% затемнения, заднее стекло — без ограничений. Плёнку подбираем строго в рамках закона, риск штрафа исключён.',
+        en: 'Front side windows — maximum 60% tint, rear side windows — maximum 75% tint, rear window — no restrictions. We select the film strictly within the law, eliminating any risk of fines.',
       },
     },
     {
@@ -585,9 +585,9 @@ export const SERVICE_FAQS: Readonly<Record<string, ReadonlyArray<FaqItem>>> = {
         en: 'What tint percentage should I choose — 60%, 50%, or other?',
       },
       answer: {
-        ka: 'პროცენტი დაბურვის ხარისხს ნიშნავს: რაც უფრო მაღალია, მით უფრო მუქია მინა. საქართველოს კანონით გვერდითა მინებზე დასაშვებია არაუმეტეს 60% დაბურვა, უკანა მინაზე შეზღუდვა არ არის. დაბურვისას გეხმარებით ოპტიმალური პროცენტის არჩევაში — კანონის ფარგლებში და თქვენი სურვილის მიხედვით.',
-        ru: 'Процент означает степень затемнения: чем он выше, тем темнее стекло. По закону Грузии на боковых стёклах допускается не более 60% затемнения, на заднем стекле ограничений нет. При тонировке поможем выбрать оптимальный процент — в рамках закона и по вашим пожеланиям.',
-        en: 'The percentage is how much the film darkens the glass — the higher it is, the darker the window. Georgian law allows up to 60% tint on side windows; the rear window has no limit. We\'ll help you choose the optimal percentage — within legal limits and your preferences.',
+        ka: 'პროცენტი დაბურვის ხარისხს ნიშნავს: რაც უფრო მაღალია, მით უფრო მუქია მინა. საქართველოს კანონით წინა გვერდითა მინებზე დასაშვებია არაუმეტეს 60% დაბურვა, უკანა გვერდითებზე — არაუმეტეს 75%, უკანა მინაზე შეზღუდვა არ არის. დაბურვისას გეხმარებით ოპტიმალური პროცენტის არჩევაში — კანონის ფარგლებში და თქვენი სურვილის მიხედვით.',
+        ru: 'Процент означает степень затемнения: чем он выше, тем темнее стекло. По закону Грузии на передних боковых допускается не более 60% затемнения, на задних боковых — не более 75%, на заднем стекле ограничений нет. При тонировке поможем выбрать оптимальный процент — в рамках закона и по вашим пожеланиям.',
+        en: 'The percentage is how much the film darkens the glass — the higher it is, the darker the window. Georgian law allows up to 60% tint on front side windows and up to 75% on rear side windows; the rear window has no limit. We\'ll help you choose the optimal percentage — within legal limits and your preferences.',
       },
     },
   ],
