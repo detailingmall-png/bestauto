@@ -133,7 +133,6 @@ test('the Facebook Pixel fires exactly one PageView per page', () => {
 test('no internal link points at a known-dead target', () => {
   const DEAD = [
     { pattern: /href="\/(?:ru\/|en\/)?ceramic"/, label: '/ceramic (slug is ceramiccoating)' },
-    { pattern: /winter-windshield-care-cracks-prevention/, label: 'unpublished winter article' },
   ];
   const offenders = [];
   for (const p of CONTENT_PAGES) {

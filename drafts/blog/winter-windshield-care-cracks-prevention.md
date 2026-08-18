@@ -8,7 +8,7 @@ primary_hf_ru: "зимний уход лобового, избежать тре�
 primary_hf_ka: "ზამთრის მოვლა, ზამთრის ბზარი"
 primary_hf_en: "winter windshield care, crack prevention"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#68"
   - competitor: "autoqimwmenda.ge (glass-repair category, seasonal)"

@@ -143,6 +143,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/windshield-repair-vs-replacement': 'windshield-repair',
   'blog/deep-crack-rescue-last-chance': 'windshield-repair',
   'blog/insurance-windshield-claim-georgia': 'windshield-repair',
+  'blog/winter-windshield-care-cracks-prevention': 'windshield-repair',
   // Interior cleaning
   'blog/car-interior-detailing-basics': 'interior-cleaning',
   'blog/car-interior-disinfection':     'interior-cleaning',

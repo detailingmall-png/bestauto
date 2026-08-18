@@ -2718,6 +2718,25 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/winter-windshield-care-cracks-prevention',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт скола',
+        originalPhrase: 'ремонт скола',
+        contextQuote: 'Сколько стоит ремонт скола до начала зимнего сезона?',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ремонт лобового стекла',
+        originalPhrase: 'ремонт',
+        contextQuote: 'Работает только индустриальный ремонт с инжектором и смолой.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
@@ -5305,6 +5324,25 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
       },
     ],
   },
+  {
+    article: 'blog/winter-windshield-care-cracks-prevention',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'საქარე მინის აღდგენა',
+        originalPhrase: 'ნაკენჭრის შეკეთება',
+        contextQuote: 'რა ღირს ნაკენჭრის შეკეთება ზამთრის სეზონის დაწყებამდე?',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'ნაკენჭრის აღდგენა',
+        originalPhrase: 'ნაკენჭრის შეკეთება',
+        contextQuote: '1 სმ-მდე ნაკენჭრის შეკეთება ღირს 60 ₾-დან, 1–2 სმ — 80 ₾-დან.',
+      },
+    ],
+  },
 ];
 
 export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
@@ -7807,6 +7845,25 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'paint protection film',
         originalPhrase: 'protection film',
         contextQuote: 'Permanent full colour change with protection film starts at 9000 ₾',
+      },
+    ],
+  },
+  {
+    article: 'blog/winter-windshield-care-cracks-prevention',
+    links: [
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'windshield repair',
+        originalPhrase: 'chip repair',
+        contextQuote: 'How much does a chip repair cost before the winter season?',
+      },
+      {
+        role: 'pillar',
+        target: '/windshield-repair',
+        anchor: 'auto glass repair',
+        originalPhrase: 'repair',
+        contextQuote: 'Timely repair vs later replacement: an order of magnitude.',
       },
     ],
   },
