@@ -115,6 +115,7 @@ export const BLOG_SERVICE_MAP: Readonly<Record<string, string>> = {
   'blog/wrap-color-options-finishes':    'vinyl-wrapping',
   'blog/interior-decor-vinyl-film':      'vinyl-wrapping',
   'blog/wedding-photoshoot-wrap':        'vinyl-wrapping',
+  'blog/wrap-removal-residue':           'vinyl-wrapping',
   // Window tinting
   'blog/vehicle-tinting-techniques':          'auto-glass-tinting',
   'blog/legal-aspects-of-tinting-in-georgia': 'auto-glass-tinting',

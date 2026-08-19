@@ -2719,6 +2719,32 @@ export const BLOG_LINKS_RU: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/wrap-removal-residue',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'виниловая плёнка',
+        originalPhrase: 'виниловая плёнка',
+        contextQuote: 'Декоративная виниловая плёнка на кузове — это многослойный материал',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'полировка',
+        originalPhrase: 'полировка',
+        contextQuote: 'Лёгкая финишная полировка возвращает глянец за 20-40 минут на деталь.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'защитной плёнкой',
+        originalPhrase: 'защитной плёнкой',
+        contextQuote: 'Полная смена цвета защитной плёнкой для ориентировки — от 9000 ₾',
+      },
+    ],
+  },
+  {
     article: 'blog/winter-windshield-care-cracks-prevention',
     links: [
       {
@@ -5325,6 +5351,32 @@ export const BLOG_LINKS_KA: readonly BlogLinkRule[] = [
     ],
   },
   {
+    article: 'blog/wrap-removal-residue',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'ვინილის ფირი',
+        originalPhrase: 'ვინილის ფირი',
+        contextQuote: 'დეკორატიული ვინილის ფირი ძარაზე — მრავალშრიანი მასალაა',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'პოლირება',
+        originalPhrase: 'პოლირება',
+        contextQuote: 'მსუბუქი საბოლოო პოლირება აბრუნებს ბრწყინვას 20-40 წუთში დეტალზე.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'დამცავი ფირით',
+        originalPhrase: 'დამცავი ფირით',
+        contextQuote: 'ფერის სრული შეცვლა დამცავი ფირით საორიენტაციოდ — 9000 ₾-დან',
+      },
+    ],
+  },
+  {
     article: 'blog/winter-windshield-care-cracks-prevention',
     links: [
       {
@@ -7845,6 +7897,32 @@ export const BLOG_LINKS_EN: readonly BlogLinkRule[] = [
         anchor: 'paint protection film',
         originalPhrase: 'protection film',
         contextQuote: 'Permanent full colour change with protection film starts at 9000 ₾',
+      },
+    ],
+  },
+  {
+    article: 'blog/wrap-removal-residue',
+    links: [
+      {
+        role: 'pillar',
+        target: '/vinyl-wrapping',
+        anchor: 'vinyl',
+        originalPhrase: 'vinyl',
+        contextQuote: 'At BESTAUTO vinyl removal is usually part of a package with a fresh install or prep for another service.',
+      },
+      {
+        role: 'bridge',
+        target: '/polishing',
+        anchor: 'polishing',
+        originalPhrase: 'polishing',
+        contextQuote: 'Fixed only by polishing the whole body to level the gloss.',
+      },
+      {
+        role: 'bridge',
+        target: '/ppf-shield-wrapping',
+        anchor: 'paint protection film',
+        originalPhrase: 'protection film',
+        contextQuote: 'Full colour change with protection film as a reference — from 9000 ₾',
       },
     ],
   },

@@ -8,7 +8,7 @@ primary_hf_ru: "снятие виниловой плёнки, удаление �
 primary_hf_ka: "ფირის მოხსნა, ვინილის ფირის მოცილება"
 primary_hf_en: "vinyl removal residue, vinyl wrap removal"
 secondary_links: []
-status: drafted
+status: published
 sources:
   - roadmap: "docs/content-roadmap.md#47"
   - guidelines: "docs/blog-article-guidelines.md §8a.1, §8a.3"
