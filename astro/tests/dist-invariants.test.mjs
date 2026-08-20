@@ -20,6 +20,11 @@
  *  - `_lz` id uniqueness: both deferred-analytics blocks numbered from `_lz0`,
  *    so one loader re-ran the other block's script — a second Facebook PageView
  *    on every page load.
+ *  - a second Google tag loader: Tilda put the GA4 measurement ID into the GTM
+ *    bootstrap template, so every page pulled `gtm.js` next to the `gtag/js`
+ *    snippet that already configured the same ID. Harmless until Google's
+ *    2026-10-02 change makes `gtm.js` initialise the tag on load — i.e. a second
+ *    page_view per visit.
  *  - dead internal links: three articles linked to a service slug that does not
  *    exist and three to an unpublished article; all six returned 404 in
  *    production for months.
@@ -178,4 +183,27 @@ test('location pages link to every live service', () => {
     .filter((x) => x.n !== 12)
     .map((x) => `${x.path} (${x.n} links, expected 12)`);
   assert.deepEqual(offenders, [], 'location pages with an incomplete service list');
+});
+
+test('the Google tag ships one loader, and it is gtag/js', () => {
+  // `gtm.js` (and its ns.html <noscript> twin) is the legacy loader Tilda
+  // emitted. It duplicates the gtag/js snippet in the body and, from
+  // 2026-10-02, would fire its own page_view. Checked over every built
+  // document, fragments included — the exports carry the snippet too.
+  const legacy = pages
+    .filter((p) => /gtm\.start|googletagmanager\.com\/(?:gtm\.js|ns\.html)/.test(p.html))
+    .map((p) => p.path);
+  assert.deepEqual(legacy, [], `pages still loading the GTM container: ${legacy.length}`);
+});
+
+test('every page that loads gtag/js also configures the property once', () => {
+  // Guards the other direction: stripping the legacy loader must not take the
+  // real snippet — or its config call — with it.
+  const offenders = [];
+  for (const p of pages) {
+    if (!p.html.includes('googletagmanager.com/gtag/js')) continue;
+    const n = (p.html.match(/gtag\(\s*'config'\s*,\s*'G-C088QPT7KV'\s*\)/g) ?? []).length;
+    if (n !== 1) offenders.push(`${p.path} (${n} config calls)`);
+  }
+  assert.deepEqual(offenders, [], 'pages loading gtag/js without exactly one config call');
 });

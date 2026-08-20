@@ -575,6 +575,44 @@ export function stripAlienAnalytics(content: string): string {
 }
 
 /**
+ * Remove the legacy Google Tag Manager loader Tilda injected for the GA4 tag.
+ *
+ * Tilda dropped the GA4 measurement ID into the *GTM* bootstrap template, so
+ * every page pulled `googletagmanager.com/gtm.js?id=G-C088QPT7KV` (plus the
+ * `ns.html` <noscript> iframe) on top of the regular `gtag/js` snippet that
+ * already sits in the body with its own `gtag('config', ...)`. There is no GTM
+ * container behind that ID — it is a GA4 property — so the loader only ever
+ * duplicated work.
+ *
+ * Google is standardising the `gtm.js` snippet on 2026-10-02: it will initialise
+ * the tag on container load regardless of `gtag('config')`, which would turn the
+ * duplicate loader into duplicate page_view hits. Dropping it leaves `gtag/js`
+ * as the single loader, which is exactly what Google's migration notice asks for.
+ *
+ * The `window.dataLayer` stub is deliberately left in place — gtag.js uses it.
+ */
+export function stripGtmContainerLoader(content: string): string {
+  return content
+    // 1. Inline GTM bootstrap (the IIFE that injects gtm.js)
+    .replace(
+      /<script\b[^>]*>(?:[^<]|<(?!\/script>))*?gtm\.start(?:[^<]|<(?!\/script>))*?<\/script>/g,
+      ''
+    )
+    // 2. Direct external gtm.js loader (defensive — Tilda emits the IIFE instead)
+    .replace(
+      /<script\b[^>]*src="[^"]*googletagmanager\.com\/gtm\.js[^"]*"[^>]*>\s*<\/script>/g,
+      ''
+    )
+    // 3. GTM <noscript> iframe fallback
+    .replace(
+      /<noscript>\s*<iframe[^>]*googletagmanager\.com\/ns\.html[^>]*>\s*<\/iframe>\s*<\/noscript>/g,
+      ''
+    )
+    // 4. Leftover comment markers around the removed blocks
+    .replace(/<!--\s*(?:End\s+)?Google Tag Manager(?:\s*\(noscript\))?\s*-->/g, '');
+}
+
+/**
  * Remove the old Tilda inline tracking script (phone_call_299 etc.)
  * that was added manually. Replaced by /js/tracking.js.
  */
@@ -2247,7 +2285,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const rawHead = headStart >= 0 && headEnd > headStart
     ? html.slice(headStart + 6, headEnd)
     : '';
-  let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(makePathsAbsolute(rawHead)))))))))));
+  let processedHead = completeTwitterCards(sanitizeMetaTags(removeClientSeoScripts(deferNonCriticalScripts(delayHeadAnalytics(inlineCriticalCss(deferNonCriticalCss(deferBlockingScripts(removePolyfill(removeTildaCdnFallback(stripGtmContainerLoader(makePathsAbsolute(rawHead))))))))))));
 
   // Remove Tilda first-visit fade-in (sets opacity:0 on .t-records → NO_LCP)
   processedHead = removeTildaFadeInScript(processedHead);
@@ -2325,7 +2363,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const rawHeaderBlock = headerOpen >= 0 && headerClose > headerOpen
     ? body.slice(headerOpen, headerClose + headerCloseTag.length)
     : '';
-  const headerBlock = fixImgDimensions(delayAnalytics(injectSecondFbPixel(stripAlienAnalytics(stripOldTracking(rawHeaderBlock))), 'h'));
+  const headerBlock = fixImgDimensions(delayAnalytics(injectSecondFbPixel(stripGtmContainerLoader(stripAlienAnalytics(stripOldTracking(rawHeaderBlock)))), 'h'));
 
   // Main content: everything after <!--/header-->
   const mainStart = headerClose >= 0 ? headerClose + headerCloseTag.length : 0;
@@ -2336,7 +2374,7 @@ export function extractSections(html: string, lang?: string, slug?: string, isHo
   const fixedAnchors = rawMainContent
     .replace(/href="#form"/g, 'href="#contacts"')
     .replace(/href="https:\/\/wa\.me\/\d+"([^>]*id="cardbtn)/g, 'href="#contacts"$1');
-  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanFaqHeadings(removeOrphanCtaBlocks(fixedAnchors))))))), 'm'), lang, slug)));
+  const mainContent = addContentVisibility(fixImgDimensions(improveEmptyAlts(delayAnalytics(stripGtmContainerLoader(stripAlienAnalytics(removeElfsight(addLazyLoading(promoteAboveFoldImages(promoteHeroBackground(removeOrphanFaqHeadings(removeOrphanCtaBlocks(fixedAnchors)))))))), 'm'), lang, slug)));
 
   return {
     headContent: addResourceHints(headContent, rawMainContent, isHomepage),
