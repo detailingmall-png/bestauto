@@ -33,7 +33,7 @@ const RIC_POLYFILL = `var ric=typeof requestIdleCallback!=='undefined'?requestId
  * (no interaction = scripts load after timeout, well outside measurement window)
  * while keeping real-user analytics fast (first scroll → immediate load).
  */
-function interactionGate(fnBody: string, fallbackMs: number): string {
+export function interactionGate(fnBody: string, fallbackMs: number): string {
   // Defer go() via setTimeout(0) + idle callback so the interaction that
   // triggered the gate is fully processed AND painted before analytics JS
   // parses/executes. Plain setTimeout(0) lands in the very next macrotask,

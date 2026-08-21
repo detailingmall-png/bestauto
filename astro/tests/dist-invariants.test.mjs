@@ -196,14 +196,18 @@ test('the Google tag ships one loader, and it is gtag/js', () => {
   assert.deepEqual(legacy, [], `pages still loading the GTM container: ${legacy.length}`);
 });
 
-test('every page that loads gtag/js also configures the property once', () => {
-  // Guards the other direction: stripping the legacy loader must not take the
-  // real snippet — or its config call — with it.
+test('every indexable page loads the Google tag exactly once', () => {
+  // Both directions at once: stripping the legacy loader must not take the real
+  // snippet with it, and no page may go untagged. The location pages used to:
+  // hand-built, no Tilda body, so tracking.js sat there waiting for a `gtag`
+  // that never arrived and dropped every phone/WhatsApp click.
   const offenders = [];
-  for (const p of pages) {
-    if (!p.html.includes('googletagmanager.com/gtag/js')) continue;
-    const n = (p.html.match(/gtag\(\s*'config'\s*,\s*'G-C088QPT7KV'\s*\)/g) ?? []).length;
-    if (n !== 1) offenders.push(`${p.path} (${n} config calls)`);
+  for (const p of CONTENT_PAGES) {
+    const loaders = (p.html.match(/googletagmanager\.com\/gtag\/js\?id=G-C088QPT7KV/g) ?? []).length;
+    const configs = (p.html.match(/gtag\(\s*'config'\s*,\s*'G-C088QPT7KV'\s*\)/g) ?? []).length;
+    if (loaders !== 1 || configs !== 1) {
+      offenders.push(`${p.path} (${loaders} loaders, ${configs} config calls)`);
+    }
   }
-  assert.deepEqual(offenders, [], 'pages loading gtag/js without exactly one config call');
+  assert.deepEqual(offenders, [], 'pages not carrying exactly one Google tag');
 });

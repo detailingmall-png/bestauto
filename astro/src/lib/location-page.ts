@@ -7,6 +7,7 @@ import { META_OVERRIDES } from '../data/meta-overrides';
 import { getHomepageHeadCss } from './shared-blocks';
 import { renderFaqAccordion, type FaqAccordionItem } from './faq-accordion';
 import { SERVICE_SLUGS, getServiceName } from './seo';
+import { googleTagSnippet } from './google-tag';
 
 const BASE_URL = 'https://bestauto.ge';
 
@@ -41,6 +42,8 @@ export function buildLocationHeadContent(
   parts.push('<link rel="stylesheet" href="/css/tilda-grid-3.0.min.css" type="text/css" />');
   parts.push('<link rel="stylesheet" href="/css/tilda-animation-2.0.min.css" type="text/css" />');
   parts.push('<link rel="stylesheet" href="/css/fonts-tildasans.css" type="text/css" />');
+  parts.push('<link rel="dns-prefetch" href="//www.googletagmanager.com">');
+  parts.push(googleTagSnippet());
   parts.push(getHomepageHeadCss(lang));
 
   return parts.join('\n');
