@@ -20,6 +20,10 @@
  *  - `_lz` id uniqueness: both deferred-analytics blocks numbered from `_lz0`,
  *    so one loader re-ran the other block's script — a second Facebook PageView
  *    on every page load.
+ *  - Tilda helpers on hand-built pages: the location pages reuse the Tilda nav
+ *    and footer markup but ship no Tilda <head>, so `t_onReady`, `t_throttle`,
+ *    `t_onFuncLoad` and the `t_menu__*` family were undefined there — six pages
+ *    throwing ReferenceError with no mobile menu, for months.
  *  - a second Google tag loader: Tilda put the GA4 measurement ID into the GTM
  *    bootstrap template, so every page pulled `gtm.js` next to the `gtag/js`
  *    snippet that already configured the same ID. Harmless until Google's
@@ -210,4 +214,35 @@ test('every indexable page loads the Google tag exactly once', () => {
     }
   }
   assert.deepEqual(offenders, [], 'pages not carrying exactly one Google tag');
+});
+
+test('every Tilda helper a page calls is defined on that page', () => {
+  // Calls come from the shared nav/footer markup; definitions come either from
+  // an inline <script> or from a /js file the page actually loads. Reading the
+  // referenced files keeps this honest instead of hardcoding a name list.
+  const defsCache = new Map();
+  const defsIn = (source) =>
+    new Set([
+      ...[...source.matchAll(/function\s+(t_[A-Za-z0-9_]+)/g)].map((m) => m[1]),
+      ...[...source.matchAll(/window\.(t_[A-Za-z0-9_]+)\s*=/g)].map((m) => m[1]),
+    ]);
+  const defsOfScript = (webPath) => {
+    if (!defsCache.has(webPath)) {
+      const file = join('public', webPath.replace(/^\//, ''));
+      defsCache.set(webPath, existsSync(file) ? defsIn(readFileSync(file, 'utf8')) : new Set());
+    }
+    return defsCache.get(webPath);
+  };
+
+  const offenders = [];
+  for (const p of CONTENT_PAGES) {
+    const called = new Set([...p.html.matchAll(/\b(t_[A-Za-z0-9_]+)\s*\(/g)].map((m) => m[1]));
+    const defined = defsIn(p.html);
+    for (const webPath of new Set(p.html.match(/\/js\/[A-Za-z0-9._-]+\.js/g) ?? [])) {
+      for (const name of defsOfScript(webPath)) defined.add(name);
+    }
+    const missing = [...called].filter((name) => !defined.has(name)).sort();
+    if (missing.length) offenders.push(`${p.path} -> ${missing.join(', ')}`);
+  }
+  assert.deepEqual(offenders, [], 'pages calling an undefined Tilda helper');
 });
