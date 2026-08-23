@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-22T04:35:40.767Z",
+  "fetchedAt": "2026-08-23T04:40:21.070Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -435,15 +435,15 @@
         "en": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!"
       },
       "relativeTimes": {
-        "ru": "3 месяца назад",
-        "ka": "3 თვის წინ",
-        "en": "3 months ago"
+        "ru": "4 месяца назад",
+        "ka": "4 თვის წინ",
+        "en": "4 months ago"
       },
       "originalLang": "en",
       "time": 1776863509,
       "profileUrl": "https://www.google.com/maps/contrib/117889272306166589812/reviews",
       "text": "Amazing job done by the guys! Car looks fresh like from a dealership! Thank you very much!",
-      "relativeTime": "3 months ago"
+      "relativeTime": "4 months ago"
     },
     {
       "authorName": "კახა სიხარულაშვილი",
@@ -529,7 +529,7 @@
       "authorName": "Mikhail",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUygXsQGgnzvFfn9HJ_xccXGGiSaxn4tjmmCczVRlhNyCeOTQ2p=s128-c0x00000000-cc-rp-mo-ba2",
       "rating": 5,
-      "relativeTime": "8 months ago",
+      "relativeTime": "9 months ago",
       "text": "Excellent service! Polite and attentive staff. The guys are masters of their craft. They did the job with great attention to detail and on time. As a bonus, they did some extra work without raising the price. I can recommend them!",
       "time": 1763710948,
       "profileUrl": "https://www.google.com/maps/contrib/115899718786548583026/reviews",
@@ -539,9 +539,9 @@
         "ka": "შესანიშნავი მომსახურება! თავაზიანი და ყურადღებიანი პერსონალი. ბიჭები თავიანთი საქმის ოსტატები არიან. მათ სამუშაო დეტალებისადმი დიდი ყურადღებით და დროულად შეასრულეს. ბონუსის სახით, მათ დამატებითი სამუშაო ფასის გაზრდის გარეშე შეასრულეს. შემიძლია მათი რეკომენდაცია!"
       },
       "relativeTimes": {
-        "en": "8 months ago",
-        "ru": "8 месяцев назад",
-        "ka": "8 თვის წინ"
+        "en": "9 months ago",
+        "ru": "9 месяцев назад",
+        "ka": "9 თვის წინ"
       },
       "originalLang": "en"
     },
