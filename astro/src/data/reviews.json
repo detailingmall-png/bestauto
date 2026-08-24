@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-23T04:40:21.070Z",
+  "fetchedAt": "2026-08-24T04:49:11.947Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -135,15 +135,15 @@
         "en": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!"
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "en",
       "time": 1782199892,
       "profileUrl": "https://www.google.com/maps/contrib/101011872027064943809/reviews",
       "text": "Brought my car here for full detailed cleaning and was not disappointed! Thank you guys for your professionalism and attention to detail, my recommendation to you!",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "ana tatulashvili",
@@ -489,7 +489,7 @@
       "authorName": "Zezva Arabuli",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKE5PU8bKn4Q1oGxM0poeErn6pKbo5TH6MbUdqEcu_kIfs4kw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "6 months ago",
+      "relativeTime": "7 months ago",
       "text": "გავაკეთე პოლირების სერვისი და დავაკარი სტიკერები. შედეგით ძალიან კმაყოფილი ვარ — მანქანა იდეალურად გამოიყურება. მუშაობენ ხარისხიანად, ყურადღებით და პროფესიონალურად. ნამდვილად გირჩევთ 👍",
       "time": 1768994407,
       "profileUrl": "https://www.google.com/maps/contrib/118019043653831607447/reviews",
@@ -499,9 +499,9 @@
         "en": "I had a polishing service and applied stickers. I am very satisfied with the result — the car looks perfect. They work with quality, attention and professionalism. I definitely recommend them 👍"
       },
       "relativeTimes": {
-        "ka": "6 თვის წინ",
-        "en": "6 months ago",
-        "ru": "6 месяцев назад"
+        "ka": "7 თვის წინ",
+        "en": "7 months ago",
+        "ru": "7 месяцев назад"
       },
       "originalLang": "ka"
     },
