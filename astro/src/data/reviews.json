@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-24T04:49:11.947Z",
+  "fetchedAt": "2026-08-25T04:41:54.701Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -55,15 +55,15 @@
         "en": "The guys did a fantastic polishing job, touched up the chips and removed all visible imperfections. As a bonus, they polished the headlights and also cleaned up the interior. The car looks like new 🙂\n\nI highly recommend them 💪🤝"
       },
       "relativeTimes": {
-        "ru": "4 недели назад",
-        "ka": "4 კვირის წინ",
-        "en": "4 weeks ago"
+        "ru": "1 месяц назад",
+        "ka": "ერთი თვის წინ",
+        "en": "a month ago"
       },
       "originalLang": "ru",
       "time": 1784877606,
       "profileUrl": "https://www.google.com/maps/contrib/114698061180804723826/reviews",
       "text": "Ребята сделали очень классную полировку, подкрасили сколы и убрали все видимые деффекты, бонусом сделали полировку фар, а также привели салон в порядок, машина как новая 🙂\n\nрекомендую к сотрудничеству 💪🤝",
-      "relativeTime": "4 weeks ago"
+      "relativeTime": "a month ago"
     },
     {
       "authorName": "Alex Rex",
