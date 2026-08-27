@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-26T04:42:44.906Z",
+  "fetchedAt": "2026-08-27T15:03:52.098Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -115,15 +115,15 @@
         "en": "It's expensive, they've set it up so that they won't even charge you VAT.\nThey did the polishing in such a way that they didn't bother with \"pointing out\" the dots, they just put it on."
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "ka",
       "time": 1782561586,
       "profileUrl": "https://www.google.com/maps/contrib/113884998987484067639/reviews",
       "text": "ძვირია, ისე აქვთ მოწყობილი რომ დღგ-საც არ ჩაგათვლევინებენ.\nპოლირება ისე გააკეთეს რომ წერტილების \"დატოჩკვაზე\" თავი არ შეუწუხებიათ, ზედ გადაატარეს უბრალოდ.",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "Luka Khvibliani",
@@ -295,15 +295,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "ka": "2 თვის წინ",
-        "en": "2 months ago"
+        "ru": "3 месяца назад",
+        "ka": "3 თვის წინ",
+        "en": "3 months ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "2 months ago"
+      "relativeTime": "3 months ago"
     },
     {
       "authorName": "tornike navrozashvili",
@@ -315,15 +315,15 @@
         "en": "It's an ideal environment and situation!"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "ka": "2 თვის წინ",
-        "en": "2 months ago"
+        "ru": "3 месяца назад",
+        "ka": "3 თვის წინ",
+        "en": "3 months ago"
       },
       "originalLang": "ka",
       "time": 1779775429,
       "profileUrl": "https://www.google.com/maps/contrib/112500830890279074778/reviews",
       "text": "იდეალური გარემო და სიტუაციაა!",
-      "relativeTime": "2 months ago"
+      "relativeTime": "3 months ago"
     },
     {
       "authorName": "Nikita Taboo",
@@ -549,7 +549,7 @@
       "authorName": "David Williams",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWEweGubGwFxLnzaYEqwXeMN1GaSqMZhValtX79WVnzfyC5MUyd=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "9 months ago",
+      "relativeTime": "10 months ago",
       "text": "Bestauto Detailing delivered a true showroom finish on my Tesla Model Y. The paint now has a deep, mirror gloss, the wheels and glass are spotless, and the interior feels refreshed—everything simply sparkles. Communication was clear, turnaround was prompt, and the care taken at every step was obvious. Special thanks to Aleksander for the excellent service and attention to detail; he treated the car like his own. I highly recommend Bestauto Detailing to any Tesla owner who wants top-tier results.",
       "time": 1761404842,
       "profileUrl": "https://www.google.com/maps/contrib/106051190216116841097/reviews",
@@ -559,9 +559,9 @@
         "ka": "Bestauto Detailing-მა ჩემს Tesla Model Y-ს ნამდვილი საგამოფენო დასრულება შესთავაზა. საღებავს ახლა ღრმა, სარკისებური პრიალა ელფერი აქვს, დისკები და მინები უნაკლოა, ინტერიერი კი განახლებული შეგრძნებით გამოირჩევა - ყველაფერი უბრალოდ ბრწყინავს. კომუნიკაცია ნათელი იყო, მომსახურება სწრაფი და ყოველ ნაბიჯზე გამოჩენილი ყურადღება აშკარა იყო. განსაკუთრებული მადლობა ალექსანდრეს შესანიშნავი მომსახურებისა და დეტალებისადმი ყურადღებისთვის; მან მანქანა საკუთარივით მოეპყრო. Bestauto Detailing-ს გირჩევთ Tesla-ს ნებისმიერ მფლობელს, ვისაც უმაღლესი დონის შედეგები სურს."
       },
       "relativeTimes": {
-        "en": "9 months ago",
-        "ru": "9 месяцев назад",
-        "ka": "9 თვის წინ"
+        "en": "10 months ago",
+        "ru": "10 месяцев назад",
+        "ka": "10 თვის წინ"
       },
       "originalLang": "en"
     },
