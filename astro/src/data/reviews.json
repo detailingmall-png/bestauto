@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-29T10:55:19.325Z",
+  "fetchedAt": "2026-08-30T09:50:05.506Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -95,15 +95,15 @@
         "ka": "დიდი სიამოვნებით გირჩევთ! პროფესიონალი პერსონალი, უნაკლო დეტალები და ჩემი მანქანა არასდროს ყოფილა ასე ლამაზი."
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "en",
       "time": 1782743178,
       "profileUrl": "https://www.google.com/maps/contrib/117049290513093642711/reviews",
       "text": "Highly recommend! Professional staff, flawless detailing, and my car has never looked better",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "Zaza Guliashvili",
