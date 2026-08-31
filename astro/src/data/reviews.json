@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-30T09:50:05.506Z",
+  "fetchedAt": "2026-08-31T10:40:51.916Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -255,15 +255,15 @@
         "en": "I had my BMW X5 polished and dry-cleaned. I'm very pleased with the results – the bodywork looks like new after polishing, with a deep shine and minor scratches gone. The interior is clean and fresh after the cleaning, removing all dirt and unpleasant odors.\n\nThe work was done efficiently, meticulously, and within the agreed-upon timeframe. It's clear they know their stuff and pay close attention to detail. I highly recommend them!"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "ka": "2 თვის წინ",
-        "en": "2 months ago"
+        "ru": "3 месяца назад",
+        "ka": "3 თვის წინ",
+        "en": "3 months ago"
       },
       "originalLang": "ru",
       "time": 1780161332,
       "profileUrl": "https://www.google.com/maps/contrib/116131506968891871214/reviews",
       "text": "Обращался на полировку и химчистку BMW X5. Результатом очень доволен — кузов после полировки выглядит как новый, появился глубокий блеск, ушли мелкие царапины. Салон после химчистки стал чистым и свежим, убрали все загрязнения и неприятные запахи.\n\nРабота выполнена качественно, аккуратно и в оговоренные сроки. Видно, что ребята знают своё дело и внимательно относятся к деталям. Смело рекомендую!",
-      "relativeTime": "2 months ago"
+      "relativeTime": "3 months ago"
     },
     {
       "authorName": "曾艾琳",
@@ -469,7 +469,7 @@
       "authorName": "jean pierre nehme",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWMrUtkJuMZqqPZJwjTZZuIaQq9EEprG0y5cg-VTNcyYSVlyO-U=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "text": "All the way from Romania 🇷🇴 it's my first time writing a review, i don't usually trust people easily but I felt really comfortable dealing with this team since day one, very professional, very satisfied with the results, highly recommended 👌🏻💪🏻\nGlad to meet you guys 🙏🏼",
       "time": 1772316949,
       "profileUrl": "https://www.google.com/maps/contrib/106862328154285265159/reviews",
@@ -479,9 +479,9 @@
         "ka": "რუმინეთიდან 🇷🇴 პირველად ვწერ მიმოხილვას, ჩვეულებრივ, ადამიანებს ადვილად არ ვენდობი, მაგრამ პირველივე დღიდან ამ გუნდთან ურთიერთობისას თავს ძალიან კომფორტულად ვგრძნობდი, ძალიან პროფესიონალები იყვნენ, შედეგით ძალიან კმაყოფილი, გირჩევთ 👌🏻💪🏻\nმიხარია თქვენი გაცნობა 🙏🏼"
       },
       "relativeTimes": {
-        "en": "5 months ago",
-        "ru": "5 месяцев назад",
-        "ka": "5 თვის წინ"
+        "en": "6 months ago",
+        "ru": "6 месяцев назад",
+        "ka": "6 თვის წინ"
       },
       "originalLang": "en"
     },
