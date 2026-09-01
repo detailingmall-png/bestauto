@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-08-31T10:40:51.916Z",
+  "fetchedAt": "2026-09-01T09:16:41.235Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -35,15 +35,15 @@
         "en": "Top quality service"
       },
       "relativeTimes": {
-        "ru": "2 недели назад",
-        "ka": "2 კვირის წინ",
-        "en": "2 weeks ago"
+        "ru": "3 недели назад",
+        "ka": "3 კვირის წინ",
+        "en": "3 weeks ago"
       },
       "originalLang": "en",
       "time": 1786438198,
       "profileUrl": "https://www.google.com/maps/contrib/105521990320459197326/reviews",
       "text": "Top quality service",
-      "relativeTime": "2 weeks ago"
+      "relativeTime": "3 weeks ago"
     },
     {
       "authorName": "Ketino Garozashvili",
@@ -235,15 +235,15 @@
         "en": "great staff"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "ka": "2 თვის წინ",
-        "en": "2 months ago"
+        "ru": "3 месяца назад",
+        "ka": "3 თვის წინ",
+        "en": "3 months ago"
       },
       "originalLang": "en",
       "time": 1780229929,
       "profileUrl": "https://www.google.com/maps/contrib/108958595932398788808/reviews",
       "text": "great staff",
-      "relativeTime": "2 months ago"
+      "relativeTime": "3 months ago"
     },
     {
       "authorName": "Дмитрий Павлов",
