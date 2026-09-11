@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-09-10T08:47:13.504Z",
+  "fetchedAt": "2026-09-11T08:45:11.376Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -175,15 +175,15 @@
         "en": "The best service! The work was done within the agreed time frame! The best professionals! Good luck!"
       },
       "relativeTimes": {
-        "ru": "2 месяца назад",
-        "ka": "2 თვის წინ",
-        "en": "2 months ago"
+        "ru": "3 месяца назад",
+        "ka": "3 თვის წინ",
+        "en": "3 months ago"
       },
       "originalLang": "ka",
       "time": 1781085763,
       "profileUrl": "https://www.google.com/maps/contrib/117872751637693533048/reviews",
       "text": "საუკეთესო სერვისი! დათქმულ ვადებში შესრულებული სამუშაო! საუკეთესო პროფესიონალები! წარმატებები!",
-      "relativeTime": "2 months ago"
+      "relativeTime": "3 months ago"
     },
     {
       "authorName": "Andro Todua",
