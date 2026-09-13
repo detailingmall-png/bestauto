@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 196,
-  "fetchedAt": "2026-09-12T08:30:04.358Z",
+  "fetchedAt": "2026-09-13T09:18:37.878Z",
   "reviews": [
     {
       "authorName": "Robert Moore",
@@ -355,15 +355,15 @@
         "en": "Professionalism and a comfortable environment together are rare today👌 My recommendation to the entire team..Thank you ✊"
       },
       "relativeTimes": {
-        "ru": "3 месяца назад",
-        "ka": "3 თვის წინ",
-        "en": "3 months ago"
+        "ru": "4 месяца назад",
+        "ka": "4 თვის წინ",
+        "en": "4 months ago"
       },
       "originalLang": "ka",
       "time": 1778746852,
       "profileUrl": "https://www.google.com/maps/contrib/103659643102670168677/reviews",
       "text": "პროფესიონალიზმი და კომფორტული გარემო ერთად იშვიათია დღეს👌 ჩემი რეკომენდაცია მთლიან გუნდს ..მადლობა ✊",
-      "relativeTime": "3 months ago"
+      "relativeTime": "4 months ago"
     },
     {
       "authorName": "Dmitry Teshev",
