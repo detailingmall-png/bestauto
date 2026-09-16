@@ -2,9 +2,29 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
-  "totalReviews": 196,
-  "fetchedAt": "2026-09-15T09:17:40.487Z",
+  "totalReviews": 197,
+  "fetchedAt": "2026-09-16T09:10:36.819Z",
   "reviews": [
+    {
+      "authorName": "fridolin boyomo",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLq0kzTSgbHNT1e2r-BBY9asD3fgtwQX7znPd2OnH14BMdrQg=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "texts": {
+        "ru": "Отлично. Я остался очень доволен результатом на своей машине.",
+        "en": "Really good. I was very satisfied with the result on my car",
+        "ka": "მართლაც კარგია. ძალიან კმაყოფილი ვიყავი ჩემი მანქანის შედეგით."
+      },
+      "relativeTimes": {
+        "ru": "сегодня",
+        "ka": "დღეს",
+        "en": "today"
+      },
+      "originalLang": "en",
+      "time": 1789488868,
+      "profileUrl": "https://www.google.com/maps/contrib/107587563874126378615/reviews",
+      "text": "Really good. I was very satisfied with the result on my car",
+      "relativeTime": "today"
+    },
     {
       "authorName": "Robert Moore",
       "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK6uogWOQfOflQB5X1aFC4t9buPUdL8nTm47_2uJE_D-r1B=s128-c0x00000000-cc-rp-mo",
