@@ -2,8 +2,8 @@
   "placeId": "ChIJufBruXBzREARmuYFgm11uMA",
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
-  "totalReviews": 197,
-  "fetchedAt": "2026-09-16T09:10:36.819Z",
+  "totalReviews": 198,
+  "fetchedAt": "2026-09-17T09:18:51.645Z",
   "reviews": [
     {
       "authorName": "fridolin boyomo",
@@ -15,15 +15,15 @@
         "ka": "მართლაც კარგია. ძალიან კმაყოფილი ვიყავი ჩემი მანქანის შედეგით."
       },
       "relativeTimes": {
-        "ru": "сегодня",
-        "ka": "დღეს",
-        "en": "today"
+        "ru": "1 день назад",
+        "ka": "ერთი დღის წინ",
+        "en": "a day ago"
       },
       "originalLang": "en",
       "time": 1789488868,
       "profileUrl": "https://www.google.com/maps/contrib/107587563874126378615/reviews",
       "text": "Really good. I was very satisfied with the result on my car",
-      "relativeTime": "today"
+      "relativeTime": "a day ago"
     },
     {
       "authorName": "Robert Moore",
@@ -95,15 +95,15 @@
         "ka": "საუკეთესო მომსახურება, ნამდვილი პროფესიონალები."
       },
       "relativeTimes": {
-        "ru": "1 месяц назад",
-        "ka": "ერთი თვის წინ",
-        "en": "a month ago"
+        "ru": "2 месяца назад",
+        "ka": "2 თვის წინ",
+        "en": "2 months ago"
       },
       "originalLang": "en",
       "time": 1784296300,
       "profileUrl": "https://www.google.com/maps/contrib/111579557195517151617/reviews",
       "text": "Best service, Real professionals.",
-      "relativeTime": "a month ago"
+      "relativeTime": "2 months ago"
     },
     {
       "authorName": "ani sonishvili",
