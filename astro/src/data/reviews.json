@@ -3,7 +3,7 @@
   "businessName": "BESTAUTO",
   "overallRating": 4.9,
   "totalReviews": 198,
-  "fetchedAt": "2026-09-18T08:54:07.054Z",
+  "fetchedAt": "2026-09-19T08:40:51.246Z",
   "reviews": [
     {
       "authorName": "fridolin boyomo",
@@ -15,15 +15,15 @@
         "ka": "მართლაც კარგია. ძალიან კმაყოფილი ვიყავი ჩემი მანქანის შედეგით."
       },
       "relativeTimes": {
-        "ru": "2 дня назад",
-        "ka": "2 დღის წინ",
-        "en": "2 days ago"
+        "ru": "3 дня назад",
+        "ka": "3 დღის წინ",
+        "en": "3 days ago"
       },
       "originalLang": "en",
       "time": 1789488868,
       "profileUrl": "https://www.google.com/maps/contrib/107587563874126378615/reviews",
       "text": "Really good. I was very satisfied with the result on my car",
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "authorName": "Robert Moore",
